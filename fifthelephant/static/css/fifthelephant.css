@@ -7,10 +7,13 @@ body	{
 	font-size: 14px;
 }
 
-h1	{
-	font-family: Magra, Verdana, sans-serif;
+h1, h2, h3	{
 	font-weight: 300;
+	font-family: Magra, Verdana, sans-serif;
 	color: #444;
+}
+
+h1	{
 	text-align: center;
 	font-size: 48px;
 }
@@ -21,12 +24,17 @@ hr {
 
 .btn	{margin: 10px;}
 
+#srosnops, #venue, #schedule, #sessions, #credits	{
+	margin-top: 50px;
+}
+
+
 /*		HOME 		*/
 
 #home .hero-unit	{
 	background: transparent;
 	margin-bottom: 0px;
-	padding: 40px 0px;
+	padding: 50px 0px;
 }
 
 #home .hero-unit h1, #home .hero-unit h2	{
@@ -44,7 +52,6 @@ hr {
 #home .hero-unit h2	{
 	font-family: Magra, Verdana, sans-serif;
 	text-transform: uppercase;
-	font-weight: 300;
 	color: #555;
 }
 
@@ -59,7 +66,84 @@ hr {
 	padding: 30px;
 }
 
-.venue, .schedule, .sessions, .credits	{
-	min-height: 900px;
-	margin-top: 40px;
+/*		SESSIONS 		*/
+
+#sessions .track	{
+	text-align: center;
 }
+
+#sessions .track h2	{
+	text-align: center;
+	font-family: Magra, Verdana, sans-serif;
+	text-transform: uppercase;
+	font-size: 28px;
+	color: #222;
+	margin-top: 20px;
+	border-bottom: 1px solid #222;
+}
+
+
+#sessions .event_preview_video	{
+	display: block;
+	width: 100%;
+	height: 100px;
+}
+
+#sessions .event_preview_video a	{
+	width: 100px;
+	height: 60px;
+	float: left;
+	margin-right: 10px;
+}
+
+#sessions .event_preview_video img	{
+	height: 100%;
+	width: 100%;
+	background: #CCC;
+}
+
+#sessions .event_preview	{
+	margin-top: 30px;
+}
+
+#sessions .propose	{
+	background: #CCC;
+	padding: 10px;
+	border-radius: 10px;
+	border: #888 1px solid;
+}
+
+#sessions .propose p.button {text-align: center;}
+
+#sessions .propose .lastdate	{
+	font-weight: bold;
+}
+
+/*	CREDITS 	*/
+#credits .movie-credits	{
+	padding-left: 100px;
+	margin-bottom: 18px;
+}
+
+#credits .movie-credits dt {
+	text-transform: uppercase;
+	clear: both;
+	float: left;
+	margin-left: -100px;
+	width: 95px;
+	text-align: right;
+	font-weight: normal;
+	line-height: 1.7;
+	margin-bottom: 0.5em;
+}
+
+#credits .movie-credits dd	{
+	margin-bottom: .5em;
+	font-weight: bold;
+	line-height: 1.7;
+}
+
+#credits .hasgeek p 	{
+	line-height: 1.5;
+}
+
