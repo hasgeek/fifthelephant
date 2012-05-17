@@ -5,19 +5,27 @@
 
 
 {% block headerbox %}
-<header>
+<header class="navbar navbar-fixed-top header">
 	{% include "baseframe/networkbar.html" -%}
-	<div class="navbar navbar-fixed-top header">
+	<div>
 		<div class="navbar-inner">
 			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="#">The Fifth Elephant</a>
+				<div class="nav-collapse">
 				<ul class="nav">
 					<li class="active"><a href="#home">Home</a></li>
 					<li><a href="#srosnops">Sponsors</a></li>
 					<li><a href="#sessions">Sessions</a></li>
-					<li><a href="#schedule">Schedule</a></li>
+					<!--<li><a href="#schedule">Schedule</a></li>-->
 					<li><a href="#venue">Venue</a></li>
 					<li><a href="#credits">Credits</a></li>
 				</ul>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -25,6 +33,7 @@
 {% endblock %}
 
 {% block main %}
+
 <div class="container home" id="home">
 	<div class="row hero-unit">
 		<div class="span12">
@@ -40,7 +49,11 @@
 		</div>
 	</div>
 </div>
-<hr>
+<div class="graphics_home">
+		<div class="z-1" data-xrange="40" data-yrange="40" ></div>
+		<div class="z-2" data-xrange="20" data-yrange="20"></div>
+		<div class="z-3" data-xrange="10" data-yrange="10" data-invert="true"></div>
+</div>
 <div class="container srosnops" id="srosnops">
 	<div class="row">
 		<div class="span12"><h1>Sponsors</h1></div>
@@ -65,7 +78,12 @@
 		<div class="span3"><a class="thumbnail"><img src="http://placehold.it/320x100" /></a></div>
 	</div>	
 </div>
-<hr>
+
+<div class="graphics_srosnops">
+		<div class="z-1" data-xrange="40" data-yrange="40" ></div>
+		<div class="z-2" data-xrange="20" data-yrange="20"></div>
+		<div class="z-3" data-xrange="10" data-yrange="10" data-invert="true"></div>
+</div>
 <div class="container sessions" id="sessions">
 	<div class="row">
 		<div class="span12"><h1>Sessions</h1></div>
@@ -112,7 +130,10 @@
 			</div>
 		</div>
 	</div>
-	
+</div>
+<div class="graphics_sessions">
+		<div class="z-1" data-xrange="40" data-yrange="40" ></div>
+		<div class="z-2" data-xrange="20" data-yrange="20"></div>		
 </div>
 <!--		NO SCHEDULE YET	//	VENUE WILL BE ADDED AS WELL. Ask @geohacker
 <hr>
@@ -130,15 +151,25 @@
 		<div class="span4"><a href='#' class="btn btn-large btn-primary icon-star"> Propose A Talk</a></div>
 	</div>
 </div>
-<hr>
+<hr>-->
 <div class="container venue" id="venue">
 	<div class="row">
-		<div class="span12">
-			<h1>Venue</h1>
+		<div class="span12"><h1>Venue</h1></div>
+	</div>
+	<div class="row">
+		<div id="map" class="map leaflet-container leaflet-fade-anim"></div>
+		<div class="details span4 offset7">
+			<h2>NIMHANS Convention Center</h2>
+			<p>Hosur Road, Bangalore</p>
 
+			<div class="directions">
+				<h3>Getting there</h3>
+				<p>In hac habitasse platea dictumst. In hac habitasse platea dictumst. Praesent condimentum venenatis massa, eget imperdiet risus aliquet vitae. Aenean erat lectus, posuere quis luctus vel, vehicula at ante. Vestibulum gravida, felis et aliquet scelerisque, leo risus imperdiet er.</p>
+				<p><a href="http://g.co/maps/9ve49" target="_blank" class="btn btn-large icon-map-marker"> View in Maps</a></p>
+			</div>
 		</div>
 	</div>
-</div>-->
+</div>
 <hr>
 <div class="container credits" id="credits">
 	<div id="map" class="map"></div>

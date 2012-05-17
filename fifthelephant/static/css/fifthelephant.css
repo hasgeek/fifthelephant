@@ -5,6 +5,7 @@
 body	{
 	background: url(/static/img/gplaypattern.png);
 	font-size: 14px;
+	height: 100%;
 }
 
 h1, h2, h3	{
@@ -20,20 +21,24 @@ h1	{
 
 hr {	
 	border-color: #EEE;
+	display: none;
 }
 
 .btn	{margin: 10px;}
 
 #srosnops, #venue, #schedule, #sessions, #credits	{
-	margin-top: 50px;
+	margin-top: 90px;
 }
+
+/*		NAVBAR		*/
+
 
 
 /*		HOME 		*/
 
 #home .hero-unit	{
 	background: transparent;
-	margin-bottom: 0px;
+	margin-top: 100px;
 	padding: 50px 0px;
 }
 
@@ -119,6 +124,38 @@ hr {
 	font-weight: bold;
 }
 
+/*	VENUE 		*/
+
+#map {
+	height: 400px;
+	overflow: hidden;
+	margin: 0;
+	width: auto;
+	margin-top: 20px;
+}
+
+#venue {
+	margin-bottom: -400px;
+}
+
+
+#venue .details	{
+	position: relative;
+	z-index: 10;
+	height: 360px;
+	padding: 20px;
+	margin-top: -400px;
+	background: rgba(50, 50, 50, 0.95)
+}
+
+#venue .details h2, #venue .directions h3 {
+	color: #DDD;
+}
+
+#venue .details p {
+	color: #FFF;
+}
+
 /*	CREDITS 	*/
 #credits .movie-credits	{
 	padding-left: 100px;
@@ -147,3 +184,52 @@ hr {
 	line-height: 1.5;
 }
 
+/*		ILLUSTRATIONS FIX		*/
+
+.graphics_home div, .graphics_srosnops div, .graphics_sessions div	{
+	width: 100%; position: absolute;
+}
+
+
+.z-1 { z-index: -1; }
+.z-2 { z-index: -2; }
+.z-3 { z-index: -3; }
+
+.graphics_home .z-1 {
+	background: url(/static/img/graphics/home-z-1.png) bottom no-repeat;
+	height: 400px;
+}
+
+.graphics_home .z-2 {
+	background: url(/static/img/graphics/home-z-2.png) bottom no-repeat;
+	height: 270px;
+}
+
+.graphics_home .z-3 {
+	background: url(/static/img/graphics/home-z-3.png) bottom no-repeat;
+	height: 200px;
+}
+
+.graphics_srosnops .z-1 {
+	background: url(/static/img/graphics/sponsor-z-1.png) bottom no-repeat;
+	height: 353px;
+}
+.graphics_srosnops .z-2 {
+	background: url(/static/img/graphics/sponsor-z-2.png) bottom no-repeat;
+	height: 353px;
+}
+
+.graphics_srosnops .z-3 {
+	background: url(/static/img/graphics/sponsor-z-3.png) bottom no-repeat;
+	height: 400px;
+}
+
+.graphics_sessions .z-1 {
+	background: url(/static/img/graphics/sessions-z-1.png) bottom no-repeat;
+	height: 400px;	
+}
+
+.graphics_sessions .z-2 {
+	background: url(/static/img/graphics/sessions-z-2.png) bottom no-repeat;
+	height: 500px;	
+}
