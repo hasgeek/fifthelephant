@@ -30,6 +30,19 @@ hr {
 	margin-top: 90px;
 }
 
+.header_box 	{
+	background: #EEE;
+	border: solid 7px #afa36a;
+	padding-bottom: 10px;
+}
+
+.content_box	{
+	background: #EEE;
+	border: 1px solid #CCC;
+	border-radius: 10px;
+	padding: 10px;
+}
+
 /*		NAVBAR		*/
 
 
@@ -71,10 +84,20 @@ hr {
 	padding: 30px;
 }
 
+.sponsdoc .content_box p	{
+	margin-bottom: 0px;
+}
+
+.sponsdoc .content_box a.btn	{
+	margin-bottom: 0px;
+}
+
 /*		SESSIONS 		*/
 
 #sessions .track	{
 	text-align: center;
+	width: 30%;
+	margin: 15px;
 }
 
 #sessions .track h2	{
@@ -86,7 +109,6 @@ hr {
 	margin-top: 20px;
 	border-bottom: 1px solid #222;
 }
-
 
 #sessions .event_preview_video	{
 	display: block;
@@ -112,16 +134,21 @@ hr {
 }
 
 #sessions .propose	{
-	background: #CCC;
+	background: #EEE;
 	padding: 10px;
 	border-radius: 10px;
-	border: #888 1px solid;
+	border: #CCC 1px solid;
 }
-
-#sessions .propose p.button {text-align: center;}
 
 #sessions .propose .lastdate	{
 	font-weight: bold;
+}
+
+#sessions .gray	{
+	background: #EEE;
+	border-radius: 10px;
+	border: 1px solid #CCC;
+	margin: 30px;
 }
 
 /*	VENUE 		*/

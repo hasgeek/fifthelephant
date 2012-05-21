@@ -19,7 +19,7 @@ configure(app, 'FIFTHELEPHANT_ENV')
 app.register_blueprint(baseframe)
 assets = Environment(app)
 js = Bundle(Bundle(baseframe_js, 'js/jquery.smooth-scroll.min.js', 'js/plax.js', 'js/fifthelephant.js', filters='jsmin', output='js/fifthelephant-packed.js'), 'js/leaflet/leaflet.js')
-css = Bundle(Bundle(baseframe_css, 'css/fifthelephant.css', 'js/leaflet/leaflet.css', filters='cssmin', output='css/fifthelephant-packed.css'))
+css = Bundle(baseframe_css, 'css/fifthelephant.css', 'js/leaflet/leaflet.css', filters='cssmin', output='css/fifthelephant-packed.css')
 assets.register('js_all', js)
 assets.register('css_all', css)
 
