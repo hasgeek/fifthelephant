@@ -30,6 +30,14 @@ p	{
 	color: #000;
 }
 
+a 	{
+	color: #FFF;
+}
+
+a:hover {
+	color: #000;
+	text-decoration: none;
+}
 /*	NAVBAR	*/
 .navbar-inner	{
 	background: #79C1F5;
@@ -157,16 +165,17 @@ section#home {
 	text-decoration: none;
 }
 
-#partners .sponsdoc	{
+.contentbox	{
 	padding: 20px;
 	border-radius: 20px;
 	margin-top: 15px;
-	background: url(/static/img/pdf_s.png) #EEE no-repeat left;
 }
 
+.pdfs { background: url(/static/img/pdf_s.png) #EEE no-repeat left; }
+.propose { background: url(/static/img/propose.png) #EEE no-repeat left; }
+
 #sessions	{
-	height: 10000px;
-	background: #99AC78;
+	background: url(/static/img/sessions_bg.jpg) #99ac78 no-repeat bottom;
 }
 
 #sessions h2, #sessions h4 	{
@@ -174,9 +183,14 @@ section#home {
 }
 
 #sessions h4	{
-	padding-top: 20px;
+	padding-top: 15px;
 	color: #FFF;
 	text-shadow: 1px 1px 3px #555;
+}
+
+#sessions h4 span {
+	font-weight: bold;
+	font-size: 18px;
 }
 
 #sessions .track1 h4, #sessions .track2 h4, #sessions .track3 h4 	{
@@ -186,8 +200,73 @@ section#home {
 
 #sessions .track2 h4 {
 	background-position: 50% -120px;
+	padding-top: 16px;
 }
 
 #sessions .track3 h4 {
 	background-position: 50% 0px;
+	padding-top: 17px;
+}
+
+#sessions .lastdate	{
+	font-weight: bold;
+}
+
+#venue {
+	background: #99ac78;
+}
+
+#venue #map {
+	height: 400px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	margin: 0;
+	width: auto;
+	z-index: 0;
+	border-top: 1px solid rgb(204, 204, 204);
+}
+
+#venue .directions	{
+	background: rgba(40, 40, 40, 0.8);
+	height: 400px;
+	z-index: 10;
+	margin-top: -10px;
+	height: 380px;	
+	position: relative;
+	padding: 20px;
+	color: #EEE;
+}
+
+#credits {
+	background: #99ac78;
+	margin-bottom: -10px;
+}
+
+#credits .movie-credits  {
+	padding-left: 100px;
+	margin-bottom: 18px;
+} 	
+
+#credits .movie-credits dt {
+	text-transform: uppercase;
+	clear: both;
+	float: left;
+	margin-left: -100px;
+	width: 95px;
+	text-align: right;
+	font-weight: normal;
+	line-height: 1.7;
+	margin-bottom: 0.5em;
+}
+
+#credits .movie-credits dd  {
+	margin-bottom: .5em;
+	font-weight: bold;
+	line-height: 1.7;
+}
+
+#register {
+	background: #99ac78;
 }
