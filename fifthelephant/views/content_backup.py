@@ -47,11 +47,6 @@ def contest():
     return render_template('contest.html', active=1)
 
 
-@app.route('/2012/ind')
-def ind():
-    return render_template('ind.html', active=1)   
-
-
 @app.route('/take-charge')
 @app.route('/take-charge.html')
 @app.route('/takecharge')

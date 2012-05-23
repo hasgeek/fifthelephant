@@ -1,62 +1,119 @@
 @font-face	{ font-family: Magra; src: url(/static/Magra-Regular.ttf);}
 @font-face	{ font-family: Magra; font-weight: bold; src: url(/static/Magra-Bold.ttf);}
 
-/* 		BASE CSS	*/
-body	{
-	background: url(/static/img/gplaypattern.png);
-	font-size: 14px;
-	height: 100%;
-}
-
-h1, h2, h3	{
+/*	GENERAL	*/
+h1, h2, h3, h4	{
 	font-weight: 300;
-	font-family: Magra, Verdana, sans-serif;
-	color: #444;
+	text-align: center;
+	font-family: Magra, Verdana, sans-serif;	
+	color: #FFF;
 }
 
 h1	{
-	text-align: center;
-	font-size: 48px;
+	font-size: 50px;
+	color: #13181c;
+	margin-bottom: 20px;
 }
 
-hr {	
-	border-color: #EEE;
-	display: none;
+p	{
+	line-height: 1.7em;
+	font-size: 15px;
 }
 
-.btn	{margin: 10px;}
-
-#srosnops, #venue, #schedule, #sessions, #credits	{
-	margin-top: 90px;
+.btn-primary 	{
+	background: #79C1F5;
+	color: #333;
 }
 
-.header_box 	{
-	background: #EEE;
-	border: solid 7px #afa36a;
-	padding-bottom: 10px;
+.btn-primary:hover	{
+	background: #CCC;
+	color: #000;
 }
 
-.content_box	{
-	background: #EEE;
-	border: 1px solid #CCC;
-	border-radius: 10px;
-	padding: 10px;
+/*	NAVBAR	*/
+.navbar-inner	{
+	background: #79C1F5;
 }
 
-/*		NAVBAR		*/
+.navbar .nav > li > a	{
+	text-transform: uppercase;
+	color: #003d6c;
+	font-weight: bold;
+}
 
+.navbar .nav .active > a, .navbar .nav .active > a:hover	{
+	background: none;
+	border-bottom: 3px solid #003d6c;
+}
 
+li [class^="icon-"], li [class*=" icon-"]	{
+	width: auto;
+}
 
-/*		HOME 		*/
+.register	{
+	background: #294c66;
+}
+
+.register:hover	{
+	background: #1c3446;
+}
+
+.register  a 	{
+	color: #FFF !important;
+	margin-bottom: 0px;
+	font-size: 22px;
+}
+
+ul.register	{
+	height: 50px;
+	margin-bottom: -10px !important;
+}
+
+.triangle	{
+	width: 0;
+	height: 0;
+	border-bottom: 8px solid transparent;
+	border-right: 8px solid #1c3446;
+	position: relative;
+	left: -8px;
+	top: 2px;
+}
+
+/* 	CONTENT	*/
+body 	{
+	background: #b1daf8;
+}
+
+#partners {
+	background: #99ac78;
+}
+
+section 	{
+	padding-top: 90px;
+	margin: 0;
+}
+
+section#home {
+	background: url(/static/img/home_bg.jpg) no-repeat bottom;
+	padding-bottom: 50px;
+}
 
 #home .hero-unit	{
-	background: transparent;
-	margin-top: 100px;
-	padding: 50px 0px;
+	background: none;
 }
 
 #home .hero-unit h1, #home .hero-unit h2	{
 	text-align: center;
+}
+
+#home .hero-unit p	{
+	line-height: 1.7em;
+	font-size: 17px;
+}
+
+#home .offset2 	{
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 #home .hero-unit h1	{
@@ -77,186 +134,60 @@ hr {
 	text-transform: lowercase;
 }
 
-
-/*		SPONSORS		*/
-
-.sponsdoc	{
-	padding: 30px;
-}
-
-.sponsdoc .content_box p	{
-	margin-bottom: 0px;
-}
-
-.sponsdoc .content_box a.btn	{
-	margin-bottom: 0px;
-}
-
-/*		SESSIONS 		*/
-
-#sessions .track	{
-	text-align: center;
-	width: 30%;
+#home a.btn 	{
 	margin: 15px;
 }
 
-#sessions .track h2	{
+#partners 	{
+	background: url(/static/img/partners_bg.jpg) #99ac78 no-repeat bottom;
+}
+
+#partners .thumbnail {
+	background: #FFF;
+}
+
+#partners .thumbnail p {
+	text-transform: uppercase;
 	text-align: center;
-	font-family: Magra, Verdana, sans-serif;
-	text-transform: uppercase;
-	font-size: 28px;
-	color: #222;
-	margin-top: 20px;
-	border-bottom: 1px solid #222;
+	border-top: 1px solid #CCC;
+	color: #666;
 }
 
-#sessions .event_preview_video	{
-	display: block;
-	width: 100%;
-	height: 100px;
+#partners .sponsdoc:hover	{
+	text-decoration: none;
 }
 
-#sessions .event_preview_video a	{
-	width: 100px;
-	height: 60px;
-	float: left;
-	margin-right: 10px;
-}
-
-#sessions .event_preview_video img	{
-	height: 100%;
-	width: 100%;
-	background: #CCC;
-}
-
-#sessions .event_preview	{
-	margin-top: 30px;
-}
-
-#sessions .propose	{
-	background: #EEE;
-	padding: 10px;
-	border-radius: 10px;
-	border: #CCC 1px solid;
-}
-
-#sessions .propose .lastdate	{
-	font-weight: bold;
-}
-
-#sessions .gray	{
-	background: #EEE;
-	border-radius: 10px;
-	border: 1px solid #CCC;
-	margin: 30px;
-}
-
-/*	VENUE 		*/
-
-#map {
-	height: 400px;
-	overflow: hidden;
-	margin: 0;
-	width: auto;
-	margin-top: 20px;
-}
-
-#venue {
-	margin-bottom: -400px;
-}
-
-
-#venue .details	{
-	position: relative;
-	z-index: 10;
-	height: 360px;
+#partners .sponsdoc	{
 	padding: 20px;
-	margin-top: -400px;
-	background: rgba(50, 50, 50, 0.95)
+	border-radius: 20px;
+	margin-top: 15px;
+	background: url(/static/img/pdf_s.png) #EEE no-repeat left;
 }
 
-#venue .details h2, #venue .directions h3 {
-	color: #DDD;
+#sessions	{
+	height: 10000px;
+	background: #99AC78;
 }
 
-#venue .details p {
+#sessions h2, #sessions h4 	{
+	color: #000;
+}
+
+#sessions h4	{
+	padding-top: 20px;
 	color: #FFF;
+	text-shadow: 1px 1px 3px #555;
 }
 
-/*	CREDITS 	*/
-#credits .movie-credits	{
-	padding-left: 100px;
-	margin-bottom: 18px;
+#sessions .track1 h4, #sessions .track2 h4, #sessions .track3 h4 	{
+	background: url(/static/img/ribbon.jpg) no-repeat center;
+	height: 40px;
 }
 
-#credits .movie-credits dt {
-	text-transform: uppercase;
-	clear: both;
-	float: left;
-	margin-left: -100px;
-	width: 95px;
-	text-align: right;
-	font-weight: normal;
-	line-height: 1.7;
-	margin-bottom: 0.5em;
+#sessions .track2 h4 {
+	background-position: 50% -120px;
 }
 
-#credits .movie-credits dd	{
-	margin-bottom: .5em;
-	font-weight: bold;
-	line-height: 1.7;
-}
-
-#credits .hasgeek p 	{
-	line-height: 1.5;
-}
-
-/*		ILLUSTRATIONS FIX		*/
-
-.graphics_home div, .graphics_srosnops div, .graphics_sessions div	{
-	width: 100%; position: absolute;
-}
-
-
-.z-1 { z-index: -1; }
-.z-2 { z-index: -2; }
-.z-3 { z-index: -3; }
-
-.graphics_home .z-1 {
-	background: url(/static/img/graphics/home-z-1.png) bottom no-repeat;
-	height: 400px;
-}
-
-.graphics_home .z-2 {
-	background: url(/static/img/graphics/home-z-2.png) bottom no-repeat;
-	height: 270px;
-}
-
-.graphics_home .z-3 {
-	background: url(/static/img/graphics/home-z-3.png) bottom no-repeat;
-	height: 200px;
-}
-
-.graphics_srosnops .z-1 {
-	background: url(/static/img/graphics/sponsor-z-1.png) bottom no-repeat;
-	height: 353px;
-}
-.graphics_srosnops .z-2 {
-	background: url(/static/img/graphics/sponsor-z-2.png) bottom no-repeat;
-	height: 353px;
-}
-
-.graphics_srosnops .z-3 {
-	background: url(/static/img/graphics/sponsor-z-3.png) bottom no-repeat;
-	height: 400px;
-}
-
-.graphics_sessions .z-1 {
-	background: url(/static/img/graphics/sessions-z-1.png) bottom no-repeat;
-	height: 400px;	
-}
-
-.graphics_sessions .z-2 {
-	background: url(/static/img/graphics/sessions-z-2.png) bottom no-repeat;
-	height: 500px;	
+#sessions .track3 h4 {
+	background-position: 50% 0px;
 }
