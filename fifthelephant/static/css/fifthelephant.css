@@ -101,7 +101,7 @@ section 	{
 	margin: 0;
 }
 
-section#home {
+#home {
 	background: url(/static/img/home_bg.jpg) no-repeat bottom;
 	padding-bottom: 50px;
 }
@@ -284,4 +284,12 @@ section#home {
 
 #register {
 	background: #99ac78;
+}
+
+#credits .hasgeek	{
+	margin-top: 14px;
+}
+
+#credits .hasgeek img {
+	margin: 10px;
 }

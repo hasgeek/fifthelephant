@@ -1,5 +1,6 @@
 $(function() {
 	$('body').attr('data-spy', 'scroll');
+        $('#nav').scrollspy();
 	$('.navbar a').smoothScroll({
 		offset: -40,
 		speed: 900
