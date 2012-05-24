@@ -4,6 +4,16 @@ $(function() {
 		offset: -40,
 		speed: 900
 	}); 
+
+	$('.preview_video.tooltip-left img').tooltip({
+		title: '<h3 style="border-bottom:1px solid rgba(220, 220, 220, 0.8)">Speaker Name</h3><p>Video Description</p>',
+		placement: 'right'
+	});
+
+	$('.preview_video.tooltip-right img').tooltip({
+		title: '<h3 style="border-bottom:1px solid rgba(220, 220, 220, 0.8)">Speaker Name</h3><p>Video Description</p>',
+		placement: 'left'
+	});
 });
 
 $(function() {

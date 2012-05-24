@@ -212,6 +212,23 @@ section#home {
 	font-weight: bold;
 }
 
+#sessions .preview_videos {
+	padding-bottom: 40px;
+}
+
+#sessions .preview_video	{
+	height: 220px;
+	margin-top: 20px;
+	text-align: center;
+}
+
+#sessions .preview_video img 	{
+	background: rgba(40, 40, 40, 0.4);
+	height: 200px;
+	width: 200px;
+	border: 0;
+}
+
 #venue {
 	background: #99ac78;
 }
@@ -230,10 +247,8 @@ section#home {
 
 #venue .directions	{
 	background: rgba(40, 40, 40, 0.8);
-	height: 400px;
 	z-index: 10;
-	margin-top: -10px;
-	height: 380px;	
+	height: 361px;	
 	position: relative;
 	padding: 20px;
 	color: #EEE;
