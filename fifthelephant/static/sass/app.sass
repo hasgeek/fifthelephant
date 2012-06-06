@@ -1,0 +1,126 @@
+@import "compass"
+
+@import "metarefresh"
+@import "responsive"
+
+html, body
+  background: #F3F3F3 image-url("stucco.png") repeat top left
+
+h1.primary
+  // font-family: "ff-mach-wide-web-pro", sans-serif
+  font-family: freight-sans-pro, sans-serif
+  text-transform: uppercase
+  font-size: 80px
+  line-height: 1
+  color: white
+  font-weight: 900
+  margin: 0 0 0.5em
+  text-shadow: 1px 1px 0 #444, 2px 2px 0 #494949, 3px 3px 0 #555
+  // text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15)
+
+  .h1-the
+    font-size: 90%
+    color: #df5e0e
+  .h1-fifth
+    color: #f0a40c
+  .h1-elephant
+    color: #816894
+
+.header
+  padding-bottom: 3em
+  margin-bottom: 4em
+  background: #444 image-url("patterns/classy_fabric.png") repeat top left
+  // background-color: #11a9e2
+  // @include background-image(linear-gradient(#0d86b3, #11a9e2))
+  // background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0d86b3), to(#11a9e2))
+  // background-image: -moz-linear-gradient(#0d86b3, #11a9e2)
+  // background-repeat: no-repeat
+
+.section
+  padding: 3em 0
+  margin: 0
+
+  h2
+    font-family: "ff-mach-wide-web-pro", sans-serif
+    font-size: 4em
+    line-height: 1.2
+    margin: 0 0 1.2em
+    text-align: center
+    // text-transform: uppercase
+    font-weight: 500
+    // color: #CCC
+    color: black
+    text-shadow: white 0px 1px 0px, #999 0px -1px 0px
+
+  h3
+    text-transform: uppercase
+    font-size: 1em
+    margin: 0.4em 0 1em
+    color: gray
+
+  hr.divider
+    margin: 5em 0 0
+
+
+// Sponsors
+.sponsor
+  padding: 1em
+  margin-bottom: 2.5em
+  background: white
+  +box-sizing(border-box)
+  position: relative
+  +box-shadow(1px 1px 2px #BBB)
+
+  &.open
+    background: #E3E3E3
+    +box-shadow(none)
+
+  &.empty
+    background: rgba(200,200,200,0.2)
+    +box-shadow(inset 1px 1px 1px #BBB)
+
+  &:after
+    font-size: 10px
+    position: absolute
+    margin-top: 0.5em
+    top: 100%
+    right: 0
+    font-weight: 500
+    text-transform: uppercase
+    letter-spacing: 0.1em
+    color: #BBB
+
+  .logo
+    text-align: center
+    vertical-align: middle
+    margin: 0
+    img
+      max-height: 100%
+      width: auto
+      vertical-align: middle
+
+.sponsor-platinum .logo
+  height: 250px
+  line-height: 250px
+.sponsor-gold .logo
+  height: 150px
+  line-height: 150px
+.sponsor-silver .logo
+  height: 100px
+  line-height: 100px
+.sponsor-bronze .logo
+  height: 75px
+  line-height: 75px
+.sponsor-community .logo
+  height: 50px
+  line-height: 50px
+.sponsor-platinum:after
+  content: "Platinum"
+.sponsor-gold:after
+  content: "Gold"
+.sponsor-silver:after
+  content: "Silver"
+.sponsor-bronze:after
+  content: "Bronze"
+.sponsor-community:after
+  content: "Community"
