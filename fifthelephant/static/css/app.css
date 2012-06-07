@@ -46,19 +46,6 @@ hr {
   margin-bottom: 1em;
 }
 
-.btn {
-  text-align: center;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  word-spacing: 0.2em;
-}
-
-.btn i {
-  font-weight: 300;
-  font-style: normal;
-}
-
 /* For image replacement */
 .ir {
   display: block;
@@ -255,23 +242,6 @@ hr {
 
 /*.callout strong { font-style: normal; }*/
 /* Activate to cut down on number of font-files */
-.banner .register {
-  width: 70%;
-  margin: 2em auto 1em;
-}
-
-.banner .register strong {
-  font-size: 1.5em;
-}
-
-.banner .register a {
-  display: block;
-  line-height: 1.5;
-  padding: 0.5em 0 0.75em;
-  max-width: 23em;
-  margin: auto;
-}
-
 .navbar {
   background: #000;
   margin: 0;
@@ -1363,25 +1333,20 @@ html, body {
   background: #f3f3f3 url('../img/stucco.png?1330691711') repeat top left;
 }
 
+body, p {
+  font-family: "ff-tisa-web-pro", serif;
+}
+
 h1.primary {
-  font-family: freight-sans-pro, sans-serif;
-  text-transform: uppercase;
+  font-family: bree-serif, serif;
   font-size: 80px;
   line-height: 1;
   color: white;
-  font-weight: 900;
   margin: 0 0 0.5em;
-  text-shadow: 1px 1px 0 #444444, 2px 2px 0 #494949, 3px 3px 0 #555555;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
 }
 h1.primary .h1-the {
   font-size: 90%;
-  color: #df5e0e;
-}
-h1.primary .h1-fifth {
-  color: #f0a40c;
-}
-h1.primary .h1-elephant {
-  color: #816894;
 }
 
 .header {
@@ -1395,7 +1360,7 @@ h1.primary .h1-elephant {
   margin: 0;
 }
 .section h2 {
-  font-family: "ff-mach-wide-web-pro", sans-serif;
+  font-family: bree-serif, sans-serif;
   font-size: 4em;
   line-height: 1.2;
   margin: 0 0 1.2em;
@@ -1412,6 +1377,35 @@ h1.primary .h1-elephant {
 }
 .section hr.divider {
   margin: 5em 0 0;
+}
+
+.btn {
+  font-family: Lato, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+.btn i {
+  text-transform: none;
+}
+
+.btn-register {
+  background: #7a990c;
+  border-color: #7a990c;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+.btn-register:hover {
+  background: #006699;
+  border-color: #006699;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+.banner .btn-register {
+  width: 70%;
+  margin: 2em auto 1em;
+  display: block;
+  line-height: 1.5;
+  padding: 0.5em 0 0.75em;
+  max-width: 23em;
 }
 
 .sponsor {
