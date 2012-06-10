@@ -37,6 +37,7 @@ hr {
 .secondary {
   font-size: 1.143em;
   line-height: 1.65;
+  text-align: center;
 }
 
 .legible p,
@@ -339,7 +340,7 @@ hr {
 }
 
 .description {
-  padding-right: 4em;
+#  padding-right: 4em;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
