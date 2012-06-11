@@ -37,7 +37,6 @@ hr {
 .secondary {
   font-size: 1.143em;
   line-height: 1.65;
-  text-align: center;
 }
 
 .legible p,
@@ -340,7 +339,7 @@ hr {
 }
 
 .description {
-#  padding-right: 4em;
+  padding-right: 4em;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -1371,7 +1370,6 @@ h1.primary .h1-the {
   text-shadow: white 0px 1px 0px, #999999 0px -1px 0px;
 }
 .section h3 {
-  text-transform: uppercase;
   font-size: 1em;
   margin: 0.4em 0 1em;
   color: gray;
