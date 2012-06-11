@@ -1,12 +1,12 @@
 {% from "baseframe/components.html" import networkbar with context -%}
-{% extends 'baseframe.html' %}
+{% extends 'eventframe.html' %}
 
-{% block title %}The Fifth Elephant{% endblock %}
+{% block title %}{{ website.title }}{% endblock %}
 {% block description %}Magic with Big Data{% endblock %}
 
 {% block headerbox %}
 <header class="header">
-  {{ networkbar(siteid='events', login=false, baseclass='hg-dark') }}
+  {{ networkbar(siteid='events', login=true, baseclass='hg-dark') }}
   <div class="container">
     <div class="row">
       <div class="span6">
