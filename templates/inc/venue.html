@@ -1,0 +1,18 @@
+<section id="venue" class="section">
+  <div class="container">
+    <h2>Venue</h2>
+  </div>
+  <div class="spread">
+    <div class="container">
+      <div class="row">
+        <div id="map" class="map"></div>
+        <div class="details clearfix span5 pull-right">
+          {% with f = fragment('2012', 'venue-blurb') %}
+            <h3>{{ f.title }}</h3>
+            {{ f.content }}
+          {% endwith %}
+        </div><!-- /details -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </div><!-- /spread -->
+</section><!-- /venue -->

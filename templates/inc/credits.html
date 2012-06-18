@@ -1,0 +1,34 @@
+<section class="credits section">
+  <div id="credits" class="container">
+    <div class="row">
+      <div class="span8">
+        {% with f = fragment('2012', 'credits-blurb') %}
+          <h3 class="hasgeek"><a href="http://hasgeek.com/">{{ f.title }}</a></h3>
+          {{ f.content }}
+        {% endwith %}
+      </div>
+      <div class="span4">
+        <h2>Credits</h2>
+        <!-- Old credits from Meta Refresh -->
+        <dl class="movie-credits">
+          <dt>Producer</dt>
+          <dd>Anupama Sharma</dd>
+          <dt>Editor</dt>
+          <dd>Kiran Jonnalagadda</dd>
+          <dt>Website</dt>
+          <dd>Prateek Rungta,<br><a href="http://miranj.in/">Miranj</a><br>Sidharth Kuruvila</dd>
+          <dt>Hosting</dt>
+          <dd><a href="http://e2enetworks.com/">E2E Networks</a></dd>
+          <dt>Tech support</dt>
+          <dd>Kingsly John<br>Praneeth Bodduluri</dd>
+          <dt>Hasgeek</dt>
+          <dd>Kiran Jonnalagadda<br>Zainab Bawa<br>Anupama Sharma<br>Nigel Babu<br>Sajjad Anwar<br>Parag Gupta</dd>
+          <dt>Earth Photo</dt>
+          <dd>Blue Marble,<br><a href="http://www.flickr.com/photos/gsfc/4392965590/">NASA</a></dd>
+          <dt>Supported By</dt>
+          <dd><a href="http://www.cis-india.org/">The Centre for Internet and Society</a></dd>
+        </dl>
+      </div><!-- /span -->
+    </div>
+  </div>
+</section><!-- /credits -->
