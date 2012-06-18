@@ -4,43 +4,69 @@
 // @import "responsive"
 
 html, body
-  background: #F3F3F3 image-url("stucco.png") repeat top left
-  // font-weight: 300
 
 body, p
-  font-family: "ff-tisa-web-pro", Georgia, serif
-  // font-weight: 300
+  font-family: ff-tisa-web-pro, Georgia, serif
 
-h1.primary
-  font-family: bree-serif, Georgia, serif
-  // text-transform: uppercase
-  font-size: 80px
-  line-height: 1
-  color: white
-  // font-weight: 900
-  margin: 0 0 0.5em
-  text-shadow: 0 1px 10px rgba(0,0,0,0.5)
-  // text-shadow: 1px 1px 0 #444, 2px 2px 0 #494949, 3px 3px 0 #555
-  // text-shadow: 1px 1px 0 #444, 2px 2px 0 #494949, 3px 3px 0 #555,  0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15)
-  // text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15)
+h2, h3
+  font-family: ff-tisa-web-pro, Georgia, serif
+  color: black
 
-  .h1-the
-    font-size: 90%
-    // color: #df5e0e
-  .h1-fifth
-    // color: #f0a40c
-  .h1-elephant
-    // color: #816894
+
+#masthead
+  margin-top: 31px
+  +box-sizing(border-box)
+  border: 6px solid black
+  +border-radius(4px)
+  background: image-url("2012/masthead-wide.jpg")
+  height: 472px
+  position: relative
+
+#banner
+  +box-sizing(content-box)
+  +border-radius(10px)
+  background: white
+  background: rgba(255, 255, 255, 0.7)
+  // background: rgba(255, 255, 255, 0.40)
+  // border: 1px solid rgba(0, 0, 0, 0.5)
+  position: absolute
+  top: 25px
+  right: 25px
+  bottom: 25px
+  width: 375px
+  padding: 30px 25px 25px
+  text-align: center
+  +box-shadow(0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.1), inset 0 10px 20px rgba(255, 255, 255, 0.3), inset 0 -15px 30px rgba(0, 0, 0, 0.3))
+
+  h1
+    font-family: bree-serif, Georgia, serif
+    font-size: 80px
+    line-height: 1
+    color: black
+    text-shadow: white 0 1px 10px
+    // rgba(255, 255, 255, 0.5)
+
+    .h1-the
+      font-size: 90%
+      // color: #df5e0e
+    .h1-fifth
+      // color: #f0a40c
+    .h1-elephant
+      // color: #816894
+
+  h2, h3
+    margin-top: 0
 
 .header
-  padding-bottom: 3em
-  margin-bottom: 4em
-  background: #444 image-url("patterns/classy_fabric.png") repeat top left
+  // background: #728b61
+  // padding-bottom: 3em
+  // margin-bottom: 4em
+  // background: #444 image-url("patterns/classy_fabric.png") repeat top left
   // background-color: #11a9e2
   // @include background-image(linear-gradient(#0d86b3, #11a9e2))
 
 .section
-  padding: 3em 0
+  // padding: 3em 0
   margin: 0
 
   h2
@@ -72,17 +98,7 @@ h1.primary
   i
     text-transform: none
 
-.btn-register
-  background: #7A990C
-  border-color: #7A990C
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
-
-  &:hover
-    background: #069
-    border-color: #069
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
-
-.banner .btn-register
+#banner .btn-register
   width: 70%
   margin: 2em auto 1em
   display: block

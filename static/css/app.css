@@ -1,31 +1,70 @@
-html, body {
-  background: #f3f3f3 url('../img/stucco.png?1330691711') repeat top left;
-}
-
 body, p {
-  font-family: "ff-tisa-web-pro", Georgia, serif;
+  font-family: ff-tisa-web-pro, Georgia, serif;
 }
 
-h1.primary {
+h2, h3 {
+  font-family: ff-tisa-web-pro, Georgia, serif;
+  color: black;
+}
+
+#masthead {
+  margin-top: 31px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 6px solid black;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  background: url('../img/2012/masthead-wide.jpg?1340024990');
+  height: 472px;
+  position: relative;
+}
+
+#banner {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  background: white;
+  background: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  bottom: 25px;
+  width: 375px;
+  padding: 30px 25px 25px;
+  text-align: center;
+  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.1), inset 0 10px 20px rgba(255, 255, 255, 0.3), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.1), inset 0 10px 20px rgba(255, 255, 255, 0.3), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.1), inset 0 10px 20px rgba(255, 255, 255, 0.3), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.1), inset 0 10px 20px rgba(255, 255, 255, 0.3), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+}
+#banner h1 {
   font-family: bree-serif, Georgia, serif;
   font-size: 80px;
   line-height: 1;
-  color: white;
-  margin: 0 0 0.5em;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  color: black;
+  text-shadow: white 0 1px 10px;
 }
-h1.primary .h1-the {
+#banner h1 .h1-the {
   font-size: 90%;
 }
-
-.header {
-  padding-bottom: 3em;
-  margin-bottom: 4em;
-  background: #444444 url('../img/patterns/classy_fabric.png?1338925058') repeat top left;
+#banner h2, #banner h3 {
+  margin-top: 0;
 }
 
 .section {
-  padding: 3em 0;
   margin: 0;
 }
 .section h2 {
@@ -56,18 +95,7 @@ h1.primary .h1-the {
   text-transform: none;
 }
 
-.btn-register {
-  background: #7a990c;
-  border-color: #7a990c;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-}
-.btn-register:hover {
-  background: #006699;
-  border-color: #006699;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-}
-
-.banner .btn-register {
+#banner .btn-register {
   width: 70%;
   margin: 2em auto 1em;
   display: block;
