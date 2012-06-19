@@ -1,12 +1,15 @@
 {% from "baseframe/components.html" import networkbar with context -%}
 {% extends theme("layout.html") %}
 
-{% block title %}{{ website.title }}{% endblock %}
+{% block titletags -%}
+  <title>{% block title %}{{ website.title }}{% endblock %}</title>
+  <meta name="DC.title" content="{{ website.title }}"/>
+{%- endblock %}
 {% block description %}Magic with Big Data{% endblock %}
 
 {% block headerbox %}
 <header class="header">
-  {{ networkbar(siteid='events', login=true) }}
+  {{ networkbar(siteid='events', login=false) }}
   <div id="masthead" class="container">
     <div id="banner">
       <h1><span class="h1-the">The</span> <span class="h1-fifth">Fifth</span> <span class="h1-elephant">Elephant</span></h1>
@@ -19,8 +22,8 @@
     <div class="container">
       <ul class="nav" id="main-nav">
         <li><a href="#about">About</a></li>
+        <li><a href="#schedule">Programme</a></li>
         <li><a href="#sponsors">Sponsors</a></li>
-        <li class="spacer"><a href="#schedule">Programme</a></li>
         <li><a href="#venue">Venue</a></li>
         <li><a href="#credits">Credits</a></li>
         <li class="register"><a href="http://fifthelephant.doattend.com/">Register</a></li>
@@ -32,8 +35,8 @@
 
 {% block main %}
 {% include theme("inc/about.html") %}
-{% include theme("inc/sponsors.html") %}
 {% include theme("inc/proposals.html") %}
+{% include theme("inc/sponsors.html") %}
 {% include theme("inc/venue.html") %}
 {% include theme("inc/credits.html") %}
 {% endblock %}
@@ -41,16 +44,53 @@
 {% block footerscripts %}
 <script type="text/javascript">
   $(function() {
+    /*
     $("#main-nav > li:first-child").hover(function() {
-      $("#masthead").addClass('sharp-bottom-left');
+      $("#masthead").addClass('round-bottom-left');
     }, function() {
-      $("#masthead").removeClass('sharp-bottom-left');
+      $("#masthead").removeClass('round-bottom-left');
     });
     $("#main-nav > li:last-child").hover(function() {
-      $("#masthead").addClass('sharp-bottom-right');
+      $("#masthead").addClass('round-bottom-right');
     }, function() {
-      $("#masthead").removeClass('sharp-bottom-right');
+      $("#masthead").removeClass('round-bottom-right');
     });
+    */
+  });
+</script>
+<script type="text/javascript">
+  $(function() {
+    // fixed nav-bar transition code
+    // adapted from twitter bootstrap docs' sub-nav
+    var $win = $(window)
+      , $nav = $('.navbar')
+      , $masthead = $('#masthead')
+      , navTop = $nav.length && $nav.offset().top // - 40
+      , isFixed = 0;
+    
+    var processScroll = function () {
+      var scrollTop = $win.scrollTop();
+      if (scrollTop >= navTop && !isFixed) {
+        isFixed = 1;
+        $nav.addClass('navbar-fixed-top');
+        $masthead.addClass('navbar-margin');
+      } else if (scrollTop <= navTop && isFixed) {
+        isFixed = 0;
+        $nav.removeClass('navbar-fixed-top');
+        $masthead.removeClass('navbar-margin');
+      };
+    };
+    
+    processScroll();
+    
+    $win.on('scroll', processScroll);
+    
+    // smooth scroll nav links
+    $('a', $nav).smoothScroll({
+        offset: -80
+      , speed: 900
+    });
+
   });
 </script>
 <script type="text/javascript">

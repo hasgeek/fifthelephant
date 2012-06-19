@@ -5,6 +5,12 @@ $thick-border-color: black
 $thick-border: $thick-border-thickness solid $thick-border-color
 $thick-border-radius: 4px
 
+$font-size: 16px
+$line-height: 24px
+
+// Height: line-height + padding-top + padding-bottom + border-bottom + margin-bottom
+$navbar-height: 19px + 10px + 11px + $thick-border-thickness + 22px
+
 // @import "metarefresh"
 // @import "responsive"
 
@@ -12,6 +18,9 @@ html, body
 
 body, p
   font-family: ff-tisa-web-pro, Georgia, serif
+  font-size: $font-size
+  line-height: $line-height
+
 
 h2, h3
   font-family: ff-tisa-web-pro, Georgia, serif
@@ -22,7 +31,9 @@ h2, h3
   margin-top: 31px
   +box-sizing(border-box)
   border: $thick-border
-  +border-radius($thick-border-radius)
+  // +border-radius($thick-border-radius)
+  +border-top-left-radius($thick-border-radius)
+  +border-top-right-radius($thick-border-radius)
   background: image-url("2012/masthead-wide.jpg")
   height: 472px
   position: relative
@@ -76,14 +87,6 @@ h2, h3
     color: black
     text-shadow: white 0px 1px 0px, #999 0px -1px 0px
 
-  h3
-    font-size: 1em
-    margin: 0.4em 0 1em
-    color: gray
-
-  hr.divider
-    margin: 5em 0 0
-
 .btn
   // font-family: Lato, sans-serif
   // text-align: center
@@ -101,14 +104,22 @@ h2, h3
   padding: 0.5em 0 0.75em
   max-width: 23em
 
+.navbar-margin
+  margin-bottom: $navbar-height
+
 // Navigation bar
 .navbar .nav
   float: none
+  +box-sizing(border-box)
   +display-box
   margin-right: 0
   width: 100%
+  background: black
   border-bottom: $thick-border
-  border-radius: $thick-border-radius
+  border-left: $thick-border
+  border-right: $thick-border
+  +border-bottom-left-radius($thick-border-radius)
+  +border-bottom-right-radius($thick-border-radius)
 
   & > li
     display: inline-block
@@ -123,18 +134,37 @@ h2, h3
       text-align: center
       +box-sizing(border-box)
       width: 100%
-      color: black
+      color: white
 
     &:hover, &:hover > a
-      color: white
-      background: black
+      color: black
+      background: white
       text-decoration: none
+
+// About
+#about h3
+  text-align: center
+  font-family: bree-serif, Georgia, serif
+  font-size: 30px
+  font-weight: normal
+  color: black
+  padding-bottom: 10px
+  margin-bottom: 20px
+  border-bottom: $thick-border
+  +border-bottom-left-radius($thick-border-radius)
+  +border-bottom-right-radius($thick-border-radius)
 
 .sharp-bottom-left
   +border-bottom-left-radius(0 !important)
 
 .sharp-bottom-right
   +border-bottom-right-radius(0 !important)
+
+.round-bottom-left
+  +border-bottom-left-radius($thick-border-radius !important)
+
+.round-bottom-right
+  +border-bottom-right-radius($thick-border-radius !important)
 
 // Sponsors
 .sponsor
@@ -225,6 +255,9 @@ h2, h3
     color: #EEE
     background: #333
     background: rgba(50,50,50,0.95)
+
+.hasgeek
+  +replace-text-with-dimensions('2012/hasgeek.png')
 
 .leaflet-popup-content-wrapper
   +border-radius(8px)
