@@ -1,5 +1,10 @@
 @import "compass"
 
+$thick-border-thickness: 6px
+$thick-border-color: black
+$thick-border: $thick-border-thickness solid $thick-border-color
+$thick-border-radius: 4px
+
 // @import "metarefresh"
 // @import "responsive"
 
@@ -16,18 +21,18 @@ h2, h3
 #masthead
   margin-top: 31px
   +box-sizing(border-box)
-  border: 6px solid black
-  +border-radius(4px)
+  border: $thick-border
+  +border-radius($thick-border-radius)
   background: image-url("2012/masthead-wide.jpg")
   height: 472px
   position: relative
 
 #banner
   +box-sizing(border-box)
-  +border-radius(4px)
+  border: $thick-border
+  +border-radius($thick-border-radius)
   background: white
   background: rgba(255, 255, 255, 0.9)
-  border: 6px solid black
   // background: rgba(255, 255, 255, 0.40)
   // border: 1px solid rgba(0, 0, 0, 0.5)
   position: absolute
@@ -101,12 +106,14 @@ h2, h3
   float: none
   +display-box
   margin-right: 0
-  border-bottom: 6px solid black
   width: 100%
+  border-bottom: $thick-border
+  border-radius: $thick-border-radius
 
   & > li
     display: inline-block
     float: none
+    font-size: 20px
     +display-box
     +box-flex(1)
     +box-pack(center)
@@ -118,10 +125,16 @@ h2, h3
       width: 100%
       color: black
 
-      &:hover
-        color: white
-        background: black
+    &:hover, &:hover > a
+      color: white
+      background: black
+      text-decoration: none
 
+.sharp-bottom-left
+  +border-bottom-left-radius(0 !important)
+
+.sharp-bottom-right
+  +border-bottom-right-radius(0 !important)
 
 // Sponsors
 .sponsor

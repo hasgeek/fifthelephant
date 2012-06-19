@@ -17,7 +17,7 @@
   </div>
   <div class="navbar">
     <div class="container">
-      <ul class="nav">
+      <ul class="nav" id="main-nav">
         <li><a href="#about">About</a></li>
         <li><a href="#sponsors">Sponsors</a></li>
         <li class="spacer"><a href="#schedule">Programme</a></li>
@@ -39,6 +39,20 @@
 {% endblock %}
 
 {% block footerscripts %}
+<script type="text/javascript">
+  $(function() {
+    $("#main-nav > li:first-child").hover(function() {
+      $("#masthead").addClass('sharp-bottom-left');
+    }, function() {
+      $("#masthead").removeClass('sharp-bottom-left');
+    });
+    $("#main-nav > li:last-child").hover(function() {
+      $("#masthead").addClass('sharp-bottom-right');
+    }, function() {
+      $("#masthead").removeClass('sharp-bottom-right');
+    });
+  });
+</script>
 <script type="text/javascript">
   $(function() {
     var map = new L.Map('map');
