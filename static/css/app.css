@@ -2,6 +2,12 @@ body, p {
   font-family: ff-tisa-web-pro, Georgia, serif;
   font-size: 16px;
   line-height: 24px;
+  margin-bottom: 12px;
+}
+
+li {
+  line-height: 24px;
+  margin-bottom: 12px;
 }
 
 small {
@@ -14,6 +20,7 @@ small {
   line-height: 48px;
   font-style: italic;
   color: black;
+  margin-bottom: 36px;
 }
 
 h2, h3 {
@@ -85,9 +92,6 @@ h1 small, h2 small, h3 small {
 ul.twitter_update_list {
   list-style: none;
   margin-left: 0;
-}
-ul.twitter_update_list li {
-  margin-bottom: 24px;
 }
 
 .section-header h2, .section-header h3 {
@@ -297,6 +301,7 @@ h1 .h1-the {
   display: inline-block;
   float: none;
   font-size: 20px;
+  margin-bottom: 0;
   display: -moz-box;
   display: -webkit-box;
   display: -ms-box;
