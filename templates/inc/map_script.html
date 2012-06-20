@@ -9,18 +9,24 @@
     var venue_nimhans = new L.LatLng(12.943104, 77.596865); // geographical point (longitude and latitude)
     var venue_cis = new L.LatLng(12.9647, 77.6375);
     var venue_teri = new L.LatLng(12.963644, 77.637951);
+    var venue_amiworks = new L.LatLng(18.53882, 73.82931);
+
     map.setView(venue_nimhans, 13).addLayer(cloudmade);
 
     var marker_nimhans = new L.Marker(venue_nimhans);
     var marker_cis = new L.Marker(venue_cis);
     var marker_teri = new L.Marker(venue_teri);
+    var marker_amiworks= new L.Marker(venue_amiworks);
 
     map.addLayer(marker_nimhans);
     map.addLayer(marker_cis);
     map.addLayer(marker_teri);
+    map.addLayer(marker_amiworks);
     marker_nimhans.bindPopup('Nimhans Convention Centre').openPopup();
     marker_cis.bindPopup('The Centre for Internet and Society');
     marker_teri.bindPopup('The Energy and Resources Institute');
+    marker_amiworks.bindPopup('AmiWorks');
+    
     map.scrollWheelZoom.disable();
     // map.doubleClickZoom.disable();        
   });
