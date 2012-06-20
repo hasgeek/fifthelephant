@@ -32,6 +32,19 @@ h2, h3
   font-family: ff-tisa-web-pro, Georgia, serif
   color: black
 
+h3
+  font-size: 25px
+  line-height: $line-height * 2
+
+h4, h5, h6
+  line-height: $line-height
+
+h4 + h3
+  line-height: $line-height * 1.5
+
+.section-header
+  h2, h3
+    margin-top: 0
 
 #masthead
   margin-top: 31px
@@ -78,8 +91,14 @@ h2, h3
     .h1-elephant
       // color: #816894
 
-  h2, h3
+  h2
     margin-top: 0
+    font-size: 25px
+    line-height: $line-height * 2
+  h3
+    margin-top: 0
+    font-size: 19px
+    line-height: $line-height
 
 .section
   margin: 0
@@ -158,7 +177,6 @@ h2, h3
   font-size: 30px
   font-weight: normal
   color: black
-  padding-bottom: 10px
   margin-bottom: 20px
   border-bottom: $thick-border
   +border-bottom-left-radius($thick-border-radius)
