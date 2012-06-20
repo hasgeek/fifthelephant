@@ -11,6 +11,19 @@ $line-height: 24px
 // Height: line-height + padding-top + padding-bottom + margin-bottom
 $navbar-height: 19px + 10px + 11px + 22px
 
+@mixin footer-height($height)
+  #root
+    margin-bottom: -($height + 10px)
+    #root_footer
+      height: $height + 10px
+  footer
+    min-height: $height
+    .footer-inner
+      min-height: $height
+
++footer-height(77px)
+
+
 // @import "metarefresh"
 // @import "responsive"
 
@@ -233,7 +246,7 @@ h1
   +border-bottom-right-radius($thick-border-radius)
 
   & > li
-    display: inline-block
+    +inline-block
     float: none
     font-size: 20px
     margin-bottom: 0
@@ -258,7 +271,7 @@ h1
 
 .navbar-fixed-top .nav
   & > .register, & > .register a
-    color: #ccc
+    color: yellow
 
 .box
   +box-sizing(border-box)
@@ -381,3 +394,12 @@ h1
 
 .leaflet-popup-content
   margin: 12px 25px 12px 15px
+
+footer .footer-inner
+  background: none
+
+.footer-bar
+  border-bottom: $thick-border
+  +border-bottom-left-radius($thick-border-radius)
+  +border-bottom-right-radius($thick-border-radius)
+  margin-bottom: $line-height / 2

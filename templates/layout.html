@@ -30,3 +30,16 @@
 {% block basecontent -%}
   {% block content %}{% endblock %}
 {%- endblock %}
+
+{% block basefooter -%}
+  <footer>
+    <div class="footer-inner">
+      <div class="container">
+        <div class="footer-bar"></div>
+        {% block footer -%}
+          <span>The Fifth Elephant is a conference by <a href="http://hasgeek.com/">HasGeek</a>. Copyright &copy; 2010-12. All rights reserved.</span>
+        {%- endblock %}
+      </div>
+    </div>
+  </footer>
+{%- endblock %}
