@@ -32,10 +32,13 @@
 
     var open_marker = function(marker) {
         return function(e) {
+            map.panTo(marker['_latlng']);
             marker.openPopup();
             e.preventDefault();
         };
     };
+
+    console.log(marker_nimhans);
 
     $('a[href="#map-nimhans"]').click(open_marker(marker_nimhans));
     $('a[href="#map-cis"]').click(open_marker(marker_cis));
