@@ -26,8 +26,21 @@
     marker_cis.bindPopup('The Centre for Internet and Society');
     marker_teri.bindPopup('The Energy and Resources Institute');
     marker_amiworks.bindPopup('AmiWorks');
-    
+
     map.scrollWheelZoom.disable();
-    // map.doubleClickZoom.disable();        
+    // map.doubleClickZoom.disable();
+
+    var open_marker = function(marker) {
+        return function(e) {
+            marker.openPopup();
+            e.preventDefault();
+        };
+    };
+
+    $('a[href="#map-nimhans"]').click(open_marker(marker_nimhans));
+    $('a[href="#map-cis"]').click(open_marker(marker_cis));
+    $('a[href="#map-teri"]').click(open_marker(marker_teri));
+    $('a[href="#map-amiworks"]').click(open_marker(marker_amiworks));
+
   });
 </script>
