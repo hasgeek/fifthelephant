@@ -1,0 +1,16 @@
+<section id="partners" class="section">
+  <div class="container">
+    <h2>Partners</h2>
+    <div class="row">
+      <div class="span4">
+        <p>Coming soon</p>
+      </div><!-- /span -->
+      <div class="span8">
+        {% with f = fragment('2012', 'credits-blurb') %}
+          <h3 class="hasgeek"><a href="http://hasgeek.com/">{{ f.title }}</a></h3>
+          {{ f.content }}
+        {% endwith %}
+      </div>
+    </div>
+  </div>
+</section><!-- /credits -->

@@ -18,18 +18,18 @@
       <a class="btn btn-success btn-register" href="http://fifthelephant.doattend.com/"><big><strong>Buy Tickets</strong></big><br><del>Rs 5000</del> Rs 2500</a>
     </div>
   </div>
-  <div class="navbar">
+  <div class="main-navbar">
     <div class="container">
       <ul class="nav" id="main-nav">
         <li><a href="#about">About</a></li>
         <li><a href="#schedule">Programme</a></li>
         <li><a href="#sponsors">Sponsors</a></li>
         <li><a href="#venue">Venue</a></li>
-        <li><a href="#credits">Credits</a></li>
+        <li><a href="#partners">Partners</a></li>
         <li class="register"><a href="http://fifthelephant.doattend.com/">Register</a></li>
       </ul>
     </div><!-- /container -->
-  </div><!-- /navbar -->
+  </div><!-- /main-navbar -->
 </header>
 {% endblock %}
 
@@ -38,7 +38,7 @@
 {% include theme("inc/proposals.html") %}
 {% include theme("inc/sponsors.html") %}
 {% include theme("inc/venue.html") %}
-{% include theme("inc/credits.html") %}
+{% include theme("inc/partners.html") %}
 {% endblock %}
 
 {% block footerscripts %}
@@ -63,7 +63,7 @@
     // fixed nav-bar transition code
     // adapted from twitter bootstrap docs' sub-nav
     var $win = $(window)
-      , $nav = $('.navbar')
+      , $nav = $('.main-navbar')
       , $masthead = $('#masthead')
       , navTop = $nav.length && $nav.offset().top // - 40
       , isFixed = 0;

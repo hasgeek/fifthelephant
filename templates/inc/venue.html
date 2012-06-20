@@ -1,18 +1,16 @@
 <section id="venue" class="section">
   <div class="container">
     <h2>Venue</h2>
-  </div>
-  <div class="spread">
-    <div class="container">
-      <div class="row">
+    <div class="row map-box">
+      <div class="span7">
         <div id="map" class="map"></div>
-        <div class="details span5 offset7">
-          {% with f = fragment('2012', 'venue-blurb') %}
-            <h3>{{ f.title }}</h3>
-            {{ f.content }}
-          {% endwith %}
-        </div><!-- /details -->
-      </div><!-- /row -->
-    </div><!-- /container -->
-  </div><!-- /spread -->
+      </div>
+      <div class="span5">
+        {% with f = fragment('2012', 'venue-blurb') %}
+          <h3>{{ f.title }}</h3>
+          {{ f.content }}
+        {% endwith %}
+      </div><!-- /details -->
+    </div><!-- /row -->
+  </div><!-- /container -->
 </section><!-- /venue -->
