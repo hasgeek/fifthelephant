@@ -24,7 +24,7 @@ body, p
 small
   font-size: smaller
 
-#about .description p
+.description p
   text-align: center
   font-size: 30px
   line-height: 48px
@@ -36,6 +36,14 @@ h2, h3
   color: black
   margin-top: $line-height
 
+.page-header h2
+  font-family: bree-serif, Georgia, serif
+  font-weight: normal
+
+h2
+  font-size: 30px
+  line-height: $line-height * 2
+
 h3
   font-size: 25px
   line-height: $line-height * 2
@@ -43,10 +51,16 @@ h3
 h4, h5, h6
   line-height: $line-height
 
+h1 small, h2 small, h3 small
+  line-height: $line-height
+
 #blog h3
   line-height: $line-height * 1.5
   font-weight: normal
   font-family: bree-serif, Georgia, serif
+
+  &:first-child
+    margin-top: 0
 
   a
     color: inherit
@@ -77,16 +91,33 @@ ul.twitter_update_list
   h2, h3
     margin-top: 0
 
-#masthead
+#masthead, #masthead-short
   margin-top: 31px
   +box-sizing(border-box)
   border: $thick-border
-  // +border-radius($thick-border-radius)
   +border-top-left-radius($thick-border-radius)
   +border-top-right-radius($thick-border-radius)
-  background: image-url("2012/masthead-wide.jpg")
-  height: 472px
   position: relative
+
+#masthead
+  background: image-url("2012/masthead-wide.jpg")
+  height: +image-height("2012/masthead-wide.jpg") + ($thick-border-thickness * 2)
+
+#masthead-short
+  background: image-url("2012/masthead-short.jpg")
+  height: +image-height("2012/masthead-short.jpg") + ($thick-border-thickness * 2)
+
+  h1
+    position: absolute
+    top: 25px
+    left: 425px
+    bottom: 25px
+    width: 450px
+    padding: 0
+    margin: 0
+    text-align: center
+    font-size: 80px
+    line-height: 1
 
 #banner
   +box-sizing(border-box)
@@ -106,21 +137,9 @@ ul.twitter_update_list
   // +box-shadow(0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.1), inset 0 10px 20px rgba(255, 255, 255, 0.3), inset 0 -15px 30px rgba(0, 0, 0, 0.3))
 
   h1
-    font-family: bree-serif, Georgia, serif
-    font-weight: normal
     font-size: 80px
     line-height: 1
-    color: black
     text-shadow: white 0 1px 10px
-    // rgba(255, 255, 255, 0.5)
-
-    .h1-the
-      font-size: 90%
-      // color: #df5e0e
-    .h1-fifth
-      // color: #f0a40c
-    .h1-elephant
-      // color: #816894
 
   h2
     margin-top: 0
@@ -130,6 +149,19 @@ ul.twitter_update_list
     margin-top: 0
     font-size: 19px
     line-height: $line-height
+
+h1
+  font-family: bree-serif, Georgia, serif
+  font-weight: normal
+  color: black
+
+  .h1-the
+    font-size: 90%
+    // color: #df5e0e
+  .h1-fifth
+    // color: #f0a40c
+  .h1-elephant
+    // color: #816894
 
 .section
   margin: 0
@@ -225,6 +257,10 @@ ul.twitter_update_list
       background: white
       text-decoration: none
 
+.navbar-fixed-top .nav
+  & > .register, & > .register a
+    color: #ccc
+
 // About
 #about h3
   text-align: center
@@ -233,6 +269,7 @@ ul.twitter_update_list
   font-weight: normal
   color: black
   margin-bottom: 20px
+  margin-top: 0
   border-bottom: $thick-border
   +border-bottom-left-radius($thick-border-radius)
   +border-bottom-right-radius($thick-border-radius)

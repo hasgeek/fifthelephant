@@ -8,7 +8,7 @@ small {
   font-size: smaller;
 }
 
-#about .description p {
+.description p {
   text-align: center;
   font-size: 30px;
   line-height: 48px;
@@ -22,6 +22,16 @@ h2, h3 {
   margin-top: 24px;
 }
 
+.page-header h2 {
+  font-family: bree-serif, Georgia, serif;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 48px;
+}
+
 h3 {
   font-size: 25px;
   line-height: 48px;
@@ -31,10 +41,17 @@ h4, h5, h6 {
   line-height: 24px;
 }
 
+h1 small, h2 small, h3 small {
+  line-height: 24px;
+}
+
 #blog h3 {
   line-height: 36px;
   font-weight: normal;
   font-family: bree-serif, Georgia, serif;
+}
+#blog h3:first-child {
+  margin-top: 0;
 }
 #blog h3 a {
   color: inherit;
@@ -77,7 +94,7 @@ ul.twitter_update_list li {
   margin-top: 0;
 }
 
-#masthead {
+#masthead, #masthead-short {
   margin-top: 31px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -96,9 +113,29 @@ ul.twitter_update_list li {
   -ms-border-top-right-radius: 4px;
   -khtml-border-top-right-radius: 4px;
   border-top-right-radius: 4px;
+  position: relative;
+}
+
+#masthead {
   background: url('../img/2012/masthead-wide.jpg?1340024990');
   height: 472px;
-  position: relative;
+}
+
+#masthead-short {
+  background: url('../img/2012/masthead-short.jpg?1340230833');
+  height: 248px;
+}
+#masthead-short h1 {
+  position: absolute;
+  top: 25px;
+  left: 425px;
+  bottom: 25px;
+  width: 450px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 80px;
+  line-height: 1;
 }
 
 #banner {
@@ -124,15 +161,9 @@ ul.twitter_update_list li {
   text-align: center;
 }
 #banner h1 {
-  font-family: bree-serif, Georgia, serif;
-  font-weight: normal;
   font-size: 80px;
   line-height: 1;
-  color: black;
   text-shadow: white 0 1px 10px;
-}
-#banner h1 .h1-the {
-  font-size: 90%;
 }
 #banner h2 {
   margin-top: 0;
@@ -143,6 +174,15 @@ ul.twitter_update_list li {
   margin-top: 0;
   font-size: 19px;
   line-height: 24px;
+}
+
+h1 {
+  font-family: bree-serif, Georgia, serif;
+  font-weight: normal;
+  color: black;
+}
+h1 .h1-the {
+  font-size: 90%;
 }
 
 .section {
@@ -289,6 +329,10 @@ ul.twitter_update_list li {
   text-decoration: none;
 }
 
+.navbar-fixed-top .nav > .register, .navbar-fixed-top .nav > .register a {
+  color: #cccccc;
+}
+
 #about h3 {
   text-align: center;
   font-family: bree-serif, Georgia, serif;
@@ -296,6 +340,7 @@ ul.twitter_update_list li {
   font-weight: normal;
   color: black;
   margin-bottom: 20px;
+  margin-top: 0;
   border-bottom: 6px solid black;
   -moz-border-radius-bottomleft: 4px;
   -webkit-border-bottom-left-radius: 4px;

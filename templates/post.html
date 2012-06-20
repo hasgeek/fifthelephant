@@ -1,0 +1,13 @@
+{% extends theme("layout.html") %}
+
+{% block title %}{{ node.title }}{% endblock %}
+{% block description %}{{ node.description }}{% endblock %}
+
+{% block headline %}
+  <div class="page-header">
+    <h2>{{ self.title() }} <small>{{ node.published_at|longdate }}</h2>
+  </div>
+{% endblock %}
+{% block content %}
+{{ node.content }}
+{% endblock %}

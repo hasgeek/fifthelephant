@@ -1,0 +1,32 @@
+{% from "baseframe/components.html" import networkbar with context -%}
+{% extends "eventframe.html" -%}
+
+{% block headerbox %}
+<header class="header">
+  {{ networkbar(siteid='events', login=false) }}
+  <div id="masthead-short" class="container">
+    <h1><span class="h1-the">The</span> <span class="h1-fifth">Fifth</span> <span class="h1-elephant">Elephant</span></h1>
+  </div>
+  <div class="main-navbar">
+    <div class="container">
+      <ul class="nav" id="main-nav">
+        <li><a href="/2012">2012 Event</a></li>
+        <li><a href="/blog">Event Blog</a></li>
+        <li class="register"><a href="http://fifthelephant.doattend.com/">Register for Event</a></li>
+      </ul>
+    </div><!-- /container -->
+  </div><!-- /main-navbar -->
+</header>
+{% endblock %}
+
+{% block baseheadline -%}
+  {% block headline -%}
+    <div class="page-header">
+      <h2>{{ self.title() }}</h2>
+    </div>
+  {%- endblock %}
+{%- endblock %}
+
+{% block basecontent -%}
+  {% block content %}{% endblock %}
+{%- endblock %}

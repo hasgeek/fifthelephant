@@ -5,7 +5,7 @@
   <title>{% block title %}{{ website.title }}{% endblock %}</title>
   <meta name="DC.title" content="{{ website.title }}"/>
 {%- endblock %}
-{% block description %}Magic with Big Data{% endblock %}
+{% block description %}{{ node.description }}{% endblock %}
 
 {% block headerbox %}
 <header class="header">
