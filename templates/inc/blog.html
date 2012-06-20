@@ -3,14 +3,14 @@
     <h2 class="left">Blog</h2>
     <div class="row">
       <div class="span8">
-        {% for post in feed(limit=2) -%}
+        {% for post in feed(limit=4) -%}
           <div class="section-header">
             <h3>
               <a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}">{{ post.title }}</a>
               <small>{{ post.published_at|longdate }}</small>
             </h3>
           </div>
-          {{ post.content }}
+          {{ post.description }}
         {%- else -%}
           <p>(No blog entries have been written so far)</p>
         {%- endfor %}

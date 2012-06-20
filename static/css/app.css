@@ -220,7 +220,7 @@ ul.twitter_update_list li {
 }
 
 .navbar-margin {
-  margin-bottom: 68px;
+  margin-bottom: 62px;
 }
 
 .main-navbar .nav {
@@ -440,6 +440,10 @@ ul.twitter_update_list li {
 
 .sponsor-community:after {
   content: "Community";
+}
+
+#venue h3 {
+  margin-top: -8px;
 }
 
 .map-box {
