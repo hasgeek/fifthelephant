@@ -1,0 +1,16 @@
+<section id="blog" class="section">
+  <h2>Blog</h2>
+  <div class="container">
+    <div class="row">
+      <div class="span8">
+        {% for post in feed(limit=2) %}
+          <div class="section-header">
+            <h4>{{ post.published_at|longdate }}</h4>
+            <h3>{{ post.title }}</h3>
+          </div>
+          {{ post.content }}
+        {% endfor %}
+      </div>
+    </div><!-- /row -->
+  </div><!-- /container -->
+</section><!-- /about -->
