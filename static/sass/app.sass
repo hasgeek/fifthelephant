@@ -60,7 +60,7 @@ h4, h5, h6
 h1 small, h2 small, h3 small
   line-height: $line-height
 
-#blog h3
+.blog h3
   line-height: $line-height * 1.5
   font-weight: normal
   font-family: bree-serif, Georgia, serif
@@ -202,15 +202,6 @@ h1
     &:after
       display: none
 
-.btn
-  // font-family: Lato, sans-serif
-  // text-align: center
-  // text-transform: uppercase
-  // letter-spacing: 0.1em
-  // word-spacing: 0.2em
-  // i
-  //   text-transform: none
-
 #banner .btn-register
   width: 70%
   margin: 2em auto 1em
@@ -264,6 +255,11 @@ h1
 .navbar-fixed-top .nav
   & > .register, & > .register a
     color: #ccc
+
+.box
+  +box-sizing(border-box)
+  border: $thick-border
+  +border-radius($thick-border-radius)
 
 // About
 #about h3

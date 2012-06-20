@@ -8,15 +8,17 @@
 <div class="description">
   {{ node.content }}
 </div>
-<div id="blog">
-  {% for post in feed() -%}
-    <h3>
-      <a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}">{{ post.title }}</a>
-      <small>{{ post.published_at|longdate }}</small>
-    </h3>
-    {{ post.content }}
-  {%- else -%}
-    <p>(No blog entries have been written so far)</p>
-  {%- endfor %}
+<div class="row blog">
+  <div class="span7">
+    {% for post in feed() -%}
+      <h3>
+        <a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}">{{ post.title }}</a>
+        <small>{{ post.published_at|longdate }} &mdash; {{ post.user.fullname }}</small>
+      </h3>
+      {{ post.content }}
+    {%- else -%}
+      <p>(No blog entries have been written so far)</p>
+    {%- endfor %}
+  </div>
 </div>
 {% endblock %}

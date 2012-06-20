@@ -52,15 +52,15 @@ h1 small, h2 small, h3 small {
   line-height: 24px;
 }
 
-#blog h3 {
+.blog h3 {
   line-height: 36px;
   font-weight: normal;
   font-family: bree-serif, Georgia, serif;
 }
-#blog h3:first-child {
+.blog h3:first-child {
   margin-top: 0;
 }
-#blog h3 a {
+.blog h3 a {
   color: inherit;
   text-decoration: none;
   border-bottom: 6px solid transparent;
@@ -77,15 +77,15 @@ h1 small, h2 small, h3 small {
   -khtml-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-#blog h3 a:after {
+.blog h3 a:after {
   content: " »";
   color: transparent;
 }
-#blog h3 a:hover {
+.blog h3 a:hover {
   color: inherit;
   border-bottom: 6px solid black;
 }
-#blog h3 a:hover:after {
+.blog h3 a:hover:after {
   color: inherit;
 }
 
@@ -336,6 +336,20 @@ h1 .h1-the {
 
 .navbar-fixed-top .nav > .register, .navbar-fixed-top .nav > .register a {
   color: #cccccc;
+}
+
+.box {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 6px solid black;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
 }
 
 #about h3 {
