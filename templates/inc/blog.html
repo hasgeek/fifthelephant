@@ -1,15 +1,23 @@
 <section id="blog" class="section">
-  <h2>Blog</h2>
   <div class="container">
+    <h2 class="left">Blog</h2>
     <div class="row">
       <div class="span8">
         {% for post in feed(limit=2) %}
           <div class="section-header">
-            <h4>{{ post.published_at|longdate }}</h4>
-            <h3>{{ post.title }}</h3>
+            <h3>
+              <a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}">{{ post.title }}</a>
+              <small>{{ post.published_at|longdate }}</small>
+            </h3>
           </div>
           {{ post.content }}
         {% endfor %}
+      </div>
+      <div class="span4">
+        <div class="section-header">
+          <h3><a href="http://twitter.com/the5el" target="_blank">On Twitter</a></h3>
+        </div>
+        <div id="twitter"></div>
       </div>
     </div><!-- /row -->
   </div><!-- /container -->

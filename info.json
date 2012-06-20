@@ -13,6 +13,7 @@
         ],
         "assets_js": [
             "js/jquery.smooth-scroll.min.js",
+            "js/jquery.twitter.js",
             "js/leaflet/leaflet.js",
             "js/app.js"
         ]

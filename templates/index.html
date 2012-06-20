@@ -40,11 +40,11 @@
 {% include theme("inc/proposals.html") %}
 {% include theme("inc/sponsors.html") %}
 {% include theme("inc/venue.html") %}
-{% include theme("inc/map_script.html") %}
 {% include theme("inc/partners.html") %}
 {% endblock %}
 
 {% block footerscripts %}
+{% include theme("inc/map_script.html") %}
 <script type="text/javascript">
   $(function() {
     /*
@@ -113,6 +113,19 @@
       if (typeof _gaq != 'undefined') {
         _gaq.push(['_trackPageview', "/out/" + $(this).attr('href')]);
       };
+    });
+  });
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#twitter").getTwitter({
+      userName: "the5el",
+      numTweets: 5,
+      loaderText: "Loading tweets...",
+      slideIn: true,
+      showHeading: false,
+      headingText: "Latest Tweets",
+      showProfileLink: false
     });
   });
 </script>

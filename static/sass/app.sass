@@ -21,6 +21,9 @@ body, p
   font-size: $font-size
   line-height: $line-height
 
+small
+  font-size: smaller
+
 #about .description p
   text-align: center
   font-size: 30px
@@ -31,6 +34,7 @@ body, p
 h2, h3
   font-family: ff-tisa-web-pro, Georgia, serif
   color: black
+  margin-top: $line-height
 
 h3
   font-size: 25px
@@ -39,8 +43,35 @@ h3
 h4, h5, h6
   line-height: $line-height
 
-h4 + h3
+#blog h3
   line-height: $line-height * 1.5
+  font-weight: normal
+  font-family: bree-serif, Georgia, serif
+
+  a
+    color: inherit
+    text-decoration: none
+    border-bottom: $thick-border-thickness solid transparent
+    +border-bottom-left-radius($thick-border-radius)
+    +border-bottom-right-radius($thick-border-radius)
+
+    &:after
+      content: " »"
+      color: transparent    
+
+    &:hover
+      color: inherit
+      border-bottom: $thick-border
+
+      &:after
+        color: inherit
+
+ul.twitter_update_list
+  list-style: none
+  margin-left: 0
+
+  li
+    margin-bottom: $line-height
 
 .section-header
   h2, h3
@@ -111,6 +142,30 @@ h4 + h3
     text-align: center
     color: black
     text-shadow: white 0px 1px 0px, #999 0px -1px 0px
+
+    &:before
+      +inline-block
+      // +replace-text-with-dimensions('2012/leaf-top-left.png')
+      +replace-text-with-dimensions('2012/leaf-bottom-left.png')
+      content: ""
+      margin-right: 20px
+
+    &:after
+      +inline-block
+      // +replace-text-with-dimensions('2012/leaf-top-right.png')
+      +replace-text-with-dimensions('2012/leaf-bottom-right.png')
+      content: ""
+      margin-left: 20px
+
+  h2.left
+    text-align: left
+    &:before
+      display: none
+
+  h2.right
+    text-align: right
+    &:after
+      display: none
 
 .btn
   // font-family: Lato, sans-serif
