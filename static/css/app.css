@@ -108,6 +108,14 @@ h1 small, h2 small, h3 small {
   color: inherit;
 }
 
+.author {
+  text-align: right;
+  font-style: italic;
+}
+.author:before {
+  content: "— ";
+}
+
 ul.twitter_update_list {
   list-style: none;
   margin-left: 0;
