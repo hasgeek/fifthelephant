@@ -318,15 +318,10 @@ h1
   background: white
   +box-sizing(border-box)
   position: relative
-  +box-shadow(1px 1px 2px #BBB)
-
-  &.open
-    background: #E3E3E3
-    +box-shadow(none)
-
-  &.empty
-    background: rgba(200,200,200,0.2)
-    +box-shadow(inset 1px 1px 1px #BBB)
+  // +box-shadow(1px 1px 2px #BBB)
+  border-bottom: $thick-border
+  +border-bottom-left-radius($thick-border-radius)
+  +border-bottom-right-radius($thick-border-radius)
 
   &:after
     font-size: 10px
@@ -337,7 +332,25 @@ h1
     font-weight: 500
     text-transform: uppercase
     letter-spacing: 0.1em
-    color: #BBB
+    // color: #BBB
+
+  &.open
+    // background: #E3E3E3
+    // border: $thick-border
+    // +border-radius($thick-border-radius)
+    border-color: #E3E3E3
+    // +box-shadow(none)
+
+    &:after
+      color: #e3e3e3
+
+  &.empty
+    // background: rgba(200,200,200,0.2)
+    // +box-shadow(inset 1px 1px 1px #BBB)
+    border-color: #f4f4f4
+
+    &:after
+      color: #f4f4f4
 
   .logo
     text-align: center
@@ -363,6 +376,7 @@ h1
 .sponsor-community .logo
   height: 50px
   line-height: 50px
+
 .sponsor-platinum:after
   content: "Platinum"
 .sponsor-gold:after
