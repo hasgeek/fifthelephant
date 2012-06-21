@@ -590,6 +590,11 @@ h1 .h1-the {
   margin: 12px 25px 12px 15px;
 }
 
+.tooltip {
+  font-weight: bold;
+  font-size: 14px;
+}
+
 footer .footer-inner {
   background: none;
 }

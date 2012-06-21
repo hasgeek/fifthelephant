@@ -38,7 +38,7 @@
         };
     };
 
-    console.log(marker_nimhans);
+    $('a[href^="#map-"]').tooltip({title: "Show on map"});
 
     $('a[href="#map-nimhans"]').click(open_marker(marker_nimhans));
     $('a[href="#map-cis"]').click(open_marker(marker_cis));
