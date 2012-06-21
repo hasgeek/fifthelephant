@@ -2,10 +2,7 @@
   <div class="container">
     <h2 class="left">Partners</h2>
     <div class="row">
-      <div class="span7">
-        <p>Work in progress</p>
-      </div><!-- /span -->
-      <div class="span5">
+      <div class="span6 push-right">
         {% with f = fragment('2012', 'credits-blurb') %}
           <div class="section-header">
             <h3 class="hasgeek"><a href="http://hasgeek.com/">{{ f.title }}</a></h3>
@@ -13,6 +10,12 @@
           {{ f.content }}
         {% endwith %}
       </div>
+      <article class="sponsor-partner sponsor span3">
+        <p class="logo"><a href="http://cis-india.org/"><img alt="The Centre for Internet and Society" src="{{ theme_static('img/2012/partners/cis.png') }}"></a></p>
+      </article>
+      <article class="sponsor-partner sponsor span3">
+        <p class="logo"><a href="http://okfn.org/"><img alt="Open Knowledge Foundation" src="{{ theme_static('img/2012/partners/okfn.png') }}"></a></p>
+      </article>
     </div>
   </div>
-</section><!-- /credits -->
+</section>

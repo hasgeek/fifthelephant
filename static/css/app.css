@@ -148,12 +148,12 @@ ul.twitter_update_list {
 }
 
 #masthead {
-  background: url('../img/2012/masthead-wide.jpg?1340024990');
+  background: url('../img/2012/masthead-wide.jpg?1340317420');
   height: 472px;
 }
 
 #masthead-short {
-  background: url('../img/2012/masthead-short.jpg?1340230833');
+  background: url('../img/2012/masthead-short.jpg?1340317420');
   height: 248px;
 }
 #masthead-short h1 {
@@ -188,7 +188,7 @@ ul.twitter_update_list {
   right: 25px;
   bottom: 25px;
   width: 450px;
-  padding: 30px 25px 25px;
+  padding: 10px;
   text-align: center;
 }
 #banner h1 {
@@ -237,7 +237,7 @@ h1 .h1-the {
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
-  background-image: url('../img/2012/leaf-bottom-left.png?1340214380');
+  background-image: url('../img/2012/leaf-bottom-left.png?1340317420');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   width: 90px;
@@ -257,7 +257,7 @@ h1 .h1-the {
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
-  background-image: url('../img/2012/leaf-bottom-right.png?1340214344');
+  background-image: url('../img/2012/leaf-bottom-right.png?1340317420');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   width: 90px;
@@ -288,6 +288,7 @@ h1 .h1-the {
   line-height: 1.5;
   padding: 0.5em 0 0.75em;
   max-width: 23em;
+  font-size: 16px;
 }
 
 .navbar-margin {
@@ -527,6 +528,11 @@ h1 .h1-the {
   line-height: 50px;
 }
 
+.sponsor-partner .logo {
+  height: 150px;
+  line-height: 150px;
+}
+
 .sponsor-platinum:after {
   content: "Platinum";
 }
@@ -577,7 +583,7 @@ h1 .h1-the {
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
-  background-image: url('../img/2012/hasgeek.png?1285854326');
+  background-image: url('../img/2012/hasgeek.png?1340317420');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   width: 100px;
