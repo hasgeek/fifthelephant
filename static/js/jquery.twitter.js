@@ -69,7 +69,7 @@
   
     // $.getScript("http://twitter.com/javascripts/blogger.js");
     // $.getScript("http://twitter.com/statuses/user_timeline/"+o.userName+".json?callback=twitterCallback2&count="+o.numTweets, function() {
-    $.getJSON("http://twitter.com/statuses/user_timeline/"+o.userName+".json?callback=?", {count: o.numTweets}, function(tweets) {
+    $.getJSON("http://api.twitter.com/1/statuses/user_timeline/"+o.userName+".json?&include_entities=1&callback=?", {count: o.numTweets}, function(tweets) {
 
       var statusHTML = [];
       var make_url = function(url) {
@@ -80,7 +80,7 @@
       };
       for (var i=0; i<tweets.length; i++) {
         var username = tweets[i].user.screen_name;
-        var status = tweets[i].text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s<\>]*[^.,;'">\:\s<\>\)\]\!])/g, make_url).replace(/\B@([_a-z0-9]+)/ig, make_reply);
+        var status = embedEntityLinks(tweets[i].text, tweets[i].entities); 
         statusHTML.push('<li>'+status+' <small>(<a href="http://twitter.com/'+username+'/statuses/'+tweets[i].id_str+'">'+relative_time(tweets[i].created_at)+'</a>)</small></li>');
       }
       twitterlist.html(statusHTML.join(''));
@@ -115,4 +115,47 @@
     headingText: "Latest Tweets",
     showProfileLink: true
   };
+
+
+  //Entity processing code
+
+  var handleEntity = {
+    hashtags: function(hashTag) {
+      return '#<a href="https://twitter.com/#!/search/%23' +
+        hashTag.text + '">' + hashTag.text + '</a>';
+    },
+    urls: function (url) {
+      return '<a href="' + url.expanded_url + '">' + url.display_url + '</a>';
+    },
+    user_mentions: function (user) {
+      return '@<a href="https://twitter.com/' +
+        user.screen_name + '">' + user.screen_name + '</a>';
+    }
+  };
+
+  function embedEntityLinks(tweet, entities){
+    var pel = [];
+    $.each(entities, function (k, vs) {
+      for(var i = 0, n = vs.length; i < n; i++ ){
+        v = vs[i];
+        pel.push({ entity: handleEntity[k](v), indices: v.indices });
+      }
+    });
+
+    pel.sort(function(a, b){ return a.indices[0] - b.indices[0]; });
+    
+    var parts = [];
+    var j = 0;
+    for(var i = 0, n = pel.length; i < n; i++){
+      var pe = pel[i],
+          start = pe.indices[0],
+          end = pe.indices[1];
+      parts.push(tweet.slice(j, start));
+      parts.push(pe.entity);
+      console.log(parts);
+      j = end;
+    }
+
+    return parts.join("");
+  }
 })(jQuery);
