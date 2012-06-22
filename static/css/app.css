@@ -148,7 +148,7 @@ ul.twitter_update_list {
 }
 
 #masthead {
-  background: url('../img/2012/masthead-wide.jpg?1340317420');
+  background: url('../img/2012/masthead-wide.jpg?1340361269');
   height: 472px;
 }
 
@@ -386,6 +386,10 @@ h1 .h1-the {
   -khtml-border-radius: 4px;
   border-radius: 4px;
   padding: 18px;
+}
+
+.box-tight {
+  padding: 0;
 }
 
 #about h3 {
