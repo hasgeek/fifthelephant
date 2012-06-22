@@ -1,10 +1,12 @@
 <section id="venue" class="section">
   <div class="container">
-    <h2 class="right">Venue</h2>
+    <div class="section-header">
+      <h2 class="right">Venue</h2>
+    </div>
     <div class="row map-box">
       <div class="span5">
         {% with f = fragment('2012', 'venue-blurb') %}
-          <div class="section-header">
+          <div class="section-subheader">
             <h3>{{ f.title }}</h3>
           </div>
           {{ f.content }}

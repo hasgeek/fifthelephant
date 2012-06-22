@@ -1,10 +1,12 @@
 <section id="partners" class="section">
   <div class="container">
-    <h2 class="left">Partners</h2>
+    <div class="section-header">
+      <h2>Partners</h2>
+    </div>
     <div class="row">
       <div class="span6 push-right">
         {% with f = fragment('2012', 'credits-blurb') %}
-          <div class="section-header">
+          <div class="section-subheader">
             <h3 class="hasgeek"><a href="http://hasgeek.com/">{{ f.title }}</a></h3>
           </div>
           {{ f.content }}
