@@ -14,31 +14,6 @@
 
   $.fn.getTwitter = function(options) {
     var o = $.extend({}, $.fn.getTwitter.defaults, options);
-  
-    var relative_time = function(time_value) {
-      var values = time_value.split(" ");
-      time_value = values[1] + " " + values[2] + ", " + values[5] + " " + values[3];
-      var parsed_date = Date.parse(time_value);
-      var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
-      var delta = parseInt((relative_to.getTime() - parsed_date) / 1000, 10);
-      delta = delta + (relative_to.getTimezoneOffset() * 60);
-
-      if (delta < 60) {
-        return 'less than a minute ago';
-      } else if(delta < 120) {
-        return 'about a minute ago';
-      } else if(delta < (60*60)) {
-        return (parseInt(delta / 60, 10)).toString() + ' minutes ago';
-      } else if(delta < (120*60)) {
-        return 'about an hour ago';
-      } else if(delta < (24*60*60)) {
-        return 'about ' + (parseInt(delta / 3600, 10)).toString() + ' hours ago';
-      } else if(delta < (48*60*60)) {
-        return '1 day ago';
-      } else {
-        return (parseInt(delta / 86400, 10)).toString() + ' days ago';
-      }
-    };
 
     // hide container element
     $(this).hide();
@@ -69,7 +44,7 @@
   
     // $.getScript("http://twitter.com/javascripts/blogger.js");
     // $.getScript("http://twitter.com/statuses/user_timeline/"+o.userName+".json?callback=twitterCallback2&count="+o.numTweets, function() {
-    $.getJSON("http://api.twitter.com/1/statuses/user_timeline/"+o.userName+".json?&include_entities=1&callback=?", {count: o.numTweets}, function(tweets) {
+    $.getJSON("http://api.twitter.com/1/statuses/user_timeline/"+o.userName+".json?&include_entities=1&include_rts=1&callback=?", {count: o.numTweets}, function(tweets) {
 
       var statusHTML = [];
       var make_url = function(url) {
@@ -78,12 +53,12 @@
       var make_reply = function(reply) {
         return  reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';
       };
+
+      twitterlist.empty();
       for (var i=0; i<tweets.length; i++) {
-        var username = tweets[i].user.screen_name;
-        var status = embedEntityLinks(tweets[i].text, tweets[i].entities); 
-        statusHTML.push('<li>'+status+' <small>(<a href="http://twitter.com/'+username+'/statuses/'+tweets[i].id_str+'">'+relative_time(tweets[i].created_at)+'</a>)</small></li>');
+        var tweetMessage = formatTweet(tweets[i]);
+        twitterlist.append(tweetMessage);
       }
-      twitterlist.html(statusHTML.join(''));
 
       // remove preLoader from container element
       $(pl).remove();
@@ -117,6 +92,71 @@
   };
 
 
+
+  var relative_time = function(time_value) {
+    var values = time_value.split(" ");
+    time_value = values[1] + " " + values[2] + ", " + values[5] + " " + values[3];
+    var parsed_date = Date.parse(time_value);
+    var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
+    var delta = parseInt((relative_to.getTime() - parsed_date) / 1000, 10);
+    delta = delta + (relative_to.getTimezoneOffset() * 60);
+
+    if (delta < 60) {
+      return 'less than a minute ago';
+    } else if(delta < 120) {
+      return 'about a minute ago';
+    } else if(delta < (60*60)) {
+      return (parseInt(delta / 60, 10)).toString() + ' minutes ago';
+    } else if(delta < (120*60)) {
+      return 'about an hour ago';
+    } else if(delta < (24*60*60)) {
+      return 'about ' + (parseInt(delta / 3600, 10)).toString() + ' hours ago';
+    } else if(delta < (48*60*60)) {
+      return '1 day ago';
+    } else {
+      return (parseInt(delta / 86400, 10)).toString() + ' days ago';
+    }
+  };
+
+  function formatTweet(tweet){
+    var username = tweet.user.screen_name;
+    var text = tweet.text;
+    var status;
+    var messageContainer = $("<li>");
+    if(tweet.retweeted_status !== undefined){
+      var rtLength = 6 + username.length;
+      username = tweet.retweeted_status.user.screen_name;
+      var ot = tweet.retweeted_status.text;
+      if(ot.length + rtLength > 140){
+        fetchTweet(messageContainer, tweet.retweeted_status.id_str);
+      }
+      status = formatRtText(text, tweet.entities);
+    } else {
+      status = formatText(text, tweet.entities);
+    }
+    var message = formatMessage(username, tweet.id_str, status, tweet.created_at);
+    return messageContainer.html(message);
+  }
+
+  function fetchTweet(messageContainer, id_str) {
+    var rtUrl = "http://api.twitter.com/1/statuses/show/" +
+      id_str + ".json?include_entities=1&callback=?";
+    $.getJSON(rtUrl, function(tweet) {
+      var status = formatText(tweet.text, tweet.entities);
+      var message = formatMessage(tweet.user.screen_name, tweet.id_str,
+        status, tweet.created_at);
+      messageContainer.html(message);
+    });
+  }
+
+  function formatMessage(username, statusId, status, createdAt) {
+    return username + ': ' + status +
+      ' <small>(<a href="http://twitter.com/' +
+      username + '/statuses/' + statusId + '">' +
+      relative_time(createdAt) + '</a>)</small>';
+  }
+
+
   //Entity processing code
 
   var handleEntity = {
@@ -132,6 +172,17 @@
         user.screen_name + '">' + user.screen_name + '</a>';
     }
   };
+
+  function formatRtText(tweet, entitities) {
+    var status = embedEntityLinks(tweet, entitities);
+    status.splice(0, 2);
+    status[0] = status[0].substring(2);
+    return status.join("");
+  }
+
+  function formatText(tweet, entitities) {
+    return embedEntityLinks(tweet, entitities).join("");
+  }
 
   function embedEntityLinks(tweet, entities){
     var pel = [];
@@ -152,10 +203,9 @@
           end = pe.indices[1];
       parts.push(tweet.slice(j, start));
       parts.push(pe.entity);
-      console.log(parts);
       j = end;
     }
-
-    return parts.join("");
+    parts.push(tweet.slice(j, tweet.length));
+    return parts;
   }
 })(jQuery);
