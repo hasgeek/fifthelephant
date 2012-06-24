@@ -135,7 +135,7 @@ ul.twitter_update_list
   height: +image-height("2012/masthead-wide.jpg") + ($thick-border-thickness * 2)
 
 #masthead-short
-  background: image-url("2012/masthead-short.jpg")
+  background: image-url("2012/masthead-short.jpg") no-repeat left top
   height: +image-height("2012/masthead-short.jpg") + ($thick-border-thickness * 2)
 
   h1
@@ -469,3 +469,5 @@ footer .footer-inner
   +border-bottom-left-radius($thick-border-radius)
   +border-bottom-right-radius($thick-border-radius)
   margin-bottom: $line-height / 2
+
+@import "responsive"
