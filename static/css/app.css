@@ -75,6 +75,7 @@ h1 small, h2 small, h3 small {
   line-height: 36px;
   font-weight: normal;
   font-family: bree-serif, Georgia, serif;
+  margin-top: 26px;
 }
 .blog h3:first-child {
   margin-top: 0;
@@ -119,6 +120,10 @@ h1 small, h2 small, h3 small {
 ul.twitter_update_list {
   list-style: none;
   margin-left: 0;
+}
+
+.twitter_id {
+  font-weight: bold;
 }
 
 .section-subheader h2, .section-subheader h3 {

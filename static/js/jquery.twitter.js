@@ -150,7 +150,7 @@
   }
 
   function formatMessage(username, statusId, status, createdAt) {
-    return username + ': ' + status +
+    return '<span class="twitter_id">' + username + '</span>: ' + status +
       ' <small>(<a href="http://twitter.com/' +
       username + '/statuses/' + statusId + '">' +
       relative_time(createdAt) + '</a>)</small>';
