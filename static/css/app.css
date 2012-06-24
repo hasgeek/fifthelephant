@@ -558,6 +558,10 @@ h1 .h1-the {
   padding: 0;
 }
 
+.nav.nav-grid {
+  margin-top: 36px;
+}
+
 .hasgeek {
   text-indent: -119988px;
   overflow: hidden;
