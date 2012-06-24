@@ -30,8 +30,8 @@ small {
 
 .description p {
   text-align: center;
-  font-size: 30px;
-  line-height: 48px;
+  font-size: 25px;
+  line-height: 36px;
   font-style: italic;
   color: black;
   margin-bottom: 36px;
@@ -370,6 +370,10 @@ h1 .h1-the {
 
 .box-tight {
   padding: 0;
+}
+
+#about {
+  margin-top: 24px;
 }
 
 #about h3 {
