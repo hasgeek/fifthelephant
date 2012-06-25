@@ -27,6 +27,10 @@
       <div class="span1 funnel-comments">{{ proposal['comments'] }}</div>
       <div class="span1 funnel-votes">{{ proposal['votes'] }}</div>
     </li>
+  {%- else -%}
+    <li class="row-fluid">
+      <div class="span12"><em>(No proposals found)</em></div>
+    </li>  
   {%- endfor %}
 </ul>
 

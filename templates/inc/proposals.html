@@ -23,6 +23,10 @@
                   <div class="span3 funnel-preview-by">{{ proposal['proposer'] }}</div>
                   <div class="span2 funnel-preview-date">{{ proposal['submitted']|shortdate }}</div>
                 </li>
+              {%- else -%}
+                <li class="row-fluid">
+                  <div class="span12"><em>(No proposals found)</em></div>
+                </li>
               {%- endfor %}
             </ul>
           {%- endwith %}
