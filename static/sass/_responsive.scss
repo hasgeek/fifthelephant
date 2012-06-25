@@ -61,6 +61,10 @@
         float: left;
     }
   }
+  .navbar-margin {
+    margin-bottom: 0;
+  }
+
   // FIXME: This is ugly. Use generic hide-on-phones, etc classes
   #funnel-preview .header .funnel-preview-by,
   #funnel-preview .header .funnel-preview-date {

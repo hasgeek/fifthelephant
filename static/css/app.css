@@ -712,6 +712,10 @@ footer .footer-inner {
     float: left;
   }
 
+  .navbar-margin {
+    margin-bottom: 0;
+  }
+
   #funnel-preview .header .funnel-preview-by,
   #funnel-preview .header .funnel-preview-date {
     display: none;
