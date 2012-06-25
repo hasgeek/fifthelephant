@@ -38,6 +38,18 @@
 // --------------------------------------------------
 
 @media screen and (max-width: 767px) {
+  .masthead-container {
+    padding: 0;
+    #masthead, #masthead-short, .main-navbar.nav {
+      margin-top: 0;
+      border-left: 0;
+      border-right: 0;
+      @include border-radius(0);
+    }
+    .main-navbar.nav {
+      padding: 0 10px;
+    }
+  }
   #masthead-short {
     background-position: -70px 0;
     height: +image-height("2012/masthead-short.jpg") + ($thick-border-thickness * 2) + 76px;
@@ -53,7 +65,7 @@
       background-color: #b3a797;
     }
   }
-  .main-navbar .nav {
+  .main-navbar.nav {
     display: block;
     @include pie-clearfix;
     & > li {
@@ -64,7 +76,14 @@
   .navbar-margin {
     margin-bottom: 0;
   }
-
+  .navbar-fixed-top .nav {
+    & > .register, & > .register a {
+      color: white;
+    }
+  }
+  .section h2 {
+    display: block;
+  }
   // FIXME: This is ugly. Use generic hide-on-phones, etc classes
   #funnel-preview .header .funnel-preview-by,
   #funnel-preview .header .funnel-preview-date {
