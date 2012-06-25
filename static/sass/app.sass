@@ -131,7 +131,7 @@ ul.twitter_update_list
   position: relative
 
 #masthead
-  background: image-url("2012/masthead-wide.jpg")
+  background: image-url("2012/masthead-wide.jpg") no-repeat left top
   height: +image-height("2012/masthead-wide.jpg") + ($thick-border-thickness * 2)
 
 #masthead-short
@@ -271,7 +271,7 @@ h1
   margin-right: 0
   margin-bottom: 0
   width: 100%
-  background: black
+  background-color: black
   border-bottom: $thick-border
   border-left: $thick-border
   border-right: $thick-border
@@ -283,9 +283,12 @@ h1
     float: none
     font-size: 20px
     margin-bottom: 0
+    // background-color: black
     +display-box
     +box-flex(1)
     +box-pack(center)
+    +transition-property("color, background-color")
+    +transition-duration(0.2s)
 
     & > a
       display: block
@@ -296,11 +299,15 @@ h1
       padding: 10px 10px 11px
       line-height: 19px
       text-decoration: none
+      +transition-property("color, background-color")
+      +transition-duration(0.2s)
 
     &:hover, &:hover > a
       color: black
-      background: white
+      background-color: #b3a797
       text-decoration: none
+      +transition-property("color, background-color")
+      +transition-duration(0.2s)
 
 .navbar-fixed-top .nav
   & > .register, & > .register a

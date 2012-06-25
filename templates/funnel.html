@@ -13,19 +13,19 @@
 </ul>
 <ul id="funnel-listing" class="grid container-fluid">
   <li class="row-fluid header">
-    <div class="span6">Title</div>
-    <div class="span3">By</div>
-    <div class="span1"><i class="icon-comments"></i></div>
-    <div class="span1">+1</div>
-    <div class="span1">Date</div>
+    <div class="span6 funnel-title">Title</div>
+    <div class="span3 funnel-by">By</div>
+    <div class="span1 funnel-date">Date</div>
+    <div class="span1 funnel-comments"><i class="icon-comments"></i></div>
+    <div class="span1 funnel-votes">+1</div>
   </li>
   {% for proposal in node.proposals() -%}
     <li class="row-fluid item" data-section="{{ proposal['section_name'] }}">
-      <div class="span6"><a target="_blank" href="{{ proposal['url'] }}" title="{{ proposal['title'] }}">{{ proposal['title'] }}</a></div>
-      <div class="span3">{{ proposal['proposer'] }}</div>
-      <div class="span1">{{ proposal['comments'] }}</div>
-      <div class="span1">{{ proposal['votes'] }}</div>
-      <div class="span1">{{ proposal['submitted']|shortdate }}</div>
+      <div class="span6 funnel-title"><a target="_blank" href="{{ proposal['url'] }}" title="{{ proposal['title'] }}">{{ proposal['title'] }}</a></div>
+      <div class="span3 funnel-by">{{ proposal['proposer'] }}</div>
+      <div class="span1 funnel-date">{{ proposal['submitted']|shortdate }}</div>
+      <div class="span1 funnel-comments">{{ proposal['comments'] }}</div>
+      <div class="span1 funnel-votes">{{ proposal['votes'] }}</div>
     </li>
   {%- endfor %}
 </ul>
