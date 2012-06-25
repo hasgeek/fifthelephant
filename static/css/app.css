@@ -98,7 +98,7 @@ h1 small, h2 small, h3 small {
   border-bottom-right-radius: 4px;
 }
 .blog h3 a:after {
-  content: " »";
+  content: "\0000a0»";
   color: transparent;
 }
 .blog h3 a:hover {
