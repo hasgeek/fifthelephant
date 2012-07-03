@@ -685,7 +685,7 @@ footer .footer-inner {
   .masthead-container {
     padding: 0;
   }
-  .masthead-container #masthead, .masthead-container #masthead-short, .masthead-container .main-navbar.nav {
+  .masthead-container #masthead, .masthead-container #masthead-short, .masthead-container .main-navbar .nav {
     margin-top: 0;
     border-left: 0;
     border-right: 0;
@@ -696,7 +696,7 @@ footer .footer-inner {
     -khtml-border-radius: 0;
     border-radius: 0;
   }
-  .masthead-container .main-navbar.nav {
+  .masthead-container .main-navbar .nav {
     padding: 0 10px;
   }
 
@@ -716,16 +716,16 @@ footer .footer-inner {
     background-color: #b3a797;
   }
 
-  .main-navbar.nav {
+  .main-navbar .nav {
     display: block;
     *zoom: 1;
   }
-  .main-navbar.nav:after {
+  .main-navbar .nav:after {
     content: "";
     display: table;
     clear: both;
   }
-  .main-navbar.nav > li {
+  .main-navbar .nav > li {
     display: block;
     float: left;
   }

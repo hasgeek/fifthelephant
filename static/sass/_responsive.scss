@@ -40,13 +40,13 @@
 @media screen and (max-width: 767px) {
   .masthead-container {
     padding: 0;
-    #masthead, #masthead-short, .main-navbar.nav {
+    #masthead, #masthead-short, .main-navbar .nav {
       margin-top: 0;
       border-left: 0;
       border-right: 0;
       @include border-radius(0);
     }
-    .main-navbar.nav {
+    .main-navbar .nav {
       padding: 0 10px;
     }
   }
@@ -65,7 +65,7 @@
       background-color: #b3a797;
     }
   }
-  .main-navbar.nav {
+  .main-navbar .nav {
     display: block;
     @include pie-clearfix;
     & > li {
