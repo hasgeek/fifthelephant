@@ -1,49 +1,33 @@
-<script type="text/javascript">
-  $(function() {
-    var map = new L.Map('map');
-    var cloudmadeUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
-      subDomains = ['otile1','otile2','otile3','otile4'],
-      cloudmadeAttrib = '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>';
-    var cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib, subdomains: subDomains});
+{% macro mapscript(mapnode) %}
+  <script type="text/javascript">
+    $(function() {
+      var map = new L.Map('map');
+      var cloudmadeUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
+        subDomains = ['otile1','otile2','otile3','otile4'],
+        cloudmadeAttrib = '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>';
+      var cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib, subdomains: subDomains});
 
-    var venue_nimhans = new L.LatLng(12.943104, 77.596865); // geographical point (longitude and latitude)
-    var venue_cis = new L.LatLng(12.9647, 77.6375);
-    var venue_teri = new L.LatLng(12.963644, 77.637951);
-    var venue_amiworks = new L.LatLng(18.53882, 73.82931);
+      map.scrollWheelZoom.disable();
 
-    map.setView(venue_nimhans, 13).addLayer(cloudmade);
-
-    var marker_nimhans = new L.Marker(venue_nimhans);
-    var marker_cis = new L.Marker(venue_cis);
-    var marker_teri = new L.Marker(venue_teri);
-    var marker_amiworks= new L.Marker(venue_amiworks);
-
-    map.addLayer(marker_nimhans);
-    map.addLayer(marker_cis);
-    map.addLayer(marker_teri);
-    map.addLayer(marker_amiworks);
-    marker_nimhans.bindPopup('Nimhans Convention Centre').openPopup();
-    marker_cis.bindPopup('The Centre for Internet and Society');
-    marker_teri.bindPopup('The Energy and Resources Institute');
-    marker_amiworks.bindPopup('AmiWorks');
-
-    map.scrollWheelZoom.disable();
-    // map.doubleClickZoom.disable();
-
-    var open_marker = function(marker) {
+      var open_marker = function(marker) {
         return function(e) {
-            map.panTo(marker['_latlng']);
-            marker.openPopup();
-            e.preventDefault();
+          map.panTo(marker['_latlng']);
+          marker.openPopup();
+          e.preventDefault();
         };
-    };
+      };
 
-    $('a[href^="#map-"]').tooltip({title: "Show on map"});
-
-    $('a[href="#map-nimhans"]').click(open_marker(marker_nimhans));
-    $('a[href="#map-cis"]').click(open_marker(marker_cis));
-    $('a[href="#map-teri"]').click(open_marker(marker_teri));
-    $('a[href="#map-amiworks"]').click(open_marker(marker_amiworks));
-
-  });
-</script>
+      $('a[href^="#map-"]').tooltip({title: "Show on map"});
+      {% for marker in mapnode.items %}
+        var marker_{{ marker.name }} = new L.Marker(new L.LatLng({{ marker.latitude }}, {{ marker.longitude }}));
+        map.addLayer(marker_{{ marker.name }});
+        marker_{{ marker.name }}.bindPopup("{{ marker.title }}");
+        $('a[href="#map-{{ marker.name }}"]').click(open_marker(marker_{{ marker.name }}));
+      {%- endfor %}
+      {%- with marker = mapnode.items[0] %}
+        map.setView(marker_{{ marker.name }}['_latlng'], {{ marker.zoomlevel or 13 }}).addLayer(cloudmade);
+        marker_{{ marker.name }}.openPopup();
+      {%- endwith %}
+    });
+  </script>
+{% endmacro %}
