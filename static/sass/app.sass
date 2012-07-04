@@ -36,9 +36,18 @@ body, p
   line-height: $line-height
   margin-bottom: $line-height / 2
 
+.leaflet-popup-content
+  font-family: ff-tisa-web-pro, Georgia, serif
+  font-size: $font-size
+  line-height: $line-height
+  font-weight: bold
+
+ul, ol
+  margin-bottom: $line-height / 2
+
 li
   line-height: $line-height
-  margin-bottom: $line-height / 2
+  margin-bottom: 0
 
 small
   font-size: smaller
@@ -323,6 +332,15 @@ h1
 .box-tight
   padding: 0
 
+.pager
+  font-size: 18px
+  line-height: $line-height
+
+  .previous
+    text-align: left
+  .next
+    text-align: right
+
 // About
 #about
   margin-top: 24px
@@ -439,19 +457,19 @@ h1
 
 .map-box
   position: relative
-  .map
-    border: $thick-border
-    +border-radius($thick-border-radius)
-    +box-sizing(border-box)
-    // position: absolute
-    // left: 0
-    // top: 0
-    // bottom: 0
-    width: 100%
-    height: 400px
-    overflow: hidden
-    margin: 0
-    padding: 0
+.map
+  border: $thick-border
+  +border-radius($thick-border-radius)
+  +box-sizing(border-box)
+  // position: absolute
+  // left: 0
+  // top: 0
+  // bottom: 0
+  width: 100%
+  height: 400px
+  overflow: hidden
+  margin: 0 0 $line-height 0
+  padding: 0
 
 .nav.nav-grid
   margin-top: $line-height * 1.5

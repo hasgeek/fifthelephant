@@ -1,4 +1,4 @@
-{% macro mapscript(mapnode) %}
+{% macro mapscript(mapnode, markername=None) %}
   <script type="text/javascript">
     $(function() {
       var map = new L.Map('map');
@@ -24,7 +24,7 @@
         marker_{{ marker.name }}.bindPopup("{{ marker.title }}");
         $('a[href="#map-{{ marker.name }}"]').click(open_marker(marker_{{ marker.name }}));
       {%- endfor %}
-      {%- with marker = mapnode.items[0] %}
+      {%- with marker = mapnode.get_by_name(markername) or mapnode.items[0] %}
         map.setView(marker_{{ marker.name }}['_latlng'], {{ marker.zoomlevel or 13 }}).addLayer(cloudmade);
         marker_{{ marker.name }}.openPopup();
       {%- endwith %}

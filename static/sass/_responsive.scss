@@ -46,9 +46,6 @@
       border-right: 0;
       @include border-radius(0);
     }
-    .main-navbar .nav {
-      padding: 0 10px;
-    }
   }
   #masthead-short {
     background-position: -70px 0;
@@ -65,12 +62,19 @@
       background-color: #b3a797;
     }
   }
-  .main-navbar .nav {
-    display: block;
-    @include pie-clearfix;
-    & > li {
-        display: block;
-        float: left;
+  .main-navbar {
+    .container {
+      padding: 0;
+    }
+    .nav {
+      padding: 0 5px;
+      display: block;
+      @include pie-clearfix;
+      @include border-radius(0);
+      & > li {
+          display: block;
+          float: left;
+      }
     }
   }
   .navbar-margin {

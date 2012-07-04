@@ -1,0 +1,35 @@
+{% extends theme("layout.html") %}
+{% from theme("inc/map_script.html") import mapscript -%}
+
+{% block title %}{{ node.title }}{% endblock %}
+{% block description %}{{ node.description }}{% endblock %}
+
+{% block headline %}{% endblock %}
+{% block content %}
+<div class="row page-top">
+  <div class="span6">
+    <div class="page-header"><h2>{{ node.title }}</h2></div>
+    {{ node.content }}
+  </div>
+  <div class="span6">
+    <div id="map" class="map"></div>
+    {%- with eventlist = getnode('2012', 'event-list'),
+        prev = eventlist.prev_to_node(node),
+        next = eventlist.next_to_node(node) %}
+      <ul class="pager">
+        <li class="previous">
+          {% if prev %}<a href="{{ prev.node.url() }}"><i class="icon-hand-left"></i> {{ prev.title }}</a>{% else %}&nbsp;{% endif %}
+        </li>
+        <li class="next">
+          {% if next %}<a href="{{ next.node.url() }}">{{ next.title }} <i class="icon-hand-right"></i></a>{% else %}&nbsp;{% endif %}
+        </li>
+      </ul>
+    {%- endwith %}
+  </div>
+</div>
+{% endblock %}
+{% block footerscripts %}
+  {% with item = getnode('2012', 'event-list').get_by_node(node) -%}
+    {{ mapscript(getnode('2012', 'venue-map'), item.name) }}
+  {%- endwith %}
+{% endblock %}
