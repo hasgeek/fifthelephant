@@ -1,4 +1,5 @@
 {% from "baseframe/components.html" import networkbar with context -%}
+{% from theme("inc/map_script.html") import mapscript -%}
 {% extends theme("layout.html") %}
 
 {% block titletags -%}
@@ -46,7 +47,7 @@
 {% endblock %}
 
 {% block footerscripts %}
-{% include theme("inc/map_script.html") %}
+{{ mapscript(getnode('2012', 'venue-map')) }}
 <script type="text/javascript">
   $(function() {
     /*
