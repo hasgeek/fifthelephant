@@ -10,18 +10,16 @@
           <p><a class="btn btn-success btn-wide" href="{{ url_for('node', folder=folder.name, node='proposals') }}">View session proposals</a></p>
         </div>
         <div class="span8">
-          {%- with proposals = getnode('2012', 'proposals').proposals() %}
+          {%- with proposals = getnode('2012', 'proposals').confirmed() %}
             <ul id="funnel-preview" class="grid container-fluid">
               <li class="row-fluid header">
                 <div class="span7 funnel-preview-title">{{ proposals_blurb.title }}</div>
                 <div class="span3 funnel-preview-by">By</div>
-                <div class="span2 funnel-preview-date">Date</div>
               </li>
               {% for proposal in proposals[:5] -%}
-                <li class="row-fluid item" data-section="{{ proposal['section_name'] }}">
-                  <div class="span7 funnel-preview-title"><a target="_blank" href="{{ proposal['url'] }}" title="{{ proposal['title'] }}">{{ proposal['title'] }}</a></div>
+		<li class="row-fluid item" data-section="{{ proposal['section_name'] }}">
+		  <div class="span7 funnel-preview-title"><a target="_blank" href="{{ proposal['url'] }}" title="{{ proposal['title'] }}">{{ proposal['title'] }}</a></div>
                   <div class="span3 funnel-preview-by">{{ proposal['proposer'] }}</div>
-                  <div class="span2 funnel-preview-date">{{ proposal['submitted']|shortdate }}</div>
                 </li>
               {%- else -%}
                 <li class="row-fluid">
