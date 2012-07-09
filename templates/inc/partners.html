@@ -22,8 +22,14 @@
         <p class="logo"><a href="http://thestartupcentre.com/"><img alt="The Startup Centre" src="{{ theme_static('img/2012/partners/tsc.png') }}"></a></p>
       </article>
       <article class="sponsor-partner sponsor span3">
-        <p class="logo"><a href="http://amiworks.com/"><img alt="Amiworks" src="{{ theme_static('img/2012/partners/amiworks.png') }}"></a></p>
+        <p class="logo"><a href="http://amiworks.com/"><img alt="AmiWorks" src="{{ theme_static('img/2012/partners/amiworks.png') }}"></a></p>
       </article>
+      <article class="sponsor-partner sponsor span3">
+        <p class="logo"><a data-toggle="modal" href="#partner-iarchive"><img alt="Internet Archive" src="{{ theme_static('img/2012/partners/iarchive.png') }}"></a></p>
+      </article>
+      <article class="sponsor-partner sponsor span3">
+        <p class="logo"><a data-toggle="modal" href="#partner-aim"><img alt="Analytics India Magazine" src="{{ theme_static('img/2012/partners/analytics-india.png') }}"></a></p>
+      </article>      
       
       <div class="modal fade sponsor-box" id="partner-okfn">
         <div class="modal-header">
@@ -37,7 +43,35 @@
           <a href="http://okfn.org/" class="btn btn-primary sponsor-exit">Visit OKFN</a>
           <a data-dismiss="modal" class="btn">Close</a>
         </div>
-      </div>      
+      </div>
+
+      <div class="modal fade sponsor-box" id="partner-okfn">
+        <div class="modal-header">
+          <a class="close" data-dismiss="modal">&times;</a>
+          <h3>The Internet Archive</h3>
+        </div>
+        <div class="modal-body">
+          {{ fragment('2012', 'partner-iarchive').content }}
+        </div>
+        <div class="modal-footer">
+          <a href="http://archive.org/" class="btn btn-primary sponsor-exit">Visit The Internet Archive</a>
+          <a data-dismiss="modal" class="btn">Close</a>
+        </div>
+      </div>  
+
+      <div class="modal fade sponsor-box" id="partner-aim">
+        <div class="modal-header">
+          <a class="close" data-dismiss="modal">&times;</a>
+          <h3>Analytics India Magazine</h3>
+        </div>
+        <div class="modal-body">
+          {{ fragment('2012', 'partner-aim').content }}
+        </div>
+        <div class="modal-footer">
+          <a href="http://analyticsindiamag.com/" class="btn btn-primary sponsor-exit">Visit Analytics India Magazine</a>
+          <a data-dismiss="modal" class="btn">Close</a>
+        </div>
+      </div>        
     </div>
   </div>
 </section>
