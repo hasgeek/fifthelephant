@@ -4,7 +4,32 @@
       <h2>Partners</h2>
     </div>
     <div class="row">
-      <div class="span6 push-right">
+      <div class="span6">
+        <div class="row">
+          <article class="sponsor-partner sponsor span2">
+            <p class="logo"><a href="http://cis-india.org/"><img alt="The Centre for Internet and Society" src="{{ theme_static('img/2012/partners/cis.png') }}"></a></p>
+          </article>
+          <article class="sponsor-partner sponsor span2">
+            <p class="logo"><a data-toggle="modal" href="#partner-okfn"><img alt="Open Knowledge Foundation" src="{{ theme_static('img/2012/partners/okfn.png') }}"></a></p>
+          </article>
+          <article class="sponsor-partner sponsor span2">
+            <p class="logo"><a href="http://thestartupcentre.com/"><img alt="The Startup Centre" src="{{ theme_static('img/2012/partners/tsc.png') }}"></a></p>
+          </article>
+          <article class="sponsor-partner sponsor span2">
+            <p class="logo"><a href="http://amiworks.com/"><img alt="AmiWorks" src="{{ theme_static('img/2012/partners/amiworks.png') }}"></a></p>
+          </article>
+          <article class="sponsor-partner sponsor span2">
+            <p class="logo"><a data-toggle="modal" href="#partner-iarchive"><img alt="Internet Archive" src="{{ theme_static('img/2012/partners/iarchive.png') }}"></a></p>
+          </article>
+          <article class="sponsor-partner sponsor span2">
+            <p class="logo"><a data-toggle="modal" href="#partner-aws"><img alt="Amazon Web Services" src="{{ theme_static('img/2012/partners/aws.png') }}"></a></p>
+          </article>
+          <article class="sponsor-partner sponsor span2">
+            <p class="logo"><a data-toggle="modal" href="#partner-aim"><img alt="Analytics India Magazine" src="{{ theme_static('img/2012/partners/analytics-india.png') }}"></a></p>
+          </article>
+        </div>
+      </div>
+      <div class="span6">
         {% with f = fragment('2012', 'credits-blurb') %}
           <div class="section-subheader">
             <h3 class="hasgeek"><a href="http://hasgeek.com/">{{ f.title }}</a></h3>
@@ -12,82 +37,60 @@
           {{ f.content }}
         {% endwith %}
       </div>
-      <article class="sponsor-partner sponsor span3">
-        <p class="logo"><a href="http://cis-india.org/"><img alt="The Centre for Internet and Society" src="{{ theme_static('img/2012/partners/cis.png') }}"></a></p>
-      </article>
-      <article class="sponsor-partner sponsor span3">
-        <p class="logo"><a data-toggle="modal" href="#partner-okfn"><img alt="Open Knowledge Foundation" src="{{ theme_static('img/2012/partners/okfn.png') }}"></a></p>
-      </article>
-      <article class="sponsor-partner sponsor span3">
-        <p class="logo"><a href="http://thestartupcentre.com/"><img alt="The Startup Centre" src="{{ theme_static('img/2012/partners/tsc.png') }}"></a></p>
-      </article>
-      <article class="sponsor-partner sponsor span3">
-        <p class="logo"><a href="http://amiworks.com/"><img alt="AmiWorks" src="{{ theme_static('img/2012/partners/amiworks.png') }}"></a></p>
-      </article>
-      <article class="sponsor-partner sponsor span3">
-        <p class="logo"><a data-toggle="modal" href="#partner-iarchive"><img alt="Internet Archive" src="{{ theme_static('img/2012/partners/iarchive.png') }}"></a></p>
-      </article>
-      <article class="sponsor-partner sponsor span3">
-        <p class="logo"><a data-toggle="modal" href="#partner-aws"><img alt="Amazon Web Services" src="{{ theme_static('img/2012/partners/aws.png') }}"></a></p>
-      </article>
-      <article class="sponsor-partner sponsor span3">
-        <p class="logo"><a data-toggle="modal" href="#partner-aim"><img alt="Analytics India Magazine" src="{{ theme_static('img/2012/partners/analytics-india.png') }}"></a></p>
-      </article>      
-      
-      <div class="modal fade sponsor-box" id="partner-okfn">
-        <div class="modal-header">
-          <a class="close" data-dismiss="modal">&times;</a>
-          <h3>Open Knowledge Foundation</h3>
-        </div>
-        <div class="modal-body">
-          {{ fragment('2012', 'partner-okfn').content }}
-        </div>
-        <div class="modal-footer">
-          <a href="http://okfn.org/" class="btn btn-primary sponsor-exit">Visit OKFN</a>
-          <a data-dismiss="modal" class="btn">Close</a>
-        </div>
-      </div>
+    </div>
+  </div>
+  <div class="modal fade sponsor-box" id="partner-okfn">
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">&times;</a>
+      <h3>Open Knowledge Foundation</h3>
+    </div>
+    <div class="modal-body">
+      {{ fragment('2012', 'partner-okfn').content }}
+    </div>
+    <div class="modal-footer">
+      <a href="http://okfn.org/" class="btn btn-primary sponsor-exit">Visit OKFN</a>
+      <a data-dismiss="modal" class="btn">Close</a>
+    </div>
+  </div>
 
-      <div class="modal fade sponsor-box" id="partner-okfn">
-        <div class="modal-header">
-          <a class="close" data-dismiss="modal">&times;</a>
-          <h3>The Internet Archive</h3>
-        </div>
-        <div class="modal-body">
-          {{ fragment('2012', 'partner-iarchive').content }}
-        </div>
-        <div class="modal-footer">
-          <a href="http://archive.org/" class="btn btn-primary sponsor-exit">Visit The Internet Archive</a>
-          <a data-dismiss="modal" class="btn">Close</a>
-        </div>
-      </div>  
+  <div class="modal fade sponsor-box" id="partner-okfn">
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">&times;</a>
+      <h3>The Internet Archive</h3>
+    </div>
+    <div class="modal-body">
+      {{ fragment('2012', 'partner-iarchive').content }}
+    </div>
+    <div class="modal-footer">
+      <a href="http://archive.org/" class="btn btn-primary sponsor-exit">Visit The Internet Archive</a>
+      <a data-dismiss="modal" class="btn">Close</a>
+    </div>
+  </div>  
 
-      <div class="modal fade sponsor-box" id="partner-aim">
-        <div class="modal-header">
-          <a class="close" data-dismiss="modal">&times;</a>
-          <h3>Analytics India Magazine</h3>
-        </div>
-        <div class="modal-body">
-          {{ fragment('2012', 'partner-aim').content }}
-        </div>
-        <div class="modal-footer">
-          <a href="http://analyticsindiamag.com/" class="btn btn-primary sponsor-exit">Visit Analytics India Magazine</a>
-          <a data-dismiss="modal" class="btn">Close</a>
-        </div>
-      </div>
-      <div class="modal fade sponsor-box" id="partner-aws">
-        <div class="modal-header">
-          <a class="close" data-dismiss="modal">&times;</a>
-          <h3>Amazon Web Services</h3>
-        </div>
-        <div class="modal-body">
-          {{ fragment('2012', 'partner-aws').content }}
-        </div>
-        <div class="modal-footer">
-          <a href="http://aws.amazon.com/" class="btn btn-primary sponsor-exit">Learn More about AWS</a>
-          <a data-dismiss="modal" class="btn">Close</a>
-        </div>
-      </div>
+  <div class="modal fade sponsor-box" id="partner-aim">
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">&times;</a>
+      <h3>Analytics India Magazine</h3>
+    </div>
+    <div class="modal-body">
+      {{ fragment('2012', 'partner-aim').content }}
+    </div>
+    <div class="modal-footer">
+      <a href="http://analyticsindiamag.com/" class="btn btn-primary sponsor-exit">Visit Analytics India Magazine</a>
+      <a data-dismiss="modal" class="btn">Close</a>
+    </div>
+  </div>
+  <div class="modal fade sponsor-box" id="partner-aws">
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">&times;</a>
+      <h3>Amazon Web Services</h3>
+    </div>
+    <div class="modal-body">
+      {{ fragment('2012', 'partner-aws').content }}
+    </div>
+    <div class="modal-footer">
+      <a href="http://aws.amazon.com/" class="btn btn-primary sponsor-exit">Learn More about AWS</a>
+      <a data-dismiss="modal" class="btn">Close</a>
     </div>
   </div>
 </section>
