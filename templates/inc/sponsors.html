@@ -35,8 +35,8 @@
       <article class="sponsor-silver sponsor span2">
         <p class="logo"><a data-toggle="modal" href="#sponsor-google"><img alt="Google" src="{{ theme_static('img/2012/sponsors/sponsor-google.png') }}"></a></p>
       </article>
-      <article class="open empty sponsor-silver sponsor span2">
-        <p class="logo"></p>
+      <article class="sponsor-silver sponsor span2">
+        <p class="logo"><a data-toggle="modal" href="#sponsor-ibm"><img alt="IBM in India" src="{{ theme_static('img/2012/sponsors/sponsor-ibm.png') }}"></a></p>
       </article>
       <article class="open empty sponsor-silver sponsor span2">
         <p class="logo"></p>
@@ -52,7 +52,7 @@
       <article class="sponsor-bronze sponsor span2">
         <p class="logo"><a data-toggle="modal" href="#sponsor-neo4j"><img alt="Neo4j" src="{{ theme_static('img/2012/sponsors/sponsor-neo4j.png') }}"></a></p>
       </article>
-      <article class=" sponsor-bronze sponsor span2">
+      <article class="sponsor-bronze sponsor span2">
         <p class="logo"><a href="http://www.enthought.com/"><img alt="Enthought" src="{{ theme_static('img/2012/sponsors/sponsor-enthought.png') }}"></a></p>
       </article>
       <article class="open empty sponsor-bronze sponsor span2">
@@ -181,7 +181,22 @@
           <a href="http://www.neo4j.org/" class="btn btn-primary sponsor-exit">Visit Neo4j</a>
           <a data-dismiss="modal" class="btn">Close</a>
         </div>
-      </div>      
+      </div>
+
+      <div class="modal fade sponsor-box" id="sponsor-ibm">
+        <div class="modal-header">
+          <a class="close" data-dismiss="modal">&times;</a>
+          <h3>IBM in India</h3>
+        </div>
+        <div class="modal-body">
+          {{ fragment('2012', 'sponsor-ibm').content }}
+        </div>
+        <div class="modal-footer">
+          <a href="http://www.ibm.com/in/en/" class="btn btn-primary sponsor-exit">Visit IBM</a>
+          <a data-dismiss="modal" class="btn">Close</a>
+        </div>
+      </div>
+      
       </div><!-- /row -->
   </div><!-- /container -->
 </section><!-- /sponsors -->
