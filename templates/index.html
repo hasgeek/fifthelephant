@@ -40,7 +40,15 @@
 {% block main %}
 {% include theme("inc/about.html") %}
 {% include theme("inc/blog.html") %}
-{% include theme("inc/schedule.html") %}
+<section id="schedule" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Programme</h2>
+    </div>
+    {{ getnode('2012', 'schedule').content }}
+    {% include theme("inc/schedule.html") %}
+  </div>
+</section>
 {% include theme("inc/sponsors.html") %}
 {% include theme("inc/venue.html") %}
 {% include theme("inc/partners.html") %}
