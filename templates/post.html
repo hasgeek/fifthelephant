@@ -6,29 +6,25 @@
 {% block headline %}{% endblock %}
 {% block content %}
 <div class="row blog page-top">
-  <div class="span7">
+  <div class="span6">
     <div class="page-header">
       <h2>{{ self.title() }} <small>{{ node.published_at|longdate }}</small></h2>
     </div>
     {{ node.content }}
     <p class="author">{{ node.user.fullname }}</p>
   </div>
-  {#
-  <div class="span5 box">
-    <div class="page-header">
-      <h2>Recent posts</h2>
-      {% for post in feed(limit=4) -%}
-        <h3>
-          <a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}">{{ post.title }}</a>
-          <small>{{ post.published_at|longdate }}</small>
-        </h3>
-        {{ post.description }}
-      {%- else -%}
-        <p>(No blog entries have been written so far)</p>
-      {%- endfor %}
-      <h3><a href="/blog/">See all blog posts</a></h3>
+  {%- if "image" in node.properties or "video" in node.properties %}
+    <div class="span6">
+      {%- if "image" in node.properties %}
+        <div class="row">
+          <div class="span6 {{ node.properties.get('image-container-class', '') }}">
+            {% if "image-link" in node.properties %}<a href="{{ node.properties['image-link'] }}">{% endif -%}
+            <img src="{{ node.properties['image'] }}" alt="{{ node.properties.get('image-alt', 'Image') }}" class="{{ node.properties.get('image-class', '') }}"/>
+            {%- if "image-link" in node.properties %}</a>{% endif %}
+          </div>
+        </div>
+      {%- endif %} 
     </div>
-  </div>
-  #}
+  {%- endif %}
 </div>
 {% endblock %}

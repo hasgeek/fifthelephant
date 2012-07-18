@@ -376,6 +376,7 @@ h1
   background: white
   +box-sizing(border-box)
   position: relative
+  text-align: center
   // +box-shadow(1px 1px 2px #BBB)
   border-bottom: $thick-border
   +border-bottom-left-radius($thick-border-radius)
@@ -410,35 +411,60 @@ h1
     &:after
       color: #f4f4f4
 
+  a
+    display: block
+    margin: 0
+    padding: 0
+    border: none
+    height: 100%
+    width: 100%
+  a:hover
+    text-decoration: none
+
   .logo
-    text-align: center
     vertical-align: middle
     margin: 0
-    img
-      max-height: 100%
-      width: auto
-      vertical-align: middle
+  img
+    max-height: 100%
+    max-width: 100%
+    vertical-align: middle
 
-.sponsor-platinum .logo
-  height: 250px
-  line-height: 250px
-.sponsor-gold .logo
-  height: 150px
-  line-height: 150px
-.sponsor-silver .logo
-  height: 100px
-  line-height: 100px
-.sponsor-bronze .logo
-  height: 75px
-  line-height: 75px
-.sponsor-community .logo
-  height: 50px
-  line-height: 50px
-
-.sponsor-partner .logo
-  height: 100px
-  line-height: 100px
-
+.sponsor-platinum
+  .logo
+    height: 250px
+  .logo, img
+    max-height: 250px
+    line-height: 250px
+.sponsor-gold
+  .logo
+    height: 150px
+  .logo, img
+    max-height: 150px
+    line-height: 150px
+.sponsor-silver
+  .logo
+    height: 100px
+  .logo, img
+    max-height: 100px
+    line-height: 100px
+.sponsor-bronze
+  .logo
+    height: 75px
+  .logo, img
+    max-height: 75px
+    line-height: 75px
+.sponsor-community
+  .logo
+    height: 50px
+  .logo, img
+    max-height: 50px
+    line-height: 50px
+.sponsor-partner
+  .logo
+    height: 100px
+  .logo, img
+    max-height: 100px
+    line-height: 100px
 
 .sponsor-platinum:after
   content: "Platinum"
