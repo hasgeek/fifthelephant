@@ -662,12 +662,23 @@ footer .footer-inner {
 }
 
 .all-tracks {
-  text-transform: uppercase;
-  background: rgba(1, 0, 0, 0.1);
+  text-transform: italic;
+  text-align: center;
+  padding: 2px;
 }
 
 .keynote {
   text-align: center !important;
+}
+
+.schedule ul.grid > .row-fluid > [class*="span"] {
+  white-space: normal;
+}
+.schedule ul.grid > .row-fluid > [class*="span"] p {
+  font-size: 14px;
+}
+.schedule ul.grid > .row-fluid > [class*="span"] h4 {
+  font-size: 16px;
 }
 
 /* ================= */
