@@ -723,13 +723,13 @@ footer .footer-inner {
   text-align: center !important;
 }
 
-.schedule ul.grid > .row-fluid > [class*="span"] {
+ul.grid.schedule > .row-fluid > [class*="span"] {
   white-space: normal;
 }
-.schedule ul.grid > .row-fluid > [class*="span"] p {
+ul.grid.schedule > .row-fluid > [class*="span"] p {
   font-size: 14px;
 }
-.schedule ul.grid > .row-fluid > [class*="span"] h4 {
+ul.grid.schedule > .row-fluid > [class*="span"] h4 {
   font-size: 16px;
 }
 
