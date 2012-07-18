@@ -11,7 +11,7 @@
       <h2>{{ self.title() }} <small>{{ node.published_at|longdate }}</small></h2>
     </div>
     {{ node.content }}
-    <p class="author">{{ node.user.fullname }}</p>
+    {#- <p class="author">{{ node.user.fullname }}</p> #}
   </div>
   {%- if "image" in node.properties or "video" in node.properties %}
     <div class="span6">
