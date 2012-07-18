@@ -16,7 +16,7 @@
         <small>{{ post.published_at|longdate }}</small>
       </h3>
       {{ post.content }}
-      <p class="author">{{ post.user.fullname }}</p>
+      {#- <p class="author">{{ post.user.fullname }}</p> #}
     {%- else -%}
       <p>(No blog entries have been written so far)</p>
     {%- endfor %}
