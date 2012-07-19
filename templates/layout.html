@@ -1,0 +1,50 @@
+{% from "baseframe/components.html" import networkbar with context -%}
+{% extends "eventframe.html" -%}
+
+{% block headerbox %}
+<header class="header">
+  {{ networkbar(siteid='events', login=false) }}
+  <div class="container masthead-container">
+    <div id="masthead-short">
+      <h1><span class="h1-the">The</span> <span class="h1-fifth">Fifth</span> <span class="h1-elephant">Elephant</span></h1>
+    </div>
+  </div>
+  <div class="main-navbar">
+    <div class="container">
+      <ul class="nav" id="main-nav">
+        <li><a href="/2012">2012 Event</a></li>
+        <li><a href="/blog">Event Blog</a></li>
+        <li><a href="/2012/schedule">Schedule</a></li>
+        <li class="register"><a href="/2012/register">Register for the Event</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block baseheadline -%}
+  {% block headline -%}
+    <div class="page-header">
+      <h2>{{ self.title() }}</h2>
+    </div>
+  {%- endblock %}
+{%- endblock %}
+
+{% block pageheaders %}
+
+{% block basecontent -%}
+  {% block content %}{% endblock %}
+{%- endblock %}
+
+{% block basefooter -%}
+  <footer>
+    <div class="footer-inner">
+      <div class="container">
+        <div class="footer-bar"></div>
+        {% block footer -%}
+          <span>The Fifth Elephant is a conference by <a href="http://hasgeek.com/">HasGeek</a>. Copyright &copy; 2010-12. All rights reserved.</span>
+        {%- endblock %}
+      </div>
+    </div>
+  </footer>
+{%- endblock %}

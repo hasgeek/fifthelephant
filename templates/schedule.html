@@ -1,0 +1,9 @@
+{% extends theme("layout.html") %}
+
+{% block title %}{{ node.title }}{% endblock %}
+{% block description %}{{ node.description }}{% endblock %}
+
+{% block content %}
+  {{ node.content }}
+  {% include theme("inc/schedule.html") %}
+{% endblock %}

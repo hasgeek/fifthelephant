@@ -1,0 +1,143 @@
+{% from "baseframe/components.html" import networkbar with context -%}
+{% from theme("inc/map_script.html") import mapscript -%}
+{% extends theme("layout.html") %}
+
+{% block titletags -%}
+  <title>{% block title %}{{ website.title }}{% endblock %}</title>
+  <meta name="DC.title" content="{{ website.title }}"/>
+{%- endblock %}
+{% block description %}{{ node.description }}{% endblock %}
+
+{% block headerbox %}
+<header class="header">
+  {{ networkbar(siteid='events', login=false) }}
+  <div class="container masthead-container">
+    <div id="masthead">
+      <div id="banner">
+        <h1><span class="h1-the">The</span> <span class="h1-fifth">Fifth</span> <span class="h1-elephant">Elephant</span></h1>
+        <h2>27 &amp; 28 July 2012</h2>
+        <h3>Nimhans Convention Centre, Bangalore</h3>
+        <a class="btn btn-success btn-wide" href="/2012/register"><big><strong>Buy Tickets</strong></big><br><del>Rs 5000</del> Rs 2500</a>
+      </div>
+    </div>
+  </div>
+  <div class="main-navbar">
+    <div class="container">
+      <ul class="nav" id="main-nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#schedule">Programme</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li class="register"><a href="/2012/register">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block main %}
+{% include theme("inc/about.html") %}
+{% include theme("inc/blog.html") %}
+<section id="schedule" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Programme</h2>
+    </div>
+    {{ getnode('2012', 'schedule').content }}
+    {% include theme("inc/schedule.html") %}
+  </div>
+</section>
+{% include theme("inc/sponsors.html") %}
+{% include theme("inc/venue.html") %}
+{% include theme("inc/partners.html") %}
+{% endblock %}
+
+{% block footerscripts %}
+{{ mapscript(getnode('2012', 'venue-map')) }}
+<script type="text/javascript">
+  $(function() {
+    /*
+    $("#main-nav > li:first-child").hover(function() {
+      $("#masthead").addClass('round-bottom-left');
+    }, function() {
+      $("#masthead").removeClass('round-bottom-left');
+    });
+    $("#main-nav > li:last-child").hover(function() {
+      $("#masthead").addClass('round-bottom-right');
+    }, function() {
+      $("#masthead").removeClass('round-bottom-right');
+    });
+    */
+  });
+</script>
+<script type="text/javascript">
+  $(function() {
+    // fixed nav-bar transition code
+    // adapted from twitter bootstrap docs' sub-nav
+    var $win = $(window)
+      , $nav = $('.main-navbar')
+      , $masthead = $('#masthead')
+      , navTop = $nav.length && $nav.offset().top // - 40
+      , isFixed = 0;
+    
+    var processScroll = function () {
+      var scrollTop = $win.scrollTop();
+      if (scrollTop >= navTop && !isFixed) {
+        isFixed = 1;
+        $nav.addClass('navbar-fixed-top');
+        $masthead.addClass('navbar-margin');
+      } else if (scrollTop <= navTop && isFixed) {
+        isFixed = 0;
+        $nav.removeClass('navbar-fixed-top');
+        $masthead.removeClass('navbar-margin');
+      };
+    };
+    
+    processScroll();
+    
+    $win.on('scroll', processScroll);
+    
+    // smooth scroll nav links
+    $('a', $nav).smoothScroll({
+        offset: -80
+      , speed: 900
+    });
+
+  });
+</script>
+
+<script type="text/javascript">
+  $(function() {
+    $(".sponsor-box").on('shown', function() {
+      if (typeof _gaq != 'undefined') {
+        _gaq.push(['_trackPageview', "/{{ folder.name }}/#" + $(this).attr('id')]);
+      };
+    });    
+    $(".sponsor-box").on('hidden', function() {
+      if (typeof _gaq != 'undefined') {
+        _gaq.push(['_trackPageview', "/{{ folder.name }}/#"]);
+      };
+    });    
+    $(".sponsor-exit").click(function() {
+      if (typeof _gaq != 'undefined') {
+        _gaq.push(['_trackPageview', "/out/" + $(this).attr('href')]);
+      };
+    });
+  });
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#twitter").getTwitter({
+      userName: "the5el",
+      numTweets: 5,
+      loaderText: "Loading tweets...",
+      slideIn: true,
+      showHeading: false,
+      headingText: "Latest Tweets",
+      showProfileLink: false
+    });
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,15 @@
+<section id="about" class="section">
+  <div class="container">
+    <div class="description">{{ node.content }}</div>
+    <div class="row">
+      {% for name in ['about-infrastructure', 'about-analytics', 'about-visualization', 'about-business'] %}
+        <div class="span3">
+          {% with p = fragment('2012', name) %}
+            <h3>{{ p.title }}</h3>
+            {{ p.content }}
+          {% endwith %}
+        </div><!-- span3 -->
+      {% endfor %}
+    </div><!-- /row -->
+  </div><!-- /container -->
+</section><!-- /about -->

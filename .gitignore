@@ -10,5 +10,7 @@ test.db
 error.log
 baseframe-packed.css
 baseframe-packed.js
-instance/development.py
-instance/production.py
+packed.css
+packed.js
+*.packed.css
+*.packed.js
