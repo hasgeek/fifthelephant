@@ -20,10 +20,10 @@
         {%- with prev = eventlist.prev_to_node(node), next = eventlist.next_to_node(node) %}
           <ul class="pager">
             <li class="previous">
-              {% if prev %}<a href="{{ prev.node.url() }}"><i class="icon-hand-left"></i> {{ prev.title }}</a>{% else %}&nbsp;{% endif %}
+              {% if prev %}<a href="{{ prev.node.url_for() }}"><i class="icon-hand-left"></i> {{ prev.title }}</a>{% else %}&nbsp;{% endif %}
             </li>
             <li class="next">
-              {% if next %}<a href="{{ next.node.url() }}">{{ next.title }} <i class="icon-hand-right"></i></a>{% else %}&nbsp;{% endif %}
+              {% if next %}<a href="{{ next.node.url_for() }}">{{ next.title }} <i class="icon-hand-right"></i></a>{% else %}&nbsp;{% endif %}
             </li>
           </ul>
         {%- endwith %}
