@@ -1,0 +1,121 @@
+{% extends theme("layout.html") %}
+{% from "baseframe/forms.html" import ajaxform %}
+{% from theme("inc/map_script.html") import mapscript with context -%}
+
+{% block title %}{{ node.title }}{% endblock %}
+{% block description %}{{ node.description }}{% endblock %}
+
+{% macro rsvp_form(node, form, waitlist=False, hascapacity=True, status='U') %}
+  <form id="rsvp" action="{{ node.url_for('rsvp') }}" class="form-inline" method="POST">
+    {{ form.hidden_tag() }}
+    <p>
+      {%- if waitlist %}
+        <button name="status" value="Y" class="btn btn-success">Add to waiting list</button>
+      {%- else %}
+        {%- if hascapacity %}
+          <button name="status" value="Y" class="btn btn-success">Yes</button>
+        {%- endif %}
+        <button name="status" value="N" class="btn btn-success">No</button>
+        {%- if node.allow_maybe %}
+          <button name="status" value="M" class="btn btn-success">Maybe</button>
+        {%- endif %}
+      {%- endif %}
+      <span class="loading hidden">&nbsp;</span>
+    </p>
+    {%- if status != 'U' %}
+      <p>
+        Your status:
+        {%- if status == 'Y' %} Attending
+        {%- elif status == 'N' %} Not attending
+        {%- elif status == 'M' %} Maybe attending
+        {%- elif status == 'W' %} Wait-listed
+        {% else %} Unknown {%- endif %}
+      </p>
+    {%- endif %}
+  </form>
+{% endmacro %}
+
+{% block headline %}{% endblock %}
+{% block content %}
+<div class="row page-top">
+  <div class="span6">
+    <div class="page-header"><h2>{{ node.title }}</h2></div>
+    <p>
+      <strong>When:</strong> {{ node.starts_at.strftime('%B %d, %Y, %I:%M %p') }} &ndash; {{ node.ends_at.strftime('%I:%M %p') }}<br>
+      <strong>Where:</strong>
+      {%- if node.mapmarker %} <a href="#map-{{ node.mapmarker }}">{{ node.location_name }}</a>,
+      {%- else %} {{ node.location_name }}, {%- endif %} {{ node.location_address }}
+    </p>
+    {{ node.content }}
+    <div class="box section">
+      {%- if g.user %}
+        {%- if node.can_rsvp(g.user) %}
+          {%- with status = node.get_status(g.user) %}
+            {%- if node.has_capacity() %}
+              <p>
+                {% if node.capacity > 0 -%} The venue has limited capacity. {% endif -%}
+                Will you be attending? Please RSVP to confirm your presence:
+              </p>
+              {{ rsvp_form(node, form, status=status) }}
+            {%- else %}
+              {%- if node.allow_waitlisting %}
+                <p>
+                  This session is fully booked, but you can place yourself in the wait list
+                  in case someone drops out.
+                </p>
+                {{ rsvp_form(node, form, waitlist=True, status=status) }}
+              {%- else %}
+                <p>This session is fully booked.</p>
+                {%- if status in ['N', 'M'] %}
+                  {{ rsvp_form(node, form, hascapacity=False, status=status) }}
+                {%- endif %}
+              {%- endif %}
+            {%- endif %}
+          {%- endwith %}
+        {%- else %}
+          <p>
+            We don’t have an email address on your profile matching your ticket.
+            Please <a href="https://auth.hasgeek.com/profile/email/new" target="_blank">add an email address</a>,
+            <a href="{{ url_for('logout') }}">logout</a> and <a href="{{ url_for('login') }}">login</a> again.
+          </p>
+          <p>
+            We are working on making this process smoother.
+          </p>
+        {%- endif %}
+      {%- else %}
+        <p>
+          {% if node.capacity > 0 -%} The venue has limited capacity. {% endif -%}
+          Interested in attending? Please login. You can use your existing
+          Twitter or Google account, and if you have previously voted on a
+          session proposal or attended a hacknight, you already have a
+          HasGeek account.
+        </p>
+        <p>
+          <a href="{{ url_for('login') }}" class="btn btn-success">Login with Twitter, Google or HasGeek id</a>
+        </p>
+      {%- endif %}
+    </div>
+  </div>
+  <div class="span6">
+    <div id="map" class="map"></div>
+    {% if "list" in node.properties %}
+      {%- with eventlist = getnode(path=node.properties['list']) %}{% if eventlist %}
+        {%- with prev = eventlist.prev_to_node(node), next = eventlist.next_to_node(node) %}
+          <ul class="pager">
+            <li class="previous">
+              {% if prev %}<a href="{{ prev.node.url_for() }}"><i class="icon-hand-left"></i> {{ prev.title }}</a>{% else %}&nbsp;{% endif %}
+            </li>
+            <li class="next">
+              {% if next %}<a href="{{ next.node.url_for() }}">{{ next.title }} <i class="icon-hand-right"></i></a>{% else %}&nbsp;{% endif %}
+            </li>
+          </ul>
+        {%- endwith %}
+      {%- endif %}{%- endwith %}
+    {%- endif %}
+  </div>
+</div>
+{% endblock %}
+{% block footerscripts %}
+  {{ ajaxform('rsvp', request, force=True) }}
+  {% if node.map %}{{ mapscript(node.map, node.mapmarker) }}{% endif %}
+{% endblock %}

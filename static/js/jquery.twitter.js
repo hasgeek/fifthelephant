@@ -6,7 +6,7 @@
     Created by Damien du Toit
     http://coda.co.za/blog/2008/10/26/jquery-plugin-for-twitter
 
-    Updated by Kiran Jonnalagadda for Eventframe/The Fifth Elephant
+    Updated by Kiran Jonnalagadda and Sidharth Kuruvila for Eventframe/The Fifth Elephant
 
     Licensed under a Creative Commons Attribution-Non-Commercial 3.0 Unported License
     http://creativecommons.org/licenses/by-nc/3.0/
