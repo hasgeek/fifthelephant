@@ -10,7 +10,12 @@
     {{ form.hidden_tag() }}
     <p>
       {%- if waitlist %}
-        <button name="status" value="Y" class="btn btn-success">Add to waiting list</button>
+        {%- if status in ['Y', 'M'] %}
+          <button name="status" value="N" class="btn btn-success">No</button>
+        {%- endif %}
+        {%- if status in ['N', 'M', 'U'] %}
+          <button name="status" value="Y" class="btn btn-success">Add to waiting list</button>
+        {%- endif %}
       {%- else %}
         {%- if hascapacity %}
           <button name="status" value="Y" class="btn btn-success">Yes</button>
