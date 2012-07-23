@@ -1,0 +1,97 @@
+{% extends theme("layout.html") %}
+{% from theme("inc/map_script.html") import mapscript with context -%}
+
+{% block title %}{{ node.title }}{% endblock %}
+{% block description %}{{ node.description }}{% endblock %}
+
+{% block headline %}{% endblock %}
+{% block content %}
+<div class="row page-top">
+  <div class="span6">
+    <div class="page-header"><h2>{{ node.title }}</h2></div>
+    {{ node.content }}
+  </div>
+  <div class="span6">
+    {%- if "map" in node.properties %}
+      <div id="map" class="map"></div>
+    {%- endif %}
+    {% if "list" in node.properties %}
+      {%- with eventlist = getnode(path=node.properties['list']) %}{% if eventlist %}
+        {%- with prev = eventlist.prev_to_node(node), next = eventlist.next_to_node(node) %}
+          <ul class="pager">
+            <li class="previous">
+              {% if prev %}<a href="{{ prev.node.url_for() }}"><i class="icon-hand-left"></i> {{ prev.title }}</a>{% else %}&nbsp;{% endif %}
+            </li>
+            <li class="next">
+              {% if next %}<a href="{{ next.node.url_for() }}">{{ next.title }} <i class="icon-hand-right"></i></a>{% else %}&nbsp;{% endif %}
+            </li>
+          </ul>
+        {%- endwith %}
+      {%- endif %}{%- endwith %}
+    {%- endif %}
+  </div>
+</div>
+<ul class="grid schedule container-fluid">
+  <li class="row-fluid header">
+    <div class="span2">Time</div>
+    <div class="span5">Venue: TERI</div>
+    <div class="span5">Venue: CIS</div>
+  </li>
+  <li class="row-fluid item">
+    <div class="span2">9:00 - 11:00</div>
+    <div class="span5">
+      <h4><a href="/2012/workshop-excel">Visualization using MS Excel - Hands on Workshop</a></h4>
+      <p>Anand S.</p>
+    </div>
+    <div class="span5">
+    </div>
+  </li>
+  <li class="row-fluid item">
+    <div class="span2">11:15 – 1:15</div>
+    <div class="span5">
+      <h4><a href="/2012/workshop-redis-analytics">The Redis way of Analytics</a></h4>
+      <p>Anoop Thomas</p>
+    </div>
+    <div class="span5">
+    </div>
+  </li>
+  <li class="row-fluid item">
+    <div class="span2">1:30 – 3:00</div>
+    <div class="span5">
+      <h4><a href="/2012/workshop-data-wrangler">Become a Data Wrangler! Learning How to work with Data</a></h4>
+      <p>Laura Newman</p>
+    </div>
+    <div class="span5">
+      <h4><a href="/2012/workshop-data-analysis">The Art of Data Analysis</a></h4>
+      <p>Karthik Shashidhar</p>
+    </div>
+  </li>
+  <li class="row-fluid item">
+    <div class="span2">3:15 – 4:45</div>
+    <div class="span5">
+      <h4><a href="/2012/workshop-openspending">OpenSpending: Data Literacy, Citizen Participation and Government Spending</a></h4>
+      <p>Lucy Chambers</p>
+    </div>
+    <div class="span5">
+      <h4><a href="/2012/workshop-python-viz">Data Visualization with Python</a></h4>
+      <p>Puneeth Chaganti</p>
+    </div>
+  </li>
+  <li class="row-fluid item">
+    <div class="span2">5:00 – 7:00</div>
+    <div class="span5">
+      <h4><a href="/2012/workshop-pig">Hands-on introduction to Pig</a></h4>
+      <p>Prashanth Babu</p>
+    </div>
+    <div class="span5">
+      <h4><a href="/2012/workshop-aws">Using AWS to Process Public Datasets using Elastic Map Reduce and Dynamo DB</a></h4>
+      <p>Joseph Ziegler</p>
+    </div>
+  </li>
+</ul>
+{% endblock %}
+{% block footerscripts %}
+  {% with mapnode = getnode(path=node.properties.get('map')), mapmarker = node.properties.get('mapmarker') %}{% if mapnode %}
+    {{ mapscript(mapnode, mapmarker) }}
+  {%- endif %}{%- endwith %}
+{% endblock %}

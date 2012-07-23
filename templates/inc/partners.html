@@ -27,7 +27,10 @@
           <article class="sponsor-partner sponsor span2">
             <p class="logo"><a data-toggle="modal" href="#partner-aim"><img alt="Analytics India Magazine" src="{{ theme_static('img/2012/partners/analytics-india.png') }}"></a></p>
           </article>
-        </div>
+          <article class="sponsor-partner sponsor span2">
+            <p class="logo"><a data-toggle="modal" href="#partner-cloudstory"><img alt="Cloud Story" src="{{ theme_static('img/2012/partners/cloudstory.png') }}"></a></p>
+          </article>
+          </div>
       </div>
       <div class="span6">
         {% with f = fragment('2012', 'credits-blurb') %}
@@ -93,4 +96,17 @@
       <a data-dismiss="modal" class="btn">Close</a>
     </div>
   </div>
-</section>
+  <div class="modal fade sponsor-box" id="partner-cloudstory">
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">&times;</a>
+      <h3>CloudStory</h3>
+    </div>
+    <div class="modal-body">
+      {{ fragment('2012', 'partner-cloudstory').content }}
+    </div>
+    <div class="modal-footer">
+      <a href="http://cloudstory.in/" class="btn btn-primary sponsor-exit">Vist CloudStory</a>
+      <a data-dismiss="modal" class="btn">Close</a>
+    </div>
+  </div>
+  </section>
