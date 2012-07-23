@@ -70,6 +70,7 @@
       {%- endif %}{%- endwith %}
     {%- endif %}
     <div class="box section">
+      <h3>RSVP</h3>
       {%- if g.user %}
         {%- if node.can_rsvp(g.user) %}
           {%- with status = node.get_status(g.user) %}

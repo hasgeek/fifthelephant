@@ -413,6 +413,9 @@ h1 .h1-the {
   padding: 18px;
   padding-bottom: 6px;
 }
+.box h3:first-child {
+  margin-top: 0;
+}
 
 .box-tight {
   padding: 0;
