@@ -1,0 +1,48 @@
+/* ============== */
+/* = Typography = */
+/* ============== */
+
+
+/*  Families  */
+
+
+
+/*  Scale  */
+
+
+
+/*  Base  */
+
+pre  { word-wrap: normal; overflow: auto; }
+code { font: 0.857em/1  Menlo, Monaco, 'Bitstream Vera Sans Mono', 'Courier New', monospace; }
+pre code { font-family: Menlo, 'Bitstream Vera Sans Mono', Monaco, 'Courier New', monospace; }
+
+
+
+
+/*  Helpers  */
+
+.centered       { text-align: center; }
+.right-aligned  { text-align: right; }
+.left-aligned   { text-align: left; }
+
+.calm           { font-weight: normal; }
+.bold           { font-weight: bold;   }
+.italic         { font-style: italic; }
+.no-italic      { font-style: normal; }
+
+.all-caps       { text-transform: uppercase; }
+.all-lower      { text-transform: lowercase; }
+.strike         { text-decoration: line-through; }
+.no-underline   { text-decoration: none; }
+
+.amp {
+    font-family: 'Hoefler Text', Baskerville, Palatino, 'Book Antiqua', Constantia, 'URW Palladio L';
+    font-style: italic;
+    font-size: 1.2em;
+    line-height: 0.5em;
+}
+.quo  { margin-left: -0.24em; }
+.dquo { margin-left: -0.44em; }
+.tquo { margin-left: -0.68em; }
+

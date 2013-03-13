@@ -1,0 +1,69 @@
+/* ========== */
+/* = Layout = */
+/* ========== */
+
+/* natural box layout model */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+.flushleft      { float: left; }
+.flushright     { float: right;}
+.clearboth      { clear: both; }
+
+.resetcoords    { position: relative; }
+.freeflow       { position: absolute; }
+.freeflow.flushleft     { left: 0; }
+.freeflow.flushright    { right:0; }
+
+.occupy         { display: block; width: 100%; }
+.inline         { display: inline; }
+.inline-block   { display: inline-block; }
+.center-block   { margin-left: auto; margin-right: auto; }
+.right-block    { margin-left: auto; margin-right: 0; }
+.truncate       { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+
+.contain-width  img, img.contain-width  { max-width:  100%; height: auto; }
+.contain-height img, img.contain-height { max-height: 100%; width:  auto; }
+
+.embed-16-9 {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+}
+.embed-16-9 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+/*  H5BP Helpers  */
+
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: h5bp.com/q */ 
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
