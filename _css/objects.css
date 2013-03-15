@@ -1,0 +1,57 @@
+.banner {
+    color: black;
+    background-color: #FFCC66;
+    box-shadow: rgba(0,0,0,0.75) 0 0 3px;
+}
+.banner a.home-link:hover:after {
+    content: "Home";
+    position: absolute;
+    left: 50%;
+    width: 14em;
+    margin: -4em 0 0 -7em;
+    padding: 0.5em 0;
+    color: white;
+    background: #222;
+-webkit-border-radius: 2em;
+        border-radius: 2em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.nav-boxes li {
+    float: left;
+    width: 50%;
+}
+.nav-boxes li.optional { display: none }
+.nav-boxes a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 0;
+    color: #DD0000;
+    border: solid #EEE;
+    border-width: 0 1px 2px;
+}
+.nav-boxes li:first-child a { border-left: none; }
+.nav-boxes li:last-child  a { border-right:none; }
+.nav-boxes .active a { color: gray }
+.nav-boxes .active a {
+    color: black;
+    background-color: #EEE;
+}
+.nav-boxes a:hover {
+    color: white;
+    background-color: #D00;
+    border-color:     #D00;
+    outline: none;
+}
+
+/* Expand the number of items per row as viewport width increases */
+@media only screen and (min-width: 33em) { .nav-boxes li { width: 25%; } }
+@media only screen and (min-width: 43em) { .nav-boxes li { width: 20%; } .nav-boxes li.optional { display: block } }
+
+/* Increase the vertical breathing space as viewport height increases */
+@media only screen and (min-width: 33em) and (min-height: 30em) { .nav-boxes a { padding-top: 1.0rem; padding-bottom: 1.0rem; } }
+@media only screen and (min-width: 43em) and (min-height: 35em) { .nav-boxes a { padding-top: 1.5rem; padding-bottom: 1.5rem; } }
+@media only screen and (min-width: 60em) and (min-height: 40em) { .nav-boxes a { padding-top: 2.0rem; padding-bottom: 2.0rem; } }
+

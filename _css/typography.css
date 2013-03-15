@@ -5,9 +5,32 @@
 
 /*  Families  */
 
+body,
+.body-type      { font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif; }
+h1,
+h2,
+h3,
+h4,
+.title-type     { font-family: bree-serif, Bree Serif, FF Tisa Web Pro, Georgia, serif; }
+.gothic-type    { font-family: league-gothic, League Gothic, HelveticaNeue-CondensedBold, ArialNarrow-Bold, Impact, sans-serif; }
+
+
 
 
 /*  Scale  */
+
+html            { font-size: 14px; line-height: 1.5 }
+
+.huge           { font-size: 2.500rem; line-height: 1.1667; }
+.large          { font-size: 2.000rem; line-height: 1.5000; }
+.legible        { font-size: 1.250rem; line-height: 1.2000; }
+.regular        { font-size: 1.000rem; line-height: 1.5000; }
+
+
+@media only screen and (min-width: 30em) {
+    html        { font-size: 18px; }
+    .huge       { font-size: 3.000rem; line-height: 1.1667; }
+}
 
 
 
@@ -26,6 +49,7 @@ pre code { font-family: Menlo, 'Bitstream Vera Sans Mono', Monaco, 'Courier New'
 .right-aligned  { text-align: right; }
 .left-aligned   { text-align: left; }
 
+.thin           { font-weight: 300; }
 .calm           { font-weight: normal; }
 .bold           { font-weight: bold;   }
 .italic         { font-style: italic; }
