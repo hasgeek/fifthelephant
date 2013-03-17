@@ -3,55 +3,73 @@
     background-color: #FFCC66;
     box-shadow: rgba(0,0,0,0.75) 0 0 3px;
 }
-.banner a.home-link:hover:after {
-    content: "Home";
-    position: absolute;
-    left: 50%;
-    width: 14em;
-    margin: -4em 0 0 -7em;
-    padding: 0.5em 0;
-    color: white;
-    background: #222;
--webkit-border-radius: 2em;
-        border-radius: 2em;
-    text-align: center;
-    text-transform: uppercase;
-}
 
 
-.nav-boxes li {
-    float: left;
-    width: 50%;
+
+.nav-line {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: rgba(200,00,00,0.65);
 }
-.nav-boxes li.optional { display: none }
-.nav-boxes a {
+.nav-line .nav-line-spacer {
+    padding: 0 0.5em;
+    display: inline-block;
+    font-size: 0.85em;
+}
+.nav-line .nav-line-spacer.amp {
     display: block;
-    width: 100%;
-    padding: 0.75rem 0;
-    color: #DD0000;
-    border: solid #EEE;
-    border-width: 0 1px 2px;
+    font-size: 1.5em;
+    line-height: 1;
+    color: rgba(200,00,00,0.65);
 }
-.nav-boxes li:first-child a { border-left: none; }
-.nav-boxes li:last-child  a { border-right:none; }
-.nav-boxes .active a { color: gray }
-.nav-boxes .active a {
+.nav-line a {
+    display: inline-block;
+    width: 8.2rem;
+    text-transform: uppercase;
     color: black;
-    background-color: #EEE;
+    font-style: normal;
+    font-weight: 600;
 }
-.nav-boxes a:hover {
+.nav-line a:hover {
+    font-weight: normal;
     color: white;
-    background-color: #D00;
-    border-color:     #D00;
     outline: none;
 }
 
-/* Expand the number of items per row as viewport width increases */
-@media only screen and (min-width: 33em) { .nav-boxes li { width: 25%; } }
-@media only screen and (min-width: 43em) { .nav-boxes li { width: 20%; } .nav-boxes li.optional { display: block } }
-
-/* Increase the vertical breathing space as viewport height increases */
-@media only screen and (min-width: 33em) and (min-height: 30em) { .nav-boxes a { padding-top: 1.0rem; padding-bottom: 1.0rem; } }
-@media only screen and (min-width: 43em) and (min-height: 35em) { .nav-boxes a { padding-top: 1.5rem; padding-bottom: 1.5rem; } }
-@media only screen and (min-width: 60em) and (min-height: 40em) { .nav-boxes a { padding-top: 2.0rem; padding-bottom: 2.0rem; } }
+@media only screen and (min-width: 30em) { .nav-line { font-size: 1em; line-height: 1.5; } }
+@media only screen and (min-width: 40em) {
+    .nav-line {
+        font-size: 1em;
+        line-height: 1.5;
+        margin: 1.5rem 0;
+    }
+    .nav-line .nav-line-spacer {
+        padding: 0;
+        width: 1.5rem;
+        visibility: hidden;
+    }
+    .nav-line .nav-line-spacer.amp {
+        display: inline-block;
+        position: relative;
+        top: 0.125em;
+        visibility: visible;
+        line-height: 1.5rem;
+    }
+    .nav-line a { width: 7rem; }
+}
+@media only screen and (min-width: 50em) {
+    .nav-line { margin: 2rem 0; }
+    .nav-line .nav-line-spacer { width: 4rem; visibility: visible; }
+    .nav-line .nav-line-spacer.amp {
+        display: inline-block;
+        width: 1.5rem;
+        visibility: visible;
+        font-weight: 300;
+    }
+    .nav-line a { width: 8.2rem; }
+}
+@media only screen and (min-width: 55em) {
+    .nav-line { margin: 3rem 0; font-weight: 300; }
+    .nav-line .nav-line-spacer.amp { font-size: 2em; width: 4rem; }
+}
 

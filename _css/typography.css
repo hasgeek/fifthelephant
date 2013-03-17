@@ -21,6 +21,8 @@ h4,
 
 html            { font-size: 14px; line-height: 1.5 }
 
+
+.massive        { font-size: 9.00rem; line-height: 0.8000; text-rendering: optimizeLegibility; }
 .huge           { font-size: 2.500rem; line-height: 1.1667; }
 .large          { font-size: 2.000rem; line-height: 1.5000; }
 .legible        { font-size: 1.250rem; line-height: 1.2000; }
@@ -30,8 +32,17 @@ html            { font-size: 14px; line-height: 1.5 }
 @media only screen and (min-width: 30em) {
     html        { font-size: 18px; }
     .huge       { font-size: 3.000rem; line-height: 1.1667; }
+    .massive    { font-size: 8.450rem; }
 }
-
+@media only screen and (min-width: 45em) {
+    .massive    { font-size: 9.000rem; }
+}
+@media only screen and (min-width: 50em) {
+    .massive    { font-size: 12.00rem; }
+}
+@media only screen and (min-width: 60em) {
+    .massive    { font-size: 18.00rem; }
+}
 
 
 /*  Base  */
@@ -61,7 +72,7 @@ pre code { font-family: Menlo, 'Bitstream Vera Sans Mono', Monaco, 'Courier New'
 .no-underline   { text-decoration: none; }
 
 .amp {
-    font-family: 'Hoefler Text', Baskerville, Palatino, 'Book Antiqua', Constantia, 'URW Palladio L';
+    font-family: Baskerville, Palatino, 'Book Antiqua', Constantia, 'URW Palladio L';
     font-style: italic;
     font-size: 1.2em;
     line-height: 0.5em;

@@ -17,12 +17,23 @@ a.block-link{ color: inherit; }
 a.block-link:hover { color: white; outline: none; }
 a.block-link-silent:hover { color: inherit; outline: none; background-color: transparent }
 
+hr {
+    display: block; clear: both; height: 0; margin: 0; padding: 0;
+    
+    border: none;
+    border-top: 1px solid #000;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid #FFF;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    
+    filter: alpha(opacity = 30);
+}
 
 
 
 /*  Colours  */
 
 .faded      { color: #666666 !important; }
-.ultrafaded { color: #B0B0B0 !important; }
+.ultrafaded { color: rgba(0,0,0,0.3) !important; }
 
 
