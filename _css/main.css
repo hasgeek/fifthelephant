@@ -33,7 +33,7 @@ hr {
 
 /*  Colours  */
 
-.faded      { color: #666666 !important; }
-.ultrafaded { color: rgba(0,0,0,0.3) !important; }
+.faded      { color: rgba(0,0,0,0.6) !important; }
+.ultrafaded { color: rgba(0,0,0,0.35) !important; }
 
 
