@@ -12,7 +12,7 @@
     color: rgba(200,00,00,0.65);
 }
 .nav-line .nav-line-spacer {
-    padding: 0 0.5em;
+    padding: 0 0.3em;
     display: inline-block;
     font-size: 1.1em;
 }
@@ -20,6 +20,8 @@
     display: block;
     font-size: 1.5em;
     line-height: 1;
+    position: relative;
+    top: 0.1em;
     color: rgba(200,00,00,0.5);
 }
 .nav-line a {
@@ -46,24 +48,19 @@
     .nav-line .nav-line-spacer {
         padding: 0;
         width: 1.5rem;
-        visibility: hidden;
+        text-indent: -999em;
+        overflow: hidden;
     }
-    .nav-line .nav-line-spacer.amp {
-        display: inline-block;
-        position: relative;
-        top: 0.15em;
-        visibility: visible;
-        line-height: 1.5rem;
-    }
+    .nav-line .nav-line-spacer.amp { display: inline-block; }
     .nav-line a { width: 7rem; }
 }
 @media only screen and (min-width: 50em) {
     .nav-line { margin: 2rem 0; }
-    .nav-line .nav-line-spacer { width: 4rem; visibility: visible; }
+    .nav-line .nav-line-spacer { width: 4rem; text-indent: 0; }
     .nav-line .nav-line-spacer.amp {
-        display: inline-block;
         width: 1.5rem;
-        visibility: visible;
+        top: 0.15em;
+        line-height: 1.5rem;
         font-weight: 300;
     }
     .nav-line a { width: 8rem; }
