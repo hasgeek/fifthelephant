@@ -11,11 +11,15 @@ body {
 }
 
 a,
-a:visited   { color: #06E; text-decoration: none; }
-a:hover     { color: #FFF; background-color: black; outline: 0.3em solid black; }
+a:visited   { color: inherit; text-decoration: none; }
+a:hover     {
+    color: #FFF !important;
+    background-color:    rgba(0,0,0,0.5);
+    outline: 0.3em solid rgba(0,0,0,0.5);
+}
 a.block-link{ color: inherit; }
 a.block-link:hover { color: white; outline: none; }
-a.block-link-silent:hover { color: inherit; outline: none; background-color: transparent }
+a.link-silent-hover:hover { color: inherit !important; outline: none; background-color: transparent }
 
 hr {
     display: block; clear: both; height: 0; margin: 0; padding: 0;
@@ -35,5 +39,9 @@ hr {
 
 .faded      { color: rgba(0,0,0,0.6) !important; }
 .ultrafaded { color: rgba(0,0,0,0.35) !important; }
+img.ultrafaded { opacity: 0.35 }
 
 
+
+a.link-unfade-hover:hover,
+.link-unfade-hover:hover img.ultrafaded { opacity: 1; }

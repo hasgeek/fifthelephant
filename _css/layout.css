@@ -131,6 +131,8 @@ dl dd { margin-left: 0; }
 .gap-one,    .gap-one-right     { margin-right:   1.0rem !important; }
 .gap-half,   .gap-half-left     { margin-left:    0.5rem !important; }
 .gap-half,   .gap-half-right    { margin-right:   0.5rem !important; }
+.gap-1q,     .gap-1q-left       { margin-left:    0.25rem!important; }
+.gap-1q,     .gap-1q-right      { margin-right:   0.25rem!important; }
 
 
 
