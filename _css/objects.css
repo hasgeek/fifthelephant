@@ -115,3 +115,32 @@
     .bio-columns li:nth-of-type(3n+1) { margin-right: 0; clear: none }
     .bio-columns h4 { font-size: 0.7em; }
 }
+
+
+
+.button,
+a.button {
+    display: inline-block;
+    font-size: 0.9em;
+    padding: 0.6em 2em;
+    border-radius: 0.2em;
+    background: rgba(200,0,0,0.9);
+    color: white;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    word-spacing: 0.15em;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.4);
+}
+.button:hover,
+a.button:hover {
+    outline: none;
+    background: black;
+}
+.button:active,
+a.button:active {
+    background: #444;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.9);
+}
+
+
