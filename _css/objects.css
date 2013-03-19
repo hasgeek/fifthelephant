@@ -70,3 +70,11 @@
     .nav-line .nav-line-spacer.amp { font-size: 2em; width: 3rem; }
 }
 
+
+
+.prose a {
+    color: #D44;
+    text-decoration: underline;
+}
+
+
