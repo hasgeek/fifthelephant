@@ -11,15 +11,18 @@ body {
 }
 
 a,
-a:visited   { color: inherit; text-decoration: none; }
+a:visited   { 
+    color: #D44;
+    text-decoration: none;
+    border-bottom: 1px dotted #D44;
+}
 a:hover     {
-    color: #FFF !important;
-    background-color:    rgba(0,0,0,0.5);
-    outline: 0.3em solid rgba(0,0,0,0.5);
+    border-bottom: 2px solid #D44;
 }
 a.block-link{ color: inherit; }
 a.block-link:hover { color: white; outline: none; }
-a.link-silent-hover:hover { color: inherit !important; outline: none; background-color: transparent }
+a.link-silent-hover:hover { color: inherit !important; outline: none !important; background-color: transparent !important; }
+a.link-white-hover:hover  { color: #FFF !important; }
 
 hr {
     display: block; clear: both; height: 0; margin: 0; padding: 0;
