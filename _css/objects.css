@@ -4,7 +4,7 @@
     box-shadow: rgba(0,0,0,0.75) 0 0 3px;
 }
 .banner a,
-.banner a:visited   { color: inherit; text-decoration: none; border: 0; }
+.banner a:visited   { color: black; text-decoration: none; border: 0; }
 .banner a:hover     {
     border: 0;
     background-color:    rgba(0,0,0,0.5);
@@ -309,8 +309,92 @@ a.button:active {
 }
 @media only screen and (min-width: 50em) {
     .videos-2012 li { width: 25% }
-    .videos-2012 li:nth-of-type(2n+2) { margin-right: 0;  }
+    .videos-2012 li:nth-of-type(2n+2) { margin-right: 0; }
     .videos-2012 li:nth-of-type(2n+1) { margin-right: 0; clear: none }
     .videos-2012 h4 { font-size: 0.7em; }
 }
 
+.ticket-options { max-width: 25em; }
+.ticket-options li { 
+    margin: 0 .5rem;
+    padding: 1rem;
+    opacity: .5;
+    clear: both;
+    position: relative;
+}
+.ticket-options li + li { border-top: 1px solid #EEE; }
+.ticket-options h3  { 
+    margin: .125em 0;
+    float: left;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.ticket-options p   { margin: 0; }
+.ticket-options li.closed {
+    opacity: 1;
+    color: rgba(0,0,0,0.3);
+    margin: 1rem 0;
+}
+.ticket-options li.closed .dates { color: rgba(0,0,0,0.3); }
+.ticket-options li.closed:before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50%;
+    margin-top: -1rem;
+    width: 100%;
+    height: 2rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    content: 'SOLD OUT';
+    text-align: center;
+    font-family: bree-serif, Bree Serif, FF Tisa Web Pro, Georgia, serif;
+    color: #D44;
+    -webkit-transform: rotate(-10deg);
+       -moz-transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+         -o-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  
+}
+.ticket-options li.active { 
+    opacity: 1;
+    padding: 0;
+}
+.ticket-options .price { 
+    float: right;
+    font-size: 1.5rem;
+}
+.ticket-options .dates { 
+    float: left; 
+    clear: both;
+    color: rgba(0,0,0,0.75);
+    font-size: .9rem;
+}
+.ticket-options a {
+    position: relative;
+    display: block;
+    color: black;
+    border: 0;
+    padding: 1.25rem 1rem;
+    background-color: #FFCC66;
+    border-radius: 0.2em;
+    text-decoration: none;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.4);
+}
+.ticket-options li.active a:before {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    content: 'BUY NOW';
+    text-align: center;
+    font-family: bree-serif, Bree Serif, FF Tisa Web Pro, Georgia, serif;
+    color: #D44;
+}
+.ticket-options a:hover,
+.ticket-options a:hover .dates { 
+    background-color: #222; color: #F6F6F6;
+}

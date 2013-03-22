@@ -27,6 +27,7 @@ html            { font-size: 14px; line-height: 1.5 }
 .large          { font-size: 2.000rem; line-height: 1.5000; }
 .legible        { font-size: 1.250rem; line-height: 1.5000; }
 .regular        { font-size: 1.000rem; line-height: 1.5000; }
+.secondary      { font-size:  .800rem; line-height: 1.3000; }
 
 
 @media only screen and (min-width: 30em) {
