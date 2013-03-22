@@ -110,31 +110,31 @@
     .bio-columns h4 { font-size: 0.7em; }
 }
 
-.numbers-2012 { margin: -8.5rem 0 0; top: 50%; background-color: rgba(0,0,0,.7); z-index: 100; }
-.numbers-2012 li { margin: 1rem 0; }
-.numbers-2012 li.numbers-2012-participants:after { 
+.last-year .band { margin: -10.85714rem 0 0; top: 50%; background-color: rgba(0,0,0,.7); z-index: 100; }
+.last-year .band li { margin: 1rem 0; }
+.last-year .band li.numbers-2012-participants:after { 
     content: normal;
     margin: 0;
 }
 @media only screen and (min-width: 44em) {
-    .numbers-2012 { margin: -5.25rem 0 0; }
-    .numbers-2012 li { margin: 2rem 0; width: 40%; display: inline-block; }
-    .numbers-2012 li.numbers-2012-days          { text-align: right; margin-bottom: .5rem; }
-    .numbers-2012 li.numbers-2012-tracks        { text-align: left; margin-bottom: .5rem; }
-    .numbers-2012 li.numbers-2012-sessions      { text-align: right; margin-top: .5rem; }
-    .numbers-2012 li.numbers-2012-participants  { text-align: left; margin-top: .5rem; }
-    .numbers-2012 li.numbers-2012-tracks:after  { content: normal; margin: 0; }
-    .numbers-2012 li:after { 
+    .last-year .band     { margin: -7.111rem 0 0; }
+    .last-year .band li  { margin: 1rem 0 .5rem; width: 40%; display: inline-block; }
+    .last-year .band li.numbers-2012-days          { text-align: right; margin-bottom: .5rem; }
+    .last-year .band li.numbers-2012-tracks        { text-align: left; margin-bottom: .5rem; }
+    .last-year .band li.numbers-2012-sessions      { text-align: right; margin-top: .5rem; }
+    .last-year .band li.numbers-2012-participants  { text-align: left; margin-top: .5rem; }
+    .last-year .band li.numbers-2012-tracks:after  { content: normal; margin: 0; }
+    .last-year .band li:after { 
         content: '\2022';
         font-size: 2rem;
         margin: 0 .3rem 0 .7rem;
     }
-    .numbers-2012 li.numbers-2012-days { display: inline-block; }
+    .last-year .band li.numbers-2012-days { display: inline-block; }
 }
 @media only screen and (min-width: 55em) {
-    .numbers-2012 { margin: -3rem 0 0; }
-    .numbers-2012 li { width: auto; }
-    .numbers-2012 li.numbers-2012-tracks:after { 
+    .last-year .band { margin: -5.1875rem 0 0; }
+    .last-year .band li { width: auto; margin: 0 0 .5rem !important; }
+    .last-year .band li.numbers-2012-tracks:after { 
         content: '\2022';
         font-size: 2rem;
         margin: 0 .3rem 0 .7rem;
@@ -173,20 +173,18 @@ a.button:active {
     padding: 0;
     margin: 0;
     z-index: 10;
-    min-height: 25em;
+    min-height: 40em;
     background-image: url(http://farm9.staticflickr.com/8435/7851360194_1fab697a2b_c_d.jpg);
     background-size: auto 100%;
     background-position: 50% 70%;
     background-repeat: no-repeat;
 }
-@media only screen and (min-width: 42em) {
+@media only screen and (min-width: 60em) {
     .flipboard { 
         background-image: url(http://farm9.staticflickr.com/8435/7851360194_c505cc357e_h_d.jpg);
-        background-size: 100%; 
+        background-size: 100%;
+        min-height: 35em;
     }
-}
-@media only screen and (min-width: 51em) {
-    .flipboard { min-height: 30em; }
 }
 .flipboard.playing {
     background-image: none;
