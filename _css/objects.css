@@ -314,42 +314,57 @@ a.button:active {
     .videos-2012 h4 { font-size: 0.7em; }
 }
 
-.ticket-options { max-width: 25em; }
-.ticket-options li { 
+.tickets { background: #F5F5F5; }
+.tickets-general .tickets-general-split { width: auto; float: none; }
+.tickets-general .tickets-general-group { background: white; border: 1px solid #EEE; }
+@media only screen and (min-width: 25em) {
+  .tickets-general .tickets-general-split { max-width: 25em; margin: 0 auto; }
+}
+@media only screen and (min-width: 58em) {
+    .tickets-general .tickets-general-split { width: 50%; max-width: none; margin: auto; }
+    .tickets-general .tickets-general-split.left  { float: left; }  
+    .tickets-general .tickets-general-split.right { float: right; }  
+    .tickets-general .tickets-general-split.left .tickets-general-group { float: right; }  
+    .tickets-general .tickets-general-split.right .tickets-general-group{ float: left; }  
+    .tickets-general .tickets-general-group { width: 100%; max-width: 22em; }
+}
+
+.ticket-options li {
     margin: 0 .5rem;
     padding: 1rem;
-    opacity: .5;
+    color: rgba(0,0,0,0.5);
     clear: both;
     position: relative;
 }
 .ticket-options li + li { border-top: 1px solid #EEE; }
-.ticket-options h3  { 
+.ticket-options h3 {
+    font-size: 1em;
     margin: .125em 0;
     float: left;
     font-weight: normal;
-    text-transform: uppercase;
+    text-transform: capitalize;
+    width: 12em;
 }
 .ticket-options p   { margin: 0; }
-.ticket-options li.closed {
-    opacity: 1;
-    color: rgba(0,0,0,0.3);
-    margin: 1rem 0;
-}
+.ticket-options li.closed { color: rgba(0,0,0,0.3); }
 .ticket-options li.closed .dates { color: rgba(0,0,0,0.3); }
 .ticket-options li.closed:before {
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-left: -50%;
+    margin-left: -2.5em;
     margin-top: -1rem;
-    width: 100%;
+    padding: 0;
+    width: 5em;
     height: 2rem;
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 1em;
+    line-height: 1.7em;
     content: 'SOLD OUT';
     text-align: center;
     font-family: bree-serif, Bree Serif, FF Tisa Web Pro, Georgia, serif;
     color: #D44;
+    border-top: 3px solid #D44;
+    border-bottom: 3px solid #D44;
     -webkit-transform: rotate(-10deg);
        -moz-transform: rotate(-10deg);
         -ms-transform: rotate(-10deg);
@@ -363,13 +378,13 @@ a.button:active {
 }
 .ticket-options .price { 
     float: right;
-    font-size: 1.5rem;
+    font-size: 1em;
 }
 .ticket-options .dates { 
     float: left; 
     clear: both;
-    color: rgba(0,0,0,0.75);
-    font-size: .9rem;
+    color: rgba(0,0,0,0.4);
+    font-size: .7em;
 }
 .ticket-options a {
     position: relative;
@@ -398,3 +413,4 @@ a.button:active {
 .ticket-options a:hover .dates { 
     background-color: #222; color: #F6F6F6;
 }
+.ticket-options a.button { font-size: .8em; }
