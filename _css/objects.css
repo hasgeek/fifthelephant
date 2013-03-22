@@ -255,6 +255,7 @@ a.button:active {
     padding: 0 2%;
     margin: 1rem 0;
 }
+.videos-2012 li:nth-of-type(2n+1) { clear: both; }
 .videos-2012 .poster { 
     position: relative;
     margin: 0 0 0.5em;
@@ -301,8 +302,8 @@ a.button:active {
 }
 
 @media only screen and (min-width: 30em) {
-    .videos-2012 li:nth-of-type(2n+2) { margin-right: 0;  }
-    .videos-2012 li:nth-of-type(2n+1) { margin-right: 0; clear: both }
+    .videos-2012 li:nth-of-type(2n+2) { margin-right: 0; }
+    .videos-2012 li:nth-of-type(2n+1) { margin-right: 0; }
     .videos-2012 h3 { font-size: 1em; }
     .videos-2012 h4 { font-size: 0.85em; }
 }
