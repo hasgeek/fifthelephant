@@ -315,18 +315,23 @@ a.button:active {
 }
 
 .tickets { background: #F5F5F5; }
-.tickets-general .tickets-general-split { width: auto; float: none; }
-.tickets-general .tickets-general-group { background: white; border: 1px solid #EEE; }
+.tickets h2 { font-size: 1.3rem; }
+.tickets h3 { font-size: 1.1rem; }
+@media only screen and (max-width: 30em) {
+    .tickets h2 { color: rgba(0,0,0,.6); }
+}
+.tickets-split { width: auto; float: none; }
 @media only screen and (min-width: 25em) {
-  .tickets-general .tickets-general-split { max-width: 25em; margin: 0 auto; }
+    .tickets-box { background: white; border: 1px solid #EEE; }
+    .tickets-split { max-width: 25em; margin: 0 auto; }
 }
 @media only screen and (min-width: 58em) {
-    .tickets-general .tickets-general-split { width: 50%; max-width: none; margin: auto; }
-    .tickets-general .tickets-general-split.left  { float: left; }  
-    .tickets-general .tickets-general-split.right { float: right; }  
-    .tickets-general .tickets-general-split.left .tickets-general-group { float: right; }  
-    .tickets-general .tickets-general-split.right .tickets-general-group{ float: left; }  
-    .tickets-general .tickets-general-group { width: 100%; max-width: 22em; }
+    .tickets-split { width: 50%; max-width: none; margin: auto; }
+    .tickets-workshop  { float: left; }  
+    .tickets-conference { float: right; }  
+    .tickets-workshop .tickets-group { float: right; }  
+    .tickets-conference .tickets-group{ float: left; }  
+    .tickets-box { width: 100%; max-width: 22em; }
 }
 
 .ticket-options li {
@@ -337,17 +342,21 @@ a.button:active {
     position: relative;
 }
 .ticket-options li + li { border-top: 1px solid #EEE; }
+.ticket-options li.active + li { border-top: 0; }
 .ticket-options h3 {
-    font-size: 1em;
+    font-size: 1.1rem;
     margin: .125em 0;
     float: left;
     font-weight: normal;
     text-transform: capitalize;
     width: 12em;
 }
+@media only screen and (max-width: 30em) {
+    .ticket-options h3 { width: 8em; }    
+}
 .ticket-options p   { margin: 0; }
-.ticket-options li.closed { color: rgba(0,0,0,0.3); }
-.ticket-options li.closed .dates { color: rgba(0,0,0,0.3); }
+.ticket-options li.closed { color: rgba(0,0,0,0.2); }
+.ticket-options li.closed .dates { color: rgba(0,0,0,0.2); }
 .ticket-options li.closed:before {
     position: absolute;
     left: 50%;
@@ -362,9 +371,9 @@ a.button:active {
     content: 'SOLD OUT';
     text-align: center;
     font-family: bree-serif, Bree Serif, FF Tisa Web Pro, Georgia, serif;
-    color: #D44;
-    border-top: 3px solid #D44;
-    border-bottom: 3px solid #D44;
+    color: #E99D9D;
+    border-top: 3px solid #E99D9D;
+    border-bottom: 3px solid #E99D9D;
     -webkit-transform: rotate(-10deg);
        -moz-transform: rotate(-10deg);
         -ms-transform: rotate(-10deg);
@@ -384,7 +393,7 @@ a.button:active {
     float: left; 
     clear: both;
     color: rgba(0,0,0,0.4);
-    font-size: .7em;
+    font-size: .85rem;
 }
 .ticket-options a {
     position: relative;
@@ -400,12 +409,13 @@ a.button:active {
 .ticket-options li.active a:before {
     position: absolute;
     right: 1rem;
-    bottom: 1rem;
-    padding: 0 1rem;
+    bottom: .8rem;
+    padding: 0;
     font-size: 1rem;
     line-height: 2rem;
+    width: 5rem;
+    text-align: right;
     content: 'BUY NOW';
-    text-align: center;
     font-family: bree-serif, Bree Serif, FF Tisa Web Pro, Georgia, serif;
     color: #D44;
 }
@@ -413,4 +423,6 @@ a.button:active {
 .ticket-options a:hover .dates { 
     background-color: #222; color: #F6F6F6;
 }
-.ticket-options a.button { font-size: .8em; }
+@media only screen and (max-width: 30em) {
+  .tickets a.button { font-size: .8em; }
+}
