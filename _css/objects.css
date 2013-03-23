@@ -200,7 +200,7 @@ a.button:active {
 .ticket h2 { margin: 0.5em }
 .ticket ul { padding: 0 2em 0 2.55em;  }
 .ticket ul li { list-style-type: circle; margin: 0.25rem 0 }
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 35em) {
     .ticket-columns {
         margin-left:  5%;
         margin-right: 5%;
@@ -208,23 +208,46 @@ a.button:active {
     }
     .ticket-columns > li {
         float: left;
-        width: 33%;
+        width: 50%;
         margin: 0;
         border-width: 0;
     }
+    .ticket-columns > li:nth-child(2) { border-width: 0 0 0 1px }
+    .ticket-columns > li:nth-child(2) hgroup { border: solid white; border-width: 0 1px 0 0 }
+    .ticket-columns > li:nth-child(3) { width: 100% }
+    
+    .ticket ul { min-height: 7em; }
+    .ticket-columns > li:nth-child(3) .ticket ul {
+        -webkit-column-gap: 3em;
+           -moz-column-gap: 3em;
+                column-gap: 3em;
+        -webkit-column-count: 2;
+           -moz-column-count: 2;
+                column-count: 2;
+        min-height: 5em;
+    }
+}
+@media only screen and (min-width: 50em) {
+    .ticket-columns > li { width: 33%; }
     .ticket-columns > li + li { border-width: 0 0 0 1px }
-    .ticket-columns > li:nth-of-type(3n+2) { width: 34% }
-    .ticket-columns > li:nth-of-type(3n+2) hgroup { border: solid white; border-width: 0 1px }
-    .ticket-columns > li:nth-of-type(3n+3) { float: right }
+    .ticket-columns > li:nth-child(2) { width: 34% }
+    .ticket-columns > li:nth-child(2) hgroup { border-width: 0 1px }
+    .ticket-columns > li:nth-child(3) { float: right; width: 33% }
     
     .ticket h2 { margin: 0.83em }
     .ticket ul {
-        margin-left:  7%;
-        margin-right: 7%;
-        min-height: 7em;
+        margin-left:  1%;
+        margin-right: 1%;
+        min-height: 10.5em;
+    }
+    .ticket-columns > li:nth-child(3) .ticket ul {
+        -webkit-column-count: 1;
+        -webkit-column-gap: 0;
+        min-height: 10.5em;
     }
 }
-
+@media only screen and (min-width: 59em) { .ticket ul { min-height: 9em !important; } }
+@media only screen and (min-width: 62em) { .ticket ul { min-height: 7.5em !important; } }
 
 
 .last-year .band { margin: -10.85714rem 0 0; top: 50%; background-color: rgba(0,0,0,.7); z-index: 100; }
