@@ -36,8 +36,6 @@ hr {
     filter: alpha(opacity = 30);
 }
 
-.elastic img,
-img.elastic { max-width: 100%; height: auto; }
 
 
 /*  Colours  */
