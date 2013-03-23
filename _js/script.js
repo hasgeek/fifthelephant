@@ -1,14 +1,19 @@
-/* Empty */
 
-function main () {
+
+function setupFlipboard () {
     active_board = new Flipboard();
     active_board.setup(true);
-        
+    
     $('.flipboard').bind('inview', function (event, visible) {
         if (visible == true) active_board.start();
         else active_board.stop();
     });
-        
+    
+}
+
+
+function main () {
+    setupFlipboard();
 }
 
 
