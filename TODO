@@ -17,4 +17,5 @@ Production
 
 Issues
 ------
-Nil.
+- Resizing the window to smaller widths makes the flipboard images overflow
+
