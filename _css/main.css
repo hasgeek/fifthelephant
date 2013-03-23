@@ -44,6 +44,7 @@ hr {
 img.ultrafaded { opacity: 0.35 }
 
 .fill-fixme     { background-color: rgba(255,255,0,0.3) }
+.fill-light     { background-color: #EEE }
 .fill-silver    { background-color: #DDD }
 .fill-dark      { background-color: #222; color: #F6F6F6 }
 .fill-white     { background-color: #FFF; color: #222222 }

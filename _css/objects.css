@@ -186,23 +186,44 @@ a.button:active {
 }
 
 
-
-.ticket {
-    border: 2px solid #4D4;
-    padding: 0 1.5rem 0;
-    min-height: 15em;
+.ticket-columns { border: 0 solid #4D4; }
+.ticket-columns > li {
+    margin: 2rem;
+    border: 1px solid #4D4;
 }
-.ticket h2 {
+
+.ticket hgroup {
     background-color: #4D4;
     color: white;
-    text-align: center;
-    font-weight: 600;
-    padding: 0.5rem 0;
-    margin: 0 -1.5rem 1.5rem;
+    padding: 1rem 0;
 }
-.ticket h4 { font-size: 0.85em }
-.ticket ul { padding-left: 0.55em }
-.ticket ul li { list-style-type: circle; }
+.ticket h2 { margin: 0.5em }
+.ticket ul { padding: 0 2em 0 2.55em;  }
+.ticket ul li { list-style-type: circle; margin: 0.25rem 0 }
+@media only screen and (min-width: 50em) {
+    .ticket-columns {
+        margin-left:  5%;
+        margin-right: 5%;
+        border-width: 1px;
+    }
+    .ticket-columns > li {
+        float: left;
+        width: 33%;
+        margin: 0;
+        border-width: 0;
+    }
+    .ticket-columns > li + li { border-width: 0 0 0 1px }
+    .ticket-columns > li:nth-of-type(3n+2) { width: 34% }
+    .ticket-columns > li:nth-of-type(3n+2) hgroup { border: solid white; border-width: 0 1px }
+    .ticket-columns > li:nth-of-type(3n+3) { float: right }
+    
+    .ticket h2 { margin: 0.83em }
+    .ticket ul {
+        margin-left:  7%;
+        margin-right: 7%;
+        min-height: 7em;
+    }
+}
 
 
 
