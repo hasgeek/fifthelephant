@@ -108,37 +108,44 @@ a.button:active {
 
 
 
-.bio-columns { padding: 0 1rem; }
-.bio-columns li {
+.thumbnail-columns { padding: 0 1rem; }
+.thumbnail-columns li {
     float: left;
     width: 50%;
     padding: 0 2%;
     margin: 1rem 0;
 }
-.bio-columns .avatar { margin: 0 0 0.5em; }
-.bio-columns .avatar img { box-shadow: 0 0 5px rgba(0,0,0,0.3); }
-.bio-columns h3 {
+.thumbnail-columns li:nth-of-type(odd) { clear: both }
+.thumbnail-columns .avatar { margin: 0 0 0.5em; }
+.thumbnail-columns .avatar img { box-shadow: 0 0 5px rgba(0,0,0,0.3); }
+.thumbnail-columns h3 {
     margin: 0;
     font-weight: normal;
 }
-.bio-columns h4 {
+.thumbnail-columns h4 {
     margin: 0;
     font-weight: normal;
     text-transform: uppercase;
 }
 @media only screen and (min-width: 30em) {
-    .bio-columns li { width: 30% }
-    .bio-columns li:nth-of-type(3n+2) { margin-right: 3%;  }
-    .bio-columns li:nth-of-type(3n+1) { margin-right: 3%; clear: both }
-    .bio-columns h3 { font-size: 1em; }
-    .bio-columns h4 { font-size: 0.85em; }
+    .thumbnail-columns-five li { width: 30%; }
+    .thumbnail-columns-five li:nth-of-type(odd)  { clear: none }
+    .thumbnail-columns-five li:nth-of-type(3n+2) { margin-right: 3%; }
+    .thumbnail-columns-five li:nth-of-type(3n+1) { margin-right: 3%; clear: both }
+    
+    .thumbnail-columns h3 { font-size: 1em; }
+    .thumbnail-columns h4 { font-size: 0.85em; }
 }
 @media only screen and (min-width: 50em) {
-    .bio-columns li { width: 20% }
-    .bio-columns li:nth-of-type(3n+2) { margin-right: 0;  }
-    .bio-columns li:nth-of-type(3n+1) { margin-right: 0; clear: none }
-    .bio-columns h4 { font-size: 0.7em; }
+    .thumbnail-columns-five li { width: 20% }
+    .thumbnail-columns-five li:nth-of-type(3n+2) { margin-right: 0;  }
+    .thumbnail-columns-five li:nth-of-type(3n+1) { margin-right: 0; clear: none }
+    .thumbnail-columns-five li:nth-of-type(5n+1) { clear: both }
+    
+    .thumbnail-columns h4 { font-size: 0.7em; }
 }
+
+
 
 .last-year .band { margin: -10.85714rem 0 0; top: 50%; background-color: rgba(0,0,0,.7); z-index: 100; }
 .last-year .band li { margin: 1rem 0; }
