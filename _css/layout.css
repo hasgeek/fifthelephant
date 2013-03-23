@@ -76,6 +76,8 @@ dl dd { margin-left: 0; }
 .measure-10words    { max-width: 32em; }
 .measure-8words     { max-width: 30em; }
 
+.min-measure-3words { min-width: 13em; }
+
 
 
 /*  Margins  */
