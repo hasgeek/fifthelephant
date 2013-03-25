@@ -186,14 +186,14 @@ a.button:active {
 }
 
 
-.ticket-columns { border: 0 solid #4D4; }
+.ticket-columns { border: 0 solid #5C5; }
 .ticket-columns > li {
     margin: 2rem;
-    border: 1px solid #4D4;
+    border: 1px solid #5C5;
 }
 
 .ticket hgroup {
-    background-color: #4D4;
+    background-color: #5C5;
     color: white;
     padding: 1rem 0;
 }
