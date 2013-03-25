@@ -200,6 +200,7 @@ a.button:active {
 .ticket h2 { margin: 0.5em }
 .ticket ul { padding: 0 2em 0 2.55em;  }
 .ticket ul li { list-style-type: circle; margin: 0.25rem 0 }
+.ticket-note  { max-width: 60%; }
 @media only screen and (min-width: 35em) {
     .ticket-columns {
         margin-left:  5%;
@@ -226,6 +227,7 @@ a.button:active {
                 column-count: 2;
         min-height: 5em;
     }
+    .ticket-note  { max-width: none; }
 }
 @media only screen and (min-width: 50em) {
     .ticket-columns > li { width: 33%; }
