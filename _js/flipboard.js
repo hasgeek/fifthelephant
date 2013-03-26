@@ -29,6 +29,7 @@ function Flipboard () {
         , card_template = _.template($(CARD_TEMPLATE).html())
         , shuffled_photos = []
         , shuffled_cards = []
+        , ready = false
         , flipper
         , animator
         , animation_queue = []
@@ -104,6 +105,7 @@ function Flipboard () {
                     if (count_loaded_images >= columns * rows) {
                         for (var i = count_loaded_images-1; i >= 0; i--)
                             flip_card(cards[i], false, images[i]);
+                        ready = true;
                         start_flipping();
                     }
                 });
@@ -120,7 +122,7 @@ function Flipboard () {
         // reset card flipper
         shuffled_cards = [];
         
-        if(start_flips) start_flipping();
+        if(start_flips && ready) start_flipping();
     }
     
     function get_random_photo () {
