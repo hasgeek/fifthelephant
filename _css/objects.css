@@ -189,7 +189,8 @@ a.button:active {
 .ticket-columns { border: 0 solid #5C5; }
 .ticket-columns > li {
     margin: 2rem;
-    border: 1px solid #5C5;
+    border: solid #5C5;
+    border-width: 0 1px 1px 1px;
 }
 
 .ticket hgroup {
@@ -205,17 +206,15 @@ a.button:active {
     .ticket-columns {
         margin-left:  5%;
         margin-right: 5%;
-        border-width: 1px;
     }
     .ticket-columns > li {
         float: left;
         width: 50%;
         margin: 0;
-        border-width: 0;
     }
-    .ticket-columns > li:nth-child(2) { border-width: 0 0 0 1px }
-    .ticket-columns > li:nth-child(2) hgroup { border: solid white; border-width: 0 1px 0 0 }
-    .ticket-columns > li:nth-child(3) { width: 100% }
+    .ticket-columns > li:nth-child(2) { border-width: 0 1px 1px 0; }
+    .ticket-columns > li:nth-child(2) hgroup { border: solid white; border-width: 0 0 0 1px; margin-left: -1px; }
+    .ticket-columns > li:nth-child(3) { width: 100%; }
     
     .ticket ul { min-height: 7em; }
     .ticket-columns > li:nth-child(3) .ticket ul {
@@ -230,11 +229,11 @@ a.button:active {
     .ticket-note  { max-width: none; }
 }
 @media only screen and (min-width: 50em) {
-    .ticket-columns > li { width: 33%; }
-    .ticket-columns > li + li { border-width: 0 0 0 1px }
-    .ticket-columns > li:nth-child(2) { width: 34% }
-    .ticket-columns > li:nth-child(2) hgroup { border-width: 0 1px }
-    .ticket-columns > li:nth-child(3) { float: right; width: 33% }
+    .ticket-columns > li { width: 33%; border-width: 0 1px 1px 1px; }
+    .ticket-columns > li + li { border-width: 0 1px 1px 0; }
+    .ticket-columns > li:nth-child(2) { width: 34%; }
+    .ticket-columns > li:nth-child(2) hgroup { border-width: 0 1px; margin: 0 -1px; }
+    .ticket-columns > li:nth-child(3) { float: left; width: 33% }
     
     .ticket h2 { margin: 0.83em }
     .ticket ul {
