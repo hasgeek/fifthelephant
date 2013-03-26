@@ -25,6 +25,7 @@ function Flipboard () {
         , $board = $(FLIPBOARD_SELECTOR)
         , $parent = $(window)
         , cards = []
+        , images = []
         , card_template = _.template($(CARD_TEMPLATE).html())
         , shuffled_photos = []
         , shuffled_cards = []
@@ -77,20 +78,37 @@ function Flipboard () {
     }
     
     function reset_cards () {
-        var $card;
+        
+        var   $card
+            , count_loaded_images = 0
+            , dfd = $.Deferred()
+            ;
         
         // add new cards
         while (cards.length < columns * rows) {
+            
+            var image = new Image();
             $card = $(card_template())
             
             $board.append($card);
             cards[cards.length] = $card[0];
+            images[cards.length-1] = image;
             
             // opacity fallback for older browsers — hide back faces when cards reset
             !Modernizr.csstransforms3d &&
             $(BACK_FACE, $card[0]).hide();
             
-            flip_card($card[0]);
+            if(!flipper) {
+                $(image).load(function() { 
+                    count_loaded_images++;
+                    if (count_loaded_images >= columns * rows) {
+                        for (var i = count_loaded_images-1; i >= 0; i--) 
+                            flip_card(cards[i], false, images[i]);
+                        dfd.resolve();
+                    }
+                });
+                image.src = get_random_photo();
+            } else flip_card($card[0]);
         }
         
         // discard unused cards
@@ -101,6 +119,8 @@ function Flipboard () {
         
         // reset card flipper
         shuffled_cards = [];
+        
+        return dfd.promise();
     }
     
     function get_random_photo () {
@@ -115,13 +135,13 @@ function Flipboard () {
         return shuffled_cards.shift();
     }
     
-    function flip_card (card, close_card) {
+    function flip_card (card, close_card, img) {
         
         // close card or flip over with a new image
         close_card = !!close_card;
         
         var   $frame = $(FRAME_SELECTOR, card || get_random_card())
-            , image = (close_card ? null : new Image())
+            , image = (close_card ? null : (img ? img : new Image()))
             , transition
             ;
         
@@ -159,10 +179,10 @@ function Flipboard () {
             });
         }
         
-        if (image) {
+        if (image && image.src) flip();
+        else if (image) {
             $(image).load(flip);
             image.src = get_random_photo();
-            
         } else flip();
         
     }
@@ -185,6 +205,7 @@ function Flipboard () {
     
     function start_flipping () {
         if (!flipper) flipper = window.setInterval(function(){flip_card()}, FLIP_INTERVAL);
+        $board.addClass(FLIPBOARD_CLASS_ON_PLAY);
     }
     
     function stop_flipping () {
@@ -192,11 +213,13 @@ function Flipboard () {
 
         window.clearInterval(flipper);
         flipper = null;
+        
+        $board.removeClass(FLIPBOARD_CLASS_ON_PLAY);
     }
     
-    this.reset = function(silent) {
+    this.reset = function() {
         reset_dimensions();
-        if(!silent) reset_cards();
+        if(flipper) reset_cards();
     };
     
     this.setup = function(silent) {
@@ -210,9 +233,7 @@ function Flipboard () {
     this.start = function() {
         $(window).off('resize', resize_handler);
         this.setup();
-                
-        $board.addClass(FLIPBOARD_CLASS_ON_PLAY);
-        start_flipping();
+        $.when(reset_cards()).done(start_flipping);    
     };
     
     this.stop = function() {

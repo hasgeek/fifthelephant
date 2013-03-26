@@ -2,7 +2,7 @@
 
 function setupFlipboard () {
     active_board = new Flipboard();
-    active_board.setup(true);
+    active_board.setup();
     
     $('.flipboard').bind('inview', function (event, visible) {
         if (visible == true) active_board.start();
