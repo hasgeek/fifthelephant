@@ -16,34 +16,48 @@
 @media only screen and (min-width: 50em) { .big-data { padding: 0 5rem; } }
 
 .nav-line {
+    font-style: italic;
     font-size: 1.2em;
     line-height: 1.8;
-    color: rgba(200,00,00,0.65);
+    color: rgba(0,0,0,0.65);
+    margin-bottom: 2rem;
 }
 .nav-line .nav-line-spacer {
-    padding: 0 0.3em;
+    padding: 0 0.2em;
     display: inline-block;
     font-size: 1.1em;
 }
+.nav-line .sub-group { display: block; }
 .nav-line .nav-line-spacer.amp {
-    display: block;
+    display: inline-block;
     font-size: 1.5em;
     line-height: 1;
     position: relative;
     top: 0.1em;
-    color: rgba(200,00,00,0.5);
+    color: rgba(0,0,0,0.5);
 }
-.nav-line a {
+.nav-line a,
+.nav-line a:visited {
     display: inline-block;
+    padding: 0 0.2em;
+    color: rgba(0,0,0,.7);
+    font-style: italic;
+    border-bottom: 1px dotted rgba(0,0,0,.2);
+}
+.nav-line .conference a,
+.nav-line .conference a:visited {
+    font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 1em;
     width: 8.2rem;
     text-transform: uppercase;
     color: black;
+    border-bottom: 0;
     font-style: normal;
     font-weight: 600;
 }
 .nav-line a:hover {
     font-weight: normal;
-    color: white;
+    color: white !important;
     outline: none;
 }
 
@@ -53,6 +67,24 @@
         font-size: 1em;
         line-height: 1.5;
         margin: 1.5rem 0;
+        color: rgba(200,00,00,0.65);
+    }
+    .nav-line .nav-line-spacer { padding: 0 0.1em; }
+    .nav-line .nav-line-spacer.amp { color: rgba(200,00,00,0.5); }
+    .nav-line .sub-group { display: inline-block; }
+    .nav-line a,
+    .nav-line .conference a,
+    .nav-line a:visited,
+    .nav-line .conference a:visited {
+        display: inline-block;
+        width: 7rem;
+        font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif;
+        text-transform: uppercase;
+        padding: 0;
+        color: black;
+        font-style: normal;
+        border: 0;
+        font-weight: 600;
     }
     .nav-line .nav-line-spacer {
         padding: 0;
@@ -61,7 +93,6 @@
         overflow: hidden;
     }
     .nav-line .nav-line-spacer.amp { display: inline-block; }
-    .nav-line a { width: 7rem; }
 }
 @media only screen and (min-width: 50em) {
     .nav-line { margin: 2rem 0; }
@@ -72,7 +103,7 @@
         line-height: 1.5rem;
         font-weight: 300;
     }
-    .nav-line a { width: 8rem; }
+    .nav-line a, .nav-line .conference a { width: 8rem; }
 }
 @media only screen and (min-width: 55em) {
     .nav-line { margin: 3rem 0; font-weight: 300; }
