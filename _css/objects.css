@@ -250,7 +250,7 @@ a.button:active {
     .ticket-columns > li:nth-child(2) hgroup { border: solid white; border-width: 0 0 0 1px; margin-left: -1px; }
     .ticket-columns > li:nth-child(3) { width: 100%; }
     
-    .ticket ul { min-height: 7em; }
+    .ticket ul { min-height: 10em; }
     .ticket-columns > li:nth-child(3) .ticket ul {
         -webkit-column-gap: 3em;
            -moz-column-gap: 3em;
@@ -281,8 +281,7 @@ a.button:active {
         min-height: 10.5em;
     }
 }
-@media only screen and (min-width: 59em) { .ticket ul { min-height: 9em !important; } }
-@media only screen and (min-width: 62em) { .ticket ul { min-height: 7.5em !important; } }
+@media only screen and (min-width: 63em) { .ticket ul { min-height: 8.5em !important; } }
 
 
 .last-year .band { margin: -10.85714rem 0 0; top: 50%; background-color: rgba(0,0,0,.7); z-index: 100; }
