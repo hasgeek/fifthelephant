@@ -13,6 +13,7 @@ function setupFlipboard () {
 
 
 function main () {
+    $(".fittext").fitText(.25);
     setupFlipboard();
 }
 

@@ -11,6 +11,9 @@
     outline: 0.3em solid rgba(0,0,0,0.5);
 }
 
+.big-data { padding: 0 1rem; }
+@media only screen and (min-width: 30em) { .big-data { padding: 0 3rem; } }
+@media only screen and (min-width: 50em) { .big-data { padding: 0 5rem; } }
 
 .nav-line {
     font-size: 1.2em;
