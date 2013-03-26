@@ -281,8 +281,7 @@ a.button:active {
         min-height: 14em;
     }
 }
-@media only screen and (min-width: 59em) { .ticket ul { min-height: 11em !important; } }
-@media only screen and (min-width: 85em) { .ticket ul { min-height: 9em !important; } }
+@media only screen and (min-width: 63em) { .ticket ul { min-height: 8.5em !important; } }
 
 
 .last-year .band { margin: -10.85714rem 0 0; top: 50%; background-color: rgba(0,0,0,.7); z-index: 100; }
