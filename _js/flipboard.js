@@ -81,7 +81,7 @@ function Flipboard () {
         
         var   $card
             , count_loaded_images = 0
-            , dfd = $.Deferred()
+            , start_flips = !cards.length < columns * rows
             ;
         
         // add new cards
@@ -102,9 +102,9 @@ function Flipboard () {
                 $(image).load(function() { 
                     count_loaded_images++;
                     if (count_loaded_images >= columns * rows) {
-                        for (var i = count_loaded_images-1; i >= 0; i--) 
+                        for (var i = count_loaded_images-1; i >= 0; i--)
                             flip_card(cards[i], false, images[i]);
-                        dfd.resolve();
+                        start_flipping();
                     }
                 });
                 image.src = get_random_photo();
@@ -120,7 +120,7 @@ function Flipboard () {
         // reset card flipper
         shuffled_cards = [];
         
-        return dfd.promise();
+        if(start_flips) start_flipping();
     }
     
     function get_random_photo () {
@@ -208,13 +208,13 @@ function Flipboard () {
         $board.addClass(FLIPBOARD_CLASS_ON_PLAY);
     }
     
-    function stop_flipping () {
+    function stop_flipping () {        
+        $board.removeClass(FLIPBOARD_CLASS_ON_PLAY);
+        
         if (!flipper) return;
 
         window.clearInterval(flipper);
-        flipper = null;
-        
-        $board.removeClass(FLIPBOARD_CLASS_ON_PLAY);
+        flipper = null;        
     }
     
     this.reset = function() {
@@ -233,7 +233,7 @@ function Flipboard () {
     this.start = function() {
         $(window).off('resize', resize_handler);
         this.setup();
-        $.when(reset_cards()).done(start_flipping);    
+        reset_cards();
     };
     
     this.stop = function() {
