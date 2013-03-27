@@ -6,14 +6,21 @@
 /*  Families  */
 
 body,
-.body-type      { font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif; }
+.body-type      { font-family: Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif; }
 h1,
 h2,
 h3,
-.title-type     { font-family: bree-serif, Bree Serif, FF Tisa Web Pro, Georgia, serif; }
-.gothic-type    { font-family: league-gothic, League Gothic, HelveticaNeue-CondensedBold, ArialNarrow-Bold, Impact, sans-serif; }
+.title-type     { font-family: Bree Serif, FF Tisa Web Pro, Georgia, serif; }
+.gothic-type    { font-family: League Gothic, HelveticaNeue-CondensedBold, ArialNarrow-Bold, Impact, sans-serif; }
 .serif-type     { font-family: Baskerville, Palatino, 'Book Antiqua', Constantia, 'URW Palladio L'; }
 
+.wf-active body,
+.wf-active .body-type      { font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif; }
+.wf-active h1,
+.wf-active h2,
+.wf-active h3,
+.wf-active .title-type     { font-family: bree-serif, Bree Serif, FF Tisa Web Pro, Georgia, serif; }
+.wf-active .gothic-type    { font-family: league-gothic, League Gothic, HelveticaNeue-CondensedBold, ArialNarrow-Bold, Impact, sans-serif; }
 
 
 

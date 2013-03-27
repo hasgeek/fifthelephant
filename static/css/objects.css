@@ -47,7 +47,7 @@
 }
 .nav-line .conference a,
 .nav-line .conference a:visited {
-    font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif;
+    font-family: Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif;
     font-size: 1em;
     width: 8.2rem;
     text-transform: uppercase;
@@ -55,6 +55,10 @@
     border-bottom-color: transparent;;
     font-style: normal;
     font-weight: 600;
+}
+.wf-active .nav-line .conference a,
+.wf-active .nav-line .conference a:visited {
+    font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif;
 }
 .nav-line a:hover {
     font-weight: normal;
@@ -81,13 +85,19 @@
     .nav-line .conference a:visited {
         display: inline-block;
         width: 7rem;
-        font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif;
+        font-family: Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif;
         text-transform: uppercase;
         padding: 0;
         color: black;
         font-style: normal;
         border: 0;
         font-weight: 600;
+    }
+    .wf-active .nav-line a,
+    .wf-active .nav-line .conference a,
+    .wf-active .nav-line a:visited,
+    .wf-active .nav-line .conference a:visited {
+        font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif;
     }
     .nav-line .nav-line-spacer {
         padding: 0;
