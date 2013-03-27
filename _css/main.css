@@ -22,6 +22,8 @@ a.block-link:hover { color: #D44; outline: none; }
 a.link-silent-hover:hover { color: inherit !important; outline: none !important; background-color: transparent !important; }
 a.link-white-hover:hover  { color: #FFF !important; }
 
+.faded a { color: inherit; border-color: rgba(0,0,0,.3); }
+
 hr {
     display: block; clear: both; height: 0; margin: 0; padding: 0;
     

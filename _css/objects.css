@@ -401,7 +401,6 @@ a.button:active {
 }
 .flipboard .portrait { background: black; }
 
-.copyright span { display: block; }
-@media only screen and (min-width: 50em) { .copyright span { display: inline; } }
-
+.wrap-mobile span { display: block; }
+@media only screen and (min-width: 50em) { .wrap-mobile span { display: inline; } }
 
