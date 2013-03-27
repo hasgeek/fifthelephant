@@ -1,0 +1,17 @@
+Deployment Notes
+====
+
+1. Remove `<link rel="stylesheet" href="_css/fonts.css">` from the <head> section.
+
+2. Create and link Typekit stack/kit having the following fonts/weights.
+    - Bree Serif 400
+    - League Gothic 400
+    - Proxima Nova 400
+    - Proxima Nova 600
+    - Proxima Nova 700
+
+3. Use minified custom modernizr build (already added to repo) — Replace `<script src="_js/libs/modernizr-2.5.3.js"></script>` with `<script src="_js/libs/modernizr.custom.12911.js"></script>` in the <head> section.
+
+4. Minify and combine all css/js sources.
+
+5. Verify analytics code at the bottom of the index.html.
