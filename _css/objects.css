@@ -334,6 +334,7 @@ a.button:active {
     background-size: auto 100%;
     background-position: 50% 70%;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 @media only screen and (min-width: 60em) {
     .flipboard {

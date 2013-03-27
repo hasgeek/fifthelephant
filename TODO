@@ -16,4 +16,5 @@ Production
 Issues
 ------
 - Resizing the window to smaller widths makes the flipboard images overflow
+  - overflow:hidden applied as a precautionary fix
 
