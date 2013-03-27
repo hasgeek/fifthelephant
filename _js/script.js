@@ -11,10 +11,17 @@ function setupFlipboard () {
     
 }
 
+// Resize twitter stream for touch based devices
+function resizeTwitterTimeline () {
+    $("iframe.twitter-timeline").contents().find(".stream").height(Math.max($(window).height()/2,180));
+    $("iframe.twitter-timeline").height($("iframe.twitter-timeline").contents().find(".twitter-timeline").height()+2);
+}
+$(window).load(resizeTwitterTimeline);
 
 function main () {
     $(".fittext").fitText(.25);
     setupFlipboard();
+    $(window).on('resize', resizeTwitterTimeline);
 }
 
 
