@@ -42,6 +42,7 @@
     padding: 0 0.2em;
     color: rgba(0,0,0,.7);
     font-style: italic;
+    border-top: 1px solid transparent;
     border-bottom: 1px dotted rgba(0,0,0,.2);
 }
 .nav-line .conference a,
@@ -51,14 +52,16 @@
     width: 8.2rem;
     text-transform: uppercase;
     color: black;
-    border-bottom: 0;
+    border-bottom-color: transparent;;
     font-style: normal;
     font-weight: 600;
 }
 .nav-line a:hover {
-    font-weight: normal;
+    font-weight: normal !important;
     color: white !important;
-    outline: none;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    outline: none;    
 }
 
 @media only screen and (min-width: 30em) { .nav-line { font-size: 1em; line-height: 1.5; } }
