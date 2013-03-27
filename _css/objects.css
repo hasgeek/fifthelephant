@@ -57,7 +57,7 @@
     font-weight: 600;
 }
 .nav-line a:hover {
-    font-weight: normal !important;
+    font-weight: normal;
     color: white !important;
     border-top: 1px solid rgba(0,0,0,0.2);
     border-bottom: 1px solid rgba(0,0,0,0.2);
@@ -113,7 +113,13 @@
     .nav-line .nav-line-spacer.amp { font-size: 2em; width: 3rem; }
 }
 
-
+.nav-line a.silent,
+.nav-line a.silent:hover {
+    background-color: transparent !important;
+    border-color: transparent;
+    font-weight: 600 !important;
+    color: black !important;
+}
 
 .button,
 a.button {
