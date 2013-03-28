@@ -54,3 +54,5 @@ img.ultrafaded { opacity: 0.35 }
 
 a.link-unfade-hover:hover,
 .link-unfade-hover:hover img.ultrafaded { opacity: 1; }
+
+.fittext { line-height: 1; max-width: 1400px; }
