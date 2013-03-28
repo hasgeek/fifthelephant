@@ -402,3 +402,7 @@ a.button:active {
 .wrap-mobile span { display: block; }
 @media only screen and (min-width: 50em) { .wrap-mobile span { display: inline; } }
 
+.sponsorship .pitch { font-size: 1.000rem; line-height: 1.5000; }
+@media only screen and (min-width: 25em) { .sponsorship .pitch { font-size: 1.250rem; } }
+@media only screen and (min-width: 40em) { .sponsorship .pitch { font-size: 1.500rem; } }
+@media only screen and (min-width: 50em) { .sponsorship .pitch { font-size: 1.750rem; } }
