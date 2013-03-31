@@ -55,4 +55,13 @@ img.ultrafaded { opacity: 0.35 }
 a.link-unfade-hover:hover,
 .link-unfade-hover:hover img.ultrafaded { opacity: 1; }
 
-.fittext { line-height: 1; max-width: 1400px; }
+.fittext { line-height: 1; max-width: 1400px; margin-bottom: 20%; }
+
+.circus-banner { 
+    background-image: url(../img/circus_banner.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    bottom: 0;
+    height: 100%;
+}
