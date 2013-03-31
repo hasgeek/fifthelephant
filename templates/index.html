@@ -11,15 +11,17 @@
   <meta name="author" content="HasGeek and friends">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   
-  <link rel="stylesheet" href="_css/normalize.css">
-  <link rel="stylesheet" href="_css/typography.css">
-  <link rel="stylesheet" href="_css/layout.css">
-  <link rel="stylesheet" href="_css/main.css">
-  <link rel="stylesheet" href="_css/objects.css">
-  <link rel="stylesheet" href="_css/2x.css">
-  <script src="_js/libs/modernizr.custom.12911.js"></script>
+  <link rel="stylesheet" href="{{ theme_static('css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ theme_static('css/typography.css') }}">
+  <link rel="stylesheet" href="{{ theme_static('css/layout.css') }}">
+  <link rel="stylesheet" href="{{ theme_static('css/main.css') }}">
+  <link rel="stylesheet" href="{{ theme_static('css/objects.css') }}">
+  <link rel="stylesheet" href="{{ theme_static('css/2x.css') }}">
+  <script src="{{ theme_static('js/libs/modernizr.custom.12911.js') }}"></script>
+
 </head>
 <body>
 <div id="page">
@@ -60,7 +62,7 @@
           title="View location in Google Maps"
           class="inline-block link-silent-hover link-unfade-hover"
           href="http://goo.gl/maps/PvXY">
-          <img alt="Co-ordinates" src="_img/map-marker.svg" width="15" class="gap-1q-right ultrafaded">
+          <img alt="Co-ordinates" src="{{ theme_static('img/map-marker.svg') }}" width="15" class="gap-1q-right ultrafaded">
         </a>
         <a 
           title="View location in Google Maps"
@@ -148,35 +150,35 @@
     
     <ul class="thumbnail-columns thumbnail-columns-five regular clearfix fill-dark push-two-top push-one-bottom space-two-top nospace-bottom">
       <li class="clearfix">
-        <p class="poster contain-width"><img alt="" src="_img/bios/ashok.jpg" width="150" height="150"></p>
+        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/ashok.jpg') }}" width="150" height="150"></p>
         <hgroup>
           <h3>Ashok Banerjee</h3>
           <h4>Flipkart</h4>
         </hgroup>
       </li>
       <li class="clearfix">
-        <p class="poster contain-width"><img alt="" src="_img/bios/gopal.jpg" width="150" height="150"></p>
+        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/gopal.jpg') }}" width="150" height="150"></p>
         <hgroup>
           <h3>Gopal Vijayraghavan</h3>
           <h4>Hortonworks</h4>
         </hgroup>
       </li>
       <li class="clearfix">
-        <p class="poster contain-width"><img alt="" src="_img/bios/govind.jpg" width="150" height="150"></p>
+        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/govind.jpg') }}" width="150" height="150"></p>
         <hgroup>
           <h3>Govind Kanshi</h3>
           <h4>Microsoft</h4>
         </hgroup>
       </li>
       <li class="clearfix">
-        <p class="poster contain-width"><img alt="" src="_img/bios/joydeep.jpg" width="150" height="150"></p>
+        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/joydeep.jpg') }}" width="150" height="150"></p>
         <hgroup>
           <h3>Joydeep Sen Sharma</h3>
           <h4>Qubole</h4>
         </hgroup>
       </li>
       <li class="clearfix">
-        <p class="poster contain-width"><img alt="" src="_img/bios/sesh.jpg" width="150" height="150"></p>
+        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/sesh.jpg') }}" width="150" height="150"></p>
         <hgroup>
           <h3>Srinivasan Seshadri (Sesh)</h3>
           <h4>Boltell</h4>
@@ -330,7 +332,7 @@
         <li class="clearfix">
           <a class="occupy block-link" href="http://hasgeek.tv/fifthelephant/2012-2/61-karthik-visweswariah-building-watson-a-brief-overview-of-deepqa-and-the-jeopardy-challenge">
             <p class="poster video contain-width">
-              <img alt="" src="./_img/video-posters/karthik.jpg" width="350" height="197">
+              <img alt="" src="{{ theme_static('img/video-posters/karthik.jpg') }}" width="350" height="197">
             </p>
             <hgroup>
               <h3>Building Watson — A Brief Overview of DeepQA</h3>
@@ -341,7 +343,7 @@
         <li class="clearfix">
           <a class="occupy block-link" href="http://hasgeek.tv/fifthelephant/2012-2/62-ashok-banerjee-exponential-growth-models">
             <p class="poster video contain-width">
-              <img alt="" src="./_img/video-posters/ashok.jpg" width="350" height="197">
+              <img alt="" src="{{ theme_static('img/video-posters/ashok.jpg') }}" width="350" height="197">
             </p>
             <hgroup>
               <h3>Exponential Growth Models</h3>
@@ -352,7 +354,7 @@
         <li class="clearfix">
           <a class="occupy block-link" href="http://hasgeek.tv/fifthelephant/2012-1/43-visualising-text">
             <p class="poster video contain-width">
-              <img alt="" src="./_img/video-posters/anand.jpg" width="350" height="197">
+              <img alt="" src="{{ theme_static('img/video-posters/anand.jpg') }}" width="350" height="197">
             </p>
             <hgroup>
               <h3>Visualizing Text</h3>
@@ -363,7 +365,7 @@
         <li class="clearfix">
           <a class="occupy block-link" href="http://hasgeek.tv/fifthelephant/2012-2/64-dr-pramod-varma-and-regunath-balasubramanian-big-data-at-aadhaar">
             <p class="poster video contain-width">
-              <img alt="" src="./_img/video-posters/aadhar.jpg" width="350" height="197">
+              <img alt="" src="{{ theme_static('img/video-posters/aadhar.jpg') }}" width="350" height="197">
             </p>
             <hgroup>
               <h3>Aadhaar — World’s Largest Biometric Identity Platform</h3>
@@ -408,11 +410,11 @@
 </div><!-- #page -->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="./_js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-<script src="./_js/libs/underscore.min.js"></script>
-<script src="./_js/plugins.js"></script>
-<script src="./_js/flipboard.js"></script>
-<script src="./_js/script.js"></script>
+<script>window.jQuery || document.write('<script src="{{ theme_static('js/libs/jquery-1.7.1.min.js') }}"><\/script>')</script>
+<script src="{{ theme_static('js/libs/underscore.min.js') }}"></script>
+<script src="{{ theme_static('js/plugins.js') }}"></script>
+<script src="{{ theme_static('js/flipboard.js') }}"></script>
+<script src="{{ theme_static('js/script.js') }}"></script>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 

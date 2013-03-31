@@ -5,7 +5,6 @@
 
 /*  Families  */
 
-
 body,
 .body-type      { font-family: Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif; }
 h1,
@@ -13,7 +12,7 @@ h2,
 h3,
 .title-type     { font-family: Bree Serif, FF Tisa Web Pro, Georgia, serif; }
 .gothic-type    { font-family: League Gothic, HelveticaNeue-CondensedBold, ArialNarrow-Bold, Impact, sans-serif; }
-.serif-type     { font-family: Palatino, 'Book Antiqua', Constantia, 'URW Palladio L'; }
+.serif-type     { font-family: Baskerville, Palatino, 'Book Antiqua', Constantia, 'URW Palladio L'; }
 
 .wf-active body,
 .wf-active .body-type      { font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif; }
