@@ -412,3 +412,49 @@ a.button:active {
 .wrap-mobile span { display: block; }
 @media only screen and (min-width: 50em) { .wrap-mobile span { display: inline; } }
 
+.sponsors li { float:left; width: 50%; margin: auto; }
+.sponsors li a { 
+    display: block;
+    text-align: center; 
+    height: 140px;
+    padding: 20px 5%;
+    margin: .5rem;
+    line-height: 100px;
+    background-color: #F5F5F5;
+    border: 0;
+}
+.sponsors .xl li a {
+    height: 160px;
+    line-height: 120px;
+    padding: 20px 10%;
+}
+.sponsors li a:hover { background-color: #EEE; }
+.sponsors li img { vertical-align: middle; }
+.sponsors .xl li,
+.sponsors .l li { width: 100%; }
+.sponsors .l li.contain-width img { width: 60%; }
+.sponsors .s li { width: 33.3333%; width: calc(100%/3); }
+.sponsors .s li a { 
+    height: 70px;
+    padding: 10px 5%;
+    margin: .5rem;
+    line-height: 50px;
+}
+.sponsors .s li.contain-width img { width: 80%; }
+
+@media only screen and (min-width: 30em) { 
+    .sponsors li a { padding: 20px 15%; }
+    .sponsors .xl li.contain-width img { width: 70%; }
+    .sponsors .l li.contain-width img { width: 50%; }
+    .sponsors .s li a { padding: 10px 5%; }
+}
+
+@media only screen and (min-width: 50em) { 
+    .sponsors li { float: left; width: 25%; }
+    .sponsors .xl li.contain-width img { width: 60%; }
+    .sponsors .l li,
+    .sponsors .l li.contain-width { width: 50%; }
+    .sponsors .l li.contain-width  a { padding-left: 10%; padding-right: 10%; }
+    .sponsors .l li.contain-width img { width: 60%; }
+    .sponsors .s li { width: 16.6666%; width: calc(100%/6); }
+}
