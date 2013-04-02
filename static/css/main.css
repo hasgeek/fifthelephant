@@ -23,6 +23,7 @@ a.link-silent-hover:hover { color: inherit !important; outline: none !important;
 a.link-white-hover:hover  { color: #FFF !important; }
 
 .faded a { color: inherit; border-color: rgba(0,0,0,.3); }
+.fill-dark .faded a { color: inherit; border-color: rgba(255,255,255,.3); }
 
 hr {
     display: block; clear: both; height: 0; margin: 0; padding: 0;
@@ -50,6 +51,9 @@ img.ultrafaded { opacity: 0.35 }
 .fill-silver    { background-color: #DDD }
 .fill-dark      { background-color: #222; color: #F6F6F6 }
 .fill-white     { background-color: #FFF; color: #222222 }
+
+.fill-dark .faded       { color: rgba(255,255,255,0.6) !important; }
+.fill-dark .ultrafaded  { color: rgba(255,255,255,0.35) !important; }
 
 
 a.link-unfade-hover:hover,
