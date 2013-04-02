@@ -10,3 +10,4 @@ test.db
 .webassets-cache
 error.log
 fonts.css$
+packed.css$
