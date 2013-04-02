@@ -1,0 +1,171 @@
+{% extends theme("layout.html") %}
+
+{% block title %} — Community{% endblock %}
+
+{% block banner %}
+<div class="banner internal-banner resetcoords layer-one clearfix">
+  <header class="clearfix">
+    <nav>
+      <p class="nav-line serif-type secondary centered">
+        <span class="sub-group community">
+          <a href="#community">Community</a>
+          <span class="nav-line-spacer italic">powered</span>
+        </span>
+        <span class="sub-group conference">
+          <a class="link-silent-hover">conference</a>
+          <span class="nav-line-spacer amp">&amp;</span>
+          <a class="link-silent-hover">workshops</a>
+        </span>
+        <span class="sub-group bangalore">
+          <span class="nav-line-spacer italic">in namma</span>
+          <a href="http://goo.gl/maps/PvXY" title="View location in Google Maps">Bangalore</a>
+        </span>
+      </p>
+    </nav>
+    
+    <hr class="half center-block space-three-bottom">
+    
+    <div class="event-summary">
+      <hgroup class="clearfix">
+        <h1 class="calm legible nospace">
+          <a class="link-silent-hover" href="./">
+            The Fifth Elephant
+          </a>
+        </h1>
+        <h3 class="body-type calm faded secondary nospace">
+          <a
+            title="View location in Google Maps"
+            class="inline-block link-silent-hover link-unfade-hover"
+            href="http://goo.gl/maps/PvXY">
+            <img alt="Co-ordinates" src="{{ theme_static('img/map-marker.svg') }}" width="15" class="gap-1q-right ultrafaded">
+          </a>
+          <a 
+            title="View location in Google Maps"
+            href="http://goo.gl/maps/PvXY"
+            class="faded link-white-hover">
+            <abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr>
+            Convention Centre
+          </a>
+        </h3>
+        <h2 class="body-type secondary calm faded space-half">
+          July 11–13, 2013
+        </h2>
+      </hgroup>
+      <p class="secondary nospace">
+        <a
+          class="buy-tickets"
+          title="Fifth Elephant 2013 Tickets on DoAttend"
+          href="http://fifthelephant.doattend.com/">
+          Buy Tickets
+        </a>
+      </p>
+    </div>
+    <hr class="invisible">
+    <h1 class="clearboth centered calm measure-10words center-block space-three-top space-two-bottom">
+      Of&nbsp;the&nbsp;Community,
+      By&nbsp;the&nbsp;Community,
+      For&nbsp;the&nbsp;Community
+    </h1>
+  </header>
+  
+  
+</div><!-- .banner -->
+{% endblock %}
+
+{% block content %}
+<section id="community" class="legible space-six-top clearfix">
+  <article class="prose clearfix">
+    <h1 class="visuallyhidden">Introduction</h1>
+    <div class="measure-10words pad-one center-block">
+      <p>
+        One of the unique features of The Fifth Elephant (and <a href="http://hasgeek.com/">HasGeek</a> events in general) is the community’s defining role. The speakers, the curators and the attendees are all from the same community.
+      </p>
+      <p class="regular">
+        Anyone is welcome to <a href="http://funnel.hasgeek.com/fifthel2013/">propose a session</a>. Participants who have purchased conference tickets will vote on session proposals. The Programme Committee steering Fifth Elephant 2013 will also vote on submissions and balance the community voting. The Programme Committee consists data analysts and big data practitioners.
+      </p>
+      <p class="regular">
+        Proposal submissions are reviewed on the basis of use cases, how a problem was solved, or why a particular technology and/or approach was adopted for solving the problem. Proposers can refer to open source technologies and tools available for storage, analytics and visualisation in their submissions.
+      </p>
+    </div>
+  </article>
+  
+  <article class="measure-8words center-block pad-two clearfix">
+    <h2 class="calm centered space-four-top space-two-bottom">Event Proposals</h2>
+    {% for s in node.sections() %}
+        {% for proposal in node.proposals() if proposal['section_name'] == s.name %}
+          {% if loop.first %} 
+            <h3 class="calm centered ultrafaded space-two">{{ s.title }}</h3>
+            <ul id="proposals" class="proposals space-four-bottom">
+          {% endif %}
+          <li class="proposal space-two clearfix">
+              <h5 class="regular space-1q capitalize calm">
+                <a target="_blank" href="{{ proposal['url'] }}" title="{{ proposal['title'] }} — {{ proposal['proposer'] }}">
+                {{ proposal['title'] }}
+                </a>
+              </h5>
+              <p class="by regular space-1q capitalize sixty">{{ proposal['proposer'] }}</p>
+              <p class="meta secondary space-1q right-aligned forty bold ultrafaded">
+                <span class="comments">{{ proposal['comments'] }}</span>
+                <span class="votes">{{ proposal['votes'] }}</span>
+              </p>
+          </li>
+          {% if loop.last %} </ul> {% endif %}
+        {% endfor %}
+    {% endfor %}
+    
+    <p class="centered space-six-top">
+      <a class="button" href="http://funnel.hasgeek.com/fifthel2013/">Propose a Session</a>
+    </p>
+    
+  </article>
+  
+  <article class="space-two-top clearfix">
+    <div class="prose measure-10words pad-one center-block">
+      <h2 class="centered calm space-two-top space-one-bottom">The Programme Committee</h2>
+      <p class="regular">
+        This year’s programme committee boasts of experience and expertise from different spectrums of Big Data &mdash; practitioners working on storage and cloud computing as well as architects and technologists working on analytics and business intelligence. 
+      </p>
+    </div>
+    
+    <ul class="thumbnail-columns thumbnail-columns-five regular clearfix fill-dark push-two-top push-one-bottom space-two-top nospace-bottom">
+      <li class="clearfix">
+        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/ashok.jpg') }}" width="150" height="150"></p>
+        <hgroup>
+          <h3>Ashok Banerjee</h3>
+          <h4>Flipkart</h4>
+        </hgroup>
+      </li>
+      <li class="clearfix">
+        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/gopal.jpg') }}" width="150" height="150"></p>
+        <hgroup>
+          <h3>Gopal Vijayraghavan</h3>
+          <h4>Hortonworks</h4>
+        </hgroup>
+      </li>
+      <li class="clearfix">
+        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/govind.jpg') }}" width="150" height="150"></p>
+        <hgroup>
+          <h3>Govind Kanshi</h3>
+          <h4>Microsoft</h4>
+        </hgroup>
+      </li>
+      <li class="clearfix">
+        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/joydeep.jpg') }}" width="150" height="150"></p>
+        <hgroup>
+          <h3>Joydeep Sen Sharma</h3>
+          <h4>Qubole</h4>
+        </hgroup>
+      </li>
+      <li class="clearfix">
+        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/sesh.jpg') }}" width="150" height="150"></p>
+        <hgroup>
+          <h3>Srinivasan Seshadri (Sesh)</h3>
+          <h4>Boltell</h4>
+        </hgroup>
+      </li>
+    </ul>
+  </article>
+</section>
+
+{% endblock %}
+

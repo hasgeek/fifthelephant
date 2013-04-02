@@ -11,6 +11,21 @@
     outline: 0.3em solid rgba(0,0,0,0.5);
 }
 
+.internal-banner .event-summary { 
+    margin: 2rem auto 0;
+    width: 60%;
+    float: right;
+}
+@media only screen and (min-width: 30em) { .internal-banner .event-summary { width: 50%; } }
+@media only screen and (min-width: 40em) { .internal-banner .event-summary { width: 40%; } }
+.internal-banner .event-summary h3 { margin-left: -1.2rem; }
+.internal-banner .event-summary a.buy-tickets { 
+    color: #D44;
+    border-bottom: 1px dotted #D44;
+}
+.internal-banner .event-summary a.buy-tickets:hover { color: white; border: 0; } 
+
+
 .big-data { padding: 0 1rem; }
 @media only screen and (min-width: 30em) { .big-data { padding: 0 3rem; } }
 @media only screen and (min-width: 50em) { .big-data { padding: 0 5rem; } }
@@ -459,4 +474,34 @@ a.button:active {
     .sponsors .l li.contain-width  a { padding-left: 10%; padding-right: 10%; }
     .sponsors .l li.contain-width img { width: 60%; }
     .sponsors .s li { width: 16.6666%; width: calc(100%/6); }
+}
+
+/*.proposals a { border: 0; color: inherit; }*/
+.proposals ul,
+.proposals li { list-style-type: none; }
+.proposals .by { line-height: 1.5; float: left; }
+.proposals .meta { line-height: 1.5; float: right; }
+.proposals .votes,
+.proposals .comments { 
+    display: inline-block;
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+}
+.proposals .comments { 
+    background-image: url(../img/bubble.svg); 
+    background-position: 100% 100%; 
+    padding: .18em 1.6em .1em 0;
+    margin-left: 1em;
+    width: 4em; 
+}
+.proposals .votes { 
+    background-image: url(../img/like.svg);
+    background-position: 0 0;
+    padding: .18em 0 .1em 1.8em;
+    margin-left: .3rem;
+    width: 3em; 
+}
+@media only screen and (min-width: 50em) { 
+    .proposals .meta,
+    .proposals .by { font-size:  .800rem; line-height: 1.4000; text-transform: uppercase; }    
 }
