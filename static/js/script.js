@@ -18,10 +18,43 @@ function resizeTwitterTimeline () {
 }
 $(window).load(resizeTwitterTimeline);
 
+// Sponsor Interaction
+function initSponsor () {
+    var   $logos = $('#sponsors .sponsor-logos')
+        , $about = $('#sponsors .about-sponsor')
+        , $container = $('#sponsors .sponsor-block')
+        ;
+    $('body').on('click', '#sponsors .sponsor-logos-list a', function(e) {
+        var   $target = $(e.target).closest('a');
+        $about.empty().append($target.next('.sponsor-details').children().clone());
+        $.smoothScroll({
+            scrollTarget: $container,
+            offset: -20,
+            afterScroll: function() { 
+                $logos.addClass('squeeze');
+                $(window).width() >= 800 && $about.show(400) || $about.slideDown(400);
+            }
+        });
+        $('dd.active', $logos).removeClass('active');
+        $target.closest('dd').addClass('active');
+        e.preventDefault();
+        return false;
+    });
+    $('body').on('click', '#sponsors .about-sponsor a.close', function(e) {
+        $.smoothScroll({ scrollTarget: $container, offset: -20 });
+        $('dd.active', $logos).removeClass('active');
+        if ($(window).width() >= 800) $about.hide(400, function() { $logos.removeClass('squeeze'); });
+        else $about.slideUp(400, function() { $logos.removeClass('squeeze'); });
+        e.preventDefault();
+        return false;
+    })
+}
+
 function main () {
     $(".fittext").fitText(.25);
     setupFlipboard();
     $(window).on('resize', resizeTwitterTimeline);
+    initSponsor();
 }
 
 

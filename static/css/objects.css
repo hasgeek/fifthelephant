@@ -427,22 +427,27 @@ a.button:active {
 .wrap-mobile span { display: block; }
 @media only screen and (min-width: 50em) { .wrap-mobile span { display: inline; } }
 
+
 .sponsors dl { 
-    margin: 0;
+    margin: 0; 
+    max-width: 32em; 
+    -webkit-transition: font-size 0.4s;
+       -moz-transition: font-size 0.4s;
+         -o-transition: font-size 0.4s;
+            transition: font-size 0.4s;
 }
-.sponsors dd { float:left; width: 50%; margin: auto; position: relative; z-index: 50; }
 .sponsors dt {
     position: relative;
-    font-size:  .700rem;
     float:left;
     width: 0;
     height: 0;
     overflow: visible;
-    line-height: 1.4000;
-    text-transform: uppercase;
 }
 .sponsors dt span {
-    padding: 0 .5rem;
+    padding: 0 1em;
+    font-size:  .700rem;
+    line-height: 1.4000;
+    text-transform: uppercase;
     position: absolute;
     display: block;
     white-space: nowrap;
@@ -450,17 +455,13 @@ a.button:active {
     color: rgba(255,255,255,.95);
     z-index: 100;
 }
-.sponsors dd a { 
-    display: block;
-    text-align: center; 
-    height: 160px;
-    padding: 25px 5%;
-    line-height: 100px;
-    border: 0;
-    border: 1px solid rgba(255,255,255,.3);
-}
-.sponsors dd a:hover { background-color: rgba(0,0,0,.04); }
+.sponsors dt.platinum,
+.sponsors dt.gold,
+.sponsors dt.silver,
+.sponsors dt.community,
+.sponsors dt.corporate { clear: left; }
 
+.sponsors dd { float: left; width: 50%; position: relative; z-index: 50; }
 .sponsors dd.platinum { background-color: #E4E4E4; }
 .sponsors dd.gold { background-color: #E7E7E7; }
 .sponsors dd.silver { background-color: #EDEDED; }
@@ -468,34 +469,74 @@ a.button:active {
 .sponsors dd.community { background-color: #F9F9F9; }
 .sponsors dd.corporate { background-color: #FFF; }
 
-.sponsors dd.xl a {
-    height: 180px;
-    line-height: 120px;
-    padding: 20px 10%;
-}
-.sponsors dd img { vertical-align: middle; }
 .sponsors dd.xl,
 .sponsors dd.l { width: 100%; }
-.sponsors dd.l.contain-width img { width: 60%; }
 .sponsors dd.s { width: 33.3333%; width: calc(100%/3); }
-.sponsors dd.s a { 
-    height: 100px;
-    padding: 25px 5%;
-    line-height: 50px;
-}
+
+.sponsors dd img { vertical-align: middle; }
+.sponsors dd.l.contain-width img { width: 60%; }
+.sponsors dd.m.contain-width img { width: 70%; }
 .sponsors dd.s.contain-width img { width: 80%; }
 
-.sponsors dt.platinum,
-.sponsors dt.gold,
-.sponsors dt.silver,
-.sponsors dt.community,
-.sponsors dt.corporate { clear: left; }
+.sponsors dd a { 
+    display: block;
+    text-align: center; 
+    height: 7em;
+    padding: 1.25em 5%;
+    line-height: 4.5em;
+    border: 0;
+    border: 1px solid rgba(255,255,255,.3);
+}
+.sponsors dd a:hover { background-color: rgba(0,0,0,.04); }
+
+.sponsors dd.xl a {
+    height: 8em;
+    line-height: 6em;
+    padding: 1em 10%;
+}
+.sponsors dd.s a { 
+    height: 4.5em;
+    padding: 1.5em 5%;
+    line-height: 2em;
+}
+
+.sponsors .about-sponsor .sponsor-logo { width: 30%; float: right; margin: 0; }
+.sponsors .about-sponsor .sponsor-name,
+.sponsors .about-sponsor .sponsor-link { width: 65%; float: left; margin: 0; }
+.sponsors .about-sponsor .sponsor-name { margin-top: .5rem; }
+
+.sponsors .about-sponsor a.close:before { content: '×'; font-size: 1.8rem; line-height: .25; display: inline-block; margin-right: .5rem; }
+
+.sponsors .about-sponsor a.close {
+    display: block;
+    float: left;
+    border-radius: 2em;
+    border: 0;
+    font-size: .7rem;
+    line-height: 1.1em;
+    text-align: center;
+    color: white;
+    background-color: #DDD;
+    padding: .5rem .8rem .5rem .7rem;
+    -webkit-transition: background-color 0.4s;
+       -moz-transition: background-color 0.4s;
+         -o-transition: background-color 0.4s;
+            transition: background-color 0.4s;
+    
+}
+.sponsors .about-sponsor a.close span { line-height: 2; }
+
+.sponsors .about-sponsor a.close:hover { background-color: #BBB; }
 
 @media only screen and (min-width: 30em) { 
-    .sponsors dd a { padding: 30px 15%; }
+    .sponsors dd a { padding: 1.25em 15%; }
     .sponsors dd.xl.contain-width img { width: 70%; }
     .sponsors dd.l.contain-width img { width: 50%; }
-    .sponsors dd.s a { height: 120px; padding: 30px 5%; }
+    .sponsors dd.s a { height: 5em; padding: 1.3em 5%; }
+    
+    .sponsors .about-sponsor .sponsor-logo { width: 20%; float: right; margin: 0; }
+    .sponsors .about-sponsor .sponsor-name,
+    .sponsors .about-sponsor .sponsor-link { width: 75%; float: left; margin: 0; }
 }
 
 @media only screen and (min-width: 50em) { 
@@ -507,6 +548,35 @@ a.button:active {
     .sponsors dd.l.contain-width img { width: 60%; }
     .sponsors dd.s { width: 16.6666%; width: calc(100%/6); }
     .sponsors dt.silver { clear: none; }
+    
+    .sponsors .squeeze { float: left; min-width: 16em; }
+    .sponsors .squeeze dt span { 
+        -webkit-transition: background-color 0.4s;
+           -moz-transition: background-color 0.4s;
+             -o-transition: background-color 0.4s;
+                transition: background-color 0.4s;
+    }
+    .sponsors .squeeze dd { 
+        -webkit-transition: opacity 0.4s;
+           -moz-transition: opacity 0.4s;
+             -o-transition: opacity 0.4s;
+                transition: opacity 0.4s;
+    }
+    .sponsors .squeeze dt span { background-color: #F7DEDE; }
+    .sponsors .squeeze:hover dt span { background-color: #D44 !important; }
+    .sponsors .squeeze dd { opacity: .2; }
+    .sponsors .squeeze dd.active { opacity: 1; }
+    .sponsors .squeeze:hover dt,
+    .sponsors .squeeze:hover dd { opacity: 1; }
+    
+    .sponsors .squeeze dl { font-size: .55em; }
+    .sponsors .squeeze dl dt span { font-size: .600rem; }
+    .sponsors .about-sponsor { float: right; width: 12em; }
+    
+    .sponsors .about-sponsor .sponsor-logo { float: none; width: 6em; margin: 1rem 0; }
+    .sponsors .about-sponsor .sponsor-name,              
+    .sponsors .about-sponsor .sponsor-link { float: none; }
+    
 }
 
 
