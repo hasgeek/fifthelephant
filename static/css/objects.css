@@ -633,22 +633,25 @@ a.button:active {
 .proposals .votes,
 .proposals .comments { 
     display: inline-block;
-    background-size: auto 80%;
     background-repeat: no-repeat;
 }
 .proposals .comments { 
     background-image: url(../img/bubble.svg); 
     background-position: 100% 100%; 
-    padding: .18em 1.6em .1em 0;
+    background-size: auto 100%;
+    padding: .2em 2em .1em 0;
     margin-left: 1em;
     width: 4em; 
+    text-align: right;
 }
 .proposals .votes { 
     background-image: url(../img/like.svg);
     background-position: 0 0;
-    padding: .18em 0 .1em 1.8em;
-    margin-left: .3rem;
-    width: 3em; 
+    background-size: auto 80%;
+    padding: .18em 0 .1em 1.7em;
+    margin-left: .5rem;
+    width: 3.5em;
+    text-align: left;
 }
 @media only screen and (min-width: 50em) { 
     .proposals .meta,
