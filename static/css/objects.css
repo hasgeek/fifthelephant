@@ -495,9 +495,9 @@ a.button:active {
     padding: 1em 10%;
 }
 .sponsors dd.s a { 
-    height: 4.5em;
+    height: 6em;
     padding: 1.5em 5%;
-    line-height: 2em;
+    line-height: 3em;
 }
 
 .sponsors .about-sponsor .sponsor-logo { width: 30%; float: right; margin: 0; }
@@ -532,7 +532,7 @@ a.button:active {
     .sponsors dd a { padding: 1.25em 15%; }
     .sponsors dd.xl.contain-width img { width: 70%; }
     .sponsors dd.l.contain-width img { width: 50%; }
-    .sponsors dd.s a { height: 5em; padding: 1.3em 5%; }
+    .sponsors dd.s a { height: 5.4em; padding: 1.2em 5%; }
     
     .sponsors .about-sponsor .sponsor-logo { width: 20%; float: right; margin: 0; }
     .sponsors .about-sponsor .sponsor-name,
