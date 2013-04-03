@@ -32,7 +32,8 @@ function initSponsor () {
             offset: -20,
             afterScroll: function() { 
                 $logos.addClass('squeeze');
-                $(window).width() >= 800 && $about.show(400) || $about.slideDown(400);
+                if (window.matchMedia && window.matchMedia("(min-width: 50em)").matches || $(window).width() >= 800) $about.show(400);
+                else $about.slideDown(400);
             }
         });
         $('dd.active', $logos).removeClass('active');
@@ -43,7 +44,7 @@ function initSponsor () {
     $('body').on('click', '#sponsors .about-sponsor a.close', function(e) {
         $.smoothScroll({ scrollTarget: $container, offset: -20 });
         $('dd.active', $logos).removeClass('active');
-        if ($(window).width() >= 800) $about.hide(400, function() { $logos.removeClass('squeeze'); });
+        if (window.matchMedia && window.matchMedia("(min-width: 50em)").matches || $(window).width() >= 800) $about.hide(400, function() { $logos.removeClass('squeeze'); });
         else $about.slideUp(400, function() { $logos.removeClass('squeeze'); });
         e.preventDefault();
         return false;
