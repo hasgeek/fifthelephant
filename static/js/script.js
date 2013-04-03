@@ -32,7 +32,7 @@ function initSponsor () {
             scrollTarget: $container,
             offset: -20,
             afterScroll: function() { 
-                $logos.addClass('squeeze');
+                $container.addClass('squeeze');
                 if (window.matchMedia && window.matchMedia("(min-width: 50em)").matches || $(window).width() >= 800) $about.show(400);
                 else $about.slideDown(400);
             }
@@ -45,8 +45,8 @@ function initSponsor () {
     $('body').on('click', '#sponsors .about-sponsor a.close', function(e) {
         $.smoothScroll({ scrollTarget: $container, offset: -20 });
         $('dd.active', $logos).removeClass('active');
-        if (window.matchMedia && window.matchMedia("(min-width: 50em)").matches || $(window).width() >= 800) $about.hide(400, function() { $logos.removeClass('squeeze'); $detail.empty(); });
-        else $about.slideUp(400, function() { $logos.removeClass('squeeze'); $detail.empty(); });
+        if (window.matchMedia && window.matchMedia("(min-width: 50em)").matches || $(window).width() >= 800) $about.hide(400, function() { $container.removeClass('squeeze'); $detail.empty(); });
+        else $about.slideUp(400, function() { $container.removeClass('squeeze'); $detail.empty(); });
         e.preventDefault();
         return false;
     })
