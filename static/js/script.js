@@ -22,11 +22,12 @@ $(window).load(resizeTwitterTimeline);
 function initSponsor () {
     var   $logos = $('#sponsors .sponsor-logos')
         , $about = $('#sponsors .about-sponsor')
+        , $detail = $('#sponsors .about-sponsor .sponsor-detail')
         , $container = $('#sponsors .sponsor-block')
         ;
     $('body').on('click', '#sponsors .sponsor-logos-list a', function(e) {
-        var   $target = $(e.target).closest('a');
-        $about.empty().append($target.next('.sponsor-details').children().clone());
+        var   $target = $(e.target).closest('dd');
+        $detail.empty().append($target.children().clone());
         $.smoothScroll({
             scrollTarget: $container,
             offset: -20,
@@ -37,15 +38,15 @@ function initSponsor () {
             }
         });
         $('dd.active', $logos).removeClass('active');
-        $target.closest('dd').addClass('active');
+        $target.addClass('active');
         e.preventDefault();
         return false;
     });
     $('body').on('click', '#sponsors .about-sponsor a.close', function(e) {
         $.smoothScroll({ scrollTarget: $container, offset: -20 });
         $('dd.active', $logos).removeClass('active');
-        if (window.matchMedia && window.matchMedia("(min-width: 50em)").matches || $(window).width() >= 800) $about.hide(400, function() { $logos.removeClass('squeeze'); });
-        else $about.slideUp(400, function() { $logos.removeClass('squeeze'); });
+        if (window.matchMedia && window.matchMedia("(min-width: 50em)").matches || $(window).width() >= 800) $about.hide(400, function() { $logos.removeClass('squeeze'); $detail.empty(); });
+        else $about.slideUp(400, function() { $logos.removeClass('squeeze'); $detail.empty(); });
         e.preventDefault();
         return false;
     })
