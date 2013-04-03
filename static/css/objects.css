@@ -480,14 +480,15 @@ a.button:active {
     width: 50%; 
     position: relative; 
     z-index: 50; 
-    border: 1px solid rgba(255,255,255,.3);
+    outline: 1px solid white;
 }
-.js .sponsors dd.platinum { background-color: #E4E4E4; }
-.js .sponsors dd.gold { background-color: #E7E7E7; }
-.js .sponsors dd.silver { background-color: #EDEDED; }
-.js .sponsors dd.bronze { background-color: #F3F3F3; }
-.js .sponsors dd.community { background-color: #F9F9F9; }
-.js .sponsors dd.corporate { background-color: #FFF; }
+
+.js .sponsors dd.platinum { background-color: #F8E9E9; }
+.js .sponsors dd.gold { background-color: #F6F7DA; }
+.js .sponsors dd.silver { background-color: #EAF5FC; }
+.js .sponsors dd.bronze { background-color: #F7F2E0; }
+.js .sponsors dd.community { background-color: #E9F8E9; }
+.js .sponsors dd.corporate { background-color: #F9F2FC; }
 
 .js .sponsors dd.xl,
 .js .sponsors dd.l { width: 100%; }
