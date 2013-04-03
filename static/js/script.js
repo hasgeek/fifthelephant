@@ -1,6 +1,7 @@
 
 
 function setupFlipboard () {
+    if(!$('.flipboard').length) return;
     active_board = new Flipboard();
     active_board.setup();
     
@@ -16,10 +17,11 @@ function resizeTwitterTimeline () {
     $("iframe.twitter-timeline").contents().find(".stream").height(Math.max($(window).height()/2,180));
     $("iframe.twitter-timeline").height($("iframe.twitter-timeline").contents().find(".twitter-timeline").height()+2);
 }
-$(window).load(resizeTwitterTimeline);
+$("iframe.twitter-timeline").length && $(window).load(resizeTwitterTimeline);
 
 // Sponsor Interaction
 function initSponsor () {
+    if(!$('#sponsors').length) return;
     var   $logos = $('#sponsors .sponsor-logos')
         , $about = $('#sponsors .about-sponsor')
         , $detail = $('#sponsors .about-sponsor .sponsor-detail')
