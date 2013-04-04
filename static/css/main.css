@@ -59,9 +59,7 @@ img.ultrafaded { opacity: 0.35 }
 a.link-unfade-hover:hover,
 .link-unfade-hover:hover img.ultrafaded { opacity: 1; }
 
-.fittext { line-height: 1; max-width: 1400px; margin-bottom: 20%; }
-
-.circus-banner { 
+.big-data { 
     background-image: url(../img/circus_banner.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -71,5 +69,5 @@ a.link-unfade-hover:hover,
     padding-top: 62.5%;
     margin-bottom: 10%;
 }
-@media only screen and (min-width: 40em) { .circus-banner { margin-bottom: 7.5%; width: 90%; padding-top: 56.25%; } }
-@media only screen and (min-width: 60em) { .circus-banner { margin-bottom: 5%; width: 80%; padding-top: 50%; } }
+@media only screen and (min-width: 40em) { .big-data { margin-bottom: 7.5%; width: 90%; padding-top: 56.25%; } }
+@media only screen and (min-width: 60em) { .big-data { margin-bottom: 5%; width: 80%; padding-top: 50%; } }

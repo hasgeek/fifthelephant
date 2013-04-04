@@ -14,10 +14,10 @@ function setupFlipboard () {
 
 // Resize twitter stream for touch based devices
 function resizeTwitterTimeline () {
-    $("iframe.twitter-timeline").contents().find(".stream").height(Math.max($(window).height()/2,180));
-    $("iframe.twitter-timeline").height($("iframe.twitter-timeline").contents().find(".twitter-timeline").height()+2);
+    $('iframe.twitter-timeline').contents().find('.stream').height(Math.max($(window).height()/2,180));
+    $('iframe.twitter-timeline').height($('iframe.twitter-timeline').contents().find('.twitter-timeline').height()+2);
 }
-$("iframe.twitter-timeline").length && $(window).load(resizeTwitterTimeline);
+$('iframe.twitter-timeline').length && $(window).load(resizeTwitterTimeline);
 
 // Sponsor Interaction
 function initSponsor () {
@@ -35,7 +35,7 @@ function initSponsor () {
             offset: -20,
             afterScroll: function() { 
                 $container.addClass('squeeze');
-                if (window.matchMedia && window.matchMedia("(min-width: 50em)").matches || $(window).width() >= 800) $about.show(400);
+                if (window.matchMedia && window.matchMedia('(min-width: 50em)').matches || $(window).width() >= 800) $about.show(400);
                 else $about.slideDown(400);
             }
         });
@@ -47,7 +47,7 @@ function initSponsor () {
     $('body').on('click', '#sponsors .about-sponsor a.close', function(e) {
         $.smoothScroll({ scrollTarget: $container, offset: -20 });
         $('dd.active', $logos).removeClass('active');
-        if (window.matchMedia && window.matchMedia("(min-width: 50em)").matches || $(window).width() >= 800) $about.hide(400, function() { $container.removeClass('squeeze'); $detail.empty(); });
+        if (window.matchMedia && window.matchMedia('(min-width: 50em)').matches || $(window).width() >= 800) $about.hide(400, function() { $container.removeClass('squeeze'); $detail.empty(); });
         else $about.slideUp(400, function() { $container.removeClass('squeeze'); $detail.empty(); });
         e.preventDefault();
         return false;
@@ -57,7 +57,7 @@ function initSponsor () {
 // Handle expansion of bio for low width screens
 function initShortenedBio () {
     $('.committee li').one('click', '.bio', function(e) {
-        if (window.matchMedia && !window.matchMedia("(min-width: 30em)").matches || $(window).width() < 480) {
+        if (window.matchMedia && !window.matchMedia('(min-width: 30em)').matches || $(window).width() < 480) {
             var $member = $(e.target).closest('li');
             $member.addClass('expand');
             $('body').animate({ scrollTop: $member.offset().top });
@@ -68,9 +68,8 @@ function initShortenedBio () {
 }
 
 function main () {
-    $(".fittext").fitText(.25);
     setupFlipboard();
-    $(window).on('resize', resizeTwitterTimeline);
+    $('iframe.twitter-timeline').length && $(window).on('resize', resizeTwitterTimeline);
     initSponsor();
     initShortenedBio();
 }
