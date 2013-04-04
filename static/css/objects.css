@@ -524,12 +524,20 @@ a.button:active {
     outline: 1px solid white;
 }
 
-.js .sponsors dd.platinum { background-color: #F8E9E9; }
-.js .sponsors dd.gold { background-color: #F6F7DA; }
+/*.js .sponsors dd.platinum { background-color: #FDF4FB; }
+.js .sponsors dd.gold { background-color: #F7F7DE; }
 .js .sponsors dd.silver { background-color: #EAF5FC; }
 .js .sponsors dd.bronze { background-color: #F7F2E0; }
-.js .sponsors dd.community { background-color: #E9F8E9; }
-.js .sponsors dd.corporate { background-color: #F9F2FC; }
+.js .sponsors dd.community { background-color: #FBEFF2; }
+.js .sponsors dd.corporate { background-color: #F6F6F6; }
+*/
+.js .sponsors dd.platinum { background-color: #F9F5FC; }
+.js .sponsors dd.gold { background-color: #F8F8E1; }
+.js .sponsors dd.silver { background-color: #EAF5FC; }
+.js .sponsors dd.bronze { background-color: #F7F2E0; }
+.js .sponsors dd.community { background-color: #FBEFF2; }
+.js .sponsors dd.corporate { background-color: #EFFBEF; }
+
 
 .js .sponsors dd.xl,
 .js .sponsors dd.l { width: 100%; }
