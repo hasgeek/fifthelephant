@@ -182,6 +182,7 @@ a.button:active {
     padding: 0 2%;
     margin: 1rem 0;
 }
+.thumbnail-columns > li:nth-of-type(odd) { clear: both; }
 .thumbnail-columns-three > li { width: 100%; }
 .thumbnail-columns .poster { margin: 0 0 0.5em; }
 .thumbnail-columns .poster img { box-shadow: 0 0 5px rgba(0,0,0,0.3); }
@@ -213,19 +214,13 @@ a.button:active {
     font-weight: normal;
     text-transform: uppercase;
 }
-.js .thumbnail-columns-five > li.expand { width: 100%; }
-
-.js .committee.thumbnail-columns-five hgroup { min-height: 5rem; }
-.js .committee.thumbnail-columns-five .expand hgroup { min-height: 0; }
-
-@media only screen and (min-width: 25em) { .js .committee.thumbnail-columns-five hgroup { min-height: 0; } }
-
 @media only screen and (min-width: 30em) {
-    .thumbnail-columns > li:nth-of-type(odd) { clear: both; }
-    
     .thumbnail-columns-four > li { margin-right: 0; }
     
-    .js .thumbnail-columns-five > li.expand { width: 50%; }
+    .thumbnail-columns-five > li { width: 30%; }
+    .thumbnail-columns-five > li:nth-of-type(odd)  { clear: none; }
+    .thumbnail-columns-five > li:nth-of-type(3n+2) { margin-right: 3%; }
+    .thumbnail-columns-five > li:nth-of-type(3n+1) { margin-right: 3%; clear: both; }
     
     .thumbnail-columns h3 { font-size: 1em; }
     .thumbnail-columns h4 { font-size: 0.85em; }
@@ -244,45 +239,17 @@ a.button:active {
     .thumbnail-columns-four  > li:nth-of-type(odd)  { clear: none; }
     .thumbnail-columns-four  > li:nth-of-type(4n+1) { clear: both; }
     
-    .js .thumbnail-columns-five > li.expand,
-    .thumbnail-columns-five > li { width: 30%; }
-    .thumbnail-columns-five > li:nth-of-type(odd)  { clear: none; }
-    .thumbnail-columns-five > li:nth-of-type(3n+2) { margin-right: 3%; }
-    .thumbnail-columns-five > li:nth-of-type(3n+1) { margin-right: 3%; clear: both; }
-
-    .thumbnail-columns h4 { font-size: 0.7em; }
-}
-@media only screen and (min-width: 80em) {
-    .js .thumbnail-columns-five > li.expand,
     .thumbnail-columns-five  > li { width: 20%; }
     .thumbnail-columns-five  > li:nth-of-type(3n+2) { margin-right: 0; }
     .thumbnail-columns-five  > li:nth-of-type(3n+1) { margin-right: 0; clear: none; }
     .thumbnail-columns-five  > li:nth-of-type(5n+1) { clear: both; }
-}
-
-.js .bio { display: none; font-size:  1rem; }
-.js .bio:nth-of-type(2) {
-    display: block;
-    line-height: 1.4000;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    cursor: pointer;
-    color: #D44;
-    border-bottom: 1px dotted #D44;
-}
-.js .expand .bio { 
-   display: block; 
-   white-space: normal;
-   overflow: visible;        
-   cursor: default;
-   color: inherit;
-   border-bottom: 0;
+    
+    .thumbnail-columns h4 { font-size: 0.7em; }
 }
 
 @media only screen and (min-width: 30em) {
-    .js .bio,
-    .js .bio:nth-of-type(2) { 
+    .js .committee .bio,
+    .js .committee .bio:nth-of-type(2) { 
         display: block; 
         font-size:  .870rem;
         white-space: normal;
@@ -705,4 +672,20 @@ a.button:active {
 @media only screen and (min-width: 50em) { 
     .proposals .meta,
     .proposals .by { font-size:  .800rem; line-height: 1.4000; text-transform: uppercase; }    
+}
+
+.programme-committee li { margin: 3rem auto; max-width: 36em; padding: 0 1rem; }
+.programme-committee .poster { position: relative; }
+.programme-committee .poster p { margin: 0; width: 10em; }
+.programme-committee .poster hgroup { position: absolute; left: 11em; bottom: 0; }
+.programme-committee h3,
+.programme-committee h4 { font-weight: normal; margin: 0; }
+@media only screen and (min-width: 30em) { .programme-committee .poster hgroup { left: 170px; } }
+@media only screen and (min-width: 51em) { 
+    .programme-committee li { max-width: none; }
+    .programme-committee .poster { width: 50%; margin-left: -8em; float: left; margin-right: 2em; text-align: right; }
+    .programme-committee .poster p { margin: .5rem 0; width: auto; }
+    .programme-committee .poster hgroup { position: relative; left: auto; bottom: auto; }
+    .programme-committee .bio { float: left; width: 24em; }
+    .programme-committee .bio p { margin: .5rem 0; }
 }

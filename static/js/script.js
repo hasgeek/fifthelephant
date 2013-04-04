@@ -54,24 +54,10 @@ function initSponsor () {
     })
 }
 
-// Handle expansion of bio for low width screens
-function initShortenedBio () {
-    $('.committee li').one('click', '.bio', function(e) {
-        if (window.matchMedia && !window.matchMedia('(min-width: 30em)').matches || $(window).width() < 480) {
-            var $member = $(e.target).closest('li');
-            $member.addClass('expand');
-            $('body').animate({ scrollTop: $member.offset().top });
-        }
-        e.preventDefault();
-        return false;
-    })
-}
-
 function main () {
     setupFlipboard();
     $('iframe.twitter-timeline').length && $(window).on('resize', resizeTwitterTimeline);
     initSponsor();
-    initShortenedBio();
 }
 
 
