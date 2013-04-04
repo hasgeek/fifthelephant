@@ -171,6 +171,7 @@ a.button:active {
     padding: 0 2%;
     margin: 1rem 0;
 }
+.thumbnail-columns-four > li:nth-of-type(odd) { clear: both; }
 .thumbnail-columns-three > li { width: 100%; }
 .thumbnail-columns .poster { margin: 0 0 0.5em; }
 .thumbnail-columns .poster img { box-shadow: 0 0 5px rgba(0,0,0,0.3); }
