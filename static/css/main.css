@@ -63,9 +63,13 @@ a.link-unfade-hover:hover,
 
 .circus-banner { 
     background-image: url(../img/circus_banner.png);
-    background-position: bottom center;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-    bottom: 0;
-    height: 100%;
+    max-width: 2880px;
+    max-width: 1800px;
+    padding-top: 62.5%;
+    margin-bottom: 10%;
 }
+@media only screen and (min-width: 40em) { .circus-banner { margin-bottom: 7.5%; width: 90%; padding-top: 56.25%; } }
+@media only screen and (min-width: 60em) { .circus-banner { margin-bottom: 5%; width: 80%; padding-top: 50%; } }
