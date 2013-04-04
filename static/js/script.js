@@ -20,10 +20,11 @@ $(window).load(resizeTwitterTimeline);
 
 // Handle expansion of bio for low width screens
 function initShortenedBio () {
-    $('body').one('click', '.bio', function(e) {
+    $('.committee li').one('click', '.bio', function(e) {
         if (window.matchMedia && !window.matchMedia("(min-width: 30em)").matches || $(window).width() < 480) {
-            $(e.target).closest('.thumbnail-columns-five').addClass('expand');
-            $('body').animate({ scrollTop: $(e.target).closest('li').offset().top });
+            var $member = $(e.target).closest('li');
+            $member.addClass('expand');
+            $('body').animate({ scrollTop: $member.offset().top });
         }
         e.preventDefault();
         return false;
