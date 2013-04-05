@@ -1,3 +1,4 @@
+{% from "baseframe/components.html" import networkbar with context -%}
 <!DOCTYPE html>
 <!--[if lt IE 8]>      <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -19,6 +20,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   
+  <link rel="stylesheet" href="/_baseframe/css/networkbar.css">
   <link rel="stylesheet" href="{{ theme_static('css/normalize.css') }}">
   <link rel="stylesheet" href="{{ theme_static('css/typography.css') }}">
   <link rel="stylesheet" href="{{ theme_static('css/layout.css') }}">
@@ -29,6 +31,7 @@
 
 </head>
 <body>
+{% block networkbar %}{{ networkbar(siteid='events', login=false) }}{% endblock %}
 <div id="page">
 
 
