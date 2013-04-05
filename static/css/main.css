@@ -71,3 +71,11 @@ a.link-unfade-hover:hover,
 }
 @media only screen and (min-width: 40em) { .big-data { margin-bottom: 7.5%; width: 90%; padding-top: 56.25%; } }
 @media only screen and (min-width: 60em) { .big-data { margin-bottom: 5%; width: 80%; padding-top: 50%; } }
+
+
+/*  Networkbar fixes  */
+
+#hg-bar a { border-bottom: 0; }
+#hg-bar .container:before, #hg-bar .container:after { content: ""; display: table; }
+#hg-bar .container:after { clear: both; }
+#hg-bar .container { zoom: 1; margin: 0 auto; padding: 0 1.5rem; }
