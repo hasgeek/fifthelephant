@@ -38,10 +38,18 @@
 
 {% block banner %}
 <header class="clearfix">
-<div class="banner internal fill-yellow resetcoords layer-one clearfix">
+<div class="banner internal fill-yellow resetcoords layer-one clearfix push-one centered">
+    <h2 class="calm large centered"><a class="link-silent-hover" href="./">The Fifth Elephant</a></h2>
+    <p class="body-type event-meta calm centered">
+      <a
+        class="buy-tickets button small-button"
+        title="Fifth Elephant 2013 Tickets on DoAttend"
+        href="http://fifthelephant.doattend.com/">
+        Jul 11–13, 2013 / Buy Tickets
+      </a>
+    </p>
     <nav>
-      <h2 class="calm legible centered"><a class="link-silent-hover ultrafaded" href="./">The Fifth Elephant</a></h2>
-      <p class="nav-line serif-type secondary centered">
+      <p class="nav-line serif-type secondary centered space-one-top">
         <span class="sub-group community">
           <a href="./community">Community</a>
           <span class="nav-line-spacer italic">powered</span>
@@ -57,17 +65,11 @@
         </span>
       </p>
     </nav>
-    <p class="body-type event-meta calm ultrafaded centered">
-      July 11–13, 2013
-      (<a
-        class="buy-tickets"
-        title="Fifth Elephant 2013 Tickets on DoAttend"
-        href="http://fifthelephant.doattend.com/">
-        Buy Tickets
-      </a>)
-    </p>
+    <hr class="half center-block space-three-bottom">
+    <h1 class="clearboth centered calm measure-10words center-block space-three giant">
+      <span class="serif-type italic legible">The</span> {% block pagehead %}{% endblock %}
+    </h1>
 </div><!-- .banner -->
-{% block pagehead %}{% endblock %}
 </header>
 {% endblock %}
 
