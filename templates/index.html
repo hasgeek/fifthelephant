@@ -1,7 +1,7 @@
 {% extends theme("layout.html") %}
 
 {% block banner %}
-<div class="banner home resetcoords clearfix">
+<div class="banner fill-yellow home resetcoords clearfix">
   <header class="clearfix">
     <nav>
       <p class="nav-line serif-type secondary centered">
@@ -10,9 +10,9 @@
           <span class="nav-line-spacer italic">powered</span>
         </span>
         <span class="sub-group conference">
-          <a class="link-silent-hover">conference</a>
+          <a href="./conference">conference</a>
           <span class="nav-line-spacer amp">&amp;</span>
-          <a class="link-silent-hover">workshops</a>
+          <a  href="./workshops">workshops</a>
         </span>
         <span class="sub-group bangalore">
           <span class="nav-line-spacer italic">in namma</span>
@@ -328,3 +328,8 @@
   </p>
 </section>
 {% endblock %}
+
+{% block footer_script %}
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+{% endblock %}
+

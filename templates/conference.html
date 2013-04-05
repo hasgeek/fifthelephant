@@ -1,0 +1,63 @@
+{% extends theme("layout.html") %}
+
+{% block title %} — Conference{% endblock %}
+
+{% block pagehead %}
+<h1 class="clearboth centered calm measure-10words center-block space-three-top space-two-bottom">
+  Big&nbsp;Data&nbsp;<span class="amp">&amp;</span>&nbsp;Analytics.
+  Every&nbsp;stone,&nbsp;unturned.
+</h1>
+{% endblock %}
+
+{% block content %}
+<section id="conference" class="legible space-six-top clearfix">
+  <article class="prose clearfix">
+    <h1 class="visuallyhidden">Introduction</h1>
+    <div class="measure-10words pad-one center-block">
+      <p>
+        A short intro to the conference. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <p class="regular">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </p>
+      <p class="regular">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+  </article>
+    
+  <article class="clearfix">
+    <div class="measure-8words center-block pad-two">
+    <h2 class="calm centered space-four-top space-two-bottom">Conference Proposals</h2>
+    {% for s in node.sections() if s.name != 'workshops' %}
+        {% for proposal in node.proposals() if proposal['section_name'] == s.name %}
+          {% if loop.first %} 
+            <h3 class="calm centered ultrafaded space-two">{{ s.title }}</h3>
+            <ul id="proposals" class="proposals space-four-bottom">
+          {% endif %}
+          <li class="proposal space-two clearfix">
+              <h5 class="regular space-1q capitalize calm">
+                <a target="_blank" href="{{ proposal['url'] }}" title="{{ proposal['title'] }} — {{ proposal['proposer'] }}">
+                {{ proposal['title'] }}
+                </a>
+              </h5>
+              <p class="by regular space-1q capitalize sixty">{{ proposal['proposer'] }}</p>
+              <p class="meta secondary space-1q right-aligned forty bold ultrafaded">
+                <span class="comments">{{ proposal['comments'] }}</span>
+                <span class="votes">{{ proposal['votes'] }}</span>
+              </p>
+          </li>
+          {% if loop.last %} </ul> {% endif %}
+        {% endfor %}
+    {% endfor %}
+    
+    <p class="centered space-six-top">
+      <a class="button" href="http://funnel.hasgeek.com/fifthel2013/">Propose a Session</a>
+    </p>
+    </div>
+  </article>
+  
+</section>
+
+{% endblock %}
+

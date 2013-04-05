@@ -38,18 +38,18 @@
 
 {% block banner %}
 <header class="clearfix">
-<div class="banner internal resetcoords layer-one clearfix">
+<div class="banner internal fill-yellow resetcoords layer-one clearfix">
     <nav>
-      <h2 class="calm legible centered"><a class="link-silent-hover faded" href="./">The Fifth Elephant</a></h2>
+      <h2 class="calm legible centered"><a class="link-silent-hover ultrafaded" href="./">The Fifth Elephant</a></h2>
       <p class="nav-line serif-type secondary centered">
         <span class="sub-group community">
-          <a href="#community">Community</a>
+          <a href="./community">Community</a>
           <span class="nav-line-spacer italic">powered</span>
         </span>
         <span class="sub-group conference">
-          <a class="link-silent-hover">conference</a>
+          <a href="./conference">conference</a>
           <span class="nav-line-spacer amp">&amp;</span>
-          <a class="link-silent-hover">workshops</a>
+          <a  href="./workshops">workshops</a>
         </span>
         <span class="sub-group bangalore">
           <span class="nav-line-spacer italic">in namma</span>
@@ -349,7 +349,7 @@
 <script src="{{ theme_static('js/flipboard.js') }}"></script>
 <script src="{{ theme_static('js/script.js') }}"></script>
 
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+{% block footer_script %}{% endblock %}
 
 <script>
 // Google Analytics
