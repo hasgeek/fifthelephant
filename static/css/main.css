@@ -56,3 +56,11 @@ a.link-unfade-hover:hover,
 .link-unfade-hover:hover img.ultrafaded { opacity: 1; }
 
 .fittext { line-height: 1; max-width: 1400px; }
+
+
+/*  Networkbar fixes  */
+
+#hg-bar a { border-bottom: 0; }
+#hg-bar .container:before, #hg-bar .container:after { content: ""; display: table; }
+#hg-bar .container:after { clear: both; }
+#hg-bar .container { zoom: 1; margin: 0 auto; padding: 0 1.5rem; }
