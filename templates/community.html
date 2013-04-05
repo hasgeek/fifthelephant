@@ -23,40 +23,12 @@
         Proposal submissions are reviewed on the basis of use cases, how a problem was solved, or why a particular technology and/or approach was adopted for solving the problem. Proposers can refer to open source technologies and tools available for storage, analytics and visualisation in their submissions.
       </p>
     </div>
-  </article>
-  
-  <article class="clearfix">
-    <div class="measure-8words center-block pad-two">
-    <h2 class="calm centered space-four-top space-two-bottom">Event Proposals</h2>
-    {% for s in node.sections() %}
-        {% for proposal in node.proposals() if proposal['section_name'] == s.name %}
-          {% if loop.first %} 
-            <h3 class="calm centered ultrafaded space-two">{{ s.title }}</h3>
-            <ul id="proposals" class="proposals space-four-bottom">
-          {% endif %}
-          <li class="proposal space-two clearfix">
-              <h5 class="regular space-1q capitalize calm">
-                <a target="_blank" href="{{ proposal['url'] }}" title="{{ proposal['title'] }} — {{ proposal['proposer'] }}">
-                {{ proposal['title'] }}
-                </a>
-              </h5>
-              <p class="by regular space-1q capitalize sixty">{{ proposal['proposer'] }}</p>
-              <p class="meta secondary space-1q right-aligned forty bold ultrafaded">
-                <span class="comments">{{ proposal['comments'] }}</span>
-                <span class="votes">{{ proposal['votes'] }}</span>
-              </p>
-          </li>
-          {% if loop.last %} </ul> {% endif %}
-        {% endfor %}
-    {% endfor %}
-    
-    <p class="centered space-six-top">
+    <p class="centered space-two-top">
       <a class="button" href="http://funnel.hasgeek.com/fifthel2013/">Propose a Session</a>
     </p>
-    </div>
   </article>
   
-  <article class="push-three-top push-two-bottom space-four-top clearfix">
+  <article class="push-three-top push-two-bottom fill-light space-four-top clearfix">
     <div class="prose measure-10words pad-one center-block">
       <h2 class="centered calm space-two-top space-one-bottom">The Programme Committee</h2>
       <p class="regular">

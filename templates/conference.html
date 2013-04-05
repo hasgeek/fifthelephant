@@ -26,7 +26,7 @@
   </article>
     
   <article class="clearfix">
-    <div class="measure-8words center-block pad-two">
+    <div class="measure-8words center-block pad-one">
     <h2 class="calm centered space-four-top space-two-bottom">Conference Proposals</h2>
     {% for s in node.sections() if s.name != 'workshops' %}
         {% for proposal in node.proposals() if proposal['section_name'] == s.name %}
