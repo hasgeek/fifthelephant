@@ -78,7 +78,7 @@
 {% endblock %}
 
 
-<footer class="clearfix">
+<footer class="clearfix push-four-bottom">
   <hr class="eighty center-block">
   <p class="centered secondary space-two-top space-half-bottom wrap-mobile copyright center-block"><span>The Fifth Elephant is a conference by <a href="http://hasgeek.com">HasGeek</a>.</span> <span>Copyright © 2010-13. All rights reserved.</span></p>
   <p class="centered secondary space-half-top wrap-mobile copyright center-block"><span>For further information / sponsorship:</span> <span><script type="text/javascript">
@@ -108,7 +108,7 @@
   //]]>
   </script>
   </span></p>
-  <p class="centered tiny space-two-top space-four-bottom faded center-block wrap-mobile attribution"><span><a href="http://thenounproject.com/noun/map-marker/#icon-No9093">Map Marker</a> designed by <a href="http://thenounproject.com/schumanncombo">Richard Schumann</a></span> <span>from The Noun Project</span></p>
+  {% block footer_credits %}{% endblock %}
 </footer>
 
 
