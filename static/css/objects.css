@@ -11,19 +11,17 @@
     outline: 0.3em solid rgba(0,0,0,0.5);
 }
 
-.internal-banner .event-summary { 
-    margin: 2rem auto 0;
-    width: 60%;
-    float: right;
-}
-@media only screen and (min-width: 30em) { .internal-banner .event-summary { width: 50%; } }
-@media only screen and (min-width: 40em) { .internal-banner .event-summary { width: 40%; } }
-.internal-banner .event-summary h3 { margin-left: -1.2rem; }
-.internal-banner .event-summary a.buy-tickets { 
-    color: #D44;
-    border-bottom: 1px dotted #D44;
-}
-.internal-banner .event-summary a.buy-tickets:hover { color: white; border: 0; } 
+.banner .event-meta { margin: 1rem 0 2rem; font-size: 1.000rem; line-height: 1.5000; }
+@media only screen and (min-width: 30em) { .banner .event-meta { font-size:  .800rem; line-height: 1.4000; } }
+.banner .event-meta a,
+.banner .event-meta a:visited { color: inherit; border-bottom: 1px dotted rgba(0,0,0,.35); font-size: .8rem; }
+.banner .event-meta:hover a { border-bottom: 1px dotted #D44; color: #D44; } 
+.banner .event-meta a:hover { border-bottom-style: solid; background-color: transparent; outline: 0; } 
+
+.banner.internal .ultrafaded:hover { color: black !important; }
+
+.banner nav h2 { margin: 2rem auto 0; }
+@media only screen and (min-width: 30em) { .banner nav h2 { margin-bottom: .5rem; } }
 
 
 .nav-line {
@@ -31,8 +29,9 @@
     font-size: 1.2em;
     line-height: 1.8;
     color: rgba(0,0,0,0.65);
-    margin-bottom: 2rem;
+    margin: 0;
 }
+.home .nav-line { margin: 2rem auto; }
 .nav-line .nav-line-spacer {
     padding: 0 0.2em;
     display: inline-block;
@@ -84,9 +83,9 @@
     .nav-line {
         font-size: 1em;
         line-height: 1.5;
-        margin: 1.5rem 0;
         color: rgba(200,00,00,0.65);
     }
+    .home .nav-line { margin: 1.5rem 0; }
     .nav-line .nav-line-spacer { padding: 0 0.1em; }
     .nav-line .nav-line-spacer.amp { color: rgba(200,00,00,0.5); }
     .nav-line .sub-group { display: inline-block; }
@@ -119,7 +118,7 @@
     .nav-line .nav-line-spacer.amp { display: inline-block; }
 }
 @media only screen and (min-width: 50em) {
-    .nav-line { margin: 2rem 0; }
+    .home .nav-line { margin: 2rem 0; }
     .nav-line .nav-line-spacer { width: 4rem; text-indent: 0; }
     .nav-line .nav-line-spacer.amp {
         width: 1.5rem;
@@ -130,7 +129,7 @@
     .nav-line a, .nav-line .conference a { width: 8rem; }
 }
 @media only screen and (min-width: 55em) {
-    .nav-line { margin: 3rem 0; font-weight: 300; }
+    .home .nav-line { margin: 3rem 0; font-weight: 300; }
     .nav-line .nav-line-spacer.amp { font-size: 2em; width: 3rem; }
 }
 

@@ -1,5 +1,68 @@
 {% extends theme("layout.html") %}
 
+{% block banner %}
+<div class="banner home resetcoords clearfix">
+  <header class="clearfix">
+    <nav>
+      <p class="nav-line serif-type secondary centered">
+        <span class="sub-group community">
+          <a href="./community">Community</a>
+          <span class="nav-line-spacer italic">powered</span>
+        </span>
+        <span class="sub-group conference">
+          <a class="link-silent-hover">conference</a>
+          <span class="nav-line-spacer amp">&amp;</span>
+          <a class="link-silent-hover">workshops</a>
+        </span>
+        <span class="sub-group bangalore">
+          <span class="nav-line-spacer italic">in namma</span>
+          <a href="http://goo.gl/maps/PvXY" title="View location in Google Maps">Bangalore</a>
+        </span>
+      </p>
+    </nav>
+    
+    <hr class="half center-block space-three-bottom">
+    
+    <hgroup class="centered clearfix">
+      <h1 class="calm huge space-two-top nospace-bottom">
+        <a class="link-silent-hover" href="./">
+          The Fifth Elephant
+        </a>
+      </h1>
+      <h3 class="body-type calm ultrafaded regular space-half">
+        <a
+          title="View location in Google Maps"
+          class="inline-block link-silent-hover link-unfade-hover"
+          href="http://goo.gl/maps/PvXY">
+          <img alt="Co-ordinates" src="{{ theme_static('img/map-marker.svg') }}" width="15" class="gap-1q-right ultrafaded">
+        </a>
+        <a 
+          title="View location in Google Maps"
+          href="http://goo.gl/maps/PvXY"
+          class="ultrafaded link-white-hover">
+          <abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr>
+          Convention Centre
+        </a>
+      </h3>
+      <h2 class="calm faded legible space-one">
+        July 11–13, 2013
+      </h2>
+    </hgroup>
+    
+    <p class="centered legible space-two-bottom">
+      <a
+        class="button button-primary min-measure-3words"
+        title="Fifth Elephant 2013 Tickets on DoAttend"
+        href="http://fifthelephant.doattend.com/">
+        Buy Tickets
+      </a>
+    </p>
+  </header>
+  
+  <p class="big-data center-block ir">Big Data</p>
+</div><!-- .banner -->
+{% endblock %}
+
 {% block content %}
 <section class="measure-10words pad-one center-block legible space-six prose clearfix">
   <h1 class="visuallyhidden">Introduction</h1>
