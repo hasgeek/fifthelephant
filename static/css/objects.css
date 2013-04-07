@@ -637,6 +637,50 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 }
 
 
+.sponsors-compact { max-width: 50em; }
+.sponsors-compact .sponsor-cat { width: 100%; }
+.sponsors-compact h5 {
+    margin: 1rem 0 0 0;
+    padding: 0 1em;
+    font-size:  .700rem;
+    line-height: 1.4000;
+    background-color: #D44;
+    color: rgba(255,255,255,.95);
+    font-weight: normal;
+    float: left;
+}
+.sponsors-compact .thumbnail-columns { padding: 0; margin: 0 0; background-color: white; width: 100%; }
+.sponsors-compact .thumbnail-columns > li { background-color: white; height: 5rem; padding: 0; margin: 0; }
+.sponsors-compact .thumbnail-columns.thumbnail-columns-three > li { width: 50%; }
+.sponsors-compact a { 
+    display: block;
+    text-align: center; 
+    height: 5rem;
+    width: 100%;
+    border: 0;
+    padding: 0 10%;
+}
+.sponsors-compact a.contain-width { padding: 0 2rem; line-height: 5rem; }
+.sponsors-compact a.contain-height { padding: 1rem; line-height: 3rem; }
+.sponsors-compact a:hover { background-color: #F5F5F5; } 
+.sponsors-compact img { vertical-align: middle; }
+.sponsors-compact a.contain-width img { max-width: 7rem;  } 
+@media only screen and (min-width: 30em) { 
+    .sponsors-compact .thumbnail-columns.thumbnail-columns-five > li,
+    .sponsors-compact .thumbnail-columns.thumbnail-columns-three > li { width: 33.3333%; width: calc(100%/3); }
+    
+    .sponsors-compact .thumbnail-columns.thumbnail-columns-three > li:nth-of-type(odd) { clear: none; }
+    .sponsors-compact .thumbnail-columns.thumbnail-columns-three > li:nth-of-type(3n+1) { clear: both; }
+}
+@media only screen and (min-width: 50em) { 
+    .sponsors-compact .sponsor-cat.platinum { width: 39%; }
+    .sponsors-compact .sponsor-cat.gold { width: 59%; margin-left: 2%; }
+    .sponsors-compact .thumbnail-columns { background-color: transparent; }
+    .sponsors-compact .thumbnail-columns.thumbnail-columns-five li { width: 20%; }
+}
+
+
+
 /*.proposals a { border: 0; color: inherit; }*/
 .proposals ul,
 .proposals li { list-style-type: none; }
