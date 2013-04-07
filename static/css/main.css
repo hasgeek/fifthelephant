@@ -14,15 +14,23 @@ a,
 a:visited   {
     color: #D44;
     text-decoration: none;
-    border-bottom: 1px dotted #D44;
 }
+
+.prose a,
+.prose a:visited,
+.highlight-links a,
+.highlight-links a:visited { border-bottom: 1px dotted #D44; }
+
+a.unhighlight,
+a.unhighlight:visited { border-bottom: 0; }
+
 a:hover     { border-bottom: 2px solid #D44; }
 a.block-link{ color: inherit; border-bottom: none }
 a.block-link:hover { color: #D44; outline: none; }
 a.link-silent-hover:hover { color: inherit !important; outline: none !important; background-color: transparent !important; }
 a.link-white-hover:hover  { color: #FFF !important; }
 
-.faded a { color: inherit; border-color: rgba(0,0,0,.3); }
+.faded a { color: inherit; border-color: rgba(0,0,0,.3) !important; }
 .fill-dark .faded a { color: inherit; border-color: rgba(255,255,255,.3); }
 
 hr {
