@@ -17,7 +17,7 @@ function resizeTwitterTimeline () {
     $('iframe.twitter-timeline').contents().find('.stream').height(Math.max($(window).height()/2,180));
     $('iframe.twitter-timeline').height($('iframe.twitter-timeline').contents().find('.twitter-timeline').height()+2);
 }
-$('iframe.twitter-timeline').length && $(window).load(resizeTwitterTimeline);
+$('.twitter-timeline').length && $(window).load(resizeTwitterTimeline);
 
 // Sponsor Interaction
 function initSponsor () {
@@ -56,7 +56,7 @@ function initSponsor () {
 
 function main () {
     setupFlipboard();
-    $('iframe.twitter-timeline').length && $(window).on('resize', resizeTwitterTimeline);
+    $('.twitter-timeline').length && $(window).on('resize', resizeTwitterTimeline);
     initSponsor();
 }
 

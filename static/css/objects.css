@@ -711,18 +711,28 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     .proposals .by { font-size:  .800rem; line-height: 1.4000; text-transform: uppercase; }    
 }
 
-.programme-committee li { margin: 3rem auto; max-width: 36em; padding: 0 1rem; }
-.programme-committee .poster { position: relative; }
-.programme-committee .poster p { margin: 0; width: 10em; }
-.programme-committee .poster hgroup { position: absolute; left: 11em; bottom: 0; }
-.programme-committee h3,
-.programme-committee h4 { font-weight: normal; margin: 0; }
-@media only screen and (min-width: 30em) { .programme-committee .poster hgroup { left: 170px; } }
+.poster-with-bio li { margin: 3rem auto; max-width: 36em; padding: 0 1rem; }
+.poster-with-bio .poster { position: relative; }
+.poster-with-bio .poster p { margin: 0; width: 10rem; max-width: 9.375rem; }
+.poster-with-bio .poster hgroup { position: absolute; left: 11rem; bottom: 0; }
+.poster-with-bio h3,
+.poster-with-bio h4 { font-weight: normal; margin: 0; }
+@media only screen and (min-width: 30em) { .poster-with-bio .poster hgroup { left: 10rem; } }
 @media only screen and (min-width: 51em) { 
-    .programme-committee li { max-width: none; }
-    .programme-committee .poster { width: 50%; margin-left: -8em; float: left; margin-right: 2em; text-align: right; }
-    .programme-committee .poster p { margin: .5rem 0; width: auto; }
-    .programme-committee .poster hgroup { position: relative; left: auto; bottom: auto; }
-    .programme-committee .bio { float: left; width: 24em; }
-    .programme-committee .bio p { margin: .5rem 0; }
+    .poster-with-bio li { max-width: none; }
+    .poster-with-bio .poster { width: 50%; margin-left: -8em; float: left; margin-right: 2em; text-align: right; }
+    .poster-with-bio .poster p { margin: .5rem 0; width: auto; float: right; }
+    .poster-with-bio .poster p img { margin: .5rem 0; width: 9.375rem; float: right; }
+    .poster-with-bio .poster hgroup { position: relative; left: auto; bottom: auto; }
+    .poster-with-bio .bio { float: left; width: 24em; }
+    .poster-with-bio .bio p { margin: .5rem 0; }
+}
+
+.conference-featured-talks .conference-featured-talk-topic { text-transform: capitalize; }
+.conference-featured-talks.poster-with-bio .bio { color: rgba(0,0,0,.8); }
+@media only screen and (min-width: 51em) { 
+    .conference-featured-talks .conference-featured-talk-topic { text-align: center; }
+    .conference-featured-talks .conference-featured-talk-description { max-width: 32em; margin: 1rem auto; }
+    .conference-featured-talks.poster-with-bio .poster { margin-left: -7em; }
+    .conference-featured-talks.poster-with-bio .bio { float: left; width: 19em; }
 }
