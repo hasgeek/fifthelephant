@@ -7,8 +7,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>The Fifth Elephant{% block title %}{% endblock %}</title>
-  <meta name="description" content="The Fifth Elephant is a community-powered conference on the big data ecosystem, covering the technology and its applications in a range of industries.">
+  <title>The Fifth Elephant{% if title %} — {{ title }}{% endif %}</title>
+  <meta name="description" content="{% if description %}{{ description }}{% else %}The Fifth Elephant is a community-powered conference on the big data ecosystem, covering the technology and its applications in a range of industries.{% endif %}">
   <meta name="author" content="HasGeek and friends">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   
