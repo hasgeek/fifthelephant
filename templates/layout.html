@@ -49,7 +49,7 @@
       </a>
     </p>
     <nav>
-      <p class="nav-line serif-type secondary centered space-one-top">
+      <p class="nav-line serif-type secondary centered space-one-top space-line-bottom">
         <span class="sub-group community">
           <a href="./community">Community</a>
           <span class="nav-line-spacer italic">powered</span>
@@ -65,10 +65,12 @@
         </span>
       </p>
     </nav>
-    <hr class="half center-block space-three-bottom">
+    {% if page_caption %}
+    <hr class="half center-block space-three-top space-three-bottom">
     <h1 class="clearboth centered calm measure-10words center-block space-three giant">
-      <span class="serif-type italic legible">The</span> {% block pagehead %}{% endblock %}
+      <span class="serif-type italic legible">The</span> {{ page_caption }}
     </h1>
+    {% endif %}
 </div><!-- .banner -->
 </header>
 {% endblock %}
