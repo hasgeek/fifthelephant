@@ -80,19 +80,19 @@
 
 <footer class="clearfix push-four-bottom">
   {% block sponsor_compact %}
-  <section id="sponsors" class="fill-light regular clearfix pad-one">
+  <section id="sponsors" class="regular clearfix space-two-top pad-one{% if not sponsor_compact_white %} fill-light{% endif %}">
     <div class="sponsors-compact center-block space-three-top space-four-bottom clearfix">
     <h3 class="legible centered nospace-top space-one-bottom ultrafaded">Sponsors</h3>
     <article class="sponsor-cat flushleft platinum clearfix">
       <h5 class="all-caps"><span>Platinum</span></h5>
-      <ul class="thumbnail-columns regular flushleft clearboth clearfix">
+      <ul class="thumbnail-columns regular flushleft clearboth clearfix{% if sponsor_compact_white %} fill-light{% else %} fill-white{% endif %}">
         <li><a href="#" class="contain-width"><img src="{{ theme_static('img/sponsors/activesphere.png') }}" alt="Active Sphere"></a></li>
         <li><a href="#" class="contain-height"><img src="{{ theme_static('img/sponsors/iarchive.png') }}" alt="Internet Archive"></a></li>
       </ul>
     </article>
     <article class="sponsor-cat flushleft gold clearfix">
       <h5 class="all-caps"><span>Gold</span></h5>
-      <ul class="thumbnail-columns thumbnail-columns-three regular clearboth flushleft clearfix">
+      <ul class="thumbnail-columns thumbnail-columns-three regular clearboth flushleft clearfix{% if sponsor_compact_white %} fill-light{% else %} fill-white{% endif %}">
         <li><a href="#" class="contain-width"><img src="{{ theme_static('img/sponsors/activesphere.png') }}" alt="Active Sphere"></a></li>
         <li><a href="#" class="contain-height"><img src="{{ theme_static('img/sponsors/iarchive.png') }}" alt="Internet Archive"></a></li>
         <li><a href="#" class="contain-width"><img src="{{ theme_static('img/sponsors/activesphere.png') }}" alt="Active Sphere"></a></li>
@@ -100,7 +100,7 @@
     </article>
     <article class="sponsor-cat silver flushleft clearfix">
       <h5 class="all-caps"><span>Silver</span></h5>
-      <ul class="thumbnail-columns thumbnail-columns-five regular clearboth clearfix">
+      <ul class="thumbnail-columns thumbnail-columns-five regular clearboth clearfix{% if sponsor_compact_white %} fill-light{% else %} fill-white{% endif %}">
         <li><a href="#" class="contain-width"><img src="{{ theme_static('img/sponsors/maas360.png') }}" alt="Internet Archive"></a></li>
         <li><a href="#" class="contain-height"><img src="{{ theme_static('img/sponsors/iarchive.png') }}" alt="Internet Archive"></a></li>
         <li><a href="#" class="contain-width"><img src="{{ theme_static('img/sponsors/activesphere.png') }}" alt="Active Sphere"></a></li>
@@ -110,7 +110,7 @@
     </article>
     <article class="sponsor-cat bronze flushleft clearfix">
       <h5 class="all-caps"><span>Bronze</span></h5>
-      <ul class="thumbnail-columns thumbnail-columns-five regular clearboth clearfix">
+      <ul class="thumbnail-columns thumbnail-columns-five regular clearboth clearfix{% if sponsor_compact_white %} fill-light{% else %} fill-white{% endif %}">
         <li><a href="#" class="contain-height"><img src="{{ theme_static('img/sponsors/iarchive.png') }}" alt="Internet Archive"></a></li>
         <li><a href="#" class="contain-width"><img src="{{ theme_static('img/sponsors/activesphere.png') }}" alt="Active Sphere"></a></li>
         <li><a href="#" class="contain-height"><img src="{{ theme_static('img/sponsors/iarchive.png') }}" alt="Internet Archive"></a></li>
@@ -121,6 +121,7 @@
     </div>
   </section>
   {% endblock %}
+  {% if sponsor_compact_white %}<hr class="seventy center-block">{% endif %}
   <p class="centered secondary space-two-top space-half-bottom wrap-mobile copyright center-block"><span>The Fifth Elephant is a conference by <a href="http://hasgeek.com">HasGeek</a>.</span> <span>Copyright © 2010-13. All rights reserved.</span></p>
   <p class="centered secondary space-half-top wrap-mobile copyright center-block"><span>For further information / sponsorship:</span> <span><script type="text/javascript">
   //<![CDATA[
