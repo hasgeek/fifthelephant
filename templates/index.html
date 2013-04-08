@@ -6,23 +6,8 @@
 {% block banner %}
 <div class="banner fill-yellow home resetcoords clearfix">
   <header class="clearfix">
-    <nav>
-      <p class="nav-line serif-type secondary centered">
-        <span class="sub-group community">
-          <a href="./community">Community</a>
-          <span class="nav-line-spacer italic">powered</span>
-        </span>
-        <span class="sub-group conference">
-          <a href="./conference">conference</a>
-          <span class="nav-line-spacer amp">&amp;</span>
-          <a  href="./workshops">workshops</a>
-        </span>
-        <span class="sub-group bangalore">
-          <span class="nav-line-spacer italic">in namma</span>
-          <a href="http://goo.gl/maps/PvXY" title="View location in Google Maps">Bangalore</a>
-        </span>
-      </p>
-    </nav>
+    
+    <div class="space-three">{% block nav %}{{ super() }}{% endblock %}</div>
     
     <hr class="half center-block space-three-bottom">
     
@@ -84,52 +69,59 @@
 </section>
 
 
-<section id="community" class="legible clearfix">  
+<section id="community" class="fill-dark legible clearfix">  
   <article class="clearfix">
-    <div class="prose measure-10words pad-one center-block">
-      <h2 class="centered calm space-two-top space-one-bottom">The Programme Committee</h2>
-      <p class="regular">
-        This year’s programme committee boasts of experience and expertise from different spectrums of Big Data &mdash; practitioners working on storage and cloud computing as well as architects and technologists working on analytics and business intelligence. 
-      </p>
-    </div>
-    
-    <ul class="committee thumbnail-columns thumbnail-columns-five regular clearfix fill-dark push-two-top push-one-bottom space-two-top nospace-bottom">
+    <h2 class="centered calm space-two-bottom space-three-top">The Programme Committee</h2>
+    <ul class="committee thumbnail-columns thumbnail-columns-five regular clearfix nospace">
       <li class="clearfix">
-        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/ashok.jpg') }}" width="150" height="150"></p>
-        <hgroup>
-          <h3>Ashok Banerjee</h3>
-          <h4>Flipkart</h4>
-        </hgroup>
+        <a class="occupy block-link" href="./community#ashok">
+          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/ashok.jpg') }}" width="150" height="150"></p>
+          <hgroup>
+            <h3>Ashok Banerjee</h3>
+            <h4>Flipkart</h4>
+          </hgroup>
+        </a>
       </li>
       <li class="clearfix">
-        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/gopal.jpg') }}" width="150" height="150"></p>
-        <hgroup>
-          <h3>Gopal Vijayraghavan</h3>
-          <h4>Hortonworks</h4>
-        </hgroup>
+        <a class="occupy block-link" href="./community#gopal">
+          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/gopal.jpg') }}" width="150" height="150"></p>
+          <hgroup>
+            <h3>Gopal Vijayraghavan</h3>
+            <h4>Hortonworks</h4>
+          </hgroup>
+        </a>
       </li>
       <li class="clearfix">
-        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/govind.jpg') }}" width="150" height="150"></p>
-        <hgroup>
-          <h3>Govind Kanshi</h3>
-          <h4>Microsoft</h4>
-        </hgroup>
+        <a class="occupy block-link" href="./community#govind">
+          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/govind.jpg') }}" width="150" height="150"></p>
+          <hgroup>
+            <h3>Govind Kanshi</h3>
+            <h4>Microsoft</h4>
+          </hgroup>
+        </a>
       </li>
       <li class="clearfix">
-        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/joydeep.jpg') }}" width="150" height="150"></p>
-        <hgroup>
-          <h3>Joydeep Sen Sharma</h3>
-          <h4>Qubole</h4>
-        </hgroup>
+        <a class="occupy block-link" href="./community#joydeep">
+          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/joydeep.jpg') }}" width="150" height="150"></p>
+          <hgroup>
+            <h3>Joydeep Sen Sharma</h3>
+            <h4>Qubole</h4>
+          </hgroup>
+        </a>
       </li>
       <li class="clearfix">
-        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/sesh.jpg') }}" width="150" height="150"></p>
-        <hgroup>
-          <h3>Srinivasan Seshadri (Sesh)</h3>
-          <h4>Boltell</h4>
-        </hgroup>
+        <a class="occupy block-link" href="./community#sesh">
+          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/sesh.jpg') }}" width="150" height="150"></p>
+          <hgroup>
+            <h3>Srinivasan Seshadri (Sesh)</h3>
+            <h4>Boltell</h4>
+          </hgroup>
+        </a>
       </li>
     </ul>
+    <p class="centered space-two-top space-three-bottom regular">
+      <a class="button" href="./community#committee">More about the committee</a>
+    </p>
   </article>
 </section>
 
@@ -320,7 +312,7 @@
         </li>
       </ul>
       
-      <p class="centered space-two">
+      <p class="centered space-two regular">
         <a class="button" href="http://hasgeek.tv/fifthelephant/">More on HasGeek TV</a>
       </p>
     </div>
