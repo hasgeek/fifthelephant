@@ -35,7 +35,8 @@ a.link-silent-hover:hover { color: inherit !important; outline: none !important;
 a.link-white-hover:hover  { color: #FFF !important; }
 a.link-white-translucent-hover:hover  { color: rgba(255,255,255,.95) !important; }
 
-.faded a { color: inherit; border-color: rgba(0,0,0,.3) !important; }
+.faded a,
+a.faded { color: inherit; border-color: rgba(0,0,0,.3) !important; }
 .fill-dark .faded a { color: inherit; border-color: rgba(255,255,255,.3); }
 
 hr {

@@ -31,6 +31,7 @@ dl dd { margin-left: 0; }
 .center-block   { margin-left: auto; margin-right: auto; }
 .right-block    { margin-left: auto; margin-right: 0; }
 .truncate       { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+.nowrap         { white-space: nowrap; }
 .forcewrap      { word-wrap: break-word; }
 
 .contain-width  img, img.contain-width  { max-width:  100%; height: auto; }

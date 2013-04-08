@@ -52,7 +52,7 @@
 {% endblock %}
 
 {% block content %}
-<section class="measure-10words pad-one center-block legible space-six prose clearfix">
+<section class="measure-10words pad-one center-block legible space-six-top space-three-bottom prose clearfix">
   <h1 class="visuallyhidden">Introduction</h1>
   <p>
     In 2013, commodity hardware and computing capacity for storing and processing large
@@ -68,6 +68,31 @@
   </p>
 </section>
 
+<section id="announcements" class="announcements pad-one legible center-block space-three-top space-four-bottom clearfix">
+  <div class="tile-block clearfix">
+    <h2 class="calm invisible">Highlights</h2>
+    <ul class="tiles title-type clearfix nospace">
+      <li class="space-one pig"><a class="occupy right-aligned block-link link-white-hover" href="#"><span class="wrap">Pig Workshop</span> <span class="regular wrap">(April&nbsp;13)</span></a></li>
+      <li class="space-one fill-yellow bird"><a class="occupy right-aligned block-link link-white-hover" href="http://twitter.com/fifthel"><span class="wrap">Follow Us</span> <span class="regular wrap">@fifthel</span></a></li>
+    </ul>
+  </div>
+  <div class="announcements-block clearfix">
+    <h2 class="calm">Announcements</h2>
+    <ul class="blog-latest-list highlight-links clearfix nospace">
+    {% for post in feed(limit=4) -%}
+      <li class="space-two-top">
+        <h4 class="calm"><a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}" class="gap-half-right">{{ post.title }}</a> <span class="body-type regular faded nowrap">{{ post.published_at|longdate }}</span></h4>
+        <p class="regular space-half">{{ post.description }}</p>
+      </li>
+      {% if loop.last %}
+        <li class="flushright"><a href="/blog" class="gap-half-right faded regular">More &rarr;</a></li>
+      {% endif %}
+    {%- else -%}
+      <li>(No blog entries have been written so far)</li>
+    {%- endfor %}
+    </ul>
+  </div>
+</section>
 
 <section id="community" class="fill-dark legible clearfix">  
   <article class="clearfix">
@@ -318,7 +343,7 @@
     </div>
 </section>
 
-<section id="announcements" class="announcements legible fill-light nospace clearfix">
+<section id="twitter" class="twitter legible fill-light nospace clearfix">
   <p class="centered space-three"><a class="twitter-timeline" data-dnt="true" href="https://twitter.com/fifthel" data-widget-id="316855895701192704" data-chrome="nofooter">Tweets by @fifthel</a>
   </p>
 </section>
@@ -565,6 +590,6 @@
 {% endblock %}
 
 {% block footer_credits %}
-<p class="centered tiny space-two-top space-four-bottom faded center-block wrap-mobile attribution"><span><a href="http://thenounproject.com/noun/map-marker/#icon-No9093">Map Marker</a> designed by <a href="http://thenounproject.com/schumanncombo">Richard Schumann</a></span> <span>from The Noun Project</span></p>
+<p class="centered tiny space-two-top space-four-bottom faded center-block wrap-mobile attribution"><span><a href="http://thenounproject.com/noun/map-marker/#icon-No9093">Map Marker</a> designed by <a href="http://thenounproject.com/schumanncombo">Richard Schumann</a> and</span> <span><a href="http://thenounproject.com/noun/bird/#icon-No6104" target="_blank">Bird</a> designed by <a href="http://thenounproject.com/tlb" target="_blank">Thomas Le Bas</a> from The Noun Project</span></p>
 {% endblock %}
 
