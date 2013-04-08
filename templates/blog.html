@@ -1,0 +1,27 @@
+{% extends theme("layout.html") %}
+
+{% block title %}{{ node.title }}{% endblock %}
+{% block description %}{{ node.description }}{% endblock %}
+
+{% block content %}
+<section class="blog space-six">
+    {# <div class="description centered">{{ node.content }}</div> #}
+    <ul class="blogpost-list measure-10words center-block">
+    {% for post in feed() -%}
+      <li>
+        <hgroup class="space-two-bottom">
+          <h2 class="calm space-half-bottom">
+            <a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}">{{ post.title }}</a>
+          </h2>
+          <h4 class="calm secondary space-half-top"><a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}" class="spooky">{{ post.published_at|longdate }}</a>{% if node.author %} <span class="serif-type italic faded pad-half">by</span> {{ post.author }}{% endif %}</h4>
+        </hgroup>
+        <div class="prose">
+        {{ post.content }}
+        </div>
+      </li>
+    {%- else -%}
+      <li>(No blog entries have been written so far)</li>
+    {%- endfor %}
+    </ul>
+</section>
+{% endblock %}

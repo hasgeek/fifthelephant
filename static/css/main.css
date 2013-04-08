@@ -21,10 +21,14 @@ a:visited   {
 .highlight-links a,
 .highlight-links a:visited { border-bottom: 1px dotted #D44; }
 
-a.unhighlight,
-a.unhighlight:visited { border-bottom: 0; }
+a:hover         { border-bottom: 2px solid #D44; }
+a.spooky:hover  { border-bottom: 1px dotted rgba(0,0,0,.3); }
 
-a:hover     { border-bottom: 2px solid #D44; }
+a.unhighlight,
+a.unhighlight:visited,
+a.unhighlight:hover { border-bottom: 0; }
+
+a.spooky,
 a.block-link{ color: inherit; border-bottom: none }
 a.block-link:hover { color: #D44; outline: none; }
 a.link-silent-hover:hover { color: inherit !important; outline: none !important; background-color: transparent !important; }

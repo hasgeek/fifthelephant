@@ -681,7 +681,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 
 .proposals ul,
 .proposals li { list-style-type: none; }
-.proposals .by { line-height: 1.5; float: left; }
+.proposals .by { line-height: 1.5; float: left; text-transform: capitalize; }
 .proposals .meta { line-height: 1.5; float: right; }
 .proposals .votes,
 .proposals .comments { 
@@ -736,3 +736,10 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     .conference-featured-talks.poster-with-bio .poster { margin-left: -7em; }
     .conference-featured-talks.poster-with-bio .bio { float: left; width: 19em; }
 }
+
+.blogpost hgroup { text-align: center; }
+.blogpost em,
+.blogpost i,
+.blogpost-list em,
+.blogpost-list i { font-family: Baskerville, Palatino, 'Book Antiqua', Constantia, 'URW Palladio L'; }
+.blogpost-list > li + li { margin-top: 8rem; }

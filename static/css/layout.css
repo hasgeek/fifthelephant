@@ -56,22 +56,27 @@ dl dd { margin-left: 0; }
 /* Widths */
 
 .full,
-.stretch      { width:100%; }
+.stretch,
+.hundred      { width:100%; }
 .eighty       { width: 80%; }
 .seventyfive,
 .threefourth  { width: 75%; }
 .twothird,
 .seventy      { width: 70%; }
 .sixty        { width: 60%; }
-.half         { width: 50%; }
+.half,
+.fifty        { width: 50%; }
 .twofifth,
 .almosthalf,
 .forty        { width: 40%; }
 .thirtyfive   { width: 35%; }
 .third        { width: 30%; }
 .quarter,
-.fourth       { width: 25%; }
-.fifth        { width: 20%; }
+.fourth,
+.twentyfive   { width: 25%; }
+.fifth,
+.twenty       { width: 20%; }
+
 
 .measure-10words    { max-width: 32em; }
 .measure-8words     { max-width: 30em; }
