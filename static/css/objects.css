@@ -748,3 +748,21 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .blogpost-list em,
 .blogpost-list i { font-family: Baskerville, Palatino, 'Book Antiqua', Constantia, 'URW Palladio L'; }
 .blogpost-list > li + li { margin-top: 8rem; }
+
+.blogpost .sponsor { position: relative; }
+.blogpost .sponsor:after { 
+    text-align: right;
+    width: 100%;
+    position: absolute;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 600;
+    color: black;
+    border-top: 5px solid rgba(0,0,0,.85);
+    padding-top: .25rem;
+}
+.blogpost .sponsor-platinum:after { content: 'Platinum'; }
+.blogpost .sponsor-gold:after { content: 'Gold'; }
+.blogpost .sponsor-silver:after { content: 'Silver'; }
+.blogpost .sponsor-bronze:after { content: 'Bronze'; }
+.blogpost .sponsor-community:after { content: 'Community'; }
