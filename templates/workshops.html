@@ -24,9 +24,9 @@
     </div>
   </article>
   
-  <article class="clearfix highlight-links">
+  <article class="clearfix highlight-links space-four">
     <div class="measure-8words center-block pad-one">
-    <h2 class="calm centered space-four-top space-two-bottom">Workshop Proposals</h2>
+    <h2 class="calm centered space-two">Workshop Proposals</h2>
     {% for proposal in node.proposals() if proposal['section_name'] == 'workshops' %}
       {% if loop.first %} 
         <ul id="proposals" class="proposals space-four-bottom">
@@ -45,7 +45,7 @@
       </li>
       {% if loop.last %} </ul> {% endif %}
     {% endfor %}
-    <p class="centered space-six">
+    <p class="centered space-six-top">
       <a class="button" href="http://funnel.hasgeek.com/fifthel2013/">Propose a Session</a>
     </p>
     </div>

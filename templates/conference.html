@@ -63,10 +63,10 @@
 </section>
   
   
-<section id="conference-proposal" class="legible highlight-links clearfix">
+<section id="conference-proposal" class="legible highlight-links clearfix space-four">
   <article class="clearfix">
     <div class="measure-8words center-block pad-one">
-    <h2 class="calm centered space-four-top space-two-bottom">Conference Proposals</h2>
+    <h2 class="calm centered space-two">Conference Proposals</h2>
     {% for s in node.sections() if s.name != 'workshops' %}
         {% for proposal in node.proposals() if proposal['section_name'] == s.name %}
           {% if loop.first %} 
@@ -89,7 +89,7 @@
         {% endfor %}
     {% endfor %}
     
-    <p class="centered space-six">
+    <p class="centered space-six-top">
       <a class="button" href="http://funnel.hasgeek.com/fifthel2013/">Propose a Session</a>
     </p>
     </div>
