@@ -650,9 +650,8 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     padding: 0 1em;
     font-size:  .700rem;
     line-height: 1.4000;
-    background-color: #D44;
-    color: rgba(255,255,255,.95);
-    font-weight: normal;
+    color: rgba(0,0,0,.4);
+    font-weight: 600;
     float: left;
 }
 .sponsors-compact .thumbnail-columns { padding: 0; margin: 0 0; width: 100%; }
