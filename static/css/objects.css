@@ -297,6 +297,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
         min-height: 5em;
     }
     .ticket-note  { max-width: none; }
+    .ticket p.limited .wrap { display: block; }
 }
 @media only screen and (min-width: 50em) {
     .ticket-columns > li { width: 33%; border-width: 0 1px 1px 1px; }
@@ -316,8 +317,13 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
         -webkit-column-gap: 0;
         min-height: 14em;
     }
+    .ticket p { min-height: 4em; }
 }
 @media only screen and (min-width: 63em) { .ticket ul { min-height: 8.5em !important; } }
+@media only screen and (min-width: 68em) { 
+  .ticket p.limited .wrap { display: inline; }
+  .ticket p { min-height: 0; }
+}
 
 
 .last-year .band { margin: -10.85714rem 0 0; top: 50%; background-color: rgba(0,0,0,.7); z-index: 100; }
