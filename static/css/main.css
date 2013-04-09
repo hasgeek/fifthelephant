@@ -87,13 +87,15 @@ a.link-unfade-hover:hover,
 }
 @media  only screen
         and (-webkit-min-device-pixel-ratio: 1.5)
+        and (min-width: 251px)
         and (max-width: 400px),
         only screen
         and (min-device-pixel-ratio: 1.5)
+        and (min-width: 251px)
         and (max-width: 400px) {
     .big-data { background-image: url(../img/circus-banner-800.png); }
 }
-@media only screen and (min-width: 501px) and (max-width: 800px) { 
+@media only screen and (min-width: 501px) and (max-width: 880px) { 
     .big-data {
         background-image: url(../img/circus-banner-800.png);
         margin-bottom: 7.5%; 
@@ -114,14 +116,14 @@ a.link-unfade-hover:hover,
 @media  only screen
         and (-webkit-min-device-pixel-ratio: 1.5)
         and (min-width: 551px)
-        and (max-width: 800px),
+        and (max-width: 880px),
         only screen
         and (min-device-pixel-ratio: 1.5)
         and (min-width: 551px)
-        and (max-width: 800px) {
+        and (max-width: 880px) {
     .big-data { background-image: url(../img/circus-banner-1600.png); }
 }
-@media only screen and (min-width: 801px) and (max-width: 1100px) { 
+@media only screen and (min-width: 881px) and (max-width: 1370px) { 
     .big-data {
         background-image: url(../img/circus-banner-1100.png);
         margin-bottom: 5%;
@@ -129,20 +131,20 @@ a.link-unfade-hover:hover,
         padding-top: 56%;
     }
 }
-@media only screen and (min-width: 1101px) and (max-width: 1600px) { 
+@media only screen and (min-width: 1371px) and (max-width: 2280px) { 
     .big-data {
         background-image: url(../img/circus-banner-1600.png);
         width: 70%;
         padding-top: 49%;
     }
 }
-@media  only screen and (min-width: 1601px),
+@media  only screen and (min-width: 2281px),
         only screen
         and (-webkit-min-device-pixel-ratio: 1.5)
-        and (min-width: 801px),
+        and (min-width: 881px),
         only screen
         and (min-device-pixel-ratio: 1.5)
-        and (min-width: 801px) {
+        and (min-width: 881px) {
     .big-data { background-image: url(../img/circus-banner-2800.png); }
 }
 
