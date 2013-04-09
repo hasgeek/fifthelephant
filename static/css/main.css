@@ -55,7 +55,77 @@ img.ultrafaded { opacity: 0.35 }
 a.link-unfade-hover:hover,
 .link-unfade-hover:hover img.ultrafaded { opacity: 1; }
 
-.fittext { line-height: 1; max-width: 1400px; }
+.big-data {
+    background-image: url(../img/circus-banner-500.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    max-width: 2800px;
+    max-width: 1960px;
+    width: 95%;
+    padding-top: 66.5%;
+    margin-bottom: 10%;
+}
+@media  only screen
+        and (-webkit-min-device-pixel-ratio: 1.5)
+        and (max-width: 400px),
+        only screen
+        and (min-device-pixel-ratio: 1.5)
+        and (max-width: 400px) {
+    .big-data { background-image: url(../img/circus-banner-800.png); }
+}
+@media only screen and (min-width: 501px) and (max-width: 800px) { 
+    .big-data {
+        background-image: url(../img/circus-banner-800.png);
+        margin-bottom: 7.5%; 
+        width: 90%;
+        padding-top: 63%;
+    }
+}
+@media  only screen
+        and (-webkit-min-device-pixel-ratio: 1.5)
+        and (min-width: 401px)
+        and (max-width: 550px),
+        only screen
+        and (min-device-pixel-ratio: 1.5)
+        and (min-width: 401px)
+        and (max-width: 550px) {
+    .big-data { background-image: url(../img/circus-banner-1100.png); }
+}
+@media  only screen
+        and (-webkit-min-device-pixel-ratio: 1.5)
+        and (min-width: 551px)
+        and (max-width: 800px),
+        only screen
+        and (min-device-pixel-ratio: 1.5)
+        and (min-width: 551px)
+        and (max-width: 800px) {
+    .big-data { background-image: url(../img/circus-banner-1600.png); }
+}
+@media only screen and (min-width: 801px) and (max-width: 1100px) { 
+    .big-data {
+        background-image: url(../img/circus-banner-1100.png);
+        margin-bottom: 5%;
+        width: 80%;
+        padding-top: 56%;
+    }
+}
+@media only screen and (min-width: 1101px) and (max-width: 1600px) { 
+    .big-data {
+        background-image: url(../img/circus-banner-1600.png);
+        width: 70%;
+        padding-top: 49%;
+    }
+}
+@media  only screen and (min-width: 1601px),
+        only screen
+        and (-webkit-min-device-pixel-ratio: 1.5)
+        and (min-width: 801px),
+        only screen
+        and (min-device-pixel-ratio: 1.5)
+        and (min-width: 801px) {
+    .big-data { background-image: url(../img/circus-banner-2800.png); }
+}
 
 
 /*  Networkbar fixes  */

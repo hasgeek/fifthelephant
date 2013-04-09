@@ -32,7 +32,6 @@ function initShortenedBio () {
 }
 
 function main () {
-    $(".fittext").fitText(.25);
     setupFlipboard();
     $(window).on('resize', resizeTwitterTimeline);
     initShortenedBio();
