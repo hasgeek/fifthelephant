@@ -171,14 +171,14 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 
 
 .announcements { max-width: 40em; }
-.tiles > li { max-width: 20em; margin-left: auto; margin-right: auto; }
+.tiles > li { max-width: 20em; margin: 1rem auto; }
 .tiles .wrap { display: block; }
 .tiles a { height: 10rem; padding-top: 7%; padding-right: 5%; border: 1px solid #DDD; }
 .tiles a:hover { background-color: rgba(0,0,0,.1); }
 .tiles .vcenter a { display: table; }
 .tiles .vcenter a span { display: table-cell; vertical-align: middle; }
 
-.announcements-block { margin-top: 2rem; }
+.announcements-block { margin-top: 6rem; }
 .announcements-block h2 { text-align: center; margin: 1rem auto; }
 .announcements-block h4 { margin: .5rem auto; }
 
@@ -195,20 +195,20 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 }
 
 @media only screen and (min-width: 30em) {
-  .tiles > li { width: 48%; float: left; }
-  .tiles > li:nth-of-type(odd) { clear: both; margin-right: 4%; }
-  .tiles .bird { background-position: -20% 160%;  }
-  
+    .tiles > li { width: 48%; float: left; margin: .5rem auto; }
+    .tiles > li:nth-of-type(odd) { clear: both; margin-right: 4%; }
+    .tiles .bird { background-position: -20% 160%;  }
 }
+
+/* Comment this block if number of tiles are disproportionally more than the blog listing */
 @media only screen and (min-width: 40em) {
-  .tiles > li { width: 100%; float: none; }
-  .tiles > li:nth-of-type(odd) { margin: 0; }
-  .announcements > div { float: left; }
-  .announcements .tile-block { width: 30%; margin-top: 1rem; }
-  .announcements .announcements-block { width: 65%; margin-left: 5%; }
-  .announcements-block { margin: 0; }
-  .announcements h2 { margin: 0; text-align: left; }
-  .tiles .bird { background-position: -40% 160%;  }
+    .tiles > li { width: 100%; float: none; }
+    .tiles > li:nth-of-type(odd) { margin: 0; }
+    .announcements > div { float: left; }
+    .announcements .tile-block { width: 30%; margin-top: 4rem; }
+    .announcements .announcements-block { width: 65%; margin-top: 2rem; margin-left: 5%; }
+    .announcements h2 { margin: 0; text-align: left; }
+    .tiles .bird { background-position: -40% 160%;  }
 }
 
 

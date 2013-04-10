@@ -68,17 +68,19 @@
   </p>
 </section>
 
-<section id="announcements" class="announcements pad-one legible center-block space-three-top space-four-bottom clearfix">
+<section id="announcements" class="announcements pad-one legible center-block space-four clearfix">
   <div class="tile-block clearfix">
-    <h2 class="calm invisible">Highlights</h2>
-    <ul class="tiles title-type clearfix nospace">
-      <li class="space-one pig"><a class="occupy right-aligned block-link link-white-hover" href="#"><span class="wrap">Pig Workshop</span> <span class="regular wrap">(April&nbsp;13)</span></a></li>
-      <li class="space-one fill-yellow bird"><a class="occupy right-aligned block-link link-white-hover" href="http://twitter.com/fifthel"><span class="wrap">Follow Us</span> <span class="regular wrap">@fifthel</span></a></li>
+    <h2 class="calm visuallyhidden">Highlights</h2>
+    <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom space-three-top">
+      <li class="pig"><a class="occupy right-aligned block-link link-white-hover" href="#"><span class="wrap">Pig Workshop</span> <span class="regular wrap">(April&nbsp;13)</span></a></li>
+      <li class="fill-yellow bird"><a class="occupy right-aligned block-link link-white-hover" href="http://twitter.com/fifthel"><span class="wrap">Follow Us</span> <span class="regular wrap">@fifthel</span></a></li>
+      <li class="pig"><a class="occupy right-aligned block-link link-white-hover" href="#"><span class="wrap">Pig Workshop</span> <span class="regular wrap">(April&nbsp;13)</span></a></li>
+      <!-- <li class="fill-yellow bird"><a class="occupy right-aligned block-link link-white-hover" href="http://twitter.com/fifthel"><span class="wrap">Follow Us</span> <span class="regular wrap">@fifthel</span></a></li> -->
     </ul>
   </div>
   <div class="announcements-block clearfix">
-    <h2 class="calm">Announcements</h2>
-    <ul class="blog-latest-list highlight-links clearfix nospace">
+    <h2 class="calm nospace">Announcements</h2>
+    <ul class="blog-latest-list highlight-links clearfix nospace measure-8words center-block">
     {% for post in feed(limit=4) -%}
       <li class="space-two-top">
         <h4 class="calm"><a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}" class="gap-half-right">{{ post.title }}</a> <span class="body-type regular faded nowrap">{{ post.published_at|longdate }}</span></h4>
@@ -94,7 +96,7 @@
   </div>
 </section>
 
-<section id="community" class="fill-dark legible clearfix">  
+<section id="community" class="fill-dark legible space-six-top clearfix">  
   <article class="clearfix">
     <h2 class="centered calm space-two-bottom space-three-top pad-one">The Programme Committee</h2>
     <ul class="committee thumbnail-columns thumbnail-columns-five regular clearfix nospace">
