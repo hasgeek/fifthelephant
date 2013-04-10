@@ -629,23 +629,17 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     .sponsors .about-sponsor .sponsor-link { float: none; }
   
     .js .sponsors .squeeze .sponsor-logos { float: left; width: 55%; }
-    .js .sponsors .squeeze .sponsor-logos dt span { 
-        -webkit-transition: background-color 0.4s;
-           -moz-transition: background-color 0.4s;
-             -o-transition: background-color 0.4s;
-                transition: background-color 0.4s;
-    }
+    .js .sponsors .squeeze .sponsor-logos dt span,
     .js .sponsors .squeeze .sponsor-logos dd { 
-        -webkit-transition: opacity 0.4s;
-           -moz-transition: opacity 0.4s;
-             -o-transition: opacity 0.4s;
-                transition: opacity 0.4s;
+        -webkit-transition: opacity 0.4s ease-out;
+           -moz-transition: opacity 0.4s ease-out;
+             -o-transition: opacity 0.4s ease-out;
+                transition: opacity 0.4s ease-out;
     }
-    .js .sponsors .squeeze .sponsor-logos dt span { background-color: #F7DEDE; }
-    .js .sponsors .squeeze .sponsor-logos:hover dt span { background-color: #D44 !important; }
+    .js .sponsors .squeeze .sponsor-logos dt span,
     .js .sponsors .squeeze .sponsor-logos dd { opacity: .2; }
     .js .sponsors .squeeze .sponsor-logos dd.active { opacity: 1; }
-    .js .sponsors .squeeze .sponsor-logos:hover dt,
+    .js .sponsors .squeeze .sponsor-logos:hover dt span,
     .js .sponsors .squeeze .sponsor-logos:hover dd { opacity: 1; }
     .js .sponsors .squeeze .sponsor-logos dl { font-size: .55em; background-color: transparent; max-width: none; }
     .js .sponsors .squeeze .sponsor-logos dl dt span { font-size: .600rem; }
