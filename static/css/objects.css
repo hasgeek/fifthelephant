@@ -481,11 +481,55 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 
 
 .sponsors { 
-    background-image: url(../img/sponsor-bg.jpg);
+    background-image: url(../img/sponsor-bg-480.jpg);
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center;
+    max-width: 1800px;
 }
+@media only screen and (min-width: 481px) and (max-width: 640px) { .sponsors { background-image: url(../img/sponsor-bg-640.jpg); } }
+@media  only screen
+        and (-webkit-min-device-pixel-ratio: 1.5)
+        and (min-width: 241px)
+        and (max-width: 320px),
+        only screen
+        and (min-device-pixel-ratio: 1.5)
+        and (min-width: 241px)
+        and (max-width: 320px) {
+    .sponsors { background-image: url(../img/sponsor-bg-640.jpg); }
+}
+@media only screen and (min-width: 641px) and (max-width: 1024px) { .sponsors { background-image: url(../img/sponsor-bg-1024.jpg); } }
+@media  only screen
+        and (-webkit-min-device-pixel-ratio: 1.5)
+        and (min-width: 321px)
+        and (max-width: 512px),
+        only screen
+        and (min-device-pixel-ratio: 1.5)
+        and (min-width: 321px)
+        and (max-width: 512px) {
+    .sponsors { background-image: url(../img/sponsor-bg-1024.jpg); }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1600px) { .sponsors { background-image: url(../img/sponsor-bg-1600.jpg); } }
+@media  only screen
+        and (-webkit-min-device-pixel-ratio: 1.5)
+        and (min-width: 513px)
+        and (max-width: 800px),
+        only screen
+        and (min-device-pixel-ratio: 1.5)
+        and (min-width: 513px)
+        and (max-width: 800px) {
+    .sponsors { background-image: url(../img/sponsor-bg-1600.jpg); }
+}
+@media  only screen and (min-width: 1601px),
+        only screen
+        and (-webkit-min-device-pixel-ratio: 1.5)
+        and (min-width: 801px)
+        only screen
+        and (min-device-pixel-ratio: 1.5)
+        and (min-width: 801px) {
+    .sponsors { background-image: url(../img/sponsor-bg-3088.jpg); }
+}
+
 .no-js .sponsors .sponsor-block { max-width: 32em; padding: 0 1rem; }
 .sponsors .sponsor-logos .sponsor-logos-list { 
     margin: 0 auto; 
