@@ -487,7 +487,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     background-position: center;
 }
 .no-js .sponsors .sponsor-block { max-width: 32em; padding: 0 1rem; }
-.sponsors dl { 
+.sponsors .sponsor-logos .sponsor-logos-list { 
     margin: 0 auto; 
     overflow: hidden;
     -webkit-transition: font-size 0.4s;
@@ -495,6 +495,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
          -o-transition: font-size 0.4s;
             transition: font-size 0.4s;
 }
+.js .sponsors .sponsor-logos dl { width: 101%; }
 .no-js .sponsors dt {
     width: 100%;
     text-align: center;
@@ -618,7 +619,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     .js .sponsors dd    { float: left; width: 33.3333%; width: calc(100%/3); }
     .js .sponsors dd.s  { width: 16.6666%; width: calc(100%/6); }
     .js .sponsors dt.community { clear: none; }
-    .js .sponsors .sponsor-logos dl { max-width: 90%; }
+    .js .sponsors .sponsor-logos .sponsor-logos-list { max-width: 90%; }
         
     .js .sponsors .about-sponsor { float: right; width: 45%; padding-left: 1rem; }
     .no-js .sponsors .sponsor-logo,
@@ -641,8 +642,8 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     .js .sponsors .squeeze .sponsor-logos dd.active { opacity: 1; }
     .js .sponsors .squeeze .sponsor-logos:hover dt span,
     .js .sponsors .squeeze .sponsor-logos:hover dd { opacity: 1; }
-    .js .sponsors .squeeze .sponsor-logos dl { font-size: .55em; background-color: transparent; max-width: none; }
-    .js .sponsors .squeeze .sponsor-logos dl dt span { font-size: .600rem; }
+    .js .sponsors .squeeze .sponsor-logos .sponsor-logos-list { font-size: .55em; background-color: transparent; max-width: none; }
+    .js .sponsors .squeeze .sponsor-logos .sponsor-logos-list dl dt span { font-size: .600rem; }
     .js .sponsors .sponsor-block.squeeze { padding-left: 1rem; }  
 }
 
@@ -652,7 +653,8 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     .js .sponsors dd.l  { width: 33.3333%; width: calc(100%/3); }
     .js .sponsors dd    { float: left; width: 25%; }
     .js .sponsors dt.corporate { clear: left; }
-    .js .sponsors .sponsor-logos dl { max-width: 80%; }
+    .js .sponsors .sponsor-logos .sponsor-logos-list { max-width: 80%; }
+    
     .js .sponsors dd.l h5 a { line-height: 7em; padding: 2.5em 25%; }
     
     .js .sponsors .squeeze .sponsor-logos { float: left; width: 50%; padding-right: 1rem; }
@@ -660,7 +662,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     .js .sponsors .about-sponsor { float: right; width: 50%; padding-left: 1rem; }
     .js .sponsors .about-sponsor > div,
     .js .sponsors .about-sponsor > p { float: left; clear: both; max-width: 24em; }
-    .js .sponsors .squeeze .sponsor-logos dl { font-size: .65em; }
+    .js .sponsors .sponsor-logos .sponsor-logos-list { font-size: .65em; }
 }
 
 @media only screen and (min-width: 60em) {
