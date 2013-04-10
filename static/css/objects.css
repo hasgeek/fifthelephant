@@ -480,6 +480,12 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 @media only screen and (min-width: 50em) { .wrap-mobile span { display: inline; } }
 
 
+.sponsors { 
+    background-image: url(../img/sponsor-bg.jpg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 .no-js .sponsors .sponsor-block { max-width: 32em; padding: 0 1rem; }
 .sponsors dl { 
     margin: 0 auto; 
@@ -526,20 +532,14 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .js .sponsors dt.community,
 .js .sponsors dt.corporate { clear: left; }
  
-/*.js .sponsors dd.platinum { background-color: #FDF4FB; }
-.js .sponsors dd.gold { background-color: #F7F7DE; }
-.js .sponsors dd.silver { background-color: #EAF5FC; }
-.js .sponsors dd.bronze { background-color: #F7F2E0; }
-.js .sponsors dd.community { background-color: #FBEFF2; }
-.js .sponsors dd.corporate { background-color: #F6F6F6; }
-*/
-.js .sponsors dd.platinum { background-color: #F9F5FC; }
-.js .sponsors dd.gold { background-color: #F8F8E1; }
-.js .sponsors dd.silver { background-color: #EAF5FC; }
-.js .sponsors dd.bronze { background-color: #F7F2E0; }
-.js .sponsors dl,
-.js .sponsors dd.community { background-color: #FBEFF2; }
-.js .sponsors dd.corporate { background-color: #EFFBEF; }
+.js .sponsors dd.platinum { background-color: #FFFFFF; background-color: rgba(255,255,255,.85); }
+.js .sponsors dd.gold { background-color: #F8F8E1; background-color: rgba(248,248,225,.85); }
+.js .sponsors dd.silver { background-color: #EAF5FC; background-color: rgba(234,245,252,.85); }
+.js .sponsors dd.bronze { background-color: #F7F2E0; background-color: rgba(247,242,224,.85); }
+.js .sponsors dd.community { background-color: #FBEFF2; background-color: rgba(251,239,242,.85); }
+.js .sponsors dd.corporate { background-color: #EFFBEF; background-color: rgba(239,251,239,.85); }
+
+.js .sponsors .about-sponsor { background-color: #FFFFFF; background-color: rgba(255,255,255,.9); color: black; }
 
 .no-js .sponsors dd { margin: 3rem auto; }
 .js .sponsors dd { 
@@ -547,7 +547,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     width: 50%; 
     position: relative; 
     z-index: 50; 
-    outline: 1px solid white;
+    outline: 1px solid rgba(255,255,255,.2);
 }
 .js .sponsors dd.xl,
 .js .sponsors dd.l { width: 100%; }
@@ -572,7 +572,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .js .sponsors dd p,
 .js .sponsors dd hr { display: none; }
 .js .sponsors dd h5 { margin: 0; }
-.js .sponsors dd a:hover { background-color: rgba(0,0,0,.04); }
+.js .sponsors dd a:hover { background-color: rgba(255,255,255,.4); }
 
 .no-js .sponsors .sponsor-logo,
 .about-sponsor .sponsor-logo { width: 30%; float: right; margin: 0; }
@@ -594,7 +594,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     line-height: 1.1em;
     text-align: center;
     color: white;
-    background-color: #CCC;
+    background-color: #BBB;
     padding: .5rem .8rem .5rem .7rem;
     -webkit-transition: background-color 0.4s;
        -moz-transition: background-color 0.4s;
@@ -603,7 +603,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     
 }
 .about-sponsor a.close span { line-height: 2; }
-.about-sponsor a.close:hover { background-color: #BBB; }
+.about-sponsor a.close:hover { background-color: #AAA; }
 
 @media only screen and (min-width: 30em) { 
     .no-js .sponsors .sponsor-logo,
@@ -618,7 +618,6 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     .js .sponsors dd    { float: left; width: 33.3333%; width: calc(100%/3); }
     .js .sponsors dd.s  { width: 16.6666%; width: calc(100%/6); }
     .js .sponsors dt.community { clear: none; }
-/*    .js .sponsors dt.corporate { clear: none; }*/
     .js .sponsors .sponsor-logos dl { max-width: 90%; }
         
     .js .sponsors .about-sponsor { float: right; width: 45%; padding-left: 1rem; }
@@ -638,7 +637,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
                 transition: opacity 0.4s ease-out;
     }
     .js .sponsors .squeeze .sponsor-logos dt span,
-    .js .sponsors .squeeze .sponsor-logos dd { opacity: .2; }
+    .js .sponsors .squeeze .sponsor-logos dd { opacity: .5; }
     .js .sponsors .squeeze .sponsor-logos dd.active { opacity: 1; }
     .js .sponsors .squeeze .sponsor-logos:hover dt span,
     .js .sponsors .squeeze .sponsor-logos:hover dd { opacity: 1; }
@@ -669,7 +668,6 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     .js .sponsors dt.bronze { clear: left; }
     .js .sponsors dt.community { clear: left; }
     .js .sponsors dt.corporate { clear: none; }
-    .js .sponsors dl { background-color: #EFFBEF; }
 }
 
 .sponsors-compact { max-width: 50em; }
