@@ -534,6 +534,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .sponsors .sponsor-logos .sponsor-logos-list { 
     margin: 0 auto; 
     overflow: hidden;
+    font-size: .85em;
     -webkit-transition: font-size 0.4s;
        -moz-transition: font-size 0.4s;
          -o-transition: font-size 0.4s;
@@ -657,6 +658,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     .no-js .sponsors .sponsor-link,
     .about-sponsor .sponsor-name,
     .about-sponsor .sponsor-link { width: 75%; float: left; margin: 0; }
+    .sponsors .sponsor-logos .sponsor-logos-list { font-size: .65em; }
 }
 
 @media only screen and (min-width: 40em) { 
@@ -706,7 +708,6 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     .js .sponsors .about-sponsor { float: right; width: 50%; padding-left: 1rem; }
     .js .sponsors .about-sponsor > div,
     .js .sponsors .about-sponsor > p { float: left; clear: both; max-width: 24em; }
-    .js .sponsors .sponsor-logos .sponsor-logos-list { font-size: .65em; }
 }
 
 @media only screen and (min-width: 60em) {
