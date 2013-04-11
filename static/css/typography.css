@@ -12,6 +12,7 @@ h2,
 h3,
 .title-type     { font-family: Bree Serif, FF Tisa Web Pro, Georgia, serif; }
 .serif-type     { font-family: Baskerville, Palatino, 'Book Antiqua', Constantia, 'URW Palladio L'; }
+.monospace      { font-family: monospace; }
 
 .wf-active body,
 .wf-active .body-type      { font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif; }

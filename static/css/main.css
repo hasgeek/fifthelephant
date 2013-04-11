@@ -148,6 +148,13 @@ a.link-unfade-hover:hover,
     .big-data { background-image: url(../img/circus-banner-2800.png); }
 }
 
+.hasgeek { 
+    background: url('../img/hasgeek.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    width: 100px;
+}
 
 /*  Networkbar fixes  */
 
