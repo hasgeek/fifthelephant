@@ -579,7 +579,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .js .sponsors dd.community { background-color: #FBEFF2; background-color: rgba(251,239,242,.85); }
 .js .sponsors dd.corporate { background-color: #EFFBEF; background-color: rgba(239,251,239,.85); }
 
-.js .sponsors .about-sponsor { background-color: #FFFFFF; background-color: rgba(255,255,255,.9); color: black; }
+.js .sponsors .about-sponsor { background-color: #FFFFFF; background-color: rgba(255,255,255,.9); color: black; padding-top: 2rem; }
 
 .no-js .sponsors dd { margin: 3rem auto; }
 .js .sponsors dd { 
@@ -638,22 +638,14 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .sponsors .about-sponsor a.close span { line-height: 2; }
 .sponsors .about-sponsor a.close:hover { background-color: #AAA; }
 
-@media only screen and (min-width: 30em) { 
-    .no-js .sponsors .sponsor-logo,
-    .about-sponsor .sponsor-logo { width: 20%; float: right; margin: 0; }
-    .no-js .sponsors .sponsor-name,
-    .no-js .sponsors .sponsor-link,
-    .about-sponsor .sponsor-name,
-    .about-sponsor .sponsor-link { width: 75%; float: left; margin: 0; }
-    .sponsors .sponsor-logos .sponsor-logos-list { font-size: .65em; }
-}
+@media only screen and (min-width: 30em) { .sponsors .sponsor-logos .sponsor-logos-list { font-size: .65em; } }
 @media only screen and (min-width: 40em) { 
     .js .sponsors dd    { float: left; width: 33.3333%; width: calc(100%/3); }
     .js .sponsors dd.s  { width: 16.6666%; width: calc(100%/6); }
     .js .sponsors dt.community { clear: none; }
     .js .sponsors .sponsor-logos .sponsor-logos-list { max-width: 90%; }
         
-    .js .sponsors .about-sponsor { float: right; width: 45%; padding-left: 1rem; }
+    .js .sponsors .about-sponsor { float: right; width: 45%; padding-left: 1rem; padding-top: 1rem; }
     .no-js .sponsors .sponsor-logo,
     .sponsors .about-sponsor .sponsor-logo { float: none; width: 6em; margin: 1rem 0; }
     .no-js .sponsors .sponsor-name,
@@ -769,11 +761,11 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 }
 
 /* Community Sponsors */
-.community-sponsors-list { max-width: 32em; margin-left: auto; margin-right: auto; }
+.community-partners-list { max-width: 32em; margin-left: auto; margin-right: auto; }
 @media only screen and (min-width: 50em) {
-    .community-sponsors-list { max-width: 55em; }
-    .community-sponsors-list > li { width: 40%; margin-left: 5%; margin-right: 5%; float: left; }
-    .community-sponsors-list > li:nth-of-type(odd) { clear: both; }
+    .community-partners-list { max-width: 55em; }
+    .community-partners-list > li { width: 40%; margin-left: 5%; margin-right: 5%; float: left; }
+    .community-partners-list > li:nth-of-type(odd) { clear: both; }
 }
 
 /* Proposals */
