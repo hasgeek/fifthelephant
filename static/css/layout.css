@@ -34,6 +34,7 @@ dl dd { margin-left: 0; }
 .nowrap         { white-space: nowrap; }
 .forcewrap      { word-wrap: break-word; }
 
+.v-middle img, img.v-middle { vertical-align: middle; }
 .contain-width  img, img.contain-width  { max-width:  100%; height: auto; }
 .contain-height img, img.contain-height { max-height: 100%; width:  auto; }
 
