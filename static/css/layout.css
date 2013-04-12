@@ -52,6 +52,8 @@ dl dd { margin-left: 0; }
     height: 100%;
 }
 
+.wrap-mobile span { display: block; }
+@media only screen and (min-width: 50em) { .wrap-mobile span { display: inline; } }
 
 
 
