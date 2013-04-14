@@ -654,9 +654,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
         left: 100%;
         outline: 1px solid rgba(255,255,255,.2);
     }
-    
     .js .sponsors .sponsor-logos .sponsor-logos-list { max-width: 90%; }
-        
     .js .sponsors .about-sponsor { float: right; width: 45%; padding-left: 1rem; padding-top: 1rem; }
     .no-js .sponsors .sponsor-logo,
     .sponsors .about-sponsor .sponsor-logo { float: none; width: 6em; margin: 1rem 0; }
@@ -664,7 +662,6 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     .no-js .sponsors .sponsor-link,
     .sponsors .about-sponsor .sponsor-name,              
     .sponsors .about-sponsor .sponsor-link { float: none; }
-  
     .js .sponsors .squeeze .sponsor-logos { float: left; width: 55%; }
     .js .sponsors .squeeze .sponsor-logos dt span,
     .js .sponsors .squeeze .sponsor-logos dd { 
@@ -689,9 +686,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     .js .sponsors dt.corporate { clear: left; }
     .js .sponsors dd.community:nth-of-type(24):after { display: none; }
     .js .sponsors .sponsor-logos .sponsor-logos-list { max-width: 80%; }
-    
     .js .sponsors dd.l h5 a { line-height: 7em; padding: 2.5em 25%; }
-    
     .js .sponsors .squeeze .sponsor-logos { float: left; width: 50%; padding-right: 1rem; }
     .js .sponsors .squeeze .sponsor-logos .sponsor-logos-list { float: right; }
     .js .sponsors .about-sponsor { float: right; width: 50%; padding-left: 1rem; }
@@ -711,15 +706,35 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .partners li a { padding: 5%; line-height: 5em; }
 .partners li a:hover { background-color: rgba(0,0,0,.05); }
 
+.credits dl      { width: 80%; margin: auto; }
+.credits dt      {
+    width: 40%;
+    float: left;
+    text-align: right;
+    text-transform: lowercase;
+    font-size: .8rem;
+    margin-top: .225rem;
+    clear: both;
+    padding: 0 .5rem;
+}
+.credits dd      { width: 60%; float: right; text-align: left; padding: 0 .5rem; }
+
+
 @media only screen and (min-width: 40em) { .partners ul { max-width: 90%; } }
 @media only screen and (min-width: 45em) { .partners ul { max-width: 80%; } }
 @media only screen and (min-width: 50em) { .partners ul { max-width: 70%; } }
 @media only screen and (min-width: 60em) { 
     .partners ul { max-width: none; }
-    .partners > article { float: right; width: 100%; max-width: 32em; }
+/*    .partners,
+    .credit { float: right; width: 100%; max-width: 32em; clear: both; }
+*/    .hasgeek-logo,
     .hasgeek > div { float: left; }
-    .partners   { width: 50%; float: left; margin-top: 6rem; padding: 0 1rem; }
-    .hasgeek    { width: 50%; float: left; }
+    .partners               { width: 48%; float: left; margin: 6rem 1% 0; }
+    .hasgeek                { width: 48%; float: right; margin: 0 1% 0; }
+    .credits                { width: 48%; float: left; margin: 2rem 1% 0; }
+    .partners > article,
+    .credits > article      { float: right; min-width: 20em; max-width: 25em; }
+    
 }
 
 
