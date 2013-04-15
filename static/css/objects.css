@@ -706,6 +706,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .partners li a { padding: 5%; line-height: 5em; }
 .partners li a:hover { background-color: rgba(0,0,0,.05); }
 
+/*.credits         { margin-top: 3rem; }*/
 .credits dl      { width: 80%; margin: auto; }
 .credits dt      {
     width: 40%;
@@ -726,16 +727,16 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 @media only screen and (min-width: 45em) { .partners ul { max-width: 80%; } }
 @media only screen and (min-width: 50em) { .partners ul { max-width: 70%; } }
 @media only screen and (min-width: 60em) { 
-    .partners ul { max-width: none; }
-/*    .partners,
-    .credit { float: right; width: 100%; max-width: 32em; clear: both; }
-*/    .hasgeek-logo,
+    .partners ul { max-width: 37em; }
+    .partners-floating-box .partners ul { max-width: none; }
+    .hasgeek-logo,
     .hasgeek > div { float: left; }
-    .partners               { width: 48%; float: left; margin: 6rem 1% 0; }
-    .hasgeek                { width: 48%; float: right; margin: 0 1% 0; }
-    .credits                { width: 48%; float: left; margin: 2rem 1% 0; }
-    .partners > article,
-    .credits > article      { float: right; min-width: 20em; max-width: 25em; }
+    .hasgeek                          { width: 48%; float: right; margin: 0 1% 0; }
+    .credits                          { width: 48%; float: left; margin: 8rem 1% 0; }
+    .partners-floating-box .partners  { width: 48%; float: left; margin: 6rem 1% 0; }
+    .partners-floating-box .credits { margin-top: 4rem; }
+    .partners-floating-box .partners > article,
+    .credits > article      { float: right; width: 100%; max-width: 25em; }
     
 }
 
