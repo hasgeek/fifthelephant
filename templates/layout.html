@@ -89,41 +89,32 @@
   <section id="sponsors" class="regular clearfix space-two-top pad-one{% if not sponsor_compact_white %} fill-light{% endif %}">
     <div class="sponsors-compact center-block space-three-top space-four-bottom v-middle clearfix">
     <h3 class="legible centered nospace-top space-one-bottom ultrafaded">Sponsors</h3>
-    <article class="sponsor-cat flushleft platinum clearfix">
-      <h5 class="all-caps"><span>Platinum</span></h5>
-      <ul class="thumbnail-columns regular flushleft clearboth clearfix{% if sponsor_compact_white %} fill-light{% else %} fill-white{% endif %}">
-        <li><a href="#" class="contain-width"><img src="{{ theme_static('img/sponsors/activesphere.png') }}" alt="Active Sphere"></a></li>
-        <li><a href="#" class="contain-height"><img src="{{ theme_static('img/sponsors/iarchive.png') }}" alt="Internet Archive"></a></li>
-      </ul>
-    </article>
-    <article class="sponsor-cat flushleft gold clearfix">
-      <h5 class="all-caps"><span>Gold</span></h5>
-      <ul class="thumbnail-columns thumbnail-columns-three regular clearboth flushleft clearfix{% if sponsor_compact_white %} fill-light{% else %} fill-white{% endif %}">
-        <li><a href="#" class="contain-width"><img src="{{ theme_static('img/sponsors/activesphere.png') }}" alt="Active Sphere"></a></li>
-        <li><a href="#" class="contain-height"><img src="{{ theme_static('img/sponsors/iarchive.png') }}" alt="Internet Archive"></a></li>
-        <li><a href="#" class="contain-width"><img src="{{ theme_static('img/sponsors/activesphere.png') }}" alt="Active Sphere"></a></li>
-      </ul>
-    </article>
-    <article class="sponsor-cat silver flushleft clearfix">
-      <h5 class="all-caps"><span>Silver</span></h5>
-      <ul class="thumbnail-columns thumbnail-columns-five regular clearboth clearfix{% if sponsor_compact_white %} fill-light{% else %} fill-white{% endif %}">
-        <li><a href="#" class="contain-width"><img src="{{ theme_static('img/sponsors/maas360.png') }}" alt="Internet Archive"></a></li>
-        <li><a href="#" class="contain-height"><img src="{{ theme_static('img/sponsors/iarchive.png') }}" alt="Internet Archive"></a></li>
-        <li><a href="#" class="contain-width"><img src="{{ theme_static('img/sponsors/activesphere.png') }}" alt="Active Sphere"></a></li>
-        <li><a href="#" class="contain-width"><img src="{{ theme_static('img/sponsors/activesphere.png') }}" alt="Active Sphere"></a></li>
-        <li><a href="#" class="contain-height"><img src="{{ theme_static('img/sponsors/iarchive.png') }}" alt="Internet Archive"></a></li>
-      </ul>
-    </article>
-    <article class="sponsor-cat bronze flushleft clearfix">
-      <h5 class="all-caps"><span>Bronze</span></h5>
-      <ul class="thumbnail-columns thumbnail-columns-five regular clearboth clearfix{% if sponsor_compact_white %} fill-light{% else %} fill-white{% endif %}">
-        <li><a href="#" class="contain-height"><img src="{{ theme_static('img/sponsors/iarchive.png') }}" alt="Internet Archive"></a></li>
-        <li><a href="#" class="contain-width"><img src="{{ theme_static('img/sponsors/activesphere.png') }}" alt="Active Sphere"></a></li>
-        <li><a href="#" class="contain-height"><img src="{{ theme_static('img/sponsors/iarchive.png') }}" alt="Internet Archive"></a></li>
-        <li><a href="#" class="contain-width"><img src="{{ theme_static('img/sponsors/activesphere.png') }}" alt="Active Sphere"></a></li>
-        <li><a href="#" class="contain-width"><img src="{{ theme_static('img/sponsors/maas360.png') }}" alt="Internet Archive"></a></li>
-      </ul>
-    </article>
+    {% from theme("data/sponsors.html") import sponsors %}
+    {% for type in sponsors if type.category in ('Platinum', 'Gold', 'Silver', 'Bronze') %}
+      {% if type.category == 'Platinum' %}
+        {% set sponsor_columns = '' %}
+      {% elif type.category == 'Gold' %}
+        {% set sponsor_columns = ' thumbnail-columns-three' %}
+      {% else %}
+        {% set sponsor_columns = ' thumbnail-columns-five' %}
+      {% endif %}
+      {% for item in type.list %}
+        {% if loop.first %}
+          <article class="sponsor-cat flushleft {{ type.category|lower|replace(" ","-") }} clearfix">
+            <h5 class="all-caps"><span>{{ type.category }}</span></h5>
+            <ul class="thumbnail-columns{{ sponsor_columns }} regular flushleft clearboth clearfix{% if sponsor_compact_white %} fill-light{% else %} fill-white{% endif %}">
+        {% endif %}
+        <li>
+          <a href="{{ item.web.link }}" class="{% if item.logo.orientation == 'portrait' %}contain-height{% else %}contain-width{% endif %}">
+            <img src="{{ theme_static(item.logo.url) }}" alt="{{ item.name }}">
+          </a>
+        </li>
+        {% if loop.last %}
+            </ul>
+          </article>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
     </div>
   </section>
   {% endblock %}
