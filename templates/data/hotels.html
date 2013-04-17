@@ -1,0 +1,353 @@
+{# Email markup — <a href="mailto:[email]">[email]</a>. Using ROT13 for obfuscation. #}
+{%
+  set hotels = [
+      {
+        'category': 'Budget'
+      , 'pricing': 'less than Rs 1500/- per night'
+      , 'options': [
+          {
+            'name': 'Comfort Suites'
+          , 'address': '#242, 5th Block, KHB Colony, Koramangala, Bangalore'
+          , 'phones': [
+              {
+                'dial': '+918025331133'
+              , 'display': '+91 80 2533 1133'
+            }
+            , {
+                'dial': '+918025533322'
+              , 'display': '+91 80 2553 3322'
+            }
+          ]
+          , 'web': {
+              'link': 'http://www.comforthospitality.net'
+            , 'display': 'comforthospitality.net'
+          }
+          , 'email': ''
+          , 'distances': {
+              'venue': 6.2
+            , 'airport': 39
+            , 'majestic': 6
+          }
+        }
+        , {
+            'name': 'The New Casablanca'
+          , 'address': 'No.15, 1st Cross, Bhuvanappa layout, Tavarekere Road, Opp Forum Mall, Koramangala, Bangalore'
+          , 'phones': [
+              {
+                'dial': '+919900203254'
+              , 'display': '+91 9900 203 254'
+            }
+            , {
+                'dial': '+919900203381'
+              , 'display': '+91 9900 203 381'
+            }
+          ]
+          , 'web': {
+              'link': 'http://www.tnchotels.com'
+            , 'display': 'tnchotels.com'
+          }
+          , 'email': ''
+          , 'distances': {
+              'venue': 2
+            , 'airport': 40
+            , 'majestic': 11
+          }
+        }
+      ]
+    }
+    , {
+        'category': 'Delux'
+      , 'pricing': 'Rs 1500/- to Rs 3000/- per night'
+      , 'options': [
+          {
+            'name': 'Kingston Palace'
+          , 'address': '#5/1, Kingston Arcade, 28th C Cross, Geetha Colony, Jayanagar 4th Block, Bangalore'
+          , 'phones': [
+              {
+                'dial': '+918042663333'
+              , 'display': '+91 80 4266 3333'
+            }
+          ]
+          , 'web': {
+              'link': 'http://kingstonpalace.com'
+            , 'display': 'kingstonpalace.com'
+          }
+          , 'email': ''
+          , 'distances': {
+              'venue': 2.8
+            , 'airport': 40
+            , 'majestic': 8
+          }
+        }
+        , {
+            'name': 'The New Casablanca'
+          , 'address': 'No.15, 1st Cross, Bhuvanappa layout, Tavarekere Road, Opp Forum Mall, Koramangala, Bangalore'
+          , 'phones': [
+              {
+                'dial': '+919900203254'
+              , 'display': '+91 9900 203 254'
+            }
+            , {
+                'dial': '+919900203381'
+              , 'display': '+91 9900 203 381'
+            }
+          ]
+          , 'web': {
+              'link': 'http://www.tnchotels.com'
+            , 'display': 'tnchotels.com'
+          }
+          , 'email': ''
+          , 'distances': {
+              'venue': 2
+            , 'airport': 40
+            , 'majestic': 11
+          }
+        }
+        , {
+            'name': 'The Bouvice'
+          , 'address': '141C, S.T.Bed Layout 1st Main, Koramangala 4th Block, Bangalore'
+          , 'phones': [
+              {
+                'dial': '+918041524429'
+              , 'display': '+91 80 4152 4429'
+            }
+          ]
+          , 'web': {
+              'link': 'http://www.bouvice.com'
+            , 'display': 'bouvice.com'
+          }
+          , 'email': ''
+          , 'distances': {
+              'venue': 5.8
+            , 'airport': 42
+            , 'majestic': 15
+          }
+        }
+        , {
+            'name': 'Savoury Sea Shell'
+          , 'address': 'No.10 Bhavani Layout, Next to Maruthi Sagar Automobiles, Bannerghatta Main Road, Bangalore'
+          , 'phones': [
+              {
+                'dial': '+918049355500'
+              , 'display': '+91 80 4935 5500'
+            }
+            , {
+                'dial': '+919738883963'
+              , 'display': '+91 9738 883 963'
+            }
+          ]
+          , 'web': {
+              'link': 'http://www.savouryseashell.com'
+            , 'display': 'savouryseashell.com'
+          }
+          , 'email': ''
+          , 'distances': {
+              'venue': 4
+            , 'airport': 37
+            , 'majestic': 4
+          }
+        }
+        , {
+            'name': 'Cross Roads Inn'
+          , 'address': '#827, 24th Main, 2nd Phase, J. P. Nagar, Bangalore'
+          , 'phones': [
+              {
+                'dial': '+918026588620'
+              , 'display': '+91 80 2658 8620'
+            }
+            , {
+                'dial': '+918026588621'
+              , 'display': '+91 80 2658 8621'
+            }
+          ]
+          , 'web': {
+              'link': 'http://www.crossroadsinn.in'
+            , 'display': 'crossroadsinn.in'
+          }
+          , 'email': '<script type="text/javascript">document.write(
+\'<n uers=\"znvygb:radhvel\100pebffebnqfvaa\056va\">radhvel\100pebffebnqfvaa\056va<\057n>\'.replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
+</script>'
+          , 'distances': {
+              'venue': 5.6
+            , 'airport': 42
+            , 'majestic': 10
+          }
+        }
+      ]
+    }
+    , {
+        'category': 'Luxury'
+      , 'pricing': 'Rs 3000/- to Rs 4000/- per night'
+      , 'options': [
+          {
+            'name': 'The President Hotel'
+          , 'address': '#79/8, Diagonal Road, Jayanagar 3rd Block, Bangalore'
+          , 'phones': [
+              {
+                'dial': '+918041808777'
+              , 'display': '+91 80 4180 8777'
+            }
+          ]
+          , 'web': {
+              'link': 'http://www.paihotels.com/president/'
+            , 'display': 'paihotels.com/president'
+          }
+          , 'email': ''
+          , 'distances': {
+              'venue': 4
+            , 'airport': 37
+            , 'majestic': 8
+          }
+        }
+        , {
+            'name': 'Brigade Homestead'
+          , 'address': 'No 500, 40th cross, 8th Block Jayanagar, Bangalore'
+          , 'phones': [
+              {
+                'dial': '+918040053333'
+              , 'display': '+91 80 4005 3333'
+            }
+            , {
+                'dial': '+919741307421'
+              , 'display': '+91 9741 307 421'
+            }
+          ]
+          , 'web': {
+              'link': 'http://www.homesteadbangalore.com'
+            , 'display': 'homesteadbangalore.com'
+          }
+          , 'email': '<script type="text/javascript">document.write(
+\'<n uers=\"znvygb:uf4\100ubzrfgrnqonatnyber\056pbz\">uf4\100ubzrfgrnqonatnyber\056pbz<\057n>\'.replace(/[a-zA-Z]/g, function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);}));
+</script>'
+          , 'distances': {
+              'venue': 5
+            , 'airport': 41
+            , 'majestic': 8
+          }
+        }
+        , {
+            'name': 'Pai Viceroy'
+          , 'address': '1504, 16th Cross, 9th Main, Jayanagar 3 Block, Bangalore'
+          , 'phones': [
+              {
+                'dial': '+918026535400'
+              , 'display': '+91 80 2653 5400'
+            }
+            , {
+                'dial': '+919900262033'
+              , 'display': '+91 9900 262 033'
+            }
+          ]
+          , 'web': {
+              'link': 'http://www.paihotels.com/jayanagar'
+            , 'display': 'paihotels.com/jayanagar'
+          }
+          , 'email': ''
+          , 'distances': {
+              'venue': 3
+            , 'airport': 42
+            , 'majestic': 10
+          }
+        }
+      ]
+    }
+    , {
+        'category': 'Super Luxury'
+      , 'pricing': 'above Rs 4000/- per night'
+      , 'options': [
+          {
+            'name': 'Adarsh Hamilton'
+          , 'address': '#2/4, Langford Garden Road, Richmond Road'
+          , 'phones': [
+              {
+                'dial': '+918043595700'
+              , 'display': '+91 80 4359 5700'
+            }
+            , {
+                'dial': '+918043595703'
+              , 'display': '+91 80 4359 5703'
+            }
+          ]
+          , 'web': {
+              'link': 'http://www.adarshhamilton.com'
+            , 'display': 'adarshhamilton.com'
+          }
+          , 'email': ''
+          , 'distances': {
+              'venue': 0
+            , 'airport': 36
+            , 'majestic': 8
+          }
+        }
+        , {
+            'name': 'The Chancery Pavilion'
+          , 'address': '135, Residency Road Opp. Bangalore Club'
+          , 'phones': [
+              {
+                'dial': '+918041414141'
+              , 'display': '+91 80 4141 4141'
+            }
+          ]
+          , 'web': {
+              'link': 'http://www.chancerypavilion.com'
+            , 'display': 'chancerypavilion.com'
+          }
+          , 'email': ''
+          , 'distances': {
+              'venue': 0
+            , 'airport': 36
+            , 'majestic': 5
+          }
+        }
+        , {
+            'name': 'Hotel Regaalis'
+          , 'address': '40/2, Lavella Road Road, Bangalore'
+          , 'phones': [
+              {
+                'dial': '+918041133111'
+              , 'display': '+91 80 4113 3111'
+            }
+            , {
+                'dial': '+918022273311'
+              , 'display': '+91 80 2227 3311'
+            }
+          ]
+          , 'web': {
+              'link': 'http://www.ushalexushotels.com/bangalore'
+            , 'display': 'ushalexushotels.com/bangalore'
+          }
+          , 'email': ''
+          , 'distances': {
+              'venue': 0
+            , 'airport': 30
+            , 'majestic': 5
+          }
+        }
+        , {
+            'name': 'The Taj Gateway Hotel'
+          , 'address': '66, Residency Road, Bangalore'
+          , 'phones': [
+              {
+                'dial': '+918066604545'
+              , 'display': '+91 80 6660 4545'
+            }
+            , {
+                'dial': '+918022273311'
+              , 'display': '+91 80 2227 3311'
+            }
+          ]
+          , 'web': {
+              'link': 'http://www.thegatewayhotels.com/residencyroadbangalore/overview.aspx'
+            , 'display': 'thegatewayhotels.com'
+          }
+          , 'email': ''
+          , 'distances': {
+              'venue': 0
+            , 'airport': 35
+            , 'majestic': 6
+          }
+        }
+      ]
+    }
+  ]
+%}

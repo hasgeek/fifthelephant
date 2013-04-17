@@ -127,6 +127,8 @@ dl dd { margin-left: 0; }
 .pad-3q,     .pad-3q-right      { padding-right: 0.75rem !important; }
 .pad-half,   .pad-half-left     { padding-left:  0.50rem !important; }
 .pad-half,   .pad-half-right    { padding-right: 0.50rem !important; }
+.pad-1q,     .pad-1q-left       { padding-left:  0.25rem !important; }
+.pad-1q,     .pad-1q-right      { padding-right: 0.25rem !important; }
 
 
 .push-four,  .push-four-top     { padding-top:    4.00rem !important; }

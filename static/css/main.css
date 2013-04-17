@@ -10,6 +10,8 @@ body {
     background: #FFF;
 }
 
+abbr.silent { border-bottom: 0; }
+
 a,
 a:visited   {
     color: #D44;

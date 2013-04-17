@@ -1,0 +1,154 @@
+{% extends theme("layout.html") %}
+
+{% set title = 'Venue' %}
+{% set description = '' %}
+{% set page_caption = 'Venue' %}
+
+{% block header_script %}
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css" />
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" />
+<![endif]-->
+<script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<section id="NIMHANS" class="legible conference-venue pad-one space-six-top">
+  <h2 class="calm centered space-two"><abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention&nbsp;Centre</h2>
+  <article class="legible measure-10words center-block">
+    <div class="venue-showcase contain-width clearfix">
+      <p class="full space-1q"><img src="{{ theme_static('img/venue/IMG_6437.JPG') }}" alt="Façade of NIMHANS Convention Centre"></p>
+      <p class="half space-1q pad-1q-right flushleft"><img src="{{ theme_static('img/venue/IMG_6298.JPG') }}" alt="Main Auditorium at NIMHANS Convention Centre"></p>
+      <p class="half space-1q pad-1q-left flushleft"><img src="{{ theme_static('img/venue/IMG_6387.JPG') }}" alt="Auditorium 2 at NIMHANS Convention Centre"></p>
+      <p class="half space-1q pad-1q-right flushleft"><img src="{{ theme_static('img/venue/IMG_6336.JPG') }}" alt="Main Hall at NIMHANS Convention Centre"></p>
+      <p class="half space-1q pad-1q-left flushleft"><img src="{{ theme_static('img/venue/IMG_6353.JPG') }}" alt="Greens at NIMHANS Convention Centre"></p>
+    </div>
+    <div class="measure-10words regular prose center-block">
+      <p class="space-two">
+        The <abbr class="silent" title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention Centre is Bangalore’s best known venue for large tech events. The venue is on Marigowda Road, past the main <abbr class="silent" title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> campus when you approach from Dairy Circle.
+      </p>
+      <h4 class="space-two nospace-bottom">Address</h4>
+      <p>
+        <abbr class="silent" title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention&nbsp;Centre<br>
+        NIMHANS Hospital Premises,<br>
+        Hosur Road / Marigowda Road, (Lakkasandra, Wilson Garden)<br>
+        Bangalore, Karnataka 560029
+      </p>
+      <div class="clearfix">
+        <h5 class="nospace ultrafaded flushleft regular pad-half-right">Landmark</h5>
+        <p class="nospace flushleft">Near Dairy Circle</p>
+      </div>
+      <p class="secondary space-half-top space-two-bottom"><a href="http://goo.gl/maps/PvXY">View on Google Maps</a></p>
+    </div>
+    <div id="map-container" class="measure-10words center-block legible clearfix"><div id="map"></div></div>
+  </article>
+</section>
+
+<section id="getting-there" class="getting-there legible highlight-links clearfix space-four pad-one">
+  <h3 class="space-two-top space-one-bottom centered">Getting There</h3>
+  <article class="measure-10words regular center-block clearfix">
+    <h5 class="space-two-top nospace-bottom regular faded capitalize">From Airport</h5>
+    <p class="regular space-half">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h5 class="space-two-top nospace-bottom regular faded capitalize">From Majestic</h5>
+    <p class="regular space-half">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </article>
+</section>
+
+<section id="accomodation" class="accomodation legible highlight-links clearfix space-four">
+  <h2 class="calm centered space-two">Stay</h2>
+  {% from theme("data/hotels.html") import hotels %}
+  {% for item in hotels %}
+    <article class="clearfix">
+      <hgroup class="space-two pad-one">
+        <h3 class="legible nospace">{{ item.category }}</h3>
+        <h4 class="price-range calm faded regular nospace">{{ item.pricing }}</h4>
+      </hgroup>
+      <ul id="hotels-list" class="hotels-list thumbnail-columns thumbnail-columns-three-wide center-block nospace-top space-four-bottom clearfix">
+      {% for hotel in item.options %}
+        <li class="hotel space-one-bottom secondary clearfix">
+            <h4 class="regular space-1q capitalize">{{ hotel.name }}</h4>
+            <p class="space-1q capitalize">{{ hotel.address }}</p>
+            {% if hotel.phones %}
+            <p class="space-1q">
+              {% for phone in hotel.phones %}
+                <a href="tel:{{ phone.dial }}" class="spooky">{{ phone.display }}</a>{% if not loop.last %} / {% endif %}
+              {% endfor %}
+            </p>
+            {% endif %}
+            {% if hotel.email %}<p class="space-1q faded">{{ hotel.email|safe }}</p>{% endif %}
+            {% if hotel.web %}
+            <p class="space-1q">
+              {% if hotel.web %}<a href="{{ hotel.web.link }}">{{ hotel.web.display }}</a>{% endif %}
+            </p>
+            {% endif %}
+            {% if hotel.distances %}
+            <h5 class="visuallyhidden">Distances</h5>
+            <ul class="tiny clearfix">
+              {% if hotel.distances.venue %}
+              <li class="flushleft pad-two-right">
+                <h6 class="nospace tiny faded">Venue</h6>
+                <p class="nospace"><span class="regular">{{ hotel.distances.venue }}</span> kms</p>
+              </li>
+              {% endif %}
+              {% if hotel.distances.airport %}
+              <li class="flushleft pad-two-right">
+                <h6 class="nospace tiny faded">Airport</h6>
+                <p class="nospace"><span class="regular">{{ hotel.distances.airport }}</span> kms</p>
+              </li>
+              {% endif %}
+              {% if hotel.distances.majestic %}
+              <li class="flushleft">
+                <h6 class="nospace tiny faded">Rly Stn / Bus Terminal</h6>
+                <p class="nospace"><span class="regular">{{ hotel.distances.majestic }}</span> kms</p>
+              </li>
+              {% endif %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </article>
+  {% endfor %}
+</section>
+
+{% endblock %}
+
+
+{% block footer_script %}
+<script type="text/javascript">
+  $(function() {
+    var map = new L.Map('map');
+    var cloudmadeUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
+      subDomains = ['otile1','otile2','otile3','otile4'],
+      cloudmadeAttrib = '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>';
+    var cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib, subdomains: subDomains});
+    var open_marker = function(marker) {
+      return function(e) {
+        map.panTo(marker['_latlng']);
+        marker.openPopup();
+        e.preventDefault();
+      };
+    };
+    var   venue = new L.LatLng(12.9431, 77.5969)
+        , center = new L.LatLng(12.9599, 77.5969)
+        ;
+    map.setView(center, 13).addLayer(cloudmade);
+    if ($(window).width() < 768) map.setView(venue,13);
+    // map.dragging.disable(); 
+    var marker_nimhans = new L.Marker(venue);
+    map.addLayer(marker_nimhans);
+    marker_nimhans.bindPopup("NIMHANS Convention Centre");
+    marker_nimhans.openPopup();
+    map.scrollWheelZoom.disable();
+    map.doubleClickZoom.disable();
+    map.on('zoomend', onZoomend);
+    function onZoomend(){ map.setView(venue, map.getZoom()); };
+  });
+</script>
+{% endblock %}
+
+{% block footer_credits %}
+<p class="centered tiny space-two-top space-four-bottom faded center-block wrap-mobile attribution"><span><a href="http://thenounproject.com/noun/speech-bubble/#icon-No5656" target="_blank">Speech Bubble</a> designed by <a href="http://thenounproject.com/naomiatkinson" target="_blank">Naomi Atkinson</a> and</span> <span><a href="http://thenounproject.com/noun/like/#icon-No1297" target="_blank">Like</a> designed by <a href="http://thenounproject.com/marwaboukarim" target="_blank">Marwa Boukarim</a> from The Noun Project</span></p>
+{% endblock %}
+
