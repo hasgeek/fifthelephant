@@ -104,40 +104,24 @@
       </li>
     </ul>
   </article>
-
+  
+  {% from theme("data/partners.html") import partners %}
+  {% if partners %}
   <article id="community-partners" class="space-four clearfix">
     <h2 class="centered calm space-two">Community Partners</h2>
     <ul class="community-partners-list about-sponsor regular clearfix nospace pad-one">
-      <li id="partner-cis" class="space-three-top clearfix">
-        <h5 class="sponsor-logo"><a href="#" class="unhighlight"><img src="{{ theme_static('img/partners/cis.png') }}" alt=" "></a></h5>
-        <h4 class="legible sponsor-name">The Centre for Internet and Society</h4>
-        <p class="secondary all-caps highlight-links sponsor-link"><a href="http://cis-india.org/">cis-india.org</a></p>
+      {% for partner in partners %}
+      <li id="partner-{{ partner.name|lower|replace(" ", "") }}" class="space-three-top clearfix {% if partner.logo.orientation == 'portrait' %}contain-height{% else %}contain-width{% endif %}">
+        <h5 class="sponsor-logo"><a href="{{ partner.web.link }}" class="unhighlight"><img src="{{ theme_static(partner.logo.url) }}" alt=" "></a></h5>
+        <h4 class="legible sponsor-name">{{ partner.name }}</h4>
+        <p class="secondary all-caps highlight-links sponsor-link"><a href="{{ partner.web.link }}">{{ partner.web.display }}</a></p>
         <hr class="invisible">
-        <p class="regular stretch prose clearboth sponsor-description space-one-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="regular stretch prose clearboth sponsor-description space-one-top">{{ partner.blurb }}</p>
       </li>
-      <li id="partner-okfn" class="space-three-top clearfix">
-        <h5 class="sponsor-logo space-half-top"><a href="#" class="unhighlight"><img src="{{ theme_static('img/partners/okfn.png') }}" alt=" "></a></h5>
-        <h4 class="legible sponsor-name">Open Knowledge Foundation</h4>
-        <p class="secondary all-caps highlight-links sponsor-link"><a href="http://okfn.org/">okfn.org</a></p>
-        <hr class="invisible">
-        <p class="regular stretch clearboth sponsor-description space-one-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </li>
-      <li class="space-three-top clearfix">
-        <h5 class="sponsor-logo space-half-top"><a href="#" class="unhighlight"><img src="{{ theme_static('img/partners/okfn.png') }}" alt=" "></a></h5>
-        <h4 class="legible sponsor-name">Open Knowledge Foundation</h4>
-        <p class="secondary all-caps highlight-links sponsor-link"><a href="http://okfn.org/">okfn.org</a></p>
-        <hr class="invisible">
-        <p class="regular stretch clearboth sponsor-description space-one-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </li>
-      <li class="space-three-top clearfix">
-        <h5 class="sponsor-logo"><a href="#" class="unhighlight"><img src="{{ theme_static('img/partners/cis.png') }}" alt=" "></a></h5>
-        <h4 class="legible sponsor-name">The Centre for Internet and Society</h4>
-        <p class="secondary all-caps highlight-links sponsor-link"><a href="http://cis-india.org/">cis-india.org</a></p>
-        <hr class="invisible">
-        <p class="regular stretch prose clearboth sponsor-description space-one-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </li>
+      {% endfor %}
     </ul>
   </article>
+  {% endif %}
 
 </section>
 

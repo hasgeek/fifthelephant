@@ -697,9 +697,13 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 @media only screen and (min-width: 60em) { .js .sponsors dd { width: 20%; } }
 
 /* Partners, HasGeek and Credits */
-.partners li { padding: 2%; height: 5em; }
-.partners li a { padding: 5%; line-height: 5em; }
+.partners .thumbnail-columns > li { margin: 0; }
+.partners li { height: 7em; }
+.partners li a { padding: 1em; height: 7em; line-height: 5em; }
+.partners li.contain-height a { padding: 1.5em .5em; line-height: 4em; }
 .partners li a:hover { background-color: rgba(0,0,0,.05); }
+.partners li a { vertical-align: middle; }
+@media only screen and (min-width: 50em) { .partners li a { padding: .5em; height: 7em; line-height: 6em; } }
 
 /*.credits         { margin-top: 3rem; }*/
 .credits dl      { width: 80%; margin: auto; }
@@ -787,6 +791,8 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 
 /* Community Sponsors */
 .community-partners-list { max-width: 32em; margin-left: auto; margin-right: auto; }
+.community-partners-list .sponsor-logo { max-height: 5em; text-align: right; }
+.community-partners-list li.contain-height .sponsor-logo { max-height: 5em; }
 @media only screen and (min-width: 50em) {
     .community-partners-list { max-width: 55em; }
     .community-partners-list > li { width: 40%; margin-left: 5%; margin-right: 5%; float: left; }
