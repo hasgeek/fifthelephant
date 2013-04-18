@@ -22,8 +22,8 @@ a.button {
 .button:hover,
 a.button:hover {
     color: #FFF;
-    outline: none;
-    background: black;
+    outline: none !important;
+    background: black !important;
     border: 0;
 }
 .button:active,
