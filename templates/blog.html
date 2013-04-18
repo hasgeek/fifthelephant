@@ -1,7 +1,14 @@
 {% extends theme("layout.html") %}
 
-{% block title %}{{ node.title }}{% endblock %}
-{% block description %}{{ node.description }}{% endblock %}
+{% set title = node.title %}
+{% set description = node.description %}
+
+{% block banner_title %}
+  <hr class="half center-block space-two">
+  <h1 class="blog-title-line clearboth centered center-block space-one faded calm all-caps">
+    {% if page_caption %}{{ page_caption|safe }}{% else %}<span class="wrap-mobile">All Stories, Updates and Announcements</span> <span class="wrap-mobile">go in <a href="/blog" class="spooky">this Blog</a></span>{% endif %}
+  </h1>
+{% endblock %}
 
 {% block content %}
 <section class="blog space-six">
@@ -9,15 +16,17 @@
     <ul class="blogpost-list measure-10words contain-width pad-one center-block">
     {% for post in feed() -%}
       <li>
-        <hgroup class="space-two-bottom">
-          <h2 class="calm space-half-bottom">
-            <a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}">{{ post.title }}</a>
-          </h2>
-          <h4 class="calm secondary space-half-top"><a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}" class="spooky">{{ post.published_at|longdate }}</a>{% if node.author %} <span class="serif-type italic faded pad-half">by</span> {{ post.author }}{% endif %}</h4>
-        </hgroup>
-        <div class="prose">
-        {{ post.content }}
-        </div>
+        <article>
+          <header class="space-two-bottom">
+            <h2 class="calm space-half-bottom">
+              <a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}">{{ post.title }}</a>
+            </h2>
+            <p class="calm secondary space-half-top"><a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}" class="spooky"><time>{{ post.published_at|longdate }}</time></a>{% if node.author %} <span class="serif-type italic faded pad-half">by</span> {{ post.author }}{% endif %}</p>
+          </header>
+          <div class="prose">
+          {{ post.content }}
+          </div>
+        </article>
       </li>
     {%- else -%}
       <li>(No blog entries have been written so far)</li>

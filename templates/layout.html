@@ -69,12 +69,14 @@
       </p>
     </nav>
     {% endblock %}
-    {% if page_caption %}
-    <hr class="half center-block space-three-top space-three-bottom">
-    <h1 class="clearboth centered calm measure-10words center-block space-three giant">
-      <span class="serif-type italic legible">The</span> {{ page_caption }}
-    </h1>
-    {% endif %}
+    {% block banner_title %}
+      {% if page_caption %}
+      <hr class="half center-block space-three-top space-three-bottom">
+      <h1 class="clearboth centered calm measure-10words center-block space-three giant">
+        <span class="serif-type italic legible occupy capitalize space-one-bottom">The</span> {{ page_caption }}
+      </h1>
+      {% endif %}
+    {% endblock %}
 </div><!-- .banner -->
 </header>
 {% endblock %}

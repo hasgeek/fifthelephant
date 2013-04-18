@@ -1,15 +1,17 @@
-{% extends theme("layout.html") %}
+{% extends theme("blog.html") %}
 
 {% set title = node.title %}
 {% set description = node.description %}
+{% set page_caption = '<span class="wrap-mobile">This is a blogpost on</span> <span class="wrap-mobile"><a href="/blog" class="blogpost-banner">The Fifth Elephant Blog</a></span>' %}
 
 {% block content %}
-<section class="blogpost space-four-top space-six-bottom pad-one">
-    <hgroup class="space-three-bottom">
+<section class="blogpost space-six pad-one">
+  <article>
+    <header class="space-three-bottom">
       <h1 class="calm">{{ node.title }}</h1>
-      <h4 class="calm">{{ node.published_at|longdate }}{% if node.author %} <span class="serif-type italic faded pad-half">by</span> {{ node.author }}{% endif %}</h4>
-    </hgroup>
-    <article class="measure-10words contain-width prose center-block">
+      <p class="calm"><time>{{ node.published_at|longdate }}</time>{% if node.author %} <span class="serif-type italic faded pad-half">by</span> {{ node.author }}{% endif %}</p>
+    </header>
+    <div class="measure-10words contain-width prose center-block">
     {{ node.content }}
     {%- if "image" in node.properties or "video" in node.properties %}
     <p class="space-three-top">
@@ -23,6 +25,7 @@
       {%- endif %} 
     </p>
     {%- endif %}
-    </article>
+    </div>
+  </article>
 </section>
 {% endblock %}

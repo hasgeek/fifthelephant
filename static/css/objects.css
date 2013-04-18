@@ -741,7 +741,6 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 /*-------------------------*/
 
 /* Banner */
-.banner.internal h1 span { display: block; text-transform: capitalize; margin-bottom: 1rem; }
 .banner.internal h2 { margin: .5rem auto 0; }
 .banner.internal .event-meta { font-size: 1.000rem; line-height: 1.5000; margin-top: 0; }
 .banner.internal nav { margin: 1rem auto 1rem; }
@@ -876,12 +875,18 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 /* Blog                    */
 /*-------------------------*/
 
-.blogpost hgroup { text-align: center; }
+h1.blog-title-line,
+h3.blog-title-line { font-size: .9rem; line-height: 1.4000; }
+.blogpost article > header { text-align: center; }
+.blogpost article a,
+.blogpost-list article a { word-wrap: break-word; }
 .blogpost em,
 .blogpost i,
 .blogpost-list em,
 .blogpost-list i { font-family: Baskerville, Palatino, 'Book Antiqua', Constantia, 'URW Palladio L'; }
 .blogpost-list > li + li { margin-top: 8rem; }
+@media all and (min-width: 40em) { .blogpost-list article > header { text-align: center; } }
+
 
 .blogpost .sponsor { position: relative; }
 .blogpost .sponsor:after { 
@@ -900,3 +905,6 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .blogpost .sponsor-silver:after { content: 'Silver'; }
 .blogpost .sponsor-bronze:after { content: 'Bronze'; }
 .blogpost .sponsor-community:after { content: 'Community'; }
+
+a.blogpost-banner { color: rgba(0,0,0,.8); border-bottom: 1px dotted black !important; }
+a.blogpost-banner:hover { color: black; border-bottom: 2px solid black !important; background-color: transparent; outline: none; }

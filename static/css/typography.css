@@ -76,6 +76,7 @@ pre code { font-family: Menlo, 'Bitstream Vera Sans Mono', Monaco, 'Courier New'
 .italic         { font-style: italic; }
 .no-italic      { font-style: normal; }
 
+.small-caps     { font-variant: small-caps; }
 .all-caps       { text-transform: uppercase; }
 .all-lower      { text-transform: lowercase; }
 .capitalize     { text-transform: capitalize; }
