@@ -26,6 +26,7 @@ a:visited   {
 a:hover         { border-bottom: 2px solid #D44; }
 a.spooky:hover  { border-bottom: 1px dotted rgba(0,0,0,.3) !important; }
 
+.links-prevent-hover-highlight a:hover,
 a.unhighlight,
 a.unhighlight:visited,
 a.unhighlight:hover { border-bottom: 0; }
