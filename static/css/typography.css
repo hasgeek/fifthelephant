@@ -72,6 +72,7 @@ pre code { font-family: Menlo, 'Bitstream Vera Sans Mono', Monaco, 'Courier New'
 
 .thin           { font-weight: 300; }
 .calm           { font-weight: normal; }
+.semi-bold      { font-weight: 600; }
 .bold           { font-weight: bold;   }
 .italic         { font-style: italic; }
 .no-italic      { font-style: normal; }
