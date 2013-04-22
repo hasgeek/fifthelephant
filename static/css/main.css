@@ -32,8 +32,9 @@ a.unhighlight:visited,
 a.unhighlight:hover { border-bottom: 0; }
 
 a.spooky,
-a.block-link{ color: inherit !important; border-bottom: none !important; background-color: transparent !important; outline: none !important; }
-a.block-link:hover { color: #D44; outline: none; }
+a.block-link { color: inherit !important; border-bottom: none !important; background-color: transparent !important; outline: none !important; }
+a.block-link:hover { color: #D44 !important; outline: none; }
+
 a.link-silent-hover:hover { color: inherit !important; outline: none !important; background-color: transparent !important; }
 a.link-white-hover:hover  { color: #FFF !important; }
 a.link-white-translucent-hover:hover  { color: rgba(255,255,255,.95) !important; }

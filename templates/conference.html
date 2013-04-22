@@ -26,13 +26,13 @@
   </article>
 </section>  
 
-<section id="speakers" class="legible clearfix">
+<section id="speakers" class="space-four-top fill-light legible clearfix">
   {% from theme("data/featured-talks.html") import featured_talks %}
   {% for talk in featured_talks %}
     {% if loop.first %}
-    <article class="push-three-top push-two-bottom fill-light space-four-top highlight-links clearfix">
+    <article class="push-three-top push-two-bottom highlight-links clearfix">
       <h2 class="centered calm space-two-top nospace-bottom ultrafaded">Featured Talks</h2>
-      <ul class="conference-featured-talks poster-with-bio legible clearfix push-one-bottom nospace">
+      <ul class="conference-featured-talks poster-with-bio legible clearfix nospace">
     {% endif %}
       <li class="clearfix">
         <h3 class="conference-featured-talk-topic calm large space-two-top">{{ talk.title }}</h3>
@@ -49,6 +49,38 @@
           <p>{{ talk.speaker.bio|safe }}</p>
         </div>
         {% endif %}
+      </li>
+    {% if loop.last %}
+      </ul>
+    </article>
+    {% endif %}
+  {% endfor %}
+  
+  {% from theme("data/talks.html") import talks %}
+  {% for talk in talks %}
+    {% if loop.first %}
+    <article class="push-two-bottom highlight-links clearfix">
+      <h2 class="centered calm space-two visuallyhidden">Talks</h2>
+      <ul class="conference-talks center-block thumbnail-columns thumbnail-columns-four-wide video-thumbnails regular clearfix">
+    {% endif %}
+      <li class="clearfix">
+        {% if talk.preview %}
+        <a class="occupy block-link" href="{{ talk.preview.link }}">
+          <p class="poster video contain-width">
+              <img alt="Watch Preview" src="{{ theme_static(talk.preview.poster) }}" width="350" height="197">
+          </p>
+        </a>
+        {% else %}
+        <p class="poster contain-width">
+            <img alt=" " src="{{ theme_static(talk.speaker.photo) }}" width="350" height="197">
+        </p>
+        {% endif %}
+        <hgroup>
+          <h3 class="capitalize"><a href="{{ talk.funnel }}" class="spooky">{{ talk.title }}</a></h3>
+          <h4 class="space-half-top nospace-bottom secondary">{{ talk.speaker.name }}</h4>
+        </hgroup>
+        <p class="talk-summary space-line-top nospace-bottom">{{ talk.summary }}</p>
+        <p class="capitalize space-line nospace-top space-line-bottom"><a href="{{ talk.funnel }}" class="capitalize tiny">View funnel proposal</a></p>
       </li>
     {% if loop.last %}
       </ul>
