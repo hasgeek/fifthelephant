@@ -267,7 +267,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .tiles > li { max-width: 20em; margin: 1rem auto; }
 .tiles .wrap { display: block; }
 .tiles a { height: 10rem; padding-top: 7%; padding-right: 5%; border: 1px solid #DDD; }
-.tiles a:hover { background-color: rgba(0,0,0,.1); }
+.tiles a:hover { background-color: rgba(0,0,0,.2); text-shadow: 0 0 1px #444; }
 .tiles .vcenter a { display: table; }
 .tiles .vcenter a span { display: table-cell; vertical-align: middle; }
 .announcements-block { margin-top: 6rem; }
