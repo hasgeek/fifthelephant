@@ -879,17 +879,17 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 }
 
 /* Conference Featured Talks */
-.conference-featured-talks .conference-featured-talk-topic { text-transform: capitalize; }
-.conference-featured-talks.poster-with-bio .bio { color: rgba(0,0,0,.8); }
+.featured-sessions .featured-session-topic { text-transform: capitalize; }
+.featured-sessions.poster-with-bio .bio { color: rgba(0,0,0,.8); }
 @media only screen and (min-width: 51em) { 
-    .conference-featured-talks .conference-featured-talk-topic { text-align: center; }
-    .conference-featured-talks .conference-featured-talk-description { max-width: 32em; margin: 1rem auto; }
-    .conference-featured-talks.poster-with-bio .poster { margin-left: -7em; }
-    .conference-featured-talks.poster-with-bio .bio { float: left; width: 19em; }
+    .featured-sessions .featured-session-topic { text-align: center; }
+    .featured-sessions .featured-session-description { max-width: 32em; margin: 1rem auto; }
+    .featured-sessions.poster-with-bio .poster { margin-left: -7em; }
+    .featured-sessions.poster-with-bio .bio { float: left; width: 19em; }
 }
 
 /* Conference Talks Preview */
-.conference-talks { max-width: 1600px; }
+.sessions { max-width: 1600px; }
 
 /* Schedule */
 .schedule-table-container { width: 100%; max-width: 60em; }

@@ -6,9 +6,9 @@
 {% set page = 'conference' %}
 
 {% block page_nav_items %}
-<li><a href="#talks" class="link-white-hover">Talks</a></li>
+<li><a href="#sessions" class="link-white-hover">Talks</a></li>
 <li><a href="#schedule" class="link-white-hover">Schedule</a></li>
-<li><a href="#conference-proposals" class="link-white-hover">Proposals</a></li>
+<li><a href="#proposals" class="link-white-hover">Proposals</a></li>
 {% endblock %}
 
 {% block content %}
@@ -33,138 +33,24 @@
   </article>
 </section>  
 
-<section id="talks" class="space-four-top fill-light legible clearfix">
-  {% from theme("data/featured-talks.html") import featured_talks %}
-  {% for talk in featured_talks %}
-    {% if loop.first %}
-    <article class="push-three-top push-two-bottom highlight-links clearfix">
-      <h2 class="centered calm space-two-top nospace-bottom ultrafaded">Featured Talks</h2>
-      <ul class="conference-featured-talks poster-with-bio legible clearfix nospace">
-    {% endif %}
-      <li class="clearfix">
-        <h3 class="conference-featured-talk-topic calm large space-two-top">{{ talk.title }}</h3>
-        <p class="conference-featured-talk-description">{{ talk.description|safe }}</p>
-        {% if talk.speaker %}
-        <div class="poster clearfix">
-          <p class="contain-width clearfix"><img alt="" src="{{ theme_static(talk.speaker.photo) }}" width="150" height="150"></p>
-          <hgroup class="clearboth">
-            <h3 class="regular">{{ talk.speaker.name }}</h3>
-            <h4 class="all-caps secondary">{{ talk.speaker.company }}</h4>
-          </hgroup>
-        </div>
-        <div class="bio serif-type italic">
-          <p>{{ talk.speaker.bio|safe }}</p>
-        </div>
-        {% endif %}
-      </li>
-    {% if loop.last %}
-      </ul>
-    </article>
-    {% endif %}
-  {% endfor %}
+<section id="sessions" class="space-four-top fill-light legible clearfix">
+  {% with session_kind = 'Talks' %}
+  {% from theme("data/featured-talks.html") import featured_talks as featured %}
+  {% include theme("partials/_featured_sessions.html") %}
   
-  {% from theme("data/talks.html") import talks %}
-  {% for talk in talks %}
-    {% if loop.first %}
-    <article class="push-two-bottom highlight-links clearfix">
-      <h2 class="centered calm space-two visuallyhidden">Talks</h2>
-      <ul class="conference-talks center-block thumbnail-columns thumbnail-columns-four-wide video-thumbnails regular clearfix">
-    {% endif %}
-      <li class="clearfix">
-        {% if talk.preview %}
-        <a class="occupy block-link" href="{{ talk.preview.link }}">
-          <p class="poster video contain-width">
-              <img alt="Watch Preview" src="{{ theme_static(talk.preview.poster) }}" width="350" height="197">
-          </p>
-        </a>
-        {% elif talk.speaker.photo %}
-        <p class="poster contain-width">
-            <img alt=" " src="{{ theme_static(talk.speaker.photo) }}" width="350" height="197">
-        </p>
-        {% endif %}
-        <hgroup>
-          <h3 class="capitalize"><a href="{{ talk.funnel }}" class="spooky">{{ talk.title }}</a></h3>
-          <h4 class="space-half-top nospace-bottom secondary">{{ talk.speaker.name }}</h4>
-        </hgroup>
-        <p class="talk-summary space-line-top nospace-bottom">{{ talk.summary }}</p>
-        <p class="capitalize space-line nospace-top space-line-bottom"><a href="{{ talk.funnel }}" class="capitalize tiny">View funnel proposal</a></p>
-      </li>
-    {% if loop.last %}
-      </ul>
-    </article>
-    {% endif %}
-  {% endfor %}
+  {% from theme("data/talks.html") import talks as sessions %}
+  {% include theme("partials/_sessions.html") %}
+  {% endwith %}
 </section>
 
 <section id="schedule" class="schedule space-six legible">
   <h2 class="centered calm space-two">Schedule</h2>
   <div class="schedule-table-container center-block pad-one regular">
-  <table class="schedule-table">
-    <colgroup class="time"></colgroup> 
-    <colgroup class="track-1"></colgroup>
-    <colgroup class="track-2"></colgroup>
-    <thead>
-      <tr>
-        <th class="time semi-bold">Time</th>
-        <th class="track-1 semi-bold">Auditorium&nbsp;1 (Storage)</th>
-        <th class="track-2 semi-bold">Auditorium&nbsp;2 (Analytics)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th class="time" scope="row">09:00 – 09:45</th>
-        <td colspan="2" class="centered">Registrations and sign-in</td>
-      </tr>
-      <tr>
-        <th class="time" scope="row">09:45 – 10:00</th>
-        <td colspan="2" class="centered">Introductions</td>
-      </tr>
-      <tr>
-        <th class="time" scope="row">10:00 – 10:45</th>
-        <td class="track-1">
-          <h4><a href="http://funnel.hasgeek.com/5el/298-a-herd-of-elephants-navigating-the-hadoop-ecosystem">A Herd of Elephants - Navigating the Hadoop Ecosystem</a></h4>
-          <p>Vinayak Hegde</p>
-        </td>
-        <td class="track-2">
-          <h4><a href="http://funnel.hasgeek.com/5el/289-an-introduction-to-data-visualization-processing-programming-language">An Introduction to Data Visualization and Processing (Programming Language)</a></h4>
-          <p>Uttam Grandhi</p>
-        </td>
-      </tr>
-      <tr>
-        <th class="time" scope="row">10:00 – 10:45</th>
-        <td class="track-1">
-          <h4><a href="http://funnel.hasgeek.com/5el/412-simplifying-advanced-analytics-to-empower-business-managers">Simplifying Advanced Analytics to Empower Business Managers</a></h4>
-          <p><a href="http://www.youtube.com/watch?v=bExIukDewTk&feature=BFa&list=UUDHao9FxNRHw1VyLuGXI_rA">Prithvijit Roy</a></p>
-        </td>
-        <td class="track-2">
-          <h4><a href="http://funnel.hasgeek.com/5el/268-visualising-text">Visualizing Text</a></h4>
-          <p>Anand S.</p>
-        </td>
-      </tr>
-      <tr>
-        <th class="time" scope="row">10:45 – 11:15</th>
-        <td colspan="2" class="stretch centered">Break</td>
-      </tr>
-      <tr>
-        <th class="time" scope="row">04:45 – 05:30</th>
-        <td class="track-1">
-          <h4><a href="http://funnel.hasgeek.com/5el/322-introduction-to-data-analysis-visualisation-with-r">Introduction to Data Analysis and Visualization with R</a></h4>
-        </td>
-        <td class="track-2">
-          <h4><a href="http://funnel.hasgeek.com/5el/384-build-your-own-real-time-analytics-and-visualization-enable-complex-event-processing-event-patterns-and-aggregates">Build Your Own Real-time Analytics and Visualization, Enable Complex Event Processing, Event Patterns and Aggregates</a></h4>
-          <p>Ramesh Perumalsamy and Vishnu H. Rao</p>
-        </td>
-      </tr>
-      <tr>
-        <th class="time" scope="row">05:30 – 06:00</th>
-        <td colspan="2" class="centered">Feedback</td>
-      </tr>
-    </tbody>
-  </table>
+    {% include theme("partials/_schedule_table.html") %}
   </div>
 </section>
 
-<section id="conference-proposals" class="legible highlight-links clearfix space-four">
+<section id="proposals" class="legible highlight-links clearfix space-four">
   <article class="clearfix">
     <div class="measure-8words center-block pad-one">
     <h2 class="calm centered space-two">Conference Proposals</h2>
@@ -174,18 +60,7 @@
             <h3 class="calm centered ultrafaded space-two">{{ s.title }}</h3>
             <ul id="proposals" class="proposals space-four-bottom">
           {% endif %}
-          <li class="proposal space-two clearfix">
-              <h5 class="regular space-1q capitalize calm">
-                <a target="_blank" href="{{ proposal['url'] }}" title="{{ proposal['title'] }} — {{ proposal['proposer'] }}">
-                {{ proposal['title'] }}
-                </a>
-              </h5>
-              <p class="by regular space-1q capitalize sixty">{{ proposal['proposer'] }}</p>
-              <p class="meta secondary space-1q right-aligned forty bold ultrafaded">
-                <span class="comments">{{ proposal['comments'] }}</span>
-                <span class="votes">{{ proposal['votes'] }}</span>
-              </p>
-          </li>
+          {% include theme("partials/_proposal_item.html") %}
           {% if loop.last %} </ul> {% endif %}
         {% endfor %}
     {% endfor %}

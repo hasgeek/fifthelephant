@@ -6,7 +6,9 @@
 {% set page = 'workshops' %}
 
 {% block page_nav_items %}
-<li><a href="#workshop-proposals" class="link-white-hover">Proposals</a></li>
+<li><a href="#sessions" class="link-white-hover">Workshops</a></li>
+<li><a href="#schedule" class="link-white-hover">Schedule</a></li>
+<li><a href="#proposals" class="link-white-hover">Proposals</a></li>
 {% endblock %}
 
 {% block content %}
@@ -28,26 +30,34 @@
       </p>
     </div>
   </article>
+</section>
+
+<section id="sessions" class="space-four-top fill-light legible clearfix">
+  {% with session_kind = 'Workshops' %}
+  {% from theme("data/featured-workshops.html") import featured_workshops as featured %}
+  {% include theme("partials/_featured_sessions.html") %}
   
-  <article id="workshop-proposals" class="clearfix highlight-links space-four">
+  {% from theme("data/workshops.html") import workshops as sessions %}
+  {% include theme("partials/_sessions.html") %}
+  {% endwith %}
+</section>
+
+<section id="schedule" class="schedule space-six legible">
+  <h2 class="centered calm space-two">Schedule</h2>
+  <div class="schedule-table-container center-block pad-one regular">
+    {% include theme("partials/_schedule_table.html") %}
+  </div>
+</section>
+  
+<section id="proposals" class="space-four">
+  <article class="clearfix highlight-links">
     <div class="measure-8words center-block pad-one">
     <h2 class="calm centered space-two">Workshop Proposals</h2>
     {% for proposal in node.proposals() if proposal['section_name'] == 'workshops' %}
       {% if loop.first %} 
         <ul id="proposals" class="proposals space-four-bottom">
       {% endif %}
-      <li class="proposal space-two clearfix">
-          <h5 class="regular space-1q capitalize calm">
-            <a target="_blank" href="{{ proposal['url'] }}" title="{{ proposal['title'] }} — {{ proposal['proposer'] }}">
-            {{ proposal['title'] }}
-            </a>
-          </h5>
-          <p class="by regular space-1q capitalize sixty">{{ proposal['proposer'] }}</p>
-          <p class="meta secondary space-1q right-aligned forty bold ultrafaded">
-            <span class="comments">{{ proposal['comments'] }}</span>
-            <span class="votes">{{ proposal['votes'] }}</span>
-          </p>
-      </li>
+      {% include theme("partials/_proposal_item.html") %}
       {% if loop.last %} </ul> {% endif %}
     {% endfor %}
     <p class="centered space-six-top">
@@ -55,7 +65,6 @@
     </p>
     </div>
   </article>
-  
 </section>
 
 {% endblock %}
