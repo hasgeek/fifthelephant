@@ -3,6 +3,13 @@
 {% set title = 'Conference' %}
 {% set description = '' %}
 {% set page_caption = 'Conference' %}
+{% set page = 'conference' %}
+
+{% block page_nav_items %}
+<li><a href="#talks" class="link-white-hover">Talks</a></li>
+<li><a href="#schedule" class="link-white-hover">Schedule</a></li>
+<li><a href="#conference-proposals" class="link-white-hover">Proposals</a></li>
+{% endblock %}
 
 {% block content %}
 <h2 class="large clearboth centered calm measure-10words center-block space-six-top space-two-bottom">
@@ -26,7 +33,7 @@
   </article>
 </section>  
 
-<section id="speakers" class="space-four-top fill-light legible clearfix">
+<section id="talks" class="space-four-top fill-light legible clearfix">
   {% from theme("data/featured-talks.html") import featured_talks %}
   {% for talk in featured_talks %}
     {% if loop.first %}
@@ -157,7 +164,7 @@
   </div>
 </section>
 
-<section id="conference-proposal" class="legible highlight-links clearfix space-four">
+<section id="conference-proposals" class="legible highlight-links clearfix space-four">
   <article class="clearfix">
     <div class="measure-8words center-block pad-one">
     <h2 class="calm centered space-two">Conference Proposals</h2>

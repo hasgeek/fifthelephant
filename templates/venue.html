@@ -3,6 +3,7 @@
 {% set title = 'Venue' %}
 {% set description = '' %}
 {% set page_caption = 'Venue' %}
+{% set page = 'venue' %}
 
 {% block header_script %}
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css" />
@@ -12,8 +13,13 @@
 <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
 {% endblock %}
 
-{% block content %}
+{% block page_nav_items %}
+<li><a href="#NIMHANS" class="link-white-hover">NIMHANS</a></li>
+<li><a href="#getting-there" class="link-white-hover">Getting There</a></li>
+<li><a href="#accomodation" class="link-white-hover">Stay</a></li>
+{% endblock %}
 
+{% block content %}
 <section id="NIMHANS" class="legible conference-venue pad-one space-six-top">
   <h2 class="calm centered space-two"><abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention&nbsp;Centre</h2>
   <article class="legible measure-10words center-block">

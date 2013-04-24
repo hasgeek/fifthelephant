@@ -3,17 +3,23 @@
 {% set title = '' %}
 {% set description = '' %}
 
+{% block page_nav_items %}
+<li><a href="#announcements" class="link-white-hover">Announcements</a></li>
+<li><a href="#last-year" class="link-white-hover">2012 Edition</a></li>
+<li><a href="#sponsors" class="link-white-hover">Sponsors</a></li>
+<li><a href="#partners" class="link-white-hover">Partners</a></li>
+{% endblock %}
+
 {% block banner %}
-<div class="banner fill-yellow home resetcoords clearfix">
+<div class="banner long-page-nav fill-yellow home resetcoords clearfix">
   <header class="clearfix">
     
     <div class="space-three">{% block nav %}{{ super() }}{% endblock %}</div>
     
     <hr class="half center-block space-three-bottom">
-    
     <hgroup class="centered clearfix">
       <h1 class="calm huge space-two-top nospace-bottom">
-        <a class="link-silent-hover" href="./">
+        <a class="link-silent-hover active" href="./">
           The Fifth Elephant
         </a>
       </h1>
@@ -27,7 +33,7 @@
         <a 
           title="View location in Google Maps"
           href="/2013/venue#NIMHANS"
-          class="ultrafaded link-white-hover">
+          class="ultrafaded venue link-white-hover">
           <abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr>
           Convention Centre
         </a>
@@ -37,7 +43,7 @@
       </h2>
     </hgroup>
     
-    <p class="centered legible space-two-bottom">
+    <p class="event-tickets centered legible space-two-bottom">
       <a
         class="button button-primary min-measure-3words"
         title="Fifth Elephant 2013 Tickets on DoAttend"
@@ -48,6 +54,9 @@
   </header>
   
   <p class="big-data center-block ir space-two-top">Big Data</p>
+  
+  {% block page_nav %}{{ super() }}{% endblock %}
+  
 </div><!-- .banner -->
 {% endblock %}
 

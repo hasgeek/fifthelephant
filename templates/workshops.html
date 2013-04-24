@@ -3,6 +3,11 @@
 {% set title = 'Workshops' %}
 {% set description = '' %}
 {% set page_caption = 'Workshops' %}
+{% set page = 'workshops' %}
+
+{% block page_nav_items %}
+<li><a href="#workshop-proposals" class="link-white-hover">Proposals</a></li>
+{% endblock %}
 
 {% block content %}
 <h2 class="large clearboth centered calm measure-10words center-block space-six-top space-two-bottom">
@@ -24,7 +29,7 @@
     </div>
   </article>
   
-  <article class="clearfix highlight-links space-four">
+  <article id="workshop-proposals" class="clearfix highlight-links space-four">
     <div class="measure-8words center-block pad-one">
     <h2 class="calm centered space-two">Workshop Proposals</h2>
     {% for proposal in node.proposals() if proposal['section_name'] == 'workshops' %}
