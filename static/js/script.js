@@ -56,6 +56,10 @@ function initInPageNav () {
         else $.smoothScroll({ scrollTarget: e.target.hash, beforeScroll: hideSticky, afterScroll: unhideSticky });
         e.preventDefault();
     });
+    $('body').on('click', '.sticky-main-bar a.active', function(e) {
+        $.smoothScroll({ scrollTarget: '#page', beforeScroll: hideSticky, afterScroll: unhideSticky });
+        e.preventDefault();
+    });
 }
 
 // Sticky Navigation
