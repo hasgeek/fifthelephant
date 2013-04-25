@@ -302,7 +302,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .sticky-nav .ticket-link,
 .sticky-nav .ticket-link .conference-dates,
 .sticky-nav .nav-line-spacer { display: none; }
-.sticky .sticky-nav { position: fixed; top: 0; width: 100%; box-shadow: rgba(0,0,0,0.75) 0 0 3px; z-index: 1010; }
+.sticky .sticky-nav { position: fixed; top: 0; left: 0; width: 100%; box-shadow: rgba(0,0,0,0.75) 0 0 3px; z-index: 1010; }
 .sticky .sticky-nav { display: block; }
 .sticky .sticky-nav .sticky-width { max-width: 60rem; margin: auto; }
 .sticky .sticky-nav a,

@@ -63,9 +63,10 @@ function initInPageNav () {
 }
 
 // Sticky Navigation
+window.ios = navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
 function hideSticky() {
     window.HIDE_STICKY = true;
-    if('ontouchstart' in document.documentElement) $('#sticky-nav').css('top', -$(window).height());
+    if(window.ios) $('#sticky-nav').css('top', -$(window).height());
 }
 function unhideSticky() { setTimeout(function(){ window.HIDE_STICKY = false; }, 0); }
 function initStickyNav () {
@@ -101,7 +102,7 @@ function initStickyNav () {
         $sticky_nav.css('top', top);
         last_scroll = curr_scroll;
     }
-    function revealStickyTouch(e) {
+    function iOSRevealSticky(e) {
         curr_scroll = e.originalEvent.touches[0].clientY;
         if(window.HIDE_STICKY) top = -$sticky_nav.height()-3;
         else {
@@ -115,9 +116,10 @@ function initStickyNav () {
         $sticky_nav.css('top', top);
         last_scroll = curr_scroll;
     }
-    if ('ontouchstart' in document.documentElement) {
+    if (window.ios) {
+        // IOS freezes the DOM while scrolling. Hence…
         $(window).on('touchstart', function(e) { last_scroll = e.originalEvent.touches[0].clientY; });
-        $(window).on('touchmove', revealStickyTouch);
+        $(window).on('touchmove', iOSRevealSticky);
         transition[Modernizr.prefixed('transition')] = 'top .5s linear';
         $sticky_nav.css(transition);
     }
