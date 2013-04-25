@@ -146,6 +146,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     color: black;
     box-shadow: rgba(0,0,0,0.75) 0 0 3px;
     position: relative;
+    z-index: 1025;
 }
 .banner a,
 .banner a:visited   { color: black; text-decoration: none; border: 0; padding: .1em .2em; }
@@ -155,21 +156,22 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 }
 .banner a.venue:hover { outline: 0.3em solid rgba(0,0,0,0.5); }
 @media only screen and (min-width: 30em) { .banner a, .banner a:visited   { padding: .2em .3em; } }
+
 /* Navigation Line */
-.nav-line {
+.main-nav .nav-line {
     font-style: italic;
     font-size: 1.2em;
     line-height: 1.8;
     color: rgba(0,0,0,0.65);
     margin: 2rem auto;
 }
-.nav-line .nav-line-spacer {
+.main-nav .nav-line .nav-line-spacer {
     padding: 0 0.2em;
     display: inline-block;
     font-size: 1.1em;
 }
-.nav-line .sub-group { display: block; }
-.nav-line .nav-line-spacer.amp {
+.main-nav .nav-line .sub-group { display: block; }
+.main-nav .nav-line .nav-line-spacer.amp {
     display: inline-block;
     font-size: 1.5em;
     line-height: 1;
@@ -177,17 +179,20 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     top: 0.1em;
     color: rgba(0,0,0,0.5);
 }
-.nav-line a,
-.nav-line a:visited {
+.main-nav .nav-line a,
+.main-nav .nav-line a:visited {
     display: inline-block;
     color: rgba(0,0,0,.7);
     font-style: italic;
     border-top: 1px solid transparent;
     border-bottom: 1px dotted rgba(0,0,0,.2);
 }
-.nav-line .conference a,
-.nav-line .conference a:visited {
-    font-family: Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif;
+.main-nav .nav-line .community a,
+.main-nav .nav-line .community a:visited,
+.main-nav .nav-line .bangalore a,
+.main-nav .nav-line .bangalore a:visited { font-family: Baskerville, Palatino, 'Book Antiqua', Constantia, 'URW Palladio L'; }
+.main-nav .nav-line .conference a,
+.main-nav .nav-line .conference a:visited {
     font-size: 1em;
     width: 8.2rem;
     text-transform: uppercase;
@@ -196,76 +201,73 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     font-style: normal;
     font-weight: 600;
 }
-.wf-active .nav-line .conference a,
-.wf-active .nav-line .conference a:visited {
-    font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif;
-}
-.nav-line a:hover {
+.main-nav .nav-line a:hover {
     font-weight: normal !important;
     color: white !important;
     border-top: 1px solid rgba(0,0,0,0.2);
     border-bottom: 1px solid rgba(0,0,0,0.2);
     outline: none;    
 }
-.nav-line a.link-silent-hover:hover {
+.main-nav .nav-line a.link-silent-hover:hover {
     border-color: transparent;
     font-weight: 600 !important;
     color: black !important;
 }
-@media only screen and (min-width: 30em) { .nav-line { font-size: 1em; line-height: 1.5; } }
+@media only screen and (min-width: 30em) { .main-nav .nav-line { font-size: 1em; line-height: 1.5; } }
 @media only screen and (min-width: 40em) {
-    .nav-line {
+    .main-nav .nav-line {
         font-size: 1em;
         color: rgba(200,00,00,0.65);
         margin: 1.5rem 0; 
     }
-    .nav-line .nav-line-spacer { padding: 0 0.1em; }
-    .nav-line .nav-line-spacer.amp { color: rgba(200,00,00,0.5); }
-    .nav-line .sub-group { display: inline-block; }
-    .nav-line a,
-    .nav-line .conference a,
-    .nav-line a:visited,
-    .nav-line .conference a:visited {
+    .main-nav .nav-line .nav-line-spacer { padding: 0 0.1em; }
+    .main-nav .nav-line .nav-line-spacer.amp { color: rgba(200,00,00,0.5); }
+    .main-nav .nav-line .sub-group { display: inline-block; }
+    .main-nav .nav-line a,
+    .main-nav .nav-line .conference a,
+    .main-nav .nav-line a:visited,
+    .main-nav .nav-line .conference a:visited {
         display: inline-block;
         width: 7rem;
-        font-family: Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif;
         text-transform: uppercase;
         color: black;
         font-style: normal;
         border: 0 !important;
         font-weight: 600;
     }
-    .wf-active .nav-line a,
-    .wf-active .nav-line .conference a,
-    .wf-active .nav-line a:visited,
-    .wf-active .nav-line .conference a:visited {
-        font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif;
-    }
-    .nav-line .nav-line-spacer {
+    .main-nav .nav-line .community a,
+    .main-nav .nav-line .community a:visited,
+    .main-nav .nav-line .bangalore a,
+    .main-nav .nav-line .bangalore a:visited { font-family: Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif; }
+    .wf-active .main-nav .nav-line .community a,
+    .wf-active .main-nav .nav-line .community a:visited,
+    .wf-active .main-nav .nav-line .bangalore a,
+    .wf-active .main-nav .nav-line .bangalore a:visited { font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif; }
+    .main-nav .nav-line .nav-line-spacer {
         padding: 0;
         width: 1.5rem;
         text-indent: -999em;
         overflow: hidden;
     }
-    .nav-line .nav-line-spacer.amp { display: inline-block; }
+    .main-nav .nav-line .nav-line-spacer.amp { display: inline-block; }
 }
 @media only screen and (min-width: 50em) {
-    .nav-line { margin: 2rem 0; }
-    .nav-line .nav-line-spacer { width: 4rem; text-indent: 0; }
-    .nav-line .nav-line-spacer.amp {
+    .main-nav .nav-line { margin: 2rem 0; }
+    .main-nav .nav-line .nav-line-spacer { width: 4rem; text-indent: 0; }
+    .main-nav .nav-line .nav-line-spacer.amp {
         width: 1.5rem;
         top: 0.15em;
         line-height: 1.5rem;
         font-weight: 300;
     }
-    .nav-line a, .nav-line .conference a { width: 8rem; }
+    .main-nav .nav-line a, .nav-line .conference a { width: 8rem; }
 }
 @media only screen and (min-width: 55em) {
-    .nav-line { margin: 3rem 0; font-weight: 300; }
-    .nav-line .nav-line-spacer.amp { font-size: 2em; width: 3rem; }
+    .main-nav .nav-line { margin: 3rem 0; font-weight: 300; }
+    .main-nav .nav-line .nav-line-spacer.amp { font-size: 2em; width: 3rem; }
 }
 
-.page-nav nav { background-color: rgba(0,0,0,.2); }
+.page-nav { background-color: rgba(0,0,0,.2); }
 .page-nav nav { text-align: center; font-size: .9rem; }
 .page-nav nav li { display: inline-block; }
 .page-nav nav li a { display: block; font-weight: 600; padding: .3rem .5rem; }
@@ -279,6 +281,65 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 @media only screen and (min-width: 40em) { .page-nav nav li a { padding: .3rem .8rem !important; } }
 @media only screen and (min-width: 60em) { .page-nav nav li a { padding: .3rem 1.2rem !important; } }
 
+
+.sticky-nav { display: none; }
+.sticky-nav .home-link { float: left; width: 10%; margin: 0 !important; }
+.sticky-nav .home-link a {
+    background: url(../img/home-white.svg) no-repeat center 40%;
+    background-size: auto 50%;
+    display: block; 
+    border: 0; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr;
+}
+.sticky-nav .home-link a:hover { background-color: black; }
+.sticky-nav .home-link a.active { background-image: url(../img/home-black.svg); }
+.sticky-nav .sticky-main-bar { background-color: rgba(0,0,0,0.6); }
+.sticky-nav .sticky-main-bar nav { width: 90%; float: left }
+.sticky-nav .nav-line .sub-group { display: block; width: 25%; float: left; }
+.sticky-nav .nav-line .sub-group.conference { width: 50%; }
+.sticky-nav .nav-line .sub-group a { color: white !important; }
+.sticky-nav .nav-line .sub-group a:hover { background-color: black; }
+.sticky-nav .nav-line .sub-group.conference a { width: 50%; }
+.sticky-nav .ticket-link,
+.sticky-nav .ticket-link .conference-dates,
+.sticky-nav .nav-line-spacer { display: none; }
+.sticky .sticky-nav { position: fixed; top: 0; width: 100%; box-shadow: rgba(0,0,0,0.75) 0 0 3px; z-index: 1010; }
+.sticky .sticky-nav { display: block; }
+.sticky .sticky-nav .sticky-width { max-width: 60rem; margin: auto; }
+.sticky .sticky-nav a,
+.sticky .sticky-nav a:visited {
+    font-size: .7rem;
+    padding: 0;
+    margin: 0 !important;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block;
+    width: 100%;
+    float: left;
+    border: 0;
+    color: black;
+}
+.sticky .sticky-nav a.active { background-color: #FFCC66 !important; color: black !important; }
+.sticky .sticky-nav .page-nav { background-color: transparent; }
+.sticky .sticky-nav .page-nav nav li { display: block; width: auto; float: left; }
+.sticky .sticky-nav .page-nav nav li a { padding: 0 .5rem !important; }
+.sticky .sticky-nav .page-nav nav li a:hover { background-color: rgba(0,0,0,0.5); }
+@media only screen and (min-width: 30em) { .sticky .sticky-nav .page-nav nav ul { width: 90%; margin-left: 10%; } }
+@media only screen and (min-width: 40em) {
+    .sticky-nav .home-link { float: left; width: 8%; margin: 0 !important; }
+    .sticky-nav .sticky-main-bar nav { width: 77%; }
+    .sticky-nav .ticket-link { display: block; position: relative; float: left; width: 15%; margin: 0 !important; left: auto; }
+    .sticky-nav .ticket-link a { display: block; border-radius: 0; min-width: 0 !important; box-shadow: none; }
+    .sticky .sticky-nav .page-nav nav ul { width: 92%; margin-left: 8%; }
+    .sticky .sticky-nav .page-nav nav ul,
+    .sticky .sticky-nav .page-nav nav li,
+    .sticky .sticky-nav a,
+    .sticky .sticky-nav a:visited { font-size: .8rem; height: 30px; line-height: 30px; }
+    .sticky .sticky-nav .page-nav nav li a { padding: 0 1rem !important; }
+}
+@media only screen and (min-width: 50em) { .sticky .sticky-nav .page-nav nav li a { padding: 0 2rem !important; } }
 
 /* Prose */
 .prose ul li { list-style-type: circle; }
@@ -775,7 +836,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 /* Banner */
 .banner.internal h2 { margin: .5rem auto 0; }
 .banner.internal .event-tickets { font-size: 1.000rem; line-height: 1.5000; margin-top: 0; }
-.banner.internal nav { margin: 1rem auto 1rem; }
+.banner.internal .main-nav nav { margin: 1rem auto 1rem; }
 .banner.internal .event-tickets a.buy-tickets { margin-left: 1em; }
 .banner.internal .event-tickets { margin-bottom: 2em; }
 @media only screen and (min-width: 52em) { 

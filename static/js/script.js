@@ -1,5 +1,4 @@
 
-
 function setupFlipboard () {
     if(!$('.flipboard').length) return;
     active_board = new Flipboard();
@@ -26,10 +25,12 @@ function initSponsor () {
         $.smoothScroll({
             scrollTarget: $container,
             offset: -20,
+            beforeScroll: hideSticky,
             afterScroll: function() { 
                 $container.addClass('squeeze');
                 if (window.matchMedia && window.matchMedia('(min-width: 50em)').matches || $(window).width() >= 800) $about.show(400);
                 else $about.slideDown(400);
+                unhideSticky();
             }
         });
         $('dd.active', $logos).removeClass('active');
@@ -38,7 +39,7 @@ function initSponsor () {
         return false;
     });
     $('body').on('click', '#sponsors .about-sponsor a.close', function(e) {
-        $.smoothScroll({ scrollTarget: $container, offset: -20 });
+        $.smoothScroll({ scrollTarget: $container, offset: -20, beforeScroll: hideSticky, afterScroll: unhideSticky });
         $('dd.active', $logos).removeClass('active');
         if (window.matchMedia && window.matchMedia('(min-width: 50em)').matches || $(window).width() >= 800) $about.hide(400, function() { $container.removeClass('squeeze'); $detail.empty(); });
         else $about.slideUp(400, function() { $container.removeClass('squeeze'); $detail.empty(); });
@@ -47,9 +48,87 @@ function initSponsor () {
     })
 }
 
+// In-page Navigation
+function initInPageNav () { 
+    $('body').on('click', '.page-nav a', function(e) {
+        if($(e.target.hash).offset().top < $(window).scrollTop())
+            $.smoothScroll({ scrollTarget: e.target.hash, beforeScroll: hideSticky, afterScroll: unhideSticky });
+        else $.smoothScroll({ scrollTarget: e.target.hash, beforeScroll: hideSticky, afterScroll: unhideSticky });
+        e.preventDefault();
+    });
+}
+
+// Sticky Navigation
+function hideSticky() {
+    window.HIDE_STICKY = true;
+    if('ontouchstart' in document.documentElement) $('#sticky-nav').css('top', -$(window).height());
+}
+function unhideSticky() { setTimeout(function(){ window.HIDE_STICKY = false; }, 0); }
+function initStickyNav () {
+    window.HIDE_STICKY = false;
+    var   $sticky_offset = $('#sticky-offset')
+        , $sticky_nav = $('#sticky-nav')
+        , transition = {}
+        , last_scroll = 0
+        , curr_scroll
+        , diff
+        , page_offset
+        , height
+        , top
+        ;
+    $('#sticky-nav .sticky-main-bar .on-sticky-content').empty();
+    $('#sticky-nav .sticky-page-bar .on-sticky-content').empty();
+    $('.home-link').clone().appendTo('#sticky-nav .sticky-main-bar .on-sticky-content');
+    $('.main-nav nav').clone().appendTo('#sticky-nav .sticky-main-bar .on-sticky-content');
+    $('.ticket-link').clone().appendTo('#sticky-nav .sticky-main-bar .on-sticky-content');
+    $('.page-nav').clone().appendTo('#sticky-nav .sticky-page-bar .on-sticky-content');
+    top = -$sticky_nav.height()-3;
+    $sticky_nav.css('top', top);
+    function revealSticky(e) {
+        curr_scroll = $(window).scrollTop();
+        if(window.HIDE_STICKY) top = -$sticky_nav.height()-3;
+        else {
+            diff = last_scroll-curr_scroll;
+            page_offset = curr_scroll - $sticky_offset.offset().top;
+            if (diff < 0) top = Math.max(top+diff, -$sticky_nav.height()-3);
+            else if(page_offset > 2*$sticky_nav.height()) top = Math.min(top+diff, 0);
+            else top = Math.min(top-diff, 0);
+        }
+        $sticky_nav.css('top', top);
+        last_scroll = curr_scroll;
+    }
+    function revealStickyTouch(e) {
+        curr_scroll = e.originalEvent.touches[0].clientY;
+        if(window.HIDE_STICKY) top = -$sticky_nav.height()-3;
+        else {
+            diff = last_scroll-curr_scroll;
+            if (diff > -70 && diff < 10) return;
+            page_offset = $(window).scrollTop() - $sticky_offset.offset().top;
+            if (diff > 0) top = -$(window).height();
+            else if(page_offset > 2*$sticky_nav.height()) top = 0;
+            else top = -$(window).height();
+        }
+        $sticky_nav.css('top', top);
+        last_scroll = curr_scroll;
+    }
+    if ('ontouchstart' in document.documentElement) {
+        $(window).on('touchstart', function(e) { last_scroll = e.originalEvent.touches[0].clientY; });
+        $(window).on('touchmove', revealStickyTouch);
+        transition[Modernizr.prefixed('transition')] = 'top .5s linear';
+        $sticky_nav.css(transition);
+    }
+    else {
+        transition[Modernizr.prefixed('transition')] = 'top .2s linear';
+        $sticky_nav.css(transition);
+        $(window).on('scroll', revealSticky);
+    }
+}
+
 function main () {
     setupFlipboard();
     initSponsor();
+    initInPageNav();
+    initStickyNav();
 }
 
 

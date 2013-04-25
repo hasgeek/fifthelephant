@@ -194,6 +194,7 @@ a.link-unfade-hover:hover,
 
 /*  Networkbar fixes  */
 
+.hg-bar-holder { position: relative; z-index: 1050; }
 #hg-bar a { border-bottom: 0; }
 #hg-bar .container:before, #hg-bar .container:after { content: ""; display: table; }
 #hg-bar .container:after { clear: both; }
