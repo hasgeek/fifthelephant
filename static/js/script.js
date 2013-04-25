@@ -122,11 +122,21 @@ function initStickyNav () {
         $(window).on('touchmove', iOSRevealSticky);
         transition[Modernizr.prefixed('transition')] = 'top .5s linear';
         $sticky_nav.css(transition);
+        // Hide fixed nav when page is zoomed-in
+        $(window).on('gesturechange', function(e) {
+            if (e.originalEvent.scale > 1.02) $sticky_nav.hide();
+            else $sticky_nav.show();
+        });
     }
     else {
         transition[Modernizr.prefixed('transition')] = 'top .2s linear';
         $sticky_nav.css(transition);
         $(window).on('scroll', revealSticky);
+        // Hide fixed nav when page is zoomed-in
+        $(window).on('touchmove', function(e) {
+            if($(document).width() / window.innerWidth > 1.02) $sticky_nav.hide();
+            else $sticky_nav.show();
+        });
     }
 }
 
