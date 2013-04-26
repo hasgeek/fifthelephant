@@ -33,10 +33,9 @@
   {% block header_script %}{% endblock %}
 
 </head>
-<body class='sticky'>
+<body>
 <div class="hg-bar-holder fill-dark">{% block networkbar %}{{ networkbar(siteid='events', login=false, baseclass='hg-dark') }}{% endblock %}</div>
 <div id="page">
-
 {% block banner %}
 <header class="clearfix">
 <div class="banner internal fill-yellow resetcoords layer-one clearfix push-one-top centered{% if long_page_nav %} long-page-nav{% endif %}">
@@ -91,16 +90,17 @@
 </header>
 {% endblock %}
 
-<div id="sticky-offset">
+<section id="sticky-offset" class="clearfix">
   <div id="sticky-nav" class="sticky-nav fill-yellow clearfix">
       <div class="sticky-main-bar clearfix"><div class="on-sticky-content sticky-width clearfix"></div></div>
       <div class="sticky-page-bar clearfix"><div class="on-sticky-content sticky-width clearfix"></div></div>
   </div>
-</div>
+</section>
 
+<section id="content" class="clearfix">
 {% block content %}
 {% endblock %}
-
+</section>
 
 <footer class="clearfix highlight-links push-four-bottom">
   {% block sponsor_compact %}

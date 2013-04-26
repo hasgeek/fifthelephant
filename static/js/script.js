@@ -87,6 +87,7 @@ function initStickyNav () {
     $('.main-nav nav').clone().appendTo('#sticky-nav .sticky-main-bar .on-sticky-content');
     $('.ticket-link').clone().appendTo('#sticky-nav .sticky-main-bar .on-sticky-content');
     $('.page-nav').clone().appendTo('#sticky-nav .sticky-page-bar .on-sticky-content');
+    $('body').addClass('sticky');
     top = -$sticky_nav.height()-3;
     $sticky_nav.css('top', top);
     function revealSticky(e) {
@@ -120,7 +121,7 @@ function initStickyNav () {
         // IOS freezes the DOM while scrolling. Hence…
         $(window).on('touchstart', function(e) { last_scroll = e.originalEvent.touches[0].clientY; });
         $(window).on('touchmove', iOSRevealSticky);
-        transition[Modernizr.prefixed('transition')] = 'top .5s linear';
+        transition[Modernizr.prefixed('transition')] = 'top .6s linear';
         $sticky_nav.css(transition);
         // Hide fixed nav when page is zoomed-in
         $(window).on('gesturechange', function(e) {
@@ -140,11 +141,12 @@ function initStickyNav () {
     }
 }
 
+
 function main () {
+    initStickyNav();
+    initInPageNav();
     setupFlipboard();
     initSponsor();
-    initInPageNav();
-    initStickyNav();
 }
 
 

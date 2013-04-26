@@ -282,13 +282,17 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 @media only screen and (min-width: 60em) { .page-nav nav li a { padding: .3rem 1.2rem !important; } }
 
 
-.sticky-nav { display: none; }
+.sticky-nav { display: none; position: fixed; top: 0; left: 0; width: 100%; box-shadow: rgba(0,0,0,0.75) 0 0 3px; z-index: 1010; }
 .sticky-nav .home-link { float: left; width: 10%; margin: 0 !important; }
 .sticky-nav .home-link a {
     background: url(../img/home-white.svg) no-repeat center 40%;
     background-size: auto 50%;
     display: block; 
-    border: 0; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr;
+    border: 0;
+    text-indent: -999em;
+    overflow: hidden;
+    text-align: left;
+    direction: ltr;
 }
 .sticky-nav .home-link a:hover { background-color: black; }
 .sticky-nav .home-link a.active { background-image: url(../img/home-black.svg); }
@@ -302,11 +306,9 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .sticky-nav .ticket-link,
 .sticky-nav .ticket-link .conference-dates,
 .sticky-nav .nav-line-spacer { display: none; }
-.sticky .sticky-nav { position: fixed; top: 0; left: 0; width: 100%; box-shadow: rgba(0,0,0,0.75) 0 0 3px; z-index: 1010; }
-.sticky .sticky-nav { display: block; }
-.sticky .sticky-nav .sticky-width { max-width: 60rem; margin: auto; }
-.sticky .sticky-nav a,
-.sticky .sticky-nav a:visited {
+.sticky-nav .sticky-width { max-width: 60rem; margin: auto; }
+.sticky-nav a,
+.sticky-nav a:visited {
     font-size: .7rem;
     padding: 0;
     margin: 0 !important;
@@ -321,25 +323,27 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     border: 0;
     color: black;
 }
-.sticky .sticky-nav a.active { background-color: #FFCC66 !important; color: black !important; }
-.sticky .sticky-nav .page-nav { background-color: transparent; }
-.sticky .sticky-nav .page-nav nav li { display: block; width: auto; float: left; }
-.sticky .sticky-nav .page-nav nav li a { padding: 0 .5rem !important; }
-.sticky .sticky-nav .page-nav nav li a:hover { background-color: rgba(0,0,0,0.5); }
+.sticky-nav .home-link a.active,
+.sticky-nav .nav-line .sub-group a.active { background-color: #FFCC66 !important; color: black !important; }
+.sticky-nav .page-nav { background-color: transparent; }
+.sticky-nav .page-nav nav li { display: block; width: auto; float: left; }
+.sticky-nav .page-nav nav li a { padding: 0 .5rem !important; }
+.sticky-nav .page-nav nav li a:hover { background-color: rgba(0,0,0,0.5); }
+.sticky .sticky-nav { display: block; }
 @media only screen and (min-width: 30em) { .sticky .sticky-nav .page-nav nav ul { width: 90%; margin-left: 10%; } }
 @media only screen and (min-width: 40em) {
     .sticky-nav .home-link { float: left; width: 8%; margin: 0 !important; }
     .sticky-nav .sticky-main-bar nav { width: 77%; }
-    .sticky-nav .ticket-link { display: block; position: relative; float: left; width: 15%; margin: 0 !important; left: auto; }
-    .sticky-nav .ticket-link a { display: block; border-radius: 0; min-width: 0 !important; box-shadow: none; }
-    .sticky .sticky-nav .page-nav nav ul { width: 92%; margin-left: 8%; }
-    .sticky .sticky-nav .page-nav nav ul,
-    .sticky .sticky-nav .page-nav nav li,
-    .sticky .sticky-nav a,
-    .sticky .sticky-nav a:visited { font-size: .8rem; height: 30px; line-height: 30px; }
-    .sticky .sticky-nav .page-nav nav li a { padding: 0 1rem !important; }
+    .sticky-nav .ticket-link { display: block; position: relative; float: left; width: 15%; margin: 0 !important; left: auto; vertical-align: middle; }
+    .sticky-nav .ticket-link a { display: block; border-radius: 0; min-width: 0 !important; box-shadow: none; vertical-align: middle; padding: 0; }
+    .sticky-nav .page-nav nav ul { width: 92%; margin-left: 8%; }
+    .sticky-nav .page-nav nav ul,
+    .sticky-nav .page-nav nav li,
+    .sticky-nav a,
+    .sticky-nav a:visited { font-size: .8rem; height: 30px; line-height: 30px; }
+    .sticky-nav .page-nav nav li a { padding: 0 1rem !important; }
 }
-@media only screen and (min-width: 50em) { .sticky .sticky-nav .page-nav nav li a { padding: 0 2rem !important; } }
+@media only screen and (min-width: 50em) { .sticky-nav .page-nav nav li a { padding: 0 2rem !important; } }
 
 /* Prose */
 .prose ul li { list-style-type: circle; }
