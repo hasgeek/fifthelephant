@@ -52,10 +52,11 @@ dl dd { margin-left: 0; }
     height: 100%;
 }
 
-.wrap-mobile span,
 span.wrap-mobile { display: block; }
-@media only screen and (min-width: 50em) { .wrap-mobile span, span.wrap-mobile { display: inline; } }
+@media only screen and (min-width: 50em) { span.wrap-mobile { display: inline; } }
 
+span.wrap-when-wide { display: inline; }
+@media only screen and (min-width: 40em) { span.wrap-when-wide { display: block; } }
 
 
 /* Widths */

@@ -18,6 +18,13 @@ a:visited   {
     text-decoration: none;
 }
 
+.fill-dark a,
+.fill-dark a:visited   {
+    color: #E55;
+    text-decoration: none;
+}
+
+
 .prose a,
 .prose a:visited,
 .highlight-links a,
@@ -34,6 +41,7 @@ a.unhighlight:hover { border-bottom: 0; }
 a.spooky,
 a.block-link { color: inherit !important; border-bottom: none !important; background-color: transparent !important; outline: none !important; }
 a.block-link:hover { color: #D44 !important; outline: none; }
+.fill-dark a.block-link:hover { color: #E55 !important; }
 
 a.link-silent-hover:hover { color: inherit !important; outline: none !important; background-color: transparent !important; }
 a.link-white-hover:hover  { color: #FFF !important; }

@@ -398,7 +398,7 @@
 </section>
 
 
-<section class="behind-the-scenes partners-floating-box clearfix space-four-bottom">
+<section class="behind-the-scenes partners-floating-box clearfix">
   {% from theme("data/partners.html") import partners %}
   {% if partners %}
   <section id="partners" class="partners clearfix">  
@@ -427,12 +427,12 @@
   </section>
   
   <section id="credits" class="credits clearfix">  
-    <article class="legible clearfix">
+    <article class="clearfix space-four-bottom">
       <h2 class="centered calm nospace">Credits</h2>
       <dl class="clearfix v-middle regular nospace highlight-links center-block ">
         <dt>Head Organiser</dt>
           <dd>Zainab Bawa</dd>
-        <dt>Organising Team</dt>
+        <!-- <dt>Organising Team</dt>
           <dd>Haris Ibrahim K V</dd>
           <dd>Jamna Vyas</dd>
           <dd>Kiran Jonnalagadda</dd>
@@ -440,7 +440,7 @@
           <dd>Nimisha Saikia</dd>
           <dd>Praseetha K R</dd>
           <dd>Radha Rao</dd>
-          <dd>Supreeth Srinivasmurthy</dd>
+          <dd>Supreeth Srinivasmurthy</dd> -->
         <dt>Website</dt>
           <dd><a href="http://miranj.in">Miranj</a></dd>
         <dt>Illustrations</dt>
@@ -452,7 +452,35 @@
       </dl>
     </article>
   </section>
+  <hr class="invisible">
+  <section id="team-hasgeek" class="team-hasgeek centered clearfix">  
+    <article class="clearfix">
+      <h2 class="centered calm space-two-bottom space-one-top pad-one capitalize">Geeks behind the scenes</h2>
+      <ul class="thumbnail-columns thumbnail-columns-five regular clearfix nospace">
+        <li class="haris clearfix"><a class="occupy block-link ir" href="#"><span class="first">Haris</span> Ibrahim K V</a></li>
+        <li class="jamna clearfix"><a class="occupy block-link ir" href="#"><span class="first">Jamna</span> Vyas</a></li>
+        <li class="kiran clearfix"><a class="occupy block-link ir" href="#"><span class="first">Kiran</span> Jonnalagadda</a></li>
+        <li class="krace clearfix"><a class="occupy block-link ir" href="#"><span class="first">Krace</span>kumar Ramaraju</a></li>
+        <li class="nimisha clearfix"><a class="occupy block-link ir" href="#"><span class="first">Nimisha</span> Saikia</a></li>
+        <li class="praseetha clearfix"><a class="occupy block-link ir" href="#"><span class="first">Praseetha</span> K R</a></li>
+        <li class="radha clearfix"><a class="occupy block-link ir" href="#"><span class="first">Radha</span> Rao</a></li>
+        <li class="supreeth clearfix"><a class="occupy block-link ir" href="#"><span class="first">Supreeth</span> Srinivasmurthy</a></li>
+        <li class="zainab clearfix"><a class="occupy block-link ir" href="#"><span class="first">Zainab</span> Bawa</a></li>
+      </ul>
+    </article>
+  </section>
+
 </section>
+
+<section id="code-of-conduct" class="code-of-conduct regular push-three-top push-four-bottom clearfix">
+  <article class="clearfix center-block centered prose">
+    <h2 class="visuallyhidden">Code of Conduct</h2>
+    <p class="space-line-bottom nospace-top serif-type italic commitment"><span class="wrap-mobile">We strive to make our events</span> <span class="wrap-mobile">friendly, safe and harrasment&#8209;free for all.</span>
+    </p>
+    <p class="secondary semi-bold all-caps">Kindly observe the <a href="#">code of conduct</a> at the event.</p>
+  </article>
+</section>
+
 {% endblock %}
 
 {% block sponsor_compact %}
@@ -460,6 +488,6 @@
 {% endblock %}
 
 {% block footer_credits %}
-<p class="centered tiny space-two-top space-four-bottom faded center-block wrap-mobile attribution"><span><a href="http://thenounproject.com/noun/map-marker/#icon-No9093">Map Marker</a> designed by <a href="http://thenounproject.com/schumanncombo">Richard Schumann</a> and</span> <span><a href="http://thenounproject.com/noun/bird/#icon-No6104" target="_blank">Bird</a> designed by <a href="http://thenounproject.com/tlb" target="_blank">Thomas Le Bas</a> from The Noun Project</span></p>
+<p class="centered tiny space-two-top space-four-bottom faded center-block attribution"><span class="wrap-mobile"><a href="http://thenounproject.com/noun/map-marker/#icon-No9093">Map Marker</a> designed by <a href="http://thenounproject.com/schumanncombo">Richard Schumann</a> and</span> <span class="wrap-mobile"><a href="http://thenounproject.com/noun/bird/#icon-No6104" target="_blank">Bird</a> designed by <a href="http://thenounproject.com/tlb" target="_blank">Thomas Le Bas</a> from The Noun Project</span></p>
 {% endblock %}
 

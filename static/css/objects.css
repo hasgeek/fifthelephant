@@ -330,7 +330,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .sticky-nav .page-nav nav li a { padding: 0 .5rem !important; }
 .sticky-nav .page-nav nav li a:hover { background-color: rgba(0,0,0,0.5); }
 .sticky .sticky-nav { display: block; }
-@media only screen and (min-width: 30em) { .sticky .sticky-nav .page-nav nav ul { width: 90%; margin-left: 10%; } }
+@media only screen and (min-width: 30em) { .sticky-nav .page-nav nav ul { width: 90%; margin-left: 10%; } }
 @media only screen and (min-width: 40em) {
     .sticky-nav .home-link { float: left; width: 8%; margin: 0 !important; }
     .sticky-nav .sticky-main-bar nav { width: 77%; }
@@ -832,6 +832,55 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     
 }
 
+.team-hasgeek a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    border-radius: 100%;
+    -webkit-box-shadow: 0 0 0 2px #EEE;
+            box-shadow: 0 0 0 2px #EEE;
+    background-repeat: no-repeat;
+    background-size: auto 300%;
+    background-image: url(../img/team.jpg); 
+}
+.team-hasgeek.fill-dark a {
+    -webkit-box-shadow: 0 0 0 2px #222;
+            box-shadow: 0 0 0 2px #222;
+}
+.team-hasgeek span.first {
+    position: absolute;
+    display: block;
+    width: 100%;
+    bottom: 10%;
+    background-color: rgba(0,0,0,.7);
+    text-align: center;
+    text-indent: 0;
+    color: white;
+    font-size: .8rem;
+    text-transform: uppercase;
+    padding: .2rem 0;
+}
+@media only screen and (min-width: 30em) { .team-hasgeek span.first { font-size: .7rem; } }
+
+.team-hasgeek .haris a      { background-position: top left; }
+.team-hasgeek .jamna a      { background-position: top center; }
+.team-hasgeek .kiran a      { background-position: top right; }
+.team-hasgeek .krace a      { background-position: center left; }
+.team-hasgeek .nimisha a    { background-position: center; }
+.team-hasgeek .praseetha a  { background-position: center right; }
+.team-hasgeek .radha a      { background-position: bottom left; }
+.team-hasgeek .supreeth a   { background-position: bottom center; }
+.team-hasgeek .zainab a     { background-position: bottom right; }
+
+.code-of-conduct { max-width: 1400px; }
+.code-of-conduct.fill-dark { color: #EEE; }
+.code-of-conduct .commitment { font-size: 1.500rem; }
+@media only screen and (min-width: 35em) { .code-of-conduct .commitment { font-size: 1.750rem; } }
+@media only screen and (min-width: 40em) { .code-of-conduct .commitment { font-size: 1.700rem; } }
+@media only screen and (min-width: 50em) { .code-of-conduct .commitment { font-size: 1.800rem; } }
+@media only screen and (min-width: 55em) { .code-of-conduct .commitment { font-size: 2.000rem; } }
 
 /*-------------------------*/
 /* Internal Pages          */
