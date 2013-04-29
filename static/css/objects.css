@@ -272,12 +272,9 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .page-nav nav li { display: inline-block; }
 .page-nav nav li a { display: block; font-weight: 600; padding: .3rem .5rem; }
 .long-page-nav .page-nav nav li { display: block; width: 50%; float: left; }
-.long-page-nav .page-nav nav li a { width: 100%; font-weight: 600; padding: .3rem 0; }
+.long-page-nav .page-nav nav li a { width: 100%; font-weight: 600; padding: .3rem .5rem; }
 
-@media only screen and (min-width: 35em) { 
-  .long-page-nav .page-nav nav li { display: inline-block; width: auto; float: none; }
-  .long-page-nav .page-nav nav li a { font-weight: 600; padding: .3rem .5rem; }
-}
+@media only screen and (min-width: 35em) { .long-page-nav .page-nav nav li { display: inline-block; width: auto; float: none; } }
 @media only screen and (min-width: 40em) { .page-nav nav li a { padding: .3rem .8rem !important; } }
 @media only screen and (min-width: 60em) { .page-nav nav li a { padding: .3rem 1.2rem !important; } }
 
