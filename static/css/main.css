@@ -168,6 +168,23 @@ a.link-unfade-hover:hover,
     width: 100px;
 }
 
+/*  Highlights (Tiles)  */
+
+.tiles .pig {
+    background: #D6E5F8 url(../img/pig.png) no-repeat scroll 10% bottom;
+    background-size: auto 100%;
+}
+.tiles .bird {
+    background-color: #FFCC66;
+    background-image: url(../img/bird.svg);
+    background-repeat: no-repeat;
+    background-position: -40% 160%;
+    background-size: auto 90%;
+    background-position: 10% 160%;
+}
+
+@media only screen and (min-width: 30em) { .tiles .bird { background-position: -20% 160%; } }
+
 /*  Keeping sponsor tiles well behaved  */
 
 .js .sponsors dt.platinum,

@@ -1,0 +1,29 @@
+{# 
+  set `on-the-side` as `false` if the number of tiles are disproportionately more than the highlighted blog updates.
+  `background` is the css class that defines background styles (defined in main.css)
+#}
+{%
+  set highlights = {
+      'on-the-side': true
+    , 'tiles': [
+        {
+          'title': 'Pig Workshop'
+        , 'meta': '(April&nbsp;13)'
+        , 'background': 'pig'
+        , 'link': '#'
+      }
+      , {
+          'title': 'Follow Us'
+        , 'meta': '@fifthel'
+        , 'background': 'bird'
+        , 'link': 'http://twitter.com/fifthel'
+      }
+      , {
+          'title': 'Pig Workshop'
+        , 'meta': '(April&nbsp;13)'
+        , 'background': 'pig'
+        , 'link': '#'
+      }
+    ]
+  }
+%}

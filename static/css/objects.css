@@ -379,33 +379,19 @@ dl.centered-key-value dt + dd { margin-top: 1.53rem; }
 .announcements-block h2 { text-align: center; margin: 1rem auto; }
 .announcements-block h4 { margin: .5rem auto; }
 
-.tiles .pig {
-    background: #D6E5F8 url(../img/pig.png) no-repeat scroll 10% bottom;
-    background-size: auto 100%;
-}
-.tiles .bird {
-    background-image: url(../img/bird.svg);
-    background-repeat: no-repeat;
-    background-position: -40% 160%;
-    background-size: auto 90%;
-    background-position: 10% 160%;
-}
-
 @media only screen and (min-width: 30em) {
     .tiles > li { width: 48%; float: left; margin: .5rem auto; }
     .tiles > li:nth-of-type(odd) { clear: both; margin-right: 4%; }
-    .tiles .bird { background-position: -20% 160%;  }
 }
 
-/* Comment this block if number of tiles are disproportionally more than the blog listing */
 @media only screen and (min-width: 40em) {
-    .tiles > li { width: 100%; float: none; }
-    .tiles > li:nth-of-type(odd) { margin: 0; }
-    .announcements > div { float: left; }
-    .announcements .tile-block { width: 30%; margin-top: 4rem; }
-    .announcements .announcements-block { width: 65%; margin-top: 2rem; margin-left: 5%; }
-    .announcements h2 { margin: 0; text-align: left; }
-    .tiles .bird { background-position: -40% 160%;  }
+    .side-by-side .tiles > li { width: 100%; float: none; }
+    .side-by-side .tiles > li:nth-of-type(odd) { margin: 0; }
+    .side-by-side.announcements > div { float: left; }
+    .side-by-side.announcements .tile-block { width: 30%; margin-top: 4rem; }
+    .side-by-side.announcements .announcements-block { width: 65%; margin-top: 2rem; margin-left: 5%; }
+    .side-by-side.announcements h2 { margin: 0; text-align: left; }
+    .side-by-side .tiles .bird { background-position: -40% 160%;  }
 }
 
 /* Programme Committee */
