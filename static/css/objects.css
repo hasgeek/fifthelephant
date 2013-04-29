@@ -349,6 +349,18 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .prose ul li { list-style-type: circle; }
 .prose ol li { list-style-type: decimal; }
 
+dl.centered-key-value dt      {
+    width: 40%;
+    float: left;
+    text-align: right;
+    text-transform: lowercase;
+    font-size: .8rem;
+    margin-top: 1.725rem;
+    clear: both;
+    padding: 0 .5rem;
+}
+dl.centered-key-value dd      { width: 60%; float: right; text-align: left; padding: 0 .5rem; }
+dl.centered-key-value dt + dd { margin-top: 1.53rem; }
 
 /*-------------------------*/
 /* Homepage                */
@@ -799,21 +811,6 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 @media only screen and (min-width: 50em) { .partners li a { padding: .5em; height: 7em; line-height: 6em; } }
 
 /*.credits         { margin-top: 3rem; }*/
-.credits dl      { width: 80%; margin: auto; }
-.credits dt      {
-    width: 40%;
-    float: left;
-    text-align: right;
-    text-transform: lowercase;
-    font-size: .8rem;
-    margin-top: 1.725rem;
-    clear: both;
-    padding: 0 .5rem;
-}
-.credits dd      { width: 60%; float: right; text-align: left; padding: 0 .5rem; }
-.credits dt + dd { margin-top: 1.5rem; }
-
-
 
 @media only screen and (min-width: 40em) { .partners ul { max-width: 90%; } }
 @media only screen and (min-width: 45em) { .partners ul { max-width: 80%; } }
@@ -1069,7 +1066,14 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 
 .accomodation .price-range:before { content: '('; }
 .accomodation .price-range:after { content: ')'; }
+.accomodation > article:last-child { margin-bottom: 0 !important; }
 @media all and (min-width: 60em) { .hotels-list { max-width: 50em; } }
+
+.emergency dl.centered-key-value dd { margin-top: .75rem; }
+.emergency dl.centered-key-value dt + dd { margin-top: 1.53rem; }
+.emergency dl.centered-key-value dd span.who { display: block; }
+@media all and (min-width: 40em) { .emergency dl.centered-key-value dd span.who { display: inline; } }
+
 
 /*-------------------------*/
 /* Blog                    */

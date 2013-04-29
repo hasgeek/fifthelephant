@@ -17,10 +17,14 @@
 <li><a href="#conference" class="link-white-hover">Conference</a></li>
 <li><a href="#party" class="link-white-hover">Party</a></li>
 <li><a href="#accomodation" class="link-white-hover">Stay</a></li>
+{% from theme("data/emergency.html") import emergency_contacts %}
+{% if emergency_contacts %}
+<li><a href="#emergency" class="link-white-hover">Emergency</a></li>
+{% endif %}
 {% endblock %}
 
 {% block content %}
-<section id="conference" class="legible conference-venue pad-one space-six-top space-four-bottom">
+<section id="conference" class="legible conference-venue pad-one space-two-top space-four-bottom push-four-top">
   <article class="legible measure-10words center-block">
     <h1 class="calm centered nospace ultrafaded legible">Conference <span class="amp">&amp;</span> Workshops Venue</h1>
     <h2 class="calm centered space-two"><abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention&nbsp;Centre</h2>
@@ -60,7 +64,7 @@
     </section>
 </section>
 <hr class="twenty center-block">
-<section id="party" class="legible conference-venue pad-one space-six-top space-four-bottom">
+<section id="party" class="legible conference-venue pad-one space-two-top space-four-bottom push-four-top">
   <article class="legible measure-10words center-block">
     <h1 class="calm centered nospace ultrafaded legible">Party Venue</h1>
     <h2 class="calm centered space-two">The Onyx (The&nbsp;HHI&nbsp;Select)</h2>
@@ -101,8 +105,8 @@
   </section>
 </section>
 <hr class="twenty center-block">
-<section id="accomodation" class="accomodation legible highlight-links clearfix space-four">
-  <h1 class="calm centered space-two">Stay</h1>
+<section id="accomodation" class="accomodation legible highlight-links clearfix space-two-top push-four-top">
+  <h1 class="calm centered nospace">Stay</h1>
   {% from theme("data/hotels.html") import hotels %}
   {% for item in hotels %}
     <article class="clearfix fill-light space-three gap-one push-three-top push-two-bottom">
@@ -157,7 +161,21 @@
     </article>
   {% endfor %}
 </section>
-
+{% from theme("data/emergency.html") import emergency_contacts %}
+{% if emergency_contacts %}
+<section id="emergency" class="emergency legible clearfix measure-8words center-block space-two-top space-four-bottom push-four-top">
+  <h1 class="calm centered nospace">Emergency</h1>
+  <p class="pad-one">Here’s a list of contact numbers that you should keep handy in case of emergency.</p>
+  <dl class="centered-key-value clearfix v-middle regular nospace highlight-links center-block ">
+    {% for group in emergency_contacts %}
+    <dt>{{ group.category|safe }}</dt>
+      {% for item in group.list %}
+      <dd>{{ item.contact }}{% if item.name %} <span class="who faded secondary">({{ item.name }})</span>{% endif %}</dd>
+      {% endfor %}
+    {% endfor %}
+  </dl>
+</section>
+{% endif %}
 {% endblock %}
 
 
