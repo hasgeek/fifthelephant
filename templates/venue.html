@@ -14,63 +14,103 @@
 {% endblock %}
 
 {% block page_nav_items %}
-<li><a href="#NIMHANS" class="link-white-hover">NIMHANS</a></li>
-<li><a href="#getting-there" class="link-white-hover">Getting There</a></li>
+<li><a href="#conference" class="link-white-hover">Conference</a></li>
+<li><a href="#party" class="link-white-hover">Party</a></li>
 <li><a href="#accomodation" class="link-white-hover">Stay</a></li>
 {% endblock %}
 
 {% block content %}
-<section id="NIMHANS" class="legible conference-venue pad-one space-six-top">
-  <h2 class="calm centered space-two"><abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention&nbsp;Centre</h2>
+<section id="conference" class="legible conference-venue pad-one space-six-top space-four-bottom">
   <article class="legible measure-10words center-block">
-    <div class="venue-showcase contain-width clearfix">
-      <p class="full space-1q"><img src="{{ theme_static('img/venue/IMG_6437.JPG') }}" alt="Façade of NIMHANS Convention Centre"></p>
-      <p class="half space-1q pad-1q-right flushleft"><img src="{{ theme_static('img/venue/IMG_6298.JPG') }}" alt="Main Auditorium at NIMHANS Convention Centre"></p>
-      <p class="half space-1q pad-1q-left flushleft"><img src="{{ theme_static('img/venue/IMG_6387.JPG') }}" alt="Auditorium 2 at NIMHANS Convention Centre"></p>
-      <p class="half space-1q pad-1q-right flushleft"><img src="{{ theme_static('img/venue/IMG_6336.JPG') }}" alt="Main Hall at NIMHANS Convention Centre"></p>
-      <p class="half space-1q pad-1q-left flushleft"><img src="{{ theme_static('img/venue/IMG_6353.JPG') }}" alt="Greens at NIMHANS Convention Centre"></p>
-    </div>
-    <div class="measure-10words regular prose center-block">
-      <p class="space-two">
-        The <abbr class="silent" title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention Centre is Bangalore’s best known venue for large tech events. The venue is on Marigowda Road, past the main <abbr class="silent" title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> campus when you approach from Dairy Circle.
-      </p>
-      <h4 class="space-two nospace-bottom">Address</h4>
-      <p>
-        <abbr class="silent" title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention&nbsp;Centre<br>
-        NIMHANS Hospital Premises,<br>
-        Hosur Road / Marigowda Road, (Lakkasandra, Wilson Garden)<br>
-        Bangalore, Karnataka 560029
-      </p>
-      <div class="clearfix">
-        <h5 class="nospace ultrafaded flushleft regular pad-half-right">Landmark</h5>
-        <p class="nospace flushleft">Near Dairy Circle</p>
+    <h1 class="calm centered nospace ultrafaded legible">Conference <span class="amp">&amp;</span> Workshops Venue</h1>
+    <h2 class="calm centered space-two"><abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention&nbsp;Centre</h2>
+    <section>
+      <div class="venue-showcase contain-width clearfix">
+        <p class="full space-1q"><img src="{{ theme_static('img/venue/IMG_6437.JPG') }}" alt="Façade of NIMHANS Convention Centre"></p>
+        <p class="half space-1q pad-1q-right flushleft"><img src="{{ theme_static('img/venue/IMG_6298.JPG') }}" alt="Main Auditorium at NIMHANS Convention Centre"></p>
+        <p class="half space-1q pad-1q-left flushleft"><img src="{{ theme_static('img/venue/IMG_6387.JPG') }}" alt="Auditorium 2 at NIMHANS Convention Centre"></p>
+        <p class="half space-1q pad-1q-right flushleft"><img src="{{ theme_static('img/venue/IMG_6336.JPG') }}" alt="Main Hall at NIMHANS Convention Centre"></p>
+        <p class="half space-1q pad-1q-left flushleft"><img src="{{ theme_static('img/venue/IMG_6353.JPG') }}" alt="Greens at NIMHANS Convention Centre"></p>
       </div>
-      <p class="secondary space-half-top space-two-bottom"><a href="http://goo.gl/maps/PvXY">View on Google Maps</a></p>
-    </div>
-    <div id="map-container" class="measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="map"></div></div>
-  </article>
+      <div class="measure-10words regular prose center-block space-two-top">
+        <p class="space-one">
+          The <abbr class="silent" title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention Centre is Bangalore’s best known venue for large tech events. The venue is on Marigowda Road, past the main <abbr class="silent" title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> campus when you approach from Dairy Circle.
+        </p>
+        <h4 class="space-two-top nospace-bottom">Address</h4>
+        <p class="space-half">
+          <abbr class="silent" title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention&nbsp;Centre<br>
+          NIMHANS Hospital Premises,<br>
+          Hosur Road / Marigowda Road, (Lakkasandra, Wilson Garden)<br>
+          Bangalore, Karnataka 560029
+        </p>
+        <div class="clearfix">
+          <h5 class="nospace ultrafaded flushleft regular pad-half-right">Landmark</h5>
+          <p class="nospace flushleft">Near Dairy Circle</p>
+        </div>
+        <p class="secondary space-half-top space-two-bottom"><a href="http://goo.gl/maps/PvXY">View on Google Maps</a></p>
+      </div>
+      <div class="map-container measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="conference-map" class="map"></div></div>
+    </section>
+    <h4 class="space-four-top space-two-bottom centered semi-bold">Getting There</h4>
+    <section class="getting-there measure-10words regular center-block highlight-links clearfix">
+      <h5 class="nospace regular faded capitalize">From Airport</h5>
+      <p class="regular space-half-top space-two-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h5 class="nospace regular faded capitalize">From Majestic</h5>
+      <p class="regular space-half-top space-two-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
 </section>
-
-<section id="getting-there" class="getting-there legible highlight-links clearfix space-four pad-one">
-  <h3 class="space-two-top space-one-bottom centered">Getting There</h3>
-  <article class="measure-10words regular center-block clearfix">
-    <h5 class="space-two-top nospace-bottom regular faded capitalize">From Airport</h5>
-    <p class="regular space-half">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <h5 class="space-two-top nospace-bottom regular faded capitalize">From Majestic</h5>
-    <p class="regular space-half">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </article>
+<hr class="twenty center-block">
+<section id="party" class="legible conference-venue pad-one space-six-top space-four-bottom">
+  <article class="legible measure-10words center-block">
+    <h1 class="calm centered nospace ultrafaded legible">Party Venue</h1>
+    <h2 class="calm centered space-two">The Onyx (The&nbsp;HHI&nbsp;Select)</h2>
+    <section>
+      <div class="venue-showcase contain-width clearfix">
+        <p class="full space-1q"><img src="{{ theme_static('img/venue/IMG_6437.JPG') }}" alt="Façade of NIMHANS Convention Centre"></p>
+      </div>
+      <div class="measure-10words regular prose center-block space-two-top">
+        <p class="space-one">
+          The Onyx at The HHI Select hotel is a classy 172 covers lounge + bar in an open terrace — a perfect setting to enjoy the cool breeze and to hang out with fellow geeks. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <p class="space-one">
+          Note that the party is open <strong class="semi-bold">only for the conference attendees</strong> and attendees must <strong class="semi-bold">carry their lanyards</strong> to enter the party venue.
+        </p>
+        <h4 class="space-two-top nospace-bottom">When</h4>
+        <p class="space-half">July 12th, 7pm – 11pm</p>
+        <h4 class="space-two-top nospace-bottom">Address</h4>
+        <p class="space-half">
+          <abbr class="silent" title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention&nbsp;Centre<br>
+          NIMHANS Hospital Premises,<br>
+          Hosur Road / Marigowda Road, (Lakkasandra, Wilson Garden)<br>
+          Bangalore, Karnataka 560029
+        </p>
+        <div class="clearfix">
+          <h5 class="nospace ultrafaded flushleft regular pad-half-right">Landmark</h5>
+          <p class="nospace flushleft">Near Dairy Circle</p>
+        </div>
+        <p class="secondary space-half-top space-two-bottom"><a href="http://goo.gl/maps/PvXY">View on Google Maps</a></p>
+      </div>
+      <div class="map-container measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="party-map" class="map"></div></div>
+    </section>
+  <h4 class="space-four-top space-two-bottom centered semi-bold">Reaching from NIMHANS&nbsp;Convention&nbsp;Centre</h4>
+  <section class="getting-there measure-10words regular center-block highlight-links clearfix">
+    <h5 class="nospace regular faded capitalize">By Foot</h5>
+    <p class="regular space-half-top space-two-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h5 class="nospace regular faded capitalize">By Autorickshaw</h5>
+    <p class="regular space-half-top space-two-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </section>
 </section>
-
+<hr class="twenty center-block">
 <section id="accomodation" class="accomodation legible highlight-links clearfix space-four">
-  <h2 class="calm centered space-two">Stay</h2>
+  <h1 class="calm centered space-two">Stay</h1>
   {% from theme("data/hotels.html") import hotels %}
   {% for item in hotels %}
-    <article class="clearfix">
-      <hgroup class="space-two pad-one">
-        <h3 class="legible nospace">{{ item.category }}</h3>
+    <article class="clearfix fill-light space-three gap-one push-three-top push-two-bottom">
+      <hgroup class="space-two-bottom centered pad-one">
+        <h3 class="nospace">{{ item.category }}</h3>
         <h4 class="price-range calm faded regular nospace">{{ item.pricing }}</h4>
       </hgroup>
-      <ul id="hotels-list" class="hotels-list thumbnail-columns thumbnail-columns-three-wide center-block nospace-top space-four-bottom clearfix">
+      <ul id="hotels-list" class="hotels-list thumbnail-columns thumbnail-columns-three-wide center-block nospace clearfix">
       {% for hotel in item.options %}
         <li class="hotel space-one-bottom secondary clearfix">
             <h4 class="regular space-1q capitalize">{{ hotel.name }}</h4>
@@ -123,34 +163,31 @@
 
 {% block footer_script %}
 <script type="text/javascript">
-  $(function() {
-    var map = new L.Map('map');
-    var cloudmadeUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
-      subDomains = ['otile1','otile2','otile3','otile4'],
-      cloudmadeAttrib = '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>';
-    var cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib, subdomains: subDomains});
-    var open_marker = function(marker) {
-      return function(e) {
-        map.panTo(marker['_latlng']);
-        marker.openPopup();
-        e.preventDefault();
-      };
-    };
-    var   venue = new L.LatLng(12.9431, 77.5969)
-        , center = new L.LatLng(12.9599, 77.5969)
-        ;
-    map.setView(center, 13).addLayer(cloudmade);
-    if ($(window).width() < 768) map.setView(venue,13);
-    // map.dragging.disable(); 
-    var marker_nimhans = new L.Marker(venue);
-    map.addLayer(marker_nimhans);
-    marker_nimhans.bindPopup("NIMHANS Convention Centre");
-    marker_nimhans.openPopup();
-    map.scrollWheelZoom.disable();
-    map.doubleClickZoom.disable();
-    map.on('zoomend', onZoomend);
-    function onZoomend(){ map.setView(venue, map.getZoom()); };
-  });
+function initMap(div, map_venue, map_center) {
+  var map = new L.Map(div);
+  var cloudmadeUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
+    subDomains = ['otile1','otile2','otile3','otile4'],
+    cloudmadeAttrib = '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>';
+  var cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib, subdomains: subDomains});
+  var   venue = new L.LatLng(map_venue.lat, map_venue.lon)
+      , center = new L.LatLng(map_center.lat, map_center.lon)
+      ;
+  map.setView(center, 13).addLayer(cloudmade);
+  if ($(window).width() < 768) map.setView(venue,13);
+  // map.dragging.disable(); 
+  var marker = new L.Marker(venue);
+  map.addLayer(marker);
+  marker.bindPopup(map_venue.name);
+  marker.openPopup();
+  map.scrollWheelZoom.disable();
+  map.doubleClickZoom.disable();
+  map.on('zoomend', onZoomend);
+  function onZoomend(){ map.setView(venue, map.getZoom()); };
+}
+$(function() { 
+  initMap('conference-map', { lat: 12.9431, lon: 77.5969, name: 'NIMHANS Convention Centre' }, { lat: 12.9599, lon: 77.5969 });
+  initMap('party-map', { lat: 12.9431, lon: 77.5969, name: 'NIMHANS Convention Centre' }, { lat: 12.9599, lon: 77.5969 });
+});
 </script>
 {% endblock %}
 

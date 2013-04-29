@@ -1060,19 +1060,15 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 
 /* Venue */
 .venue-showcase img { display: block; }
-#map-container { position: relative; height: 18em; max-width: 32em; }
-#map           { position: absolute; left: 0; right: 0; top: 0; bottom: 0; height: 100%; }
+.map-container { position: relative; height: 18em; max-width: 32em; }
+.map           { position: absolute; left: 0; right: 0; top: 0; bottom: 0; height: 100%; }
 
-@media all and (max-width: 768px) and (orientation:portrait)  { #map-container { width: 100%; height: 0; padding-top: 80%; } }
-@media all and (max-width: 768px) and (orientation:landscape) { #map-container { width: 80%; height: 0; padding-top: 50%; } }
+@media all and (max-width: 768px) and (orientation:portrait)  { .map-container { width: 100%; height: 0; padding-top: 80%; } }
+@media all and (max-width: 768px) and (orientation:landscape) { .map-container { width: 80%; height: 0; padding-top: 50%; } }
 
 
 .accomodation .price-range:before { content: '('; }
 .accomodation .price-range:after { content: ')'; }
-@media all and (min-width: 40em) { 
-    .accomodation hgroup { text-align: center; }
-    .hotels-list { max-width: 32em; }
-}
 @media all and (min-width: 60em) { .hotels-list { max-width: 50em; } }
 
 /*-------------------------*/
