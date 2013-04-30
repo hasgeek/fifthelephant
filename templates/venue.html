@@ -151,8 +151,8 @@
       <ul id="hotels-list" class="hotels-list thumbnail-columns thumbnail-columns-three-wide center-block nospace clearfix">
       {% for hotel in item.options %}
         <li class="hotel space-one-bottom secondary clearfix">
-            <h4 class="regular space-1q capitalize">{{ hotel.name }}</h4>
-            <p class="space-1q capitalize">{{ hotel.address }}</p>
+            <h4 class="regular space-1q capitalize">{% if hotel.web %}<a href="{{ hotel.web.link }}" class="spooky">{% endif %}{{ hotel.name }}{% if hotel.web %}</a>{% endif %}</h4>
+            <p class="space-1q-top space-one-bottom capitalize">{{ hotel.address }}</p>
             {% if hotel.phones %}
             <p class="space-1q">
               {% for phone in hotel.phones %}
@@ -161,14 +161,10 @@
             </p>
             {% endif %}
             {% if hotel.email %}<p class="space-1q faded">{{ hotel.email|safe }}</p>{% endif %}
-            {% if hotel.web %}
-            <p class="space-1q">
-              {% if hotel.web %}<a href="{{ hotel.web.link }}">{{ hotel.web.display }}</a>{% endif %}
-            </p>
-            {% endif %}
+            {% if hotel.web %}<p class="space-1q"><a href="{{ hotel.web.link }}">{{ hotel.web.display }}</a></p>{% endif %}
             {% if hotel.distances %}
             <h5 class="visuallyhidden">Distances</h5>
-            <ul class="tiny clearfix">
+            <ul class="space-one-top tiny clearfix">
               {% if hotel.distances.venue %}
               <li class="flushleft pad-two-right">
                 <h6 class="nospace tiny faded">Venue</h6>
