@@ -277,7 +277,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 
 @media only screen and (min-width: 35em) { 
     .page-nav nav li a { padding: .3rem 1rem; }
-    .long-page-nav .page-nav nav li { width: 33.3333%; }
+    .long-page-nav .page-nav nav li { width: 33.3333%; width: calc(100%/3); }
 }
 @media only screen and (min-width: 45em) { .page-nav nav li a { padding: .3rem 1.2rem; } }
 @media only screen and (min-width: 60em) { 
