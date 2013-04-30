@@ -142,11 +142,38 @@ function initStickyNav () {
 }
 
 
+// Replace Venue Images
+function replaceVenueImages () {
+    var $images = $('img.venuephoto');    
+    if(!$images.length) return;
+    
+    function runTests() {
+        $images.each(function() {
+            var   $img = $(this)
+                , tests = $img.data('src')
+                , current = $img.data('src-index') >= 0 ? $img.data('src-index') : -1
+                , index
+                ;
+            if(!tests) return;
+            $.each(tests, function(i) { if (window.matchMedia(this.test).matches) index = i });
+            if (index > current) {
+                $img.attr('src', tests[index].src);
+                $img.data('src-index', index);
+            }
+        })
+    }
+    if (window.matchMedia) {
+        runTests();
+        $(window).on('resize', runTests);
+    } 
+}
+
 function main () {
     initStickyNav();
     initInPageNav();
     setupFlipboard();
     initSponsor();
+    replaceVenueImages();
 }
 
 
