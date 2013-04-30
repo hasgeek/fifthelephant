@@ -964,15 +964,22 @@ dl.centered-key-value dt + dd { margin-top: 1.53rem; }
     width: 3.5em;
     text-align: left;
 }
+.proposals li { border: 1px solid transparent; }
+.proposals li + li { border-top-color: #F5F5F5; }
+.proposals li:hover { border: 1px solid #EEE; }
+.proposals li:hover + li { border-top-color: transparent; }
+.proposals a.block-link:hover { background-color: #F5F5F5 !important; }
 @media only screen and (min-width: 50em) { 
     .proposals .meta,
-    .proposals .by { font-size:  .800rem; line-height: 1.4000; text-transform: uppercase; }    
+    .proposals .by { font-size:  .800rem; line-height: 1.4000; text-transform: uppercase; font-size: .8rem; }
+    .proposals .votes { margin-left: 1rem; }
 }
 
 /* List of poster image + bio */
 .poster-with-bio li { margin: 3rem auto; max-width: 36em; padding: 0 1rem; }
 .poster-with-bio .poster { position: relative; }
-.poster-with-bio .poster p { margin: 0; width: 10rem; max-width: 9.375rem; }
+.poster-with-bio .poster p { margin: 0; max-width: 9.375rem; }
+.poster-with-bio .poster p img { display: block; }
 .poster-with-bio .poster hgroup { position: absolute; left: 11rem; bottom: 0; }
 .poster-with-bio h3,
 .poster-with-bio h4 { font-weight: normal; margin: 0; }
@@ -989,12 +996,16 @@ dl.centered-key-value dt + dd { margin-top: 1.53rem; }
 
 /* Conference Featured Talks */
 .featured-sessions .featured-session-topic { text-transform: capitalize; }
-.featured-sessions.poster-with-bio .bio { color: rgba(0,0,0,.8); }
+.featured-sessions.poster-with-bio .bio { color: rgba(0,0,0,.8); font-size: .9rem; }
+.featured-sessions.poster-with-bio .poster p { width: 30%; }
+.featured-sessions.poster-with-bio .poster hgroup { left: 35%; }
+@media only screen and (min-width: 30em) { .featured-sessions.poster-with-bio .poster hgroup { left: 10rem; } }
 @media only screen and (min-width: 51em) { 
     .featured-sessions .featured-session-topic { text-align: center; }
     .featured-sessions .featured-session-description { max-width: 32em; margin: 1rem auto; }
-    .featured-sessions.poster-with-bio .poster { margin-left: -7em; }
-    .featured-sessions.poster-with-bio .bio { float: left; width: 19em; }
+    .featured-sessions.poster-with-bio .poster { margin-left: -7em; margin-right: 1em; }
+    .featured-sessions.poster-with-bio .bio { float: left; width: 25em; }
+    .featured-sessions.poster-with-bio .poster hgroup { left: auto; }
 }
 
 /* Conference Talks Preview */

@@ -50,12 +50,12 @@
 </section>
   
 <section id="proposals" class="push-four">
-  <article class="clearfix highlight-links">
-    <div class="measure-8words center-block pad-one">
+  <article class="clearfix">
+    <div class="measure-8words center-block">
     <h2 class="calm centered space-two">Workshop Proposals</h2>
     {% for proposal in node.proposals() if proposal['section_name'] == 'workshops' %}
       {% if loop.first %} 
-        <ul id="proposals" class="proposals space-four-bottom">
+        <ul id="proposals" class="proposals regular space-four-bottom">
       {% endif %}
       {% include theme("partials/_proposal_item.html") %}
       {% if loop.last %} </ul> {% endif %}

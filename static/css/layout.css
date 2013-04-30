@@ -139,6 +139,8 @@ span.wrap-when-wide { display: inline; }
 .push-three, .push-three-bottom { padding-bottom: 3.00rem !important; }
 .push-two,   .push-two-top      { padding-top:    2.00rem !important; }
 .push-two,   .push-two-bottom   { padding-bottom: 2.00rem !important; }
+.push-line,  .push-line-top     { padding-top:    1.50rem !important; }
+.push-line,  .push-line-bottom  { padding-bottom: 1.50rem !important; }
 .push-one,   .push-one-top      { padding-top:    1.00rem !important; }
 .push-one,   .push-one-bottom   { padding-bottom: 1.00rem !important; }
 .push-3q,    .push-3q-top       { padding-top:    0.75rem !important; }

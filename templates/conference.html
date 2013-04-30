@@ -51,15 +51,15 @@
   </div>
 </section>
 
-<section id="proposals" class="legible highlight-links clearfix push-four">
+<section id="proposals" class="legible clearfix push-four">
   <article class="clearfix">
-    <div class="measure-8words center-block pad-one">
+    <div class="measure-8words center-block">
     <h2 class="calm centered space-two">Conference Proposals</h2>
     {% for s in node.sections() if s.name != 'workshops' %}
         {% for proposal in node.proposals() if proposal['section_name'] == s.name %}
           {% if loop.first %} 
             <h3 class="calm centered ultrafaded space-two">{{ s.title }}</h3>
-            <ul id="proposals" class="proposals space-four-bottom">
+            <ul id="proposals" class="proposals regular space-four-bottom">
           {% endif %}
           {% include theme("partials/_proposal_item.html") %}
           {% if loop.last %} </ul> {% endif %}
