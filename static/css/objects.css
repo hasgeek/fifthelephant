@@ -368,8 +368,8 @@ dl.centered-key-value dt + dd { margin-top: 1.53rem; }
 .announcements { max-width: 40em; }
 .tiles > li { max-width: 20em; margin: 1rem auto; }
 .tiles .wrap { display: block; }
-.tiles a { height: 10rem; padding-top: 7%; padding-right: 5%; border: 1px solid #DDD; }
-.tiles a:hover { background-color: rgba(0,0,0,.2); text-shadow: 0 0 1px #444; }
+.tiles a { height: 10rem; padding-top: 7%; padding-right: 5%; -webkit-box-shadow: 0 0 2px 0 #888; box-shadow: 0 0 2px 0 #888; }
+.tiles a:hover { background-color: rgba(0,0,0,.4); text-shadow: 0 0 1px #444; -webkit-box-shadow: 0 0 2px 0 #000; box-shadow: 0 0 2px 0 #000; }
 .tiles .vcenter a { display: table; }
 .tiles .vcenter a span { display: table-cell; vertical-align: middle; }
 .announcements-block { margin-top: 6rem; }

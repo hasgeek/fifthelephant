@@ -83,7 +83,7 @@
     <h2 class="calm visuallyhidden">Highlights</h2>
     <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom space-three-top">
       {% for tile in highlights.tiles %}
-      <li class="{{ tile.background }}"><a class="occupy right-aligned link-white-hover" href="{{ tile.link }}"><span class="wrap">{{ tile.title|safe }}</span> <span class="regular wrap">{{ tile.meta|safe }}</span></a></li>
+      <li class="{{ tile.background }}"><a class="occupy right-aligned link-white-hover unhighlight" href="{{ tile.link }}"><span class="wrap">{{ tile.title|safe }}</span> <span class="regular wrap">{{ tile.meta|safe }}</span></a></li>
       {% endfor %}
     </ul>
   </div>
