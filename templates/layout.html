@@ -78,7 +78,7 @@
       {% endif %}
     {% endblock %}
     {% block page_nav %}
-      <div class="page-nav clearfix">
+      <div class="page-nav{% if fixed_width_sticky %} fixed-width-sticky{% endif %} clearfix">
         <nav class="all-caps nospace sticky-width clearfix">
           <ul class="nospace clearfix">
             {% block page_nav_items %}{% endblock %}

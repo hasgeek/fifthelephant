@@ -2,12 +2,16 @@
 
 {% set title = '' %}
 {% set description = '' %}
+{% set long_page_nav = true %}
+{% set fixed_width_sticky = true %}
 
 {% block page_nav_items %}
 <li><a href="#announcements" class="link-white-hover">Announcements</a></li>
+<li><a href="#tickets" class="link-white-hover">Ticket Details</a></li>
 <li><a href="#last-year" class="link-white-hover">2012 Edition</a></li>
 <li><a href="#sponsors" class="link-white-hover">Sponsors</a></li>
-<li><a href="#partners" class="link-white-hover">Partners</a></li>
+<li><a href="#hasgeek" class="link-white-hover">Behind The Scenes</a></li>
+<li><a href="#code-of-conduct" class="link-white-hover">Code of Conduct</a></li>
 {% endblock %}
 
 {% block banner %}
@@ -32,7 +36,7 @@
         </a>
         <a 
           title="View location in Google Maps"
-          href="/2013/venue#NIMHANS"
+          href="/2013/venue#conference"
           class="ultrafaded venue link-white-hover">
           <abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr>
           Convention Centre
@@ -105,66 +109,9 @@
   </div>
 </section>
 
-<section id="community" class="fill-dark legible space-six-top clearfix">  
-  <article class="clearfix">
-    <h2 class="centered calm space-two-bottom space-three-top pad-one">The Programme Committee</h2>
-    <ul class="committee thumbnail-columns thumbnail-columns-five regular clearfix nospace">
-      <li class="clearfix">
-        <a class="occupy block-link" href="./community#ashok">
-          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/ashok.jpg') }}" width="150" height="150"></p>
-          <hgroup>
-            <h3>Ashok Banerjee</h3>
-            <h4>Flipkart</h4>
-          </hgroup>
-        </a>
-      </li>
-      <li class="clearfix">
-        <a class="occupy block-link" href="./community#gopal">
-          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/gopal.jpg') }}" width="150" height="150"></p>
-          <hgroup>
-            <h3>Gopal Vijayraghavan</h3>
-            <h4>Hortonworks</h4>
-          </hgroup>
-        </a>
-      </li>
-      <li class="clearfix">
-        <a class="occupy block-link" href="./community#govind">
-          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/govind.jpg') }}" width="150" height="150"></p>
-          <hgroup>
-            <h3>Govind Kanshi</h3>
-            <h4>Microsoft</h4>
-          </hgroup>
-        </a>
-      </li>
-      <li class="clearfix">
-        <a class="occupy block-link" href="./community#joydeep">
-          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/joydeep.jpg') }}" width="150" height="150"></p>
-          <hgroup>
-            <h3>Joydeep Sen Sharma</h3>
-            <h4>Qubole</h4>
-          </hgroup>
-        </a>
-      </li>
-      <li class="clearfix">
-        <a class="occupy block-link" href="./community#sesh">
-          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/sesh.jpg') }}" width="150" height="150"></p>
-          <hgroup>
-            <h3>Srinivasan Seshadri (Sesh)</h3>
-            <h4>Boltell</h4>
-          </hgroup>
-        </a>
-      </li>
-    </ul>
-    <p class="centered space-two-top space-three-bottom regular">
-      <a class="button" href="./community#committee">More about the committee</a>
-    </p>
-  </article>
-</section>
 
-
-
-<section id="tickets" class="fill-light push-three clearfix">
-  <h1 class="calm centered space-four-top space-two-bottom large">
+<section id="tickets" class="fill-light push-three space-six-top clearfix">
+  <h1 class="calm centered space-two large">
     Tickets
   </h1>
   <ul class="ticket-columns clearfix">
@@ -243,7 +190,7 @@
     </li>
   </ul>
   
-  <p class="centered legible space-three-top space-six-bottom">
+  <p class="centered legible space-three">
     <a
       class="button button-primary min-measure-3words"
       title="Fifth Elephant 2013 Tickets on DoAttend"
@@ -257,6 +204,62 @@
   </p>
 </section>
 
+
+<section id="community" class="fill-dark legible push-two clearfix">  
+  <article class="clearfix">
+    <h2 class="centered calm space-two-bottom space-three-top pad-one">The Programme Committee</h2>
+    <ul class="committee thumbnail-columns thumbnail-columns-five regular clearfix nospace">
+      <li class="clearfix">
+        <a class="occupy block-link" href="./community#ashok">
+          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/ashok.jpg') }}" width="150" height="150"></p>
+          <hgroup>
+            <h3>Ashok Banerjee</h3>
+            <h4>Flipkart</h4>
+          </hgroup>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a class="occupy block-link" href="./community#gopal">
+          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/gopal.jpg') }}" width="150" height="150"></p>
+          <hgroup>
+            <h3>Gopal Vijayraghavan</h3>
+            <h4>Hortonworks</h4>
+          </hgroup>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a class="occupy block-link" href="./community#govind">
+          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/govind.jpg') }}" width="150" height="150"></p>
+          <hgroup>
+            <h3>Govind Kanshi</h3>
+            <h4>Microsoft</h4>
+          </hgroup>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a class="occupy block-link" href="./community#joydeep">
+          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/joydeep.jpg') }}" width="150" height="150"></p>
+          <hgroup>
+            <h3>Joydeep Sen Sharma</h3>
+            <h4>Qubole</h4>
+          </hgroup>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a class="occupy block-link" href="./community#sesh">
+          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/sesh.jpg') }}" width="150" height="150"></p>
+          <hgroup>
+            <h3>Srinivasan Seshadri (Sesh)</h3>
+            <h4>Boltell</h4>
+          </hgroup>
+        </a>
+      </li>
+    </ul>
+    <p class="centered space-two-top space-three-bottom regular">
+      <a class="button" href="./community#committee">More about the committee</a>
+    </p>
+  </article>
+</section>
 
 
 <section id="last-year" class="last-year legible nospace clearfix">
