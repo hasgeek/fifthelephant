@@ -200,7 +200,7 @@
     {% for group in emergency_contacts %}
     <dt>{{ group.category|safe }}</dt>
       {% for item in group.list %}
-      <dd>{{ item.contact }}{% if item.name %} <span class="who faded secondary">({{ item.name }})</span>{% endif %}</dd>
+      <dd><a href="tel:{{ item.contact.dial }}" class="spooky">{{ item.contact.display }}</a>{% if item.name %} <span class="who faded secondary">({{ item.name }})</span>{% endif %}</dd>
       {% endfor %}
     {% endfor %}
   </dl>
