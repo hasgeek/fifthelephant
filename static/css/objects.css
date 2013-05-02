@@ -357,9 +357,10 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 }
 
 /* Prose */
-.prose ul li { list-style-type: disc; margin-left: 1rem; }
+.prose ul { padding-left: 1rem; }
+.prose ul li { list-style-type: disc; }
 .prose ol li { list-style-type: decimal; }
-@media only screen and (min-width: 40em) { .prose ul li { margin-left: 0; } }
+@media only screen and (min-width: 40em) { .prose ul, .prose ol { padding-left: 0; } }
 
 dl.centered-key-value dt      {
     width: 40%;

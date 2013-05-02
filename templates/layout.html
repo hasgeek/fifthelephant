@@ -118,7 +118,7 @@
       {% endif %}
       {% for item in type.list %}
         {% if loop.first %}
-          <article class="sponsor-cat flushleft {{ type.category|lower|replace(" ","-") }} clearfix">
+          <section class="sponsor-cat flushleft {{ type.category|lower|replace(" ","-") }} clearfix">
             <h5 class="all-caps"><span>{{ type.category }}</span></h5>
             <ul class="thumbnail-columns{{ sponsor_columns }} regular flushleft clearboth clearfix{% if sponsor_compact_white %} fill-light{% else %} fill-white{% endif %}">
         {% endif %}
@@ -129,7 +129,7 @@
         </li>
         {% if loop.last %}
             </ul>
-          </article>
+          </section>
         {% endif %}
       {% endfor %}
     {% endfor %}
