@@ -2,8 +2,9 @@
 
 {% set title = node.title %}
 {% set description = node.description %}
+{% set page_caption = 'Blog' %}
 
-{% block page_caption %}<span class="wrap-mobile">All Stories, Updates and Announcements</span> <span class="wrap-mobile">go in <a href="/blog" class="spooky nopad">this Blog</a></span>{% endblock %}
+{% block page_meta %}<span class="wrap-mobile">All Stories, Updates and Announcements</span> <span class="wrap-mobile">go in <a href="/blog" class="spooky nopad">this Blog</a></span>{% endblock %}
 
 {% block content %}
 <section class="blog space-six">

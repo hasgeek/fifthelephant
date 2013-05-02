@@ -54,6 +54,9 @@ a.faded { color: inherit; border-color: rgba(0,0,0,.3) !important; }
 a.soft { color: inherit; border-bottom: 1px dotted;  border-bottom-color: inherit !important; }
 a.soft:hover { border-bottom: 2px solid; }
 
+a.dark { color: rgba(0,0,0,.8); border-bottom: 1px dotted black !important; }
+a.dark:hover { color: black; border-bottom: 2px solid black !important; background-color: transparent !important; outline: none; }
+
 hr {
     display: block; clear: both; height: 0; margin: 0; padding: 0;
     

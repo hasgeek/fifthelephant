@@ -1131,6 +1131,3 @@ dl.centered-key-value dt + dd { margin-top: 1.53rem; }
 .blogpost .sponsor-silver:after { content: 'Silver'; }
 .blogpost .sponsor-bronze:after { content: 'Bronze'; }
 .blogpost .sponsor-community:after { content: 'Community'; }
-
-a.blogpost-banner { color: rgba(0,0,0,.8); border-bottom: 1px dotted black !important; }
-a.blogpost-banner:hover { color: black; border-bottom: 2px solid black !important; background-color: transparent; outline: none; }
