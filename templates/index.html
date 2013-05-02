@@ -404,7 +404,7 @@
   <section id="partners" class="partners clearfix">  
     <article class="fill-light legible push-three-top push-two-bottom clearfix">
       <h2 class="centered calm space-two-bottom space-three-top nospace">Partners</h2>
-      <ul class="thumbnail-columns thumbnail-columns-three regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
+      <ul class="thumbnail-columns thumbnail-columns-five regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
         {% for partner in partners %}
         <li class="clearfix {% if partner.logo.orientation == 'portrait' %}contain-height{% else %}contain-width{% endif %}"><a class="occupy centered" href="{{ partner.web.link }}"><img src="{{ theme_static(partner.logo.url) }}" alt="{{ partner.name }}"></a></li>
         {% endfor %}
@@ -427,9 +427,9 @@
   </section>
   
   <section id="credits" class="credits clearfix">  
-    <article class="clearfix measure-10words center-block space-four-bottom">
+    <article class="clearfix legible space-four-bottom">
       <h2 class="centered calm nospace">Credits</h2>
-      <dl class="centered-key-value eighty clearfix v-middle regular nospace highlight-links center-block">
+      <dl class="center-block centered-key-value clearfix v-middle regular nospace highlight-links center-block pad-half">
         <dt>Head Organiser</dt>
           <dd>Zainab Bawa</dd>
         <!-- <dt>Organising Team</dt>
@@ -447,16 +447,17 @@
           <dd>Nimisha Saikia</dd>
         <dt>Volunteers</dt>
           <dd>Kingsly John</dd>
-          <dd>Nigel Babu</dd>
           <dd>Sajjad Anwar</dd>
+          <dd>Nigel Babu</dd>
+        <dt>Icons</dt>
+          <dd><a href="http://thenounproject.com/noun/speech-bubble/#icon-No5656" target="_blank" class="soft">Speech Bubble</a> designed by <a href="http://thenounproject.com/naomiatkinson" target="_blank" class="soft">Naomi Atkinson</a></dd>
+          <dd><a href="http://thenounproject.com/noun/map-marker/#icon-No9093" target="_blank" class="soft">Map Marker</a> designed by <a href="http://thenounproject.com/schumanncombo" class="soft">Richard Schumann</a></dd>
+          <dd><a href="http://thenounproject.com/noun/like/#icon-No1297" target="_blank" class="soft">Like</a> designed by <a href="http://thenounproject.com/marwaboukarim" target="_blank" class="soft">Marwa Boukarim</a></dd>
+          <dd><a href="http://thenounproject.com/noun/bird/#icon-No6104" target="_blank" class="soft">Bird</a> designed by <a href="http://thenounproject.com/tlb" target="_blank" class="soft">Thomas Le Bas</a></dd>
+          <dd><a href="http://thenounproject.com/noun/home/#icon-No293" target="_blank" class="soft">Home</a>  from The Noun Project</dd>
       </dl>
-    </article>
-  </section>
-  <hr class="invisible">
-  <section id="team-hasgeek" class="team-hasgeek centered clearfix">  
-    <article class="clearfix">
-      <h2 class="centered calm space-two-bottom space-one-top pad-one capitalize">Geeks behind the scenes</h2>
-      <ul class="thumbnail-columns thumbnail-columns-five regular clearfix nospace">
+      <h3 class="legible centered calm space-one-bottom space-four-top pad-one ultrafaded">The HasGeek Team</h3>
+      <ul class="team-hasgeek thumbnail-columns thumbnail-columns-five regular clearfix nospace pad-one">
         <li class="haris clearfix"><a class="occupy block-link ir" href="#"><span class="first">Haris</span> Ibrahim K V</a></li>
         <li class="jamna clearfix"><a class="occupy block-link ir" href="#"><span class="first">Jamna</span> Vyas</a></li>
         <li class="kiran clearfix"><a class="occupy block-link ir" href="#"><span class="first">Kiran</span> Jonnalagadda</a></li>
@@ -486,8 +487,3 @@
 {% block sponsor_compact %}
   <hr class="eighty center-block">
 {% endblock %}
-
-{% block footer_credits %}
-<p class="centered tiny space-half faded center-block attribution"><span class="wrap-mobile"><a href="http://thenounproject.com/noun/map-marker/#icon-No9093">Map Marker</a> designed by <a href="http://thenounproject.com/schumanncombo">Richard Schumann</a> and</span> <span class="wrap-mobile"><a href="http://thenounproject.com/noun/bird/#icon-No6104" target="_blank">Bird</a> designed by <a href="http://thenounproject.com/tlb" target="_blank">Thomas Le Bas</a> from The Noun Project</span></p>
-{% endblock %}
-
