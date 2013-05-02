@@ -55,6 +55,9 @@ dl dd { margin-left: 0; }
 span.wrap-mobile { display: block; }
 @media only screen and (min-width: 50em) { span.wrap-mobile { display: inline; } }
 
+span.hide-mobile { display: none; }
+@media only screen and (min-width: 40em) { span.hide-mobile { display: inline; } }
+
 span.wrap-when-wide { display: inline; }
 @media only screen and (min-width: 40em) { span.wrap-when-wide { display: block; } }
 
@@ -131,6 +134,8 @@ span.wrap-when-wide { display: inline; }
 .pad-half,   .pad-half-right    { padding-right: 0.50rem !important; }
 .pad-1q,     .pad-1q-left       { padding-left:  0.25rem !important; }
 .pad-1q,     .pad-1q-right      { padding-right: 0.25rem !important; }
+.nopad,      .nopad-left        { padding-left:  0       !important; }
+.nopad,      .nopad-right       { padding-right: 0       !important; }
 
 
 .push-four,  .push-four-top     { padding-top:    4.00rem !important; }

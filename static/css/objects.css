@@ -357,8 +357,9 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 }
 
 /* Prose */
-.prose ul li { list-style-type: circle; }
+.prose ul li { list-style-type: disc; margin-left: 1rem; }
 .prose ol li { list-style-type: decimal; }
+@media only screen and (min-width: 40em) { .prose ul li { margin-left: 0; } }
 
 dl.centered-key-value dt      {
     width: 40%;
@@ -1102,8 +1103,6 @@ dl.centered-key-value dt + dd { margin-top: 1.53rem; }
 /* Blog                    */
 /*-------------------------*/
 
-h1.blog-title-line,
-h3.blog-title-line { font-size: .9rem; line-height: 1.4000; }
 .blogpost article > header { text-align: center; }
 .blogpost article a,
 .blogpost-list article a { word-wrap: break-word; }

@@ -72,8 +72,8 @@
     {% block banner_title %}
       {% if page_caption %}
       <hr class="half center-block space-three-top space-three-bottom">
-      <h1 class="clearboth centered calm measure-10words center-block space-three giant">
-        <span class="serif-type italic legible occupy capitalize space-one-bottom">The</span> {{ page_caption }}
+      <h1 class="clearboth centered calm measure-10words center-block space-three {% if banner_title_size %}{{ banner_title_size }}{% else %}giant{% endif %}">
+        <span class="serif-type italic legible occupy capitalize space-one-bottom">{% block banner_title_prefix %}The{% endblock %}</span> {{ page_caption }}
       </h1>
       {% endif %}
     {% endblock %}

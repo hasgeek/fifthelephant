@@ -51,9 +51,10 @@ function initSponsor () {
 // In-page Navigation
 function initInPageNav () { 
     $('body').on('click', '.page-nav a', function(e) {
-        if($(e.target.hash).offset().top < $(window).scrollTop())
-            $.smoothScroll({ scrollTarget: e.target.hash, beforeScroll: hideSticky, afterScroll: unhideSticky });
-        else $.smoothScroll({ scrollTarget: e.target.hash, beforeScroll: hideSticky, afterScroll: unhideSticky });
+        var target = $(e.target).closest('.page-nav a')[0];
+        if($(target.hash).offset().top < $(window).scrollTop())
+            $.smoothScroll({ scrollTarget: target.hash, beforeScroll: hideSticky, afterScroll: unhideSticky });
+        else $.smoothScroll({ scrollTarget: target.hash, beforeScroll: hideSticky, afterScroll: unhideSticky });
         e.preventDefault();
     });
     $('body').on('click', '.sticky-main-bar a.active', function(e) {
