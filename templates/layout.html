@@ -159,19 +159,19 @@
   </script>
   </span></p>
   
-  <p class="centered secondary space-half-top copyright center-block"><span class="wrap-mobile"><a href="/" class="spooky">The Fifth Elephant</a> is a conference by <a href="http://hasgeek.com">HasGeek</a>.</p>
+  <p class="centered secondary space-half-top space-line-bottom copyright center-block"><span class="wrap-mobile"><a href="/" class="spooky">The Fifth Elephant</a> is a conference by <a href="http://hasgeek.com">HasGeek</a>.</p>
   
-  <nav class="secondary space-two">
+  {% block footer_credits %}{% endblock %}
+  
+  <p class="centered tiny space-half-top faded center-block attribution">Copyright © 2010-13. All rights reserved.</p>
+  
+  <nav class="tiny space-three all-caps semi-bold">
     <ul class="centered">
       <li class="inline"><a href="http://twitter.com/fifthel">Twitter</a></li>
       <li class="inline"><a href="/blog">Blog</a></li>
       <li class="inline"><a href="/2013/code-of-conduct">Code of Conduct</a></li>
     </ul>
   </nav>
-
-  {% block footer_credits %}{% endblock %}
-  
-  <p class="centered tiny space-half-top faded center-block attribution">Copyright © 2010-13. All rights reserved.</p>
   
 </footer>
 
