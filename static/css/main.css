@@ -224,6 +224,8 @@ a.link-unfade-hover:hover,
     .js .sponsors dt.corporate-tickets { clear: none; }
 }
 
+footer nav ul li + li:before { content: '\2022'; margin: 0 .7rem 0 .4rem; color: #AAA; }
+
 /*  Networkbar fixes  */
 
 .hg-bar-holder { position: relative; z-index: 1050; }
