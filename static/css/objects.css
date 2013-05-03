@@ -444,9 +444,9 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 }
 
 /* Ticketing Details */
-.ticket-columns { border: 0 solid #5C5; }
+.ticket-columns { border: 0 solid #5C5; max-width: 1400px; margin: auto; }
 .ticket-columns > li {
-    margin: 2rem;
+    margin: 1rem;
     border: solid #5C5;
     border-width: 0 1px 1px 1px;
 }
@@ -460,10 +460,6 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .ticket ul li { list-style-type: circle; margin: 0.25rem 0; }
 .ticket-note  { max-width: 60%; }
 @media only screen and (min-width: 35em) {
-    .ticket-columns {
-        margin-left:  5%;
-        margin-right: 5%;
-    }
     .ticket-columns > li {
         float: left;
         width: 50%;
@@ -1104,8 +1100,9 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 
 .accomodation .price-range:before { content: '('; }
 .accomodation .price-range:after { content: ')'; }
+.accomodation { max-width: 55em; margin: auto; }
 .accomodation > article:last-child { margin-bottom: 0 !important; }
-@media all and (min-width: 60em) { .hotels-list { max-width: 50em; } }
+.hotels-list { max-width: 50em; }
 
 
 /*-------------------------*/
