@@ -51,8 +51,11 @@ function initSponsor () {
 // In-page Navigation
 function initInPageNav () { 
     $('body').on('click', '.page-nav a', function(e) {
-        var target = $(e.target).closest('.page-nav a')[0];
-        if($(target.hash).offset().top < $(window).scrollTop())
+        var   target = $(e.target).closest('.page-nav a')[0]
+            , $section = $(target.hash)
+            ;
+        if(!$section.length) return;
+        if($section.offset().top < $(window).scrollTop())
             $.smoothScroll({ scrollTarget: target.hash, beforeScroll: hideSticky, afterScroll: unhideSticky });
         else $.smoothScroll({ scrollTarget: target.hash, beforeScroll: hideSticky, afterScroll: unhideSticky });
         e.preventDefault();

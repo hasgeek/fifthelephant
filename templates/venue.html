@@ -198,7 +198,7 @@
   <p class="pad-one">Here’s a list of contact numbers that you should keep handy in case of emergency.</p>
   <dl class="centered-key-value clearfix v-middle regular nospace highlight-links center-block ">
     {% for group in emergency_contacts %}
-    <dt>{{ group.category|safe }}</dt>
+    <dt class="secondary">{{ group.category|safe }}</dt>
       {% for item in group.list %}
       <dd><a href="tel:{{ item.contact.dial }}" class="spooky">{{ item.contact.display }}</a>{% if item.name %} <span class="who faded secondary">({{ item.name }})</span>{% endif %}</dd>
       {% endfor %}
