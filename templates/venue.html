@@ -14,14 +14,14 @@
 {% endblock %}
 
 {% block page_nav_items %}
-<li><a href="#conference" class="link-white-hover">Conference</a></li>
-<li><a href="#party" class="link-white-hover">Party</a></li>
-<li><a href="#accomodation" class="link-white-hover">Stay</a></li>
-{% from theme("data/emergency.html") import emergency_contacts %}
-{% if emergency_contacts %}
+   <li><a href="#conference" class="link-white-hover">Conference</a></li><!--
+--><li><a href="#party" class="link-white-hover">Party</a></li><!--
+--><li><a href="#accomodation" class="link-white-hover">Stay</a></li><!--
+-->{% from theme("data/emergency.html") import emergency_contacts -%}
+{% if emergency_contacts -%}
 <li><a href="#emergency" class="link-white-hover">Emergency</a></li>
-{% endif %}
-{% endblock %}
+{%- endif %}
+{%- endblock %}
 
 {% block content %}
 <section id="conference" class="legible conference-venue space-two-top space-four-bottom push-four-top">

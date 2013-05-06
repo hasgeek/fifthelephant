@@ -269,21 +269,37 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 
 .page-nav { background-color: rgba(0,0,0,.2); }
 .page-nav nav { text-align: center; font-size: .85rem; }
-.page-nav nav li { display: inline-block; }
-.page-nav nav li a { display: block; font-weight: 600; padding: .4rem .5rem; }
+.page-nav nav li { display: inline-block;  border-left: 1px solid rgba(0,0,0,.05); }
+.page-nav nav li:last-child { border-right: 1px solid rgba(0,0,0,.05) !important; }
+.page-nav nav li a { display: block; font-weight: 600; padding: .8rem .8rem !important; }
 .long-page-nav .page-nav nav ul { max-width: 50em; margin: auto; }
 .long-page-nav .page-nav nav li { display: block; width: 50%; float: left; }
-.long-page-nav .page-nav nav li a { width: 100%; font-weight: 600; padding: .4rem 0; }
+.long-page-nav .page-nav nav li:nth-of-type(2n) { border-right: 1px solid rgba(0,0,0,.05); }
+.long-page-nav .page-nav nav li:nth-of-type(2n+3),
+.long-page-nav .page-nav nav li:nth-of-type(2n+4) { border-top: 1px solid rgba(0,0,0,.05); }
+.long-page-nav .page-nav nav li a { width: 100%; font-weight: 600; }
 
 @media only screen and (min-width: 35em) { 
     .page-nav nav li a { padding: .3rem 1rem; }
     .long-page-nav .page-nav nav li { width: 33.3333%; width: calc(100%/3); }
+    .long-page-nav .page-nav nav li:nth-of-type(2n),
+    .long-page-nav .page-nav nav li:nth-of-type(2n+3),
+    .long-page-nav .page-nav nav li:nth-of-type(2n+4) { border-right: 0; border-top: 0; }
+    .long-page-nav .page-nav nav li:nth-of-type(3n) { border-right: 1px solid rgba(0,0,0,.05); }
+    .long-page-nav .page-nav nav li:nth-of-type(3n+4),
+    .long-page-nav .page-nav nav li:nth-of-type(3n+5),
+    .long-page-nav .page-nav nav li:nth-of-type(3n+6) { border-top: 1px solid rgba(0,0,0,.05); }
 }
 @media only screen and (min-width: 45em) { .page-nav nav li a { padding: .3rem 1.2rem; } }
 @media only screen and (min-width: 60em) { 
     .long-page-nav .page-nav nav ul { max-width: none; }
     .long-page-nav .page-nav nav li { display: inline-block; width: auto; float: none; }
     .long-page-nav .page-nav nav li a { width: 100%; font-weight: 600; padding: .3rem 1rem; }
+    
+    .long-page-nav .page-nav nav li:nth-of-type(3n),
+    .long-page-nav .page-nav nav li:nth-of-type(3n+4),
+    .long-page-nav .page-nav nav li:nth-of-type(3n+5),
+    .long-page-nav .page-nav nav li:nth-of-type(3n+6) { border-right: 0; border-top: 0; }
 }
 
 
@@ -312,6 +328,8 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .sticky-nav .ticket-link .conference-dates,
 .sticky-nav .nav-line-spacer { display: none; }
 .sticky-nav .sticky-width { max-width: 60rem; margin: auto; }
+.sticky-nav nav li,
+.sticky-nav nav li:last-child { border: 0 !important; }
 .sticky-nav a,
 .sticky-nav a:visited {
     font-size: .7rem;
