@@ -1,11 +1,11 @@
 {% for session in featured %}
   {% if loop.first %}
   <article class="push-three-top push-two-bottom highlight-links clearfix">
-    <h3 class="centered calm space-two-top nospace-bottom ultrafaded">Featured {{ session_kind }}</h3>
+    <h3 class="centered calm space-one-top nospace-bottom ultrafaded">Featured {{ session_kind }}</h3>
     <ul class="featured-sessions poster-with-bio legible clearfix nospace">
   {% endif %}
     <li class="clearfix">
-      <h3 class="featured-session-topic calm space-two-top">{% if session.funnel %}<a href="{{ session.funnel }}" class="spooky">{% endif %}{{ session.title }}{% if session.funnel %}</a>{% endif %}</h3>
+      <h3 class="featured-session-topic calm space-one-top">{% if session.funnel %}<a href="{{ session.funnel }}" class="spooky">{% endif %}{{ session.title }}{% if session.funnel %}</a>{% endif %}</h3>
       <div class="featured-session-description center-block regular clearfix">{{ session.description|safe }}</div>
       <ul class="session-meta-links regular capitalize center-block space-half-top space-line-bottom clearfix">
         {% if session.funnel %}<li><a href="{{ session.funnel }}" class="capitalize tiny">View funnel proposal</a></li>{% endif %}
