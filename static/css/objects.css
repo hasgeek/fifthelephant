@@ -733,20 +733,18 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .js .sponsors dd.gold { background-color: #F8F8E1; background-color: rgba(248,248,225,.85); }
 .js .sponsors dd.silver { background-color: #EAF5FC; background-color: rgba(234,245,252,.85); }
 .js .sponsors dd.bronze { background-color: #F7F2E0; background-color: rgba(247,242,224,.85); }
+.js .sponsors dd.party { background-color: #F1F1FF; background-color: rgba(241,241,255,.85); }
 .js .sponsors dd.community { background-color: #FBEFF2; background-color: rgba(251,239,242,.85); }
+.js .sponsors dd.corporate,
 .js .sponsors dd.corporate-tickets { background-color: #EFFBEF; background-color: rgba(239,251,239,.85); }
 .js .sponsors .about-sponsor { background-color: #FFFFFF; background-color: rgba(255,255,255,.9); color: black; padding-top: 2rem; }
 .no-js .sponsors dd { margin: 3rem auto; }
 .js .sponsors dd { 
     float: left; 
-    width: 50%; 
     position: relative; 
     z-index: 50; 
     outline: 1px solid rgba(255,255,255,.2);
 }
-.js .sponsors dd.xl,
-.js .sponsors dd.l { width: 100%; }
-.js .sponsors dd.s { width: 33.3333%; width: calc(100%/3); }
 .js .sponsors dd h5 a { 
     display: block;
     text-align: center; 
@@ -797,8 +795,6 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .sponsors .sponsor-pitch p:first-child { text-shadow: 1px 1px 2px #333; }
 @media only screen and (min-width: 30em) { .sponsors .sponsor-logos .sponsor-logos-list { font-size: .65em; } }
 @media only screen and (min-width: 40em) { 
-    .js .sponsors dd    { float: left; width: 33.3333%; width: calc(100%/3); }
-    .js .sponsors dd.s  { width: 16.6666%; width: calc(100%/6); }
     .js .sponsors .sponsor-logos .sponsor-logos-list { max-width: 90%; }
     .js .sponsors .about-sponsor { float: right; width: 45%; padding-left: 1rem; padding-top: 1rem; }
     .no-js .sponsors .sponsor-logo,
@@ -825,9 +821,6 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .js .sponsors .sponsor-block.squeeze { padding-left: 1rem; }  
 }
 @media only screen and (min-width: 45em) {
-    .js .sponsors dd.xl { width: 50%; }
-    .js .sponsors dd.l  { width: 33.3333%; width: calc(100%/3); }
-    .js .sponsors dd    { float: left; width: 25%; }
     .js .sponsors .sponsor-logos .sponsor-logos-list { max-width: 80%; }
     .js .sponsors dd.l h5 a { line-height: 7em; padding: 2.5em 25%; }
     .js .sponsors .squeeze .sponsor-logos { float: left; width: 50%; padding-right: 1rem; }
@@ -836,8 +829,6 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .js .sponsors .about-sponsor > div,
     .js .sponsors .about-sponsor > p { float: left; clear: both; max-width: 24em; }
 }
-
-@media only screen and (min-width: 60em) { .js .sponsors dd { width: 20%; } }
 
 /* Partners, HasGeek and Credits */
 .partners ul { max-width: 50em; }
@@ -924,7 +915,9 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 
 /* Sponsors on internal pages */
 .sponsors-compact { max-width: 50em; }
-.sponsors-compact .sponsor-cat { width: 100%; }
+/*.sponsors-compact .sponsor-cat { width: 100%; }*/
+.sponsors-compact .sponsor-cat { width: 49%; }
+.sponsors-compact .sponsor-cat.bronze { margin-left: 2%; }
 .sponsors-compact h5 {
     margin: 1rem 0 0 0;
     padding: 0 1em;
@@ -934,8 +927,8 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     font-weight: 600;
     float: left;
 }
-.sponsors-compact .thumbnail-columns { padding: 0; margin: 0 0; width: 100%; }
-.sponsors-compact .thumbnail-columns > li { height: 5rem; padding: 0; margin: 0; }
+.sponsors-compact .thumbnail-columns { padding: 0; margin: 0; width: 100%; }
+.sponsors-compact .thumbnail-columns > li { height: 5rem; padding: 0; margin: 0; width: 100%; }
 .sponsors-compact a { 
     display: block;
     text-align: center; 
@@ -949,12 +942,12 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .sponsors-compact a:hover { background-color: rgba(0,0,0,.04); } 
 .sponsors-compact a.contain-width img { width: 100%; max-width: 7rem;  } 
 @media only screen and (min-width: 30em) { 
-    .sponsors-compact .thumbnail-columns.thumbnail-columns-five > li { width: 33.3333%; width: calc(100%/3); }
+/*    .sponsors-compact .thumbnail-columns.thumbnail-columns-five > li { width: 33.3333%; width: calc(100%/3); }*/
 }
 @media only screen and (min-width: 50em) { 
-    .sponsors-compact .sponsor-cat.platinum { width: 39%; }
-    .sponsors-compact .sponsor-cat.gold { width: 59%; margin-left: 2%; }
-    .sponsors-compact .thumbnail-columns.thumbnail-columns-five li { width: 20%; }
+/*    .sponsors-compact .sponsor-cat.platinum { width: 39%; }*/
+/*    .sponsors-compact .sponsor-cat.gold { width: 59%; margin-left: 2%; }*/
+/*    .sponsors-compact .thumbnail-columns.thumbnail-columns-five li { width: 20%; }*/
 }
 
 /* Community Sponsors */
