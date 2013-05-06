@@ -361,7 +361,7 @@
     <div class="sponsor-block center-block clearfix">
     <article class="about-sponsor nospace-top clearfix pad-two space-line-bottom resetcoords highlight-links js-hidden">
       <div class="sponsor-detail"></div>
-      <p class="nospace-top all-caps space-three-bottom clearfix"><a class="close" href="#">Close</a></p>
+      <p class="all-caps space-three-bottom clearfix"><a class="close" href="#">Close</a></p>
     </article>
     <article class="sponsor-logos clearfix">
       <div class="sponsor-logos-list clearfix">
@@ -375,7 +375,7 @@
               <h4 class="legible sponsor-name">{{ item.name }}</h4>
               <p class="secondary all-caps sponsor-link"><a href="{{ item.web.link }}">{{ item.web.display }}</a></p>
               <hr class="invisible">
-              <p class="regular stretch clearboth sponsor-description space-one-top">{{ item.blurb }}</p>
+              <div class="regular stretch clearboth sponsor-description space-one-top clearfix">{{ item.blurb|safe }}</div>
             </dd>
           {% endfor %}
         {% endfor %}

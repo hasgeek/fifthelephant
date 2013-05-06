@@ -122,7 +122,7 @@
         <h4 class="legible sponsor-name">{{ partner.name }}</h4>
         <p class="secondary all-caps highlight-links sponsor-link"><a href="{{ partner.web.link }}">{{ partner.web.display }}</a></p>
         <hr class="invisible">
-        <p class="regular stretch prose clearboth sponsor-description space-one-top">{{ partner.blurb }}</p>
+        <div class="regular stretch prose clearboth sponsor-description space-one-top clearfix">{{ partner.blurb|safe }}</div>
       </li>
       {% endfor %}
     </ul>

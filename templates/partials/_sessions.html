@@ -20,7 +20,7 @@
         <h3 class="capitalize"><a href="{{ session.funnel }}" class="spooky">{{ session.title }}</a></h3>
         <h4 class="space-half-top nospace-bottom secondary">{{ session.speaker.name }}</h4>
       </hgroup>
-      <p class="session-summary space-line-top nospace-bottom">{{ session.summary }}</p>
+      <div class="session-summary space-line-top nospace-bottom clearfix">{{ session.summary|safe }}</div>
       <p class="capitalize space-line nospace-top space-line-bottom"><a href="{{ session.funnel }}" class="capitalize tiny">View funnel proposal</a></p>
     </li>
   {% if loop.last %}

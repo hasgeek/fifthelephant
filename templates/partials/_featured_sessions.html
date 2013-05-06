@@ -6,7 +6,7 @@
   {% endif %}
     <li class="clearfix">
       <h3 class="featured-session-topic calm space-two-top"><a href="{{ session.funnel }}" class="spooky">{{ session.title }}</a></h3>
-      <p class="featured-session-description regular">{{ session.description|safe }}</p>
+      <div class="featured-session-description regular clearfix">{{ session.description|safe }}</div>
       {% if session.speaker %}
       <div class="poster clearfix">
         <p class="contain-width clearfix"><img alt="" src="{{ theme_static(session.speaker.photo) }}" width="150" height="150"></p>
@@ -15,8 +15,8 @@
           <h4 class="all-caps secondary">{{ session.speaker.company }}</h4>
         </hgroup>
       </div>
-      <div class="bio">
-        <p>{{ session.speaker.bio|safe }}</p>
+      <div class="bio clearfix">
+        {{ session.speaker.bio|safe }}
       </div>
       {% endif %}
     </li>
