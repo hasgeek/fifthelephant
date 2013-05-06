@@ -5,8 +5,12 @@
     <ul class="featured-sessions poster-with-bio legible clearfix nospace">
   {% endif %}
     <li class="clearfix">
-      <h3 class="featured-session-topic calm space-two-top"><a href="{{ session.funnel }}" class="spooky">{{ session.title }}</a></h3>
-      <div class="featured-session-description regular clearfix">{{ session.description|safe }}</div>
+      <h3 class="featured-session-topic calm space-two-top">{% if session.funnel %}<a href="{{ session.funnel }}" class="spooky">{% endif %}{{ session.title }}{% if session.funnel %}</a>{% endif %}</h3>
+      <div class="featured-session-description center-block regular clearfix">{{ session.description|safe }}</div>
+      <ul class="session-meta-links regular capitalize center-block space-half-top space-line-bottom clearfix">
+        {% if session.funnel %}<li><a href="{{ session.funnel }}" class="capitalize tiny">View funnel proposal</a></li>{% endif %}
+        {% if session.preview %}<li><a href="{{ session.preview }}" class="capitalize tiny">Watch preview</a></li>{% endif %}
+      </ul>      
       {% if session.speaker %}
       <div class="poster clearfix">
         <p class="contain-width clearfix"><img alt="" src="{{ theme_static(session.speaker.photo) }}" width="150" height="150"></p>

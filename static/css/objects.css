@@ -1007,7 +1007,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 }
 
 /* List of poster image + bio */
-.poster-with-bio li { margin: 3rem auto; max-width: 36em; padding: 0 1rem; }
+.poster-with-bio > li { margin: 3rem auto; max-width: 36em; padding: 0 1rem; }
 .poster-with-bio .poster { position: relative; }
 .poster-with-bio .poster p { margin: 0; max-width: 9.375rem; }
 .poster-with-bio .poster p img { display: block; }
@@ -1030,11 +1030,16 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .featured-sessions.poster-with-bio .bio { color: rgba(0,0,0,.8); font-size: .9rem; }
 .featured-sessions.poster-with-bio .poster p { width: 30%; }
 .featured-sessions.poster-with-bio .poster hgroup { left: 35%; }
+.featured-sessions.poster-with-bio .poster { margin-top: 2rem; }
+.featured-sessions .featured-session-description p { margin-bottom: 0; }
+.featured-sessions .session-meta-links li { float: left; }
+.featured-sessions .session-meta-links li + li:before { content: '\2022'; margin: 0 .6rem 0 .6rem; color: #BBB; font-size: .8rem; }
 @media only screen and (min-width: 30em) { .featured-sessions.poster-with-bio .poster hgroup { left: 10rem; } }
 @media only screen and (min-width: 51em) { 
     .featured-sessions .featured-session-topic { text-align: center; }
-    .featured-sessions .featured-session-description { max-width: 32em; margin: 1rem auto; }
-    .featured-sessions.poster-with-bio .poster { margin-left: -7em; margin-right: 1em; }
+    .featured-sessions .featured-session-description { max-width: 32em; margin: 1rem auto 0; }
+    .featured-sessions .session-meta-links           { max-width: 32em; }
+    .featured-sessions.poster-with-bio .poster { margin-left: -7em; margin-right: 1em; margin-top: 0; }
     .featured-sessions.poster-with-bio .bio { float: left; width: 25em; }
     .featured-sessions.poster-with-bio .poster hgroup { left: auto; }
 }
@@ -1042,6 +1047,10 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 /* Conference Talks Preview */
 .sessions { max-width: 1600px; }
 .sessions .session-summary p { margin-bottom: 0; }
+@media only screen and (min-width: 35em) {
+    .sessions .session-meta-links li { float: left; }
+    .sessions .session-meta-links li + li:before { content: '\2022'; margin: 0 .4rem 0 .4rem; color: #BBB; font-size: .8rem; }
+}
 
 /* Schedule */
 .schedule-table-container { width: 100%; max-width: 60em; }
