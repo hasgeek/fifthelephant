@@ -148,7 +148,7 @@ function initStickyNav () {
 
 // Replace Venue Images
 function replaceVenueImages () {
-    var $images = $('img.venuephoto');    
+    var $images = $('img.venuephoto');
     if(!$images.length) return;
     
     function runTests() {
@@ -169,6 +169,7 @@ function replaceVenueImages () {
     if (window.matchMedia) {
         runTests();
         $(window).on('resize', runTests);
+        $('.venue-showcase').addClass('stretch').show();
     } 
 }
 

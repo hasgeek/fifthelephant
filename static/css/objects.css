@@ -1076,7 +1076,11 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 }  
 
 /* Venue */
-.venue-showcase { max-width: 1600px; margin: auto; }
+@media only screen and (min-width: 641px),
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 321px),
+@media only screen and (min-device-pixel-ratio: 1.5) and (min-width: 321px) { .js .venue-showcase { display: none; } }
+.venue-showcase { max-width: 1600px; width: 640px; margin: auto; }
+.venue-showcase.stretch { width: 100%; }
 .venue-showcase p { margin: 0; }
 .venue-showcase.conference-venue p { margin: .25rem 0; }
 .venue-showcase.conference-venue p:nth-of-type(2),
