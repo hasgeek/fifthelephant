@@ -834,7 +834,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .js .sponsors .squeeze .sponsor-logos:hover dt span,
     .js .sponsors .squeeze .sponsor-logos:hover dd,
     .js .sponsors .squeeze .sponsor-logos:hover dd.active:after { opacity: 1; }
-    .js .sponsors .squeeze .sponsor-logos .sponsor-logos-list { font-size: .55em; background-color: transparent; max-width: none; }
+    .js .sponsors .squeeze .sponsor-logos .sponsor-logos-list { font-size: .55em; background-color: transparent; max-width: none; width: 100%; }
     .js .sponsors .squeeze .sponsor-logos .sponsor-logos-list dl dt span { font-size: .600rem; }
     .js .sponsors .sponsor-block.squeeze { padding-left: 1rem; }  
 }
