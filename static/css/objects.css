@@ -975,6 +975,8 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 @media only screen and (min-width: 50em) {
     .community-partners-list { max-width: 55em; }
     .community-partners-list > li { width: 40%; margin-left: 5%; margin-right: 5%; float: left; }
+    .community-partners-list.single { max-width: 32em; }
+    .community-partners-list.single > li { width: auto; margin-left: auto; margin-right: auto; float: none; }
     .community-partners-list > li:nth-of-type(odd) { clear: both; }
 }
 

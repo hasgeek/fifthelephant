@@ -102,9 +102,9 @@
   {% if partners %}
   <article id="community-partners" class="push-four clearfix">
     <h2 class="centered calm space-two">Community Partners</h2>
-    <ul class="community-partners-list about-sponsor regular clearfix nospace pad-one">
+    <ul class="community-partners-list{% if partners|length == 1 %} single{% endif%} about-sponsor regular clearfix nospace pad-one">
       {% for partner in partners %}
-      <li id="partner-{{ partner.name|lower|replace(" ", "") }}" class="space-three-top clearfix {% if partner.logo.orientation == 'portrait' %}contain-height{% else %}contain-width{% endif %}">
+      <li id="partner-{{ partner.name|lower|replace(" ", "") }}" class="space-three-top clearfix {% if partner.logo.contain == 'height' %}contain-height{% else %}contain-width{% endif %}">
         <h5 class="sponsor-logo"><a href="{{ partner.web.link }}" class="unhighlight"><img src="{{ theme_static(partner.logo.url) }}" alt=" "></a></h5>
         <h4 class="legible sponsor-name">{{ partner.name }}</h4>
         <p class="secondary all-caps highlight-links sponsor-link"><a href="{{ partner.web.link }}">{{ partner.web.display }}</a></p>
