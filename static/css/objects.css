@@ -48,7 +48,7 @@
     width: 8.2rem;
     text-transform: uppercase;
     color: black;
-    border-bottom-color: transparent;;
+    border-bottom-color: transparent;
     font-style: normal;
     font-weight: 600;
 }
@@ -86,7 +86,7 @@
         padding: 0;
         color: black;
         font-style: normal;
-        border: 0;
+        border: 0 !important;
         font-weight: 600;
     }
     .wf-active .nav-line a,
