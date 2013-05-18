@@ -30,7 +30,6 @@
     font-size: 1.5em;
     line-height: 1;
     position: relative;
-    top: 0.1em;
     color: rgba(0,0,0,0.5);
 }
 .nav-line a,
@@ -109,7 +108,6 @@
     .nav-line .nav-line-spacer { width: 4rem; text-indent: 0; overflow: visible; }
     .nav-line .nav-line-spacer.amp {
         width: 1.5rem;
-        top: 0.15em;
         line-height: 1.5rem;
         font-weight: 300;
     }
