@@ -20,16 +20,18 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   
+  {%- if _theme %}
+    {% assets "css_" + _theme -%}
+      <link rel="stylesheet" href="{{ ASSET_URL }}"/>
+    {% endassets -%}
+  {%- endif %}
+  {%- if config['DEBUG'] %}
+    <link rel="stylesheet" href="{{ theme_static('css/fonts.css') }}">
+  {%- endif %}
   <link rel="stylesheet" href="/_baseframe/css/networkbar.css">
-  <link rel="stylesheet" href="{{ theme_static('css/fonts.css') }}">
-  <link rel="stylesheet" href="{{ theme_static('css/normalize.css') }}">
-  <link rel="stylesheet" href="{{ theme_static('css/typography.css') }}">
-  <link rel="stylesheet" href="{{ theme_static('css/layout.css') }}">
-  <link rel="stylesheet" href="{{ theme_static('css/main.css') }}">
-  <link rel="stylesheet" href="{{ theme_static('css/objects.css') }}">
-  <link rel="stylesheet" href="{{ theme_static('css/2x.css') }}">
   <script src="{{ theme_static('js/libs/modernizr-2.5.3.js') }}"></script>
-  
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600">
+
   {% block header_script %}{% endblock %}
 
 </head>
@@ -178,10 +180,11 @@
 
 <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
 <script>window.jQuery || document.write('<script src="{{ theme_static('js/libs/jquery-1.7.1.min.js') }}"><\/script>')</script>
-<script src="{{ theme_static('js/libs/underscore.min.js') }}"></script>
-<script src="{{ theme_static('js/plugins.js') }}"></script>
-<script src="{{ theme_static('js/flipboard.js') }}"></script>
-<script src="{{ theme_static('js/script.js') }}"></script>
+{%- if _theme %}
+  {% assets "js_" + _theme -%}
+    <script src="{{ ASSET_URL }}"></script>
+  {% endassets -%}
+{%- endif %}
 
 {% block footer_script %}{% endblock %}
 
