@@ -19,7 +19,7 @@ function initSponsor () {
         , $detail = $('#sponsors .about-sponsor .sponsor-detail')
         , $container = $('#sponsors .sponsor-block')
         ;
-    $('body').on('click', '#sponsors .sponsor-logos-list a', function(e) {
+    $('body').on('click', '#sponsors .sponsor-logos-list a.sponsor-blurb', function(e) {
         var   $target = $(e.target).closest('dd');
         $detail.empty().append($target.children().clone());
         $.smoothScroll({
