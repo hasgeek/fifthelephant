@@ -395,26 +395,27 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 
 
 dl.centered-key-value dt      {
-    text-transform: uppercase;
     text-align: center;
     margin-top: 2rem;
     margin-bottom: .75rem;
     padding: 0 .5rem;
     color: #888;
 }
+dl.centered-key-value dt.secondary { text-transform: uppercase; }
+
 dl.centered-key-value dd      { padding: 0 .5rem; text-align: center; }
 dl.centered-key-value dt + dd { margin-top: .25rem; }
 
 @media only screen and (min-width: 35em) { 
     dl.centered-key-value dt      {
-        margin-top: 1.725rem;
+        margin-top: 1.53rem;
         margin-bottom: 0;
-        text-transform: lowercase;
         width: 35%;
         float: left;
         text-align: right;
         clear: both;
     }
+    dl.centered-key-value dt.secondary { margin-top: 1.725rem; text-transform: lowercase; }
     dl.centered-key-value dd      { width: 65%; float: right; text-align: left; clear: right; }
     dl.centered-key-value dt + dd { margin-top: 1.53rem; }
 }
@@ -426,7 +427,6 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     dl.centered-key-value dt { width: 45%; }
     dl.centered-key-value dd { width: 55%; }
 }
-
 
 /*-------------------------*/
 /* Homepage                */
@@ -1155,6 +1155,19 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .accomodation { max-width: 55em; margin: auto; }
 .accomodation > article:last-child { margin-bottom: 0 !important; }
 .hotels-list { max-width: 50em; }
+
+dl.centered-key-value.cabs dt {
+    width: 35%;
+    float: left;
+    text-align: right;
+    clear: both; 
+    margin-top: .5rem;  
+}
+dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clear: right; margin-top: .3rem; }
+@media only screen and (min-width: 35em) { 
+    dl.centered-key-value.cabs dt { margin-top: 1rem; text-transform: none; }
+    dl.centered-key-value.cabs dd { margin-top: .8rem; }
+}
 
 
 /*-------------------------*/
