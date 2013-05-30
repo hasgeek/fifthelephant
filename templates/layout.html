@@ -1,0 +1,212 @@
+{% from "baseframe/components.html" import networkbar with context -%}
+<!DOCTYPE html>
+<!--[if lt IE 8]>      <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js wf-active"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>The Fifth Elephant{% if title %} — {{ title }}{% endif %}</title>
+  <meta name="description" content="{% if description %}{{ description }}{% else %}The Fifth Elephant is a community-powered conference on the big data ecosystem, covering the technology and its applications in a range of industries.{% endif %}">
+  <meta name="author" content="HasGeek and friends">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  
+  <meta property="og:title" content="The Fifth Elephant"/>
+  <meta property="og:image" content="{{ request.url_root[:-1] }}{{ theme_static('img/logo.png') }}"/>
+  <meta property="og:url" content="{{ request.url }}"/>
+  <meta property="og:description" content="The Fifth Elephant is a community-powered conference on the big data ecosystem, covering the technology and its applications in a range of industries."/>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  {%- if _theme %}
+    {% assets "css_" + _theme -%}
+      <link rel="stylesheet" href="{{ ASSET_URL }}"/>
+    {% endassets -%}
+  {%- endif %}
+  {%- if config['DEBUG'] %}
+    <link rel="stylesheet" href="{{ theme_static('css/fonts.css') }}">
+  {%- endif %}
+  <link rel="stylesheet" href="/_baseframe/css/networkbar.css">
+  <script src="{{ theme_static('js/libs/modernizr-2.5.3.js') }}"></script>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600">
+
+  {% block header_script %}{% endblock %}
+
+</head>
+<body>
+<div class="hg-bar-holder fill-dark">{% block networkbar %}{{ networkbar(siteid='events', login=false, baseclass='hg-dark') }}{% endblock %}</div>
+<div id="page">
+{% block banner %}
+<header class="clearfix">
+<div class="banner internal fill-yellow resetcoords layer-one clearfix push-one-top centered{% if long_page_nav %} long-page-nav{% endif %}">
+    <h2 class="home-link calm large centered"><a class="link-white-translucent-hover" href="/2013/">The Fifth Elephant</a></h2>
+    <p class="ticket-link body-type event-tickets calm centered">
+      <a
+        class="buy-tickets button small-button"
+        title="Fifth Elephant 2013 Tickets on DoAttend"
+        href="http://fifthelephant.doattend.com/">
+        <span class="conference-dates">Jul 11–13, 2013 / </span>Buy Tickets
+      </a>
+    </p>
+    {% block nav %}
+    <div class="main-nav space-one-top space-line-bottom">
+      <nav class="nospace">
+        <p class="nav-line secondary centered nospace clearfix">
+          <span class="sub-group community">
+            <a href="/2013/community"{% if page == 'community' %} class="active"{% endif %}>Community</a>
+            <span class="nav-line-spacer serif-type italic">powered</span>
+          </span>
+          <span class="sub-group conference">
+            <a href="/2013/conference"{% if page == 'conference' %} class="active"{% endif %}>conference</a>
+            <span class="nav-line-spacer serif-type amp">&amp;</span>
+            <a  href="/2013/workshops"{% if page == 'workshops' %} class="active"{% endif %}>workshops</a>
+          </span>
+          <span class="sub-group bangalore">
+            <span class="nav-line-spacer serif-type italic">in&nbsp;namma</span>
+            <a href="/2013/venue" title="View location in Google Maps"{% if page == 'venue' %} class="active"{% endif %}>Bangalore</a>
+          </span>
+        </p>
+      </nav>
+    </div>
+    {% endblock %}
+    {% block banner_title %}
+      {% if page_caption %}
+      <hr class="half center-block space-three-top space-three-bottom">
+      <h1 class="clearboth centered calm measure-10words center-block space-three {% if banner_title_size %}{{ banner_title_size }}{% else %}giant{% endif %}">
+        <span class="serif-type italic legible occupy capitalize space-one-bottom">{% block banner_title_prefix %}The{% endblock %}</span> {{ page_caption }}
+      </h1>
+      {% endif %}
+    {% endblock %}
+    {% block image_banner %}{% endblock %}
+    {% block page_nav %}
+      <div class="page-nav{% if fixed_width_sticky %} fixed-width-sticky{% endif %} clearfix">
+        <nav class="all-caps nospace sticky-width clearfix">
+          <ul class="nospace clearfix">
+            {% block page_nav_items %}{% endblock %}
+          </ul>
+        </nav>
+      </div>
+    {% endblock %}
+</div><!-- .banner -->
+</header>
+{% endblock %}
+
+<section id="sticky-offset" class="clearfix">
+  <div id="sticky-nav" class="sticky-nav fill-yellow clearfix">
+      <div class="sticky-main-bar clearfix"><div class="on-sticky-content sticky-width clearfix"></div></div>
+      <div class="sticky-page-bar clearfix"><div class="on-sticky-content sticky-width clearfix"></div></div>
+  </div>
+</section>
+
+<section id="content" class="clearfix">
+{% block content %}
+{% endblock %}
+</section>
+
+<footer class="clearfix highlight-links push-four-bottom">
+  {% block sponsor_compact %}
+  <section id="sponsors" class="regular clearfix space-two-top pad-one{% if not sponsor_compact_white %} fill-light{% endif %}">
+    <div class="sponsors-compact center-block space-three-top space-four-bottom v-middle clearfix">
+    <h3 class="legible centered nospace-top space-one-bottom ultrafaded">Sponsors</h3>
+    {% from theme("data/sponsors.html") import sponsors %}
+    {% for type in sponsors if type.category in ('Platinum', 'Gold', 'Silver', 'Bronze') %}
+      {% if type.category == 'Platinum' %}
+        {% set sponsor_columns = '' %}
+      {% elif type.category == 'Gold' %}
+        {% set sponsor_columns = ' thumbnail-columns-three' %}
+      {% elif type.category == 'Corporate' %}
+        {% set sponsor_columns = ' thumbnail-columns-eight' %}
+      {% else %}
+        {% set sponsor_columns = ' thumbnail-columns-five' %}
+      {% endif %}
+      {% for item in type.list %}
+        {% if loop.first %}
+          <section class="sponsor-cat flushleft {{ type.category|lower|replace(" ","-") }} clearfix">
+            <h5 class="all-caps"><span>{{ type.category }}</span></h5>
+            <ul class="thumbnail-columns{{ sponsor_columns }} regular flushleft clearboth clearfix{% if sponsor_compact_white %} fill-light{% else %} fill-white{% endif %}">
+        {% endif %}
+        <li>
+          <a href="{{ item.web.link }}" class="{% if item.logo.orientation == 'portrait' %}contain-height{% else %}contain-width{% endif %}">
+            <img src="{{ theme_static(item.logo.url) }}" alt="{{ item.name }}">
+          </a>
+        </li>
+        {% if loop.last %}
+            </ul>
+          </section>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+    </div>
+  </section>
+  {% endblock %}
+  {% if sponsor_compact_white %}<hr class="seventy center-block">{% endif %}
+  
+  <p class="centered secondary space-two-top space-half-bottom copyright center-block"><span class="wrap-mobile">For further information / sponsorship:</span> <span class="wrap-mobile"><script type="text/javascript">
+  //<![CDATA[
+  <!--
+  var x="function f(x){var i,o=\"\",ol=x.length,l=ol;while(x.charCodeAt(l/13)!" +
+  "=48){try{x+=x;l+=l;}catch(e){}}for(i=l-1;i>=0;i--){o+=x.charAt(i);}return o" +
+  ".substr(0,ol);}f(\")521,\\\"771\\\\syhb100\\\\_220\\\\000\\\\t\\\\010\\\\r\\"+
+  "\\410\\\\710\\\\000\\\\200\\\\200\\\\630\\\\200\\\\t\\\\530\\\\630\\\\720\\" +
+  "\\600\\\\220\\\\t\\\\v]NHU700\\\\x630\\\\QRAs}=>G(+,#.##%\\\"\\\\)!6%7`n~+T" +
+  ":`gr620\\\\]530\\\\GZVXI720\\\\ZH630\\\\530\\\\220\\\\^400\\\\310\\\\010\\\\"+
+  "310\\\\030\\\\310\\\\100\\\\(010\\\\000\\\\310\\\\r\\\\]@=420\\\\91.~700\\\\"+
+  "g*+6:6tq610\\\\%>.&=)'710\\\\yzb.1\\\"\\\\*400\\\\qr230\\\\QQP^r400\\\\LTS_" +
+  "VFA610\\\\]@M300\\\\GNON[FNeKELH230\\\\pjquzw;D*ppf{2p,-&c`n~`zp(qjfotc120\\"+
+  "\\130\\\\\\\"(f};o nruter};))++y(^)i(tAedoCrahc.x(edoCrahCmorf.gnirtS=+o;72" +
+  "1=%y;2=*y))y+521(>i(fi{)++i;l<i;0=i(rof;htgnel.x=l,\\\"\\\"=o,i rav{)y,x(f " +
+  "noitcnuf\")"                                                                 ;
+  while(x=eval(x));
+  //-->
+  //]]>
+  </script>
+  </span></p>
+  
+  <p class="centered secondary space-half-top space-line-bottom copyright center-block"><span class="wrap-mobile"><a href="/" class="spooky">The Fifth Elephant</a> is a conference by <a href="http://hasgeek.com">HasGeek</a>.</p>
+  
+  <p class="centered tiny space-half-top faded center-block attribution">Copyright © 2010-13. All rights reserved.</p>
+  
+  <nav class="tiny space-three all-caps semi-bold">
+    <ul class="centered">
+      <li class="inline"><a href="http://twitter.com/fifthel">Twitter</a></li>
+      <li class="inline"><a href="/blog">Blog</a></li>
+      <li class="inline"><a href="/2013/code-of-conduct">Code of Conduct</a></li>
+    </ul>
+  </nav>
+  
+</footer>
+
+
+</div><!-- #page -->
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+<script>window.jQuery || document.write('<script src="{{ theme_static('js/libs/jquery-1.7.1.min.js') }}"><\/script>')</script>
+{%- if _theme %}
+  {% assets "js_" + _theme -%}
+    <script src="{{ ASSET_URL }}"></script>
+  {% endassets -%}
+{%- endif %}
+
+{% block footer_script %}{% endblock %}
+
+<script>
+// Google Analytics
+if (location.hostname == 'fifthelephant.in') {
+  var _gaq=[['_setAccount','UA-19123154-20'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+}
+</script>
+
+<!-- Prompt IE 6 users to install Chrome Frame. -->
+<!-- chromium.org/developers/how-tos/chrome-frame-getting-started -->
+<!--[if lt IE 7 ]>
+  <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+  <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+<![endif]-->
+
+</body>
+</html>

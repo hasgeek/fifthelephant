@@ -1,0 +1,72 @@
+{% extends theme("layout.html") %}
+
+{% set title = 'Workshops' %}
+{% set description = '' %}
+{% set page_caption = 'Workshops' %}
+{% set page = 'workshops' %}
+
+{% block image_banner %}
+<p class="workshop-banner center-block ir space-two-top">Workshops</p>
+{% endblock %}
+
+
+{% block page_nav_items %}
+   <li><a href="#sessions" class="link-white-hover">Workshops</a></li><!--
+--><!--<li><a href="#schedule" class="link-white-hover">Schedule</a></li>--><!--
+--><li><a href="#proposals" class="link-white-hover">Proposals</a></li>
+{% endblock %}
+
+{% block content %}
+<h2 class="large clearboth centered calm measure-10words center-block space-six-top space-two-bottom">
+  Intense.&nbsp;In-Depth. Hands&nbsp;On.
+</h2>
+<section id="workshops" class="legible clearfix">
+  <article class="prose clearfix">
+    <h1 class="visuallyhidden">Introduction</h1>
+    <div class="measure-10words pad-one center-block">
+      <p>
+        The preliminary day of The Fifth Elephant 2013 - 11th July - provides the best opportunity to dive into various languages and tools used for <a href="http://funnel.hasgeek.com/fifthel2013/652-big-data-real-time-processing-and-storm" target="_blank">data analysis</a> and visualization, and understand how they compare with each other.
+      </p> 
+      <p class="regular">
+        Learn about open source frameworks and tools such as <a href="http://funnel.hasgeek.com/fifthel2013/707-analytics-using-hadoop-ecosystem-on-aws" target="_blank">Pig, Hive</a>, <a href= "http://funnel.hasgeek.com/fifthel2013/678-howto-run-a-hadoop-cluster-on-a-laptop" target="_blank">Hadoop</a>; commercial solutions (sponsored), programming languages such as R, <a href="http://funnel.hasgeek.com/fifthel2013/689-neo4j-graph-workshop" target="_blank">databases</a> and visualization techniques and tricks through slides, demonstrations and partially hands-on activities. There will be ample opportunity to clarify doubts regarding the limitations and possibilities of these tools and frameworks. 
+      </p> 
+      <p class="regular">8 sessions, 90-120 mins each. <a href="http://fifthelephant.doattend.com/" target="_blank">Limited seats available.</a></p>
+    </div>
+  </article>
+</section>
+
+<section id="sessions" class="space-four-top fill-light legible clearfix">
+  {% with session_kind = 'Workshops' %}
+  {% from theme("data/featured-workshops.html") import featured_workshops as featured %}
+  {% include theme("partials/_featured_sessions.html") %}
+  {#{% from theme("data/workshops.html") import workshops as sessions %}#}
+  {#{% include theme("partials/_sessions.html") %}#}
+  {% endwith %}
+</section>
+
+{#<!--<section id="schedule" class="schedule space-two push-four legible">
+  <h2 class="centered calm space-two">Schedule</h2>
+  <div class="schedule-table-container center-block pad-one regular">
+    {% include theme("partials/_schedule_table.html") %}
+  </div>
+</section>-->#}
+  
+<section id="proposals" class="push-four">
+  <article class="clearfix">
+    <div class="measure-8words center-block">
+    <h2 class="calm centered space-two">Workshop Proposals</h2>
+    {% for proposal in node.proposals() if proposal['section_name'] == 'workshops' %}
+      {% if loop.first %} 
+        <ul id="proposals" class="proposals regular space-four-bottom">
+      {% endif %}
+      {% include theme("partials/_proposal_item.html") %}
+      {% if loop.last %} </ul> {% endif %}
+    {% endfor %}
+    <p class="centered space-six-top">
+      <a class="button" href="http://funnel.hasgeek.com/fifthel2013/">Propose a Session</a>
+    </p>
+    </div>
+  </article>
+</section>
+
+{% endblock %}

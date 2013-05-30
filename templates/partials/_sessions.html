@@ -1,0 +1,33 @@
+{% for session in sessions %}
+  {% if loop.first %}
+  <article class="push-two-bottom highlight-links clearfix">
+    <h2 class="centered calm space-two visuallyhidden">{{ session_kind }}</h2>
+    <ul class="sessions center-block thumbnail-columns thumbnail-columns-four-wide video-thumbnails regular clearfix">
+  {% endif %}
+    <li class="clearfix">
+      {% if session.preview %}
+      <a class="occupy block-link space-3q-bottom" href="{{ session.preview.link }}">
+        <p class="poster video contain-width">
+            <img alt="Watch Preview" src="{{ theme_static(session.preview.poster) }}" width="350" height="197">
+        </p>
+      </a>
+      {% elif session.speaker.photo %}
+      <p class="poster contain-width">
+          <img alt=" " src="{{ theme_static(session.speaker.photo) }}" width="350" height="197">
+      </p>
+      {% endif %}
+      <hgroup>
+        <h3 class="capitalize">{% if session.funnel %}<a href="{{ session.funnel }}" class="spooky">{% endif %}{{ session.title }}{% if session.funnel %}</a>{% endif %}</h3>
+        <h4 class="space-half-top nospace-bottom secondary">{{ session.speaker.name }}</h4>
+      </hgroup>
+      <div class="session-summary space-half-top nospace-bottom clearfix">{{ session.summary|safe }}</div>
+      <ul class="session-meta-links capitalize center-block space-1q-top space-line-bottom clearfix">
+        {% if session.funnel %}<li><a href="{{ session.funnel }}" class="capitalize tiny">View funnel proposal</a></li>{% endif %}
+        {% if session.preview %}<li><a href="{{ session.preview.link }}" class="capitalize tiny">Watch preview</a></li>{% endif %}
+      </ul>      
+    </li>
+  {% if loop.last %}
+    </ul>
+  </article>
+  {% endif %}
+{% endfor %}

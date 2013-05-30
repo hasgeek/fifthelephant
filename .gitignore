@@ -14,3 +14,4 @@ instance/development.py
 instance/production.py
 *.packed.css
 *.packed.js
+static/css/fonts.css

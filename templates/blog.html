@@ -1,0 +1,34 @@
+{% extends theme("layout-compact-header.html") %}
+
+{% set title = node.title %}
+{% set description = node.description %}
+{% set page_caption = 'Blog' %}
+
+{% block page_nav %}{% endblock %}
+
+{% block page_meta %}<span class="wrap-mobile">All Stories, Updates and Announcements</span> <span class="wrap-mobile">go in <a href="/blog" class="spooky nopad">this Blog</a></span>{% endblock %}
+
+{% block content %}
+<section class="blog space-six">
+    {# <div class="description centered">{{ node.content }}</div> #}
+    <ul class="blogpost-list measure-10words contain-width pad-one center-block">
+    {% for post in feed() -%}
+      <li>
+        <article>
+          <header class="space-two-bottom">
+            <h2 class="calm space-half-bottom">
+              <a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}">{{ post.title }}</a>
+            </h2>
+            <p class="calm secondary space-half-top"><a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}" class="spooky"><time>{{ post.published_at|longdate }}</time></a>{% if node.author %} <span class="serif-type italic faded pad-half">by</span> {{ post.author }}{% endif %}</p>
+          </header>
+          <div class="prose">
+          {{ post.content }}
+          </div>
+        </article>
+      </li>
+    {%- else -%}
+      <li>(No blog entries have been written so far)</li>
+    {%- endfor %}
+    </ul>
+</section>
+{% endblock %}

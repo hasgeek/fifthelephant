@@ -1,6 +1,6 @@
 
-
 function setupFlipboard () {
+    if(!$('.flipboard').length) return;
     active_board = new Flipboard();
     active_board.setup();
     
@@ -11,30 +11,174 @@ function setupFlipboard () {
     
 }
 
-// Resize twitter stream for touch based devices
-function resizeTwitterTimeline () {
-    $("iframe.twitter-timeline").contents().find(".stream").height(Math.max($(window).height()/2,180));
-    $("iframe.twitter-timeline").height($("iframe.twitter-timeline").contents().find(".twitter-timeline").height()+2);
-}
-$(window).load(resizeTwitterTimeline);
-
-// Handle expansion of bio for low width screens
-function initShortenedBio () {
-    $('.committee li').one('click', '.bio', function(e) {
-        if (window.matchMedia && !window.matchMedia("(min-width: 30em)").matches || $(window).width() < 480) {
-            var $member = $(e.target).closest('li');
-            $member.addClass('expand');
-            $('body').animate({ scrollTop: $member.offset().top });
-        }
+// Sponsor Interaction
+function initSponsor () {
+    if(!$('#sponsors').length) return;
+    var   $logos = $('#sponsors .sponsor-logos')
+        , $about = $('#sponsors .about-sponsor')
+        , $detail = $('#sponsors .about-sponsor .sponsor-detail')
+        , $container = $('#sponsors .sponsor-block')
+        ;
+    $('body').on('click', '#sponsors .sponsor-logos-list a.sponsor-blurb', function(e) {
+        var   $target = $(e.target).closest('dd');
+        $detail.empty().append($target.children().clone());
+        $.smoothScroll({
+            scrollTarget: $container,
+            offset: -20,
+            beforeScroll: hideSticky,
+            afterScroll: function() { 
+                $container.addClass('squeeze');
+                if (window.matchMedia && window.matchMedia('(min-width: 50em)').matches || $(window).width() >= 800) $about.show(400);
+                else $about.slideDown(400);
+                unhideSticky();
+            }
+        });
+        $('dd.active', $logos).removeClass('active');
+        $target.addClass('active');
+        e.preventDefault();
+        return false;
+    });
+    $('body').on('click', '#sponsors .about-sponsor a.close', function(e) {
+        $.smoothScroll({ scrollTarget: $container, offset: -20, beforeScroll: hideSticky, afterScroll: unhideSticky });
+        $('dd.active', $logos).removeClass('active');
+        if (window.matchMedia && window.matchMedia('(min-width: 50em)').matches || $(window).width() >= 800) $about.hide(400, function() { $container.removeClass('squeeze'); $detail.empty(); });
+        else $about.slideUp(400, function() { $container.removeClass('squeeze'); $detail.empty(); });
         e.preventDefault();
         return false;
     })
 }
 
+// In-page Navigation
+function initInPageNav () { 
+    $('body').on('click', '.page-nav a', function(e) {
+        var   target = $(e.target).closest('.page-nav a')[0]
+            , $section = $(target.hash)
+            ;
+        if(!$section.length) return;
+        if($section.offset().top < $(window).scrollTop())
+            $.smoothScroll({ scrollTarget: target.hash, beforeScroll: hideSticky, afterScroll: unhideSticky });
+        else $.smoothScroll({ scrollTarget: target.hash, beforeScroll: hideSticky, afterScroll: unhideSticky });
+        e.preventDefault();
+    });
+    $('body').on('click', '.sticky-main-bar a.active', function(e) {
+        $.smoothScroll({ scrollTarget: '#page', beforeScroll: hideSticky, afterScroll: unhideSticky });
+        e.preventDefault();
+    });
+}
+
+// Sticky Navigation
+window.ios = navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
+function hideSticky() {
+    window.HIDE_STICKY = true;
+    if(window.ios) $('#sticky-nav').css('top', -$(window).height());
+}
+function unhideSticky() { setTimeout(function(){ window.HIDE_STICKY = false; }, 0); }
+function initStickyNav () {
+    window.HIDE_STICKY = false;
+    var   $sticky_offset = $('#sticky-offset')
+        , $sticky_nav = $('#sticky-nav')
+        , transition = {}
+        , last_scroll = 0
+        , curr_scroll
+        , diff
+        , page_offset
+        , height
+        , top
+        ;
+    $('#sticky-nav .sticky-main-bar .on-sticky-content').empty();
+    $('#sticky-nav .sticky-page-bar .on-sticky-content').empty();
+    $('.home-link').clone().appendTo('#sticky-nav .sticky-main-bar .on-sticky-content');
+    $('.main-nav nav').clone().appendTo('#sticky-nav .sticky-main-bar .on-sticky-content');
+    $('.ticket-link').clone().appendTo('#sticky-nav .sticky-main-bar .on-sticky-content');
+    $('.page-nav').clone().appendTo('#sticky-nav .sticky-page-bar .on-sticky-content');
+    $('body').addClass('sticky');
+    top = -$sticky_nav.height()-3;
+    $sticky_nav.css('top', top);
+    function revealSticky(e) {
+        curr_scroll = $(window).scrollTop();
+        if(window.HIDE_STICKY) top = -$sticky_nav.height()-3;
+        else {
+            diff = last_scroll-curr_scroll;
+            page_offset = curr_scroll - $sticky_offset.offset().top;
+            if (diff < 0) top = Math.max(top+diff, -$sticky_nav.height()-3);
+            else if(page_offset > 2*$sticky_nav.height()) top = Math.min(top+diff, 0);
+            else top = Math.min(top-diff, 0);
+        }
+        $sticky_nav.css('top', top);
+        last_scroll = curr_scroll;
+    }
+    function iOSRevealSticky(e) {
+        curr_scroll = e.originalEvent.touches[0].clientY;
+        if(window.HIDE_STICKY) top = -$sticky_nav.height()-3;
+        else {
+            diff = last_scroll-curr_scroll;
+            if (diff > -70 && diff < 10) return;
+            page_offset = $(window).scrollTop() - $sticky_offset.offset().top;
+            if (diff > 0) top = -$(window).height();
+            else if(page_offset > 2*$sticky_nav.height()) top = 0;
+            else top = -$(window).height();
+        }
+        $sticky_nav.css('top', top);
+        last_scroll = curr_scroll;
+    }
+    if (window.ios) {
+        // IOS freezes the DOM while scrolling. Hence…
+        $(window).on('touchstart', function(e) { last_scroll = e.originalEvent.touches[0].clientY; });
+        $(window).on('touchmove', iOSRevealSticky);
+        transition[Modernizr.prefixed('transition')] = 'top .6s linear';
+        $sticky_nav.css(transition);
+        // Hide fixed nav when page is zoomed-in
+        $(window).on('gesturechange', function(e) {
+            if (e.originalEvent.scale > 1.02) $sticky_nav.hide();
+            else $sticky_nav.show();
+        });
+    }
+    else {
+        transition[Modernizr.prefixed('transition')] = 'top .2s linear';
+        $sticky_nav.css(transition);
+        $(window).on('scroll', revealSticky);
+        // Hide fixed nav when page is zoomed-in
+        $(window).on('touchmove', function(e) {
+            if($(document).width() / window.innerWidth > 1.02) $sticky_nav.hide();
+            else $sticky_nav.show();
+        });
+    }
+}
+
+
+// Replace Venue Images
+function replaceVenueImages () {
+    var $images = $('img.venuephoto');
+    if(!$images.length) return;
+    
+    function runTests() {
+        $images.each(function() {
+            var   $img = $(this)
+                , tests = $img.data('src')
+                , current = $img.data('src-index') >= 0 ? $img.data('src-index') : -1
+                , index
+                ;
+            if(!tests) return;
+            $.each(tests, function(i) { if (window.matchMedia(this.test).matches) index = i });
+            if (index > current) {
+                $img.attr('src', tests[index].src);
+                $img.data('src-index', index);
+            }
+        })
+    }
+    if (window.matchMedia) {
+        runTests();
+        $(window).on('resize', runTests);
+        $('.venue-showcase').addClass('stretch').show();
+    } 
+}
+
 function main () {
+    initStickyNav();
+    initInPageNav();
     setupFlipboard();
-    $(window).on('resize', resizeTwitterTimeline);
-    initShortenedBio();
+    initSponsor();
+    replaceVenueImages();
 }
 
 

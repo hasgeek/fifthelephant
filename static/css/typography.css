@@ -12,6 +12,7 @@ h2,
 h3,
 .title-type     { font-family: Bree Serif, FF Tisa Web Pro, Georgia, serif; }
 .serif-type     { font-family: Baskerville, Palatino, 'Book Antiqua', Constantia, 'URW Palladio L'; }
+.monospace      { font-family: monospace; }
 
 .wf-active body,
 .wf-active .body-type      { font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif; }
@@ -28,6 +29,7 @@ html            { font-size: 14px; line-height: 1.5 }
 
 
 .massive        { font-size: 9.00rem; line-height: 0.8000; text-rendering: optimizeLegibility; }
+.giant          { font-size: 4.000rem; line-height: 1; text-rendering: optimizeLegibility; }
 .huge           { font-size: 2.500rem; line-height: 1.1667; }
 .large          { font-size: 2.000rem; line-height: 1.5000; }
 .legible        { font-size: 1.250rem; line-height: 1.5000; }
@@ -40,6 +42,7 @@ html            { font-size: 14px; line-height: 1.5 }
     html        { font-size: 18px; }
     .huge       { font-size: 3.000rem; line-height: 1.1667; }
     .massive    { font-size: 8.450rem; }
+    .giant      { font-size: 4.500rem; }    
 }
 @media only screen and (min-width: 45em) {
     .massive    { font-size: 9.000rem; }
@@ -69,12 +72,15 @@ pre code { font-family: Menlo, 'Bitstream Vera Sans Mono', Monaco, 'Courier New'
 
 .thin           { font-weight: 300; }
 .calm           { font-weight: normal; }
+.semi-bold      { font-weight: 600; }
 .bold           { font-weight: bold;   }
 .italic         { font-style: italic; }
 .no-italic      { font-style: normal; }
 
+.small-caps     { font-variant: small-caps; }
 .all-caps       { text-transform: uppercase; }
 .all-lower      { text-transform: lowercase; }
+.capitalize     { text-transform: capitalize; }
 .strike         { text-decoration: line-through; }
 .no-underline   { text-decoration: none; }
 

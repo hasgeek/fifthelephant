@@ -1,69 +1,29 @@
-{% from "baseframe/components.html" import networkbar with context -%}
-<!DOCTYPE html>
-<!--[if lt IE 8]>      <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  
-  <title>The Fifth Elephant</title>
-  <meta name="description" content="The Fifth Elephant is a community-powered conference on the big data ecosystem, covering the technology and its applications in a range of industries.">
-  <meta name="author" content="HasGeek and friends">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  
-  <meta property="og:title" content="The Fifth Elephant"/>
-  <meta property="og:image" content="{{ request.url_root[:-1] }}{{ theme_static('img/logo.png') }}"/>
-  <meta property="og:url" content="{{ request.url }}"/>
-  <meta property="og:description" content="The Fifth Elephant is a community-powered conference on the big data ecosystem, covering the technology and its applications in a range of industries."/>
-  
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/_baseframe/css/networkbar.css">
-  <link rel="stylesheet" href="{{ theme_static('css/normalize.css') }}">
-  <link rel="stylesheet" href="{{ theme_static('css/typography.css') }}">
-  <link rel="stylesheet" href="{{ theme_static('css/layout.css') }}">
-  <link rel="stylesheet" href="{{ theme_static('css/main.css') }}">
-  <link rel="stylesheet" href="{{ theme_static('css/objects.css') }}">
-  <link rel="stylesheet" href="{{ theme_static('css/2x.css') }}">
-  <script src="{{ theme_static('js/libs/modernizr.custom.12911.js') }}"></script>
+{% extends theme("layout.html") %}
 
-  <script type="text/javascript" src="//use.typekit.net/ftd4kro.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-</head>
-<body>
-<div class="fill-dark">{% block networkbar %}{{ networkbar(siteid='events', login=false, baseclass='hg-dark') }}{% endblock %}</div>
-<div id="page">
+{% set title = '' %}
+{% set description = '' %}
+{% set long_page_nav = true %}
+{% set fixed_width_sticky = true %}
 
+{% block page_nav_items %}
+   <li><a href="#announcements" class="link-white-hover">Announcements</a></li><!--
+--><li><a href="#tickets" class="link-white-hover">Ticket Details</a></li><!--
+--><li><a href="#last-year" class="link-white-hover">2012 Edition</a></li><!--
+--><li><a href="#sponsors" class="link-white-hover">Sponsors</a></li><!--
+--><li><a href="#hasgeek" class="link-white-hover">Behind The Scenes</a></li><!--
+--><li><a href="/2013/code-of-conduct" class="link-white-hover">Code of Conduct</a></li>
+{% endblock %}
 
-
-<div class="banner resetcoords layer-one clearfix">
+{% block banner %}
+<div class="banner long-page-nav fill-yellow home resetcoords clearfix">
   <header class="clearfix">
-    <nav>
-      <p class="nav-line serif-type secondary centered">
-        <span class="sub-group community">
-          <a href="#community">Community</a>
-          <span class="nav-line-spacer italic">powered</span>
-        </span>
-        <span class="sub-group conference">
-          <a class="link-silent-hover">conference</a>
-          <span class="nav-line-spacer amp">&amp;</span>
-          <a class="link-silent-hover">workshops</a>
-        </span>
-        <span class="sub-group bangalore">
-          <span class="nav-line-spacer italic">in&nbsp;namma</span>
-          <a href="http://goo.gl/maps/PvXY" title="View location in Google Maps">Bangalore</a>
-        </span>
-      </p>
-    </nav>
+    
+    <div class="space-three">{% block nav %}{{ super() }}{% endblock %}</div>
     
     <hr class="half center-block space-three-bottom">
-    
-    
     <hgroup class="centered clearfix">
-      <h1 class="calm huge space-two-top nospace-bottom">
-        <a class="link-silent-hover" href="./">
+      <h1 class="home-link calm huge space-two-top nospace-bottom">
+        <a class="link-silent-hover active" href="./">
           The Fifth Elephant
         </a>
       </h1>
@@ -76,8 +36,8 @@
         </a>
         <a 
           title="View location in Google Maps"
-          href="http://goo.gl/maps/PvXY"
-          class="ultrafaded link-white-hover">
+          href="/2013/venue#conference"
+          class="ultrafaded venue link-white-hover">
           <abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr>
           Convention Centre
         </a>
@@ -87,7 +47,7 @@
       </h2>
     </hgroup>
     
-    <p class="centered legible space-two-bottom">
+    <p class="ticket-link event-tickets centered legible space-two-bottom">
       <a
         class="button button-primary min-measure-3words"
         title="Fifth Elephant 2013 Tickets on DoAttend"
@@ -97,12 +57,17 @@
     </p>
   </header>
   
+  {% block image_banner %}
   <p class="big-data center-block ir space-two-top">Big Data</p>
+  {% endblock %}
+  
+  {% block page_nav %}{{ super() }}{% endblock %}
+  
 </div><!-- .banner -->
+{% endblock %}
 
-
-
-<section class="measure-10words pad-one center-block legible space-six prose clearfix">
+{% block content %}
+<section class="measure-10words pad-one center-block legible space-six-top space-three-bottom prose clearfix">
   <h1 class="visuallyhidden">Introduction</h1>
   <p>
     In 2013, commodity hardware and computing capacity for storing and processing large
@@ -118,86 +83,49 @@
   </p>
 </section>
 
-
-
-<section id="community" class="legible space-six-top clearfix">
-  <article class="prose clearfix">
-    <h1 class="centered calm measure-10words center-block">
-      Of&nbsp;the&nbsp;Community,
-      By&nbsp;the&nbsp;Community,
-      For&nbsp;the&nbsp;Community
-    </h1>
-    
-    <div class="measure-10words pad-one center-block">
-      <p>
-        One of the unique features of The Fifth Elephant (and <a href="http://hasgeek.com/">HasGeek</a> events in general) is the community’s defining role. The speakers, the curators and the attendees are all from the same community.
-      </p>
-      <p class="regular">
-        Anyone is welcome to <a href="http://funnel.hasgeek.com/fifthel2013/">propose a session</a>. Participants who have purchased conference tickets will vote on session proposals. The Programme Committee steering The Fifth Elephant 2013 will also vote on submissions and balance the community voting. The Programme Committee consists of data analysts and big data practitioners.
-      </p>
-      <p class="regular">
-        Proposal submissions are reviewed on the basis of use cases, how a problem was solved, or why a particular technology and/or approach was adopted for solving the problem. Proposers can refer to open source technologies and tools available for storage, analytics and visualisation in their submissions.
-      </p>
-      
-      <p class="centered space-line">
-        <a class="button" href="http://funnel.hasgeek.com/fifthel2013/">Propose a Session</a>
-      </p>
-    </div>
-  </article>
-  
-  <article class="space-two-top clearfix">
-    <div class="prose measure-10words pad-one center-block">
-      <h2 class="centered calm space-two-top space-one-bottom">The Programme Committee</h2>
-      <p class="regular">
-        This year’s programme committee boasts of experience and expertise from different spectrums of Big Data &mdash; practitioners working on storage and cloud computing as well as architects and technologists working on analytics and business intelligence. 
-      </p>
-    </div>
-    
-    <ul class="committee thumbnail-columns thumbnail-columns-four-wide regular clearfix fill-dark push-two-top push-one-bottom space-two-top nospace-bottom">
-      <li class="clearfix">
-        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/gopal.jpg') }}" width="150" height="150"></p>
-        <hgroup>
-          <h3>Gopal Vijayraghavan</h3>
-          <h4>Hortonworks</h4>
-        </hgroup>
-        <p class="bio">Gopal has spent many years making PHP faster at Yahoo! and Zynga. He thinks about performance problems as opportunities to contribute. He has turned towards Hadoop for newer challenges and is chasing performance at both ends of the scale spectrum at Hortonworks.</p>
-        <p class="bio">Beyond work, he’s a photographer by day, biker by sunset, and by night he posts <a href="http://twitter.com/t3rmin4t0r">random thoughts</a>.</p>
-      </li>
-      <li class="clearfix">
-        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/govind.jpg') }}" width="150" height="150"></p>
-        <hgroup>
-          <h3>Govind Kanshi</h3>
-          <h4>Microsoft</h4>
-        </hgroup>
-        <p class="bio">Govind works at Microsoft Technology Center (MTC) in Bangalore helping customers adopt technology platform, ranging from applied software solutions and processes. He can be usually found ‘learning’ more about ‘how things work’ and demystifying them in pragmatic way. His expertise lies in developing applications and finding/fixing bottlenecks. Data excites him, and terms like startburst and byzantine evoke his curiosity.</p>
-        <p class="bio">Outside work, food, books and movies, travel keeps him busy. He <a href="http://govindkanshi.wordpress.com">blogs occasionally</a>.</p>
-      </li>
-      <li class="clearfix">
-        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/joydeep.jpg') }}" width="150" height="150"></p>
-        <hgroup>
-          <h3>Joydeep Sen Sharma</h3>
-          <h4>Qubole</h4>
-        </hgroup>
-        <p class="bio">Joydeep is a co-founder at Qubole and heads their India development team. Prior to starting Qubole, he worked at Facebook where he boot-strapped the data processing ecosystem based on Hadoop, started the Apache Hive project and led the Data Infrastructure team. Joydeep studied Computer Science at IIT-Delhi and University of Pittsburgh. He has previously worked at Oracle, Netapp and Yahoo!</p>
-        <p class="bio">Joydeep holds numerous patents, has many published papers and has been both speaker and panelist at Hadoop summits and at other Silicon Valley conferences.</p>
-      </li>
-      <li class="clearfix">
-        <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/sesh.jpg') }}" width="150" height="150"></p>
-        <hgroup>
-          <h3>Srinivasan Seshadri (Sesh)</h3>
-          <h4>Boltell</h4>
-        </hgroup>
-        <p class="bio">Sesh has significant expertise in internet technologies and is a well-known database and information retrieval researcher. He spent the initial part of his career in academia and research, first at IIT Bombay and then at Bell Labs, Murray Hill. Subsequently, Sesh returned to India as the founding CEO of Strand Genomics (now Strand Life Sciences). He was also the founding CTO of Yahoo! India.</p>
-        <p class="bio">Sesh currently runs Boltell Infomedia, a tech-savvy company with a focus on emerging technologies and building out next-generation software.</p>
-      </li>
+{% from theme("data/highlights.html") import highlights %}
+<section id="announcements" class="announcements pad-one legible center-block space-four clearfix">
+  <h1 class="calm centered space-two large">
+    Hightlights
+  </h1>
+  <div class="tile-block clearfix">    
+    <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom">
+      {% for tile in highlights.tiles %}
+      <li class="{{ tile.background }}"><a class="occupy right-aligned link-white-hover unhighlight" href="{{ tile.link }}"><span class="wrap">{{ tile.title|safe }}</span> <span class="regular wrap">{{ tile.meta|safe }}</span></a></li>
+      {% endfor %}
     </ul>
-  </article>
+  </div>
 </section>
+<!--<section id="announcements" class="announcements {% if highlights['on-the-side'] %}side-by-side {% endif %}pad-one legible center-block space-four clearfix">
+  <div class="tile-block clearfix">
+    <h2 class="calm visuallyhidden">Highlights</h2>
+    <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom space-three-top">
+      {% for tile in highlights.tiles %}
+      <li class="{{ tile.background }}"><a class="occupy right-aligned link-white-hover unhighlight" href="{{ tile.link }}"><span class="wrap">{{ tile.title|safe }}</span> <span class="regular wrap">{{ tile.meta|safe }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="announcements-block clearfix">
+    <h2 class="calm nospace">Announcements</h2>
+    <ul class="blog-latest-list highlight-links clearfix nospace measure-8words center-block">
+    {% for post in feed(limit=4) -%}
+      <li class="space-two-top">
+        <h4 class="calm"><a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}" class="gap-half-right">{{ post.title }}</a> <span class="body-type regular faded nowrap">{{ post.published_at|longdate }}</span></h4>
+        <p class="regular space-half">{{ post.description }}</p>
+      </li>
+      {% if loop.last %}
+        <li class="flushright"><a href="/blog" class="gap-half-right faded regular">More &rarr;</a></li>
+      {% endif %}
+    {%- else -%}
+      <li>(No blog entries have been written so far)</li>
+    {%- endfor %}
+    </ul>
+  </div>
+</section>-->
 
 
-
-<section id="tickets" class="fill-light push-three clearfix">
-  <h1 class="calm centered space-four-top space-two-bottom large">
+<section id="tickets" class="fill-light push-three space-six-top clearfix pad-one">
+  <h1 class="calm centered space-two large">
     Tickets
   </h1>
   <ul class="ticket-columns clearfix">
@@ -211,13 +139,13 @@
           <li>Two parallel tracks of hands-on workshop sessions</li>
           <li>Breakfast &amp; Lunch</li>
         </ul>
-        <p class="centered space-line-top">
+        <p class="centered space-line-top pad-one limited">
           <span class="legible bold">
             Rs&nbsp;1,500
           </span>
           <br>
           <span class="secondary faded">
-            Available until July&nbsp;10<sup>th</sup>
+            Available until July 10<sup>th</sup>
           </span>
         </p>
       </div>
@@ -236,7 +164,7 @@
           <li>Breakfast &amp; Lunch</li>
           <li>Event party</li>
         </ul>
-        <p class="centered space-line-top">
+        <p class="centered space-line-top pad-one limited">
           <del class="ultrafaded gap-1q-right">
             Rs&nbsp;4000</del>
           <span class="legible bold">
@@ -263,7 +191,7 @@
           <li>Ticket sponsorship credit</li>
           <li>Custom invoice</li>
         </ul>
-        <p class="centered space-line-top">
+        <p class="centered space-line-top pad-one">
           <span class="legible bold">Rs&nbsp;6,000</span>
           <br>
           <span class="secondary faded">
@@ -274,7 +202,7 @@
     </li>
   </ul>
   
-  <p class="centered legible space-three-top space-six-bottom">
+  <p class="centered legible space-three">
     <a
       class="button button-primary min-measure-3words"
       title="Fifth Elephant 2013 Tickets on DoAttend"
@@ -288,6 +216,52 @@
   </p>
 </section>
 
+<section id="community" class="legible push-two space-four clearfix">  
+  <article class="clearfix">
+    <h2 class="centered calm nospace-top space-two-bottom space-three-top pad-one">The Programme Committee</h2>
+    <ul class="committee thumbnail-columns thumbnail-columns-four-narrow regular clearfix nospace">
+      <li class="clearfix">
+        <a class="occupy block-link" href="./community#gopal">
+          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/gopal.jpg') }}" width="150" height="150"></p>
+          <hgroup>
+            <h3>Gopal Vijayraghavan</h3>
+            <h4>Hortonworks</h4>
+          </hgroup>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a class="occupy block-link" href="./community#govind">
+          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/govind.jpg') }}" width="150" height="150"></p>
+          <hgroup>
+            <h3>Govind Kanshi</h3>
+            <h4>Microsoft</h4>
+          </hgroup>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a class="occupy block-link" href="./community#joydeep">
+          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/joydeep.jpg') }}" width="150" height="150"></p>
+          <hgroup>
+            <h3>Joydeep Sen Sharma</h3>
+            <h4>Qubole</h4>
+          </hgroup>
+        </a>
+      </li>
+      <li class="clearfix">
+        <a class="occupy block-link" href="./community#sesh">
+          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/sesh.jpg') }}" width="150" height="150"></p>
+          <hgroup>
+            <h3>Srinivasan Seshadri (Sesh)</h3>
+            <h4>Boltell</h4>
+          </hgroup>
+        </a>
+      </li>
+    </ul>
+    <p class="centered space-two-top space-three-bottom regular">
+      <a class="button" href="./community#committee">More about the committee</a>
+    </p>
+  </article>
+</section>
 
 
 <section id="last-year" class="last-year legible nospace clearfix">
@@ -313,7 +287,7 @@
       </script>
     </div>
     
-    <article class="prose measure-10words pad-one space-six center-block">
+    <article class="prose measure-10words pad-one space-four-top space-two-bottom center-block">
         <p>
           <a href="http://fifthelephant.in/2012/">Last year’s edition</a> of The Fifth Elephant was the first conference in India which focused on big data and analytics.
         </p>
@@ -330,9 +304,9 @@
       </div>
     </article>
     
-    <div class="fill-dark push-one">
-      <h2 class="centered calm measure-10words center-block space-two-top space-two-bottom">Featured Talks from 2012</h2>
-      <ul class="thumbnail-columns thumbnail-columns-four regular clearfix">
+    <div class="push-one">
+      <h2 class="centered calm measure-10words center-block space-two">Featured Talks from 2012</h2>
+      <ul class="thumbnail-columns thumbnail-columns-four video-thumbnails regular clearfix">
         <li class="clearfix">
           <a class="occupy block-link" href="http://hasgeek.tv/fifthelephant/2012-2/61-karthik-visweswariah-building-watson-a-brief-overview-of-deepqa-and-the-jeopardy-challenge">
             <p class="poster video contain-width">
@@ -340,7 +314,7 @@
             </p>
             <hgroup>
               <h3>Building Watson — A Brief Overview of DeepQA</h3>
-              <h4>Karthik Visweswariah</h4>
+              <h4 class="space-1q-top nospace-bottom">Karthik Visweswariah</h4>
             </hgroup>
           </a>
         </li>
@@ -351,7 +325,7 @@
             </p>
             <hgroup>
               <h3>Exponential Growth Models</h3>
-              <h4>Ashok Banerjee</h4>
+              <h4 class="space-1q-top nospace-bottom">Ashok Banerjee</h4>
             </hgroup>
           </a>
         </li>
@@ -362,7 +336,7 @@
             </p>
             <hgroup>
               <h3>Visualizing Text</h3>
-              <h4>Anand S.</h4>
+              <h4 class="space-1q-top nospace-bottom">Anand S.</h4>
             </hgroup>
           </a>
         </li>
@@ -373,99 +347,137 @@
             </p>
             <hgroup>
               <h3>Aadhaar — World’s Largest Biometric Identity Platform</h3>
-              <h4>Dr. Pramod Varma <span class="amp">&amp;</span> Regunath Balasubramanian</h4>
+              <h4 class="space-1q-top nospace-bottom">Dr. Pramod Varma <span class="amp">&amp;</span> Regunath Balasubramanian</h4>
             </hgroup>
           </a>
         </li>
       </ul>
       
-      <p class="centered space-two">
+      <p class="centered space-two regular">
         <a class="button" href="http://hasgeek.tv/fifthelephant/">More on HasGeek TV</a>
       </p>
     </div>
 </section>
 
-<section id="sponsorship" class="sponsorship legible fill-light nospace clearfix">
-  <article class="space-four-top clearfix">
-    <div class="prose measure-10words center-block">
-      <h1 class="centered calm measure-10words center-block visuallyhidden">Sponsor Us!</h1>
-      <p class="pitch centered">
-          Startups to Fast Growing Companies<br>
-          Developers to Chiefs in-charge<br>
-          Under One Roof
+<section id="sponsors" class="fill-dark legible space-six-top clearfix">
+  <div class="sponsors clearfix center-block">
+  <div class="space-six-top space-four-bottom">
+    <h1 class="centered calm measure-10words center-block space-three-bottom">Sponsors</h1>
+    <div class="sponsor-block center-block clearfix">
+    <article class="about-sponsor nospace-top clearfix pad-two space-line-bottom resetcoords highlight-links js-hidden">
+      <div class="sponsor-detail"></div>
+      <p class="all-caps space-three-bottom clearfix"><a class="close" href="#">Close</a></p>
+    </article>
+    <article class="sponsor-logos clearfix">
+      <div class="sponsor-logos-list clearfix">
+      <dl class="nospace v-middle clearfix">
+        {% from theme("data/sponsors.html") import sponsors %}
+        {% for type in sponsors %}
+          {% for item in type.list %}
+            {% if loop.first %}<dt class="{{ type.category|lower|replace(" ","-") }}"><span>{{ type.category }}</span></dt>{% endif %}
+            <dd class="{{ item.logo.size }} {% if item.logo.orientation == 'portrait' %}contain-height{% else %}contain-width{% endif %} {{ type.category|lower|replace(" ","-") }}">
+              <h5 class="sponsor-logo"><a href="{{ item.web.link }}" class="unhighlight{% if item.blurb %} sponsor-blurb{% endif %}"><img src="{{ theme_static(item.logo.url) }}" alt=" "></a></h5>
+              <h4 class="legible sponsor-name">{{ item.name }}</h4>
+              <p class="secondary all-caps sponsor-link"><a href="{{ item.web.link }}">{{ item.web.display }}</a></p>
+              {% if item.blurb %}
+              <hr class="invisible">
+              <div class="regular stretch clearboth sponsor-description space-one-top clearfix">{{ item.blurb|safe }}</div>
+              {% endif %}
+            </dd>
+          {% endfor %}
+        {% endfor %}
+      </dl>
+      </div>
+    </article>
+    </div>
+    <article class="sponsor-pitch space-four-top clearfix">
+      <p class="centered nospace legible">
+        Startups to Fast Growing Companies<br>
+        Developers to Chiefs in-charge<br>
+        Under One Roof
       </p>
       <p class="centered space-two">
         <a class="button" href="http://hsgk.in/14engzl">Get Sponsorship Deck</a>
       </p>
+    </article>
+  </div>
+  </div>
+</section>
+
+
+<section class="behind-the-scenes partners-floating-box clearfix">
+  {% from theme("data/partners.html") import partners %}
+  {% if partners %}
+  <section id="partners" class="partners clearfix">  
+    <article class="fill-light legible push-three-top push-two-bottom clearfix">
+      <h2 class="centered calm space-two-bottom space-three-top nospace">Partners</h2>
+      <ul class="{% if partners|length > 3 %}thumbnail-columns thumbnail-columns-five {% else %}centered {% endif%}regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
+        {% for partner in partners %}
+        <li class="clearfix {% if partner.logo.contain == 'height' %}contain-height{% else %}contain-width{% endif %}{% if partners|length <= 3 %} inline-block{% endif%}"><a class="occupy centered {% if partners|length <= 3 %} pad-one{% endif%}" href="{{ partner.web.link }}"><img src="{{ theme_static(partner.logo.url) }}" alt="{{ partner.name }}"></a></li>
+        {% endfor %}
+      </ul>
+    </article>
+  </section>
+  {% endif %}
+  
+  <section id="hasgeek" class="hasgeek regular space-four clearfix">
+    <div class="measure-10words pad-one center-block prose clearfix">
+      <h2 class="clearfix"><a href="http://hasgeek.com/" class="hasgeek-logo ir center-block unhighlight">HasGeek</a></h2>
+      <article class="clearboth">
+        <p><a href="http://hasgeek.com/">HasGeek</a> helps people in technology meet each other, collaborate on new opportunities and advance the state of the art. We organize conferences, hacknights, workshops and geekups, and provide tools for communities to self-organize.</p>
+        <p>We’ve created conferences around the themes of <a href="http://metarefresh.in/">front end engineering</a>, <a href="http://fifthelephant.in/">big data and cloud computing</a>, <a href="http://jsfoo.in/">JavaScript</a>, <a href="http://droidcon.in/">Android</a>, <a href="http://cartonama.com/">location-aware services</a> and <a href="http://rootconf.in/">devops</a>. Our <a href="http://jobs.hasgeek.com/">Job Board</a> is used by thousands of geeks every month to find new opportunities.</p>
+        <p>HasGeek is a technology company in the media business, bringing software automation to a traditionally people-intensive operation. In a little over two years, HasGeek has organized over two dozen conferences attended by thousands of technology professionals, made several thousand connections, and built open source tools that are now used by many communities.</p>
+      </article>
     </div>
+  </section>
+  
+  <section id="credits" class="credits clearfix">  
+    <article class="clearfix legible space-two-bottom">
+      <h2 class="centered calm nospace">Credits</h2>
+      <dl class="center-block centered-key-value clearfix v-middle regular nospace highlight-links center-block pad-half">
+        <dt class="secondary">Lead Organizer</dt>
+          <dd>Zainab Bawa</dd>
+        <dt class="secondary">Website</dt>
+          <dd><a href="http://miranj.in" class="soft">Miranj</a></dd>
+        <dt class="secondary">Illustrations</dt>
+          <dd>Nimisha Saikia</dd>
+        <dt class="secondary">Icons</dt>
+          <dd><a href="http://thenounproject.com/noun/speech-bubble/#icon-No5656" target="_blank" class="soft">Speech Bubble</a> designed by <a href="http://thenounproject.com/naomiatkinson" target="_blank" class="soft">Naomi Atkinson</a></dd>
+          <dd><a href="http://thenounproject.com/noun/map-marker/#icon-No9093" target="_blank" class="soft">Map Marker</a> designed by <a href="http://thenounproject.com/schumanncombo" class="soft">Richard Schumann</a></dd>
+          <dd><a href="http://thenounproject.com/noun/like/#icon-No1297" target="_blank" class="soft">Like</a> designed by <a href="http://thenounproject.com/marwaboukarim" target="_blank" class="soft">Marwa Boukarim</a></dd>
+          <dd><a href="http://thenounproject.com/noun/bird/#icon-No6104" target="_blank" class="soft">Bird</a> designed by <a href="http://thenounproject.com/tlb" target="_blank" class="soft">Thomas Le Bas</a></dd>
+          <dd><a href="http://thenounproject.com/noun/home/#icon-No293" target="_blank" class="soft">Home</a>  from The Noun Project</dd>
+        <dt class="secondary">Supported By</dt>
+          <dd><a href="http://www.cis-india.org/" class="soft">The Centre for Internet and Society</a></dd>
+      </dl>
+      <h4 class="team-hasgeek-caption centered space-one-bottom pad-one">Team HasGeek</h4>
+      <ul class="team-hasgeek thumbnail-columns thumbnail-columns-five regular clearfix nospace pad-one">
+        <li class="haris clearfix"><a class="occupy block-link" href="#"><span>Haris<span class="visuallyhidden"> Ibrahim K V</span></span></a></li>
+        <li class="jamna clearfix"><a class="occupy block-link" href="#"><span>Jamna<span class="visuallyhidden"> Vyas</span></span></a></li>
+        <li class="kiran clearfix"><a class="occupy block-link" href="#"><span>Kiran<span class="visuallyhidden"> Jonnalagadda</span></span></a></li>
+        <li class="krace clearfix"><a class="occupy block-link" href="#"><span>Krace<span class="visuallyhidden"> Kumar Ramaraju</span></span></a></li>
+        <li class="nimisha clearfix"><a class="occupy block-link" href="#"><span>Nimisha<span class="visuallyhidden"> Saikia</span></span></a></li>
+        <li class="praseetha clearfix"><a class="occupy block-link" href="#"><span>Praseetha<span class="visuallyhidden"> K R</span></span></a></li>
+        <li class="radha clearfix"><a class="occupy block-link" href="#"><span>Radha<span class="visuallyhidden"> Rao</span></span></a></li>
+        <li class="supreeth clearfix"><a class="occupy block-link" href="#"><span>Supreeth<span class="visuallyhidden">  Srinivasmurthy</span></span></a></li>
+        <li class="zainab clearfix"><a class="occupy block-link" href="#"><span>Zainab<span class="visuallyhidden"> Bawa</span></span></a></li>
+      </ul>
+    </article>
+  </section>
+
+</section>
+
+<section id="code-of-conduct" class="code-of-conduct regular push-three-top push-four-bottom space-one-bottom clearfix">
+  <article class="clearfix center-block centered prose">
+    <h2 class="visuallyhidden">Code of Conduct</h2>
+    <p class="space-line-bottom nospace-top serif-type italic commitment"><span class="wrap-mobile">We strive to make our events</span> <span class="wrap-mobile">friendly, safe and harrasment&#8209;free for all.</span>
+    </p>
+    <p class="secondary semi-bold all-caps">Please observe the <a href="/2013/code-of-conduct">code of conduct</a> at the event.</p>
   </article>
 </section>
 
-<section id="announcements" class="announcements legible fill-light nospace clearfix">
-  <p class="centered space-three"><a class="twitter-timeline" data-dnt="true" href="https://twitter.com/fifthel" data-widget-id="316855895701192704" data-chrome="nofooter">Tweets by @fifthel</a>
-  </p>
-</section>
+{% endblock %}
 
-<footer>
-  <p class="centered secondary space-two-top space-half-bottom wrap-mobile copyright center-block"><span>The Fifth Elephant is a conference by <a href="http://hasgeek.com">HasGeek</a>.</span> <span>Copyright © 2010-13. All rights reserved.</span></p>
-  <p class="centered secondary space-half-top wrap-mobile copyright center-block"><span>For further information / sponsorship:</span> <span><script type="text/javascript">
-  //<![CDATA[
-  <!--
-  var x="function f(x,y){var i,o=\"\",l=x.length;for(i=0;i<l;i++){if(i<32)y++;" +
-  "y%=127;o+=String.fromCharCode(x.charCodeAt(i)^(y++));}return o;}f(\"GVKD]BB" +
-  "A\\021U\\035O\\020@K^3c,k&vom}<9j!u1:\\016\\006\\026\\013H\\t[\\010\\004R\\" +
-  "035\\003\\005\\001\\013G\\010_\\021\\033\\025\\0075\\030\\034\\034;\\017T\\" +
-  "021Q12+\\\"965.s}xrwu%2h*~8)y-j{xnxt5{6[\\\\_EKW\\016N\\025E\\007\\032\\027" +
-  "D\\020\\022\\000\\n[\\036\\031\\034MX\\023\\004B\\025_U_M\\0015j*m~;5-=?9\\" +
-  "\"m!a#$0  '~gt66rg 8wBHVUH9DQ[Y67X_^3,AAC()EFH%&HLM\\\"\\\\713XYx6)'#%!-/.3" +
-  "(19(4 2+7M#'!-!\\023\\022\\027\\021\\035\\024aqn\\036\\030\\033pq\\031\\034" +
-  "\\000mnAhil\\034s\\n\\010\\013`a\\017\\rp\\035\\036rtu\\032\\033zzz\\027\\0" +
-  "20\\034\\177}`\\r\\016\\000\\032\\027\\032\\002khj\\007\\000\\033\\n1<=\\02" +
-  "6?8SVW45 []]23GAB/(AFG$%MKL!\\\",>7775Z[<5=:eyzSL1/ -5<K:EF+--BC\\\\XM\\002" +
-  "\\030\\004\\t\\024\\030\\031vwX\\\\I\\001\\034ckA\\001\\005\\006kd{mlfqgfws" +
-  "r\\037\\030\\016\\r\\006~xz\\027\\02087xg`\\016\\017cbg\\013\\004</!\\014<4" +
-  ";\\001]\\t\\025\\010QTW45XX\\\\12[BA./!\\\\8@JI&'\\022!\\\"722_X667TUC=<=RS" +
-  "IP[\\\"%+;)?=-,-AB$\\003\\017\\006\\021\\002\\t\\003{\\n\\001LV\\027B\\016A" +
-  "BDFVFH\\r\\036\\021\\022\\021B\\024c\\027Vh5\\003& *\\0055)!)e4e++?\\022 2<" +
-  "\\026;8*?t<24,+3\\\\I\\014_RTVUL\\023PGF\\027FDGN\\032\\\\\\023\\037\\014QR" +
-  "Q\\022G\\021Bi:2>m-thn2b\\177kckc>i/\\1778I4K:$u7u=l~VZ\\013Z\\010]\\016A\\" +
-  "010GEBXN@ZV\\023\\033\",32)"                                                 ;
-  while(x=eval(x));
-  //-->
-  //]]>
-  </script>
-  </span></p>
-  <p class="centered tiny space-two-top space-four-bottom faded center-block wrap-mobile attribution"><span><a href="http://thenounproject.com/noun/map-marker/#icon-No9093">Map Marker</a> designed by <a href="http://thenounproject.com/schumanncombo">Richard Schumann</a></span> <span>from The Noun Project</span></p>
-</footer>
-
-
-</div><!-- #page -->
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="{{ theme_static('js/libs/jquery-1.7.1.min.js') }}"><\/script>')</script>
-<script src="{{ theme_static('js/libs/underscore.min.js') }}"></script>
-<script src="{{ theme_static('js/plugins.js') }}"></script>
-<script src="{{ theme_static('js/flipboard.js') }}"></script>
-<script src="{{ theme_static('js/script.js') }}"></script>
-
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-<script>
-// Google Analytics
-if (location.hostname == 'fifthelephant.in') {
-  var _gaq=[['_setAccount','UA-19123154-20'],['_trackPageview']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));
-}
-</script>
-
-<!-- Prompt IE 6 users to install Chrome Frame. -->
-<!-- chromium.org/developers/how-tos/chrome-frame-getting-started -->
-<!--[if lt IE 7 ]>
-  <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-  <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-<![endif]-->
-
-</body>
-</html>
+{% block sponsor_compact %}
+  <hr class="eighty center-block">
+{% endblock %}
