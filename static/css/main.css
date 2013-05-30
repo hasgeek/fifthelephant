@@ -134,7 +134,7 @@ a.link-unfade-hover:hover,
     max-width: 2800px;
     max-width: 1960px;
     width: 95%;
-    padding-top: 24%;
+    padding-top: 20%;
     margin-bottom: 10%;
 }
 @media  only screen
@@ -153,9 +153,9 @@ a.link-unfade-hover:hover,
 @media only screen and (min-width: 501px) and (max-width: 880px) { 
     .big-data {
         background-image: url(../img/circus-banner-800.png);
-        margin-bottom: 7.5%; 
+        margin-bottom: 7%; 
         width: 90%;
-        padding-top: 63%;
+        padding-top: 55%;
     }
     .community-banner {
         background-image: url(../img/community-banner-800.png);
@@ -165,9 +165,9 @@ a.link-unfade-hover:hover,
     }
     .conference-banner {
         background-image: url(../img/conference-banner-800.png);
-        margin-bottom: 7.5%; 
+        margin-bottom: 7%; 
         width: 90%;
-        padding-top: 63%;
+        padding-top: 50%;
     }
     .workshop-banner {
         background-image: url(../img/workshop-banner-800.png);
@@ -205,9 +205,9 @@ a.link-unfade-hover:hover,
 @media only screen and (min-width: 881px) and (max-width: 1370px) { 
     .big-data {
         background-image: url(../img/circus-banner-1100.png);
-        margin-bottom: 0%;
+        margin-bottom: 5%;
         width: 85%;
-        padding-top: 56%;
+        padding-top: 50%;
     }
     .community-banner {
         background-image: url(../img/community-banner-1100.png);
@@ -231,23 +231,27 @@ a.link-unfade-hover:hover,
 @media only screen and (min-width: 1371px) and (max-width: 2280px) { 
     .big-data {
         background-image: url(../img/circus-banner-1600.png);
-        width: 70%;
+        width: 85%;
+        margin-bottom: 4%;
         padding-top: 49%;
     }
     .community-banner {
         background-image: url(../img/community-banner-1600.png);
         width: 70%;
+        margin-bottom: 2%;
         padding-top: 49%;
     }
     .conference-banner {
         background-image: url(../img/conference-banner-1600.png);
         width: 70%;
-        padding-top: 49%;
+        margin-bottom: 1%;
+        padding-top: 40%;
     }
     .workshop-banner {
         background-image: url(../img/workshop-banner-1600.png);
         width: 70%;
-        padding-top: 49%;
+        margin-bottom: 4%;
+        padding-top: 19%;
     }
 }
 @media  only screen and (min-width: 2281px),
