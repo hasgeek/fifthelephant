@@ -16,6 +16,10 @@
             "css/2x.css"
         ],
         "assets_js": [
+            "js/libs/underscore.min.js",
+            "js/plugins.js",
+            "js/flipboard.js",
+            "js/script.js"
         ]
     }
 }

@@ -57,7 +57,9 @@
     </p>
   </header>
   
+  {% block image_banner %}
   <p class="big-data center-block ir space-two-top">Big Data</p>
+  {% endblock %}
   
   {% block page_nav %}{{ super() }}{% endblock %}
   
@@ -82,7 +84,19 @@
 </section>
 
 {% from theme("data/highlights.html") import highlights %}
-<section id="announcements" class="announcements {% if highlights['on-the-side'] %}side-by-side {% endif %}pad-one legible center-block space-four clearfix">
+<section id="announcements" class="announcements pad-one legible center-block space-four clearfix">
+  <h1 class="calm centered space-two large">
+    Hightlights
+  </h1>
+  <div class="tile-block clearfix">    
+    <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom">
+      {% for tile in highlights.tiles %}
+      <li class="{{ tile.background }}"><a class="occupy right-aligned link-white-hover unhighlight" href="{{ tile.link }}"><span class="wrap">{{ tile.title|safe }}</span> <span class="regular wrap">{{ tile.meta|safe }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+<!--<section id="announcements" class="announcements {% if highlights['on-the-side'] %}side-by-side {% endif %}pad-one legible center-block space-four clearfix">
   <div class="tile-block clearfix">
     <h2 class="calm visuallyhidden">Highlights</h2>
     <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom space-three-top">
@@ -107,7 +121,7 @@
     {%- endfor %}
     </ul>
   </div>
-</section>
+</section>-->
 
 
 <section id="tickets" class="fill-light push-three space-six-top clearfix pad-one">
@@ -205,16 +219,7 @@
 <section id="community" class="legible push-two space-four clearfix">  
   <article class="clearfix">
     <h2 class="centered calm nospace-top space-two-bottom space-three-top pad-one">The Programme Committee</h2>
-    <ul class="committee thumbnail-columns thumbnail-columns-five regular clearfix nospace">
-      <li class="clearfix">
-        <a class="occupy block-link" href="./community#ashok">
-          <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/ashok.jpg') }}" width="150" height="150"></p>
-          <hgroup>
-            <h3>Ashok Banerjee</h3>
-            <h4>Flipkart</h4>
-          </hgroup>
-        </a>
-      </li>
+    <ul class="committee thumbnail-columns thumbnail-columns-four-narrow regular clearfix nospace">
       <li class="clearfix">
         <a class="occupy block-link" href="./community#gopal">
           <p class="poster contain-width"><img alt="" src="{{ theme_static('img/bios/gopal.jpg') }}" width="150" height="150"></p>
@@ -371,11 +376,13 @@
           {% for item in type.list %}
             {% if loop.first %}<dt class="{{ type.category|lower|replace(" ","-") }}"><span>{{ type.category }}</span></dt>{% endif %}
             <dd class="{{ item.logo.size }} {% if item.logo.orientation == 'portrait' %}contain-height{% else %}contain-width{% endif %} {{ type.category|lower|replace(" ","-") }}">
-              <h5 class="sponsor-logo"><a href="{{ item.web.link }}" class="unhighlight"><img src="{{ theme_static(item.logo.url) }}" alt=" "></a></h5>
+              <h5 class="sponsor-logo"><a href="{{ item.web.link }}" class="unhighlight{% if item.blurb %} sponsor-blurb{% endif %}"><img src="{{ theme_static(item.logo.url) }}" alt=" "></a></h5>
               <h4 class="legible sponsor-name">{{ item.name }}</h4>
               <p class="secondary all-caps sponsor-link"><a href="{{ item.web.link }}">{{ item.web.display }}</a></p>
+              {% if item.blurb %}
               <hr class="invisible">
               <div class="regular stretch clearboth sponsor-description space-one-top clearfix">{{ item.blurb|safe }}</div>
+              {% endif %}
             </dd>
           {% endfor %}
         {% endfor %}
@@ -404,9 +411,9 @@
   <section id="partners" class="partners clearfix">  
     <article class="fill-light legible push-three-top push-two-bottom clearfix">
       <h2 class="centered calm space-two-bottom space-three-top nospace">Partners</h2>
-      <ul class="thumbnail-columns thumbnail-columns-five regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
+      <ul class="{% if partners|length > 3 %}thumbnail-columns thumbnail-columns-five {% else %}centered {% endif%}regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
         {% for partner in partners %}
-        <li class="clearfix {% if partner.logo.orientation == 'portrait' %}contain-height{% else %}contain-width{% endif %}"><a class="occupy centered" href="{{ partner.web.link }}"><img src="{{ theme_static(partner.logo.url) }}" alt="{{ partner.name }}"></a></li>
+        <li class="clearfix {% if partner.logo.contain == 'height' %}contain-height{% else %}contain-width{% endif %}{% if partners|length <= 3 %} inline-block{% endif%}"><a class="occupy centered {% if partners|length <= 3 %} pad-one{% endif%}" href="{{ partner.web.link }}"><img src="{{ theme_static(partner.logo.url) }}" alt="{{ partner.name }}"></a></li>
         {% endfor %}
       </ul>
     </article>
@@ -417,11 +424,9 @@
     <div class="measure-10words pad-one center-block prose clearfix">
       <h2 class="clearfix"><a href="http://hasgeek.com/" class="hasgeek-logo ir center-block unhighlight">HasGeek</a></h2>
       <article class="clearboth">
-        <p><strong>HasGeek is a developer-led initiative</strong>, and has been re-organising the conference scene since 2010.&nbsp;<a href="http://hasgeek.com/">HasGeek</a>&nbsp;is an attempt to solve the problem of insipid conferences organised around buzzwords by uninterested, soulless corporate entities who pitch them as company training events or as places for companies to pick up hot developers.</p>
-            
-        <p>We are attempting to build a new space,&nbsp;<strong>a space that is genuinely respectful of the communities</strong>&nbsp;and topics that we choose to engage with. We want to be a space for developers who are as excited as us about technology and the possibilities that it creates, not to be a recruitment fair (though we hope you do find partnership possibilities at our events).</p>
-  
-        <p>We are community-driven —&nbsp;<a href="http://funnel.hasgeek.com/">check out our speaker-selection funnel</a>, where you decide what talks to listen to by voting up or down. There are just a handful of us running the show and are not in it for the money (not there is much left after paying the vendors and logistics providers). We are doing this because this is what we love: bringing a whole bunch of us geeks together, sharing our interests and expertise and hanging out later over <span class="monospace">$beverageOfChoice</span>.</p>
+        <p><a href="http://hasgeek.com/">HasGeek</a> helps people in technology meet each other, collaborate on new opportunities and advance the state of the art. We organize conferences, hacknights, workshops and geekups, and provide tools for communities to self-organize.</p>
+        <p>We’ve created conferences around the themes of <a href="http://metarefresh.in/">front end engineering</a>, <a href="http://fifthelephant.in/">big data and cloud computing</a>, <a href="http://jsfoo.in/">JavaScript</a>, <a href="http://droidcon.in/">Android</a>, <a href="http://cartonama.com/">location-aware services</a> and <a href="http://rootconf.in/">devops</a>. Our <a href="http://jobs.hasgeek.com/">Job Board</a> is used by thousands of geeks every month to find new opportunities.</p>
+        <p>HasGeek is a technology company in the media business, bringing software automation to a traditionally people-intensive operation. In a little over two years, HasGeek has organized over two dozen conferences attended by thousands of technology professionals, made several thousand connections, and built open source tools that are now used by many communities.</p>
       </article>
     </div>
   </section>
@@ -430,43 +435,32 @@
     <article class="clearfix legible space-two-bottom">
       <h2 class="centered calm nospace">Credits</h2>
       <dl class="center-block centered-key-value clearfix v-middle regular nospace highlight-links center-block pad-half">
-        <dt class="secondary">Head Organiser</dt>
+        <dt class="secondary">Lead Organizer</dt>
           <dd>Zainab Bawa</dd>
-        <!-- <dt>Organising Team</dt>
-          <dd>Haris Ibrahim K V</dd>
-          <dd>Jamna Vyas</dd>
-          <dd>Kiran Jonnalagadda</dd>
-          <dd>Kracekumar Ramaraju</dd>
-          <dd>Nimisha Saikia</dd>
-          <dd>Praseetha K R</dd>
-          <dd>Radha Rao</dd>
-          <dd>Supreeth Srinivasmurthy</dd> -->
         <dt class="secondary">Website</dt>
           <dd><a href="http://miranj.in" class="soft">Miranj</a></dd>
         <dt class="secondary">Illustrations</dt>
           <dd>Nimisha Saikia</dd>
-        <dt class="secondary">Volunteers</dt>
-          <dd>Kingsly John</dd>
-          <dd>Sajjad Anwar</dd>
-          <dd>Nigel Babu</dd>
         <dt class="secondary">Icons</dt>
           <dd><a href="http://thenounproject.com/noun/speech-bubble/#icon-No5656" target="_blank" class="soft">Speech Bubble</a> designed by <a href="http://thenounproject.com/naomiatkinson" target="_blank" class="soft">Naomi Atkinson</a></dd>
           <dd><a href="http://thenounproject.com/noun/map-marker/#icon-No9093" target="_blank" class="soft">Map Marker</a> designed by <a href="http://thenounproject.com/schumanncombo" class="soft">Richard Schumann</a></dd>
           <dd><a href="http://thenounproject.com/noun/like/#icon-No1297" target="_blank" class="soft">Like</a> designed by <a href="http://thenounproject.com/marwaboukarim" target="_blank" class="soft">Marwa Boukarim</a></dd>
           <dd><a href="http://thenounproject.com/noun/bird/#icon-No6104" target="_blank" class="soft">Bird</a> designed by <a href="http://thenounproject.com/tlb" target="_blank" class="soft">Thomas Le Bas</a></dd>
           <dd><a href="http://thenounproject.com/noun/home/#icon-No293" target="_blank" class="soft">Home</a>  from The Noun Project</dd>
+        <dt class="secondary">Supported By</dt>
+          <dd><a href="http://www.cis-india.org/" class="soft">The Centre for Internet and Society</a></dd>
       </dl>
       <h4 class="team-hasgeek-caption centered space-one-bottom pad-one">Team HasGeek</h4>
       <ul class="team-hasgeek thumbnail-columns thumbnail-columns-five regular clearfix nospace pad-one">
-        <li class="haris clearfix"><a class="occupy block-link ir" href="#"><span class="first">Haris</span> Ibrahim K V</a></li>
-        <li class="jamna clearfix"><a class="occupy block-link ir" href="#"><span class="first">Jamna</span> Vyas</a></li>
-        <li class="kiran clearfix"><a class="occupy block-link ir" href="#"><span class="first">Kiran</span> Jonnalagadda</a></li>
-        <li class="krace clearfix"><a class="occupy block-link ir" href="#"><span class="first">Krace</span>kumar Ramaraju</a></li>
-        <li class="nimisha clearfix"><a class="occupy block-link ir" href="#"><span class="first">Nimisha</span> Saikia</a></li>
-        <li class="praseetha clearfix"><a class="occupy block-link ir" href="#"><span class="first">Praseetha</span> K R</a></li>
-        <li class="radha clearfix"><a class="occupy block-link ir" href="#"><span class="first">Radha</span> Rao</a></li>
-        <li class="supreeth clearfix"><a class="occupy block-link ir" href="#"><span class="first">Supreeth</span> Srinivasmurthy</a></li>
-        <li class="zainab clearfix"><a class="occupy block-link ir" href="#"><span class="first">Zainab</span> Bawa</a></li>
+        <li class="haris clearfix"><a class="occupy block-link" href="#"><span>Haris<span class="visuallyhidden"> Ibrahim K V</span></span></a></li>
+        <li class="jamna clearfix"><a class="occupy block-link" href="#"><span>Jamna<span class="visuallyhidden"> Vyas</span></span></a></li>
+        <li class="kiran clearfix"><a class="occupy block-link" href="#"><span>Kiran<span class="visuallyhidden"> Jonnalagadda</span></span></a></li>
+        <li class="krace clearfix"><a class="occupy block-link" href="#"><span>Krace<span class="visuallyhidden"> Kumar Ramaraju</span></span></a></li>
+        <li class="nimisha clearfix"><a class="occupy block-link" href="#"><span>Nimisha<span class="visuallyhidden"> Saikia</span></span></a></li>
+        <li class="praseetha clearfix"><a class="occupy block-link" href="#"><span>Praseetha<span class="visuallyhidden"> K R</span></span></a></li>
+        <li class="radha clearfix"><a class="occupy block-link" href="#"><span>Radha<span class="visuallyhidden"> Rao</span></span></a></li>
+        <li class="supreeth clearfix"><a class="occupy block-link" href="#"><span>Supreeth<span class="visuallyhidden">  Srinivasmurthy</span></span></a></li>
+        <li class="zainab clearfix"><a class="occupy block-link" href="#"><span>Zainab<span class="visuallyhidden"> Bawa</span></span></a></li>
       </ul>
     </article>
   </section>
@@ -478,7 +472,7 @@
     <h2 class="visuallyhidden">Code of Conduct</h2>
     <p class="space-line-bottom nospace-top serif-type italic commitment"><span class="wrap-mobile">We strive to make our events</span> <span class="wrap-mobile">friendly, safe and harrasment&#8209;free for all.</span>
     </p>
-    <p class="secondary semi-bold all-caps">Kindly observe the <a href="/2013/code-of-conduct">code of conduct</a> at the event.</p>
+    <p class="secondary semi-bold all-caps">Please observe the <a href="/2013/code-of-conduct">code of conduct</a> at the event.</p>
   </article>
 </section>
 

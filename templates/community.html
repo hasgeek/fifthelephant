@@ -5,6 +5,10 @@
 {% set page_caption = 'Community' %}
 {% set page = 'community' %}
 
+{% block image_banner %}
+<p class="community-banner center-block ir space-two-top">Community</p>
+{% endblock %}
+
 {% block page_nav_items %}
    <li><a href="#committee" class="link-white-hover">Programme Committee</a></li><!--
 --><li><a href="#community-partners" class="link-white-hover"><span class="hide-mobile">Community </span>Partners</a></li>
@@ -43,19 +47,6 @@
     </div>
     
     <ul class="programme-committee poster-with-bio prose regular clearfix push-one-bottom space-two-top nospace-bottom">
-      <li id="ashok" class="clearfix">
-        <div class="poster clearfix">
-          <p class="contain-width clearfix"><img alt="" src="{{ theme_static('img/bios/ashok.jpg') }}" width="150" height="150"></p>
-          <hgroup class="clearboth">
-            <h3>Ashok Banerjee</h3>
-            <h4 class="all-caps secondary">Flipkart</h4>
-          </hgroup>
-        </div>
-        <div class="bio">
-          <p>Ashok is VP of Analytics and Tech Platforms at Flipkart. Prior to Flipkart, he worked at Twitter in San Francisco and Google in Mountain View. He is interested in experimentation platforms, large data systems, parallel computing, distributed systems, fault tolerant computing, recommendation systems, supply chain, mathematical models and investments.</p>
-          <p>On the non-work side, Ashok enjoys sailing, wind surfing, horse riding, german shepherd dogs and soccer.</p>
-        </div>
-      </li>
       <li id="gopal" class="clearfix">
         <div class="poster clearfix">
           <p class="contain-width clearfix"><img alt="" src="{{ theme_static('img/bios/gopal.jpg') }}" width="150" height="150"></p>
@@ -115,9 +106,9 @@
   {% if partners %}
   <article id="community-partners" class="push-four clearfix">
     <h2 class="centered calm space-two">Community Partners</h2>
-    <ul class="community-partners-list about-sponsor regular clearfix nospace pad-one">
+    <ul class="community-partners-list{% if partners|length == 1 %} single{% endif%} about-sponsor regular clearfix nospace pad-one">
       {% for partner in partners %}
-      <li id="partner-{{ partner.name|lower|replace(" ", "") }}" class="space-three-top clearfix {% if partner.logo.orientation == 'portrait' %}contain-height{% else %}contain-width{% endif %}">
+      <li id="partner-{{ partner.name|lower|replace(" ", "") }}" class="space-three-top clearfix {% if partner.logo.contain == 'height' %}contain-height{% else %}contain-width{% endif %}">
         <h5 class="sponsor-logo"><a href="{{ partner.web.link }}" class="unhighlight"><img src="{{ theme_static(partner.logo.url) }}" alt=" "></a></h5>
         <h4 class="legible sponsor-name">{{ partner.name }}</h4>
         <p class="secondary all-caps highlight-links sponsor-link"><a href="{{ partner.web.link }}">{{ partner.web.display }}</a></p>

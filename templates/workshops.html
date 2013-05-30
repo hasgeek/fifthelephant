@@ -5,8 +5,14 @@
 {% set page_caption = 'Workshops' %}
 {% set page = 'workshops' %}
 
+{% block image_banner %}
+<p class="workshop-banner center-block ir space-two-top">Workshops</p>
+{% endblock %}
+
+
 {% block page_nav_items %}
    <li><a href="#sessions" class="link-white-hover">Workshops</a></li><!--
+--><!--<li><a href="#schedule" class="link-white-hover">Schedule</a></li>--><!--
 --><li><a href="#proposals" class="link-white-hover">Proposals</a></li>
 {% endblock %}
 
@@ -19,14 +25,12 @@
     <h1 class="visuallyhidden">Introduction</h1>
     <div class="measure-10words pad-one center-block">
       <p>
-        A short intro to the workshops. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
+        The preliminary day of The Fifth Elephant 2013 - 11th July - provides the best opportunity to dive into various languages and tools used for <a href="http://funnel.hasgeek.com/fifthel2013/652-big-data-real-time-processing-and-storm" target="_blank">data analysis</a> and visualization, and understand how they compare with each other.
+      </p> 
       <p class="regular">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      </p>
-      <p class="regular">
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+        Learn about open source frameworks and tools such as <a href="http://funnel.hasgeek.com/fifthel2013/707-analytics-using-hadoop-ecosystem-on-aws" target="_blank">Pig, Hive</a>, <a href= "http://funnel.hasgeek.com/fifthel2013/678-howto-run-a-hadoop-cluster-on-a-laptop" target="_blank">Hadoop</a>; commercial solutions (sponsored), programming languages such as R, <a href="http://funnel.hasgeek.com/fifthel2013/689-neo4j-graph-workshop" target="_blank">databases</a> and visualization techniques and tricks through slides, demonstrations and partially hands-on activities. There will be ample opportunity to clarify doubts regarding the limitations and possibilities of these tools and frameworks. 
+      </p> 
+      <p class="regular">8 sessions, 90-120 mins each. <a href="http://fifthelephant.doattend.com/" target="_blank">Limited seats available.</a></p>
     </div>
   </article>
 </section>
@@ -35,8 +39,17 @@
   {% with session_kind = 'Workshops' %}
   {% from theme("data/featured-workshops.html") import featured_workshops as featured %}
   {% include theme("partials/_featured_sessions.html") %}
+  {#{% from theme("data/workshops.html") import workshops as sessions %}#}
+  {#{% include theme("partials/_sessions.html") %}#}
   {% endwith %}
 </section>
+
+{#<!--<section id="schedule" class="schedule space-two push-four legible">
+  <h2 class="centered calm space-two">Schedule</h2>
+  <div class="schedule-table-container center-block pad-one regular">
+    {% include theme("partials/_schedule_table.html") %}
+  </div>
+</section>-->#}
   
 <section id="proposals" class="push-four">
   <article class="clearfix">
