@@ -776,6 +776,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .js .sponsors dd.xl h5 a { height: 15em; line-height: 9em; padding: 3em 20%; }
 .js .sponsors dd.l h5 a { height: 12em; line-height: 8em; padding: 2em 25%; }
 .js .sponsors dd.s h5 a { padding: 2em 15%; line-height: 4em; }
+.js .sponsors dd.s { width: calc(100% / 6); }
 .js .sponsors dd.contain-height h5 a { padding-left: 0 !important; padding-right: 0 !important;}
 .js .sponsors dd > h4,
 .js .sponsors dd > p,

@@ -104,6 +104,39 @@ a.link-unfade-hover:hover,
     padding-top: 66.5%;
     margin-bottom: 10%;
 }
+.community-banner {
+    background-image: url(../img/community-banner-500.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    max-width: 2800px;
+    max-width: 1960px;
+    width: 95%;
+    padding-top: 66.5%;
+    margin-bottom: 10%;
+}
+.conference-banner {
+    background-image: url(../img/conference-banner-500.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    max-width: 2800px;
+    max-width: 1960px;
+    width: 95%;
+    padding-top: 66.5%;
+    margin-bottom: 10%;
+}
+.workshop-banner {
+    background-image: url(../img/workshop-banner-500.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    max-width: 2800px;
+    max-width: 1960px;
+    width: 95%;
+    padding-top: 24%;
+    margin-bottom: 10%;
+}
 @media  only screen
         and (-webkit-min-device-pixel-ratio: 1.5)
         and (min-width: 251px)
@@ -113,6 +146,9 @@ a.link-unfade-hover:hover,
         and (min-width: 251px)
         and (max-width: 400px) {
     .big-data { background-image: url(../img/circus-banner-800.png); }
+    .community-banner { background-image: url(../img/community-banner-800.png); }
+    .conference-banner { background-image: url(../img/conference-banner-800.png); }
+    .workshop-banner { background-image: url(../img/workshop-banner-800.png); }
 }
 @media only screen and (min-width: 501px) and (max-width: 880px) { 
     .big-data {
@@ -120,6 +156,24 @@ a.link-unfade-hover:hover,
         margin-bottom: 7.5%; 
         width: 90%;
         padding-top: 63%;
+    }
+    .community-banner {
+        background-image: url(../img/community-banner-800.png);
+        margin-bottom: 7.5%; 
+        width: 90%;
+        padding-top: 63%;
+    }
+    .conference-banner {
+        background-image: url(../img/conference-banner-800.png);
+        margin-bottom: 7.5%; 
+        width: 90%;
+        padding-top: 63%;
+    }
+    .workshop-banner {
+        background-image: url(../img/workshop-banner-800.png);
+        margin-bottom: 5%; 
+        width: 90%;
+        padding-top: 24%;
     }
 }
 @media  only screen
@@ -131,6 +185,9 @@ a.link-unfade-hover:hover,
         and (min-width: 401px)
         and (max-width: 550px) {
     .big-data { background-image: url(../img/circus-banner-1100.png); }
+    .community-banner { background-image: url(../img/community-banner-1100.png); }
+    .conference-banner { background-image: url(../img/conference-banner-1100.png); }
+    .workshop-banner { background-image: url(../img/workshop-banner-1100.png); }
 }
 @media  only screen
         and (-webkit-min-device-pixel-ratio: 1.5)
@@ -141,18 +198,54 @@ a.link-unfade-hover:hover,
         and (min-width: 551px)
         and (max-width: 880px) {
     .big-data { background-image: url(../img/circus-banner-1600.png); }
+    .community-banner { background-image: url(../img/community-banner-1600.png); }
+    .conference-banner { background-image: url(../img/conference-banner-1600.png); }
+    .workshop-banner { background-image: url(../img/workshop-banner-1600.png); }
 }
 @media only screen and (min-width: 881px) and (max-width: 1370px) { 
     .big-data {
         background-image: url(../img/circus-banner-1100.png);
-        margin-bottom: 5%;
-        width: 80%;
+        margin-bottom: 0%;
+        width: 85%;
         padding-top: 56%;
+    }
+    .community-banner {
+        background-image: url(../img/community-banner-1100.png);
+        margin-bottom: 4%;
+        width: 65%;
+        padding-top: 38%;
+    }
+    .conference-banner {
+        background-image: url(../img/conference-banner-1100.png);
+        margin-bottom: 1%;
+        width: 65%;
+        padding-top: 36%;
+    }
+    .workshop-banner {
+        background-image: url(../img/workshop-banner-1100.png);
+        margin-bottom: 2%;
+        width: 85%;
+        padding-top: 24%;
     }
 }
 @media only screen and (min-width: 1371px) and (max-width: 2280px) { 
     .big-data {
         background-image: url(../img/circus-banner-1600.png);
+        width: 70%;
+        padding-top: 49%;
+    }
+    .community-banner {
+        background-image: url(../img/community-banner-1600.png);
+        width: 70%;
+        padding-top: 49%;
+    }
+    .conference-banner {
+        background-image: url(../img/conference-banner-1600.png);
+        width: 70%;
+        padding-top: 49%;
+    }
+    .workshop-banner {
+        background-image: url(../img/workshop-banner-1600.png);
         width: 70%;
         padding-top: 49%;
     }
@@ -165,6 +258,9 @@ a.link-unfade-hover:hover,
         and (min-device-pixel-ratio: 1.5)
         and (min-width: 881px) {
     .big-data { background-image: url(../img/circus-banner-2800.png); }
+    .community-banner { background-image: url(../img/community-banner-2800.png); }
+    .conference-banner { background-image: url(../img/conference-banner-2800.png); }
+    .workshop-banner { background-image: url(../img/workshop-banner-2800.png); }
 }
 
 .hasgeek-logo { 
@@ -182,13 +278,47 @@ a.link-unfade-hover:hover,
     background-size: auto 100%;
 }
 .tiles .bird {
-    background-color: #FFCC66;
+    background-color: #665128;
     background-image: url(../img/bird.svg);
     background-repeat: no-repeat;
     background-position: -40% 160%;
     background-size: auto 90%;
     background-position: 10% 160%;
 }
+.tiles .julia {
+    background-color: #FFFFFF;
+    background-image: url(../img/partners/julia.png);
+    background-repeat: no-repeat;
+    background-position: -40% 160%;
+    background-size: auto 50%;
+    background-position: 10% 80%;
+}
+.tiles .hadoop {
+    background-color: #FFCC66;
+    background-image: url(../img/hadoop.png);
+    background-repeat: no-repeat;
+    background-position: -40% 10%;
+    background-size: auto 80%;
+    background-position: 1% 100%;
+}
+.tiles .visualization {
+    background-color: #F3F3F3;
+    background-image: url(../img/visualization.png);
+    background-repeat: no-repeat;
+    background-position: -40% 160%;
+    background-size: auto 80%;
+    background-position: 1% 160%;
+}
+.tiles .puneevent {
+    background-color: #CCA351;
+    background-image: url(../img/db.png);
+    background-repeat: no-repeat;
+    background-position: -40% 160%;
+    background-size: auto 70%;
+    background-position: -3% 120%;
+}
+
+
 
 @media only screen and (min-width: 30em) { .tiles .bird { background-position: -20% 160%; } }
 

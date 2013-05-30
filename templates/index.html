@@ -57,7 +57,9 @@
     </p>
   </header>
   
+  {% block image_banner %}
   <p class="big-data center-block ir space-two-top">Big Data</p>
+  {% endblock %}
   
   {% block page_nav %}{{ super() }}{% endblock %}
   
@@ -82,7 +84,19 @@
 </section>
 
 {% from theme("data/highlights.html") import highlights %}
-<section id="announcements" class="announcements {% if highlights['on-the-side'] %}side-by-side {% endif %}pad-one legible center-block space-four clearfix">
+<section id="announcements" class="announcements pad-one legible center-block space-four clearfix">
+  <h1 class="calm centered space-two large">
+    Hightlights
+  </h1>
+  <div class="tile-block clearfix">    
+    <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom">
+      {% for tile in highlights.tiles %}
+      <li class="{{ tile.background }}"><a class="occupy right-aligned link-white-hover unhighlight" href="{{ tile.link }}"><span class="wrap">{{ tile.title|safe }}</span> <span class="regular wrap">{{ tile.meta|safe }}</span></a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+<!--<section id="announcements" class="announcements {% if highlights['on-the-side'] %}side-by-side {% endif %}pad-one legible center-block space-four clearfix">
   <div class="tile-block clearfix">
     <h2 class="calm visuallyhidden">Highlights</h2>
     <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom space-three-top">
@@ -107,7 +121,7 @@
     {%- endfor %}
     </ul>
   </div>
-</section>
+</section>-->
 
 
 <section id="tickets" class="fill-light push-three space-six-top clearfix pad-one">

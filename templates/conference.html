@@ -5,10 +5,14 @@
 {% set page_caption = 'Conference' %}
 {% set page = 'conference' %}
 
+{% block image_banner %}
+<p class="conference-banner center-block ir space-two-top">Community</p>
+{% endblock %}
+
 {% block page_nav_items %}
    <li><a href="#tracks" class="link-white-hover">Tracks</a></li><!--
 --><li><a href="#sessions" class="link-white-hover">Talks</a></li><!--
---><li><a href="#schedule" class="link-white-hover">Schedule</a></li><!--
+--><!--<li><a href="#schedule" class="link-white-hover">Schedule</a></li>--><!--
 --><li><a href="#proposals" class="link-white-hover">Proposals</a></li>
 {% endblock %}
 
@@ -69,20 +73,21 @@
 
 <section id="sessions" class="space-four-top fill-light legible clearfix">
   {% with session_kind = 'Talks' %}
-  {% from theme("data/featured-talks.html") import featured_talks as featured %}
-  {% include theme("partials/_featured_sessions.html") %}
-  
-  {% from theme("data/talks.html") import talks as sessions %}
-  {% include theme("partials/_sessions.html") %}
+    {#{% from theme("data/featured-talks.html") import featured_talks as featured %}#}
+    {#{% include theme("partials/_featured_sessions.html") %}#}
+    <h3 class="centered calm space-four-top space-one-bottom ultrafaded">Confirmed Talks</h3>
+    
+    {% from theme("data/talks.html") import talks as sessions %}
+    {% include theme("partials/_sessions.html") %}
   {% endwith %}
 </section>
 
-<section id="schedule" class="schedule space-two push-four legible">
+<!--<section id="schedule" class="schedule space-two push-four legible">
   <h2 class="centered calm space-two">Schedule</h2>
   <div class="schedule-table-container center-block pad-one regular">
     {% include theme("partials/_schedule_table.html") %}
   </div>
-</section>
+</section>-->
 
 <section id="proposals" class="legible clearfix push-four">
   <article class="clearfix">

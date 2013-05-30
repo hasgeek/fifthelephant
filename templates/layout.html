@@ -79,6 +79,7 @@
       </h1>
       {% endif %}
     {% endblock %}
+    {% block image_banner %}{% endblock %}
     {% block page_nav %}
       <div class="page-nav{% if fixed_width_sticky %} fixed-width-sticky{% endif %} clearfix">
         <nav class="all-caps nospace sticky-width clearfix">
@@ -115,6 +116,8 @@
         {% set sponsor_columns = '' %}
       {% elif type.category == 'Gold' %}
         {% set sponsor_columns = ' thumbnail-columns-three' %}
+      {% elif type.category == 'Corporate' %}
+        {% set sponsor_columns = ' thumbnail-columns-eight' %}
       {% else %}
         {% set sponsor_columns = ' thumbnail-columns-five' %}
       {% endif %}
