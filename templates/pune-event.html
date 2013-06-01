@@ -17,32 +17,32 @@
 {% macro rsvp_form(node, form, waitlist=False, hascapacity=True, status='U') %}
   <form id="rsvp" action="{{ node.url_for('rsvp') }}" class="form-inline" method="POST">
     {{ form.hidden_tag() }}
-    <p>
+    <p class="centered space-three-top space-two-bottom">
       {%- if waitlist %}
         {%- if status in ['Y', 'M', 'W'] %}
-          <button name="status" value="N" class="btn btn-success">Withdraw</button>
+          <button name="status" value="N" class="button">Withdraw</button>
         {%- endif %}
         {%- if status in ['N', 'M', 'U'] %}
-          <button name="status" value="Y" class="btn btn-success">Add to waiting list</button>
+          <button name="status" value="Y" class="button">Add to waiting list</button>
         {%- endif %}
       {%- else %}
         {%- if hascapacity %}
-          <button name="status" value="Y" class="btn btn-success">Yes</button>
+          <button name="status" value="Y" class="button">Yes</button>
         {%- endif %}
-        <button name="status" value="N" class="btn btn-success">No</button>
+          <button name="status" value="N" class="button">No</button>
         {%- if node.allow_maybe %}
-          <button name="status" value="M" class="btn btn-success">Maybe</button>
+          <button name="status" value="M" class="button">Maybe</button>
         {%- endif %}
       {%- endif %}
       <span class="loading hidden">&nbsp;</span>
     </p>
     {%- if status != 'U' %}
-      <p>
-        Your status:
-        {%- if status == 'Y' %} Attending
-        {%- elif status == 'N' %} Not attending
-        {%- elif status == 'M' %} Maybe attending
-        {%- elif status == 'W' %} Wait-listed
+      <p class="centered">
+        <span class="ultrafaded">Your status:</span>
+        {%- if status == 'Y' %} <span class="green">Attending</span>
+        {%- elif status == 'N' %} <span class="red">Not attending</span>
+        {%- elif status == 'M' %} <span class="blue">Maybe attending</span>
+        {%- elif status == 'W' %} <span class="orange">Wait-listed</span>
         {% else %} Unknown {%- endif %}
       </p>
     {%- endif %}
@@ -201,11 +201,11 @@
 
   <section id="rsvp" class="space-four-top fill-light legible clearfix">
     <article class="push-two-top push-two-bottom highlight-links clearfix">
-      <h3 class="centered calm space-two-top space-two-bottom">RSVP</h3>
+      <h3 class="centered calm space-two-top space-three-bottom">RSVP</h3>
       <div class="center-block measure-8words">
         <div class="box section">
-          {%- if g.user %}
-            {#{%- if node.can_rsvp(g.user) %}
+          {%- if g.user %}            
+            {%- if node.can_rsvp(g.user) %}
               {%- with status = node.get_status(g.user) %}
                 {%- if node.has_capacity() %}
                   <p>
@@ -234,9 +234,7 @@
                 you used when buying your ticket, <a href="{{ url_for('logout') }}">logout</a>
                 and <a href="{{ url_for('login') }}">login</a> again.
               </p>
-            {%- endif %}#}
-
-            <h1>{{ url_for('logout') }}</h1>
+            {%- endif %}
           {%- else %}
             <p>
               {#{% if node.capacity > 0 -%} The venue has limited capacity. {% endif -%}#}
