@@ -96,33 +96,6 @@
     </ul>
   </div>
 </section>
-<!--<section id="announcements" class="announcements {% if highlights['on-the-side'] %}side-by-side {% endif %}pad-one legible center-block space-four clearfix">
-  <div class="tile-block clearfix">
-    <h2 class="calm visuallyhidden">Highlights</h2>
-    <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom space-three-top">
-      {% for tile in highlights.tiles %}
-      <li class="{{ tile.background }}"><a class="occupy right-aligned link-white-hover unhighlight" href="{{ tile.link }}"><span class="wrap">{{ tile.title|safe }}</span> <span class="regular wrap">{{ tile.meta|safe }}</span></a></li>
-      {% endfor %}
-    </ul>
-  </div>
-  <div class="announcements-block clearfix">
-    <h2 class="calm nospace">Announcements</h2>
-    <ul class="blog-latest-list highlight-links clearfix nospace measure-8words center-block">
-    {% for post in feed(limit=4) -%}
-      <li class="space-two-top">
-        <h4 class="calm"><a href="{{ url_for('node', folder=post.folder.name, node=post.name) }}" class="gap-half-right">{{ post.title }}</a> <span class="body-type regular faded nowrap">{{ post.published_at|longdate }}</span></h4>
-        <p class="regular space-half">{{ post.description }}</p>
-      </li>
-      {% if loop.last %}
-        <li class="flushright"><a href="/blog" class="gap-half-right faded regular">More &rarr;</a></li>
-      {% endif %}
-    {%- else -%}
-      <li>(No blog entries have been written so far)</li>
-    {%- endfor %}
-    </ul>
-  </div>
-</section>-->
-
 
 <section id="tickets" class="fill-light push-three space-six-top clearfix pad-one">
   <h1 class="calm centered space-two large">

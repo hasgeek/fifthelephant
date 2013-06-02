@@ -94,3 +94,15 @@ pre code { font-family: Menlo, 'Bitstream Vera Sans Mono', Monaco, 'Courier New'
 .dquo { margin-left: -0.44em; }
 .tquo { margin-left: -0.68em; }
 
+.red {
+    color: rgba(200, 0, 0, 0.9);
+}
+.green {
+    color: #55CC55;
+}
+.orange {
+    color: #CCA351;
+}
+.blue {
+    color: #58B3F2;
+}
