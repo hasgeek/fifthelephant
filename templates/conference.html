@@ -68,11 +68,11 @@
   </article>
 </section>  
 
-<section id="sessions" class="space-four-top fill-light legible clearfix">
+<section id="sessions" class="space-four-top push-one-top fill-light legible clearfix">
   {% with session_kind = 'Talks' %}
     {#{% from theme("data/featured-talks.html") import featured_talks as featured %}#}
     {#{% include theme("partials/_featured_sessions.html") %}#}
-    <h3 class="centered calm space-four-top space-one-bottom ultrafaded">Confirmed Talks</h3>
+    <h2 class="centered calm space-four-top space-one-bottom">Confirmed Talks</h2>
     
     {% from theme("data/talks.html") import talks as sessions %}
     {% include theme("partials/_sessions.html") %}
