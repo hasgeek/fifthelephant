@@ -332,31 +332,30 @@ a.link-unfade-hover:hover,
 .js .sponsors dt.bronze,
 .js .sponsors dt.party,
 .js .sponsors dt.community,
-.js .sponsors dt.corporate-tickets { clear: left; }
+.js .sponsors dt.corporate { clear: left; }
 
 .js .sponsors dd { width: 50%; }
 .js .sponsors dd.xl,
 .js .sponsors dd.l { width: 100%; }
 .js .sponsors dd.s { width: 33.3333%; width: calc(100%/3); }
 
-.js .sponsors dd.corporate-tickets:nth-of-type(6):after {
-    content: ' ';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    outline: 1px solid rgba(255,255,255,.2);
-    background-color: #EFFBEF;
-    background-color: rgba(239,251,239,.85);
-}
-
 @media only screen and (min-width: 30em) { }
 @media only screen and (min-width: 40em) { 
 /*    .js .sponsors dt.party { clear: none; }*/
 /*    .js .sponsors dd.corporate:nth-of-type(4):after { display: none; }*/
     .js .sponsors dt.bronze { clear: both; }
-    .js .sponsors dt.corporate-tickets { clear: none; }
+/*    .js .sponsors dt.corporate { clear: none; }*/
+    .js .sponsors dd.corporate:nth-of-type(6):after { display: none; }
+    
+/*    .js .sponsors dd    { width: 33.3333%; width: calc(100%/3); }*/
+/*    .js .sponsors dd.s  { width: 16.6666%; width: calc(100%/6); }    */
+}
+@media only screen and (min-width: 45em) {
+/*    .js .sponsors dd    { width: 33.3333%; width: calc(100%/3); }*/
+    .js .sponsors dd.xl { width: 50%; }
+    .js .sponsors dd.l  { width: 50%; }
+/*    .js .sponsors dd.l  { width: 33.3333%; width: calc(100%/3); }*/
+/*    .js .sponsors dd    { width: 25%; }*/
     .js .sponsors dd.bronze:nth-of-type(3):after {
         content: ' ';
         width: 100%;
@@ -368,17 +367,6 @@ a.link-unfade-hover:hover,
         background-color: #F7F2E0;
         background-color: rgba(247,242,224,.85);
     }
-    .js .sponsors dd.corporate-tickets:nth-of-type(6):after { display: none; }
-    
-/*    .js .sponsors dd    { width: 33.3333%; width: calc(100%/3); }*/
-/*    .js .sponsors dd.s  { width: 16.6666%; width: calc(100%/6); }    */
-}
-@media only screen and (min-width: 45em) {
-    .js .sponsors dd    { width: 33.3333%; width: calc(100%/3); }
-    .js .sponsors dd.xl { width: 50%; }
-    .js .sponsors dd.l  { width: 50%; }
-/*    .js .sponsors dd.l  { width: 33.3333%; width: calc(100%/3); }*/
-/*    .js .sponsors dd    { width: 25%; }*/
 }
 /*@media only screen and (min-width: 60em) { .js .sponsors dd { width: 20%; } }*/
 
