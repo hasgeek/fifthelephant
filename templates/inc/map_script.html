@@ -17,7 +17,6 @@
         };
       };
 
-      $('a[href^="#map-"]').tooltip({title: "Show on map"});
       {% for marker in mapnode.items %}
         var marker_{{ marker.name }} = new L.Marker(new L.LatLng({{ marker.latitude }}, {{ marker.longitude }}));
         map.addLayer(marker_{{ marker.name }});
@@ -28,6 +27,7 @@
         map.setView(marker_{{ marker.name }}['_latlng'], {{ marker.zoomlevel or 13 }}).addLayer(cloudmade);
         marker_{{ marker.name }}.openPopup();
       {%- endwith %}
+      $('a[href^="#map-"]').tooltip({title: "Show on map"});
     });
   </script>
 {% endmacro %}
