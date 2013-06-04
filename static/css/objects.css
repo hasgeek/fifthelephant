@@ -706,7 +706,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .sponsors { background-image: url(../img/sponsor-bg-3088.jpg); }
 }
 
-.no-js .sponsors .sponsor-block { max-width: 32em; padding: 0 1rem; }
+.no-js .sponsors .sponsor-block { max-width: 32em; padding: 0 1rem; background-color: rgba(255,255,255,.75); color: black; }
 .sponsors .sponsor-logos .sponsor-logos-list { 
     margin: 0 auto; 
     overflow: hidden;
