@@ -885,7 +885,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     }
 }
 .team-hasgeek { max-width: 60em; margin: auto; }
-.team-hasgeek a {
+.team-hasgeek p {
     display: block;
     width: 100%;
     height: 0;
@@ -899,11 +899,11 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     background-clip: padding-box;
     overflow: hidden;
 }
-.team-hasgeek.fill-dark a {
+.team-hasgeek.fill-dark p {
     -webkit-box-shadow: 0 0 0 2px #222;
             box-shadow: 0 0 0 2px #222;
 }
-.team-hasgeek a > span {
+.team-hasgeek p > span {
     display: block;
     width: 100%;
     margin-top: -25%;
@@ -914,17 +914,17 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     text-transform: uppercase;
     padding: .2rem 0;
 }
-@media only screen and (min-width: 30em) { .team-hasgeek a > span { font-size: .7rem; } }
+@media only screen and (min-width: 30em) { .team-hasgeek p > span { font-size: .7rem; } }
 
-.team-hasgeek .haris a      { background-position: top left; }
-.team-hasgeek .jamna a      { background-position: top center; }
-.team-hasgeek .kiran a      { background-position: top right; }
-.team-hasgeek .krace a      { background-position: center left; }
-.team-hasgeek .nimisha a    { background-position: center; }
-.team-hasgeek .praseetha a  { background-position: center right; }
-.team-hasgeek .radha a      { background-position: bottom left; }
-.team-hasgeek .supreeth a   { background-position: bottom center; }
-.team-hasgeek .zainab a     { background-position: bottom right; }
+.team-hasgeek .haris p      { background-position: top left; }
+.team-hasgeek .jamna p      { background-position: top center; }
+.team-hasgeek .kiran p      { background-position: top right; }
+.team-hasgeek .krace p      { background-position: center left; }
+.team-hasgeek .nimisha p    { background-position: center; }
+.team-hasgeek .praseetha p  { background-position: center right; }
+.team-hasgeek .radha p      { background-position: bottom left; }
+.team-hasgeek .supreeth p   { background-position: bottom center; }
+.team-hasgeek .zainab p     { background-position: bottom right; }
 
 .code-of-conduct { max-width: 1400px; }
 .code-of-conduct.fill-dark { color: #EEE; }
