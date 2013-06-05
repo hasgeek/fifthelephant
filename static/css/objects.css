@@ -332,8 +332,9 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .sticky-nav .home-link a.active { background-image: url(../img/home-black.svg); }
 .sticky-nav .sticky-main-bar { background-color: rgba(0,0,0,0.6); }
 .sticky-nav .sticky-main-bar nav { width: 90%; float: left }
-.sticky-nav .nav-line .sub-group { display: block; width: 25%; float: left; }
-.sticky-nav .nav-line .sub-group.conference { width: 50%; }
+.sticky-nav .nav-line { width: 104.5%; }
+.sticky-nav .nav-line .sub-group { display: block; width: 24%; float: left; }
+.sticky-nav .nav-line .sub-group.conference { width: 48%; }
 .sticky-nav .nav-line .sub-group a { color: white !important; }
 .sticky-nav .nav-line .sub-group a:hover { background-color: black; }
 .sticky-nav .nav-line .sub-group.conference a { width: 50%; }
