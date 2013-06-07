@@ -321,6 +321,14 @@ a.link-unfade-hover:hover,
     background-size: auto 70%;
     background-position: -3% 120%;
 }
+.tiles .delhievent {
+    background-color: #E4DCD3;
+    background-image: url(../img/db.png);
+    background-repeat: no-repeat;
+    background-position: -40% 160%;
+    background-size: auto 70%;
+    background-position: -3% 120%;
+}
 
 
 

@@ -1,0 +1,232 @@
+{% extends theme("layout.html") %}
+{% from "baseframe/forms.html" import ajaxform %}
+
+{% set title = 'Taming the Elephant: Using Data For Business Decisions' %}
+{% set description = node.description %}
+{% set page_caption = 'Taming the Elephant: Using Data For Business Decisions' %}
+{% set banner_title_size = 'huge' %}
+
+{% block header_script %}
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css" />
+  <!--[if lte IE 8]>
+      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" />
+  <![endif]-->
+  <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
+{% endblock %}
+
+{% macro rsvp_form(node, form, waitlist=False, hascapacity=True, status='U') %}
+  <form id="rsvp" action="{{ node.url_for('rsvp') }}" class="form-inline" method="POST">
+    {{ form.hidden_tag() }}
+    <p class="centered space-three-top space-two-bottom">
+      {%- if waitlist %}
+        {%- if status in ['Y', 'M', 'W'] %}
+          <button name="status" value="N" class="button">Withdraw</button>
+        {%- endif %}
+        {%- if status in ['N', 'M', 'U'] %}
+          <button name="status" value="Y" class="button">Add to waiting list</button>
+        {%- endif %}
+      {%- else %}
+        {%- if hascapacity %}
+          <button name="status" value="Y" class="button">Yes</button>
+        {%- endif %}
+          <button name="status" value="N" class="button">No</button>
+        {%- if node.allow_maybe %}
+          <button name="status" value="M" class="button">Maybe</button>
+        {%- endif %}
+      {%- endif %}
+      <span class="loading hidden">&nbsp;</span>
+    </p>
+    {%- if status != 'U' %}
+      <p class="centered">
+        <span class="ultrafaded">Your status:</span>
+        {%- if status == 'Y' %} <span class="green">Attending</span>
+        {%- elif status == 'N' %} <span class="red">Not attending</span>
+        {%- elif status == 'M' %} <span class="blue">Maybe attending</span>
+        {%- elif status == 'W' %} <span class="orange">Wait-listed</span>
+        {% else %} Unknown {%- endif %}
+      </p>
+    {%- endif %}
+  </form>
+{% endmacro %}
+
+{% block banner_title_prefix %}{% endblock %}
+
+{% block page_nav_items %}
+  <li><a href="#preface" class="link-white-hover">About</a></li>  
+  <li><a href="#schedule" class="link-white-hover">Schedule</a></li>
+  <li><a href="#venue" class="link-white-hover">Venue</a></li>
+  <li><a href="#rsvp-section" class="link-white-hover">RSVP</a></li>
+{% endblock %}
+
+{% block content %}
+  <section class="legible prose space-six-top pad-one" id="preface">
+    <article> 
+      <section class="preface">
+        <h2 class="visuallyhidden">Preface</h2>
+        <div class="measure-8words center-block">
+          <p>From retail to manufacturing and health care to financial services, companies are rushing to embrace the promise that big data brings. By collecting more and more data managers hope to understand their businesses better and gain insights on the ways in which customers interact with businesses. Collecting terabytes of data that just produce charts and dashboards miss the true potential of the opportunity.</p><p>Simple data reporting won’t help managers make effective data-based decisions. Only considered and ongoing data analysis will. Join us as we cut through the hype and the clutter around Big Data and learn how to use data for business decisions</p>
+        </div>
+      </section> 
+    </article>
+  </section>
+
+  <section id="schedule" class="schedule push-three-top legible">
+    <h2 class="centered calm space-three-bottom">Schedule</h2>
+    <div class="schedule-table-container center-block pad-one regular">
+      {% include theme("partials/_delhi_schedule.html") %}
+    </div>
+  </section>
+
+
+  <section id="venue" class="legible conference-venue space-two-top space-four-bottom push-four-top">
+  <article class="legible">
+    <hgroup class="space-two-bottom">
+      <h1 class="calm centered nospace large">Venue</h1>
+      <h2 class="calm centered space-half-top nospace-bottom ultrafaded legible">91 Springboard, New Delhi</h2>
+    </hgroup>
+    <section>
+      <div class="venue-showcase conference-venue contain-width clearfix">
+        <p class="full ">
+        </p>
+        
+        <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/runup-event-venue/delhi-venue-1-256.png') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/delhi-venue-1-256.png') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/delhi-venue-1-400.png') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/delhi-venue-1-800.png') }}" }]'
+                alt="91 Springboard, New Delhi">
+        </p>
+        <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/runup-event-venue/delhi-venue-2-256.png') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/delhi-venue-2-256.png') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/delhi-venue-2-400.png') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/delhi-venue-2-800.png') }}" }]'
+                alt="91 Springboard, New Delhi">
+        </p>
+        <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/runup-event-venue/delhi-venue-3-256.png') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/delhi-venue-3-256.png') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/delhi-venue-3-400.png') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/delhi-venue-3-800.png') }}" }]'
+                alt="91 Springboard, New Delhi">
+        </p>
+        <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/runup-event-venue/delhi-venue-4-256.png') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/delhi-venue-4-256.png') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/delhi-venue-4-400.png') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/delhi-venue-4-800.png') }}" }]'
+                alt="91 Springboard, New Delhi">
+        </p>
+      </div>
+      <div class="measure-10words regular prose center-block pad-one space-two-top">
+        <h4 class="space-two-top nospace-bottom">When</h4>
+        <p class="space-half">June 20th, 6.30 pm - 8.30 pm</p>
+        <h4 class="space-two-top nospace-bottom">Address</h4>
+        <p class="space-half">
+          91 Springboards<br />
+          B1/H3, Lower Ground Floor,<br />
+          Mohan Cooperative Industrial Estate,<br />
+          Mathura Road,<br />
+          New Delhi - 110044<br />
+        </p>
+        <p class="secondary space-half-top space-two-bottom"><a href="http://goo.gl/maps/Dmda0">View on Google Maps</a></p>
+      </div>
+      <div class="map-container measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="pune-map" class="map"></div></div>
+    </section>
+</section>
+
+  <section id="rsvp-section" class="space-four-top fill-light legible clearfix">
+    <article class="push-two-top push-two-bottom highlight-links clearfix">
+      <h3 class="centered calm space-two-top space-three-bottom">RSVP</h3>
+      <div class="center-block measure-8words">
+        <div class="box section">
+          {%- if g.user %}            
+            {%- if node.can_rsvp(g.user) %}
+              {%- with status = node.get_status(g.user) %}
+                {%- if node.has_capacity() %}
+                  <p>
+                    {% if node.capacity > 0 -%} The venue has limited capacity. {% endif -%}
+                    Will you be attending? Please RSVP to confirm your presence:
+                  </p>
+                  {{ rsvp_form(node, form, status=status) }}
+                {%- else %}
+                  {%- if node.allow_waitlisting %}
+                    <p>
+                      This session is fully booked, but you can place yourself in the wait list in case someone drops out.
+                    </p>
+                    {{ rsvp_form(node, form, waitlist=True, status=status) }}
+                  {%- else %}
+                    <p>This session is fully booked.</p>
+                    {%- if status in ['N', 'M'] %}
+                      {{ rsvp_form(node, form, hascapacity=False, status=status) }}
+                    {%- endif %}
+                  {%- endif %}
+                {%- endif %}
+              {%- endwith %}
+            {%- else %}
+              <p>
+                We don’t have an email address on your profile matching your ticket.
+                Please <a href="https://auth.hasgeek.com/profile/email/new" target="_blank">add the email address</a>
+                you used when buying your ticket, <a href="{{ url_for('logout') }}">logout</a>
+                and <a href="{{ url_for('login') }}">login</a> again.
+              </p>
+            {%- endif %}
+          {%- else %}
+            <p>
+              {#{% if node.capacity > 0 -%} The venue has limited capacity. {% endif -%}#}
+              Interested in attending? Please login. You can use your existing Twitter or Google account, and if you have previously voted on a session proposal or attended a hacknight, you already have a HasGeek account.
+            </p>
+            <p class="centered">
+              <a href="{{ url_for('login') }}" class="button small-button">Login with Twitter, Google or HasGeek id</a>
+            </p>
+          {%- endif %}
+        </div>    
+      </div> 
+    </article>
+  </section>
+
+  {% from theme("data/delhi-event-sponsors.html") import pune_event_sponsors %}
+  {% if pune_event_sponsors %}
+  <section id="sponsor" class="partners clearfix space-three-top">  
+    <article class=" legible push-three-top push-two-bottom clearfix">
+      <h3 class="centered calm space-two-bottom space-three-top nospace ultrafaded">Sponsored by</h3>
+      <ul class="{% if partners|length > 3 %}thumbnail-columns thumbnail-columns-five {% else %}centered {% endif%}regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
+        {% for sponsor in pune_event_sponsors %}
+        <li class="clearfix {% if sponsor.logo.contain == 'height' %}contain-height{% else %}contain-width thirtyfive{% endif %}{% if pune_event_sponsors|length <= 3 %} inline-block{% endif%}"><a class="occupy centered {% if pune_event_sponsors|length <= 3 %} pad-one{% endif%}" href="{{ sponsor.web.link }}" style="height: auto"><img src="{{ theme_static(sponsor.logo.url) }}" alt="{{ sponsor.name }}"></a></li>
+        {% endfor %}
+      </ul>
+    </article>
+  </section>
+  {% endif %}
+
+{% endblock %}
+
+
+{% block sponsor_compact %}{% endblock %}
+
+{% block footer_script %}
+  <script type="text/javascript">
+  function initMap(div, map_venue, map_center) {
+    var map = new L.Map(div);
+    var cloudmadeUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
+      subDomains = ['otile1','otile2','otile3','otile4'],
+      cloudmadeAttrib = '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>';
+    var cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib, subdomains: subDomains});
+    var   venue = new L.LatLng(map_venue.lat, map_venue.lon)
+        , center = new L.LatLng(map_center.lat, map_center.lon)
+        ;
+    map.setView(center, 13).addLayer(cloudmade);
+    if ($(window).width() < 768) map.setView(venue,13);
+    // map.dragging.disable(); 
+    var marker = new L.Marker(venue);
+    map.addLayer(marker);
+    marker.bindPopup(map_venue.name);
+    marker.openPopup();
+    map.scrollWheelZoom.disable();
+    map.doubleClickZoom.disable();
+    map.on('zoomend', onZoomend);
+    function onZoomend(){ map.setView(venue, map.getZoom()); };
+  }
+  $(function() { 
+    initMap('pune-map', { lat: 28.51732, lon: 77.29496, name: '91 Springboard, New Delhi' }, { lat: 28.51732, lon: 77.29496 });
+  });
+  </script>
+  {{ ajaxform('rsvp', request, force=True) }}
+{% endblock %}
+
