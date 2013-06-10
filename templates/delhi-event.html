@@ -52,10 +52,10 @@
 {% block banner_title_prefix %}{% endblock %}
 
 {% block page_nav_items %}
-  <li><a href="#preface" class="link-white-hover">About</a></li>  
-  <li><a href="#schedule" class="link-white-hover">Schedule</a></li>
-  <li><a href="#venue" class="link-white-hover">Venue</a></li>
-  <li><a href="#rsvp-section" class="link-white-hover">RSVP</a></li>
+   <li><a href="#preface" class="link-white-hover">About</a></li><!--
+--><li><a href="#schedule" class="link-white-hover">Schedule</a></li><!--
+--><li><a href="#venue" class="link-white-hover">Venue</a></li><!--
+--><li><a href="#rsvp-section" class="link-white-hover">RSVP</a></li>
 {% endblock %}
 
 {% block content %}
@@ -138,7 +138,7 @@
   </section>
 </section>
 
-  <section id="rsvp-section" class="space-four-top fill-light legible clearfix">
+  <section id="rsvp-section" class="space-four-top fill-light legible clearfix pad-one">
     <article class="push-two-top push-two-bottom highlight-links clearfix">
       <h3 class="centered calm space-two-top space-three-bottom">RSVP</h3>
       <div class="center-block measure-8words">
@@ -179,8 +179,8 @@
               {#{% if node.capacity > 0 -%} The venue has limited capacity. {% endif -%}#}
               Interested in attending? Please login. You can use your existing Twitter or Google account, and if you have previously voted on a session proposal or attended a hacknight, you already have a HasGeek account.
             </p>
-            <p class="centered">
-              <a href="{{ url_for('login') }}" class="button small-button">Login with Twitter, Google or HasGeek id</a>
+            <p class="centered regular space-three-top space-two-bottom">
+              <a href="{{ url_for('login') }}" class="button">Login with Twitter, Google or&nbsp;HasGeek ID</a>
             </p>
           {%- endif %}
         </div>    

@@ -1090,6 +1090,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .schedule-table           { border: 1px solid #DDD; }
 .schedule-table .track-1  { width: 50%; background-color: #F9F9F9; }
 .schedule-table .track-2  { width: 50%; border-left: 1px solid #EEE; background-color: #F9F9F9; }
+.schedule-table.single-track .track-1  { width: 100%; }
 .schedule-table tr        { display: block; position: relative; }
 
 .schedule-table thead    { background-color: #DDD; }
