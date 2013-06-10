@@ -282,7 +282,7 @@ a.link-unfade-hover:hover,
     background-size: auto 100%;
 }
 .tiles .bird {
-    background-color: #665128;
+    background-color: #DDEEFF;
     background-image: url(../img/bird.svg);
     background-repeat: no-repeat;
     background-position: -40% 160%;
