@@ -190,12 +190,12 @@
 
   {% from theme("data/delhi-event-sponsors.html") import pune_event_sponsors %}
   {% if pune_event_sponsors %}
-  <section id="sponsor" class="partners clearfix space-three-top">  
+  <section id="sponsor" class="partners clearfix space-three">  
     <article class=" legible push-three-top push-two-bottom clearfix">
-      <h3 class="centered calm space-two-bottom space-three-top nospace ultrafaded">Sponsored by</h3>
-      <ul class="{% if partners|length > 3 %}thumbnail-columns thumbnail-columns-five {% else %}centered {% endif%}regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
+      <h3 class="centered calm space-one-bottom nospace-top ultrafaded">Sponsored by</h3>
+      <ul class="thumbnail-columns {% if partners|length > 3 %}thumbnail-columns-five {% else %}thumbnail-columns-three {% endif%}regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
         {% for sponsor in pune_event_sponsors %}
-        <li class="clearfix {% if sponsor.logo.contain == 'height' %}contain-height{% else %}contain-width thirtyfive{% endif %}{% if pune_event_sponsors|length <= 3 %} inline-block{% endif%}"><a class="occupy centered {% if pune_event_sponsors|length <= 3 %} pad-one{% endif%}" href="{{ sponsor.web.link }}" style="height: auto"><img src="{{ theme_static(sponsor.logo.url) }}" alt="{{ sponsor.name }}"></a></li>
+        <li class="clearfix {% if sponsor.logo.contain == 'height' %}contain-height{% else %}contain-width {% endif %}"><a class="occupy centered {% if pune_event_sponsors|length <= 3 %} pad-one{% endif%}" href="{{ sponsor.web.link }}"><img src="{{ theme_static(sponsor.logo.url) }}" alt="{{ sponsor.name }}"></a></li>
         {% endfor %}
       </ul>
     </article>
@@ -205,7 +205,7 @@
 {% endblock %}
 
 
-{% block sponsor_compact %}{% endblock %}
+{% block sponsor_compact %}<hr class="eighty center-block">{% endblock %}
 
 {% block footer_script %}
   <script type="text/javascript">
