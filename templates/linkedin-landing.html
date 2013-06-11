@@ -1,0 +1,133 @@
+{% extends theme("layout.html") %}
+
+{% set title = 'Interact with the Big Data Ecosystem in India' %}
+{% set description = node.description %}
+{% set page_caption = 'Interact with the Big Data Ecosystem in India' %}
+{% set banner_title_size = 'huge' %}
+
+{% block page_nav_items %}
+<li><a href="#short" class="link-white-hover">Short<span class="hide-mobile"> Version</span></a></li>
+<li><a href="#long" class="link-white-hover">Long<span class="hide-mobile">er Version</span></a></li>
+<li><a href="#contact" class="link-white-hover">Contact</a></li>
+<li><a href="#procedures" class="link-white-hover">Procedures</a></li>
+{% endblock %}
+
+{% block content %}
+<section class="legible prose space-six-top pad-one">
+  <article>
+    
+    <section class="preface">
+      <h2 class="visuallyhidden">Preface</h2>
+      <div class="measure-8words center-block">
+        <p>The Fifth Elephant 2013 is a community conference intended for collaboration and networking in the developer and business communities.</p>
+        <p>We value the presence of every attendee and want everyone to have an enjoyable and fulfilling experience. All attendees are therefore expected to show respect and courtesy to other attendees throughout the workshops and the conference.</p>
+        <p>All attendees – participants, speakers, exhibitors, organisers and volunteers – at The Fifth Elephant 2013 are required to conform to the following Code of Conduct. Organisers will enforce this code throughout the event.</p>
+      </div>
+    </section>
+
+    <section id="venue" class="legible conference-venue space-two-top space-four-bottom push-four-top">
+  <article class="legible">
+    <hgroup class="space-two-bottom">
+      <h1 class="calm centered nospace large">Venue</h1>
+      <h2 class="calm centered space-half-top nospace-bottom ultrafaded legible">ThoughtWorks office, Pune</h2>
+    </hgroup>
+    <section>
+      <div class="venue-showcase conference-venue contain-width clearfix">
+        <p class="full ">
+        </p>
+        
+        <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/runup-event-venue/pune-venue-1-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-1-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-1-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-1-800.jpg') }}" }]'
+                alt="ThoughtWorks office, Pune">
+        </p>
+        <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/runup-event-venue/pune-venue-2-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-2-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-2-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-2-800.jpg') }}" }]'
+                alt="ThoughtWorks office, Pune">
+        </p>
+        <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/runup-event-venue/pune-venue-3-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-3-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-3-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-3-800.jpg') }}" }]'
+                alt="ThoughtWorks office, Pune">
+        </p>
+        <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/runup-event-venue/pune-venue-4-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-4-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-4-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-4-800.jpg') }}" }]'
+                alt="ThoughtWorks office, Pune">
+        </p>
+      </div>
+      <div class="measure-10words regular prose center-block pad-one space-two-top">
+        <h4 class="space-two-top nospace-bottom">When</h4>
+        <p class="space-half">July 15th, 11am – 7pm</p>
+        <h4 class="space-two-top nospace-bottom">Address</h4>
+        <p class="space-half">
+          ThoughtWorks Technologies (India) Pvt Ltd<br />
+          GF-01 and MZ-01 Tower C<br />
+          Panchshil Tech Park<br />
+          Yerwada,<br />
+          Pune - 411006<br />
+        </p>
+        <div class="clearfix">
+          <h5 class="nospace ultrafaded flushleft regular pad-half-right">Landmark</h5>
+          <p class="nospace flushleft">ThoughtWorks in Pune is located inside Panchshil Tech Park. Panchshil Tech Park is situated opposite Pune Golf Course, adjacent to Don Bosco School.<br /></p>
+        </div>
+        <p class="secondary space-half-top space-two-bottom"><a href="https://maps.google.co.in/maps?q=Bak+Bak+Bar&ie=UTF-8&ei=xwqlUZ_hFsexrAeM4IBY&ved=0CAsQ_AUoAg">View on Google Maps</a></p>
+      </div>
+      <div class="map-container measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="pune-map" class="map"></div></div>
+    </section>
+  
+    <section id="long" class="longer-version regular space-two push-four-top">
+      <h2 class="centered calm">The Code of Conduct Applies to Everyone</h2>
+      <div class="measure-10words center-block">
+        <p>HasGeek is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of conference attendees in any form.</p>
+        <p>All communication should be appropriate for a professional audience including people of many different backgrounds.</p>
+        <p><b>Code for Speakers:</b> Sexual language and imagery is not appropriate during talks. Refrain from using these in your slides.</p>
+        <p>Sexist, racist, or exclusionary jokes are not acceptable.</p>
+        <p><b> Code for Exhibitors and Sponsors:</b> Exhibitors in the expo hall are also subject to the anti-harassment policy. Exhibitors should not use sexualised images, activities, or other material. Booth staff (including volunteers) should not use sexualised clothing/uniforms/costumes, or otherwise create a sexualised environment.</p>
+        <p><b>Code for Participants:</b> Harassment includes offensive verbal comments related to gender, sexual orientation, disability, physical appearance, body size, race, religion, sexual images in public spaces, deliberate intimidation, stalking, following, harassing photography or recording, sustained disruption of talks or other events, inappropriate physical contact, and unwelcome sexual attention.</p>
+        <p>Attendees asked to stop any harassing behaviour are expected to comply immediately.</p>
+        <p>If an attendee engages in behaviour that violates this code of conduct, the conference organisers may take any action they deem appropriate, including warning the offender or expelling him or her from the premises with no refund.</p>
+        <p></p>
+        <p>Thank you for helping make The Fifth Elephant 2013 a welcoming, friendly event for all.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-info regular space-two push-four-top">
+      <h2 class="centered calm">Contact Information</h2>
+      <div class="measure-10words center-block">
+        <p>If you are being harassed, have noticed that someone else is being harassed, or have any other concerns, please contact a crew member. Conference staff will be wearing “CREW” badges. Ask them to put you in touch with the lead organizer — Zainab Bawa.</p>
+        <p>If the matter is especially urgent, please call/contact any of these individuals:</p>
+        <ul>
+          <li>Zainab Bawa: +91 99454 73641</li>
+          <li>Radha Rao: +91 90356 26606</li>
+          <li>Kiran Jonnalagadda: +91 99452 35123</li>
+        </ul>
+        <p>Crew members are there to help participants contact appropriate authorities, provide escorts, or otherwise assist those experiencing harassment to feel safe for the duration of the conference. We value your attendance.</p>
+      </div>
+    </section>
+
+    <section id="procedures" class="procedures regular space-two push-four-top pad-one">
+      <h2 class="centered calm">Procedure for Handling&nbsp;Harassment</h2>
+      <ul class="measure-10words center-block">
+        <li><a href="/2013/incident-reporting">Attendee Procedure for incident handling</a></li>
+        <li><a href="/2013/incident-handling">Staff Procedure for incident handling</a></li>
+      </ul>
+    </section>
+
+    <footer id="license" class="license measure-10words regular center-block space-two-top space-six-bottom push-four-top">
+      <h2 class="centered calm">License</h2>
+      <div class="faded secondary">
+        <p>This Code of Conduct was forked from the <a href="https://us.pycon.org/2013/about/code-of-conduct/">PyCon US Code of Conduct</a>, which in turn was forked from the <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">Geek Feminism wiki, created by the Ada Initiative and other volunteers</a> and available under a Creative Commons Zero license.</p>
+
+        <p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/" class="unhighlight"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">The Conference Code of Conduct</span> for <a xmlns:cc="http://creativecommons.org/ns#" href="http://fifthelephant.in/2013/code-of-conduct" property="cc:attributionName" rel="cc:attributionURL">The Fifth Elephant</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</p>
+      </div>
+    </footer>
+    
+  </article>
+</section>
+{% endblock %}
