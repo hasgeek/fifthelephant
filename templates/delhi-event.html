@@ -188,14 +188,14 @@
     </article>
   </section>
 
-  {% from theme("data/delhi-event-sponsors.html") import pune_event_sponsors %}
-  {% if pune_event_sponsors %}
+  {% from theme("data/delhi-event-sponsors.html") import delhi_event_sponsors %}
+  {% if delhi_event_sponsors %}
   <section id="sponsor" class="partners clearfix space-three">  
     <article class=" legible push-three-top push-two-bottom clearfix">
       <h3 class="centered calm space-one-bottom nospace-top ultrafaded">Sponsored by</h3>
-      <ul class="thumbnail-columns {% if partners|length > 3 %}thumbnail-columns-five {% else %}thumbnail-columns-three {% endif%}regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
-        {% for sponsor in pune_event_sponsors %}
-        <li class="clearfix {% if sponsor.logo.contain == 'height' %}contain-height{% else %}contain-width {% endif %}"><a class="occupy centered {% if pune_event_sponsors|length <= 3 %} pad-one{% endif%}" href="{{ sponsor.web.link }}"><img src="{{ theme_static(sponsor.logo.url) }}" alt="{{ sponsor.name }}"></a></li>
+      <ul class="thumbnail-columns {% if delhi_event_sponsors|length > 3 %}thumbnail-columns-five {% else %}thumbnail-columns-three {% endif%}regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
+        {% for sponsor in delhi_event_sponsors %}
+        <li class="clearfix {% if sponsor.logo.contain == 'height' %}contain-height{% else %}contain-width {% endif %}"><a class="occupy centered {% if delhi_event_sponsors|length <= 3 %} pad-one{% endif%}" href="{{ sponsor.web.link }}"><img src="{{ theme_static(sponsor.logo.url) }}" alt="{{ sponsor.name }}"></a></li>
         {% endfor %}
       </ul>
     </article>

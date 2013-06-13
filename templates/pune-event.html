@@ -254,9 +254,9 @@
   <section id="sponsor" class="partners clearfix space-three">  
     <article class=" legible push-three-top push-two-bottom clearfix">
       <h3 class="centered calm space-one-bottom nospace-top ultrafaded">Sponsored by</h3>
-      <ul class="thumbnail-columns {% if partners|length > 3 %}thumbnail-columns-five {% endif%}regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
+      <ul class="thumbnail-columns {% if pune_event_sponsors|length > 3 %}thumbnail-columns-five {% else %}thumbnail-columns-three {% endif%}regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
         {% for sponsor in pune_event_sponsors %}
-        <li class="clearfix {% if sponsor.logo.contain == 'height' %}contain-height{% else %}contain-width thirtyfive{% endif %}{% if pune_event_sponsors|length <= 3 %} inline-block{% endif%}"><a class="occupy centered {% if pune_event_sponsors|length <= 3 %} pad-one{% endif%}" href="{{ sponsor.web.link }}"><img src="{{ theme_static(sponsor.logo.url) }}" alt="{{ sponsor.name }}"></a></li>
+        <li class="clearfix {% if sponsor.logo.contain == 'height' %}contain-height{% else %}contain-width {% endif %}"><a class="occupy centered {% if pune_event_sponsors|length <= 3 %} pad-one{% endif%}" href="{{ sponsor.web.link }}"><img src="{{ theme_static(sponsor.logo.url) }}" alt="{{ sponsor.name }}"></a></li>
         {% endfor %}
       </ul>
     </article>
