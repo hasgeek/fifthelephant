@@ -1,0 +1,40 @@
+{# 
+  Sold out example for tickets:
+    set tickets = {
+        'workshop': {
+          'current': 'Sold Out!'
+        , 'full': 'Rs&nbsp;1500'
+        , 'note': ''
+      }
+      , 'conference': {
+          'current': 'Sold Out!'
+        , 'full': 'Rs&nbsp;4000'
+        , 'note': ''
+      }
+      , 'corporate': {
+          'current': 'Sold Out!'
+        , 'full': 'Rs&nbsp;6000'
+        , 'note': ''
+      }
+    }
+#}
+
+{%
+  set tickets = {
+      'workshop': {
+        'current': 'Rs&nbsp;1,500'
+      , 'full': ''
+      , 'note': 'Available until July&nbsp;10<sup>th</sup>'
+    }
+    , 'conference': {
+        'current': 'Rs&nbsp;2,600'
+      , 'full': 'Rs&nbsp;4000'
+      , 'note': 'Save Rs&nbsp;1,400 until July&nbsp;4<sup>th</sup>'
+    }
+    , 'corporate': {
+        'current': 'Rs&nbsp;6,000'
+      , 'full': ''
+      , 'note': 'Available until July&nbsp;9<sup>th</sup>'
+    }
+  }
+%}
