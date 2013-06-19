@@ -101,6 +101,7 @@
   <h1 class="calm centered space-two large">
     Tickets
   </h1>
+  {% from theme("data/tickets.html") import tickets %}
   <ul class="ticket-columns clearfix">
     <li>
       <div class="ticket fill-white clearfix">
@@ -112,14 +113,11 @@
           <li>Two parallel tracks of hands-on workshop sessions</li>
           <li>Breakfast &amp; Lunch</li>
         </ul>
-        <p class="centered space-line-top pad-one limited">
-          <span class="legible bold">
-            Rs&nbsp;1,500
-          </span>
-          <br>
-          <span class="secondary faded">
-            Available until July 10<sup>th</sup>
-          </span>
+        <p class="centered space-line-top pad-one limited ticket-price">
+          {% if tickets.workshop.full %}<del class="ultrafaded gap-1q-right">{{ tickets.workshop.full|safe }}</del>{% endif %}
+          <span class="legible bold">{{ tickets.workshop.current|safe }}</span>
+          {% if tickets.workshop.note %}<br>
+          <span class="secondary faded">{{ tickets.workshop.note|safe }}</span>{% endif %}
         </p>
       </div>
     </li>
@@ -137,16 +135,11 @@
           <li>Breakfast &amp; Lunch</li>
           <li>Event party</li>
         </ul>
-        <p class="centered space-line-top pad-one limited">
-          <del class="ultrafaded gap-1q-right">
-            Rs&nbsp;4000</del>
-          <span class="legible bold">
-            Rs&nbsp;2,600
-          </span>
-          <br>
-          <span class="secondary faded">
-            Save Rs&nbsp;1,400 until July&nbsp;4<sup>th</sup>
-          </span>
+        <p class="centered space-line-top pad-one limited ticket-price">
+          {% if tickets.conference.full %}<del class="ultrafaded gap-1q-right">{{ tickets.conference.full|safe }}</del>{% endif %}
+          <span class="legible bold">{{ tickets.conference.current|safe }}</span>
+          {% if tickets.conference.note %}<br>
+          <span class="secondary faded">{{ tickets.conference.note|safe }}</span>{% endif %}
         </p>
       </div>
     </li>
@@ -164,12 +157,11 @@
           <li>Ticket sponsorship credit</li>
           <li>Custom invoice</li>
         </ul>
-        <p class="centered space-line-top pad-one">
-          <span class="legible bold">Rs&nbsp;6,000</span>
-          <br>
-          <span class="secondary faded">
-            Available until July 9<sup>th</sup>
-          </span>
+        <p class="centered space-line-top pad-one ticket-price">
+          {% if tickets.corporate.full %}<del class="ultrafaded gap-1q-right">{{ tickets.corporate.full|safe }}</del>{% endif %}
+          <span class="legible bold">{{ tickets.corporate.current|safe }}</span>
+          {% if tickets.corporate.note %}<br>
+          <span class="secondary faded">{{ tickets.corporate.note|safe }}</span>{% endif %}
         </p>
       </div>
     </li>

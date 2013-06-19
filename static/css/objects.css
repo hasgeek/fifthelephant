@@ -514,6 +514,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
         min-height: 5em;
     }
     .ticket-note  { max-width: none; }
+    .ticket-price { min-height: 4em; }
     .ticket p.limited .wrap { display: block; }
 }
 @media only screen and (min-width: 50em) {
@@ -541,10 +542,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .ticket p { min-height: 4em; }
 }
 @media only screen and (min-width: 63em) { .ticket ul { min-height: 8.5em !important; } }
-@media only screen and (min-width: 68em) { 
-  .ticket p.limited .wrap { display: inline; }
-  .ticket p { min-height: 0; }
-}
+@media only screen and (min-width: 68em) { .ticket p.limited .wrap { display: inline; } }
 
 /* Last Year: 2012 edition */
 .last-year { overflow: hidden; }
