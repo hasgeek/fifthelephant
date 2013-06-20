@@ -339,8 +339,7 @@ a.link-unfade-hover:hover,
 .js .sponsors dt.silver,
 .js .sponsors dt.bronze,
 .js .sponsors dt.party,
-.js .sponsors dt.community,
-.js .sponsors dt.corporate { clear: left; }
+.js .sponsors dt.community { clear: left; }
 
 .js .sponsors dd { width: 50%; }
 .js .sponsors dd.xl,
@@ -357,6 +356,18 @@ a.link-unfade-hover:hover,
     outline: 1px solid rgba(255,255,255,.2);
     background-color: #EAF5FC;
     background-color: rgba(234,245,252,.85);
+}
+
+.js .sponsors dd.corporate:nth-of-type(14):after {
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    outline: 1px solid rgba(255,255,255,.2);
+    background-color: #F8FFEF;
+    background-color: rgba(248,255,239,.85);
 }
 
 
