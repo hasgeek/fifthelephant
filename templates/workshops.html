@@ -12,8 +12,8 @@
 
 {% block page_nav_items %}
    <li><a href="#sessions" class="link-white-hover">Workshops</a></li><!--
---><!--<li><a href="#schedule" class="link-white-hover">Schedule</a></li>--><!--
---><li><a href="#proposals" class="link-white-hover">Proposals</a></li>
+--><li><a href="#schedule" class="link-white-hover">Schedule</a></li><!--
+--><!--<li><a href="#proposals" class="link-white-hover">Proposals</a>--></li>
 {% endblock %}
 
 {% block content %}
@@ -30,9 +30,16 @@
       <p class="regular">
         Learn about open source frameworks and tools such as <a href="http://funnel.hasgeek.com/fifthel2013/707-analytics-using-hadoop-ecosystem-on-aws" target="_blank">Pig, Hive</a>, <a href= "http://funnel.hasgeek.com/fifthel2013/678-howto-run-a-hadoop-cluster-on-a-laptop" target="_blank">Hadoop</a>; commercial solutions (sponsored), programming languages such as R, <a href="http://funnel.hasgeek.com/fifthel2013/689-neo4j-graph-workshop" target="_blank">databases</a> and visualization techniques and tricks through slides, demonstrations and partially hands-on activities. There will be ample opportunity to clarify doubts regarding the limitations and possibilities of these tools and frameworks. 
       </p> 
-      <p class="regular">8 sessions, 90-120 mins each. <a href="http://fifthelephant.doattend.com/" target="_blank">Limited seats available.</a></p>
+      <p class="regular">8 sessions, 90-120 mins each. <a href="http://fifthelephant.doattend.com/" target="_blank">Workshop tickets sold out.</a></p>
     </div>
   </article>
+</section>
+
+<section id="schedule" class="schedule space-two push-four legible">
+  <h2 class="centered calm space-two">Schedule</h2>
+  <div class="schedule-table-container center-block pad-one regular">
+    {% include theme("partials/_workshop_table.html") %}
+  </div>
 </section>
 
 <section id="sessions" class="space-four-top fill-light legible clearfix">
@@ -45,13 +52,7 @@
   {% endwith %}
 </section>
 
-<!--<section id="schedule" class="schedule space-two push-four legible">
-  <h2 class="centered calm space-two">Schedule</h2>
-  <div class="schedule-table-container center-block pad-one regular">
-    {% include theme("partials/_schedule_table.html") %}
-  </div>
-</section>-->
-  
+{#
 <section id="proposals" class="push-four">
   <article class="clearfix">
     <div class="measure-8words center-block">
@@ -69,5 +70,6 @@
     </div>
   </article>
 </section>
+#}
 
 {% endblock %}
