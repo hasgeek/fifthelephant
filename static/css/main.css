@@ -277,9 +277,13 @@ a.link-unfade-hover:hover,
 
 /*  Highlights (Tiles)  */
 
-.tiles .pig {
-    background: #D6E5F8 url(../img/pig.png) no-repeat scroll 10% bottom;
-    background-size: auto 100%;
+.tiles .visualization {
+    background-color: #FFF;
+    background-image: url(../img/visualization.png);
+    background-repeat: no-repeat;
+    background-position: -40% 160%;
+    background-size: auto 80%;
+    background-position: 1% 160%;
 }
 .tiles .bird {
     background-color: #DDEEFF;
@@ -289,50 +293,48 @@ a.link-unfade-hover:hover,
     background-size: auto 90%;
     background-position: 10% 160%;
 }
-.tiles .julia {
-    background-color: #FFFFFF;
-    background-image: url(../img/partners/julia.png);
+.tiles .conference-schedule {
+    background-color: #F3F3F3;
+    background-image: url(../img/conference-schedule.png);
     background-repeat: no-repeat;
     background-position: -40% 160%;
-    background-size: auto 50%;
+    background-size: auto 70%;
+    background-position: 15% 80%;
+}
+.tiles .workshop-schedule {
+    background-color: #FFCC66;
+    background-image: url(../img/workshop-schedule.png);
+    background-repeat: no-repeat;
+    background-position: -40% 160%;
+    background-size: auto 70%;
+    background-position: 15% 80%;
+}
+.tiles .venue {
+    background-color: #E4DCD3;
+    background-image: url(../img/venue.svg);
+    background-repeat: no-repeat;
+    background-position: -80% 160%;
+    background-size: auto 60%;
     background-position: 10% 80%;
 }
-.tiles .hadoop {
-    background-color: #FFCC66;
-    background-image: url(../img/hadoop.png);
-    background-repeat: no-repeat;
-    background-position: -40% 10%;
-    background-size: auto 80%;
-    background-position: 1% 100%;
-}
-.tiles .visualization {
-    background-color: #F3F3F3;
-    background-image: url(../img/visualization.png);
-    background-repeat: no-repeat;
-    background-position: -40% 160%;
-    background-size: auto 80%;
-    background-position: 1% 160%;
-}
-.tiles .puneevent {
+.tiles .code-of-conduct {
     background-color: #CCA351;
-    background-image: url(../img/db.png);
+    background-image: url(../img/code-of-conduct.png);
     background-repeat: no-repeat;
-    background-position: -40% 160%;
-    background-size: auto 70%;
-    background-position: -3% 120%;
-}
-.tiles .delhievent {
-    background-color: #E4DCD3;
-    background-image: url(../img/db.png);
-    background-repeat: no-repeat;
-    background-position: -40% 160%;
-    background-size: auto 70%;
-    background-position: -3% 120%;
+    background-position: -45% 10%;
+    background-size: auto 80%;
+    background-position: 10% 110%;
 }
 
 
 
-@media only screen and (min-width: 30em) { .tiles .bird { background-position: -20% 160%; } }
+@media only screen and (min-width: 30em) { 
+    .tiles .bird { background-position: -20% 160%; } 
+    .tiles .conference-schedule { background-position: -3% 120%; } 
+    .tiles .workshop-schedule { background-position: -3% 120%; }
+    .tiles .venue { background-position: -5% 90%; }
+    .tiles .code-of-conduct { background-position: -5% 120%; }
+}
 
 /*  Keeping sponsor tiles well behaved  */
 
