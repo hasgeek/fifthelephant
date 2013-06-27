@@ -342,16 +342,18 @@ a.link-unfade-hover:hover,
 .js .sponsors dt.silver,
 .js .sponsors dt.bronze,
 .js .sponsors dt.party,
-.js .sponsors dt.community { clear: left; }
+.js .sponsors dt.community,
+.js .sponsors dt.corporate { clear: left; }
 
 .js .sponsors dd { width: 50%; }
 .js .sponsors dd.xl,
 .js .sponsors dd.l { width: 100%; }
-.js .sponsors dd.s { width: 33.3333%; width: calc(100%/3); }
+.js .sponsors dd.s,
+.js .sponsors dd.xs { width: 33.3333%; width: calc(100%/3); }
 
-.js .sponsors dd.corporate:nth-of-type(16):after {
+.js .sponsors dd.corporate:nth-of-type(21):after {
     content: ' ';
-    width: 100%;
+    width: 500%;
     height: 100%;
     position: absolute;
     top: 0;
@@ -373,7 +375,7 @@ a.link-unfade-hover:hover,
     .js .sponsors dd.xl { width: 50%; }
     .js .sponsors dd.l  { width: 50%; }
 }
-/*@media only screen and (min-width: 60em) { .js .sponsors dd { width: 20%; } }*/
+@media only screen and (min-width: 60em) { .js .sponsors dd.xs { width: 16.6667%; width: calc(100%/6); } }
 
 footer nav ul li + li:before { content: '\2022'; margin: 0 .7rem 0 .4rem; color: #AAA; }
 
