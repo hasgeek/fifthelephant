@@ -1,35 +1,95 @@
 {% extends theme("layout.html") %}
 
-{% set title = 'Interact with the Big Data Ecosystem in India' %}
+{% set title = 'Is big data on your mind?' %}
 {% set description = node.description %}
-{% set page_caption = 'Interact with the Big Data Ecosystem in India' %}
+{% set page_caption = 'Is big data on your mind?' %}
 {% set banner_title_size = 'huge' %}
 
 {% block page_nav_items %}
-<li><a href="#short" class="link-white-hover">Short<span class="hide-mobile"> Version</span></a></li>
-<li><a href="#long" class="link-white-hover">Long<span class="hide-mobile">er Version</span></a></li>
-<li><a href="#contact" class="link-white-hover">Contact</a></li>
-<li><a href="#procedures" class="link-white-hover">Procedures</a></li>
+<li><a href="#about" class="link-white-hover">about</a></li>
+<li><a href="#linkedin-featured-talks" class="link-white-hover">Featured<span class="hide-mobile"> Speakers</span></a></li>
+<li><a href="#venue" class="link-white-hover">Venue</a></li>
+<li><a href="#linkedin-tickets" class="link-white-hover"><span class="hide-mobile">Buy </span>Ticket</a></li>
+<li><a href="#links" class="link-white-hover">Links</a></li>
+<li><a href="#hasgeek" class="link-white-hover"><span class="hide-mobile">About </span>HasGeek</a></li>
 {% endblock %}
 
 {% block content %}
-<section class="legible prose space-six-top pad-one">
-  <article>
-    
-    <section class="preface">
-      <h2 class="visuallyhidden">Preface</h2>
-      <div class="measure-8words center-block">
-        <p>The Fifth Elephant 2013 is a community conference intended for collaboration and networking in the developer and business communities.</p>
-        <p>We value the presence of every attendee and want everyone to have an enjoyable and fulfilling experience. All attendees are therefore expected to show respect and courtesy to other attendees throughout the workshops and the conference.</p>
-        <p>All attendees – participants, speakers, exhibitors, organisers and volunteers – at The Fifth Elephant 2013 are required to conform to the following Code of Conduct. Organisers will enforce this code throughout the event.</p>
-      </div>
-    </section>
+<section id="about" class="measure-10words pad-one center-block legible space-four-top nospace-bottom prose clearfix">
+  <h2 class="visuallyhidden">About The Fifth Elephant</h2>
+   <div class="measure-8words center-block">
+    <p>By 2012, data storage and processing had turned into huge areas of business opportunities and technological challenges.  Organizations holding millions of records or even 1 GB of data were grappling with questions about how to store information and retrieve it in the shortest possible time and most efficient manner.</p><p>To respond to this growing trend, HasGeek organized The Fifth Elephant which was to be an annual conference on big data, analytics and application of technology for managing data. The Fifth Elephant 2012 had over 650 participants, across two days, discussing storage, visualization, analytics and application of technology. Participants and speakers were from large and medium-sized companies such as Akamai, Amazon, Enthought, InMobi, Red Hat, Google, IBM, and others. Startups, self-motivated developers, open data communities and researchers also participated in the conference.</p><p>At the The Fifth Elephant 2013, we will help small and large organizations to understand and decide which technologies are required for managing and analyzing data and how these technologies affect business processes and outcomes.</p>    
+  </div>
+</section>
 
-    <section id="venue" class="legible conference-venue space-two-top space-four-bottom push-four-top">
+<p class="linkedin-banner center-block ir">Big Data</p>
+    
+<section id="about-2013" class="longer-version regular push-five-bottom push-two-top">
+  <h2 class="centered calm">The Fifth Elephant 2013</h2>
+  <div class="measure-10words center-block">
+    <p>The main themes for the 2013 edition are storage and analytics. There will be separate tracks for technology, decision-support issues and metrics and tools. The agenda is as follows:</p>
+    <p><b>Technology Agenda:</b>
+      <ul>
+        <li>Exposure to storage and analytics technologies.</li>
+        <li>Better understanding of why different tools and approaches work for some domains.</li>
+        <li>Interactions with decision-makers and product managers to understand how these technologies fit business processes and goals.</li>
+      <ul>
+    </p>
+    <p><b>Business Agenda:</b>
+      <ul>
+        <li>Understand how technology is applied for better customer targeting, building products, improving business processes and decision-making.</li>
+        <li>Interactions with technologists and analysts to learn how data collection and processing techniques work in different sectors.</li>
+        <li>Deeper insights about costs, scale, performance and reliability of technologies for managing and processing data.</li>
+      </ul>
+    </p>
+    <p><b>Target Audience:</b></p><p>The conference is open to developers, architects, database administrators, CTOs, CIOs, product managers and analysts.</p>
+  </div>
+  <p class="centered regular space-three-top space-two-bottom">
+      <a href="/2013/" class="button">View Event website</a>
+    </p>
+</section>
+
+<section id="linkedin-featured-talks" class="space-four-top fill-light legible clearfix pad-one">
+  <article class="push-two-top push-two-bottom highlight-links clearfix">
+    <h3 class="centered calm space-two-top space-three-bottom ultrafaded">Featured talks and speakers</h3>
+    <div class="center-block measure-8words">
+      <p>
+        The Fifth Elephant 2013 promises to be a focussed event with high-quality content, excellent speakers, a showcase for cutting-edge technology and platform for important discussions in the space of big data and analytics.  Some of the featured speakers include:</p>
+      <ul class="featured-sessions poster-with-bio legible clearfix nospace">
+        {% from theme("data/linkedin-featured-talks.html") import featured_speakers as featured %}
+        {% for session in featured %}
+          <li class="clearfix" style="list-style-type: none">     
+            {% if session.speaker %}
+              <div class="poster clearfix">
+                <p class="contain-width clearfix">
+                  {% if session.speaker.photo %}
+                    <img alt="" src="{{ theme_static(session.speaker.photo) }}" width="150" height="150">
+                  {% endif %}
+                </p>
+              </div>
+              <div class="bio clearfix">
+                <h3 class="regular">{{ session.speaker.name }}</h3>
+                <h4 class="all-caps secondary">{{ session.speaker.company }}</h4>
+                
+              </div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+      <p>The Fifth Elephant 2013 will have 700-1,000 attendees. Some of the participating companies include 10gen, Sprinklr, Google, Aerospike, ThoughtWorks, Intel, Neo Technology, Nexus Venture Partners, Qubole, Yahoo!,  Oracle, NetApp, LucidWorks, Sequoia Capital, Verisign, GE Healthcare and others.</p>
+      <p>
+        <a href="/2013/" class="button small-button">View Conference Schedule</a>
+        <a href="/2013/" class="button small-button">View Workshop Schedule</a>
+      </p>
+    </div> 
+  </article>
+</section>
+
+<section id="venue" class="legible conference-venue space-two-top space-four-bottom push-four-top">
   <article class="legible">
     <hgroup class="space-two-bottom">
       <h1 class="calm centered nospace large">Venue</h1>
-      <h2 class="calm centered space-half-top nospace-bottom ultrafaded legible">ThoughtWorks office, Pune</h2>
+      <h2 class="calm centered space-half-top nospace-bottom ultrafaded legible">NIMHANS Convention Centre , Bangalore</h2>
     </hgroup>
     <section>
       <div class="venue-showcase conference-venue contain-width clearfix">
@@ -38,96 +98,132 @@
         
         <p class="quarter flushleft">
           <img  class="venuephoto"
-                src="{{ theme_static('img/venue/runup-event-venue/pune-venue-1-256.jpg') }}"
-                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-1-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-1-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-1-800.jpg') }}" }]'
-                alt="ThoughtWorks office, Pune">
+                src="{{ theme_static('img/venue/nimhans-audi1-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/nimhans-audi1-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/nimhans-audi1-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/nimhans-audi1-800.jpg') }}" }]'
+                alt="Main Auditorium at NIMHANS Convention Centre">
         </p>
         <p class="quarter flushleft">
           <img  class="venuephoto"
-                src="{{ theme_static('img/venue/runup-event-venue/pune-venue-2-256.jpg') }}"
-                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-2-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-2-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-2-800.jpg') }}" }]'
-                alt="ThoughtWorks office, Pune">
+                src="{{ theme_static('img/venue/nimhans-audi2-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/nimhans-audi2-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/nimhans-audi2-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/nimhans-audi2-800.jpg') }}" }]'
+                alt="Auditorium 2 at NIMHANS Convention Centre">
         </p>
         <p class="quarter flushleft">
           <img  class="venuephoto"
-                src="{{ theme_static('img/venue/runup-event-venue/pune-venue-3-256.jpg') }}"
-                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-3-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-3-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-3-800.jpg') }}" }]'
-                alt="ThoughtWorks office, Pune">
+                src="{{ theme_static('img/venue/nimhans-hall-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/nimhans-hall-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/nimhans-hall-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/nimhans-hall-800.jpg') }}" }]'
+                alt="Main Hall at NIMHANS Convention Centre">
         </p>
         <p class="quarter flushleft">
           <img  class="venuephoto"
-                src="{{ theme_static('img/venue/runup-event-venue/pune-venue-4-256.jpg') }}"
-                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-4-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-4-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-4-800.jpg') }}" }]'
-                alt="ThoughtWorks office, Pune">
-        </p>
-      </div>
+                src="{{ theme_static('img/venue/nimhans-greens-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/nimhans-greens-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/nimhans-greens-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/nimhans-greens-800.jpg') }}" }]'
+                alt="Greens at NIMHANS Convention Centre">
+        </p>      </div>
       <div class="measure-10words regular prose center-block pad-one space-two-top">
-        <h4 class="space-two-top nospace-bottom">When</h4>
-        <p class="space-half">July 15th, 11am – 7pm</p>
+        
         <h4 class="space-two-top nospace-bottom">Address</h4>
         <p class="space-half">
-          ThoughtWorks Technologies (India) Pvt Ltd<br />
-          GF-01 and MZ-01 Tower C<br />
-          Panchshil Tech Park<br />
-          Yerwada,<br />
-          Pune - 411006<br />
+          <abbr class="silent" title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention&nbsp;Centre<br>
+          NIMHANS Hospital Premises,<br>
+          Hosur Road / Marigowda Road, (Lakkasandra, Wilson Garden)<br>
+          Bangalore, Karnataka 560029
         </p>
-        <div class="clearfix">
-          <h5 class="nospace ultrafaded flushleft regular pad-half-right">Landmark</h5>
-          <p class="nospace flushleft">ThoughtWorks in Pune is located inside Panchshil Tech Park. Panchshil Tech Park is situated opposite Pune Golf Course, adjacent to Don Bosco School.<br /></p>
-        </div>
-        <p class="secondary space-half-top space-two-bottom"><a href="https://maps.google.co.in/maps?q=Bak+Bak+Bar&ie=UTF-8&ei=xwqlUZ_hFsexrAeM4IBY&ved=0CAsQ_AUoAg">View on Google Maps</a></p>
       </div>
-      <div class="map-container measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="pune-map" class="map"></div></div>
+      <p class="centered">
+        <a href="/2013/venue#conference" class="button">Venue Details</a>
+      </p>
     </section>
-  
-    <section id="long" class="longer-version regular space-two push-four-top">
-      <h2 class="centered calm">The Code of Conduct Applies to Everyone</h2>
-      <div class="measure-10words center-block">
-        <p>HasGeek is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of conference attendees in any form.</p>
-        <p>All communication should be appropriate for a professional audience including people of many different backgrounds.</p>
-        <p><b>Code for Speakers:</b> Sexual language and imagery is not appropriate during talks. Refrain from using these in your slides.</p>
-        <p>Sexist, racist, or exclusionary jokes are not acceptable.</p>
-        <p><b> Code for Exhibitors and Sponsors:</b> Exhibitors in the expo hall are also subject to the anti-harassment policy. Exhibitors should not use sexualised images, activities, or other material. Booth staff (including volunteers) should not use sexualised clothing/uniforms/costumes, or otherwise create a sexualised environment.</p>
-        <p><b>Code for Participants:</b> Harassment includes offensive verbal comments related to gender, sexual orientation, disability, physical appearance, body size, race, religion, sexual images in public spaces, deliberate intimidation, stalking, following, harassing photography or recording, sustained disruption of talks or other events, inappropriate physical contact, and unwelcome sexual attention.</p>
-        <p>Attendees asked to stop any harassing behaviour are expected to comply immediately.</p>
-        <p>If an attendee engages in behaviour that violates this code of conduct, the conference organisers may take any action they deem appropriate, including warning the offender or expelling him or her from the premises with no refund.</p>
-        <p></p>
-        <p>Thank you for helping make The Fifth Elephant 2013 a welcoming, friendly event for all.</p>
-      </div>
-    </section>
-
-    <section id="contact" class="contact-info regular space-two push-four-top">
-      <h2 class="centered calm">Contact Information</h2>
-      <div class="measure-10words center-block">
-        <p>If you are being harassed, have noticed that someone else is being harassed, or have any other concerns, please contact a crew member. Conference staff will be wearing “CREW” badges. Ask them to put you in touch with the lead organizer — Zainab Bawa.</p>
-        <p>If the matter is especially urgent, please call/contact any of these individuals:</p>
-        <ul>
-          <li>Zainab Bawa: +91 99454 73641</li>
-          <li>Radha Rao: +91 90356 26606</li>
-          <li>Kiran Jonnalagadda: +91 99452 35123</li>
-        </ul>
-        <p>Crew members are there to help participants contact appropriate authorities, provide escorts, or otherwise assist those experiencing harassment to feel safe for the duration of the conference. We value your attendance.</p>
-      </div>
-    </section>
-
-    <section id="procedures" class="procedures regular space-two push-four-top pad-one">
-      <h2 class="centered calm">Procedure for Handling&nbsp;Harassment</h2>
-      <ul class="measure-10words center-block">
-        <li><a href="/2013/incident-reporting">Attendee Procedure for incident handling</a></li>
-        <li><a href="/2013/incident-handling">Staff Procedure for incident handling</a></li>
-      </ul>
-    </section>
-
-    <footer id="license" class="license measure-10words regular center-block space-two-top space-six-bottom push-four-top">
-      <h2 class="centered calm">License</h2>
-      <div class="faded secondary">
-        <p>This Code of Conduct was forked from the <a href="https://us.pycon.org/2013/about/code-of-conduct/">PyCon US Code of Conduct</a>, which in turn was forked from the <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">Geek Feminism wiki, created by the Ada Initiative and other volunteers</a> and available under a Creative Commons Zero license.</p>
-
-        <p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/" class="unhighlight"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">The Conference Code of Conduct</span> for <a xmlns:cc="http://creativecommons.org/ns#" href="http://fifthelephant.in/2013/code-of-conduct" property="cc:attributionName" rel="cc:attributionURL">The Fifth Elephant</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</p>
-      </div>
-    </footer>
-    
-  </article>
 </section>
+
+<section id="linkedin-tickets" class="fill-light push-three space-six-top clearfix pad-one">
+  <h1 class="calm centered space-two large">
+    Tickets
+  </h1>
+  <div class="centered">
+  {% from theme("data/tickets.html") import tickets %}
+  <ul class="ticket-columns clearfix">
+    <li>
+      <div class="ticket fill-white clearfix">
+        <hgroup class="centered">
+          <h2 class="body-type calm large">Conference</h2>
+          <h3 class="body-type calm secondary all-caps faded nospace">
+            July 12 <span class="amp calm ultrafaded">&amp;</span> 13
+          </h3>
+        </hgroup>
+        <ul class="space-two">
+          <li>Two days of talks &amp; discussions</li>
+          <li>Expo area &amp; hacker corners</li>
+          <li>Breakfast &amp; Lunch</li>
+          <li>Event party</li>
+        </ul>
+        <p class="centered space-line-top pad-one limited ticket-price">
+          {% if tickets.conference.full %}<del class="ultrafaded gap-1q-right">{{ tickets.conference.full|safe }}</del>{% endif %}
+          <span class="legible bold">{{ tickets.conference.current|safe }}</span>
+          {% if tickets.conference.note %}<br>
+          <span class="secondary faded">{{ tickets.conference.note|safe }}</span>{% endif %}
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="ticket fill-white clearfix">
+        <hgroup class="centered">
+          <h2 class="body-type calm large">Corporate</h2>
+          <h3 class="body-type calm secondary all-caps faded nospace">
+            July 11, 12 <span class="amp calm ultrafaded">&amp;</span> 13
+          </h3>
+        </hgroup>
+        <ul class="space-two">
+          <li>Workshop + Conference</li>
+          <li>Event T-Shirt</li>
+          <li>Ticket sponsorship credit</li>
+          <li>Custom invoice</li>
+        </ul>
+        <p class="centered space-line-top pad-one ticket-price">
+          {% if tickets.corporate.full %}<del class="ultrafaded gap-1q-right">{{ tickets.corporate.full|safe }}</del>{% endif %}
+          <span class="legible bold">{{ tickets.corporate.current|safe }}</span>
+          {% if tickets.corporate.note %}<br>
+          <span class="secondary faded">{{ tickets.corporate.note|safe }}</span>{% endif %}
+        </p>
+      </div>
+    </li>
+  </ul>
+  </div>
+  <p class="centered legible space-three">
+    <a
+      class="button button-primary min-measure-3words"
+      title="Fifth Elephant 2013 Tickets on DoAttend"
+      href="http://fifthelephant.doattend.com/">
+      Buy Tickets
+    </a>
+    <br>
+    <span class="ticket-note center-block secondary occupy space-line-top faded">
+      Single day conference tickets for 12<sup>th</sup> &amp; 13<sup>th</sup> will be available at the venue.
+    </span>
+  </p>
+</section>
+
+<section id="links" class="contact-info regular space-two push-four-top">
+  <h2 class="centered calm">Links</h2>
+  <div class="measure-8words center-block">
+    <ul>
+      <li>Event website: <a href="http://fifthelephant.in/2013">http://fifthelephant.in/2013</a></li>
+      <li>Conference Schedule: <a href="http://fifthelephant.in/2013/conference">http://fifthelephant.in/2013/conference</a></li>
+      <li>Workshop Schedule: <a href="http://fifthelephant.in/2013/workshops">http://fifthelephant.in/2013/workshops</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer id="hasgeek" class="license measure-10words regular center-block space-two-top space-six-bottom push-four-top">
+  <h2 class="clearfix"><a href="http://hasgeek.com/" class="hasgeek-logo ir center-block unhighlight">HasGeek</a></h2>
+  <div class="faded secondary">
+    <p>HasGeek is a technology company in the media business, bringing software automation to a traditionally people-intensive operation. In a little over two years, HasGeek has organized over two dozen conferences attended by thousands of technology professionals, made several thousand connections, and built open source tools that are now used by many communities.</p><p>We’ve created conferences around the themes of front end engineering, big data, analytics and cloud computing, JavaScript, Android, location-aware services and devops. Our Job Board is used by thousands of geeks every month to find new opportunities.</p><p>HasGeek was founded in December 2010. The company is based out of Bangalore.</p>
+    <ul>
+      <li>Website: <a href="http://hasgeek.com">http://hasgeek.com</a></li>
+      <li>Email: info@hasgeek.com</li>
+      <li>Phone: +91 80 6768 4422</li>
+    </ul>
+  </div>
+</footer>
+    
 {% endblock %}

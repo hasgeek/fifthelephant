@@ -104,6 +104,17 @@ a.link-unfade-hover:hover,
     padding-top: 66.5%;
     margin-bottom: 10%;
 }
+.linkedin-banner {
+    background-image: url(../img/linkedin-banner-1100.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    max-width: 2800px;
+    max-width: 1960px;
+    width: 55%;
+    padding-top: 25%;
+    margin-bottom: 0%;
+}
 .community-banner {
     background-image: url(../img/community-banner-500.png);
     background-position: center;
@@ -175,6 +186,11 @@ a.link-unfade-hover:hover,
         width: 90%;
         padding-top: 24%;
     }
+    .linkedin-banner {
+        width: 75%;
+        padding-top: 25%;
+        margin-bottom: 0%;
+    }
 }
 @media  only screen
         and (-webkit-min-device-pixel-ratio: 1.5)
@@ -188,6 +204,11 @@ a.link-unfade-hover:hover,
     .community-banner { background-image: url(../img/community-banner-1100.png); }
     .conference-banner { background-image: url(../img/conference-banner-1100.png); }
     .workshop-banner { background-image: url(../img/workshop-banner-1100.png); }
+    .linkedin-banner {
+        width: 100%;
+        padding-top: 25%;
+        margin-bottom: 0%;
+    }
 }
 @media  only screen
         and (-webkit-min-device-pixel-ratio: 1.5)

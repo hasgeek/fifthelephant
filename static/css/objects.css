@@ -541,6 +541,10 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     }
     .ticket p { min-height: 4em; }
 }
+@media only screen and (min-width: 50em) {
+    #linkedin-tickets .ticket-columns{ margin: 0 auto; width: 70%;}
+    #linkedin-tickets .ticket-columns > li { width: 50%; border-width: 0 1px 1px 1px; }
+}
 @media only screen and (min-width: 63em) { .ticket ul { min-height: 8.5em !important; } }
 @media only screen and (min-width: 68em) { .ticket p.limited .wrap { display: inline; } }
 
@@ -1057,6 +1061,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .poster-with-bio .poster { width: 50%; margin-left: -8em; float: left; margin-right: 2em; text-align: right; }
     .poster-with-bio .poster p { margin: .5rem 0; width: auto; float: right; }
     .poster-with-bio .poster p img { margin: .5rem 0; width: 9.375rem; float: right; }
+    #linkedin-featured-talks .poster-with-bio .poster p img { margin: -20px 0; }
     .poster-with-bio .poster hgroup { position: relative; left: auto; bottom: auto; }
     .poster-with-bio .bio { float: left; width: 24em; }
     .poster-with-bio .bio p { margin: .5rem 0; }
