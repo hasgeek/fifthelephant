@@ -709,7 +709,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .sponsors { background-image: url(../img/sponsor-bg-3088.jpg); }
 }
 
-.no-js .sponsors .sponsor-block { max-width: 32em; padding: 0 1rem; background-color: rgba(255,255,255,.75); color: black; }
+.no-js .sponsors .sponsor-logos-block { max-width: 32em; padding: 0 1rem; background-color: rgba(255,255,255,.75); color: black; }
 .sponsors .sponsor-logos .sponsor-logos-list { 
     margin: 0 auto; 
     overflow: hidden;
@@ -858,7 +858,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .js .sponsors .squeeze .sponsor-logos:hover dd.active:after { opacity: 1; }
     .js .sponsors .squeeze .sponsor-logos .sponsor-logos-list { font-size: .55em; background-color: transparent; max-width: none; width: 100%; }
     .js .sponsors .squeeze .sponsor-logos .sponsor-logos-list dl dt span { font-size: .600rem; }
-    .js .sponsors .sponsor-block.squeeze { padding-left: 1rem; }  
+    .js .sponsors .sponsor-logos-block.squeeze { padding-left: 1rem; }
 }
 @media only screen and (min-width: 45em) {
     .js .sponsors .sponsor-logos .sponsor-logos-list { max-width: 80%; }

@@ -17,7 +17,7 @@ function initSponsor () {
     var   $logos = $('#sponsors .sponsor-logos')
         , $about = $('#sponsors .about-sponsor')
         , $detail = $('#sponsors .about-sponsor .sponsor-detail')
-        , $container = $('#sponsors .sponsor-block')
+        , $container = $('#sponsors .sponsor-logos-block')
         ;
     $('body').on('click', '#sponsors .sponsor-logos-list a.sponsor-blurb', function(e) {
         var   $target = $(e.target).closest('dd');
