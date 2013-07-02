@@ -758,7 +758,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .js .sponsors dd.party { background-color: #FFF4F6; background-color: rgba(255,244,246,.85); }
 .js .sponsors dd.travel { background-color: #F1F1FF; background-color: rgba(241,241,255,.85); }
 .js .sponsors dd.community { background-color: #F4F2F0; background-color: rgba(244,242,240,.85); }
-.js .sponsors dd.corporate,
+.js .sponsors dd.corporate-tickets,
 .js .sponsors dd.corporate-tickets { background-color: #F8FFEF; background-color: rgba(248,255,239,.85); }
 .js .sponsors .about-sponsor { background-color: #FFFFFF; background-color: rgba(255,255,255,.9); color: black; padding-top: 2rem; }
 .no-js .sponsors dd { margin: 3rem auto; }
