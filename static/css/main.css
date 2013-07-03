@@ -363,7 +363,7 @@ a.link-unfade-hover:hover,
 .js .sponsors dt.silver,
 .js .sponsors dt.bronze,
 .js .sponsors dt.party,
-.js .sponsors dt.community,
+/*.js .sponsors dt.community,*/
 .js .sponsors dt.corporate-tickets { clear: left; }
 
 .js .sponsors dd { width: 50%; }
@@ -372,7 +372,7 @@ a.link-unfade-hover:hover,
 .js .sponsors dd.s,
 .js .sponsors dd.xs { width: 33.3333%; width: calc(100%/3); }
 
-.js .sponsors dd.corporate-tickets:nth-of-type(21):after {
+.js .sponsors dd.corporate-tickets:nth-of-type(24):after {
     content: ' ';
     width: 500%;
     height: 100%;
