@@ -1151,6 +1151,18 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .schedule-table tbody th { padding: 1rem .5rem; }
 }  
 
+@media only screen and (max-width: 45em) {
+    .schedule-table.single-track .track-1 {
+        width: auto;
+    }
+    .schedule-table .track-1 {
+        width: auto;
+    }
+    .schedule-table .track-2 {
+        width: auto;
+    }
+}
+
 /* Venue */
 @media only screen and (min-width: 641px),
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 321px),
