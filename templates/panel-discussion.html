@@ -1,0 +1,219 @@
+{% extends theme("layout.html") %}
+{% from "baseframe/forms.html" import ajaxform %}
+
+{% set title = 'Panel Discussions' %}
+{% set description = node.description %}
+{% set page_caption = 'Panel Discussions' %}
+{% set banner_title_size = 'huge' %}
+
+{% block header_script %}
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css" />
+  <!--[if lte IE 8]>
+      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" />
+  <![endif]-->
+  <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
+{% endblock %}
+
+{% block banner_title_prefix %}{% endblock %}
+
+{% block page_nav_items %}
+   <li><a href="#preface" class="link-white-hover">About</a></li><!--
+--><li><a href="#panel" class="link-white-hover">The Panel</a></li><!--
+--><li><a href="#companies" class="link-white-hover">Participating Companies</a></li><!--
+--><li><a href="#schedule" class="link-white-hover">Schedule</a></li><!--
+--><li><a href="#venue" class="link-white-hover">Venue</a></li>
+{% endblock %}
+
+{% block content %}
+  <section class="legible prose space-six-top pad-one" id="preface">
+    <article> 
+      <section class="preface">
+        <h2 class="visuallyhidden">Preface</h2>
+        <div class="measure-8words center-block">
+          <p>
+            <a href="http://www.nexusvp.com/">Nexus Venture Partners</a> presents the CIO Panel
+            at The Fifth Elephant 2013, on <strong>realizing cost savings with next generation storage
+            and network acceleration technologies</strong>. The panel features eminent CIOs and key
+            leadership from high tech companies in the Nexus VP portfolio.
+          </p>
+        </div>
+      </section> 
+    </article>
+  </section>
+
+  <section id="panel" class="space-four-top fill-light legible clearfix">
+    {% from theme("data/panel-members.html") import panel_members as featured %}
+    {% for session in featured %}
+      {% if loop.first %}
+      <article class="push-three-top push-two-bottom highlight-links clearfix">
+        <h3 class="centered calm space-two-top nospace-bottom ultrafaded">The Panel</h3>
+        <ul class="featured-sessions poster-with-bio legible clearfix nospace">
+      {% endif %}
+          <li class="clearfix">    
+            {% if session.speaker %}
+              <div class="poster clearfix">
+                <p class="contain-width clearfix">
+                  {% if session.speaker.photo %}
+                    <img alt="" src="{{ theme_static(session.speaker.photo) }}" width="150" height="150">
+                  {% endif %}
+                </p>
+                <hgroup class="clearboth">
+                  <h4 class="regular red">{{ session.speaker.position }}</h4>
+                  <h3 class="regular">{{ session.speaker.name }}</h3>
+                  <h4 class="all-caps secondary">{{ session.speaker.company|safe }}</h4>
+                </hgroup>
+              </div>
+              <div class="bio clearfix">
+                {{ session.speaker.bio|safe }}
+              </div>
+            {% endif %}
+            <br class="clearboth" />
+          </li>
+      {% if loop.last %}
+        </ul>
+      </article>
+      {% endif %}
+    {% endfor %}
+  </section>
+
+    <section id="companies" class="legible clearfix">
+    {% from theme("data/panel-companies.html") import participating_companies as featured %}
+    {% for session in featured %}
+      {% if loop.first %}
+      <article class="push-three-top push-two-bottom highlight-links clearfix">
+        <h3 class="centered calm space-one-top space-one-bottom ultrafaded">Participating Companies</h3>
+        <ul class="featured-sessions poster-with-bio legible clearfix nospace">
+      {% endif %}
+          <li class="clearfix">    
+            {% if session.company %}
+              <div class="poster clearfix">
+                <p class="contain-width clearfix">
+                  {% if session.company.photo %}
+                    <a href="{{ session.company.link }}"><img alt="" src="{{ theme_static(session.company.photo) }}" width="150" height="150"></a>
+                  {% endif %}
+                </p>
+              </div>
+              <div class="bio clearfix">
+                <h3 class="regular"><a href="{{ session.company.link }}">{{ session.company.name }}</a></h3>
+                {{ session.company.bio|safe }}
+              </div>
+            {% endif %}
+          </li>
+      {% if loop.last %}
+        </ul>
+      </article>
+      {% endif %}
+    {% endfor %}
+  </section>
+
+  <section id="schedule" class="schedule fill-light push-three-top push-four-bottom legible">
+    <hgroup class="space-two-bottom">
+      <h2 class="calm centered space-one-bottom">Schedule</h2>
+      <h2 class="calm centered space-half-top nospace-bottom ultrafaded legible">July 11, 2013, Thursday, 5.00 PM – 6.45 PM</h2>
+    </hgroup>
+    <div class="schedule-table-container center-block pad-one regular">
+      {% include theme("partials/_panel_schedule.html") %}
+    </div>
+  </section>
+
+
+  <section id="venue" class="legible conference-venue nospace-top space-four-bottom push-four-top">
+  <article class="legible">
+    <hgroup class="space-two-bottom">
+      <h1 class="calm centered nospace large">Venue</h1>
+      <h2 class="calm centered space-half-top nospace-bottom ultrafaded legible"><abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention&nbsp;Centre</h2>
+    </hgroup>
+    <section>
+      <div class="venue-showcase conference-venue contain-width clearfix">
+        <p class="full ">
+        </p>
+       <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/nimhans-audi1-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/nimhans-audi1-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/nimhans-audi1-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/nimhans-audi1-800.jpg') }}" }]'
+                alt="Main Auditorium at NIMHANS Convention Centre">
+        </p>
+        <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/nimhans-audi2-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/nimhans-audi2-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/nimhans-audi2-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/nimhans-audi2-800.jpg') }}" }]'
+                alt="Auditorium 2 at NIMHANS Convention Centre">
+        </p>
+        <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/nimhans-hall-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/nimhans-hall-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/nimhans-hall-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/nimhans-hall-800.jpg') }}" }]'
+                alt="Main Hall at NIMHANS Convention Centre">
+        </p>
+        <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/nimhans-greens-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/nimhans-greens-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/nimhans-greens-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/nimhans-greens-800.jpg') }}" }]'
+                alt="Greens at NIMHANS Convention Centre">
+        </p>      
+      </div>
+      <div class="measure-10words regular prose center-block pad-one space-two-top">
+        <h4 class="space-two-top nospace-bottom">Address</h4>
+        <p class="space-half">
+          <abbr class="silent" title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention&nbsp;Centre<br>
+          NIMHANS Hospital Premises,<br>
+          Hosur Road / Marigowda Road, (Lakkasandra, Wilson Garden)<br>
+          Bangalore, Karnataka 560029
+        </p>        
+        <div class="clearfix">
+          <h5 class="nospace ultrafaded flushleft regular pad-half-right">Landmark</h5>
+          <p class="nospace flushleft">Near Dairy Circle</p>
+        </div>
+        <p class="secondary space-half-top space-two-bottom"><a href="http://goo.gl/maps/PvXY">View on Google Maps</a></p>
+      </div>
+      <div class="map-container measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="conference-map" class="map"></div></div>
+    </section>
+</section>
+
+  {% from theme("data/pune-event-sponsors.html") import pune_event_sponsors %}
+  {% if pune_event_sponsors %}
+  <section id="sponsor" class="partners clearfix space-three">  
+    <article class=" legible push-three-top push-two-bottom clearfix">
+      <h3 class="centered calm space-one-bottom nospace-top ultrafaded">Sponsored by</h3>
+      <ul class="thumbnail-columns-one regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
+        <li class="clearfix contain-height"><a class="occupy centered" href="http://www.nexusvp.com/"><img src="{{ theme_static('img/sponsors/nexus.png') }}" alt="Nexus Venture Partners logo"></a></li>
+      </ul>
+    </article>
+  </section>
+  {% endif %}
+
+{% endblock %}
+
+
+{% block sponsor_compact %}<hr class="eighty center-block">{% endblock %}
+
+{% block footer_script %}
+  <script type="text/javascript">
+  function initMap(div, map_venue, map_center) {
+    var map = new L.Map(div);
+    var cloudmadeUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
+      subDomains = ['otile1','otile2','otile3','otile4'],
+      cloudmadeAttrib = '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>';
+    var cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib, subdomains: subDomains});
+    var   venue = new L.LatLng(map_venue.lat, map_venue.lon)
+        , center = new L.LatLng(map_center.lat, map_center.lon)
+        ;
+    map.setView(center, 13).addLayer(cloudmade);
+    if ($(window).width() < 768) map.setView(venue,13);
+    // map.dragging.disable(); 
+    var marker = new L.Marker(venue);
+    map.addLayer(marker);
+    marker.bindPopup(map_venue.name);
+    marker.openPopup();
+    map.scrollWheelZoom.disable();
+    map.doubleClickZoom.disable();
+    map.on('zoomend', onZoomend);
+    function onZoomend(){ map.setView(venue, map.getZoom()); };
+  }
+  $(function() { 
+  initMap('conference-map', { lat: 12.9431, lon: 77.5969, name: 'NIMHANS Convention Centre' }, { lat: 12.9599, lon: 77.5969 });
+  });
+  </script>
+  {{ ajaxform('rsvp', request, force=True) }}
+{% endblock %}
+
