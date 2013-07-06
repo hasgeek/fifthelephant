@@ -1,0 +1,372 @@
+{% extends theme("layout.html") %}
+
+{% set title = 'Workshop Prerequisites' %}
+{% set description = node.description %}
+{% set page_caption = 'Workshop Prerequisites' %}
+{% set banner_title_size = 'huge' %}
+
+{% block page_nav_items %}
+<li><a href="#why" class="link-white-hover">Why</a></li>
+<li><a href="#prerequisites" class="link-white-hover">Prerequisites</a></li>
+{% endblock %}
+
+{% block content %}
+<section id="why" class="measure-10words pad-one center-block legible space-four-top nospace-bottom prose clearfix">
+  <h2 class="visuallyhidden">About The Fifth Elephant</h2>
+   <div class="measure-8words center-block">
+    <p>These are the mandatory steps needed for those who are attending the Fifth Elephant workshops. This is required since the workshops needs internet access and it will be difficult to start with the setup, installation and configuration of the softwares and background steps required during the Conference. This will also help to preempt any last minute issues in internet connectivity.</p>    
+  </div>
+</section>
+
+<section id="prerequisites" class="measure-10words pad-one center-block legible space-four-top nospace-bottom prose clearfix">
+  <h3 class="centered">Prerequisites for workshops</h3>
+  <div id="accordion-container">
+    <div class="accordion-header">
+      <p>Neo4j Graph Workshop</p>
+      <span class="red all-caps secondary">Andreas Kollegger</span>
+    </div>
+    <div class="accordion-content">
+      <h3>Installation Instructions</h3>
+      <p>Install Neo4j from here <a href="http://www.neo4j.org/download">http://www.neo4j.org/download</a></p>
+    </div>
+
+    <div class="accordion-header">
+      <p>Big Data, Real-time Processing and Storm</p>
+      <span class="red all-caps secondary">Prashanth Babu</span>
+    </div>
+    <div class="accordion-content">
+      <h3>Machine requirements</h3>
+      <p>Laptop with any OS with JDK and Maven will suffice, as we will be using Storm Local Mode for our analysis.</p>
+
+      <h3>GitHub Repo</h3>
+      <p>Please check Storm project samples on my GitHub account:</p>
+      <ul>
+        <li><a href="https://github.com/P7h/StormWordCount">https://github.com/P7h/StormWordCount</a></li>
+        <li><a href="https://github.com/P7h/StormTweetsWordCount">https://github.com/P7h/StormTweetsWordCount</a></li>
+      </ul>
+
+      <h3>JDK 7.x setup</h3>
+      <ol>
+        <li>Download latest JDK 7.0 from: <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads- 1880260.html">http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads- 1880260.html</a></li>
+        <li>Please select appropriate version depending on your OS and bits [32 -bit or 64-bit] and complete the installation.
+          <ul>
+            <li>Please remember the location to which you have installed the JDK.</li>
+          </ul>
+        </li>
+        <li>Environment Variables:
+          <ul>
+            <li>Please add a new environment variable <span class="highlight">JAVA_HOME</span> to the location where you installed JDK.</li>
+            <li>Please update the environment variable <span class="highlight">PATH</span> to include <span class="highlight">%JAVA_HOME%/bin</span> or <span class="highlight">$JAVA_HOME/bin</span> as required by your OS.</li>
+          </ul>
+        </li>
+        <li>Try <span class="highlight">java -version</span> in a command prompt or shell.</li>
+      </ol>
+      <h3>Maven 3.x setup</h3>
+      <ol>
+        <li>Download latest Maven from: <a href="http://www.carfab.com/apachesoftware/maven/maven-3/3.0.5/binaries/apache-maven- 3.0.5-bin.zip">http://www.carfab.com/apachesoftware/maven/maven-3/3.0.5/binaries/apache-maven- 3.0.5-bin.zip</a></li>
+        <li>Uncompress the above downloaded binary to a location on your machine.
+          <ul>
+            <li>Please remember the location to which you have uncompressed the above archive.</li>
+          </ul>
+        </li>
+        <li>Environment Variables:
+          <ul>
+            <li>Please add a new environment variable <span class="highlight">MAVEN_HOME</span> to the location where you installed Maven.</li>
+            <li>Please update the environment variable <span class="highlight">PATH</span> to include <span class="highlight">%MAVEN_HOME%/bin</span> or <span class="highlight">$MAVEN_HOME/bin</span> as required by your OS.</li>
+          </ul>
+        </li>
+        <li>Try <span class="highlight">maven -version</span> in a command prompt or shell</li>
+      </ol>
+      <h3>Create a new Twitter app</h3>
+      <ol>
+        <li>Please check and use the simple steps mentioned in the below URL for creating a new Twitter app.
+          <br /><a href="http://iag.me/socialmedia/how-to-create-a-twitter-app-in-8-easy-steps/">http://iag.me/socialmedia/how-to-create-a-twitter-app-in-8-easy-steps/</a></li>
+        <li>Once you created the Twitter app, please keep OAuth Settings handy:
+          <ul>
+            <li>Consumer Key</li>
+            <li>Consumer Secret</li>
+            <li>OAuth Access Token</li>
+            <li>OAuth Access Token Secret</li>
+          </ul>
+        </li>
+        <li>Please copy these values to the appropriate keys in config.properties [<a href="https://github.com/P7h/StormTweetsWordCount/blob/master/src/main/resources/config.properties">https://github.com/P7h/StormTweetsWordCount/blob/master/src/main/resources/config.properties</a>] file present in StormTweetsWordCount project on your local machine.</li>
+      </ol>
+      <h3>Building and executing Topology for StormWordCount</h3>
+      <ol>
+        <li>Change into StormWordCount Project.<div class="command">cd StormWordCount</div></li>
+        <li>And execute the following command on the shell or command prompt, run one of the following commands:
+          <div class="command">mvn clean compile exec:java -Dexec.classpathScope=compile -Dexec.mainClass=org.p7h.storm.offline.wordcount.topology.WordCountTopology</div>
+          <div class="command">mvn clean compile package &amp;&amp; java -jar target/storm-wordcount-1.0-SNAPSHOT-jar-with-dependencies.jar</div>
+        </li>
+        <li>For more detailed steps on this project and features and info on the output it generates, please refer to: <a href="https://github.com/P7h/StormWordCount#stormwordcount">https://github.com/P7h/StormWordCount#stormwordcount</a></li>
+      </ol>
+      <h3>Building and executing Topology for StormTweetsWordCount</h3>
+      <ol>
+        <li>Change into StormTweetsWordCount Project.
+          <div class="command">cd StormTweetsWordCount</div>
+        </li>
+        <li>And execute the following command on the shell or command prompt, run one of the following commands:
+          <div class="command">mvn clean compile exec:java -Dexec.classpathScope=compile -Dexec.mainClass=org.p7h.storm.wordcount.topology.WordCountTopology</div>
+          <div class="command">mvn clean compile package &amp;&amp; java -jar target/storm-tweets-wordcount-0.1-jar-with-dependencies.jar</div>
+        </li>
+        <li>For more detailed steps on this project and features and info on the output it generates, please refer to: <a href="https://github.com/P7h/StormTweetsWordCount#stormtweetswordcount">https://github.com/P7h/StormTweetsWordCount#stormtweetswordcount</a></li>
+      </ol>
+      <br /><hr>
+      <h3>OVERVIEW</h3>
+      <a target="_blank" href="{{ theme_static('files/Outline__TheFifthElephant_2013__Big_Data_Real_time_processing_and_Storm.pdf') }}">Overview of this workshop</a><br />
+    </div>
+
+    <div class="accordion-header">
+      <p>MongoDB: An Overview</p>
+      <span class="red all-caps secondary">Edouard Servan-Schreiber</span>
+    </div>
+    <div class="accordion-content">
+      <h3>Installation Instructions</h3>
+      <p><a href="http://www.mongodb.org/downloads">http://www.mongodb.org/downloads</a></p>
+    </div>
+
+    <div class="accordion-header">
+      <p>Finding order in the chaos : machine learning for web text analytics using R</p>
+      <span class="red all-caps secondary">Harshad Saykhedkar</span>
+    </div>
+    <div class="accordion-content">
+      <h3>RESPONSE FORM</h3>
+      <p>Please fill in the following form so that the instructor can fine tune his workshop: <br /><a href="https://docs.google.com/a/sokrati.com/forms/d/16SzczjP1tPN7SY4EfHNERSiGo5JNFZTlQdEkIGyh9WY/viewform">https://docs.google.com/a/sokrati.com/forms/d/16SzczjP1tPN7SY4EfHNERSiGo5JNFZTlQdEkIGyh9WY/viewform</a></p><br /><hr>
+      <h3>INSTALLATION INSTRUCTIONS</h3>
+      <h3>Step 1 : Installation of R</h3>
+      <p>R is going to be our primary platform for the workshop. R version 3.0.1 (Good Sport) has been released on 2013​05​16 and you can install the same. However its not mandatory to have the latest version installed. Any version of R ≥ 2.14.0 is fine.</p><p>The installation is fairly simple and well documented on the R project website. Some details are given below.</p>
+      <h4 class="orange">1.1 Installation on *nix systems</h4>
+      <ul>
+        <li><strong>Installing from source</strong><br/>
+          Follow the steps given at <a href="http://www.cran.r​project.org/doc/manuals/R​admin.html">http://www.cran.r​project.org/doc/manuals/R​admin.html</a>
+        </li>
+        <li><strong>Installation using binaries on Debian/Ubuntu systems</strong><br />
+          <ol>
+            <li>Add the appropriate entry in your <span class="highlight">/etc/hosts/sources.list</span> file for the nearest cran
+mirror ( which is IIT Madras FTP server for us) <br />example : <div class="command">deb http://ftp.iitm.ac.in/cran/bin/linux/ubuntu precise/</div></li>
+            <li>Refresh using <div class="command">sudo​ apt get update</div></li>
+            <li>Secure APT : The Ubuntu archives on CRAN are signed with the key of "Michael Rutter <marutter@gmail.com>" with key ID E084DAB9. To add the key to your system with one command use <div class="command">sudo apt​key adv ​keyserver keyserver.ubuntu.com ​recv​keys E084DAB9</div></li>
+            <li>Install R using <div class="command">sudo apt get install r​base​core</div></li>
+          </ol>
+        </li>
+        <li><strong>Installation using binaries on other linux systems</strong>
+          <p>The binaries are available at <a href="http://cran.r​project.org/bin/linux/">http://cran.r​project.org/bin/linux/</a></p>
+        </li>
+      </ul>
+
+      <h4 class="orange">1.2 Installation on Windows</h4>
+      <ul>
+        <li>R precompiled binaries for Windows are available at <a href="http://www.cran.r​project.org/bin/windows/base/R​3.0.1​win.exe">http://www.cran.r​project.org/bin/windows/base/R​3.0.1​win.exe</a>
+        </li>
+        <li>Common questions about R installation on Windows are answered at <a href="http://www.cran.r​project.org/bin/windows/base/rw​FAQ.html">http://www.cran.r​project.org/bin/windows/base/rw​FAQ.html</a>
+        </li>
+      </ul>
+
+      <h4 class="orange">1.3 Installation on OS​X</h4>
+      <ul>
+        <li>R precompiled binaries for OS​X are available at <a href="http://www.cran.r​project.org/bin/windows/base/rw​FAQ.html">http://www.cran.r​project.org/bin/windows/base/rw​FAQ.html</a></li>
+        <li>Common questions about R installation on Mac platform are answered at <a href="http://www.cran.r​project.org/bin/macosx/RMacOSX​FAQ.html">http://www.cran.r​project.org/bin/macosx/RMacOSX​FAQ.html</a></li>
+      </ul>
+
+      <h3>Step 2 : Installation of relevant R packages</h3>
+      <p>Installation of new packages is simple once we have R up and running. Just use the <span class="highlight">install.packages()</span> function!</p>
+      <ul>
+        <li>Most the R packages do a self check after installation ( “testing if installed package can be loaded” )</li>
+        <li>Issues during installation are highlighted ( “installation of package ‘....’ had non​zero exit status” ) with relevant error messages.</li>
+      </ul>
+      <p>We need the following packages for our session.</p>
+      <table border="1">
+        <tr>
+          <th>Package name</th>
+          <th>Package usage</th>
+        </tr>
+        <tr>
+          <td>package tm (must!)</td>
+          <td>Main functions for text mining</td>
+        </tr>
+        <tr>
+          <td>package e1071 (must!)</td>
+          <td>Functions for training Naive Bayes Classifier and other machine learning tasks</td>
+        </tr>
+        <tr>
+          <td>package openNLP, openNLPmodels.en (optional)</td>
+          <td>Functions for natural language processing tasks and models trained for English</td>
+        </tr>
+      </table>
+      <h4 class="orange">2.1 Installing package for text mining</h4>
+      <ul>
+        <li>This packages needs R >= 2.14 and methods package (installed by default with R)</li>
+        <li>Install the package by running the command
+          <div class="command">install.packages(“tm”)</div>
+        </li>
+      </ul>
+      <h4 class="orange">2.2 Installing package e1071</h4>
+      <p>Install the package using 
+        <div class="command">install.packages(“e1071”)</div>
+      </p>
+      <h4 class="orange">2.3 Installing package openNLP and openNLPmodels.en (optional)</h4>
+      <ul>
+        <li>This package is a collection of tools from the openNLP project ( which is in Java) and hence imports package rJava during the installation.</li>
+        <li>Importantly, your system must have JDK 1.4 or higher installed.</li>
+        <li>Install the package using the following command. (It will also install the dependency rJava)<div class="command">install.packages(“openNLP”, “openNLPmodels.en”)</div></li>
+      </ul>
+      <p>For any issues faced during installation : write to <strong>harshad.saykhedkar AT sokrati DOT com</strong> with subject line <strong>‘fifth elephant workshop installation issues’</strong></p>
+      <hr><br />
+      <h3>EXERCISE FILES</h3>
+      <a href="{{ theme_static('files/Exercises.tar.gz') }}">Download Exercise Files</a>
+    </div>
+
+
+    <div class="accordion-header">
+      <p>Data Analysis and Visualization using R</p>
+      <span class="red all-caps secondary">Vinayak Hegde</span>
+    </div>
+    <div class="accordion-content">
+      <h3>INSTALLATION INSTRUCTIONS</h3>
+      <h3>Step 1 : Installation of R</h3>
+      <p>R is going to be our primary platform for the workshop. R version 3.0.1 (Good Sport) has been released on 2013​05​16 and you can install the same. However its not mandatory to have the latest version installed. Any version of R ≥ 2.14.0 is fine.</p><p>The installation is fairly simple and well documented on the R project website. Some details are given below.</p>
+      <h4 class="orange">1.1 Installation on *nix systems</h4>
+      <ul>
+        <li><strong>Installing from source</strong><br/>
+          Follow the steps given at <a href="http://www.cran.r​project.org/doc/manuals/R​admin.html">http://www.cran.r​project.org/doc/manuals/R​admin.html</a>
+        </li>
+        <li><strong>Installation using binaries on Debian/Ubuntu systems</strong><br />
+          <ol>
+            <li>Add the appropriate entry in your <span class="highlight">/etc/hosts/sources.list</span> file for the nearest cran
+mirror ( which is IIT Madras FTP server for us) <br />example : <div class="command">deb http://ftp.iitm.ac.in/cran/bin/linux/ubuntu precise/</div></li>
+            <li>Refresh using <div class="command">sudo​ apt get update</div></li>
+            <li>Secure APT : The Ubuntu archives on CRAN are signed with the key of "Michael Rutter <marutter@gmail.com>" with key ID E084DAB9. To add the key to your system with one command use <div class="command">sudo apt​key adv ​keyserver keyserver.ubuntu.com ​recv​keys E084DAB9</div></li>
+            <li>Install R using <div class="command">sudo apt get install r​base​core</div></li>
+          </ol>
+        </li>
+        <li><strong>Installation using binaries on other linux systems</strong>
+          <p>The binaries are available at <a href="http://cran.r​project.org/bin/linux/">http://cran.r​project.org/bin/linux/</a></p>
+        </li>
+      </ul>
+
+      <h4 class="orange">1.2 Installation on Windows</h4>
+      <ul>
+        <li>R precompiled binaries for Windows are available at <a href="http://www.cran.r​project.org/bin/windows/base/R​3.0.1​win.exe">http://www.cran.r​project.org/bin/windows/base/R​3.0.1​win.exe</a>
+        </li>
+        <li>Common questions about R installation on Windows are answered at <a href="http://www.cran.r​project.org/bin/windows/base/rw​FAQ.html">http://www.cran.r​project.org/bin/windows/base/rw​FAQ.html</a>
+        </li>
+      </ul>
+
+      <h4 class="orange">1.3 Installation on OS​X</h4>
+      <ul>
+        <li>R precompiled binaries for OS​X are available at <a href="http://www.cran.r​project.org/bin/windows/base/rw​FAQ.html">http://www.cran.r​project.org/bin/windows/base/rw​FAQ.html</a></li>
+        <li>Common questions about R installation on Mac platform are answered at <a href="http://www.cran.r​project.org/bin/macosx/RMacOSX​FAQ.html">http://www.cran.r​project.org/bin/macosx/RMacOSX​FAQ.html</a></li>
+      </ul>
+
+      <h3>Step 2 : R Studio Installation</h3>
+      <ul>
+        <li>You can download the RStudio for your platform at the following link <a href="http://www.rstudio.com/ide/download/">http://www.rstudio.com/ide/download/</a></li>
+        <li>You can download either the server or the desktop version for your platform</li>
+      </ul>
+
+      <h3>Step 3 : R Packages installation</h3>
+      <p>Once you have installed R and Rstudio. You can go to the R console and install the following packages from the console. You need to be connected to the internet and use the following command for installing the packages.</p>
+      <div class="command">install.packages('<package_name>')</div>
+
+      <p>The following packages need to be installed.<br />
+        <span class="highlight">plyr</span>, <span class="highlight">reshape2</span>, <span class="highlight">ggplot2</span>, <span class="highlight">lattice</span>, <span class="highlight">knitr</span>, <span class="highlight">shiny</span></p>
+      <p>For any issues faced during installation : write to <strong>vinayakh AT gmail DOT com</strong> with subject line <strong>‘fifth elephant workshop installation issues'</strong></p>
+    </div>
+
+    <div class="accordion-header">
+      <p>Learning ElasticSearch and using it to analyze Aadhaar's Public Datasets</p>
+      <span class="red all-caps secondary">Anurag</span>
+    </div>
+    <div class="accordion-content">
+      <h3>RESPONSE FORM</h3>
+      <p>Please fill in the following form so that the instructor can fine tune his workshop: <br /><a href="https://docs.google.com/forms/d/1mVSkr5daz_eQsvEplmzbjVB_VBmLo9LZpFXbsHIiJG4/viewform">https://docs.google.com/forms/d/1mVSkr5daz_eQsvEplmzbjVB_VBmLo9LZpFXbsHIiJG4/viewform</a></p><br /><hr>
+      <h3>DATA SET</h3>
+      <p>Please download and keep the following data set handy with you. We are going to be using this at the workshop. Although we will have it hosted on a file server, it would br really great if you can download it beforehand itself.</p>
+      <a href="http://xinh.org/~anurag/5el/aadhaar­archive.tar">http://xinh.org/~anurag/5el/aadhaar­archive.tar</a>
+      <p><strong>It is a 600MB download and upon extraction, comes upto almost 10GB. So make sure you have hard disk space in your machine.</strong></p>
+      <br /><hr>
+      <h3>INSTALLATION INSTRUCTIONS</h3>
+      <p><strong><span class="red">Important:</span>You need to have Linux running on your machine. Either do a Dual Boot or use a VM. Running ElasticSearch inside a Linux VM is not only fine, but highly encouraged. Ubuntu/Fedora VMs are equally good. For this workshop, ES examples can run good on anything above 2GB RAM VM, with 20 GB disk.</strong></p>
+      <ol>
+        <li>Install updated JRE for your platform.</li>
+        <li>Download ElasticSearch from <a href="http://www.elasticsearch.org/download/">http://www.elasticsearch.org/download/</a></li>
+        <li>In case of <strong>deb</strong> or <strong>rpm</strong>,
+          <ul>
+            <li>install it using your package manager.</li>
+            <li>Start the service using <div class="command">service elasticsearch start</div>or<div class="command">/etc/init.d/elasticsearch start</div></li>
+          </ul>
+        </li>
+        <li>In case of <strong>zip</strong> or <strong>tarball</strong>,
+          <ul>
+            <li>extract it at your preferred location.</li>
+            <li>Open the terminal and navigate to the extraced directory.</li>
+            <li>Run <div class="command">./bin/elasticsearch ­-f</div></li>
+          </ul>
+        </li>
+        <li>Open your web browser and navigate to <a href="http://localhost:9200/" target="_blank">http://localhost:9200/</a></li>
+        <li>If you're greeted with:
+<pre>
+{
+  ok: true,
+  status: 200,
+  name: "Andrew Gervais",
+  version: {
+    number: "0.90.1", snapshot_build: false, lucene_version: "4.3"
+  },
+  tagline: "You Know, for Search" 
+}
+</pre>
+        ElasticSearch is installed and running. You're good to go!</li>
+      </ol>
+      <br />
+    </div>
+
+  </div>
+
+<div class="centered push-two-top space-two-bottom"><a class="button small-button">Workshop Schedule</a></div>
+</section>
+
+{% endblock %}
+
+{% block footer_script %}
+<script type="text/javascript">
+  /*!
+ * Vallenato 1.0
+ * A Simple JQuery Accordion
+ *
+ * Designed by Switchroyale
+ * 
+ * Use Vallenato for whatever you want, enjoy!
+ */
+
+$(document).ready(function()
+{
+  //Add Inactive Class To All Accordion Headers
+  $('.accordion-header').toggleClass('inactive-header');
+  
+  //Set The Accordion Content Width
+  //var contentwidth = $('.accordion-header').width();
+  //$('.accordion-content').css({'width' : contentwidth });
+  
+  //Open The First Accordion Section When Page Loads
+  $('.accordion-header').first().toggleClass('active-header').toggleClass('inactive-header');
+  $('.accordion-content').first().slideDown().toggleClass('open-content');
+  
+  // The Accordion Effect
+  $('.accordion-header').click(function () {
+    if($(this).is('.inactive-header')) {
+      $('.active-header').toggleClass('active-header').toggleClass('inactive-header').next().slideToggle().toggleClass('open-content');
+      $(this).toggleClass('active-header').toggleClass('inactive-header');
+      $(this).next().slideToggle().toggleClass('open-content');
+    }
+    
+    else {
+      $(this).toggleClass('active-header').toggleClass('inactive-header');
+      $(this).next().slideToggle().toggleClass('open-content');
+    }
+  });
+  
+  return false;
+});
+</script>
+{% endblock %}

@@ -106,3 +106,17 @@ pre code { font-family: Menlo, 'Bitstream Vera Sans Mono', Monaco, 'Courier New'
 .blue {
     color: #58B3F2;
 }
+.highlight{
+    background-color: #EEEEEE;
+    padding: 0 5px 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.command{
+    background-color: #EEEEEE;
+    padding: 5px 10px 5px 10px;
+    border: 1px dashed #ccc;
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}

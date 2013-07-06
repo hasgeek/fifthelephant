@@ -1242,3 +1242,82 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
 .blogpost .sponsor-silver:after { content: 'Silver'; }
 .blogpost .sponsor-bronze:after { content: 'Bronze'; }
 .blogpost .sponsor-community:after { content: 'Community'; }
+
+
+
+/*---------------------------*/
+/* Collapsible Panel         */
+/*---------------------------*/
+
+#accordion-container {
+    font-size: 13px;
+}
+
+.accordion-header {
+    background: #ebebeb;
+    margin: 3px 0 0 0;
+    padding: 0px 20px 15px 20px;
+    border: 1px solid #cccccc;
+    border-left: 6px solid #CCA351;
+    cursor: pointer;
+    color: #666666;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.accordion-header p{
+    font-size: 16px;
+}
+
+.active-header {
+    -moz-border-radius: 2px 2px 0 0;
+    -webkit-border-radius: 2px 2px 0 0;
+    border-radius: 2px 2px 0 0;
+    background: #EEEEEE;
+    background-repeat: no-repeat;
+    background-position: right 50%;
+    border-left-color: #FFCC66;
+}
+
+.active-header:hover {
+    background: #F5F5F5;
+    background-repeat: no-repeat;
+    background-position: right 50%;
+}
+
+.inactive-header {
+    background: #F5F5F5;
+    background-repeat: no-repeat;
+    background-position: right 50%;
+}
+
+.inactive-header:hover {
+    background: #f5f5f5;
+    background-repeat: no-repeat;
+    background-position: right 50%;
+}
+
+.accordion-content {
+    display: none;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-top: 0;
+    -moz-border-radius: 0 0 2px 2px;
+    -webkit-border-radius: 0 0 2px 2px;
+    border-radius: 0 0 2px 2px;
+    font-size: 15px;
+}
+.accordion-content li{
+    margin-top: 10px;
+}
+.accordion-content ul li, .accordion-content > ol > li{
+    margin-left: 15px;
+}
+.accordion-content ul ol{
+    margin-left: 5px;
+}
+.accordion-content td{
+    padding-left: 5px;
+}
