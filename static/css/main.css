@@ -307,7 +307,7 @@ a.link-unfade-hover:hover,
     background-position: 1% 160%;
 }
 .tiles .bird {
-    background-color: #DDEEFF;
+    background-color: #FFCC66;
     background-image: url(../img/bird.svg);
     background-repeat: no-repeat;
     background-position: -40% 160%;
@@ -376,15 +376,19 @@ a.link-unfade-hover:hover,
     width: 500%;
     height: 100%;
     position: absolute;
-    top: 0;
-    left: 100%;
+    top: 100%;
+    left: 0%;
     outline: 1px solid rgba(255,255,255,.2);
     background-color: #F8FFEF;
     background-color: rgba(248,255,239,.85);
 }
 
-
-@media only screen and (min-width: 30em) { }
+@media only screen and (min-width: 60em) { 
+    .js .sponsors dd.corporate-tickets:nth-of-type(25):after{
+        top: 0;
+        left: 300%;
+    }
+}
 @media only screen and (min-width: 40em) { 
     .js .sponsors dt.bronze { clear: both; }
 }

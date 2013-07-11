@@ -1321,3 +1321,13 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
 .accordion-content td{
     padding-left: 5px;
 }
+.schedule-buttons a{
+    width: 80%;    
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 30em){
+   .schedule-buttons a{
+        width: 420px;
+    }
+}
