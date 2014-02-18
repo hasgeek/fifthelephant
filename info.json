@@ -1,9 +1,9 @@
 {
     "application": "eventframe",
-    "identifier": "fifthelephant2013",
-    "name": "The Fifth Elephant 2013",
-    "author": "Miranj",
-    "description": "Fifth Elephant 2013 website template",
+    "identifier": "fifthelephant2014",
+    "name": "The Fifth Elephant 2014",
+    "author": "Miranj, HasGeek",
+    "description": "Fifth Elephant 2014 website template adapted from 2013 website",
     "license": "All rights reserved",
     "doctype": "html5",
     "options": {
