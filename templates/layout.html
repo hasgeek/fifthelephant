@@ -60,17 +60,17 @@
       <nav class="nospace">
         <p class="nav-line secondary centered nospace clearfix">
           <span class="sub-group community">
-            <a href="/2014/community"{% if page == 'community' %} class="active"{% endif %}>Community</a>
+            <a href="/2014/community" class="white" {% if page == 'community' %} class="active"{% endif %}>Community</a>
             <span class="nav-line-spacer serif-type italic">powered</span>
           </span>
           <span class="sub-group conference">
-            <a href="/2014/conference"{% if page == 'conference' %} class="active"{% endif %}>conference</a>
+            <a href="/2014/conference" class="white" {% if page == 'conference' %} class="active"{% endif %}>conference</a>
             <span class="nav-line-spacer serif-type amp">&amp;</span>
-            <a  href="/2014/workshops"{% if page == 'workshops' %} class="active"{% endif %}>workshops</a>
+            <a  href="/2014/workshops" class="white" {% if page == 'workshops' %} class="active"{% endif %}>workshops</a>
           </span>
           <span class="sub-group bangalore">
             <span class="nav-line-spacer serif-type italic">in&nbsp;namma</span>
-            <a href="/2014/venue" title="View location in Google Maps"{% if page == 'venue' %} class="active"{% endif %}>Bangalore</a>
+            <a href="/2014/venue" title="View location in Google Maps" class="white" {% if page == 'venue' %} class="active"{% endif %}>Bangalore</a>
           </span>
         </p>
       </nav>
@@ -99,7 +99,7 @@
 {% endblock %}
 
 <section id="sticky-offset" class="clearfix">
-  <div id="sticky-nav" class="sticky-nav fill-yellow clearfix">
+  <div id="sticky-nav" class="sticky-nav fill-green clearfix">
       <div class="sticky-main-bar clearfix"><div class="on-sticky-content sticky-width clearfix"></div></div>
       <div class="sticky-page-bar clearfix"><div class="on-sticky-content sticky-width clearfix"></div></div>
   </div>
