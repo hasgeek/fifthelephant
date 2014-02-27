@@ -88,6 +88,7 @@ img.ultrafaded { opacity: 0.35 }
 .fill-white     { background-color: #FFF; color: #222222 }
 .fill-yellow    { background-color: #FFCC66; }
 .fill-green     { background-color: #64A971; }
+.fill-blue      { background-color: #459EBD; }
 
 .fill-dark .faded       { color: rgba(255,255,255,0.6) !important; }
 .fill-dark .ultrafaded  { color: rgba(255,255,255,0.35) !important; }
