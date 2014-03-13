@@ -8,9 +8,9 @@
 a.button {
     display: inline-block;
     font-size: 0.9em;
-    padding: 0.6em 2em;
+    padding: .5em 1em .3em 1em;
     border-radius: 0.2em;
-    background: #e48632;
+    background: #C54C17;
     border: 0;
     color: white !important;
     font-weight: normal;
@@ -164,31 +164,26 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     /*background-image: url('https://imgee.s3.amazonaws.com/imgee/46ecaba6992b423480456a8938571280_w1024_h768.jpeg');*/
     
     /*background-color: #444C63;*/
-    background: 
-    /* top, transparent red */ 
-    linear-gradient(
-      rgba(100, 169, 113, 0.45), 
-      rgba(100, 169, 113, 0.45)
-    ),
-    /* bottom, image */
-    url(https://imgee.s3.amazonaws.com/imgee/46ecaba6992b423480456a8938571280_w1024_h768.jpeg);
+}
+.banner1{
+    background: /* bottom, transparent #2D3339 */ linear-gradient(rgba(69, 83, 105, 0.7),rgba(69, 83, 105, 0.7)),/* bottom, 
+    image */url(http://unsplash.s3.amazonaws.com/batch%205/unsplash-kitsune-4.jpg);
     background-size: 100%;
 }
 .banner a,
-.banner a:visited   { color: black; text-decoration: none; border: 0; padding: .1em .2em; }
+.banner a:visited   { color: #989EA2; text-decoration: none; border: 0; }
 .banner a:hover     {
     border: 0;
     background-color:    rgba(0,0,0,0.5);
 }
 .banner a.venue:hover { outline: 0.3em solid rgba(0,0,0,0.5); }
-@media only screen and (min-width: 30em) { .banner a, .banner a:visited   { padding: .2em .3em; } }
 
 /* Navigation Line */
 .main-nav .nav-line {
     font-style: italic;
     font-size: 1.2em;
     line-height: 1.8;
-    color: rgba(0,0,0,0.65);
+    color: #53B461;
     margin: 2rem auto;
 }
 .main-nav .nav-line .nav-line-spacer {
@@ -243,10 +238,9 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 @media only screen and (min-width: 40em) {
     .main-nav .nav-line {
         font-size: 1em;
-        color: rgba(200,00,00,0.65);
         margin: 1.5rem 0; 
     }
-    .main-nav .nav-line .nav-line-spacer.amp { color: rgba(200,00,00,0.5); }
+    .main-nav .nav-line .nav-line-spacer.amp { color: #53B461; }
     .main-nav .nav-line .sub-group { display: inline-block; }
     .main-nav .nav-line a,
     .main-nav .nav-line .conference a,
@@ -368,7 +362,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     width: 100%;
     float: left;
     border: 0;
-    color: black;
+    color: #989EA2;
 }
 .sticky-nav .home-link a.active,
 .sticky-nav .nav-line .sub-group a.active { background-color: #FFCC66 !important; color: black !important; }
@@ -667,53 +661,11 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 
 /* Sponsors */
 .sponsors { 
-    background-image: url(../img/sponsor-bg-480.jpg);
+    /*background-image: url(../img/sponsor-bg-480.jpg);*/
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     max-width: 1800px;
-}
-@media only screen and (min-width: 481px) and (max-width: 640px) { .sponsors { background-image: url(../img/sponsor-bg-640.jpg); } }
-@media  only screen
-        and (-webkit-min-device-pixel-ratio: 1.5)
-        and (min-width: 241px)
-        and (max-width: 320px),
-        only screen
-        and (min-device-pixel-ratio: 1.5)
-        and (min-width: 241px)
-        and (max-width: 320px) {
-    .sponsors { background-image: url(../img/sponsor-bg-640.jpg); }
-}
-@media only screen and (min-width: 641px) and (max-width: 1024px) { .sponsors { background-image: url(../img/sponsor-bg-1024.jpg); } }
-@media  only screen
-        and (-webkit-min-device-pixel-ratio: 1.5)
-        and (min-width: 321px)
-        and (max-width: 512px),
-        only screen
-        and (min-device-pixel-ratio: 1.5)
-        and (min-width: 321px)
-        and (max-width: 512px) {
-    .sponsors { background-image: url(../img/sponsor-bg-1024.jpg); }
-}
-@media only screen and (min-width: 1025px) and (max-width: 1600px) { .sponsors { background-image: url(../img/sponsor-bg-1600.jpg); } }
-@media  only screen
-        and (-webkit-min-device-pixel-ratio: 1.5)
-        and (min-width: 513px)
-        and (max-width: 800px),
-        only screen
-        and (min-device-pixel-ratio: 1.5)
-        and (min-width: 513px)
-        and (max-width: 800px) {
-    .sponsors { background-image: url(../img/sponsor-bg-1600.jpg); }
-}
-@media  only screen and (min-width: 1601px),
-        only screen
-        and (-webkit-min-device-pixel-ratio: 1.5)
-        and (min-width: 801px)
-        only screen
-        and (min-device-pixel-ratio: 1.5)
-        and (min-width: 801px) {
-    .sponsors { background-image: url(../img/sponsor-bg-3088.jpg); }
 }
 
 .no-js .sponsors .sponsor-block { max-width: 32em; padding: 0 1rem; }

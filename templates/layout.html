@@ -41,7 +41,7 @@
 
 </head>
 <body>
-<div class="hg-bar-holder fill-dark">{% block networkbar %}{{ networkbar(siteid='events', login=true, baseclass='hg-dark') }}{% endblock %}</div>
+<div class="hg-bar-holder fill-white">{% block networkbar %}{{ networkbar(siteid='events', login=false) }}{% endblock %}</div>
 <div id="page">
 {% block banner %}
 <header class="clearfix">
@@ -60,17 +60,17 @@
       <nav class="nospace">
         <p class="nav-line secondary centered nospace clearfix">
           <span class="sub-group community">
-            <a href="/2014/community" class="white" {% if page == 'community' %} class="active"{% endif %}>Community</a>
-            <span class="nav-line-spacer serif-type italic">powered</span>
+            <a href="/2014/community" class="darkblue" {% if page == 'community' %} class="active"{% endif %}>Community</a>
+            <span class="nav-line-spacer orange serif-type italic">powered</span>
           </span>
           <span class="sub-group conference">
-            <a href="/2014/conference" class="white" {% if page == 'conference' %} class="active"{% endif %}>conference</a>
-            <span class="nav-line-spacer serif-type amp">&amp;</span>
-            <a  href="/2014/workshops" class="white" {% if page == 'workshops' %} class="active"{% endif %}>workshops</a>
+            <a href="/2014/conference" class="darkblue" {% if page == 'conference' %} class="active"{% endif %}>conference</a>
+            <span class="nav-line-spacer orange serif-type amp">&amp;</span>
+            <a  href="/2014/workshops" class="darkblue" {% if page == 'workshops' %} class="active"{% endif %}>workshops</a>
           </span>
           <span class="sub-group bangalore">
-            <span class="nav-line-spacer serif-type italic">in&nbsp;namma</span>
-            <a href="/2014/venue" title="View location in Google Maps" class="white" {% if page == 'venue' %} class="active"{% endif %}>Bangalore</a>
+            <span class="nav-line-spacer orange serif-type italic">in&nbsp;namma</span>
+            <a href="/2014/venue" title="View location in Google Maps" class="darkblue" {% if page == 'venue' %} class="active"{% endif %}>Bangalore</a>
           </span>
         </p>
       </nav>
@@ -99,7 +99,7 @@
 {% endblock %}
 
 <section id="sticky-offset" class="clearfix">
-  <div id="sticky-nav" class="sticky-nav fill-green clearfix">
+  <div id="sticky-nav" class="sticky-nav fill-blue clearfix">
       <div class="sticky-main-bar clearfix"><div class="on-sticky-content sticky-width clearfix"></div></div>
       <div class="sticky-page-bar clearfix"><div class="on-sticky-content sticky-width clearfix"></div></div>
   </div>
@@ -110,7 +110,7 @@
 {% endblock %}
 </section>
 
-<footer class="clearfix highlight-links push-four-bottom">
+<footer class="clearfix fill-light highlight-links push-four-bottom">
   {% block sponsor_compact %}
   <section id="sponsors" class="regular clearfix space-two-top pad-one{% if not sponsor_compact_white %} fill-light{% endif %}">
     <div class="sponsors-compact center-block space-three-top space-four-bottom v-middle clearfix">
@@ -146,7 +146,7 @@
     </div>
   </section>
   {% endblock %}
-  {% if sponsor_compact_white %}<hr class="seventy center-block">{% endif %}
+  {% if sponsor_compact_white %}{% endif %}
   
   <p class="centered secondary space-two-top space-half-bottom copyright center-block"><span class="wrap-mobile">For further information / sponsorship:</span> <span class="wrap-mobile"><script type="text/javascript">
   //<![CDATA[

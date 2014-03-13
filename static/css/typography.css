@@ -29,7 +29,7 @@ html            { font-size: 14px; line-height: 1.5 }
 
 
 .massive        { font-size: 9.00rem; line-height: 0.8000; text-rendering: optimizeLegibility; }
-.giant          { font-size: 4.000rem; line-height: 1; text-rendering: optimizeLegibility; }
+.giant          { font-size: 5.500rem; line-height: 1; text-rendering: optimizeLegibility; }
 .huge           { font-size: 2.500rem; line-height: 1.1667; }
 .large          { font-size: 2.000rem; line-height: 1.5000; }
 .legible        { font-size: 1.250rem; line-height: 1.5000; }
@@ -37,12 +37,14 @@ html            { font-size: 14px; line-height: 1.5 }
 .secondary      { font-size:  .800rem; line-height: 1.4000; }
 .tiny           { font-size:  .700rem; line-height: 1.4000; }
 
+.textshadow     { text-shadow: 0.001em 0.001em 3px rgba(0, 0, 0, 0.1);}
+
 
 @media only screen and (min-width: 30em) {
     html        { font-size: 18px; }
     .huge       { font-size: 3.000rem; line-height: 1.1667; }
     .massive    { font-size: 8.450rem; }
-    .giant      { font-size: 4.500rem; }    
+    .giant      { font-size: 6.000rem; }    
 }
 @media only screen and (min-width: 45em) {
     .massive    { font-size: 9.000rem; }

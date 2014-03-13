@@ -6,59 +6,59 @@
 {% set fixed_width_sticky = true %}
 
 {% block page_nav_items %}
-   <li><a href="#announcements" class="link-white-hover">Announcements</a></li><!--
---><li><a href="#tickets" class="link-white-hover">Ticket Details</a></li><!--
---><li><a href="#last-year" class="link-white-hover">2012 Edition</a></li><!--
---><li><a href="#sponsors" class="link-white-hover">Sponsors</a></li><!--
---><li><a href="#hasgeek" class="link-white-hover">Behind The Scenes</a></li><!--
---><li><a href="/2013/code-of-conduct" class="link-white-hover">Code of Conduct</a></li>
+   <li><a href="#announcements" class="darkgray link-white-hover">Announcements</a></li><!--
+--><li><a href="#tickets" class="darkgray link-white-hover">Ticket Details</a></li><!--
+--><li><a href="#last-year" class="darkgray link-white-hover">2012 Edition</a></li><!--
+--><li><a href="#sponsors" class="darkgray link-white-hover">Sponsors</a></li><!--
+--><li><a href="#hasgeek" class="darkgray link-white-hover">Behind The Scenes</a></li><!--
+--><li><a href="/2013/code-of-conduct" class="darkgray link-white-hover">Code of Conduct</a></li>
 {% endblock %}
 
 {% block banner %}
-<div class="banner long-page-nav fill-green home resetcoords clearfix">
+<div class="banner long-page-nav fill-blue home resetcoords clearfix">
   <header class="clearfix">
     
     <div class="space-three">{% block nav %}{{ super() }}{% endblock %}</div>
     
-    <hr class="half center-block space-three-bottom">
+    <!-- <hr class="half center-block space-three-bottom"> -->
     <hgroup class="centered clearfix">
-      <h1 class="home-link calm huge space-two-top nospace-bottom">
-        <a class="link-silent-hover active" href="./">
+      <h1 class=" calm huge space-three-top space-one-bottom offwhite textshadow">
           The Fifth Elephant
-        </a>
       </h1>
-      <h3 class="body-type calm ultrafaded regular space-half">
+      <!-- <h3 class="body-type calm large">Conference on Bigdata, Storage and Analytics</h3> -->
+      <h3 class="body-type calm brown regular space-one-top nospace-bottom">
         <a
           title="View location in Google Maps"
           class="inline-block link-silent-hover link-unfade-hover"
           href="http://goo.gl/maps/PvXY">
-          <img alt="Co-ordinates" src="{{ theme_static('img/map-marker.svg') }}" width="15" class="gap-1q-right ultrafaded">
+          <img alt="Co-ordinates" src="{{ theme_static('img/map-marker.svg') }}" width="15" class="gap-1q-right white">
         </a>
         <a 
           title="View location in Google Maps"
           href="/2013/venue#conference"
-          class="ultrafaded venue link-white-hover">
+          class="brown venue link-silent-hover link-white-hover">
           <abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr>
           Convention Centre
         </a>
       </h3>
-      <h2 class="calm faded legible space-one">
+      <h2 class="calm brown legible space-one">
         July 23–26, 2014
       </h2>
     </hgroup>
     
-    <p class="ticket-link event-tickets centered legible space-eight-bottom">
+    <p class="ticket-link event-tickets centered legible nospace-bottom">
       <a
-        class="button button-primary min-measure-3words"
+        class="button button-primary min-measure-3words prose-type"
         title="Fifth Elephant 2013 Tickets on DoAttend"
-        href="http://fifthelephant.doattend.com/">
+        href="http://fifthel.doattend.com/"
+        target="_blank">
         Buy Tickets
       </a>
     </p>
   </header>
   
   {% block image_banner %}
-  <!-- <p class="big-data center-block ir space-two-top">Big Data</p> -->
+  <p class="big-data center-block ir space-two-top">Big Data</p>
   {% endblock %}
   
   {% block page_nav %}{{ super() }}{% endblock %}
@@ -78,7 +78,7 @@
   </p>
   
   <p>
-    The Fifth Elephant 2014 is a four-day workshop and conference on big data,
+    The Fifth Elephant 2014 is a four-days of workshops and conference on big data,
     storage and analytics, with product demos and hacker corners.
   </p>
 </section>
@@ -277,7 +277,7 @@
       </div>
     </article>
     
-    <div class="push-one">
+    <div class="push-one-top push-four-bottom fill-white">
       <h2 class="centered calm measure-10words center-block space-two">Featured Talks from 2012</h2>
       <ul class="thumbnail-columns thumbnail-columns-four video-thumbnails regular clearfix">
         <li class="clearfix">
@@ -332,7 +332,7 @@
     </div>
 </section>
 
-<section id="sponsors" class="fill-dark legible space-six-top clearfix">
+<section id="sponsors" class="fill-dark legible clearfix">
   <div class="sponsors clearfix center-block">
   <div class="space-six-top space-four-bottom">
     <h1 class="centered calm measure-10words center-block space-three-bottom">Sponsors</h1>
@@ -378,7 +378,7 @@
 </section>
 
 
-<section class="behind-the-scenes partners-floating-box clearfix">
+<section class="behind-the-scenes fill-light partners-floating-box clearfix">
   {% from theme("data/partners.html") import partners %}
   {% if partners %}
   <section id="partners" class="partners clearfix">  
@@ -404,7 +404,7 @@
     </div>
   </section>
   
-  <section id="credits" class="credits clearfix">  
+  <section id="credits" class="fill-dark credits clearfix">  
     <article class="clearfix legible space-two-bottom">
       <h2 class="centered calm nospace">Credits</h2>
       <dl class="center-block centered-key-value clearfix v-middle regular nospace highlight-links center-block pad-half">
@@ -452,5 +452,5 @@
 {% endblock %}
 
 {% block sponsor_compact %}
-  <hr class="eighty center-block">
+  
 {% endblock %}
