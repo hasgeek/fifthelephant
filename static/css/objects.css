@@ -715,6 +715,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .js .sponsors dd.silver { background-color: #EAF5FC; background-color: rgba(234,245,252,.85); }
 .js .sponsors dd.bronze { background-color: #F7F2E0; background-color: rgba(247,242,224,.85); }
 .js .sponsors dd.party { background-color: #FBEFF2; background-color: rgba(251,239,242,.85); }
+.js .sponsors dd.lanyard { background-color: #FBEFF2; background-color: rgba(251,239,242,.85); }
 .js .sponsors dd.travel { background-color: #F1F1FF; background-color: rgba(241,241,255,.85); }
 .js .sponsors dd.community { background-color: #FBEFF2; background-color: rgba(251,239,242,.85); }
 .js .sponsors dd.corporate,
@@ -866,14 +867,14 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 }
 @media only screen and (min-width: 30em) { .team-hasgeek a > span { font-size: .7rem; } }
 
-.team-hasgeek .haris a      { background-position: top left; }
+.team-hasgeek .none a      { background-position: top left; }
 .team-hasgeek .jamna a      { background-position: top center; }
-.team-hasgeek .kiran a      { background-position: top right; }
-.team-hasgeek .krace a      { background-position: center left; }
+.team-hasgeek .mitesh a      { background-position: top right; }
+.team-hasgeek .kiran a      { background-position: center left; }
 .team-hasgeek .nimisha a    { background-position: center; }
 .team-hasgeek .praseetha a  { background-position: center right; }
 .team-hasgeek .radha a      { background-position: bottom left; }
-.team-hasgeek .supreeth a   { background-position: bottom center; }
+.team-hasgeek .tony a   { background-position: bottom center; }
 .team-hasgeek .zainab a     { background-position: bottom right; }
 
 .code-of-conduct { max-width: 1400px; }

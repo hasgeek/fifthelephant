@@ -50,9 +50,9 @@
     <p class="ticket-link body-type event-tickets calm centered">
       <a
         class="buy-tickets button small-button"
-        title="Fifth Elephant 2013 Tickets on DoAttend"
-        href="http://fifthelephant.doattend.com/">
-        <span class="conference-dates">Jul 11–13, 2013 / </span>Buy Tickets
+        title="Fifth Elephant 2014 Tickets on DoAttend"
+        href="http://fifthel.doattend.com/">
+        <span class="conference-dates">Jul 23 - 26, 2014 / </span>Buy Tickets
       </a>
     </p>
     {% block nav %}
@@ -121,6 +121,8 @@
         {% set sponsor_columns = '' %}
       {% elif type.category == 'Gold' %}
         {% set sponsor_columns = ' thumbnail-columns-three' %}
+      {% elif type.category == 'Community' %}
+        {% set sponsor_columns = ' thumbnail-columns-eight' %}
       {% elif type.category == 'Corporate' %}
         {% set sponsor_columns = ' thumbnail-columns-eight' %}
       {% else %}
@@ -177,7 +179,7 @@
     <ul class="centered">
       <li class="inline"><a href="http://twitter.com/fifthel">Twitter</a></li>
       <li class="inline"><a href="/blog">Blog</a></li>
-      <li class="inline"><a href="/2013/code-of-conduct">Code of Conduct</a></li>
+      <li class="inline"><a href="/2014/code-of-conduct">Code of Conduct</a></li>
     </ul>
   </nav>
   

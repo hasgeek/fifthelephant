@@ -11,7 +11,7 @@
 --><li><a href="#last-year" class="darkgray link-white-hover">2012 Edition</a></li><!--
 --><li><a href="#sponsors" class="darkgray link-white-hover">Sponsors</a></li><!--
 --><li><a href="#hasgeek" class="darkgray link-white-hover">Behind The Scenes</a></li><!--
---><li><a href="/2013/code-of-conduct" class="darkgray link-white-hover">Code of Conduct</a></li>
+--><li><a href="/2014/code-of-conduct" class="darkgray link-white-hover">Code of Conduct</a></li>
 {% endblock %}
 
 {% block banner %}
@@ -35,7 +35,7 @@
         </a>
         <a 
           title="View location in Google Maps"
-          href="/2013/venue#conference"
+          href="/2014/venue#conference"
           class="brown venue link-silent-hover link-white-hover">
           <abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr>
           Convention Centre
@@ -49,7 +49,7 @@
     <p class="ticket-link event-tickets centered legible nospace-bottom">
       <a
         class="button button-primary min-measure-3words prose-type"
-        title="Fifth Elephant 2013 Tickets on DoAttend"
+        title="Fifth Elephant 2014 Tickets on DoAttend"
         href="http://fifthel.doattend.com/"
         target="_blank">
         Buy Tickets
@@ -382,19 +382,6 @@
 
 
 <section class="behind-the-scenes fill-light partners-floating-box clearfix">
-  {% from theme("data/partners.html") import partners %}
-  {% if partners %}
-  <section id="partners" class="partners clearfix">  
-    <article class="fill-light legible push-three-top push-two-bottom clearfix">
-      <h2 class="centered calm space-two-bottom space-three-top nospace">Partners</h2>
-      <ul class="{% if partners|length > 3 %}thumbnail-columns thumbnail-columns-five {% else %}centered {% endif%}regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
-        {% for partner in partners %}
-        <li class="clearfix {% if partner.logo.contain == 'height' %}contain-height{% else %}contain-width{% endif %}{% if partners|length <= 3 %} inline-block{% endif%}"><a class="occupy centered {% if partners|length <= 3 %} pad-one{% endif%}" href="{{ partner.web.link }}"><img src="{{ theme_static(partner.logo.url) }}" alt="{{ partner.name }}"></a></li>
-        {% endfor %}
-      </ul>
-    </article>
-  </section>
-  {% endif %}
   
   <section id="hasgeek" class="hasgeek regular space-four clearfix">
     <div class="measure-10words pad-one center-block prose clearfix">
@@ -407,36 +394,27 @@
     </div>
   </section>
   
-  <section id="credits" class="fill-dark credits clearfix">  
+  <section id="credits" class="fill-white credits clearfix">  
     <article class="clearfix legible space-two-bottom">
-      <h2 class="centered calm nospace">Credits</h2>
+      <h2 class="centered calm space-three-top">Credits</h2>
       <dl class="center-block centered-key-value clearfix v-middle regular nospace highlight-links center-block pad-half">
-        <dt class="secondary">Lead Organizer</dt>
-          <dd>Zainab Bawa</dd>
-        <dt class="secondary">Website</dt>
-          <dd><a href="http://miranj.in" class="soft">Miranj</a></dd>
-        <dt class="secondary">Illustrations</dt>
-          <dd>Nimisha Saikia</dd>
         <dt class="secondary">Icons</dt>
           <dd><a href="http://thenounproject.com/noun/speech-bubble/#icon-No5656" target="_blank" class="soft">Speech Bubble</a> designed by <a href="http://thenounproject.com/naomiatkinson" target="_blank" class="soft">Naomi Atkinson</a></dd>
           <dd><a href="http://thenounproject.com/noun/map-marker/#icon-No9093" target="_blank" class="soft">Map Marker</a> designed by <a href="http://thenounproject.com/schumanncombo" class="soft">Richard Schumann</a></dd>
-          <dd><a href="http://thenounproject.com/noun/like/#icon-No1297" target="_blank" class="soft">Like</a> designed by <a href="http://thenounproject.com/marwaboukarim" target="_blank" class="soft">Marwa Boukarim</a></dd>
-          <dd><a href="http://thenounproject.com/noun/bird/#icon-No6104" target="_blank" class="soft">Bird</a> designed by <a href="http://thenounproject.com/tlb" target="_blank" class="soft">Thomas Le Bas</a></dd>
+          <dd><a href="http://thenounproject.com/noun/like/#icon-No1297" target="_blank" class="soft">Like</a> designed by <a href="http://thenounproject.com/marwaboukarim" target="_blank" class="soft">Marwa Boukarim</a></dd><!-- 
+          <dd><a href="http://thenounproject.com/noun/bird/#icon-No6104" target="_blank" class="soft">Bird</a> designed by <a href="http://thenounproject.com/tlb" target="_blank" class="soft">Thomas Le Bas</a></dd> -->
           <dd><a href="http://thenounproject.com/noun/home/#icon-No293" target="_blank" class="soft">Home</a>  from The Noun Project</dd>
-        <dt class="secondary">Supported By</dt>
-          <dd><a href="http://www.cis-india.org/" class="soft">The Centre for Internet and Society</a></dd>
       </dl>
       <h4 class="team-hasgeek-caption centered space-one-bottom pad-one">Team HasGeek</h4>
       <ul class="team-hasgeek thumbnail-columns thumbnail-columns-five regular clearfix nospace pad-one">
-        <li class="haris clearfix"><a class="occupy block-link" href="#"><span>Haris<span class="visuallyhidden"> Ibrahim K V</span></span></a></li>
-        <li class="jamna clearfix"><a class="occupy block-link" href="#"><span>Jamna<span class="visuallyhidden"> Vyas</span></span></a></li>
-        <li class="kiran clearfix"><a class="occupy block-link" href="#"><span>Kiran<span class="visuallyhidden"> Jonnalagadda</span></span></a></li>
-        <li class="krace clearfix"><a class="occupy block-link" href="#"><span>Krace<span class="visuallyhidden"> Kumar Ramaraju</span></span></a></li>
-        <li class="nimisha clearfix"><a class="occupy block-link" href="#"><span>Nimisha<span class="visuallyhidden"> Saikia</span></span></a></li>
-        <li class="praseetha clearfix"><a class="occupy block-link" href="#"><span>Praseetha<span class="visuallyhidden"> K R</span></span></a></li>
-        <li class="radha clearfix"><a class="occupy block-link" href="#"><span>Radha<span class="visuallyhidden"> Rao</span></span></a></li>
-        <li class="supreeth clearfix"><a class="occupy block-link" href="#"><span>Supreeth<span class="visuallyhidden">  Srinivasmurthy</span></span></a></li>
-        <li class="zainab clearfix"><a class="occupy block-link" href="#"><span>Zainab<span class="visuallyhidden"> Bawa</span></span></a></li>
+        <li class="jamna clearfix"><a class="occupy block-link" target="_blank" href="https://twitter.com/jamna"><span>Jamna<span class="visuallyhidden"> Vyas</span></span></a></li>
+        <li class="mitesh clearfix"><a class="occupy block-link" target="_blank" href="https://twitter.com/jackerhack"><span>Kiran<span class="visuallyhidden"> Jonnalagadda</span></span></a></li>
+        <li class="kiran clearfix"><a class="occupy block-link" target="_blank" href="https://twitter.com/imba"><span>Mitesh<span class="visuallyhidden"> Ashar</span></span></a></li>
+        <li class="nimisha clearfix"><a class="occupy block-link" target="_blank" href="https://twitter.com/nimisja"><span>Nimisha<span class="visuallyhidden"> Saikia</span></span></a></li>
+        <li class="praseetha clearfix"><a class="occupy block-link" target="_blank" href="https://twitter.com/void_imagineer"><span>Praseetha<span class="visuallyhidden"> K R</span></span></a></li>
+        <li class="radha clearfix"><a class="occupy block-link" target="_blank" href="https://www.facebook.com/radha.rao.73"><span>Radha<span class="visuallyhidden"> Rao</span></span></a></li>
+        <li class="tony clearfix"><a class="occupy block-link" target="_blank" href="https://twitter.com/tonysimon90"><span>Tony<span class="visuallyhidden"> Simon</span></span></a></li>
+        <li class="zainab clearfix"><a class="occupy block-link" target="_blank" href="https://twitter.com/zainabbawa"><span>Zainab<span class="visuallyhidden"> Bawa</span></span></a></li>
       </ul>
     </article>
   </section>
@@ -448,7 +426,7 @@
     <h2 class="visuallyhidden">Code of Conduct</h2>
     <p class="space-line-bottom nospace-top serif-type italic commitment"><span class="wrap-mobile">We strive to make our events</span> <span class="wrap-mobile">friendly, safe and harrasment&#8209;free for all.</span>
     </p>
-    <p class="secondary semi-bold all-caps">Please observe the <a href="/2013/code-of-conduct">code of conduct</a> at the event.</p>
+    <p class="secondary semi-bold all-caps">Please observe the <a href="/2014/code-of-conduct">code of conduct</a> at the event.</p>
   </article>
 </section>
 
