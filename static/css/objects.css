@@ -234,6 +234,11 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     font-weight: 600 !important;
     color: black !important;
 }
+.main-nav .nav-line .conference a.inactive:hover{
+    background-color: transparent;
+    color: #327096 !important;
+    font-weight: 600 !important;
+}
 @media only screen and (min-width: 30em) { .main-nav .nav-line { font-size: 1em; line-height: 1.5; } }
 @media only screen and (min-width: 40em) {
     .main-nav .nav-line {
@@ -334,6 +339,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     direction: ltr;
 }
 .sticky-nav .home-link a:hover { background-color: black; }
+.sticky-nav .home-link a.inactive:hover { background-color: transparent; }
 .sticky-nav .home-link a.active { background-image: url(../img/home-black.svg); }
 .sticky-nav .sticky-main-bar { background-color: rgba(0,0,0,0.6); }
 .sticky-nav .sticky-main-bar nav { width: 90%; float: left }
@@ -341,6 +347,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .sticky-nav .nav-line .sub-group.conference { width: 50%; }
 .sticky-nav .nav-line .sub-group a { color: white !important; }
 .sticky-nav .nav-line .sub-group a:hover { background-color: black; }
+.sticky-nav .nav-line .sub-group a.inactive:hover { background-color: transparent; }
 .sticky-nav .nav-line .sub-group.conference a { width: 50%; }
 .sticky-nav .ticket-link,
 .sticky-nav .ticket-link .conference-dates,
