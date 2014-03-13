@@ -14,7 +14,7 @@ abbr.silent { border-bottom: 0; }
 
 a,
 a:visited   {
-    color: #D44;
+    color: #C54C17;
     text-decoration: none;
 }
 
@@ -40,7 +40,7 @@ a.unhighlight:hover { border-bottom: 0; }
 
 a.spooky,
 a.block-link { color: inherit !important; border-bottom: none !important; background-color: transparent !important; outline: none !important; }
-a.block-link:hover { color: #D44 !important; outline: none; }
+a.block-link:hover { color: #C54C17 !important; outline: none; }
 .fill-dark a.block-link:hover { color: #E55 !important; }
 
 a.link-silent-hover:hover { color: inherit !important; outline: none !important; background-color: transparent !important; }
@@ -92,10 +92,11 @@ img.ultrafaded { opacity: 0.35 }
 .fill-silver    { background-color: #DDD }
 .fill-dark      { background-color: #2D3339; color: #F6F6F6 }
 .fill-white     { background-color: #FFF; color: #222222 }
-.fill-yellow    { background-color: #FFCC66; }
-.fill-green     { background-color: #53B461; /*#64A971*/ }
+.fill-yellow    { background-color: #FCEBB6; }
+.fill-cream     { background-color: #F5F2C4; }
+.fill-green     { background-color: #A6D099; /*#64A971*/ }
 .fill-blue      { background-color: #74B3BA; }
-.fill-darkblue  { background-color: #0B222B; }
+.fill-darkblue  { background-color: #2D6772; }
 .fill-gray      { background-color: #4C535A; }
 
 .fill-dark .faded       { color: rgba(255,255,255,0.6) !important; }
@@ -304,17 +305,17 @@ a.link-unfade-hover:hover,
     background-size: auto 90%;
     background-position: 10% 160%;
 }
-.tiles .julia {
-    background-color: #FFFFFF;
-    background-image: url(../img/partners/julia.png);
+.tiles .workshops {
+    background-color: #F5F2C4;
+    background-image: url(../img/db.png);
     background-repeat: no-repeat;
     background-position: -40% 160%;
-    background-size: auto 50%;
-    background-position: 10% 80%;
+    background-size: auto 70%;
+    background-position: -3% 120%;
 }
-.tiles .hadoop {
-    background-color: #FFCC66;
-    background-image: url(../img/hadoop.png);
+.tiles .conference {
+    background-color: #F1D5A5;
+    background-image: url(../img/conference-icon.png);
     background-repeat: no-repeat;
     background-position: -40% 10%;
     background-size: auto 80%;

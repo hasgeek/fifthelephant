@@ -482,10 +482,10 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 @media only screen and (min-width: 30em) { .committee { max-width: 60em; } }
 
 /* Ticketing Details */
-.ticket-columns { border: 0 solid #5C5; max-width: 1400px; margin: auto; }
+.ticket-columns { border: 0 solid #A6D099; max-width: 1400px; margin: auto; }
 .ticket-columns > li {
     margin: 1rem;
-    border: solid #459EBD;
+    border: solid #A6D099;
     border-width: 0 1px 1px 1px;
 }
 .ticket hgroup {
