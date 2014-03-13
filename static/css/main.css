@@ -107,13 +107,13 @@ a.link-unfade-hover:hover,
 .link-unfade-hover:hover img.ultrafaded { opacity: 1; }
 
 .big-data {
-    background-image: url(../img/circus-banner-500.png);
+    background-image: url(https://imgee.s3.amazonaws.com/imgee/18aeebd4a6b346f995c7ddf6627770f4_w300_h266.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
     max-width: 2800px;
     max-width: 1960px;
-    width: 95%;
+    width: 83%;
     padding-top: 66.5%;
     margin-bottom: 10%;
 }
@@ -158,16 +158,16 @@ a.link-unfade-hover:hover,
         and (min-device-pixel-ratio: 1.5)
         and (min-width: 251px)
         and (max-width: 400px) {
-    .big-data { background-image: url(../img/circus-banner-800.png); }
+    .big-data { background-image: url(https://imgee.s3.amazonaws.com/imgee/18aeebd4a6b346f995c7ddf6627770f4_w400_h354.png); }
     .community-banner { background-image: url(../img/community-banner-800.png); }
     .conference-banner { background-image: url(../img/conference-banner-800.png); }
     .workshop-banner { background-image: url(../img/workshop-banner-800.png); }
 }
 @media only screen and (min-width: 501px) and (max-width: 880px) { 
     .big-data {
-        background-image: url(../img/circus-banner-800.png);
+        background-image: url(https://imgee.s3.amazonaws.com/imgee/18aeebd4a6b346f995c7ddf6627770f4_w400_h354.png);
         margin-bottom: 7%; 
-        width: 90%;
+        width: 65%;
         padding-top: 55%;
     }
     .community-banner {
@@ -197,7 +197,7 @@ a.link-unfade-hover:hover,
         and (min-device-pixel-ratio: 1.5)
         and (min-width: 401px)
         and (max-width: 550px) {
-    .big-data { background-image: url(../img/circus-banner-1100.png); }
+    .big-data { background-image: url(https://imgee.s3.amazonaws.com/imgee/18aeebd4a6b346f995c7ddf6627770f4_w600_h532.png); }
     .community-banner { background-image: url(../img/community-banner-1100.png); }
     .conference-banner { background-image: url(../img/conference-banner-1100.png); }
     .workshop-banner { background-image: url(../img/workshop-banner-1100.png); }
@@ -210,17 +210,17 @@ a.link-unfade-hover:hover,
         and (min-device-pixel-ratio: 1.5)
         and (min-width: 551px)
         and (max-width: 880px) {
-    .big-data { background-image: url(../img/circus-banner-1600.png); }
+    .big-data { background-image: url(https://imgee.s3.amazonaws.com/imgee/18aeebd4a6b346f995c7ddf6627770f4_w600_h532.png); }
     .community-banner { background-image: url(../img/community-banner-1600.png); }
     .conference-banner { background-image: url(../img/conference-banner-1600.png); }
     .workshop-banner { background-image: url(../img/workshop-banner-1600.png); }
 }
 @media only screen and (min-width: 881px) and (max-width: 1370px) { 
     .big-data {
-        background-image: url(../img/circus-banner-1100.png);
+        background-image: url(https://imgee.s3.amazonaws.com/imgee/18aeebd4a6b346f995c7ddf6627770f4_w600_h532.png);
         margin-bottom: 5%;
-        width: 85%;
-        padding-top: 50%;
+        width: 50%;
+        padding-top: 45%;
     }
     .community-banner {
         background-image: url(../img/community-banner-1100.png);
@@ -243,8 +243,8 @@ a.link-unfade-hover:hover,
 }
 @media only screen and (min-width: 1371px) and (max-width: 2280px) { 
     .big-data {
-        background-image: url(../img/circus-banner-1600.png);
-        width: 85%;
+        background-image: url(https://imgee.s3.amazonaws.com/imgee/18aeebd4a6b346f995c7ddf6627770f4_w600_h532.png);
+        width: 40%;
         margin-bottom: 4%;
         padding-top: 39%;
     }
@@ -276,7 +276,7 @@ a.link-unfade-hover:hover,
         and (min-width: 881px) {
     .big-data { 
         background-image: url(../img/bigdata-banner.png);
-        background-size: 50%;
+        background-size: 100%;
      }
     .community-banner { background-image: url(../img/community-banner-2800.png); }
     .conference-banner { background-image: url(../img/conference-banner-2800.png); }
