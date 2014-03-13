@@ -171,7 +171,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     background-size: 100%;
 }
 .banner a,
-.banner a:visited   { color: #989EA2; text-decoration: none; border: 0; }
+.banner a:visited   { color: rgba(0,0,0,0.6); text-decoration: none; border: 0; }
 .banner a:hover     {
     border: 0;
     background-color:    rgba(0,0,0,0.5);
@@ -362,7 +362,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     width: 100%;
     float: left;
     border: 0;
-    color: #989EA2;
+    color: rgba(0,0,0,0.6);
 }
 .sticky-nav .home-link a.active,
 .sticky-nav .nav-line .sub-group a.active { background-color: #FFCC66 !important; color: black !important; }
@@ -686,7 +686,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     color: rgba(255,255,255,.95);
     font-size: 1.250rem;
     line-height: 1.5000;
-    background-color: #D44;
+    background-color: #C54C17;
     padding: .5rem 0;
     margin: 5rem auto 3rem; 
 }

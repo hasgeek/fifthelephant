@@ -28,9 +28,9 @@ a:visited   {
 .prose a,
 .prose a:visited,
 .highlight-links a,
-.highlight-links a:visited { border-bottom: 1px dotted #D44; }
+.highlight-links a:visited { border-bottom: 1px dotted #C54C17; }
 
-a:hover         { border-bottom: 2px solid #D44; }
+a:hover         { border-bottom: 2px solid #C54C17; }
 a.spooky:hover  { border-bottom: 1px dotted rgba(0,0,0,.3) !important; }
 
 .links-prevent-hover-highlight a:hover,
