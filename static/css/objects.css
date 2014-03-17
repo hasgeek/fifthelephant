@@ -10,7 +10,7 @@ a.button {
     font-size: 0.9em;
     padding: .5em 1em .3em 1em;
     border-radius: 0.2em;
-    background: #C54C17;
+    background: #EC6015; /*#C54C17*/
     border: 0;
     color: white !important;
     font-weight: normal;
@@ -236,7 +236,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 }
 .main-nav .nav-line .conference a.inactive:hover{
     background-color: transparent;
-    color: #327096 !important;
+    color: #498F94 !important;
     font-weight: 600 !important;
 }
 @media only screen and (min-width: 30em) { .main-nav .nav-line { font-size: 1em; line-height: 1.5; } }
