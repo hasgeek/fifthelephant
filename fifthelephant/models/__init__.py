@@ -8,5 +8,5 @@ from flask.ext.lastuser.sqlalchemy import UserBase
 db = SQLAlchemy(app)
 
 
-class User(db.Model, UserBase):
+class User(UserBase, db.Model):
     __tablename__ = 'user'
