@@ -671,7 +671,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     /*background-image: url(../img/sponsor-bg-480.jpg);*/
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
     max-width: 1800px;
 }
 

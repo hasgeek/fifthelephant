@@ -88,7 +88,7 @@ hr {
 img.ultrafaded { opacity: 0.35 }
 
 .fill-fixme     { background-color: rgba(255,255,0,0.3) }
-.fill-light     { background-color: #F4F2E5; }
+.fill-light     { background-color: #F6F9FA; }
 .fill-silver    { background-color: #DDD }
 .fill-dark      { background-color: #2D3339; color: #F6F6F6 }
 .fill-white     { background-color: #FFF; color: #222222 }
@@ -98,6 +98,7 @@ img.ultrafaded { opacity: 0.35 }
 .fill-blue      { background-color: #B3D9DC; /* #74B3BA */ }
 .fill-darkblue  { background-color: #498F94; /*#327096, #2D6772*/ }
 .fill-gray      { background-color: #4C535A; }
+.fill-beige     { background-color: #FEF3DA;}
 
 .fill-dark .faded       { color: rgba(255,255,255,0.6) !important; }
 .fill-dark .ultrafaded  { color: rgba(255,255,255,0.35) !important; }
@@ -281,8 +282,10 @@ a.link-unfade-hover:hover,
         and (min-device-pixel-ratio: 1.5)
         and (min-width: 881px) {
     .big-data { 
-        background-image: url(https://imgee.s3.amazonaws.com/imgee/11050ab1efa041febfbe1d2f06373bba.png);
-        background-size: 90%;
+        background-image: url(https://imgee.s3.amazonaws.com/imgee/c0866f85c10c4c2fae2480cf5e0db506_w2200_h1656.png);
+        background-size: 100%;
+        width: 65%;
+        padding-top: 50%;
      }
     .community-banner { background-image: url(../img/community-banner-2800.png); }
     .conference-banner { background-image: url(../img/conference-banner-2800.png); }
@@ -312,7 +315,7 @@ a.link-unfade-hover:hover,
     background-position: 10% 160%;
 }
 .tiles .workshops {
-    background-color: #F5F2C4;
+    background-color: #68BEC1;
     background-image: url(../img/db.png);
     background-repeat: no-repeat;
     background-position: -40% 160%;
@@ -320,7 +323,7 @@ a.link-unfade-hover:hover,
     background-position: -3% 120%;
 }
 .tiles .conference {
-    background-color: #F1D5A5;
+    background-color: #498F94;
     background-image: url(../img/conference-icon.png);
     background-repeat: no-repeat;
     background-position: -40% 10%;
@@ -413,9 +416,4 @@ footer nav ul li + li:before { content: '\2022'; margin: 0 .7rem 0 .4rem; color:
 #hg-bar .container:before, #hg-bar .container:after { content: ""; display: table; }
 #hg-bar .container:after { clear: both; }
 #hg-bar .container { zoom: 1; margin: 0 auto; padding: 0 1.5rem; }
-#hg-bar{
-    background-image: none !important;
-    background-color: #FFF !important;
-    box-shadow: none !important;
-    border-bottom: 0 !important;
-}
+

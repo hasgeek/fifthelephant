@@ -15,16 +15,19 @@
 {% endblock %}
 
 {% block banner %}
-<div class="banner long-page-nav fill-blue home resetcoords clearfix">
+<div class="banner long-page-nav fill-beige home resetcoords clearfix">
   <header class="clearfix">
     
     <div class="space-three">{% block nav %}{{ super() }}{% endblock %}</div>
+    {% block image_banner %}
+    <p class="big-data center-block ir space-two-top">Big Data</p>
+    {% endblock %}
     
     <!-- <hr class="half center-block space-three-bottom"> -->
     <hgroup class="centered clearfix">
-      <h1 class=" calm huge space-three-top space-one-bottom offwhite textshadow">
+      <!-- <h1 class=" calm huge space-three-top space-one-bottom offwhite textshadow">
           The Fifth Elephant
-      </h1>
+      </h1> -->
       <!-- <h3 class="body-type calm large">Conference on Bigdata, Storage and Analytics</h3> -->
       <h3 class="body-type calm brown regular space-one-top nospace-bottom">
         <a
@@ -36,7 +39,7 @@
         <a 
           title="View location in Google Maps"
           href="/2014/venue#conference"
-          class="brown venue link-silent-hover link-white-hover">
+          class="brown venue link-silent-hover">
           <abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr>
           Convention Centre
         </a>
@@ -46,7 +49,7 @@
       </h2>
     </hgroup>
     
-    <p class="ticket-link event-tickets centered legible nospace-bottom">
+    <p class="ticket-link event-tickets centered legible space-six-bottom">
       <a
         class="button button-primary min-measure-3words prose-type"
         title="Fifth Elephant 2014 Tickets on DoAttend"
@@ -57,9 +60,6 @@
     </p>
   </header>
   
-  {% block image_banner %}
-  <p class="big-data center-block ir space-two-top">Big Data</p>
-  {% endblock %}
   
   {% block page_nav %}{{ super() }}{% endblock %}
   
@@ -92,7 +92,7 @@
   <div class="tile-block clearfix">    
     <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom">
       {% for tile in highlights.tiles %}
-      <li class="{{ tile.background }}"><a class="occupy right-aligned link-white-hover unhighlight" href="{{ tile.link }}"><span class="wrap">{{ tile.title|safe }}</span> <span class="regular wrap">{{ tile.meta|safe }}</span></a></li>
+      <li class="{{ tile.background }}"><a class="occupy right-aligned link-white-hover unhighlight" href="{{ tile.link }}"><span class="wrap white">{{ tile.title|safe }}</span> <span class="regular wrap white">{{ tile.meta|safe }}</span></a></li>
       {% endfor %}
     </ul>
   </div>
