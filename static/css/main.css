@@ -80,10 +80,10 @@ hr {
 .red        { color: #930F00 !important; }
 .green      { color: #6C956B !important; }
 .gray       { color: #CBCBCB !important; }
-.darkgray       { color: rgba(0,0,0,0.6) !important; }
+.darkgray   { color: rgba(0,0,0,0.6) !important; }
 .yellow     { color: #DBD169 !important; }
 .brown      { color: #300000 !important; }
-.darkblue { color: #498F94 !important; }
+.darkblue   { color: #498F94 !important; }
 .orange       { color: #EC5F13 !important;/*#C54C17*/ }
 img.ultrafaded { opacity: 0.35 }
 
@@ -168,10 +168,10 @@ a.link-unfade-hover:hover,
 }
 @media only screen and (min-width: 501px) and (max-width: 880px) { 
     .big-data {
-        background-image: url(https://imgee.s3.amazonaws.com/imgee/11050ab1efa041febfbe1d2f06373bba_w500_h513.png);
+        background-image: url(https://imgee.s3.amazonaws.com/imgee/c0866f85c10c4c2fae2480cf5e0db506_w880_h662.png);
         margin-bottom: 7%; 
-        width: 55%;
-        padding-top: 55%;
+        width: 85%;
+        padding-top: 63%;
     }
     .community-banner {
         background-image: url(../img/community-banner-800.png);
@@ -202,7 +202,9 @@ a.link-unfade-hover:hover,
         and (max-width: 550px) {
     .big-data { 
         background-image: url(https://imgee.s3.amazonaws.com/imgee/11050ab1efa041febfbe1d2f06373bba_w600_h615.png);
-        padding-top: 80%; }
+        padding-top: 80%;
+        width: 80%;
+    }
     .community-banner { background-image: url(../img/community-banner-1100.png); }
     .conference-banner { background-image: url(../img/conference-banner-1100.png); }
     .workshop-banner { background-image: url(../img/workshop-banner-1100.png); }
@@ -216,18 +218,18 @@ a.link-unfade-hover:hover,
         and (min-width: 551px)
         and (max-width: 880px) {
     .big-data { 
-        background-image: url(https://imgee.s3.amazonaws.com/imgee/11050ab1efa041febfbe1d2f06373bba_w700_h718.png);
-        padding-top: 70%; }
+        background-image: url(https://imgee.s3.amazonaws.com/imgee/c0866f85c10c4c2fae2480cf5e0db506_w2200_h1656.png);
+        padding-top: 65%; }
     .community-banner { background-image: url(../img/community-banner-1600.png); }
     .conference-banner { background-image: url(../img/conference-banner-1600.png); }
     .workshop-banner { background-image: url(../img/workshop-banner-1600.png); }
 }
 @media only screen and (min-width: 881px) and (max-width: 1370px) { 
     .big-data {
-        background-image: url(https://imgee.s3.amazonaws.com/imgee/11050ab1efa041febfbe1d2f06373bba_w700_h718.png);
-        margin-bottom: 5%;
-        width: 38%;
-        padding-top: 42%;
+        background-image: url(https://imgee.s3.amazonaws.com/imgee/c0866f85c10c4c2fae2480cf5e0db506_w1370_h1031.png);
+        margin-bottom: 2%;
+        width: 70%;
+        padding-top: 55%;
     }
     .community-banner {
         background-image: url(../img/community-banner-1100.png);
@@ -250,10 +252,10 @@ a.link-unfade-hover:hover,
 }
 @media only screen and (min-width: 1371px) and (max-width: 2280px) { 
     .big-data {
-        background-image: url(https://imgee.s3.amazonaws.com/imgee/11050ab1efa041febfbe1d2f06373bba.png);
-        width: 35%;
-        margin-bottom: 4%;
-        padding-top: 39%;
+        background-image: url(https://imgee.s3.amazonaws.com/imgee/c0866f85c10c4c2fae2480cf5e0db506_w2200_h1656.png);
+        width: 65%;
+        margin-bottom: 2%;
+        padding-top: 50%;
     }
     .community-banner {
         background-image: url(../img/community-banner-1600.png);
@@ -282,7 +284,7 @@ a.link-unfade-hover:hover,
         and (min-device-pixel-ratio: 1.5)
         and (min-width: 881px) {
     .big-data { 
-        background-image: url(https://imgee.s3.amazonaws.com/imgee/c0866f85c10c4c2fae2480cf5e0db506_w2200_h1656.png);
+        background-image: url(https://imgee.s3.amazonaws.com/imgee/c0866f85c10c4c2fae2480cf5e0db506_w3200_h2409.png);
         background-size: 100%;
         width: 65%;
         padding-top: 50%;
@@ -416,4 +418,24 @@ footer nav ul li + li:before { content: '\2022'; margin: 0 .7rem 0 .4rem; color:
 #hg-bar .container:before, #hg-bar .container:after { content: ""; display: table; }
 #hg-bar .container:after { clear: both; }
 #hg-bar .container { zoom: 1; margin: 0 auto; padding: 0 1.5rem; }
+
+
+.visible-xs{
+    display: block;
+}
+@media screen and (min-width: 501px){
+    .visible-xs{
+        display: none;
+    }
+}
+@media  only screen
+        and (-webkit-min-device-pixel-ratio: 1.5)
+        and (min-width: 551px)
+        only screen
+        and (min-device-pixel-ratio: 1.5)
+        and (min-width: 551px) {
+    .visible-xs{
+        display: none;
+    }
+}
 
