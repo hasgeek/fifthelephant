@@ -362,7 +362,7 @@ a.link-unfade-hover:hover,
 .js .sponsors dt.corporate-tickets { clear: left; }
 
 .js .sponsors dd { width: 50%; }
-.js .sponsors dd.xl,
+.js .sponsors dd.xxl, .js .sponsors dd.xl,
 .js .sponsors dd.l { width: 100%; }
 .js .sponsors dd.s { width: 33.3333%; width: calc(100%/3); }
 
@@ -402,7 +402,7 @@ a.link-unfade-hover:hover,
 }
 @media only screen and (min-width: 45em) {
     .js .sponsors dd    { width: 33.3333%; width: calc(100%/3); }
-    .js .sponsors dd.xl { width: 50%; }
+    .js .sponsors dd.xxl, .js .sponsors dd.xl { width: 50%; }
     .js .sponsors dd.l  { width: 50%; }
 /*    .js .sponsors dd.l  { width: 33.3333%; width: calc(100%/3); }*/
 /*    .js .sponsors dd    { width: 25%; }*/
