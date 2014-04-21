@@ -355,6 +355,7 @@ a.link-unfade-hover:hover,
 
 /*  Keeping sponsor tiles well behaved  */
 
+.js .sponsors dt.vc-sponsor,
 .js .sponsors dt.silver,
 .js .sponsors dt.bronze,
 .js .sponsors dt.party,
