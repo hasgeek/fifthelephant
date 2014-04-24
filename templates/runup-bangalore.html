@@ -147,15 +147,11 @@
     </hgroup>
     <section>
       <div class="venue-showcase conference-venue contain-width clearfix">
-        <p class="full ">
+        <p class="full">
         <img  class="venuephoto occupy" style="width:50%; margin: 0 auto;"
                 src="https://imgee.s3.amazonaws.com/imgee/9abfb5f4886841108665dda42b2a5ecf.jpeg"
                 data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "https://imgee.s3.amazonaws.com/imgee/9abfb5f4886841108665dda42b2a5ecf.jpeg" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "https://imgee.s3.amazonaws.com/imgee/9abfb5f4886841108665dda42b2a5ecf.jpeg" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "https://imgee.s3.amazonaws.com/imgee/9abfb5f4886841108665dda42b2a5ecf.jpeg" }]'
-                alt="ThoughtWorks office, Pune">
-        </p>
-        
-        <p class="center">
-          
+                alt="Apigee office, Bangalore">
         </p>
       </div>
       <div class="measure-10words regular prose center-block pad-one space-two-top">
@@ -172,7 +168,7 @@
         </p>
         <p class="secondary space-half-top space-two-bottom"><a href="https://goo.gl/maps/hFCKO">View on Google Maps</a></p>
       </div>
-      <div class="map-container measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="pune-map" class="map"></div></div>
+      <div class="map-container measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="apigee-map" class="map"></div></div>
     </section>
   <h4 class="space-four-top space-two-bottom centered semi-bold">Reaching ThoughtWorks</h4>
   <section class="getting-there measure-10words regular center-block highlight-links clearfix pad-one">
@@ -274,7 +270,7 @@
     function onZoomend(){ map.setView(venue, map.getZoom()); };
   }
   $(function() { 
-    initMap('pune-map', { lat: 12.926622, lon: 77.632455, name: 'Apigee office, Bangalore' }, { lat: 12.926622, lon: 77.632455 });
+    initMap('apigee-map', { lat: 12.926622, lon: 77.632455, name: 'Apigee office, Bangalore' }, { lat: 12.926622, lon: 77.632455 });
   });
   </script>
   {{ ajaxform('rsvp', request, force=True) }}
