@@ -3,7 +3,8 @@
 
 {% set title = 'Bangalore run-up' %}
 {% set description = node.description %}
-{% set page_caption = 'Bangalore Run-up' %}
+{% set page_caption = 'Real-time Analytics on a <br>High Performance Database Platform' %}
+{% set page_subtitle = '<span class="orange">3 May 2014</span>&nbsp;&nbsp;<span class="darkblue">Apigee, Bangalore</span>' %}
 {% set banner_title_size = 'huge' %}
 
 {% block header_script %}
@@ -53,10 +54,11 @@
 
 {% block page_nav_items %}
   <li><a href="#preface" class="link-white-hover">About</a></li>
-  <li><a href="#sessions" class="link-white-hover">Tutorials and Talks</a></li>
+  <li><a href="#sessions" class="link-white-hover">Talks and Workshops</a></li>
   <li><a href="#schedule" class="link-white-hover">Schedule</a></li>
   <li><a href="#venue" class="link-white-hover">Venue</a></li>
   <li><a href="#rsvp-section" class="link-white-hover">RSVP</a></li>
+  <li><a href="#rsvp-section" class="link-white-hover">Sponsors</a></li>
 {% endblock %}
 
 {% block content %}
@@ -65,14 +67,14 @@
       <section class="preface">
         <h2 class="visuallyhidden">Preface</h2>
         <div class="measure-8words center-block">
-          <p>Data and big data are inescapable terms. They haunt you, whether you are a programmer, web developer, startup or decision-maker in an established firm. The more daunting question faced by all is: how do you tease insights from data, make decisions, target specific customer segments and build products?</p><p>On June 15th, we have organized a day of data: hands-on tutorials on Graph databases and Apache Hive in the morning and afternoon, followed by an evening of discussions about data, apps and targeting. Work with instructors, meet practitioners and interact with people who are dealing with the same data angsts and aspirations as you.</p>
+          <p>In the light of the mountainous amount of data being processed real time around the world and that too with a few milli seconds for processing, comes in the relevance of a high performance database.</p><p>Second only to high frequency trading when it comes to low latency, real-time bidding platforms have fewer than 100 milliseconds to win a bid and serve an ad. To build a competitive offering, these systems have to store context on billions of users and devices and process queries and updates within a few milliseconds. Therefore, front-edge operational database use is overwhelmingly key-value, with models and insights generated using offline systems (e.g., Hadoop).</p><p>This meet up hence showcases the technical system architecture of a high performance database which features availability, high performance, clustering, Flash storage, and immediate consistency</p>
         </div>
       </section> 
     </article>
   </section>
 
   <section id="sessions" class="space-four-top fill-light legible clearfix">
-    {% from theme("data/runup-bangalore-sessions.html") import pune_event as featured %}
+    {% from theme("data/runup-bangalore-sessions.html") import event as featured %}
     {% for session in featured %}
       {% if loop.first %}
       <article class="push-three-top push-two-bottom highlight-links clearfix">
@@ -132,7 +134,7 @@
   <section id="schedule" class="schedule push-three-top legible">
     <h2 class="centered calm space-three-bottom">Schedule</h2>
     <div class="schedule-table-container center-block pad-one regular">
-      {% include theme("partials/_pune_schedule.html") %}
+      {% include theme("partials/_runup_bangalore_schedule.html") %}
     </div>
   </section>
 
@@ -141,61 +143,41 @@
   <article class="legible">
     <hgroup class="space-two-bottom">
       <h1 class="calm centered nospace large">Venue</h1>
-      <h2 class="calm centered space-half-top nospace-bottom ultrafaded legible">ThoughtWorks office, Pune</h2>
+      <h2 class="calm centered space-half-top nospace-bottom ultrafaded legible">Apigee office, Bangalore</h2>
     </hgroup>
     <section>
       <div class="venue-showcase conference-venue contain-width clearfix">
         <p class="full ">
+        <img  class="venuephoto occupy" style="width:50%; margin: 0 auto;"
+                src="https://imgee.s3.amazonaws.com/imgee/9abfb5f4886841108665dda42b2a5ecf.jpeg"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "https://imgee.s3.amazonaws.com/imgee/9abfb5f4886841108665dda42b2a5ecf.jpeg" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "https://imgee.s3.amazonaws.com/imgee/9abfb5f4886841108665dda42b2a5ecf.jpeg" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "https://imgee.s3.amazonaws.com/imgee/9abfb5f4886841108665dda42b2a5ecf.jpeg" }]'
+                alt="ThoughtWorks office, Pune">
         </p>
         
-        <p class="quarter flushleft">
-          <img  class="venuephoto"
-                src="{{ theme_static('img/venue/runup-event-venue/pune-venue-1-256.jpg') }}"
-                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-1-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-1-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-1-800.jpg') }}" }]'
-                alt="ThoughtWorks office, Pune">
-        </p>
-        <p class="quarter flushleft">
-          <img  class="venuephoto"
-                src="{{ theme_static('img/venue/runup-event-venue/pune-venue-2-256.jpg') }}"
-                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-2-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-2-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-2-800.jpg') }}" }]'
-                alt="ThoughtWorks office, Pune">
-        </p>
-        <p class="quarter flushleft">
-          <img  class="venuephoto"
-                src="{{ theme_static('img/venue/runup-event-venue/pune-venue-3-256.jpg') }}"
-                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-3-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-3-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-3-800.jpg') }}" }]'
-                alt="ThoughtWorks office, Pune">
-        </p>
-        <p class="quarter flushleft">
-          <img  class="venuephoto"
-                src="{{ theme_static('img/venue/runup-event-venue/pune-venue-4-256.jpg') }}"
-                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-4-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-4-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/runup-event-venue/pune-venue-4-800.jpg') }}" }]'
-                alt="ThoughtWorks office, Pune">
+        <p class="center">
+          
         </p>
       </div>
       <div class="measure-10words regular prose center-block pad-one space-two-top">
         <h4 class="space-two-top nospace-bottom">When</h4>
-        <p class="space-half">July 15th, 11am – 7pm</p>
+        <p class="space-half">May 3rd, 9am – 1pm</p>
         <h4 class="space-two-top nospace-bottom">Address</h4>
         <p class="space-half">
-          ThoughtWorks Technologies (India) Pvt Ltd<br />
-          GF-01 and MZ-01 Tower C<br />
-          Panchshil Tech Park<br />
-          Yerwada,<br />
-          Pune - 411006<br />
+          Apigee Technologies India Pvt. Ltd.<br>
+          No. 17/2, 2nd B Cross, 7th Main<br>
+          2nd &amp; 3rd Floor, Off 80 Feet Road<br>
+          Industrial Estate 3rd Block, Koramangala<br>
+          Bangalore, 560034, India<br>
+          Tel: +91 80 67696800<br>
         </p>
-        <div class="clearfix">
-          <h5 class="nospace ultrafaded flushleft regular pad-half-right">Landmark</h5>
-          <p class="nospace flushleft">ThoughtWorks in Pune is located inside Panchshil Tech Park. Panchshil Tech Park is situated opposite Pune Golf Course, adjacent to Don Bosco School.<br /></p>
-        </div>
-        <p class="secondary space-half-top space-two-bottom"><a href="https://maps.google.co.in/maps?q=Bak+Bak+Bar&ie=UTF-8&ei=xwqlUZ_hFsexrAeM4IBY&ved=0CAsQ_AUoAg">View on Google Maps</a></p>
+        <p class="secondary space-half-top space-two-bottom"><a href="https://goo.gl/maps/hFCKO">View on Google Maps</a></p>
       </div>
       <div class="map-container measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="pune-map" class="map"></div></div>
     </section>
   <h4 class="space-four-top space-two-bottom centered semi-bold">Reaching ThoughtWorks</h4>
   <section class="getting-there measure-10words regular center-block highlight-links clearfix pad-one">
     <h5 class="nospace regular faded capitalize">By Car/Two-wheeler</h5>
-    <p class="regular space-half-top space-two-bottom">Car and two-wheeler parking space is available adjacent to the front entry, near Don bosco school, of Panchshil Tech Park as well as at the back entry i.e., back entrance of Ishanya mall.</p>
+    <p class="regular space-half-top space-two-bottom">On the Domlur - Madiwala inner ring road, turn left at the the Kormanagala Sony world signal and proceed straight. Beyond the Maharaja and Wipro signals, take the immediate right after the Flipkart office. You will find the Apigee office in the Toshiba building.</p>
   </section>
 </section>
 
@@ -249,14 +231,14 @@
     </article>
   </section>
 
-  {% from theme("data/pune-event-sponsors.html") import pune_event_sponsors %}
-  {% if pune_event_sponsors %}
+  {% from theme("data/runup-bangalore-sponsors.html") import event_sponsors %}
+  {% if event_sponsors %}
   <section id="sponsor" class="partners clearfix space-three-top">  
     <article class=" legible push-three-top push-two-bottom clearfix">
-      <h3 class="centered calm space-two-bottom space-three-top nospace ultrafaded">Sponsored by</h3>
+      <h3 class="centered calm space-two-bottom space-three-top nospace ultrafaded">Venue sponsor</h3>
       <ul class="{% if partners|length > 3 %}thumbnail-columns thumbnail-columns-five {% else %}centered {% endif%}regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
-        {% for sponsor in pune_event_sponsors %}
-        <li class="clearfix {% if sponsor.logo.contain == 'height' %}contain-height{% else %}contain-width thirtyfive{% endif %}{% if pune_event_sponsors|length <= 3 %} inline-block{% endif%}"><a class="occupy centered {% if pune_event_sponsors|length <= 3 %} pad-one{% endif%}" href="{{ sponsor.web.link }}"><img src="{{ theme_static(sponsor.logo.url) }}" alt="{{ sponsor.name }}"></a></li>
+        {% for sponsor in event_sponsors %}
+        <li class="clearfix {% if sponsor.logo.contain == 'height' %}contain-height{% else %}contain-width thirtyfive{% endif %}{% if event_sponsors|length <= 3 %} inline-block{% endif%}"><a class="occupy centered {% if event_sponsors|length <= 3 %} pad-one{% endif%}" href="{{ sponsor.web.link }}"><img src="{{sponsor.logo.url}}" alt="{{ sponsor.name }}"></a></li>
         {% endfor %}
       </ul>
     </article>
@@ -292,7 +274,7 @@
     function onZoomend(){ map.setView(venue, map.getZoom()); };
   }
   $(function() { 
-    initMap('pune-map', { lat: 18.5528, lon: 73.8928, name: 'ThoughtWorks office, Pune' }, { lat: 18.5528, lon: 73.8928 });
+    initMap('pune-map', { lat: 12.926622, lon: 77.632455, name: 'Apigee office, Bangalore' }, { lat: 12.926622, lon: 77.632455 });
   });
   </script>
   {{ ajaxform('rsvp', request, force=True) }}

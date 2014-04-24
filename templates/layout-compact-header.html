@@ -2,7 +2,7 @@
 
 {% block banner_title %}
   {% if page_caption %}
-  <h1 class="visuallyhidden">{% block banner_title_prefix %}The{% endblock %} {{ page_caption }}</h1>
+  <h1 class="visuallyhidden">{% block banner_title_prefix %}The{% endblock %} {{ page_caption|safe }}</h1>
   {% endif %}
   <hr class="half center-block space-two">
   <p class="regular clearboth centered center-block space-two faded all-caps title-type">{% block page_meta %}{% endblock %}</p>
