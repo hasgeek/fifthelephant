@@ -7,13 +7,6 @@
 {% set page_subtitle = '<span class="orange">3 May 2014</span>&nbsp;&nbsp;<span class="darkblue">Apigee, Bangalore</span>' %}
 {% set banner_title_size = 'huge' %}
 
-{% block header_script %}
-  <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.5.1/leaflet.css" />
-  <!--[if lte IE 8]>
-      <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" />
-  <![endif]-->
-  <script src="//cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
-{% endblock %}
 
 {% macro rsvp_form(node, form, waitlist=False, hascapacity=True, status='U') %}
   <form id="rsvp" action="{{ node.url_for('rsvp') }}" class="form-inline" method="POST">
