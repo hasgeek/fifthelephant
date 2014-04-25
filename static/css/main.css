@@ -309,7 +309,7 @@ a.link-unfade-hover:hover,
     background-size: auto 100%;
 }
 .tiles .bird {
-    background-color: #665128;
+    background-color: #A6D099;
     background-image: url(../img/bird.svg);
     background-repeat: no-repeat;
     background-position: -40% 160%;
@@ -332,8 +332,8 @@ a.link-unfade-hover:hover,
     background-size: auto 80%;
     background-position: 1% 100%;
 }
-.tiles .visualization {
-    background-color: #F3F3F3;
+.tiles .analytics {
+    background-color: #EC5F13;
     background-image: url(../img/visualization.png);
     background-repeat: no-repeat;
     background-position: -40% 160%;

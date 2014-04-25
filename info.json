@@ -9,8 +9,8 @@
     "options": {
         "assets_css": [
             "css/normalize.css",
-            "css/vendor/leaflet/leaflet.css",
-            "css/vendor/leaflet/leaflet.ie.css",
+            "js/vendor/leaflet/leaflet.ie.css",
+            "js/vendor/leaflet/leaflet.css",
             "css/typography.css",
             "css/layout.css",
             "css/main.css",
