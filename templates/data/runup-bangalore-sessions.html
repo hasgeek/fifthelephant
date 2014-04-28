@@ -3,24 +3,36 @@
       {
         'title': 'Real-time Analytics on a High Performance Database Platform'
       , 'type': 'Talk'
-      , 'description': "<p>Dr. Srini speaks on functionality and efficiency, in the context of Aerospike's multiple deployments at 1M+ TPS. The extended functionality of prioritized query processing allows this high performance data platform to be effectively used for real-time analytics.</p><p>The techniques described include how to:<ul><li>- Use an in-memory NoSQL database for low latency access</li><li>- Exploit parallelism using a combination of DRAM and flash</li><li>- Use flexible schema and dynamic definition of access paths for efficient query retrieval</li><li>- Increase number of records that can be accessed in real-time using efficient secondary indexes</li><li>- Size deployments precisely for predictable price/performance</li><li>- Configure the system to ensure 100% uptime</li><li>- Define operator friendly procedures for launching a system at Internet scale</li></ul></p>"
+      , 'description': "<p>Dr. Srini speaks on functionality and efficiency, in the context of Aerospike's multiple deployments at 1M+ TPS.</p><p>The techniques described include how to:<ul><li>- Use an in-memory NoSQL database for low latency access</li><li>- Exploit parallelism using a combination of DRAM and flash</li><li>- Use flexible schema and dynamic definition of access paths for efficient query retrieval</li><li>- Increase number of records that can be accessed in real-time using efficient secondary indexes</li><li>- Size deployments precisely for predictable price/performance</li><li>- Configure the system to ensure 100% uptime</li><li>- Define operator friendly procedures for launching a system at Internet scale</li></ul></p>"
       , 'speaker': {
           'name': 'Dr. Srini V. Srinivasan'
         , 'photo': 'https://imgee.s3.amazonaws.com/imgee/28bc8168c9d7433c92652d16a7b7cb51.jpeg'      
         , 'company': 'Aerospike'
-        , 'bio': '<p>Dr. Srini V. Srinivasan, Aerospike founder and vice president of engineering & operations brings 20-plus years of experience in designing, developing and operating Web-scale infrastructures, and he holds over a dozen patents in database, Internet, mobile, and distributed system technologies. Srini co-founded Aerospike to solve the scaling problems he experienced with Oracle databases at Yahoo! where, as senior director of engineering, he had global responsibility for the development, deployment and 24×7 operations of Yahoo!’s mobile products, in use by tens of millions of users. Srini joined Yahoo! as part of the Verdisoft acquisition, where as vice president of engineering, he oversaw the development of high-performance data synchronization products for mobile users. Srini also was chief architect of IBM’s DB2 Internet products, and he served as senior architect of digital TV products at Liberate Technologies. Srini has degrees in Computer Science from IIT Madras (B.Tech) and the University of Wisconsin-Madison (M.S. and Ph.D).</p>'
+        , 'bio': '<p>Dr. Srini V. Srinivasan, Aerospike founder and vice president of engineering &amp; operations brings 20-plus years of experience in designing, developing and operating Web-scale infrastructures, and he holds over a dozen patents in database, Internet, mobile, and distributed system technologies. Previously ,vice president of engineering, Yahoo! and Chief architect of IBM’s DB2 Internet products.</p>'
+      }
+    }
+    , {
+        'title': 'Hyperion: The Flipkart way'
+      , 'type': 'Talk'
+      , 'description': "<p>How do you know what\'s going on in the apps and on your services? The key lies in being able to get insights into what\'s happening on your app and in your production systems quickly and without failure.</p><p>In this talk we discuss Hyperion: a fault tolerant, real time, distributed event tracking and analysis system. The system allows clients to push, store and analyze event data to gain long term and short term insight in a collection of related systems. It is designed to be scalable, flexible and reliable, and provides real-time histograms, trends and query features. Hyperion is built as a platform for event storage, query and processing. It provides capabilities to the clients to build very powerful apps on top of it. We'll go through the architecture, performance and learnings from the system.</p>"
+      , 'speaker': {
+          'name': 'Santanu Sinha'
+        , 'photo_src': 'git'
+        , 'photo': 'img/speakers/runup-event-speakers/shantanu.jpg'
+        , 'company': 'Flipkart'
+        , 'bio': '<p>Santanu Sinha is an architect working on real-time analytics and next generation systems at flipkart.com. Prior work include developing the distributed content ingestion framework that powers meta and content ingestion for all books and ebooks on flipkart.com.</p>'
       }
     }
     , {
         'title': 'Introduction to Real-time Analytics on Aerospike'
       , 'type': 'Workshop'
-      , 'description': "<p>The workshop is divided into two phases.<ul><li>1. Basic setup and operations</li><li>2. Writing distributed streaming aggregations in LUA.</li></ul></p><p><ul><strong>Phase-1: Installation and Setup</strong><li>- Installing Aerospike</li><li>- Forming Cluster</li><li>- Putting load on Aerospike</li><li>- Take down nodes and bring them up</li><li>- Monitoring using AMC</li><li>- Dynamically changing some config parameters</li></ul></p><p><ul><strong>Phase-2: Running an analytics use case.</strong><li>- Load dataset</li><li>- Create secondary index</li><li>- Create a Streaming Aggregation UDF and registering it</li><li>- Triggering the Aggregation LUA UDF</li><li>- Check the results</li><li>- Play with the Aggregation logic</li></ul></p>"
+      , 'description': "<p>The workshop is divided into two phases.</p><p><ul><strong>Phase-1: Installation and Setup</strong><li>- Installing Aerospike</li><li>- Forming Cluster</li><li>- Putting load on Aerospike</li><li>- Take down nodes and bring them up</li><li>- Monitoring using AMC</li><li>- Dynamically changing some config parameters</li></ul></p><p><ul><strong>Phase-2: Running an analytics use case.</strong><li>- Load dataset</li><li>- Create secondary index</li><li>- Create a Streaming Aggregation UDF and registering it</li><li>- Triggering the Aggregation LUA UDF</li><li>- Check the results</li><li>- Play with the Aggregation logic</li></ul></p>"
       , 'requirement' : "<p>Laptop running Centos/Ubuntu/Debian Linux (could be VM).</p>"
       , 'speaker': {
           'name': 'Sunil Sayyaparaju'
         , 'photo': 'https://imgee.s3.amazonaws.com/imgee/69c110a74746420b9057fbc835c395cf_w200_h200.jpeg'
         , 'company': 'Aerospike'
-        , 'bio': '<p>Sunil Sayyaparaju, Engineering Lead at Aerospike, has over 9 years experience working on different types of SQL RDBMS solutions, such as single machine (monolithic), in-memory, distributed shared-disk, and distributed shared-nothing architectures with emphasis in transaction management, storage, access, performance tuning, and recovery areas.</p><p>Sunil currently leads Aerospike\'s Bangalore office, working on their distributed shared-nothing NoSQL solution. Aerospike is a high-performance, self-balancing, immediately consistent, distributed NoSQL database. Aerospike also has an add on product for replication across data-centers over WAN which supports different complex topologies.</p>'
+        , 'bio': '<p>Sunil Sayyaparaju, Engineering Lead at Aerospike, has over 9 years experience working on different types of SQL RDBMS solutions. Sunil currently leads Aerospike\'s Bangalore office, working on their distributed shared-nothing NoSQL solution. Aerospike is a high-performance, self-balancing, immediately consistent, distributed NoSQL database.</p>'
       }
     }
   ]

@@ -1048,6 +1048,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 /* Schedule */
 .schedule-table-container { width: 100%; max-width: 60em; }
 .schedule-table           { border: 1px solid #DDD; }
+.schedule-table .track-single  { width: 50%; background-color: #F9F9F9; }
 .schedule-table .track-1  { width: 50%; background-color: #F9F9F9; }
 .schedule-table .track-2  { width: 50%; border-left: 1px solid #EEE; background-color: #F9F9F9; }
 .schedule-table tr        { display: block; position: relative; }

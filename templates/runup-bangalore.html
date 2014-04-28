@@ -87,7 +87,11 @@
               <div class="poster clearfix">
                 <p class="contain-width clearfix">
                   {% if session.speaker.photo %}
-                    <img alt="" src="{{ session.speaker.photo }}" width="150" height="150">
+                    {% if session.speaker.photo_src == 'git' %}
+                      <img alt="{{ session.speaker.name }}" src="{{ theme_static(session.speaker.photo) }}" width="150" height="150">
+                    {% else %}
+                      <img alt="{{ session.speaker.name }}" src="{{ session.speaker.photo }}" width="150" height="150">
+                    {% endif %}
                   {% endif %}
                 </p>
                 <hgroup class="clearboth">
@@ -163,7 +167,7 @@
       </div>
       <div class="map-container measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="apigee-map" class="map"></div></div>
     </section>
-  <h4 class="space-four-top space-two-bottom centered semi-bold">Reaching ThoughtWorks</h4>
+  <h4 class="space-four-top space-two-bottom centered semi-bold">Reaching Apigee</h4>
   <section class="getting-there measure-10words regular center-block highlight-links clearfix pad-one">
     <h5 class="nospace regular faded capitalize">By Car/Two-wheeler</h5>
     <p class="regular space-half-top space-two-bottom">On the Domlur - Madiwala inner ring road, turn left at the the Kormanagala Sony world signal and proceed straight. Beyond the Maharaja and Wipro signals, take the immediate right after the Flipkart office. You will find the Apigee office in the Toshiba building.</p>
