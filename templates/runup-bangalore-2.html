@@ -156,17 +156,17 @@
                       {{ rsvp_form(node, form, hascapacity=False, status=status) }}
                     {%- endif %}
                   {%- endif %}
-                {%- endif %}
+                 {%- endif %}
               {%- endwith %}
             {%- else %}
-           <p>
+              <p>
                 We don’t have an email address on your profile matching your ticket.
                 Please <a href="https://auth.hasgeek.com/profile/email/new" target="_blank">add the email address</a>
                 you used when buying your ticket, <a href="{{ url_for('logout') }}">logout</a>
                 and <a href="{{ url_for('login') }}">login</a> again.
-            </p>
+              </p>
             {%- endif %}
-          {%- else %} 
+          {%- else %}
             <p>
               {#{% if node.capacity > 0 -%} The venue has limited capacity. {% endif -%}#}
               Interested in attending? Please login. You can use your existing Twitter or Google account, and if you have previously voted on a session proposal or attended a hacknight, you already have a HasGeek account.
