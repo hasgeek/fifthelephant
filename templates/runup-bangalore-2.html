@@ -60,7 +60,7 @@
       <section class="preface">
         <h2 class="visuallyhidden">Preface</h2>
         <div class="measure-8words center-block">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt massa sit amet sapien dapibus, quis viverra lorem lobortis. Donec ut pharetra libero, sit amet rutrum arcu. Morbi convallis vehicula blandit. Curabitur molestie varius dui, tempus viverra purus sollicitudin a. Nam eget metus suscipit, mattis augue ac, adipiscing purus. Nulla ac placerat nisl. Etiam egestas accumsan odio id mattis.</p><p>Duis vulputate, ligula sed posuere mattis, purus diam porta velit, ac eleifend tortor nibh sed lectus. Sed in ante sed odio fringilla sagittis. Donec sed diam a eros interdum interdum. Quisque vestibulum eros at sagittis vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus cursus sem est, et pharetra libero convallis a. Sed cursus sagittis iaculis. Morbi euismod feugiat nibh non fermentum.</p>
+          <p>During the 2014 general elections in India, technology was widely used for candidate and party campaigns. The purpose of these technology-driven campaigns was to help voters make more informed decisions about which candidate to cast their votes for. Voter responses to these campaigns continuously helped individual candidates and political parties (via their technology teams and consultants) to rework messaging till the very end. </p><p>On Friday, May 23rd, HasGeek and The Centre for Internet and Society are organizing three presentations followed by an interactive Q&A session to understand how technology spurred campaigns during the 2014 elections, and how the voter will have to get smarter the way parties are becoming smart at reaching out to them.</p>
         </div>
       </section> 
     </article>
@@ -159,14 +159,6 @@
                 {%- endif %}
               {%- endwith %}
             {%- else %}
-              <p>
-                We don’t have an email address on your profile matching your ticket.
-                Please <a href="https://auth.hasgeek.com/profile/email/new" target="_blank">add the email address</a>
-                you used when buying your ticket, <a href="{{ url_for('logout') }}">logout</a>
-                and <a href="{{ url_for('login') }}">login</a> again.
-              </p>
-            {%- endif %}
-          {%- else %}
             <p>
               {#{% if node.capacity > 0 -%} The venue has limited capacity. {% endif -%}#}
               Interested in attending? Please login. You can use your existing Twitter or Google account, and if you have previously voted on a session proposal or attended a hacknight, you already have a HasGeek account.
