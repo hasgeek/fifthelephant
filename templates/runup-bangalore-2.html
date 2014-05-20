@@ -7,6 +7,7 @@
 {% set page_subtitle = '<span class="orange legible semi-bold">23 May 2014</span><br><span class="regular body-type semi-bold all-caps"><img alt="Co-ordinates" src="/_themes/fifthelephant2014/img/map-marker.svg" width="15" class="gap-1q-right white"> Centre for Internet and Society, Bangalore</span>' %}
 {% set banner_title_size = 'huge' %}
 
+{% block networkbar %}{{ networkbar(siteid='events', login=true) }}{% endblock %}
 
 {% macro rsvp_form(node, form, waitlist=False, hascapacity=True, status='U') %}
   <form id="rsvp" action="{{ node.url_for('rsvp') }}" class="form-inline" method="POST">
