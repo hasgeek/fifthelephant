@@ -309,7 +309,7 @@ a.link-unfade-hover:hover,
     background-size: auto 100%;
 }
 .tiles .bird {
-    background-color: #A6D099;
+    background-color: #C2AE8B;
     background-image: url(../img/bird.svg);
     background-repeat: no-repeat;
     background-position: -40% 160%;
@@ -333,16 +333,16 @@ a.link-unfade-hover:hover,
     background-position: 1% 100%;
 }
 .tiles .analytics {
-    background-color: #EC5F13;
-    background-image: url(../img/visualization.png);
+    background-color: #A6D099;
+    background-image: url(../img/analytics.png);
     background-repeat: no-repeat;
     background-position: -40% 160%;
     background-size: auto 80%;
     background-position: 1% 160%;
 }
-.tiles .puneevent {
-    background-color: #CCA351;
-    background-image: url(../img/db.png);
+.tiles .elections {
+    background-color: #EC5F13;
+    background-image: url(../img/election.png);
     background-repeat: no-repeat;
     background-position: -40% 160%;
     background-size: auto 70%;
