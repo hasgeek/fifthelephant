@@ -151,6 +151,15 @@ a.link-unfade-hover:hover,
     padding-top: 20%;
     margin-bottom: 10%;
 }
+.runup-banner {
+    background-image: url(https://imgee.s3.amazonaws.com/imgee/78dcfac51a184f86a5cb9ca91f08fefd.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65%;
+    width: 80%;
+    margin-bottom: 6%;
+    padding-top: 30%;
+}
 @media  only screen
         and (-webkit-min-device-pixel-ratio: 1.5)
         and (min-width: 251px)

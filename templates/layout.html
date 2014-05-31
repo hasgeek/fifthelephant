@@ -36,6 +36,7 @@
   {%- endif %}
   <link rel="stylesheet" href="/_baseframe/css/networkbar.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400italic,600italic,400,600">
+  <link href='//fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 
   {% block header_script %}{% endblock %}
 
@@ -85,6 +86,8 @@
       {% endif %}
       {% if page_subtitle %}<h2 class="space-three-bottom">{{ page_subtitle|safe }}</h2>{% endif %}
     {% endblock %}
+
+
     {% block image_banner %}{% endblock %}
     {% block page_nav %}
       <div class="page-nav{% if fixed_width_sticky %} fixed-width-sticky{% endif %} clearfix">
