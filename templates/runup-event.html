@@ -60,7 +60,7 @@
 {% block page_nav_items %}
   <li><a href="#preface" class="link-white-hover">About</a></li>
   {% if event.schedule %}
-  <li><a href="#sessions" class="link-white-hover">{{ event.format }}</a></li>
+  <li><a href="#sessions" class="link-white-hover">{{ event.format|safe }}</a></li>
   <li><a href="#schedule" class="link-white-hover">Schedule</a></li>
   {% endif %}
   {% if event.venue.address %}
@@ -89,7 +89,7 @@
     {% for item in event.schedule %}
       {% if loop.first %}
       <article class="push-three-top push-two-bottom highlight-links clearfix">
-        <h3 class="centered calm space-two-top nospace-bottom ultrafaded capitalize">{{ event.format }}</h3>
+        <h3 class="centered calm space-two-top nospace-bottom ultrafaded capitalize">{{ event.format|safe }}</h3>
         <ul class="featured-sessions poster-with-bio legible clearfix nospace">
       {% endif %}
       {% if item.speaker %}

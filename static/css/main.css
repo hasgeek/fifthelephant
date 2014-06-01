@@ -318,7 +318,7 @@ a.link-unfade-hover:hover,
     background-size: auto 100%;
 }
 .tiles .bird {
-    background-color: #C2AE8B;
+    background-color: #A6D099;
     background-image: url(../img/bird.svg);
     background-repeat: no-repeat;
     background-position: -40% 160%;
@@ -341,21 +341,62 @@ a.link-unfade-hover:hover,
     background-size: auto 80%;
     background-position: 1% 100%;
 }
-.tiles .analytics {
-    background-color: #A6D099;
-    background-image: url(../img/analytics.png);
-    background-repeat: no-repeat;
-    background-position: -40% 160%;
-    background-size: auto 80%;
-    background-position: 1% 160%;
-}
-.tiles .elections {
+.tiles .runup {
     background-color: #EC5F13;
-    background-image: url(../img/election.png);
+    background-image: url(../img/analytics.png);
     background-repeat: no-repeat;
     background-position: -40% 160%;
     background-size: auto 70%;
     background-position: -3% 120%;
+}
+.tiles .analytics {
+    background-image: url(../img/analytics.png);
+    background-repeat: no-repeat;
+    background-position: -40% 160%;
+    background-size: auto 60%;
+    background-position: 3% 110%;
+}
+.tiles .election {
+    background-image: url(../img/election.png);
+    background-repeat: no-repeat;
+    background-position: -40% 160%;
+    background-size: auto 60%;
+    background-position: 1% 110%;
+}
+.tiles .hadoop {
+    background-image: url(../img/hadoop.png);
+    background-repeat: no-repeat;
+    background-position: -40% 160%;
+    background-size: auto 80%;
+    background-position: 1% 110%;
+}
+.tiles .machine-learning {
+    background-image: url(../img/machine-learning.png);
+    background-repeat: no-repeat;
+    background-position: -40% 160%;
+    background-size: auto 70%;
+    background-position: 1% 105%;
+}
+.tiles .journalism {
+    background-image: url(../img/journalism.png);
+    background-repeat: no-repeat;
+    background-position: -40% 160%;
+    background-size: auto 60%;
+    background-position: 10% 105%;
+}
+.tiles .db{
+    background-image: url(../img/db.png);
+    background-repeat: no-repeat;
+    background-position: -40% 160%;
+    background-size: auto 60%;
+    background-position: 3% 105%;
+}
+.tiles .ads{
+    background-image: url(../img/ads.png);
+    background-repeat: no-repeat;
+    background-position: -40% 160%;
+    background-size: auto 60%;
+    background-position: 10% 90%;
 }
 
 

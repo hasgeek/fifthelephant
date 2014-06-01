@@ -461,7 +461,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .announcements { max-width: 40em; }
 .tiles > li { max-width: 20em; margin: 1rem auto; }
 .tiles .wrap { display: block; }
-.tiles a { height: 10rem; padding-top: 7%; padding-right: 5%; -webkit-box-shadow: 0 0 2px 0 #888; box-shadow: 0 0 2px 0 #888; }
+.tiles a { height: 10rem; padding-top: 7%; padding-right: 5%;  -webkit-box-shadow: 0 0 2px 0 #888; box-shadow: 0 0 2px 0 #888; }
 .tiles a:hover { background-color: rgba(0,0,0,.4); text-shadow: 0 0 1px #444; -webkit-box-shadow: 0 0 2px 0 #000; box-shadow: 0 0 2px 0 #000; }
 .tiles .vcenter a { display: table; }
 .tiles .vcenter a span { display: table-cell; vertical-align: middle; }
@@ -1236,11 +1236,11 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
   padding: 0;
   border-top: 8px solid #E9F0F3;
   display: table;
-  border-spacing: 30px 0;
+  border-spacing: 20px 0;
 }
 #htimeline li{
   display: table-cell;
-  width: 8%;
+  width: 7%;
   text-align: center;
 }
 #htimeline li .relative{
@@ -1249,13 +1249,16 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
 #htimeline p{
   margin: 0 0 15px;
 }
+#htimeline p:nth-child(2){
+  margin: -5px 0 15px;
+}
 
 #htimeline .date{
   text-align: center;
   top: -55px;
   left: 0;
   right: 0;
-  font-size: 0.95em;
+  font-size: 0.90em;
   line-height: 20px;
   position: absolute;
 }
@@ -1287,6 +1290,15 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
   position: relative;
   background-color: #F6F9FA;
 }
+#htimeline .content p, #htimeline .content p a{
+    font-size: 0.94em;
+    color: #333;
+}
+#htimeline .content p a:hover{
+    border-bottom-color: transparent;
+    color: #EC5F13;
+}
+
 #htimeline .content:before, .content:after{
   content: "";
   width: 0;
@@ -1301,7 +1313,7 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
     border-width: 15px;
     left: 50%;
     margin-left: -15px;
-  top: -30px;
+    top: -30px;
 }
 #htimeline .content:after{
   border-bottom-color: #F6F9FA;
@@ -1356,7 +1368,7 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
   background: #73BD2C;
 }
 #htimeline .radio ~ .content {
-  border-color: #333;
+  border-color: #DBE7EB;
   transform: translateX(20px);
   transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
 }
@@ -1389,7 +1401,7 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
     display: block;
   }
   #htimeline li {
-    margin: 50px 0;
+    margin: 52px 0;
     display: block;
     width: 100%;
   }
@@ -1434,9 +1446,8 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
     top: 0;
     left: 0;
     text-align: center;
-    color: #6E8A31;
     padding: 30px 0;
-    border-radius: 50px;
+    border-radius: 0px;
     background: #FFF;
   }
   #htimeline .radio+.relative .circle{
