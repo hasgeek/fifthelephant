@@ -318,7 +318,7 @@ a.link-unfade-hover:hover,
     background-size: auto 100%;
 }
 .tiles .bird {
-    background-color: #A6D099;
+    background-color: #C2AE8B;
     background-image: url(../img/bird.svg);
     background-repeat: no-repeat;
     background-position: -40% 160%;
@@ -342,12 +342,12 @@ a.link-unfade-hover:hover,
     background-position: 1% 100%;
 }
 .tiles .runup {
-    background-color: #EC5F13;
-    background-image: url(../img/analytics.png);
+    background-color: #A6D099;
+    background-image: url(../img/india.png);
     background-repeat: no-repeat;
     background-position: -40% 160%;
-    background-size: auto 70%;
-    background-position: -3% 120%;
+    background-size: auto 90%;
+    background-position: -3% 90%;
 }
 .tiles .analytics {
     background-image: url(../img/analytics.png);
