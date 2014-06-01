@@ -97,92 +97,22 @@
   <div class="row-fluid space-three-bottom">
     <h1 class="calm centered space-two large">Run-up events series</h1>
     <p>We are organizing run-up events in different cities across India.</p>
-    
+    {% from theme("data/timeline.html") import timeline %}  
     <ul id='htimeline'>
+    {% for event in timeline %}
       <li class='work'>
-        <input class='radio theme-red' id='work4' name='works' type='radio'>
+        <input class='radio {% if event.type == "past" %}theme-red{% else %}theme-green{% endif %}' id='work4' name='works' type='radio'>
         <div class="relative">
-          <span class='date'>May 3</span>
+          <span class='date'>{{ event.date }}</span>
           <span class='circle'></span>
         </div>
         <div class='content'>
-          <p><a class="link-silent" href="/2014/runup-bangalore">Bangalore</a></p>
+        {% for item in event.events %}
+          <p><a class="link-silent" href="/2014/{{ item.url }}">{{ item.city }}</a></p>
+        {% endfor %}
         </div>
       </li>
-      <li class='work'>
-        <input class='radio theme-red' id='work4' name='works' type='radio'>
-        <div class="relative">
-          <span class='date'>May 23</span>
-          <span class='circle'></span>
-        </div>
-        <div class='content'>
-          <p><a class="link-silent" href="/2014/runup-bangalore">Bangalore</a></p>
-        </div>
-      </li>
-      <li class='work'>
-        <input class='radio theme-green' id='work4' name='works' type='radio'>
-        <div class="relative">
-          <span class='date'>June 7</span>
-          <span class='circle'></span>
-        </div>
-        <div class='content'>
-          <p><a class="link-silent" href="/2014/runup-bangalore">Mumbai</a></p>
-          <p><a class="link-silent" href="/2014/runup-bangalore">Bangalore</a></p>
-        </div>
-      </li>
-      <li class='work'>
-        <input class='radio theme-green' id='work4' name='works' type='radio'>
-        <div class="relative">
-          <span class='date'>June 14</span>
-          <span class='circle'></span>
-        </div>
-        <div class='content'>
-          <p><a class="link-silent" href="/2014/runup-bangalore">Delhi</a></p>
-          <p><a class="link-silent" href="/2014/runup-bangalore">Mumbai</a></p>
-        </div>
-      </li>
-      <li class='work'>
-        <input class='radio theme-green' id='work4' name='works' type='radio'>
-        <div class="relative">
-          <span class='date'>June 21</span>
-          <span class='circle'></span>
-        </div>
-        <div class='content'>
-          <p><a class="link-silent" href="/2014/runup-bangalore">Bangalore</a></p>
-        </div>
-      </li>
-      <li class='work'>
-        <input class='radio theme-green' id='work4' name='works' type='radio'>
-        <div class="relative">
-          <span class='date'>June 28</span>
-          <span class='circle'></span>
-        </div>
-        <div class='content'>
-          <p><a class="link-silent" href="/2014/runup-bangalore">Hyderabad</a></p>
-        </div>
-      </li>
-      <li class='work'>
-        <input class='radio theme-green' id='work4' name='works' type='radio'>
-        <div class="relative">
-          <span class='date'>July 5</span>
-          <span class='circle'></span>
-        </div>
-        <div class='content'>
-          <p><a class="link-silent" href="/2014/runup-bangalore">Pune</a></p>
-          <p><a class="link-silent" href="/2014/runup-bangalore">Bangalore</a></p>
-        </div>
-      </li>
-      <li class='work'>
-        <input class='radio theme-green' id='work4' name='works' type='radio'>
-        <div class="relative">
-          <span class='date'>July 12</span>
-          <span class='circle'></span>
-        </div>
-        <div class='content'>
-          <p><a class="link-silent" href="/2014/runup-bangalore">Chennai</a></p>
-        </div>
-      </li>
-      
+    {% endfor %}
     </ul>
   </div>
 </section>

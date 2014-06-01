@@ -233,6 +233,30 @@
     </article>
   </section>
   {% endif %}
+
+<section class="push-two centered">
+  <div class="row-fluid space-three-bottom">
+    <h1 class="calm centered space-two large">Run-up events series</h1>
+    {% from theme("data/timeline.html") import timeline %}  
+    <ul id='htimeline'>
+    {% for event in timeline %}
+      <li class='work'>
+        <input class='radio {% if event.type == "past" %}theme-red{% else %}theme-green{% endif %}' id='work4' name='works' type='radio'>
+        <div class="relative">
+          <span class='date'>{{ event.date }}</span>
+          <span class='circle'></span>
+        </div>
+        <div class='content'>
+        {% for item in event.events %}
+          <p><a class="link-silent" href="/2014/{{ item.url }}">{{ item.city }}</a></p>
+        {% endfor %}
+        </div>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+
 {% endblock %}
 {% block sponsor_compact %}{% endblock %}
 
