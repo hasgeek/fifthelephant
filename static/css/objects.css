@@ -1251,7 +1251,7 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
 }
 #htimeline li{
   display: table-cell;
-  width: 7%;
+  width: 6%;
   text-align: center;
 }
 #htimeline li .relative{
