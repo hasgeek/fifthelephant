@@ -901,15 +901,11 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 
 .team-hasgeek .none a      { background-position: top left; }
 .team-hasgeek .jamna a      { background-position: top center; }
-.team-hasgeek .mitesh a      { background-position: top right; }
-.team-hasgeek .kiran a      { background-position: center left; }
-.team-hasgeek .nimisha a    { background-position: center; }
-.team-hasgeek .praseetha a  { background-position: center right; }
+.team-hasgeek .kiran a      { background-position: top right; }
 .team-hasgeek .radha a      { background-position: bottom left; }
 .team-hasgeek .tony a   { background-position: bottom center; }
 .team-hasgeek .zainab a     { background-position: bottom right; }
 
-.code-of-conduct { max-width: 1400px; }
 .code-of-conduct.fill-dark { color: #EEE; }
 .code-of-conduct .commitment { font-size: 1.500rem; }
 @media only screen and (min-width: 35em) { .code-of-conduct .commitment { font-size: 1.750rem; } }
@@ -1243,7 +1239,7 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
 
 #htimeline{
   list-style: none;
-  margin: 120px 0 0;
+  margin: 120px auto;
   padding: 0;
   border-top: 8px solid #E9F0F3;
   display: table;
@@ -1380,12 +1376,9 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
 }
 #htimeline .radio ~ .content {
   border-color: #DBE7EB;
-  transform: translateX(20px);
-  transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
 }
 #htimeline .radio ~ .content p {
   color: #333;
-  transition: color 0.3s linear 0.3s;
 }
 
 .fill-white #htimeline a:hover,
@@ -1424,7 +1417,6 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
     text-overflow: ellipsis;
     overflow: hidden;
     display: block;
-    transform: translateX(18px);
   }
 
   #htimeline .content {
@@ -1573,13 +1565,10 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
   max-height: 180px;
   border-color: #E9F0F3;
   margin-right: 20px;
-  transform: translateX(20px);
-  transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
 }
 #vtimeline .radio ~ .content p {
   max-height: 200px;
   color: #333;
-  transition: color 0.3s linear 0.3s;
 }
 #vtimeline li.event-node{
     padding: 10px;
@@ -1605,7 +1594,6 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
     text-overflow: ellipsis;
     overflow: hidden;
     display: block;
-    transform: translateX(18px);
   }
 
   #vtimeline .content {
