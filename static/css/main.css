@@ -406,11 +406,10 @@ a.link-unfade-hover:hover,
 /*  Keeping sponsor tiles well behaved  */
 
 .js .sponsors dt.vc-sponsor,
-.js .sponsors dt.silver,
 .js .sponsors dt.bronze,
 .js .sponsors dt.party,
 .js .sponsors dt.community,
-.js .sponsors dt.corporate-tickets { clear: left; }
+.js .sponsors dt.corporate { clear: left; }
 
 .js .sponsors dd { width: 50%; }
 .js .sponsors dd.xxl, .js .sponsors dd.xl,
@@ -429,6 +428,7 @@ a.link-unfade-hover:hover,
     background-color: rgba(239,251,239,.85);
 }
 
+
 @media only screen and (min-width: 30em) { }
 @media only screen and (min-width: 40em) { 
 /*    .js .sponsors dt.party { clear: none; }*/
@@ -446,7 +446,7 @@ a.link-unfade-hover:hover,
         background-color: #F7F2E0;
         background-color: rgba(247,242,224,.85);
     }
-    .js .sponsors dd.corporate-tickets:nth-of-type(6):after { display: none; }
+    .js .sponsors dd.corporate-tickets:nth-of-type(6):after { /*display: none;*/ }
     
 /*    .js .sponsors dd    { width: 33.3333%; width: calc(100%/3); }*/
 /*    .js .sponsors dd.s  { width: 16.6666%; width: calc(100%/6); }    */
