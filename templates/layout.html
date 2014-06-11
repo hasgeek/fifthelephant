@@ -120,10 +120,12 @@
     <div class="sponsors-compact center-block space-three-top space-four-bottom v-middle clearfix">
     <h3 class="legible centered nospace-top space-one-bottom ultrafaded">Sponsors</h3>
     {% from theme("data/sponsors.html") import sponsors %}
-    {% for type in sponsors if type.category in ('Platinum', 'Gold', 'Silver', 'Bronze') %}
+    {% for type in sponsors if type.category in ('Platinum', 'Gold', 'VC Sponsor', 'Silver', 'Bronze') %}
       {% if type.category == 'Platinum' %}
         {% set sponsor_columns = '' %}
       {% elif type.category == 'Gold' %}
+        {% set sponsor_columns = ' thumbnail-columns-three' %}
+      {% elif type.category == 'VC Sponsor' %}
         {% set sponsor_columns = ' thumbnail-columns-three' %}
       {% elif type.category == 'Community' %}
         {% set sponsor_columns = ' thumbnail-columns-eight' %}
