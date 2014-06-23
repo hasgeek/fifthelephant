@@ -35,7 +35,7 @@ dl dd { margin-left: 0; }
 .forcewrap      { word-wrap: break-word; }
 
 .v-middle img, img.v-middle { vertical-align: middle; }
-.contain-width  img, img.contain-width  { max-width:  100%; height: auto; }
+.contain-width  img, img.contain-width  { max-width:  100%; height: auto; max-height: 100%; }
 .contain-height img, img.contain-height { max-height: 100%; width:  auto; }
 
 .embed-16-9 {
