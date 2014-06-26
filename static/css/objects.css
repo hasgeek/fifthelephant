@@ -747,7 +747,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .js .sponsors dd.vc-sponsor  { background-color: #EAF5FC; background-color: rgba(234,245,252,.85); }
 .js .sponsors dd.party { background-color: #FBEFF2; background-color: rgba(251,239,242,.85); }
 .js .sponsors dd.lanyard { background-color: #FBEFF2; background-color: rgba(251,239,242,.85); }
-.js .sponsors dd.travel { background-color: #F1F1FF; background-color: rgba(241,241,255,.85); }
+.js .sponsors dd.speaker-travel-support { background-color: #F1F1FF; background-color: rgba(241,241,255,.85); }
 .js .sponsors dd.community { background-color: #FBEFF2; background-color: rgba(251,239,242,.85); }
 .js .sponsors dd.corporate,
 .js .sponsors dd.corporate-tickets { background-color: #EFFBEF; background-color: rgba(239,251,239,.85); }

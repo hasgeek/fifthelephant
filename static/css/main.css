@@ -407,6 +407,7 @@ a.link-unfade-hover:hover,
 
 .js .sponsors dt.vc-sponsor,
 .js .sponsors dt.bronze,
+.js .sponsors dt.speaker-travel-support,
 .js .sponsors dt.party,
 .js .sponsors dt.community,
 .js .sponsors dt.corporate { clear: left; }
@@ -414,6 +415,7 @@ a.link-unfade-hover:hover,
 .js .sponsors dd { width: 50%; }
 .js .sponsors dd.xxl, .js .sponsors dd.xl,
 .js .sponsors dd.l { width: 100%; }
+.js .sponsors dd.ms { width: 25%; }
 .js .sponsors dd.s { width: 33.3333%; width: calc(100%/3); }
 
 .js .sponsors dd.corporate-tickets:nth-of-type(6):after {
