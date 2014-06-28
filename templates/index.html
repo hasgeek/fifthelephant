@@ -17,11 +17,14 @@
 {% block banner %}
 <div class="banner long-page-nav fill-beige home resetcoords clearfix">
   <header class="clearfix">
-    
     <div class="space-three">{% block nav %}{{ super() }}{% endblock %}</div>
     {% block image_banner %}
-    <p class="big-data center-block ir space-two-top">Big Data</p>
-    {% endblock %}
+    <div class="masthead-svg-container">
+      {% include theme("partials/_bigdata_banner.html") %}
+    </div>
+    <div class="masthead-svg-alternative"><p class="big-data center-block ir space-two-top">The Fifth Elephant, 2014 July 23-26, Bangalore</p></div>
+    {% endblock %}  
+
     
     <!-- <hr class="half center-block space-three-bottom"> -->
     <hgroup class="centered clearfix">

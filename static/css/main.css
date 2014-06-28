@@ -98,7 +98,7 @@ img.ultrafaded { opacity: 0.35 }
 .fill-blue      { background-color: #B3D9DC; /* #74B3BA */ }
 .fill-darkblue  { background-color: #498F94; /*#327096, #2D6772*/ }
 .fill-gray      { background-color: #4C535A; }
-.fill-beige     { background-color: #FEF3DA;}
+.fill-beige     { background-color: #F2DE9C; /*#F7E1B2*/}
 
 .fill-dark .faded       { color: rgba(255,255,255,0.6) !important; }
 .fill-dark .ultrafaded  { color: rgba(255,255,255,0.35) !important; }
@@ -227,7 +227,7 @@ a.link-unfade-hover:hover,
         and (min-width: 551px)
         and (max-width: 880px) {
     .big-data { 
-        background-image: url(https://imgee.s3.amazonaws.com/imgee/c0866f85c10c4c2fae2480cf5e0db506_w2200_h1656.png);
+        background-image: url(../img/masthead.png);
         padding-top: 65%; }
     .community-banner { background-image: url(../img/community-banner-1600.png); }
     .conference-banner { background-image: url(../img/conference-banner-1600.png); }
@@ -235,7 +235,7 @@ a.link-unfade-hover:hover,
 }
 @media only screen and (min-width: 881px) and (max-width: 1370px) { 
     .big-data {
-        background-image: url(https://imgee.s3.amazonaws.com/imgee/c0866f85c10c4c2fae2480cf5e0db506_w1370_h1031.png);
+        background-image: url(../img/masthead.png);
         margin-bottom: 2%;
         width: 70%;
         padding-top: 55%;
@@ -261,7 +261,7 @@ a.link-unfade-hover:hover,
 }
 @media only screen and (min-width: 1371px) and (max-width: 2280px) { 
     .big-data {
-        background-image: url(https://imgee.s3.amazonaws.com/imgee/c0866f85c10c4c2fae2480cf5e0db506_w2200_h1656.png);
+        background-image: url(../img/masthead.png);
         width: 65%;
         margin-bottom: 2%;
         padding-top: 50%;
@@ -293,7 +293,7 @@ a.link-unfade-hover:hover,
         and (min-device-pixel-ratio: 1.5)
         and (min-width: 881px) {
     .big-data { 
-        background-image: url(https://imgee.s3.amazonaws.com/imgee/c0866f85c10c4c2fae2480cf5e0db506_w3200_h2409.png);
+        background-image: url(../img/masthead.png);
         background-size: 100%;
         width: 65%;
         padding-top: 50%;

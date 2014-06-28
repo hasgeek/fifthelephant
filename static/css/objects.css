@@ -1105,6 +1105,12 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .schedule-table .time     { background-color: #EAEAEA; width: 20%; }
     .schedule-table .track-1  { background-color: #F9F9F9; width: 40%; }
     .schedule-table .track-2  { background-color: #EAEAEA; width: 40%; border-left-color: transparent; }
+
+    .schedule-table.tracks3 .time     { background-color: #EAEAEA; width: 12%; }
+    .schedule-table.tracks3 .track-1  { background-color: #F9F9F9; width: 30%; }
+    .schedule-table.tracks3 .track-2  { background-color: #EAEAEA; width: 30%; border-left-color: transparent; border-right-color: transparent; }
+    .schedule-table.tracks3 .track-3  { background-color: #F7F7F7; width: 28%; border-left-color: transparent; }
+
     .schedule-table thead th.time     { background-color: #DDD; }
     .schedule-table thead th.track-1  { background-color: #EAEAEA; }
     .schedule-table thead th.track-2  { background-color: #DDD; border-left-color: transparent; }
@@ -1620,4 +1626,17 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
     border-radius: 50px;
     background: #FFF;
   }
+}
+.masthead-svg-container{
+    margin: 2em auto;
+    height: 0;
+    width: 60%;
+    padding-bottom: calc((591.5/782)*60%);
+}
+
+.masthead-svg-alternative, .no-svg .masthead-svg-container{
+    display: none;
+}
+.no-svg .masthead-svg-alternative, .masthead-svg-container{
+    display: block;
 }
