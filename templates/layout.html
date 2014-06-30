@@ -39,6 +39,7 @@
   <link href='//fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 
   {% block header_script %}{% endblock %}
+  {% block page_styling %}{% endblock %}
 
 </head>
 <body>
@@ -56,6 +57,7 @@
         <span class="conference-dates">Jul 23 - 26, 2014 / </span>Buy Tickets
       </a>
     </p>
+    {% block header_caption %}{% endblock %}
     {% block nav %}
     <div class="main-nav space-one-top space-line-bottom">
       <nav class="nospace">
@@ -63,6 +65,7 @@
           <span class="sub-group community">
             <a href="/2014/community" class="darkblue" {% if page == 'community' %} class="active"{% endif %}>Community</a>
             <span class="nav-line-spacer orange serif-type italic">powered</span>
+            <span class="nav-line-spacer orange serif-type italic">bigdata</span>
           </span>
           <span class="sub-group conference">
             <a href="/2014/conference" class="darkblue" {% if page == 'conference' %} class="active"{% endif %}>conference</a>

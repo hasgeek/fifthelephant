@@ -4,13 +4,15 @@
 {% set description = '' %}
 {% set page_caption = 'Conference' %}
 {% set page = 'conference' %}
+{% set banner_title_size = 'huge' %}
 
 {% block image_banner %}
 <!-- <p class="conference-banner center-block ir space-two-top">Community</p> -->
 {% endblock %}
 
 {% block page_nav_items %}
-   <li><a href="#tracks" class="link-white-hover">Tracks</a></li><!--
+   <li><a href="#tracks" class="link-white-hover">Tracks</a></li>
+   <li><a href="#sessions" class="link-white-hover">Confirmed Talks</a></li><!--
 --><!-- <li><a href="#sessions" class="link-white-hover">Talks</a></li> --><!--
 --><!--<li><a href="#schedule" class="link-white-hover">Schedule</a></li>--><!--
 --><li><a href="#proposals" class="link-white-hover">Proposals</a></li>
@@ -21,11 +23,11 @@
   Storage&nbsp;<span class="amp">&amp;</span>&nbsp;Analytics.
   Every&nbsp;stone,&nbsp;unturned.
 </h2>
-<section class="legible clearfix">
+<section id="tracks" class="legible clearfix">
   <article class="prose clearfix">
     <h1 class="visuallyhidden">Introduction</h1>
     <div class="measure-10words pad-one center-block">
-    <p>
+    <!-- <p>
       The Fifth Elephant 2014 brings engineering and business professionals under one roof to discuss technology and application challenges involved in managing and analyzing large volumes of data.
     </p>
     <p class="regular">
@@ -36,12 +38,42 @@
     </p>
     <p class="regular">
       Talks apart, there will be open house sessions, panel discussions and plenty of opportunities to interact with some of the best minds in technology and business.
-    </p>
+    </p> -->
+    <p class="legible">In 2014, infrastructure components such as Hadoop, Berkeley Data Stack and other commercial tools have stabilized and are thriving. The challenges have moved higher up the stack from data collection and storage to data analysis and data visualization. It is also interesting to see diffusion of technology to traditional, non-tech audiences such as non-profits, journalists and govermment organisations. The focus for this year's conference will be on how data is being used and applied in different sectors.</p>
+      <p class="darkblue">
+        The conference covers two major themes: storage and analytics. There will be separate engineering and business tracks covering each theme. 
+      </p>
+      <h4 class="space-two-top space-half-bottom semi-bold regular">Engineering track on Storage</h4>
+      <p class="regular">
+       Learn about databases, OLTP, NoSQL, data integration and warehousing. Find out how developers and tech teams deal with performance, speed, scaling and other challenges associated with storage. The storage track will lay the foundation for better understanding of data processing and analytics.
+      </p>
+      <h4 class="space-two-top space-half-bottom semi-bold regular">Business track on Storage</h4>
+      <p class="regular">
+        Understand decision support issues such as costs of storage infrastructure, maintenance, benefits and limitations. Panel discussions and interactive Q&amp;A sessions between solution architects, decision-makers and engineers will further clarify how choice of storage technologies affect business processes and goals.
+      </p>
+      <h4 class="space-two-top space-half-bottom semi-bold regular">Analytics track for engineers and analysts</h4>
+      <p class="regular">
+        Find out about metrics, tools and statistical techniques and their application for different use-cases. This track is for the algorithmically curious. It also covers hacky territory such as applications and technologies for better data collection and insight gathering. Case studies of platforms and solutions built for data collection, processing and analytics will be showcased here. 
+      </p>
+      <h4 class="space-two-top space-half-bottom semi-bold regular">CIO and Product Managers' track on Analytics</h4>
+      <p class="regular">
+        How data can be used for decision-making is a pressing question for most organizations. This track will consist of talks around how data has been used effectively for building products, leveraging insights and developing in-house technology capabilities for better business processes.
+      </p>
     </div>
   </article>
-</section>  
+</section> 
 
-<section class="clearfix space-four-top fill-light push-four">
+
+<section id="sessions" class="space-four-top push-one-top fill-light legible clearfix">
+{% with session_kind = 'Talks' %}
+<h2 class="centered calm space-four-top space-one-bottom">Confirmed Talks</h2>
+{% from theme("data/talks.html") import talks as sessions %}
+{% include theme("partials/_sessions.html") %}
+{% endwith %}
+</section>
+ 
+
+<!-- <section class="clearfix space-four-top fill-white push-four">
   <article class="legible measure-10words pad-one center-block prose clearfix">
     <h2 class="centered calm">Tracks</h2>
     <div class="regular">
@@ -67,36 +99,26 @@
       </p>
     </div>
   </article>
-</section>  
+</section>  --> 
 
 <section id="proposals" class="legible clearfix push-four">
   <article class="clearfix">
     <div class="measure-8words center-block">
     <h2 class="calm centered space-two">Conference Proposals</h2>
-    <p class="regular space-two-bottom">
-      <span class="bold">Criteria for Proposing sessions:</span> You should be a practitioner who does hands-on work with big data technology. Preference will be given to talks which demonstrate something new or implementation of technology and techniques in novel and interesting ways. Please do not propose introductory talks based on online documentation. You are expected to present original work that your peers recognise as being notable enough to deserve a stage.
-    </p>
-    <p class="regular">Talks are being accepted in the following formats.
-      <ol class="regular space-three-bottom">
-        <li><span class="bold">Crisp talk</span> - 15 Min: Usage of Data / Technology / Demo</li>
-        <li><span class="bold">Full talk</span> - 45 Min (including Q&amp;A): About the experience of building a complex solution / architecture to solve a problem.</li>
-      </ol>
-    </p>
-    <p class="regular">Talks are invited for the following areas:
-      <ol class="regular">
-        <li><span class="bold">Data Collection and Transport</span> – for e.g, Opendatatoolkit, Scribe, Kafka, RabbitMQ, etc.</li>
-        <li><span class="bold">Data Storage, Caching and Management</span> – Distributed storage (such as Gluster, HDFS) or hardware-specific (such as SSD or memory) or databases (Postgresql, MySQL, Infobright) or caching/storage (Memcache, Cassandra, Redis, etc).</li>
-        <li><span class="bold">Data Processing, Querying and Analysis</span> – Oozie, Azkaban, scikit-learn, Mahout, Impala, Hive, Tez, etc.</li>
-        <li><span class="bold">Data Usage</span> - Innovative usage of data for improving education, delivery of services and data journalism. Use of data for elections, government services, etc. You can also submit sessions on how data was visualized for complex datasets or to depict multiple parameters (using d3.js, DC, infovis protvis, ggplot2, lattice, excel, etc).</li>
-      </ol>
-    </p>
-    
+    <p>Status: Submissions and voting closed, awaiting jury selection</p>
     <p class="centered space-six-top">
-      <a class="button" href="http://funnel.hasgeek.com/fifthel2014/">Propose a Session</a>
+      <a class="button" href="http://funnel.hasgeek.com/fifthel2014/">View Proposals on funnel</a>
     </p>
     </div>
-  </article>
+  </article> 
   
 </section>
+<!--
+<section id="schedule" class="schedule space-two push-four legible">
+  <h2 class="centered calm space-two">Schedule</h2>
+  <div class="schedule-table-container center-block pad-one regular">
+    {% include theme("partials/_schedule_table.html") %}
+  </div>
+</section>-->
 
 {% endblock %}

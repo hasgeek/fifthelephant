@@ -4,7 +4,7 @@
     <h2 class="centered calm space-two visuallyhidden">{{ session_kind }}</h2>
     <ul class="sessions center-block thumbnail-columns thumbnail-columns-four-wide video-thumbnails regular clearfix">
   {% endif %}
-    <li class="clearfix">
+    <li class="clearfix" style="height: 400px">
       {% if session.preview %}
       <a class="occupy block-link space-3q-bottom" href="{{ session.preview.link }}">
         <p class="poster video contain-width">
@@ -17,12 +17,14 @@
       </p>
       {% endif %}
       <hgroup>
-        <h3 class="capitalize">{% if session.funnel %}<a href="{{ session.funnel }}" class="spooky">{% endif %}{{ session.title }}{% if session.funnel %}</a>{% endif %}</h3>
+        <h3 class="capitalize">{% if session.funnel %}<a href="{{ session.funnel }}" class="spooky">{% endif %}{{ session.title }}{% if session.funnel %}</a>{% endif %}{% if session.funnel2 %}/ <a href="{{ session.funnel2 }}" class="spooky">{% endif %}{{ session.title2 }}{% if session.funnel2 %}</a>{% endif %}</h3>
         <h4 class="space-half-top nospace-bottom secondary">{{ session.speaker.name }}</h4>
+        <h6 class="space-1q-top space-half-bottom secondary thin darkblue">{{ session.speaker.designation|safe }}</h6>
       </hgroup>
-      <div class="session-summary space-half-top nospace-bottom clearfix">{{ session.summary|safe }}</div>
+      <!-- <div class="session-summary space-half-top nospace-bottom clearfix" style="height: 150px; overflow: scroll;">{{ session.summary|safe }}</div> -->
       <ul class="session-meta-links capitalize center-block space-1q-top space-line-bottom clearfix">
         {% if session.funnel %}<li><a href="{{ session.funnel }}" class="capitalize tiny">View funnel proposal</a></li>{% endif %}
+        {% if session.funnel2 %}<li><a href="{{ session.funnel2 }}" class="capitalize tiny">View funnel proposal</a></li>{% endif %}
         {% if session.preview %}<li><a href="{{ session.preview.link }}" class="capitalize tiny">Watch preview</a></li>{% endif %}
       </ul>      
     </li>

@@ -4,6 +4,7 @@
 {% set description = '' %}
 {% set page_caption = 'Workshops' %}
 {% set page = 'workshops' %}
+{% set banner_title_size = 'huge' %}
 
 {% block image_banner %}
 <!-- <p class="workshop-banner center-block ir space-two-top">Workshops</p> -->
@@ -11,7 +12,8 @@
 
 
 {% block page_nav_items %}
-   <li><a href="#sessions" class="link-white-hover">Workshops</a></li><!--
+   <li><a href="#workshops" class="link-white-hover">Introduction</a></li>
+   <li><a href="#sessions" class="link-white-hover">Confirmed Workshops</a></li><!--
 --><!--<li><a href="#schedule" class="link-white-hover">Schedule</a></li>--><!--
 --><li><a href="#proposals" class="link-white-hover">Proposals</a></li>
 {% endblock %}
@@ -34,18 +36,13 @@
     </div>
   </article>
 </section>
-  
-<section id="proposals" class="push-four">
-  <article class="clearfix">
-    <div class="measure-8words center-block">
-    <h2 class="calm centered space-two">Workshop Proposals</h2>
-    <p class="legible space-two-bottom">Workshops will be 3 hour interactive and hands-on sessions on data analysis tools and technologies. Proposers must define precise pre-requisites and requirements from audience when submitting workshop proposals.
-    </p>
-    <p class="centered space-three-top">
-      <a class="button" href="http://funnel.hasgeek.com/fifthel2014/">Propose a Session</a>
-    </p>
-    </div>
-  </article>
+
+<section id="sessions" class="space-four-top push-one-top fill-light legible clearfix">
+{% with session_kind = 'Talks' %}
+<h2 class="centered calm space-four-top space-one-bottom">Confirmed Workshops</h2>
+{% from theme("data/workshop.html") import talks as sessions %}
+{% include theme("partials/_sessions.html") %}
+{% endwith %}
 </section>
 
 {% endblock %}

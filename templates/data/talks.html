@@ -2,53 +2,147 @@
 {%
   set talks = [
       {
-        'title': 'Extracting consumer trends in real time using 100 billion tweets'
-      , 'funnel': 'http://funnel.hasgeek.com/fifthel2013/650-extracting-consumer-trends-in-real-time-using-100-billion-tweets'
-      , 'summary': '<p>Connected consumers express everything they feel about products, services and brands in social media. How consumers feel and engage with products is very important for retailers to make better merchandizing decisions.</p><p>This talk will outline one such system built to analyze 13 months of twitter data amounting to ~100B tweets. The talk will describe a system to extract volume, sentiment, geo trends and related words about any arbitrary topic (defined as a boolean query) from a corpus on 100B tweets increasing at ~500M a day.</p><p>This solution was developed using open source technologies such as hadoop, hive, hamake, sold and mupd8.</p>'
-      , 'preview': {
-          'poster': 'img/video-posters/pankaj.jpg'
-        , 'link': 'http://hasgeek.tv/fifthelephant/2013-previews/565-extracting-consumer-trends-in-real-time-using-100-billion-tweets'
-      }
+        'title': '\'Know Your Customer!\' - Advanced Data Science for Audience Segmentation'
+      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1118-know-your-customer--advanced-data-science-for-audi'
+      , 'summary': '<p>Audience Segmentation is a very important practical necessity in pretty much every field. Whether it is internet subscribers or paytv subscribers there is an intense need from the advertisers and service providers to know who is living in a household and what their demography profiles are and what their interests are?</p><p>An ensemble of techniques which include advanced linear and non-linear dimensionality reduction, unsupervised learning algorithms, bayesian predictive analytics and expert systems come together to form a compelling pragmatic data science solution stack for the big data environment.</p>'
       , 'speaker': {
-          'name': 'Pankaj Risbood'
-        , 'photo': 'img/speakers/pankaj_risbood.jpg'
+          'name': 'Prabhakar Srinivasan'
+        , 'designation': 'data scientist at Cisco'
+        , 'photo': 'img/speakers/prabhakar_srinivasan.jpg'
       }
     }
     , {
-        'title': 'Latency and Fault tolerance in OLTP @ 1.5 billion/day service calls'
-      , 'funnel': 'http://funnel.hasgeek.com/fifthel2013/661-latency-and-fault-tolerance-in-oltp-1-5-billion-day-service-calls'
-      , 'summary': '<p>User perceived Availability and Experience is important for any eCommerce site. Achieving this is not easy for distributed systems that run multiple platforms and access multiple resources, data sources. The data sources span MySQL, Key-Value stores and Columnar databases storing OLTP data to the order of tens of millions.</p><p>This talk describes how Flipkart built its website to manage Latency and Fault tolerance at scale - millions of requests amounting to 1.5 billion service calls per day. The talk will also feature a demo of the Service Proxy.</p>'
-      , 'preview': {
-          'poster': 'img/video-posters/regunath.jpg'
-        , 'link': 'http://hasgeek.tv/fifthelephant/2013-previews/566-latency-and-fault-tolerance-in-oltp-1-5-billion-day-service-calls'
+        'title': 'Unified analytics platform for Bigdata'
+      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1135-unified-analytics-platform-for-bigdata'
+      , 'summary': '<p>This talk is about a system developed at InMobi to support OLAP data cubes on top of Hive metastore. With this abstraction, users can reference single schema and data stored across diverse storage engine and that users can query data on the logical tables without knowing about schema details like relationships, rollup levels, data location and data types.</p>'
+      , 'speaker': {
+          'name': 'Amareshwari Sriramadasu'
+        , 'designation': 'Architect in platform team at Inmobi'
+        , 'photo': 'img/speakers/amareshwari_sriramadasu.jpg'
       }
+    }
+    , {
+        'title': 'Circuitscape - A Case Study on Scientific Computing'
+      , 'title2':  'The state of Julia - a fast language for technical computing'
+      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1068-circuitscape-a-case-study-on-scientific-computing'
+      , 'funnel2': 'https://funnel.hasgeek.com/fifthel2014/1182-the-state-of-julia-a-fast-language-for-technical-c'
+      , 'summary': '<p>In this talk I would talk about some of the challenges faced in typical scientific computing applications and how to address them, taking Circuitscape as a case study. it would walk the audience briefly through what is possible through modern scientific computing platforms built on Python and Julia.</p>'
+      , 'speaker': {
+          'name': 'Viral B. Shah'
+        , 'designation': 'Co-creator at Circuitscape &amp; Julia language'
+        , 'photo': 'img/speakers/viral.jpg'
+      }
+    }
+    , {
+        'title': 'Serving user intent : Facebook style notifications using HBase and Event streams'
+      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1056-serving-user-intent-facebook-style-notifications-u'
+      , 'summary': '<p>This talk is about building a low-latency, near real-time Notifications platform for serving user intent using Event based architecture, Complex Event Processing and a data store like HBase. Will also cover how millisecond response times are achieved when accessing data from 100 million rows by interpreting change from immutable events and organizing data as LSM trees.</p>'
       , 'speaker': {
           'name': 'Regunath Balasubramanian'
+        , 'designation': 'Architect and Open source committer'
         , 'photo': 'img/speakers/regunath_balasubramanian.jpg'
       }
     }
     , {
-        'title': 'Interactive analysis of data live, using Pandas, Matplotlib and IPython'
-      , 'funnel': 'http://funnel.hasgeek.com/fifthel2013/685-interactive-analysis-of-data-live-using-pandas-matplotlib-and-ipython'
-      , 'summary': '<p>This is a live coding session to analyse various datasets using Pandas and plotting them in an IPython notebook.</p><p>There has been a surge in the development of SciPy tools. The adoption of these tools has seen an unprecedented increase recently because they can be used for both interactive analysis and run in production.</p><p>This session will give the audience a short tour of the data analysis and visualisation using some of these scientific python tools by doing live analysis on different datasets.</p>'
-      , 'preview': {
-          'poster': 'img/video-posters/lakshman.jpg'
-        , 'link': 'http://hasgeek.tv/fifthelephant/2013-previews/570-interactive-analysis-of-data-live-using-pandas-matplotlib-and-ipython'
-      }
-
+        'title': 'Using Cascalog and Clojure to make the elephant move!'
+      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1175-using-cascalog-and-clojure-to-make-the-elephant-mo'
+      , 'summary': '<p>Intent is to highlight benefits gained by using Clojure, a functional language which works on JVM and Cascalog data processing library for Hadoop.</p>'
       , 'speaker': {
-          'name': 'Lakshman Prasad'
-        , 'photo': 'img/speakers/lakshman_prasad.jpg'
+          'name': 'Harshad Saykhedkar'
+        , 'designation': 'Senior data scientist at Sokrati'
+        , 'photo': 'img/speakers/harshad_saykhedkar.jpg'
       }
     }
     , {
-        'title': 'Neo4j Graphs: What, When, How'
-      , 'funnel': 'http://funnel.hasgeek.com/fifthel2013/682-neo4j-graphs-what-when-how'
-      , 'summary': "<p>Google's knowledge graph, Facebook's graph search and Amazon's recommendation engine are hugely successful applications of basic graph theory. This talk will take you through Neo4j, the world's leading graph database, to understand what graphs offers and how to use them in real applications.</p><p>The talk will provide a basic introduction to Neo4j and graph databases, placing them in context of NOSQL and Big Data. The speaker will then explore a few business use cases which illustrate different advantages of using graphs. While some technical details will be covered in this talk, the focus will be on understanding what a graph database is, when to use one, and how it helps.</p><p>By the end of the talk, you will leave with an understanding of what a graph database is, what advantages it can offer, and when to use one.</p>"
+        'title': 'Learnings from doing analytics on linked-data'
+      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1134-learnings-from-doing-analytics-on-linked-data'
+      , 'summary': '<p>This talk outlines our journey which started from researching existing graphdb\'s/processing frameworks, why they didn\'t work for us at our scale and then moving on to build something. We will go in depth to explain the data-structures used and how we supported the tinker-pop graph API specification( used by all graph databases). We will also touch upon how our ad-system unique data model allowed us to come up with a fairly simplistic technique to shard the entire thing and query over it.</p>'
       , 'speaker': {
-          'name': 'Andreas Kollegger'
-        , 'photo': 'img/video-posters/andreas.jpg'
+          'name': 'Inder Singh'
+        , 'designation': 'Senior Architect of Tech Platforms at InMobi'
+        , 'photo': 'img/speakers/inder_singh.jpg'
       }
     }
+    , {
+        'title': 'Using Data for Art'
+      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1198-using-data-for-art'
+      , 'summary': '<p>A talk on Data Art for a tech-focused audience must introduce the essence of art (vs design) and the purpose of creating art. I\'ll introduce the field with a few teasers (conventional art vs data art) and then introduce the modes in which data can be mapped in the final art form (mostly visual attributes, and a bit of other forms of media too). This will be followed by an introduction to Generative Systems in art, where an art form evolves from data (and isn\'t completely controlled by an artist) and a categorization of these systems (with hand picked examples) that I had explored recently.</p>'
+      , 'speaker': {
+          'name': 'Rasagy Sharma'
+        , 'designation': 'visualize data at Microsoft IDC'
+        , 'photo': 'img/speakers/rasagy_sharma.jpg'
+      }
+    }
+    , {
+        'title': 'Apache Tez: Accelerating Hadoop Data Pipelines'
+      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1151-apache-tez-accelerating-hadoop-data-pipelines'
+      , 'summary': '<p>Apache Tez is a DAG execution engine which exists as a super-set of traditional Map Reduce. Tez designed as a replacement computational model for nearly everything that currently uses map-reduce. The talk is meant to be an introduction to Tez, its architecture and its evolution from traditional map-reduce.</p>'
+      , 'speaker': {
+          'name': 'Gopal Vijayaraghavan'
+        , 'designation': 'Hortonworks'
+        , 'photo': 'img/speakers/gopal_vijayaraghavan.jpg'
+      }
+    }
+    , {
+        'title': 'Realizing Large-scale Distributed Deep Learning Networks over GraphLab'
+      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1132-realizing-large-scale-distributed-deep-learning-ne'
+      , 'summary': '<p>The main objective is to give an overview of our cutting edge work on realizing distributed deep learning networks over GraphLab.</p>'
+      , 'speaker': {
+          'name': 'Dr. Vijay Srinivas A'
+        , 'designation': 'Director, Big Data Labs'
+        , 'photo': 'img/speakers/vijay_srinivas.jpg'
+      }
+    }
+    , {
+        'title': 'Scaling SolrCloud to a large number of collections'
+      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1196-scaling-solrcloud-to-a-large-number-of-collections'
+      , 'summary': '<p>Apache Tez is a DAG execution engine which exists as a super-set of traditional Map Reduce. Tez designed as a replacement computational model for nearly everything that currently uses map-reduce. The talk is meant to be an introduction to Tez, its architecture and its evolution from traditional map-reduce.</p>'
+      , 'speaker': {
+          'name': 'Shalin Mangar'
+        , 'designation': 'Engineer at LucidWorks, Member of the Lucene/Solr project management committee'
+        , 'photo': 'img/speakers/shalin_mangar.jpg'
+      }
+    }
+    , {
+        'title': 'The ART of Data Mining - Practical Learnings from Real-world Data Mining applications'
+      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1166-the-art-of-data-mining-practical-learnings-from-re'
+      , 'summary': '<p>Machine Learning and data mining is part SCIENCE (ML algorithms, optimization), part ENGINEERING (large scale modeling, real-time decisions), part PROCESS (data understanding, feature engineering, modelling, evaluation, and deployment), and part ART. In this talk we will focus more on the "ART of data mining" - the little things that make the big difference in the quality and sophistication of machine learning models we build.</p>'
+      , 'speaker': {
+          'name': 'Shailesh Kumar'
+        , 'designation': 'Member Technical Staff at Google'
+        , 'photo': 'img/speakers/shailesh_kumar.jpg'
+      }
+    }
+    , {
+        'title': 'Scaling real time visualisations for Elections 2014'
+      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1146-scaling-real-time-visualisations-for-elections-201s'
+      , 'summary': '<p>How does one go about creating interactive real-time visualisations with rapidly changing data? This talk is about our experiences in designing the CNN-IBN and Bing election results page.</p>'
+      , 'speaker': {
+          'name': 'Anand S'
+        , 'designation': 'Chief data scientist at Gramener'
+        , 'photo': 'img/speakers/s_anand.jpg'
+      }
+    }
+    , {
+        'title': 'Crafting Visual Stories with Data'
+      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1098-crafting-visual-stories-with-data'
+      , 'summary': '<p>Data visualisation has enabled us to compress data and express them visually in many interesting new ways. It is often cited that we are trying to tell stories through them. But, the science of data-visual-stories is still very nascent and developing. On the other hand, the art of storytelling through spoken and written words, pictures, comics and movies is very well developed and understood. Lets explore \'why\' stories work and how can we combine the science and art together to craft visual stories with data.</p>'
+      , 'speaker': {
+          'name': 'Amit Kapoor'
+        , 'designation': 'Guest faculty at IIM Bangalore'
+        , 'photo': 'img/speakers/amit_kapoor.jpg'
+      }
+    }
+    , {
+        'title': 'Lessons from Elasticsearch in production'
+      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1098-crafting-visual-stories-with-data'
+      , 'summary': '<p>This talk is for people who are planning to use Elasticsearch in their next project. Elasticsearch is one of the core pieces of infrastructure at Helpshift, a mobile-first CRM product. We have had mistakes and lessons learned in production, and we would like to share that so that others have a smoother experience with Elasticsearch. </p>'
+      , 'speaker': {
+          'name': 'Swaroop C H'
+        , 'designation': 'Backend engineer at Helpshift'
+        , 'photo': 'img/speakers/swaroopch.jpg'
+      }
+    }
+    
   ]
 %}

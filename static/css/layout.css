@@ -55,11 +55,16 @@ dl dd { margin-left: 0; }
 span.wrap-mobile { display: block; }
 @media only screen and (min-width: 50em) { span.wrap-mobile { display: inline; } }
 
-span.hide-mobile { display: none; }
-@media only screen and (min-width: 40em) { span.hide-mobile { display: inline; } }
+span.hide-mobile, .hide-mobile { display: none; }
+@media only screen and (min-width: 40em) { span.hide-mobile, .hide-mobile { display: inline; } }
 
 span.wrap-when-wide { display: inline; }
 @media only screen and (min-width: 40em) { span.wrap-when-wide { display: block; } }
+
+.hide-xs { display: none; }
+@media only screen and (min-width: 40em) { .hide-xs { display: block; } }
+.show-xs { display: block; }
+@media only screen and (min-width: 40em) { .show-xs { display: none; } }
 
 
 /* Widths */

@@ -1631,7 +1631,7 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
     margin: 2em auto;
     height: 0;
     width: 60%;
-    padding-bottom: calc((591.5/782)*60%);
+    padding-bottom: calc((329/743)*60%);
 }
 
 .masthead-svg-alternative, .no-svg .masthead-svg-container{

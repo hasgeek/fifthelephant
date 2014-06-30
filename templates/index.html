@@ -17,41 +17,27 @@
 {% block banner %}
 <div class="banner long-page-nav fill-beige home resetcoords clearfix">
   <header class="clearfix">
-    <div class="space-three">{% block nav %}{{ super() }}{% endblock %}</div>
     {% block image_banner %}
-    <div class="masthead-svg-container">
-      {% include theme("partials/_bigdata_banner.html") %}
-    </div>
-    <div class="masthead-svg-alternative"><p class="big-data center-block ir space-two-top">The Fifth Elephant, 2014 July 23-26, Bangalore</p></div>
+      
+      <div class="space-three">{% block nav %}{{ super() }}{% endblock %}</div>
+      <div class="masthead-svg-container">
+        {% include theme("partials/_bigdata_banner.html") %}
+      </div>
+      <div class="masthead-svg-alternative"><p class="big-data center-block ir space-two-top">The Fifth Elephant, 2014 July 23-26, Bangalore</p></div>
+      {% block header_caption %}
+        
+      {% endblock %}
     {% endblock %}  
 
-    
     <!-- <hr class="half center-block space-three-bottom"> -->
     <hgroup class="centered clearfix">
-      <div class="visible-xs">
-        <h1 class="calm large space-one-top space-one-bottom darkblue textshadow">The Fifth Elephant</h1>
+      <div class="">
+        <h1 class="calm huge space-one-top space-one-bottom darkblue textshadow">The Fifth Elephant</h1>
       </div>
-      <!-- <h3 class="body-type calm large">Conference on Bigdata, Storage and Analytics</h3> -->
-      <h3 class="body-type calm brown regular space-one-top nospace-bottom">
-        <a
-          title="View location in Google Maps"
-          class="inline-block link-silent-hover link-unfade-hover"
-          href="http://goo.gl/maps/PvXY">
-          <img alt="Co-ordinates" src="{{ theme_static('img/map-marker.svg') }}" width="15" class="gap-1q-right white">
-        </a>
-        <a 
-          title="View location in Google Maps"
-          href="/2014/venue#conference"
-          class="brown venue link-silent-hover">
-          <abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr>
-          Convention Centre
-        </a>
+      <h3 class="calm brown legible space-one">
+        23 - 26 July 2014, <a href="/2014/venue" class="brown venue link-silent-hover">Bangalore</a>
       </h3>
-      <h2 class="calm brown legible space-one">
-        July 23–26, 2014
-      </h2>
     </hgroup>
-    
     <p class="ticket-link event-tickets centered legible space-six-bottom">
       <a
         class="button button-primary min-measure-3words prose-type"
@@ -70,11 +56,11 @@
 {% endblock %}
 
 {% block content %}
-<section class="measure-10words pad-one center-block legible space-six-top space-three-bottom prose clearfix">
-  <h1 class="visuallyhidden">Introduction</h1>
+<section class="measure-10words pad-one center-block legible space-four-top space-three-bottom prose clearfix">
+  <h2 class="visuallyhidden">Introduction</h2>
+  <div class="centered center-block legible title-type space-three-bottom">4 days - 50+ - speakers - 750+ smartest technologists <br class="hide-mobile">Descend in Namma Bengaluru's most happening <br class="hide-mobile">Community powered big data conference &amp; workshops</div>
   <p>
-    In 2014, infrastructure components such as Hadoop, Berkeley Data Stack and other commercial tools have stabilized and are thriving. The challenges have moved higher up the stack from data collection and storage to data analysis and its presentation to users. The theme of this year's edition is on analytics – the infrastructure that powers analytics and how analytics is done.</p>
-    <p>Conference sessions will address data application and usage in different domains, the challenges involved in analyzing large datasets and performing real-time analytics and how insights are teased from data. 
+    Fifth Elephant is not just a conference; in the last two years it has become a must attend learning &amp; training pilgrimage for every big data professional and enthusiast in India. Our community curated content approach makes sure the topics of discussions are ahead of the curve, an eye opener &amp; addresses issues that you want to hear and discuss! 
   </p>
   
   <p>
@@ -82,7 +68,7 @@
   </p>
 </section>
 
-{% from theme("data/highlights.html") import highlights %}
+<!-- {% from theme("data/highlights.html") import highlights %}
 <section id="announcements" class="announcements pad-one legible center-block space-four clearfix">
   <h1 class="calm centered space-two large">
     Highlights
@@ -94,11 +80,11 @@
       {% endfor %}
     </ul>
   </div>
-</section>
+</section> -->
 
 <section class="push-two-top centered">
   <div class="row-fluid">
-    <h1 class="calm centered space-two large">Run-up event series</h1>
+    <h1 class="calm centered space-one large">Run-up event series</h1>
     <p>We are organizing run-up events in different cities across India.</p>
     {% from theme("data/timeline.html") import timeline %}  
     <ul id='htimeline'>
@@ -120,7 +106,7 @@
   </div>
 </section>
 
-<section id="tickets" class="fill-light push-three space-six-top clearfix pad-one">
+<section id="tickets" class="fill-light push-1q space-two-top clearfix pad-one">
   <h1 class="calm centered space-two large">
     Tickets
   </h1>
@@ -199,7 +185,7 @@
     </li>
   </ul>
   
-  <p class="centered legible space-three">
+  <p class="centered legible space-two">
     <a
       class="button button-primary min-measure-3words"
       title="Fifth Elephant 2014 Tickets on DoAttend"
@@ -213,7 +199,7 @@
   </p>
 </section>
 
-<section id="community" class="legible push-two space-four clearfix">  
+<section id="community" class="legible push-one space-two-top space-one-bottom clearfix">  
   <article class="clearfix">
     <h2 class="centered calm nospace-top space-two-bottom space-three-top pad-one">The Editorial Panel</h2>
     <ul class="committee thumbnail-columns thumbnail-columns-four-narrow regular clearfix nospace">
@@ -359,8 +345,8 @@
 
 <section id="sponsors" class="fill-dark legible clearfix">
   <div class="sponsors clearfix center-block">
-  <div class="space-six-top space-four-bottom">
-    <h1 class="centered calm measure-10words center-block space-three-bottom">Sponsors</h1>
+  <div class="space-two-top space-two-bottom">
+    <h1 class="centered calm measure-10words center-block space-two-bottom">Sponsors</h1>
     <div class="eventsponsor-block center-block clearfix">
     <article class="about-sponsor nospace-top clearfix pad-two space-line-bottom resetcoords highlight-links js-hidden">
       <div class="sponsor-detail"></div>
