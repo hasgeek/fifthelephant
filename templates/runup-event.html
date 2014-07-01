@@ -225,7 +225,7 @@
   {% if event.sponsors %}
   <section id="sponsor" class="partners clearfix space-three">  
     <article class=" legible push-three-top push-two-bottom clearfix">
-      <h3 class="centered calm space-two-bottom space-three-top nospace ultrafaded">Sponsor</h3>
+      <h3 class="centered calm space-two-bottom space-three-top nospace ultrafaded">Hosted by</h3>
       <ul class="centered regular clearfix v-middle nospace center-block links-prevent-hover-highlight">
         {% for sponsor in event.sponsors %}
         <li class="clearfix {% if sponsor.contain == 'height' %}contain-height{% else %}contain-width thirtyfive{% endif %}{% if event.sponsors|length <= 3 %} inline-block{% endif%}"><a class="occupy centered {% if event.sponsors|length <= 3 %} pad-two{% endif%}" href="{{ sponsor.url }}"><img src="{{sponsor.logo}}" alt="{{ sponsor.name }}"></a></li>
