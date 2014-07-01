@@ -1640,3 +1640,24 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
 .no-svg .masthead-svg-alternative, .masthead-svg-container{
     display: block;
 }
+
+/* scrollback */
+.scrollback-stream{
+  z-index: 9999 !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+.scrollback-icon, .scrollback-title{
+  background-color: #E5C788 !important;
+}
+.scrollback-alert{
+  background-color: #EC5F13 !important;
+}
+.scrollback-title{
+  border-bottom-color: #60583E !important;
+}
+.scrollback-icon-menu{
+  background-image: url(/favicon.ico) !important;
+  background-size: 50%;
+}
