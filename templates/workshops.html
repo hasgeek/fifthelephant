@@ -13,8 +13,8 @@
 
 {% block page_nav_items %}
    <li><a href="#workshops" class="link-white-hover">Introduction</a></li>
-   <li><a href="#sessions" class="link-white-hover">Confirmed Workshops</a></li><!--
---><!--<li><a href="#schedule" class="link-white-hover">Schedule</a></li>-->
+   <li><a href="#sessions" class="link-white-hover">Confirmed Workshops</a></li>
+   <li><a href="#schedule" class="link-white-hover">Schedule</a></li>
 {% endblock %}
 
 {% block content %}
@@ -42,6 +42,13 @@
 {% from theme("data/workshop.html") import talks as sessions %}
 {% include theme("partials/_sessions.html") %}
 {% endwith %}
+</section>
+
+<section id="schedule" class="schedule space-two push-four legible">
+  <h2 class="centered calm space-two">Schedule</h2>
+  <div class="schedule-table-container center-block pad-one regular">
+    {% include theme("partials/_schedule_workshops.html") %}
+  </div>
 </section>
 
 {% endblock %}

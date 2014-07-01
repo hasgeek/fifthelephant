@@ -12,10 +12,8 @@
 
 {% block page_nav_items %}
    <li><a href="#tracks" class="link-white-hover">Tracks</a></li>
-   <li><a href="#sessions" class="link-white-hover">Confirmed Talks</a></li><!--
---><!-- <li><a href="#sessions" class="link-white-hover">Talks</a></li> --><!--
---><!--<li><a href="#schedule" class="link-white-hover">Schedule</a></li>--><!--
---><li><a href="#proposals" class="link-white-hover">Proposals</a></li>
+   <li><a href="#sessions" class="link-white-hover">Confirmed Talks</a></li>
+   <li><a href="#schedule" class="link-white-hover">Schedule</a></li>
 {% endblock %}
 
 {% block content %}
@@ -27,18 +25,6 @@
   <article class="prose clearfix">
     <h1 class="visuallyhidden">Introduction</h1>
     <div class="measure-10words pad-one center-block">
-    <!-- <p>
-      The Fifth Elephant 2014 brings engineering and business professionals under one roof to discuss technology and application challenges involved in managing and analyzing large volumes of data.
-    </p>
-    <p class="regular">
-      <b>Technology Agenda:</b> Exposure to storage and analytics technologies. Better understanding of why different tools and approaches work for some domains. Interact with decision-makers and product managers to understand how these technologies fit into business processes and goals.
-    </p>
-    <p class="regular">
-      <b>Business Agenda:</b> Understand how technology is applied for better customer targeting, building products, improving business processes and decision-making. Interact with technologists and analysts to learn how data collection and processing techniques work in different sectors.
-    </p>
-    <p class="regular">
-      Talks apart, there will be open house sessions, panel discussions and plenty of opportunities to interact with some of the best minds in technology and business.
-    </p> -->
     <p class="legible">In 2014, infrastructure components such as Hadoop, Berkeley Data Stack and other commercial tools have stabilized and are thriving. The challenges have moved higher up the stack from data collection and storage to data analysis and data visualization. It is also interesting to see diffusion of technology to traditional, non-tech audiences such as non-profits, journalists and govermment organisations. The focus for this year's conference will be on how data is being used and applied in different sectors.</p>
       <p class="darkblue">
         The conference covers two major themes: storage and analytics. There will be separate engineering and business tracks covering each theme. 
@@ -63,7 +49,6 @@
   </article>
 </section> 
 
-
 <section id="sessions" class="space-four-top push-one-top fill-light legible clearfix">
 {% with session_kind = 'Talks' %}
 <h2 class="centered calm space-four-top space-one-bottom">Confirmed Talks</h2>
@@ -71,53 +56,11 @@
 {% include theme("partials/_sessions.html") %}
 {% endwith %}
 </section>
- 
-
-<!-- <section class="clearfix space-four-top fill-white push-four">
-  <article class="legible measure-10words pad-one center-block prose clearfix">
-    <h2 class="centered calm">Tracks</h2>
-    <div class="regular">
-      <p class="legible">In 2014, infrastructure components such as Hadoop, Berkeley Data Stack and other commercial tools have stabilized and are thriving. The challenges have moved higher up the stack from data collection and storage to data analysis and data visualization. It is also interesting to see diffusion of technology to traditional, non-tech audiences such as non-profits, journalists and govermment organisations. The focus for this year's conference will be on how data is being used and applied in different sectors.</p>
-      <p>
-        The conference covers two major themes: storage and analytics. There will be separate engineering and business tracks covering each theme. 
-      </p>
-      <h4 class="space-two-top space-half-bottom semi-bold">Engineering track on Storage</h4>
-      <p>
-       Learn about databases, OLTP, NoSQL, data integration and warehousing. Find out how developers and tech teams deal with performance, speed, scaling and other challenges associated with storage. The storage track will lay the foundation for better understanding of data processing and analytics.
-      </p>
-      <h4 class="space-two-top space-half-bottom semi-bold">Business track on Storage</h4>
-      <p>
-        Understand decision support issues such as costs of storage infrastructure, maintenance, benefits and limitations. Panel discussions and interactive Q&amp;A sessions between solution architects, decision-makers and engineers will further clarify how choice of storage technologies affect business processes and goals.
-      </p>
-      <h4 class="space-two-top space-half-bottom semi-bold">Analytics track for engineers and analysts</h4>
-      <p>
-        Find out about metrics, tools and statistical techniques and their application for different use-cases. This track is for the algorithmically curious. It also covers hacky territory such as applications and technologies for better data collection and insight gathering. Case studies of platforms and solutions built for data collection, processing and analytics will be showcased here. 
-      </p>
-      <h4 class="space-two-top space-half-bottom semi-bold">CIO and Product Managers' track on Analytics</h4>
-      <p>
-        How data can be used for decision-making is a pressing question for most organizations. This track will consist of talks around how data has been used effectively for building products, leveraging insights and developing in-house technology capabilities for better business processes.
-      </p>
-    </div>
-  </article>
-</section>  --> 
-
-<!-- <section id="proposals" class="legible clearfix push-four">
-  <article class="clearfix">
-    <div class="measure-8words center-block">
-    <h2 class="calm centered space-two">Conference Proposals</h2>
-    <p>Status: Submissions and voting closed, awaiting jury selection</p>
-    <p class="centered space-six-top">
-      <a class="button" href="http://funnel.hasgeek.com/fifthel2014/">View Proposals on funnel</a>
-    </p>
-    </div>
-  </article> 
-  
-</section> -->
 
 <section id="schedule" class="schedule space-two push-four legible">
   <h2 class="centered calm space-two">Schedule</h2>
   <div class="schedule-table-container center-block pad-one regular">
-    {% include theme("partials/_schedule_table.html") %}
+    {% include theme("partials/_schedule_conference.html") %}
   </div>
 </section>
 
