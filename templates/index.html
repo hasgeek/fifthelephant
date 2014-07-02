@@ -67,28 +67,32 @@
     The Fifth Elephant 2014 is a four-day event with two days of hands-on workshops and an interactive conference on analytics.
   </p>
 </section>
-<section class="centered">
+<!-- <section class="centered">
   <div class="space-one-bottom">
     <a class="button" href="/2014/workshops#schedule">Workshops Schedule: 23 - 24 July 2014</a>
   </div>
   <div>
     <a class="button" href="/2014/conference#schedule">Conference Schedule: 25 - 26 July 2014</a>
   </div>
-</section>
+</section> -->
 
-<!-- {% from theme("data/highlights.html") import highlights %}
+{% from theme("data/highlights.html") import highlights %}
 <section id="announcements" class="announcements pad-one legible center-block space-four clearfix">
-  <h1 class="calm centered space-two large">
+  <!-- <h1 class="calm centered space-two large">
     Highlights
-  </h1>
+  </h1> -->
   <div class="tile-block clearfix">    
     <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom">
       {% for tile in highlights.tiles %}
-      <li class="{{ tile.background }}"><a class="occupy right-aligned link-white-hover unhighlight" href="{{ tile.link }}"><span class="wrap white">{{ tile.title|safe }}</span> <span class="regular wrap white">{{ tile.meta|safe }}</span></a></li>
+      <li class="{{ tile.background }} centered">
+        <a class="occupy unhighlight legible" href="{{ tile.link_title }}"><div class="white">{{ tile.title|safe }}</div></a>
+        <a href="{{ tile.link_schedule }}"><div class="regular wrap space-half">Schedule: {{ tile.date|safe }}</div></a>
+        <a href="{{ tile.link_venue }}" class="brown"><div class="regular">{{ tile.venue|safe }}</div></a>
+      </li>
       {% endfor %}
     </ul>
   </div>
-</section> -->
+</section>
 
 <section class="push-two-top centered">
   <div class="row-fluid">

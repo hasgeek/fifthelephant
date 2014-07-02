@@ -1,22 +1,24 @@
-{# 
-  set `on-the-side` as `false` if the number of tiles are disproportionately more than the highlighted blog updates.
-  `background` is the css class that defines background styles (defined in main.css)
-#}
 {%
   set highlights = {
       'on-the-side': true
     , 'tiles': [
        {
           'title': 'Workshops'
-        , 'meta': 'July&nbsp;23&nbsp;&amp;&nbsp;24<br>TERI, Domlur,<br>Bangalore'
+        , 'date': 'July&nbsp;23&nbsp;&amp;&nbsp;24'
+        , 'venue': 'The Energy &amp; Resources Institute, Domlur, Bangalore'
         , 'background': 'workshops'
-        , 'link': '/2014/workshops'
+        , 'link_title': '/2014/workshops'
+        , 'link_schedule': '/2014/workshops#schedule'
+        , 'link_venue': '/2014/workshops#venue'
       }
       , {
           'title': 'Conference'
-        , 'meta': 'July&nbsp;25&nbsp;&amp;&nbsp;26<br>NIMHANS Convention<br>Centre, Bangalore'
+        , 'date': 'July&nbsp;25&nbsp;&amp;&nbsp;26'
+        , 'venue': 'NIMHANS Convention Centre, Bangalore'
         , 'background': 'conference'
-        , 'link': '/2014/conference'
+        , 'link_title': '/2014/conference'
+        , 'link_schedule': '/2014/conference#schedule'
+        , 'link_venue': '/2014/conference#venue'
       }
     ]
   }

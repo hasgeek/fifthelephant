@@ -326,20 +326,10 @@ a.link-unfade-hover:hover,
     background-position: 10% 160%;
 }
 .tiles .workshops {
-    background-color: #68BEC1;
-    background-image: url(../img/db.png);
-    background-repeat: no-repeat;
-    background-position: -40% 160%;
-    background-size: auto 70%;
-    background-position: -3% 120%;
+    background-color: #F2DE9C;
 }
 .tiles .conference {
-    background-color: #498F94;
-    background-image: url(../img/conference-icon.png);
-    background-repeat: no-repeat;
-    background-position: -40% 10%;
-    background-size: auto 80%;
-    background-position: 1% 100%;
+    background-color: #E5C788;
 }
 .tiles .runup {
     background-color: #A6D099;
