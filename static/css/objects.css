@@ -572,7 +572,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
               column-count: 1;
         min-height: 14em;
     }
-    .ticket p { min-height: 4em; }
+    .ticket p { min-height: 6em; }
 }
 @media only screen and (min-width: 63em) { .ticket ul { min-height: 8.5em !important; } }
 @media only screen and (min-width: 68em) { 

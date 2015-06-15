@@ -49,14 +49,15 @@
 <header class="clearfix">
 <div class="banner internal fill-beige resetcoords layer-one clearfix push-one-top centered{% if long_page_nav %} long-page-nav{% endif %}">
     <h2 class="home-link calm large centered"><a class="link-white-translucent-hover brown" href="/2015/">The Fifth Elephant</a></h2>
-    <!--<p class="ticket-link body-type event-tickets calm centered">
+    <p class="ticket-link body-type event-tickets calm centered">
       <a
         class="buy-tickets button small-button"
-        title="Fifth Elephant 2014 Tickets on DoAttend"
-        href="http://fifthel.doattend.com/">
-        <span class="conference-dates">Jul 23 - 26, 2014 / </span>Buy Tickets
+        title="Fifth Elephant 2014 Tickets on Explara"
+        href="https://in.explara.com/e/the-fifth-elephant-2015"
+        target="_blank">
+        <span class="conference-dates">Jul 16 - 18, 2015 </span>Buy Tickets
       </a>
-    </p>-->
+    </p>
     {% block header_caption %}{% endblock %}
     {% block nav %}
     <div class="main-nav space-one-top space-line-bottom">
@@ -82,7 +83,7 @@
     {% endblock %}
     {% block banner_title %}
       {% if page_caption %}
-      <hr class="half center-block space-three-top space-three-bottom">
+      <!-- <hr class="half center-block space-three-top space-three-bottom"> -->
       <h1 class="clearboth centered calm measure-10words center-block space-three-top {% if banner_title_size %}{{ banner_title_size }}{% else %}giant{% endif %}">
         <span class="serif-type italic legible occupy capitalize space-one-bottom">{% block banner_title_prefix %}The{% endblock %}</span> {{ page_caption|safe }}
       </h1>

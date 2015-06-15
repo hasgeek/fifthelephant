@@ -6,8 +6,8 @@
 {% set fixed_width_sticky = true %}
 
 {% block page_nav_items %}
-   <!--<li><a href="#announcements" class="darkgray link-white-hover">Announcements</a></li><!-->
-   <!---<li><a href="#tickets" class="darkgray link-white-hover">Ticket Details</a></li><!-->
+   <li><a href="#announcements" class="darkgray link-white-hover">Announcements</a></li>
+   <li><a href="#tickets" class="darkgray link-white-hover">Ticket Details</a></li>
    <li><a href="#last-year" class="darkgray link-white-hover">Past Edition</a></li>
    <li><a href="#sponsors" class="darkgray link-white-hover">Sponsors</a></li>
    <li><a href="#hasgeek" class="darkgray link-white-hover">Behind The Scenes</a></li>
@@ -52,27 +52,27 @@
   
   {% block page_nav %}{{ super() }}{% endblock %}
   
-</div><!-- .banner -->
+</div>
 {% endblock %}
 
 {% block content %}
-<!--{% from theme("data/highlights.html") import highlights %}-->
-<!--<section id="announcements" class="announcements pad-one legible center-block space-four clearfix">-->
-<!--   <h1 class="calm centered space-two large">-->
-<!--    Highlights-->
-<!--  </h1> -->
-<!--  <div class="tile-block clearfix">    -->
-<!--    <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom">-->
-<!--      {% for tile in highlights.tiles %}-->
-<!--      <li class="{{ tile.background }} centered">-->
-<!--        <a class="occupy unhighlight legible" href="{{ tile.link_title }}"><div class="white">{{ tile.title|safe }}</div></a>-->
-<!--        <a href="{{ tile.link_schedule }}"><div class="regular wrap space-half">Schedule: {{ tile.date|safe }}</div></a>-->
-<!--        <a href="{{ tile.link_venue }}" class="brown"><div class="regular"><img alt="Co-ordinates" src="{{ theme_static('img/map-marker.svg') }}" width="15" class="gap-1q-right ultrafaded">{{ tile.venue|safe }}</div></a>-->
-<!--      </li>-->
-<!--      {% endfor %}-->
-<!--    </ul>-->
-<!--  </div>-->
-<!--</section>-->
+{% from theme("data/highlights.html") import highlights %}
+<section id="announcements" class="announcements pad-one legible center-block space-four clearfix">
+<!--    <h1 class="calm centered space-two large">
+    Highlights
+ </h1> -->
+ <div class="tile-block clearfix">   
+    <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom">
+      {% for tile in highlights.tiles %}
+      <li class="{{ tile.background }} centered">
+         <!-- <a class="occupy unhighlight legible" href="{{ tile.link_title }}"> --><div class="white">{{ tile.title|safe }}</div><!-- </a> -->
+        <!-- <a href="{{ tile.link_schedule }}"> --><div class="regular wrap space-half">Schedule: {{ tile.date|safe }}</div><!-- </a> -->
+        <a href="{{ tile.link_venue }}" class="brown"><div class="regular"><img alt="Co-ordinates" src="{{ theme_static('img/map-marker.svg') }}" width="15" class="gap-1q-right ultrafaded">{{ tile.venue|safe }}</div></a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
 <section class="measure-10words pad-one center-block legible space-four-top space-three-bottom prose clearfix">
   <h2 class="visuallyhidden">Introduction</h2>
   <div class="centered center-block legible title-type space-three-bottom">3 days - 50+ - speakers - 750+ smartest technologists <br class="hide-mobile">Descend in Namma Bengaluru's most happening <br class="hide-mobile">Community powered big data conference &amp; workshops</div>
@@ -111,7 +111,7 @@
     </ul>
   </div>
 </section>
-
+-->
 <section id="tickets" class="fill-light push-1q space-two-top clearfix pad-one">
   <h1 class="calm centered space-two large">
     Tickets
@@ -122,42 +122,16 @@
         <hgroup class="centered fill-green">
           <h2 class="body-type calm large">Workshop</h2>
           <h3 class="body-type calm secondary all-caps faded nospace">
-            July 23 <span class="amp calm ultrafaded">&amp;</span> 24
+            July 18
           </h3>
         </hgroup>
         <ul class="space-two">
-          <li>Two days of hands-on workshop sessions</li>
+          <li>One day of hands-on workshop sessions</li>
           <li>Breakfast &amp; Lunch</li>
         </ul>
         <p class="centered space-line-top pad-one limited">
           <span class="legible bold">
-            Sold out!
-          </span>
-          <br>
-          <span class="secondary faded">
-            Was Rs 4000
-          </span>
-        </p>
-      </div>
-    </li>
-    <li>
-      <div class="ticket fill-white clearfix">
-        <hgroup class="centered fill-green">
-          <h2 class="body-type calm large">Conference</h2>
-          <h3 class="body-type calm secondary all-caps faded nospace">
-            July 25 <span class="amp calm ultrafaded">&amp;</span> 26
-          </h3>
-        </hgroup>
-        <ul class="space-two">
-          <li>Two days of talks &amp; discussions</li>
-          <li>Expo area &amp; hacker corners</li>
-          <li>Breakfast &amp; Lunch</li>
-        </ul>
-        <p class="centered space-line-top pad-one limited">
-          <! <del class="ultrafaded gap-1q-right">
-            Rs&nbsp;4000</del> 
-          <span class="legible bold">
-            Rs&nbsp;3,200
+            Rs 4000
           </span>
           <br>
           <span class="secondary faded">
@@ -169,22 +143,46 @@
     <li>
       <div class="ticket fill-white clearfix">
         <hgroup class="centered fill-green">
+          <h2 class="body-type calm large">Conference</h2>
+          <h3 class="body-type calm secondary all-caps faded nospace">
+            July 16 <span class="amp calm ultrafaded">&amp;</span> 17
+          </h3>
+        </hgroup>
+        <ul class="space-two">
+          <li>Two days of talks &amp; discussions</li>
+          <li>Breakfast &amp; Lunch</li>
+        </ul>
+        <p class="centered space-line-top pad-one limited">
+          <! <del class="ultrafaded gap-1q-right">
+            Early geek tickets</del> 
+          <span class="legible bold">
+            Rs&nbsp;3,800
+          </span>
+          <br>
+          <span class="secondary faded">
+            Available until June&nbsp;22<sup>nd</sup>
+          </span>
+        </p>
+      </div>
+    </li>
+    <li>
+      <div class="ticket fill-white clearfix">
+        <hgroup class="centered fill-green">
           <h2 class="body-type calm large">Corporate</h2>
           <h3 class="body-type calm secondary all-caps faded nospace">
-            July 23 <span class="amp calm ultrafaded">-</span> 26
+            July 16, 17 <span class="amp calm ultrafaded">&amp;</span> 18
           </h3>
         </hgroup>
         <ul class="space-two">
           <li>Everything in the Conference ticket</li>
-          <li>Event t-shirt</li>
-          <li>Ticket sponsorship credit</li>
-          <li>Custom invoice</li>
+          <li>Access to workshops on 18 July</li>
+          <li>Branding at venue</li>
         </ul>
         <p class="centered space-line-top pad-one">
-          <span class="legible bold">Rs&nbsp;7,000</span>
+          <span class="legible bold">Rs&nbsp;25,000</span>
           <br>
           <span class="secondary faded">
-            Available until July 21<sup>st</sup>
+            Available until July 10<sup>th</sup>
           </span>
         </p>
       </div>
@@ -194,17 +192,18 @@
   <p class="centered legible space-two">
     <a
       class="button button-primary min-measure-3words"
-      title="Fifth Elephant 2014 Tickets on DoAttend"
-      href="http://fifthel.doattend.com/">
+      title="Fifth Elephant 2015 Tickets on Explara"
+      href="https://in.explara.com/e/the-fifth-elephant-2015"
+      target="_blank">
       Buy Tickets
     </a>
     <br>
-    <! <span class="ticket-note center-block secondary occupy space-line-top faded">
+    <!-- <span class="ticket-note center-block secondary occupy space-line-top faded">
       Single day conference tickets for 12<sup>th</sup> &amp; 13<sup>th</sup> will be available at the venue.
-    </span>
+    </span>-->
   </p>
 </section>
--->
+
 <!--<section id="community" class="legible push-one space-two-top space-one-bottom clearfix">  
   <article class="clearfix">
     <h2 class="centered calm nospace-top space-two-bottom space-three-top pad-one">The Editorial Panel</h2>
