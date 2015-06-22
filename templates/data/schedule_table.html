@@ -1,0 +1,38 @@
+{% raw %}
+<script id="scheduletemplate" type="text/x-mustache-template">
+  <h3 class="centered calm space-two">{{date}}</h3>
+  <table class="schedule-table">
+    <thead>
+      <tr>
+        <th class="time semi-bold">Time</th>
+        {{#rooms}}
+        <th class="track-{{track}} semi-bold">{{title}}</th>
+        {{/rooms}}
+      </tr>
+    </thead>
+    <tbody>
+    {{#slots}}
+      <tr>
+        <th class="time" scope="row">{{slot}}</th>
+        {{#sessions}}
+        {{#is_break}}
+        <td colspan="2" class="centered">{{title}}</td>        
+        {{/is_break}}
+        {{^is_break}}
+        <td class="track-{{track}}" rowspan={{rowspan}}>
+          <h4><a href="{{url}}">{{title}}</a></h4>
+          {{#speaker}}
+          <p>{{speaker}}</p>
+          {{/speaker}}
+          {{#rowspan}}
+          <p><em>{{start}} - {{end}}</em></p>
+          {{/rowspan}}
+        </td>
+        {{/is_break}}
+        {{/sessions}}
+      </tr>
+    {{/slots}}
+    </tbody>
+  </table>
+</script>
+{% endraw %}

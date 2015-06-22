@@ -44,12 +44,15 @@
 {% endwith %}
 </section>
 
+<!--schedule -->
+{% include theme("data/schedule_table.html") %}
 <section id="schedule" class="schedule space-two push-four legible">
   <h2 class="centered calm space-two">Schedule</h2>
-  <div class="schedule-table-container center-block pad-one regular">
-    {% include theme("partials/_schedule_conference.html") %}
+  <div class="schedule-table-container center-block pad-one regular" id="conferenceschedule">
+    <p class="centered loadingtxt">Loading...</p>
   </div>
 </section>
+<!--schedule -->
 
   <section id="venue" class="legible conference-venue space-two-top space-four-bottom push-four-top">
     <article class="legible">

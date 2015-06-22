@@ -22,7 +22,8 @@
             "js/plugins.js",
             "js/flipboard.js",
             "js/vendor/leaflet/leaflet.js",
-            "js/script.js"
+            "js/script.js",
+            "js/libs/mustache.min.js"
         ]
     }
 }

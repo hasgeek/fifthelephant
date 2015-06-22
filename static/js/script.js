@@ -181,6 +181,198 @@ function main () {
     replaceVenueImages();
 }
 
+//dateStr is expected in the format 2015-07-16", then returns "Thu Jul 16 2015"
+var getDateString = function(dateStr) {
+    var year = parseInt(dateStr.substr(0, 4), 10);
+    var month = parseInt(dateStr.substr(5, 2), 10) - 1;
+    var day = parseInt(dateStr.substr(8, 2), 10);
+    var d = new Date();
+    d.setFullYear(year,month,day);
+    return d.toDateString();
+}
+
+//dateString is expected in the format "2014-07-24T11:30:00Z" returns time "11:30"
+var getTimeString = function(dateString) {
+    return dateString.substr(dateString.indexOf('T')+1,5);
+}
+
+//Input UTC, returns IST
+var getIST = function(utcTime) {
+    var hr = parseInt(utcTime.substring(0, 2), 10);
+    var min = parseInt(utcTime.substring(3), 10);
+    var totalMins = min + 30;
+    if (totalMins >= 60) {
+        totalMins = totalMins - 60;
+        hr = hr + 1;
+    }
+    hr = hr + 5;
+    totalMins = totalMins.toString();
+    if (totalMins === '0') {
+        totalMins = '00';
+    }
+    var ist = hr.toString() + ":" + totalMins;
+    return ist;
+}
+
+//Input slot time "08:30 - 09:15", returns "09:15"
+var getEndTime = function(time) {
+    return time.substring(time.indexOf('-')+2);
+}
+
+var getTotalMins = function(time) {
+    var hr = parseInt(time.substring(0,time.indexOf(':')), 10);
+    var min = parseInt(time.substring(time.indexOf(':')+1), 10);
+    return (hr * 60) + min;
+}
+
+//roomName is "nimhans-convention-center/audi-1" return "AUDI-1"
+var getAudiTitle = function(roomName) {
+    return roomName.substring(roomName.indexOf('/')+1).toUpperCase();
+}
+
+//audiName is AUDI-2 returns track 1.
+var getTrack = function(audiName, rooms) {
+    for (var index=0; index<rooms.length; index++) {
+        if (rooms[index].name === audiName) {
+            return rooms[index].track;
+        }
+    }
+}
+
+var renderScheduleTable = function(schedules, eventType) {
+    schedules.forEach(function(schedule) {
+        var tableTemplate = $('#scheduletemplate').html();
+        $(".schedule-table-container p.loadingtxt").hide();
+        if(eventType === 'conference') {
+            $('#conferenceschedule').append(Mustache.render(tableTemplate, schedule));
+        }
+        else {
+            $('#workshopschedule').append(Mustache.render(tableTemplate, schedule));
+        }
+    });
+}
+
+function parseJson(data) {
+    var schedules = data.schedule;
+    var workshopSchedule = [];
+    var conferenceSchedule = [];
+    schedules.forEach(function(eachSchedule) {
+        var schedule = {};
+        var rooms = [];
+        schedule.date = getDateString(eachSchedule.date);
+        schedule.slots = eachSchedule.slots;
+        schedule.slots.forEach(function(slot, slotindex, slots) {
+            var sessions = slot.sessions;
+            sessions.forEach(function(session, sessionindex) {
+                schedule.slots[slotindex].sessions[sessionindex].start = getIST(getTimeString(session.start));
+                schedule.slots[slotindex].sessions[sessionindex].end = getIST(getTimeString(session.end));
+                if(session.section_title && (session.section_title.toLowerCase().indexOf('workshop') !== -1)) {
+                    schedule.type = 'workshop';
+                }
+                if(session.room && (rooms.indexOf(session.room) === -1)) {
+                    rooms.push(session.room);
+                }
+            }); //eof sessions loop
+            if(!schedule.type) {
+                schedule.type = 'conference';
+            }
+        }); //eof schedule.slots loop
+
+        rooms.forEach(function(room, index, rooms) {
+            //Add title and track to each room. Eg: room: "nimhans-convention-center/audi-1", title: "Audi 1", track: 0
+            rooms[index] = { name: room, title: getAudiTitle(room), track: index};
+        });
+        schedule.rooms = rooms;
+
+        //Add track based on room of the session eg: Audi 1 track 0, Audi 2 track 1
+        schedule.slots.forEach(function(slot, slotindex) {
+            var sessions = slot.sessions;
+            sessions.forEach(function(session, sessionindex) {
+                if(session.room) {
+                    schedule.slots[slotindex].sessions[sessionindex].track = getTrack(session.room, rooms);
+                }
+            });
+        });
+
+        //Sort sessions based on track
+        schedule.slots.forEach(function(slot, slotindex) {
+            if (slot.sessions.length > 1) {
+                slot.sessions.sort(function(session1, session2) {
+                    return session1.track - session2.track;
+                });
+            }
+        });
+
+        //Change slot to "start time - end time". This decides the rows in the schedule table.
+        schedule.slots.forEach(function(slot, slotindex, slots) {
+            if(slot.sessions.length > 1) {
+                if(slotindex < slots.length-1) {
+                    //Use next slot's start time as the end time of this session.
+                    schedule.slots[slotindex].slot = slot.slot + ' - ' + slots[slotindex+1].slot;
+                }
+                else {
+                    //Incase of last sessions array, use end time of its last session.
+                    schedule.slots[slotindex].slot = slot.slot + ' - ' + slot.sessions[slot.sessions.length-1].end;
+                }
+            }
+            //Only one item in sessions, then use its end time.
+            else {
+                schedule.slots[slotindex].slot = slot.slot + ' - ' + slot.sessions[0].end;
+            }
+        });
+
+        //Check if each session ends within slot if not add rowspan
+        schedule.slots.forEach(function(slot, slotindex, slots) {
+            var slotEndTime = getEndTime(slot.slot);
+            //Check only if there are more than 1 sessions in the array
+            if(slot.sessions.length > 1) {
+                slot.sessions.forEach(function(session, sessionindex) {
+                    var rows = false;
+                    var rowspan = 1;
+                    var index = slotindex;
+                    while(getTotalMins(slotEndTime) < getTotalMins(session.end)) {
+                        rows = true;
+                        rowspan += 1;
+                        index += 1;
+                        slotEndTime = getEndTime(slots[index].slot);
+                    }
+                    if(rows) {
+                        schedule.slots[slotindex].sessions[sessionindex].rowspan = rowspan;
+                    }
+                });//eof slot.sessions loop
+            }
+        });//eof schedule.slots loop
+
+        if(schedule.type === 'conference') {
+            conferenceSchedule.push(schedule);
+        }
+        else {
+            workshopSchedule.push(schedule);
+        }
+    }); //eof schedules loop
+    renderScheduleTable(conferenceSchedule, 'conference');
+    renderScheduleTable(workshopSchedule, 'workshop');
+}
+
+$(function() {
+    var funnelurl = 'https://fifthelephant.talkfunnel.com/2014/schedule/json';
+    //If schedule divs are present on the page, then make the ajax call.
+    if(($('#conferenceschedule').length) || ($('#workshopschedule').length)) {
+        $.ajax({
+            type: 'GET',
+            dataType: 'jsonp',
+            url: funnelurl,
+            success: function(data) {
+                parseJson(data);
+            },
+            error: function() {
+                //If ajax call returns error then show a link to funnel schedule
+                $(".schedule-table-container p.loadingtxt").hide();
+                $('.schedule-table-container').append('<p class="centered space-two-top"><a class="button" href="http://fifthelephant.talkfunnel.com/2015/schedule">View Schedule</a></p>');
+            }
+        });//eof ajax call
+    }
+});
 
 PHOTOS_LOCAL = [];
 PHOTOS_FLICKR = [
