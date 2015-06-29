@@ -201,6 +201,7 @@ var getIST = function(utcTime) {
     var hr = parseInt(utcTime.substring(0, 2), 10);
     var min = parseInt(utcTime.substring(3), 10);
     var totalMins = min + 30;
+    var ist;
     if (totalMins >= 60) {
         totalMins = totalMins - 60;
         hr = hr + 1;
@@ -210,7 +211,7 @@ var getIST = function(utcTime) {
     if (totalMins === '0') {
         totalMins = '00';
     }
-    var ist = hr.toString() + ":" + totalMins;
+    ist = hr.toString() + ":" + totalMins;
     return ist;
 }
 
@@ -232,7 +233,8 @@ var getAudiTitle = function(roomName) {
 
 //audiName is AUDI-2 returns track 1.
 var getTrack = function(audiName, rooms) {
-    for (var index=0; index<rooms.length; index++) {
+    var index;
+    for (index=0; index<rooms.length; index++) {
         if (rooms[index].name === audiName) {
             return rooms[index].track;
         }
