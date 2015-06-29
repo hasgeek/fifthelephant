@@ -27,9 +27,17 @@
     <h1 class="visuallyhidden">Introduction</h1>
     <div class="measure-10words pad-one center-block">
       <p>
-        The first and second days of The Fifth Elephant 2014 - 23rd July &amp; 24th July - are hands-on workshops open to 80 participants. These workshops will provide an overview to Machine Learning techniques and analytics technologies – Solr and Aerospike. 
+        The third day of The Fifth Elephant 2015 - 18th July is hands-on workshops open to 50 participants. These workshops will provide an overview to Exploratory data analysis, Deep learning and Supervised Machine learning.
       </p> 
-      <p class="regular"><!-- 8 sessions, 90-120 mins each. --> <a href="http://fifthel.doattend.com/" target="_blank">Only 80 seats available.</a></p>
+      <p class="ticket-link event-tickets centered legible space-six-bottom">
+        <a
+          class="button button-primary min-measure-3words prose-type"
+          title="Fifth Elephant 2015 Tickets on Explara"
+          href="https://in.explara.com/e/the-fifth-elephant-2015"
+          target="_blank">
+          Buy Tickets
+        </a>
+      </p>
     </div>
   </article>
 </section>
@@ -50,37 +58,37 @@
   </div>
 </section>
 
-  <section id="venue" class="legible conference-venue space-two-top space-four-bottom push-four-top">
-    <article class="legible">
-      <hgroup class="space-two-bottom">
-        <h1 class="calm centered nospace large">Workshops Venue</h1>
-        <h2 class="calm centered space-half-top nospace-bottom ultrafaded legible">The Energy and Resources Institute (TERI), Domlur</h2>
-      </hgroup>
-      <section>
-        <div class="venue-showcase conference-venue contain-width clearfix">
-          <p class="full">
-          <img  class="venuephoto occupy" style="width:50%; margin: 0 auto;"
-                  src="{{ theme_static('img/venue/teri-640.jpg') }}"
-                  alt="NIMHANS Convention Centre">
+<section id="venue" class="legible conference-venue space-two-top space-four-bottom push-four-top">
+  <article class="legible">
+    <hgroup class="space-two-bottom">
+      <h1 class="calm centered nospace large">Conference Venue</h1>
+      <h2 class="calm centered space-half-top nospace-bottom ultrafaded legible">NIMHANS Convention Centre</h2>
+    </hgroup>
+    <section>
+      <div class="venue-showcase conference-venue contain-width clearfix">
+        <p class="full">
+        <img  class="venuephoto occupy" style="width:50%; margin: 0 auto;"
+                src="{{ theme_static('img/venue/nimhans-facade-640.jpg') }}"
+                alt="NIMHANS Convention Centre">
+        </p>
+      </div>
+      <div class="measure-10words regular prose center-block pad-one space-two-top">
+        <h4 class="space-two-top nospace-bottom">When</h4>
+        <p class="space-half">July 18, 2015</p>
+        <h4 class="space-two-top nospace-bottom">Address</h4>
+          <p class="space-half">
+          NIMHANS Convention Centre<br>
+          NIMHANS Hospital Premises,<br>
+          Hosur Road / Marigowda Road, (Lakkasandra, Wilson Garden)<br>
+          Bangalore, Karnataka 560029<br>
           </p>
-        </div>
-        <div class="measure-10words regular prose center-block pad-one space-two-top">
-          <h4 class="space-two-top nospace-bottom">When</h4>
-          <p class="space-half">July 23 &amp; 24</p>
-          <h4 class="space-two-top nospace-bottom">Address</h4>
-            <p class="space-half">
-            The Energy and Resources Institute (TERI),<br>
-            4th Main Rd, Domlur II Stage,<br>
-            Domlur, Bangalore,<br>
-            Karnataka 560008, India<br>
-            <a href="http://www.teriin.org/index.php?option=com_content&task=view&id=25">www.teriin.org</a></p>
-            <p><strong>Landmark:</strong> Near Domlur Club</p>
-          <p class="secondary space-half-top space-two-bottom"><a href="http://goo.gl/maps/E7Pfj">View on Google Maps</a></p>
-        </div>
-        <div class="map-container measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="workshop-map" class="map"></div></div>
-      </section>
-    </article>
-  </section>
+          <p><strong>Landmark:</strong> Near Dairy Circle</p>
+        <p class="secondary space-half-top space-two-bottom"><a href="http://goo.gl/maps/PvXY">View on Google Maps</a></p>
+      </div>
+      <div class="map-container measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="workshop-map" class="map"></div></div>
+    </section>
+  </article>
+</section>
 
 {% endblock %}
 {% block footer_script %}
@@ -106,8 +114,8 @@ function initMap(div, map_venue, map_center) {
   map.on('zoomend', onZoomend);
   function onZoomend(){ map.setView(venue, map.getZoom()); };
 }
-$(function() {
-  initMap('workshop-map', { lat: 12.963369, lon: 77.638320, name: 'The Energy and Research Institute (TERI), Domlur' }, { lat: 12.963369, lon: 77.638320 });
+$(function() { 
+  initMap('workshop-map', { lat: 12.9431, lon: 77.5969, name: 'NIMHANS Convention Centre' }, { lat: 12.9431, lon: 77.5969 });
 });
 </script>
 {% endblock %}

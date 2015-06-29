@@ -65,8 +65,8 @@
     <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom">
       {% for tile in highlights.tiles %}
       <li class="{{ tile.background }} centered">
-         <!-- <a class="occupy unhighlight legible" href="{{ tile.link_title }}"> --><div class="white">{{ tile.title|safe }}</div><!-- </a> -->
-        <a href="http://fifthelephant.talkfunnel.com/2015/"><div class="regular wrap space-half">Schedule: {{ tile.date|safe }}</div></a>
+        <a class="occupy unhighlight legible" href="{{ tile.link_title }}"><div class="white">{{ tile.title|safe }}</div></a>
+        <a href="{{ tile.link_schedule }}"><div class="regular wrap space-half">Schedule: {{ tile.date|safe }}</div></a>
         <a href="{{ tile.link_venue }}" class="brown"><div class="regular"><img alt="Co-ordinates" src="{{ theme_static('img/map-marker.svg') }}" width="15" class="gap-1q-right ultrafaded">{{ tile.venue|safe }}</div></a>
       </li>
       {% endfor %}
