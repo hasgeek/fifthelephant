@@ -12,7 +12,7 @@
 
 {% block page_nav_items %}
    <li><a href="#tracks" class="link-white-hover">Tracks</a></li>
-   <li><a href="#sessions" class="link-white-hover">Confirmed Talks</a></li>
+   <!-- <li><a href="#sessions" class="link-white-hover">Confirmed Talks</a></li> -->
    <li><a href="#schedule" class="link-white-hover">Schedule</a></li>
    <li><a href="#venue" class="link-white-hover">Venue</a></li>
 {% endblock %}
@@ -26,23 +26,32 @@
   <article class="prose clearfix">
     <h1 class="visuallyhidden">Introduction</h1>
     <div class="measure-10words pad-one center-block">
-    <p class="legible">The Fifth Elephant is India's largest gathering of big data and analytics practitioners. The theme of this year's edition is analytics. Speakers will share practical experiences with data mining, machine learning and building technology for analytics.</p>
+      <p class="legible">The Fifth Elephant is India's largest gathering of big data and analytics practitioners. Machine Learning, Distributed and Parallel Computing, and High-performance Computing are the themes for this year’s edition.</p>
       <p class="darkblue">
-        The conference has two tracks: infrastructure for analytics and applications. 
+        The conference has two tracks: Discovering Insights and Speed at Scale.
       </p>
-      <h4 class="space-two-top space-half-bottom semi-bold regular">Analytics infrastructure: platforms, tools and in-house solutions.</h4>
-      <h4 class="space-two-top space-half-bottom semi-bold regular">Data mining and machine learning: applications in different domains.</h4>
+      <p class="space-two-top space-half-bottom"><b>Discovering Insights</b>: This track is about general, novel, fundamental, and advanced techniques for making sense of data and driving decisions from data.</p>
+      <p class="space-two-top space-half-bottom"><b>Speed at Scale</b>: This track is about tools and processes for collecting, indexing, and processing vast amounts of data. </p>
+      <p class="ticket-link event-tickets centered legible space-six-bottom">
+        <a
+          class="button button-primary min-measure-3words prose-type"
+          title="Fifth Elephant 2015 Tickets on Explara"
+          href="https://in.explara.com/e/the-fifth-elephant-2015"
+          target="_blank">
+          Buy Tickets
+        </a>
+      </p>
     </div>
   </article>
 </section> 
 
-<section id="sessions" class="space-four-top push-one-top fill-light legible clearfix">
+<!-- <section id="sessions" class="space-four-top push-one-top fill-light legible clearfix">
 {% with session_kind = 'Talks' %}
 <h2 class="centered calm space-four-top space-one-bottom">Confirmed Talks</h2>
 {% from theme("data/talks.html") import talks as sessions %}
 {% include theme("partials/_sessions.html") %}
 {% endwith %}
-</section>
+</section> -->
 
 <!--schedule -->
 {% include theme("data/schedule_table.html") %}
