@@ -1070,7 +1070,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 
 /* Schedule */
 .schedule-table-container { width: 100%; max-width: 60em; }
-.schedule-table           { border: 1px solid #DDD; width: 100%; border-collapse: separate; border-spacing: 1px;}
+.schedule-table           { border: 1px solid #DDD; width: 100%; border-collapse: separate; border-spacing: 1px; background-color: #fff}
 .schedule-table .track-single  { width: 50%; background-color: #F9F9F9; }
 .schedule-table .track-0  { width: 100%; background-color: #F9F9F9; display: block; }
 .schedule-table .track-1  { width: 100%; border-left: 1px solid #EEE; background-color: #EAEAEA; display: block; }
