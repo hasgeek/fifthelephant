@@ -6,12 +6,13 @@
 {% set fixed_width_sticky = true %}
 
 {% block page_nav_items %}
-   <li><a href="#announcements" class="darkgray link-white-hover">Announcements</a></li>
-   <li><a href="#tickets" class="darkgray link-white-hover">Ticket Details</a></li>
-   <li><a href="#last-year" class="darkgray link-white-hover">Past Edition</a></li>
-   <li><a href="#sponsors" class="darkgray link-white-hover">Sponsors</a></li>
-   <li><a href="#hasgeek" class="darkgray link-white-hover">Behind The Scenes</a></li>
-   <li><a href="/2015/code-of-conduct" class="darkgray link-white-hover">Code of Conduct</a></li>
+  <li><a href="#announcements" class="darkgray link-white-hover">Announcements</a></li>
+  <!--  <li><a href="#last-year" class="darkgray link-white-hover">Past Edition</a></li> -->
+  <li><a href="#schedules" class="darkgray link-white-hover">Schedules</a></li>
+  <li><a href="#tickets" class="darkgray link-white-hover">Ticket Details</a></li>
+  <li><a href="#sponsors" class="darkgray link-white-hover">Sponsors</a></li>
+  <li><a href="#hasgeek" class="darkgray link-white-hover">Behind The Scenes</a></li>
+  <li><a href="/2015/code-of-conduct" class="darkgray link-white-hover">Code of Conduct</a></li>
 {% endblock %}
 
 {% block banner %}
@@ -110,6 +111,23 @@
   </div>
 </section>
 -->
+
+{% include theme("data/schedule_table.html") %}
+<section id="schedules" class="schedule legible">
+  <div class="fill-light push-four space-two-top" id="conference-schedule">
+    <h2 class="centered calm nospace">Conference Schedule</h2>
+    <div class="schedule-table-container center-block pad-one regular" id="conferenceschedule">
+      <p class="centered loadingtxt">Loading...</p>
+    </div>
+  </div>
+  <div class="push-four space-two-bottom" id="workshop-schedule">
+    <h2 class="centered calm nospace">Workshop Schedule</h2>
+    <div class="schedule-table-container center-block pad-one regular" id="workshopschedule">
+      <p class="centered loadingtxt">Loading...</p>
+    </div>
+  </div>
+</section>
+
 <section id="tickets" class="fill-light push-1q space-two-top clearfix pad-one">
   <h1 class="calm centered space-two large">
     Tickets
@@ -250,7 +268,7 @@
 </section>
 -->
 
-<section id="last-year" class="last-year legible nospace clearfix">
+<!-- <section id="last-year" class="last-year legible nospace clearfix">
     <div class="resetcoords full fill-dark">
       <div class="band last-year white freeflow full">
         <h1 class="centered calm measure-10words space-half-bottom space-one-top">2014 Edition</h1>
@@ -344,7 +362,7 @@
         <a class="button" href="http://hasgeek.tv/fifthelephant/">More on HasGeek TV</a>
       </p>
     </div>
-</section>
+</section> -->
 
 <section id="sponsors" class="fill-dark legible clearfix">
   <div class="sponsors clearfix center-block">
