@@ -50,8 +50,8 @@ function initSponsor () {
 
 // In-page Navigation
 function initInPageNav () { 
-    $('body').on('click', '.smooth-scroll', function(e) {
-        var   target = $(e.target).closest('.smooth-scroll')[0]
+    $('body').on('click', '.page-nav a, .smooth-scroll', function(e) {
+        var   target = $(e.target).closest(this)[0]
             , $section = $(target.hash)
             ;
         if(!$section.length) return;
