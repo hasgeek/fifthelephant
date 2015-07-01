@@ -38,9 +38,10 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .thumbnail-columns { padding: 0 1rem; }
 .thumbnail-columns > li {
     float: left;
-    width: 50%;
+    width: 100%;
     padding: 0 2%;
     margin: 1rem 0;
+    text-align: center;
 }
 .thumbnail-columns > li:nth-of-type(odd) { clear: both; }
 .thumbnail-columns-three-wide > li { width: 100%; padding: 0; }
@@ -66,6 +67,10 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 .thumbnail-columns a:hover .video:after {
     background-color: rgba(0,0,0,0.9);
     background-image: url(../img/play_hover.svg);
+}
+.thumbnail-columns .title-width {
+    max-width: 350px;
+    margin: auto;
 }
 .thumbnail-columns-three h3,
 .thumbnail-columns-four h3,
@@ -129,6 +134,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     .thumbnail-columns-five-narrow  > li { padding: 0 2%; }
 }
 @media only screen and (min-width: 40em) {
+    .thumbnail-columns > li { width: 50%;}
     .thumbnail-columns-three-wide > li { float: left; width: 50%; }
     .thumbnail-columns-three-wide > li:nth-of-type(odd)  { clear: both; padding: 0 2% 0 0; }
     .thumbnail-columns-three-wide > li:nth-of-type(even) { padding: 0 0 0 2%; }
