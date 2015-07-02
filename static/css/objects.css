@@ -557,9 +557,9 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .ticket p.limited .wrap { display: block; }
 }
 @media only screen and (min-width: 50em) {
-    .ticket-columns > li { width: 33%; border-width: 0 1px 1px 1px; }
+    .ticket-columns > li { width: 50%; border-width: 0 1px 1px 1px; }
     .ticket-columns > li + li { border-width: 0 1px 1px 0; }
-    .ticket-columns > li:nth-child(2) { width: 34%; }
+    .ticket-columns > li:nth-child(2) { width: 50%; }
     .ticket-columns > li:nth-child(2) hgroup { border-width: 0 1px; margin: 0 -1px; }
     .ticket-columns > li:nth-child(3) { float: left; width: 33%; }
     
@@ -580,7 +580,10 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     }
     .ticket p { min-height: 6em; }
 }
-@media only screen and (min-width: 63em) { .ticket ul { min-height: 8.5em !important; } }
+@media only screen and (min-width: 63em) { 
+    .ticket ul { min-height: 8.5em !important; } 
+    .ticket-columns { width: 70%; }
+}
 @media only screen and (min-width: 68em) { 
   .ticket p.limited .wrap { display: inline; }
   .ticket p { min-height: 0; }
