@@ -1110,6 +1110,8 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .schedule-table tbody td.centered { display: block; background-color: #F9F9F9; }
 .schedule-table tbody tr:hover td { background-color: white !important; border-left-color: #EEE; }
 .schedule-table tbody tr:hover th { background-color: #E5E5E5; color: #444; }
+.js .funnel-schedule-link { display: none; }
+.no-js .schedule-container { display: none; }
 
 @media only screen and (min-width: 45em) {
     .schedule-table           { border-color: #EAEAEA; }

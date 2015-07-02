@@ -114,16 +114,24 @@
 
 {% include theme("data/schedule_table.html") %}
 <section id="schedules" class="schedule legible">
-  <div class="fill-light push-four space-two-top" id="conference-schedule">
-    <h2 class="centered calm nospace">Conference Schedule</h2>
-    <div class="schedule-table-container center-block pad-one regular" id="conferenceschedule">
-      <p class="centered loadingtxt">Loading...</p>
-    </div>
+  <div class="push-four space-two-top funnel-schedule-link">
+    <h2 class="centered calm nospace">Conference and Workshop Schedules</h2>
+    <p class="centered space-two-top">
+      <a class="button" href="http://fifthelephant.talkfunnel.com/2015/schedule" target="_blank">View Schedule</a>
+    </p>
   </div>
-  <div class="push-four space-two-bottom" id="workshop-schedule">
-    <h2 class="centered calm nospace">Workshop Schedule</h2>
-    <div class="schedule-table-container center-block pad-one regular" id="workshopschedule">
-      <p class="centered loadingtxt">Loading...</p>
+  <div class="schedule-container">
+    <div class="fill-light push-four space-two-top" id="conference-schedule">
+      <h2 class="centered calm nospace">Conference Schedule</h2>
+      <div class="schedule-table-container center-block pad-one regular" id="conferenceschedule">
+        <p class="centered loadingtxt">Loading...</p>
+      </div>
+    </div>
+    <div class="push-four space-two-bottom" id="workshop-schedule">
+      <h2 class="centered calm nospace">Workshop Schedule</h2>
+      <div class="schedule-table-container center-block pad-one regular" id="workshopschedule">
+        <p class="centered loadingtxt">Loading...</p>
+      </div>
     </div>
   </div>
 </section>
