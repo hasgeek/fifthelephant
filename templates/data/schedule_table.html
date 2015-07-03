@@ -20,7 +20,14 @@
         {{/is_break}}
         {{^is_break}}
         <td class="track-{{track}}" rowspan={{rowspan}}>
-          <h4><a href="{{url}}" target="_blank">{{title}}</a></h4>
+          <h4>
+          {{#proposal_url}}
+          <a href="{{proposal_url}}" target="_blank">{{title}}</a>
+          {{/proposal_url}}
+          {{^proposal_url}}
+          {{title}}
+          {{/proposal_url}}
+          </h4>
           {{#speaker}}
           <p>{{speaker}}</p>
           {{/speaker}}
