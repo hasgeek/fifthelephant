@@ -313,8 +313,8 @@ function parseJson(data) {
                     schedule.slots[slotindex].slot = slot.slot + ' - ' + slots[slotindex+1].slot;
                 }
                 else {
-                    //Incase of last sessions array, use end time of its last session.
-                    schedule.slots[slotindex].slot = slot.slot + ' - ' + slot.sessions[slot.sessions.length-1].end;
+                    //Incase of last sessions array
+                    schedule.slots[slotindex].slot = slot.slot + ' - ' + slot.sessions[0].end;
                 }
             }
             //Only one item in sessions, then use its end time.
@@ -336,7 +336,13 @@ function parseJson(data) {
                         rows = true;
                         rowspan += 1;
                         index += 1;
-                        slotEndTime = getEndTime(slots[index].slot);
+                        if(slots[index]) {
+                          slotEndTime = getEndTime(slots[index].slot);
+                        }
+                        else {
+                          rows = false;
+                          break;
+                        }
                     }
                     if(rows) {
                         schedule.slots[slotindex].sessions[sessionindex].rowspan = rowspan;
