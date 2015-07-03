@@ -248,6 +248,14 @@ var getTrack = function(audiName, rooms) {
     }
 }
 
+var renderResponsiveTable = function() {
+    $('td.tab-active').attr('colspan', 2);
+}
+
+var disableResponsiveTable = function() {
+    $('td').not('.centered').attr('colspan', "");
+}
+
 var renderScheduleTable = function(schedules, eventType) {
     schedules.forEach(function(schedule) {
         var tableTemplate = $('#scheduletemplate').html();
@@ -259,6 +267,9 @@ var renderScheduleTable = function(schedules, eventType) {
             $('#workshopschedule').append(Mustache.render(tableTemplate, schedule));
         }
     });
+    if($(window).width() < 768){
+        renderResponsiveTable();
+    }
 }
 
 function parseJson(data) {
@@ -400,6 +411,26 @@ $(function() {
             }
         });//eof ajax call
     }
+
+    $(window).resize(function() {
+        if($(window).width() < 768) {
+            renderResponsiveTable();
+        }
+        else{
+            disableResponsiveTable();
+        }
+    });
+
+    $('#conferenceschedule, #workshopschedule').on('click', 'table th.track0, table th.track1', function() {
+        if($(window).width() < 768){
+            var parentTable = $(this).parents('table');
+            var activeColumn = $(this).attr('data-td');
+            parentTable.find('.tab-active').removeClass('tab-active');
+            $(this).addClass('tab-active');
+            parentTable.find('.' + activeColumn).addClass('tab-active');
+            renderResponsiveTable();
+        }
+    });
 });
 
 PHOTOS_LOCAL = [];

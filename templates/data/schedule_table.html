@@ -6,7 +6,12 @@
       <tr>
         <th class="time semi-bold">Time</th>
         {{#rooms}}
-        <th class="track-{{track}} semi-bold">{{title}}</th>
+        {{#track}}
+          <th class="track{{track}} semi-bold" data-td="track-{{track}}">{{title}}</th>
+        {{/track}}
+        {{^track}}
+          <th class="track{{track}} semi-bold tab-active" data-td="track-{{track}}">{{title}}</th>
+        {{/track}}
         {{/rooms}}
       </tr>
     </thead>
@@ -19,7 +24,12 @@
         <td colspan="2" class="centered">{{title}}</td>        
         {{/is_break}}
         {{^is_break}}
-        <td class="track-{{track}}" rowspan={{rowspan}}>
+        {{#track}}
+          <td class="track-{{track}}" rowspan={{rowspan}}>
+        {{/track}}
+        {{^track}}
+          <td class="track-{{track}} tab-active" rowspan={{rowspan}}>
+        {{/track}}
           <h4>
           {{#proposal_url}}
           <a href="{{proposal_url}}" target="_blank">{{title}}</a>
