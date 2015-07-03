@@ -215,9 +215,16 @@ var getIST = function(utcTime) {
     return ist;
 }
 
-//Input slot time "08:30 - 09:15", returns "09:15"
-var getEndTime = function(time) {
-    return time.substring(time.indexOf('-')+2);
+//Input slot time "08:30 - 09:15"
+//option:start returns "08:30"
+//option:end returns "09:15"
+var getTime = function(time, pos) {
+    if(pos == "start") {
+        return time.substr(0, 5);
+    }
+    else {
+        return time.substr(time.indexOf('-')+2);
+    }
 }
 
 var getTotalMins = function(time) {
@@ -323,9 +330,23 @@ function parseJson(data) {
             }
         });
 
+        //For slots which have sessions, only in track 1 (Audi 2)
+        for(var counter = 0; counter < schedule.slots.length; counter++) {
+            if(schedule.slots[counter].sessions.length === 1) {
+               if(schedule.slots[counter].sessions[0].track && (schedule.slots[counter].sessions[0].track === 1)) {
+                    //Then add this session to next slot.
+                    if(schedule.slots[counter+1] && (schedule.slots[counter+1].sessions.length === 1) && (getTotalMins(getTime(schedule.slots[counter+1].slot, "end")) > getTotalMins(getTime(schedule.slots[counter].slot, "start")))) {
+                        schedule.slots[counter].sessions[0].rowspan = 1;
+                        schedule.slots[counter+1].sessions[1] = schedule.slots[counter].sessions[0];
+                        schedule.slots.splice(counter, 1);
+                    }
+                }
+            }
+        }
+
         //Check if each session ends within slot if not add rowspan
         schedule.slots.forEach(function(slot, slotindex, slots) {
-            var slotEndTime = getEndTime(slot.slot);
+            var slotEndTime = getTime(slot.slot, "end");
             //Check only if there are more than 1 sessions in the array
             if(slot.sessions.length > 1) {
                 slot.sessions.forEach(function(session, sessionindex) {
@@ -337,10 +358,9 @@ function parseJson(data) {
                         rowspan += 1;
                         index += 1;
                         if(slots[index]) {
-                          slotEndTime = getEndTime(slots[index].slot);
+                          slotEndTime = getTime(slots[index].slot, "end");
                         }
                         else {
-                          rows = false;
                           break;
                         }
                     }
