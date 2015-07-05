@@ -196,23 +196,20 @@ var getTimeString = function(dateString) {
     return dateString.substr(dateString.indexOf('T')+1,5);
 }
 
+var getdateObject = function(hr, min) {
+  var time = new Date();
+  time.setHours(hr);
+  time.setMinutes(min);
+  return time;
+}
+
 //Input UTC, returns IST
 var getIST = function(utcTime) {
-    var hr = parseInt(utcTime.substring(0, 2), 10);
-    var min = parseInt(utcTime.substring(3), 10);
-    var totalMins = min + 30;
-    var ist;
-    if (totalMins >= 60) {
-        totalMins = totalMins - 60;
-        hr = hr + 1;
-    }
-    hr = hr + 5;
-    totalMins = totalMins.toString();
-    if (totalMins === '0') {
-        totalMins = '00';
-    }
-    ist = hr.toString() + ":" + totalMins;
-    return ist;
+  var hr = parseInt(utcTime.substring(0, 2), 10) + 5;
+  var min = parseInt(utcTime.substring(3), 10) + 30;
+  var time = getdateObject(hr, min);
+  ist = time.getHours() + ':' + ((time.getMinutes() < 10 ? '0':'') + time.getMinutes());
+  return ist;
 }
 
 //Input slot time "08:30 - 09:15"
@@ -297,6 +294,9 @@ function parseJson(data) {
                 schedule.type = 'conference';
             }
         }); //eof schedule.slots loop
+
+        //Sort rooms
+        rooms.sort();
 
         rooms.forEach(function(room, index, rooms) {
             //Add title and track to each room. Eg: room: "nimhans-convention-center/audi-1", title: "Audi 1", track: 0
