@@ -208,7 +208,7 @@ var getIST = function(utcTime) {
   var hr = parseInt(utcTime.substring(0, 2), 10) + 5;
   var min = parseInt(utcTime.substring(3), 10) + 30;
   var time = getdateObject(hr, min);
-  ist = time.getHours() + ':' + ((time.getMinutes() < 10 ? '0':'') + time.getMinutes());
+  ist = ((time.getHours() < 10 ? '0':'') + time.getHours()) + ':' + ((time.getMinutes() < 10 ? '0':'') + time.getMinutes());
   return ist;
 }
 

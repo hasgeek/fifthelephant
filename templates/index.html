@@ -7,7 +7,7 @@
 
 {% block page_nav_items %}
   <li><a href="#announcements" class="darkgray link-white-hover smooth-scroll">Announcements</a></li>
-  <!--  <li><a href="#last-year" class="darkgray link-white-hover">Past Edition</a></li> -->
+  <li><a href="#sessions" class="darkgray link-white-hover">Featured Speakers</a></li>
   <li><a href="#schedules" class="darkgray link-white-hover smooth-scroll">Schedules</a></li>
   <li><a href="#tickets" class="darkgray link-white-hover smooth-scroll">Ticket Details</a></li>
   <li><a href="#sponsors" class="darkgray link-white-hover smooth-scroll">Sponsors</a></li>
@@ -86,31 +86,14 @@
      <a class="button" href="http://fifthelephant.talkfunnel.com/2015/">View Funnel Submissions</a>
   </p>
 </section>
-<!--
-<section class="push-two-top centered">
-  <div class="row-fluid">
-    <h1 class="calm centered space-one large">Run-up event series</h1>
-    <p>We are organizing run-up events in different cities across India.</p>
-    {% from theme("data/timeline.html") import timeline %}  
-    <ul id='htimeline'>
-    {% for event in timeline %}
-      <li class='work'>
-        <input class='radio {% if event.type == "past" %}theme-red{% else %}theme-green{% endif %}' id='work4' name='works' type='radio'>
-        <div class="relative">
-          <span class='date'>{{ event.date }}</span>
-          <span class='circle'></span>
-        </div>
-        <div class='content'>
-        {% for item in event.events %}
-          <p><a class="link-silent" href="/2014/{{ item.url }}">{{ item.city }}</a></p>
-        {% endfor %}
-        </div>
-      </li>
-    {% endfor %}
-    </ul>
-  </div>
+
+<section id="sessions" class="space-four-top push-one-top fill-light legible clearfix">
+{% with session_kind = 'Talks' %}
+<h2 class="centered calm space-four-top space-one-bottom">Featured speakers</h2>
+{% from theme("data/talks.html") import talks as sessions %}
+{% include theme("partials/_sessions.html") %}
+{% endwith %}
 </section>
--->
 
 {% include theme("data/schedule_table.html") %}
 <section id="schedules" class="schedule legible">
@@ -121,7 +104,7 @@
     </p>
   </div>
   <div class="schedule-container">
-    <div class="fill-light push-four space-two-top" id="conference-schedule">
+    <div class="push-four space-two-top" id="conference-schedule">
       <h2 class="centered calm nospace">Conference Schedule</h2>
       <div class="schedule-table-container center-block pad-one regular" id="conferenceschedule">
         <p class="centered loadingtxt">Loading...</p>

@@ -1,265 +1,32 @@
 {# Posters should be 350x197 image #}
 {%
   set talks = [
-      {
-        'title': 'Keynote: Personalized Medicine and Big Data'
-      , 'summary': ''
-      , 'speaker': {
-          'name': 'Anu Acharya'
-        , 'designation': 'CEO of Mapmygenome India Limited'
-        , 'photo': 'img/speakers/anu_acharya.jpg'
+    {
+      'speaker': {
+        'name': 'Tim Poston' ,
+        'designation': 'Chief Scientist at Forus Health' ,
+        'photo': 'img/speakers/tim_poston.jpg'
       }
-    }
-    , {
-        'title': 'Keynote: Realizing Large-scale Distributed Deep Learning Networks over GraphLab'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1132-realizing-large-scale-distributed-deep-learning-ne'
-      , 'summary': '<p>The main objective is to give an overview of our cutting edge work on realizing distributed deep learning networks over GraphLab.</p>'
-      , 'speaker': {
-          'name': 'Dr. Vijay Srinivas A'
-        , 'designation': 'Director, Big Data Labs'
-        , 'photo': 'img/speakers/vijay_srinivas.jpg'
+    },
+    {
+      'speaker': {
+        'name': 'Amod Malviya' ,
+        'designation': 'CTO at Flipkart' ,
+        'photo': 'img/speakers/amod_malviya.jpg'
       }
-    }
-    , {
-        'title': 'The ART of Data Mining - Practical Learnings from Real-world Data Mining applications'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1166-the-art-of-data-mining-practical-learnings-from-re'
-      , 'summary': '<p>Machine Learning and data mining is part SCIENCE (ML algorithms, optimization), part ENGINEERING (large scale modeling, real-time decisions), part PROCESS (data understanding, feature engineering, modelling, evaluation, and deployment), and part ART. In this talk we will focus more on the "ART of data mining" - the little things that make the big difference in the quality and sophistication of machine learning models we build.</p>'
-      , 'speaker': {
-          'name': 'Shailesh Kumar'
-        , 'designation': 'Member Technical Staff at Google'
-        , 'photo': 'img/speakers/shailesh_kumar.jpg'
+    },
+    {
+      'speaker': {
+        'name': 'Shalin Mangar' ,
+        'designation': 'Engineer at LucidWorks' ,
+        'photo': 'img/speakers/shalin_mangar.jpg'
       }
-    }
-    , {
-        'title': 'Unified analytics platform for Bigdata'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1135-unified-analytics-platform-for-bigdata'
-      , 'summary': '<p>This talk is about a system developed at InMobi to support OLAP data cubes on top of Hive metastore. With this abstraction, users can reference single schema and data stored across diverse storage engine and that users can query data on the logical tables without knowing about schema details like relationships, rollup levels, data location and data types.</p>'
-      , 'speaker': {
-          'name': 'Amareshwari Sriramadasu'
-        , 'designation': 'Architect in platform team at Inmobi'
-        , 'photo': 'img/speakers/amareshwari_sriramadasu.jpg'
-      }
-    }
-    , {
-        'title': '\'Know Your Customer!\' - Advanced Data Science for Audience Segmentation'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1118-know-your-customer--advanced-data-science-for-audi'
-      , 'summary': '<p>Audience Segmentation is a very important practical necessity in pretty much every field. Whether it is internet subscribers or paytv subscribers there is an intense need from the advertisers and service providers to know who is living in a household and what their demography profiles are and what their interests are?</p><p>An ensemble of techniques which include advanced linear and non-linear dimensionality reduction, unsupervised learning algorithms, bayesian predictive analytics and expert systems come together to form a compelling pragmatic data science solution stack for the big data environment.</p>'
-      , 'speaker': {
-          'name': 'Prabhakar Srinivasan'
-        , 'designation': 'data scientist at Cisco'
-        , 'photo': 'img/speakers/prabhakar_srinivasan.jpg'
-      }
-    }
-    , {
-        'title': 'Circuitscape - A Case Study on Scientific Computing'
-      , 'title2':  'The state of Julia - a fast language for technical computing'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1068-circuitscape-a-case-study-on-scientific-computing'
-      , 'funnel2': 'https://funnel.hasgeek.com/fifthel2014/1182-the-state-of-julia-a-fast-language-for-technical-c'
-      , 'summary': '<p>In this talk I would talk about some of the challenges faced in typical scientific computing applications and how to address them, taking Circuitscape as a case study. it would walk the audience briefly through what is possible through modern scientific computing platforms built on Python and Julia.</p>'
-      , 'speaker': {
-          'name': 'Viral B. Shah'
-        , 'designation': 'Co-creator at Circuitscape &amp; Julia language'
-        , 'photo': 'img/speakers/viral.jpg'
-      }
-    }
-    , {
-        'title': 'Apache Tez: Accelerating Hadoop Data Pipelines'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1151-apache-tez-accelerating-hadoop-data-pipelines'
-      , 'summary': '<p>Apache Tez is a DAG execution engine which exists as a super-set of traditional Map Reduce. Tez designed as a replacement computational model for nearly everything that currently uses map-reduce. The talk is meant to be an introduction to Tez, its architecture and its evolution from traditional map-reduce.</p>'
-      , 'speaker': {
-          'name': 'Gopal Vijayaraghavan'
-        , 'designation': 'Hortonworks'
-        , 'photo': 'img/speakers/gopal_vijayaraghavan.jpg'
-      }
-    }
-    , {
-        'title': 'Serving user intent : Facebook style notifications using HBase and Event streams'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1056-serving-user-intent-facebook-style-notifications-u'
-      , 'summary': '<p>This talk is about building a low-latency, near real-time Notifications platform for serving user intent using Event based architecture, Complex Event Processing and a data store like HBase. Will also cover how millisecond response times are achieved when accessing data from 100 million rows by interpreting change from immutable events and organizing data as LSM trees.</p>'
-      , 'speaker': {
-          'name': 'Regunath Balasubramanian'
-        , 'designation': 'Architect and Open source committer'
-        , 'photo': 'img/speakers/regunath_balasubramanian.jpg'
-      }
-    }
-    , {
-        'title': 'Scaling real time visualisations for Elections 2014'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1146-scaling-real-time-visualisations-for-elections-201s'
-      , 'summary': '<p>How does one go about creating interactive real-time visualisations with rapidly changing data? This talk is about our experiences in designing the CNN-IBN and Bing election results page.</p>'
-      , 'speaker': {
-          'name': 'Anand S'
-        , 'designation': 'Chief data scientist at Gramener'
-        , 'photo': 'img/speakers/s_anand.jpg'
-      }
-    }
-    , {
-        'title': 'Using Cascalog and Clojure to make the elephant move!'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1175-using-cascalog-and-clojure-to-make-the-elephant-mo'
-      , 'summary': '<p>Intent is to highlight benefits gained by using Clojure, a functional language which works on JVM and Cascalog data processing library for Hadoop.</p>'
-      , 'speaker': {
-          'name': 'Harshad Saykhedkar'
-        , 'designation': 'Senior data scientist at Sokrati'
-        , 'photo': 'img/speakers/harshad_saykhedkar.jpg'
-      }
-    }
-    , {
-        'title': 'Learnings from doing analytics on linked-data'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1134-learnings-from-doing-analytics-on-linked-data'
-      , 'summary': '<p>This talk outlines our journey which started from researching existing graphdb\'s/processing frameworks, why they didn\'t work for us at our scale and then moving on to build something. We will go in depth to explain the data-structures used and how we supported the tinker-pop graph API specification( used by all graph databases). We will also touch upon how our ad-system unique data model allowed us to come up with a fairly simplistic technique to shard the entire thing and query over it.</p>'
-      , 'speaker': {
-          'name': 'Inder Singh'
-        , 'designation': 'Senior Architect of Tech Platforms at InMobi'
-        , 'photo': 'img/speakers/inder_singh.jpg'
-      }
-    }
-    , {
-        'title': 'Using Data for Art'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1198-using-data-for-art'
-      , 'summary': '<p>A talk on Data Art for a tech-focused audience must introduce the essence of art (vs design) and the purpose of creating art. I\'ll introduce the field with a few teasers (conventional art vs data art) and then introduce the modes in which data can be mapped in the final art form (mostly visual attributes, and a bit of other forms of media too). This will be followed by an introduction to Generative Systems in art, where an art form evolves from data (and isn\'t completely controlled by an artist) and a categorization of these systems (with hand picked examples) that I had explored recently.</p>'
-      , 'speaker': {
-          'name': 'Rasagy Sharma'
-        , 'designation': 'visualize data at Microsoft IDC'
-        , 'photo': 'img/speakers/rasagy_sharma.jpg'
-      }
-    }
-    , {
-        'title': 'Scaling SolrCloud to a large number of collections'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1196-scaling-solrcloud-to-a-large-number-of-collections'
-      , 'summary': '<p>Apache Tez is a DAG execution engine which exists as a super-set of traditional Map Reduce. Tez designed as a replacement computational model for nearly everything that currently uses map-reduce. The talk is meant to be an introduction to Tez, its architecture and its evolution from traditional map-reduce.</p>'
-      , 'speaker': {
-          'name': 'Shalin Mangar'
-        , 'designation': 'Engineer at LucidWorks, Member of the Lucene/Solr project management committee'
-        , 'photo': 'img/speakers/shalin_mangar.jpg'
-      }
-    }
-    , {
-        'title': 'Crafting Visual Stories with Data'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1098-crafting-visual-stories-with-data'
-      , 'summary': '<p>Data visualisation has enabled us to compress data and express them visually in many interesting new ways. It is often cited that we are trying to tell stories through them. But, the science of data-visual-stories is still very nascent and developing. On the other hand, the art of storytelling through spoken and written words, pictures, comics and movies is very well developed and understood. Lets explore \'why\' stories work and how can we combine the science and art together to craft visual stories with data.</p>'
-      , 'speaker': {
-          'name': 'Amit Kapoor'
-        , 'designation': 'Data storyteller at narrativeVIZ Consulting'
-        , 'photo': 'img/speakers/amit_kapoor.jpg'
-      }
-    }
-    , {
-        'title': 'Lessons from Elasticsearch in production'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1098-crafting-visual-stories-with-data'
-      , 'summary': '<p>This talk is for people who are planning to use Elasticsearch in their next project. Elasticsearch is one of the core pieces of infrastructure at Helpshift, a mobile-first CRM product. We have had mistakes and lessons learned in production, and we would like to share that so that others have a smoother experience with Elasticsearch. </p>'
-      , 'speaker': {
-          'name': 'Swaroop C H'
-        , 'designation': 'Backend engineer at Helpshift'
-        , 'photo': 'img/speakers/swaroopch.jpg'
-      }
-    }
-    , {
-        'title': 'How to build a Data Stack from scratch'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1148-how-to-build-a-data-stack-from-scratch'
-      , 'summary': '<p>In the talk I will talk about my experience of how to build a data stack from stratch. I have built a big data analytics stack at Akamai and Inmobi before and am currently building one now at Helpshift. These are three different domains - Content Delivery Networks (Akamai), Mobile Advertising (Inmobi) and now Customer Service (Helpshift).</p>'
-      , 'speaker': {
-          'name': 'Vinayak Hegde'
-        , 'designation': 'VP Engineering at Helpshift'
-        , 'photo': 'img/speakers/vinayak_hegde.jpg'
-      }
-    }
-    , {
-        'title': 'Data sciences (is) in fashion @ Myntra'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1180-data-sciences-is-in-fashion-myntra'
-      , 'summary': '<p>Fashion is a hard category to sell online given most of the purchases happen on impulse. It fundamentally differs from selling categories like mobiles which are more driven through reviews and ratings. Data sciences help bring a differentiating angle to selling fashion and can be applied in a variety of fashion e-tailing problems ranging from product rankings (the extreme form of which is personalised store for every user), store organisation and navigation, better customer engagement, better offer creation, better merchandising decisions, etc. We @ Myntra are working towards these specific problems and would love to talk about the approaches that have worked for us.</p>'
-      , 'speaker': {
-          'name': 'Divya Alok'
-        , 'designation': 'Data scientist at Myntra'
-        , 'photo': 'img/speakers/divya_alok.jpg'
-      }
-    }
-    , {
-        'title': 'Live analytical dashboards at scale - SQL style'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1152-live-analytical-dashboards-at-scale-sql-style'
-      , 'summary': '<p>How to build a real-time, analytical dashboads that can enable business take decisions at scale? There are various technologies out there that fill one or the other use case - right from horizontally scalable queues such as kafka, stream processing systems such as storm, data stores such as openTSDB and druid that can provide dimensional lookup on large amount of data and visualisation libraries such as d3, cubism to view them. But there is a lot more that is never discussed if not for the details. In a service-oriented architecture, where dimensions and measures are coming from different sources, where some dimension is larger than the number of seconds in a year (for those who are wondering it is ~32 M), ensuring liveness and correctness at every minute is what Fireball is all about.</p>'
-      , 'speaker': {
-          'name': 'Shashwat Agarwal'
-        , 'designation': 'Technical Architect at Flipkart'
-        , 'photo': 'img/speakers/shashwat.jpg'
-      }
-    }
-    , {
-        'title': 'De-dup on Hadoop'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1189-de-dup-on-hadoop'
-      , 'summary': '<p>In this talk, I wish to share experiences we had at Intuit in building Master Data Management solution on Hadoop platform. At the core MDM solution consists of fuzzy matching, entity resolution and de-duplication. Solving these patterns on Big Data Platform like Hadoop is the focus of this discussion.</p>'
-      , 'speaker': {
-          'name': 'Neeta Pande'
-        , 'designation': 'Data Architect at Intuit'
-        , 'photo': 'img/speakers/neeta_pande.jpg'
-      }
-    }
-    , {
-        'title': 'Dr. Hadoop – Diagnose your Hadoop Jobs'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1190-dr-hadoop-diagnose-your-hadoop-jobs'
-      , 'summary': '<p>This talk is about a tool that we have developed within intuit – Dr. hadoop, which analyzes your job, identifies the areas of improvements and gives recommendations to improve its performance. It collects all the history logs, counters and configuration of your job, applies a set of rules and provides recommendations with suggested values and severity.</p>'
-      , 'speaker': {
-          'name': 'Chandraprakash Bhagtani'
-        , 'designation': 'Hadoop performance engineer at Intuit'
-        , 'photo': 'img/speakers/chandraprakash_bhagtani.jpg'
-      }
-    }
-    , {
-        'title': 'Analytics on Large Scale, Unstructured, Dynamic Data using Lambda Architecture'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1177-analytics-on-large-scale-unstructured-dynamic-data'
-      , 'summary': '<p>In this talk, I will focus on our experience in using Lambda Architecture at Indix, to build a large scale analytics system on unstructured, dynamically changing data sources using Hadoop, HBase, Scalding, Spark and Solr.</p>'
-      , 'speaker': {
-          'name': 'Rajesh Muppalla'
-        , 'designation': 'Co-founder and Director of Engineering at Indix'
-        , 'photo': 'img/speakers/rajesh_muppalla.jpg'
-      }
-    }
-    , {
-        'title': 'Why we developed the most adopted Polyglot Object Mapper for NoSQL?'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1122-why-we-built-the-most-adopted-polyglot-object-mapp'
-      , 'summary': '<p>The talk would narrate the story of building the most adopted Polyglot Object Mapper for NoSQL, Kundera (https://github.com/impetus-opensource/Kundera). Kundera is a High Level Client / Object Mapper with a JPA interface for working with RDBMS and NoSQL Datastores. It can be considered as a Hibernate equivalent for NoSQL Datastore.</p>'
-      , 'speaker': {
-          'name': 'Vivek Shrivastava'
-        , 'designation': 'Technical Architect &amp; NoSQL Evangelist, Impetus Technologies '
-        , 'photo': 'img/speakers/vivek_shrivastava.jpg'
-      }
-    }
-    , {
-        'title': 'Scaling Spatial Data - OpenStreetMap as Infrastructure'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1165-scaling-spatial-data-openstreetmap-as-infrastructu'
-      , 'summary': '<p>For the success of any location service, the length and breadth of geographic relationships have to be recorded with enough room for frequent verification and classification. This talk will introduce the infrastructure behind the largest open geographic data repository - OpenStreetMap - and how you can leverage the complete geospatial stack for independent data collection, verification, and building services. We will understand and discuss the unique data model, its performance, scalability, data editing and verification methods, and extensible data service built on top of it. Besides, we will learn what it means for serving beautiful maps from this unmatched dataset and end with my experiences on a recent project that I worked on which uses OpenStreetMap from ground up to monitor natural resources extraction in the Democratic Republic of Congo.</p>'
-      , 'speaker': {
-          'name': 'Sajjad Anwar'
-        , 'designation': 'Hacktivist and Programmer'
-        , 'photo': 'img/speakers/sajjad_anwar.jpg'
-      }
-    }
-    , {
-        'title': 'How we do research on high frequency finance'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1191-how-we-do-research-on-high-frequency-finance'
-      , 'summary': '<p>How to build systems using open source software in a resource/budget constrained environment.</p>'
-      , 'speaker': {
-          'name': 'Chirag Anand'
-        , 'designation': 'Research Programmer at Indira Gandhi Institute of Development Research'
-        , 'photo': 'img/speakers/chirag.jpg'
-      }
-    }
-    , {
-        'title': 'Real Time User-Scoring for Bidding in Display Retargeting'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1209-real-time-user-scoring-for-bidding-in-display-reta'
-      , 'summary': '<p>Retargeting online customers to a retail website via Display Ads has become an incredible avenue to drive traffic back to the website. Especially with the advent of Real Time Bidding (RTB), advertisers now have access to an efficient and transparent mechanism to buy from this huge volume of available ad inventory. It allows an advertiser to optimize their ad spend down to the exact user they are targeting in real time, show visual ads personalized based on the user’s tastes, and strive for a desired Cost per Click / Impression / Conversion goal. In this session, we would like to discuss the various approaches we have tried to model each Walmart user that visits walmart.com, and target the user via Display Ads.</p>'
-      , 'speaker': {
-          'name': 'Ambuj Singh'
-        , 'designation': 'Senior Software Engineer at WalmartLabs'
-        , 'photo': 'img/speakers/ambuj.jpg'
-      }
-    }
-    , {
-        'title': 'Experimentation to Productization : developing a Dynamic Bidding system for a location aware Mobile landscape'
-      , 'funnel': 'https://funnel.hasgeek.com/fifthel2014/1136-experimentation-to-productization-developing-a-dyn'
-      , 'summary': '<p>I will start with the obvious, ie. how do advertisers reach you on mobile, fetching your comprehensive digital footprint, all in 6 milliseconds, or less. Then look through sample digital footprint(weblogs), laying the ground to understand the data, and algorithms to derive statistical relationships. </p>'
-      , 'speaker': {
-          'name': 'Ekta Grover'
-        , 'designation': 'Data Scientist with AdNear'
-        , 'photo': 'img/speakers/ekta.jpg'
+    },
+    {
+      'speaker': {
+        'name': 'Viral B. Shah' ,
+        'designation': 'Founding partner at Julia Computing' ,
+        'photo': 'img/speakers/viral_shah.jpg'
       }
     }
   ]
