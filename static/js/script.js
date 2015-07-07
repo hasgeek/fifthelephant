@@ -332,7 +332,7 @@ function parseJson(data) {
                 }
                 else {
                     //Incase of last sessions array
-                    schedule.slots[slotindex].slot = slot.slot + ' - ' + slot.sessions[0].end;
+                    schedule.slots[slotindex].slot = slot.slot + ' - ' + slot.sessions[slot.sessions.length-1].end;
                 }
             }
             //Only one item in sessions, then use its end time.
@@ -345,12 +345,10 @@ function parseJson(data) {
         for(var counter = 0; counter < schedule.slots.length; counter++) {
             if(schedule.slots[counter].sessions.length === 1) {
                if(schedule.slots[counter].sessions[0].track && (schedule.slots[counter].sessions[0].track === 1)) {
-                    //Then add this session to next slot.
-                    if(schedule.slots[counter+1] && (schedule.slots[counter+1].sessions.length === 1) && (getTotalMins(getTime(schedule.slots[counter+1].slot, "end")) > getTotalMins(getTime(schedule.slots[counter].slot, "start")))) {
-                        schedule.slots[counter].sessions[0].rowspan = 1;
-                        schedule.slots[counter+1].sessions[1] = schedule.slots[counter].sessions[0];
-                        schedule.slots.splice(counter, 1);
-                    }
+                    //Add a empty track session
+                    schedule.slots[counter].sessions[1] = schedule.slots[counter].sessions[0];
+                    schedule.slots[counter].sessions[0] = {track: "empty", start: schedule.slots[counter].sessions[1].start, end: ((schedule.slots[counter+1]) ? getTime(schedule.slots[counter+1].slot, "start") : getTime(schedule.slots[counter].slot, "end"))};
+                    schedule.slots[counter].slot = getTime(schedule.slots[counter].slot, "start")  + ' - ' + schedule.slots[counter].sessions[0].end;
                 }
             }
         }
