@@ -519,7 +519,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 @media only screen and (min-width: 30em) { .committee { max-width: 60em; } }
 
 /* Ticketing Details */
-.ticket-columns { border: 0 solid #A6D099; max-width: 1400px; margin: auto; }
+.ticket-columns { border: 0 solid #A6D099; max-width: 1200px; margin: auto; }
 .ticket-columns > li {
     margin: 1rem;
     border: solid #A6D099;
@@ -548,46 +548,45 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
         -webkit-column-gap: 3em;
            -moz-column-gap: 3em;
                 column-gap: 3em;
-        -webkit-column-count: 2;
-           -moz-column-count: 2;
-                column-count: 2;
+        -webkit-column-count: 1;
+           -moz-column-count: 1;
+                column-count: 1;
         min-height: 5em;
     }
     .ticket-note  { max-width: none; }
     .ticket p.limited .wrap { display: block; }
 }
-@media only screen and (min-width: 50em) {
-    .ticket-columns > li { width: 50%; border-width: 0 1px 1px 1px; }
+@media only screen and (min-width: 1024px) {
+    .ticket-columns { width: 80%; }
+    .ticket-columns > li { width: 33%; border-width: 0 1px 1px 1px; }
     .ticket-columns > li + li { border-width: 0 1px 1px 0; }
-    .ticket-columns > li:nth-child(2) { width: 50%; }
-    .ticket-columns > li:nth-child(2) hgroup { border-width: 0 1px; margin: 0 -1px; }
+    .ticket-columns > li:nth-child(2) { width: 34%; }
+    .ticket-columns > li:nth-child(2) hgroup { border-width: 0 1px; margin: 0 -1px; min-height: 150px}
     .ticket-columns > li:nth-child(3) { float: left; width: 33%; }
     
-    .ticket h2 { margin: 0.83em; }
+    .ticket { min-height: 618px }
+    .ticket h2 { margin: 0.83em; min-height: 66px;}
     .ticket ul {
         margin-left:  1%;
         margin-right: 1%;
-        min-height: 14em;
+        min-height: 12em;
     }
     .ticket-columns > li:nth-child(3) .ticket ul {
-      -webkit-column-gap: 0;
-         -moz-column-gap: 0;
-              column-gap: 0;
-      -webkit-column-count: 1;
-         -moz-column-count: 1;
-              column-count: 1;
-        min-height: 14em;
+        min-height: 12em;
     }
     .ticket p { min-height: 6em; }
 }
-@media only screen and (min-width: 63em) { 
+/*@media only screen and (min-width: 63em) { 
+    .ticket { min-height: 510px }
     .ticket ul { min-height: 8.5em !important; } 
-    .ticket-columns { width: 70%; }
+    .ticket h2 { min-height: 65px;}
 }
 @media only screen and (min-width: 68em) { 
+  .ticket { min-height: 510px }
+  .ticket-columns { width: 80%; }
   .ticket p.limited .wrap { display: inline; }
   .ticket p { min-height: 0; }
-}
+}*/
 
 /* Last Year: 2012 edition */
 .last-year { overflow: hidden; }
