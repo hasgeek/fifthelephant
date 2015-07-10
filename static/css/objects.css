@@ -828,7 +828,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .no-js .sponsors .sponsor-name,
     .no-js .sponsors .sponsor-link,
     .sponsors .about-sponsor .sponsor-name,              
-    .sponsors .about-sponsor .sponsor-link { float: none; }
+    .sponsors .about-sponsor .sponsor-link { float: none; width: auto;}
     .js .sponsors .squeeze .sponsor-logos { float: left; width: 55%; }
     .js .sponsors .squeeze .sponsor-logos dt span,
     .js .sponsors .squeeze .sponsor-logos dd,
