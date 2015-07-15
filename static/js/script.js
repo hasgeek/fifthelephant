@@ -246,7 +246,7 @@ var getTrack = function(audiName, rooms) {
 }
 
 var renderResponsiveTable = function() {
-    $('td.tab-active').attr('colspan', 2);
+    $('td.tab-active').attr('colspan', 3);
 }
 
 var disableResponsiveTable = function() {
@@ -419,7 +419,7 @@ $(function() {
         }
     });
 
-    $('#conferenceschedule, #workshopschedule').on('click', 'table th.track0, table th.track1', function() {
+    $('#conferenceschedule, #workshopschedule').on('click', 'table th.track0, table th.track1, table th.track2', function() {
         if($(window).width() < 768){
             var parentTable = $(this).parents('table');
             var activeColumn = $(this).attr('data-td');

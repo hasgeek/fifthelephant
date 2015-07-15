@@ -1080,15 +1080,17 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .schedule-table-container { width: 100%; max-width: 60em; }
 .schedule-table           { border: 1px solid #EAEAEA; width: 100%; border-collapse: separate; border-spacing: 1px; background-color: #fff}
 
-.schedule-table thead th.time   { width: 33.3%; background-color: #CCC; padding: 1rem .5rem; }
-.schedule-table .track0  { width: 33.3%; background-color: #FFF; color: #CCC;}
-.schedule-table .track1  { width: 33.3%; background-color: #FFF; color: #CCC;}
+.schedule-table thead th.time   { width: 25%; background-color: #CCC; padding: 1rem .5rem; }
+.schedule-table .track0  { width: 25%; background-color: #FFF; color: #CCC;}
+.schedule-table .track1  { width: 25%; background-color: #FFF; color: #CCC;}
+.schedule-table .track2  { width: 25%; background-color: #FFF; color: #CCC;}
 .schedule-table .tab-active { color: #222; background-color: #EEE}
 
 .schedule-table tbody td { padding: 2.5rem .5rem .5rem; vertical-align: top; text-align: center;}
 .schedule-table th.time     { background-color: #CCC; width: 33.3%; }
 .schedule-table td.track-0  { width: 33.3%; background-color: #EEE;  }
 .schedule-table td.track-1  { width: 33.3%; background-color: #EEE;}
+.schedule-table td.track-2  { width: 33.3%; background-color: #EEE;}
 .schedule-table tbody td h4 { margin: 0; font-weight: normal; }
 .schedule-table tbody td p { text-transform: uppercase; font-size: .8rem; }
 .schedule-table tbody td.centered { background-color: #EEE; }
@@ -1101,12 +1103,14 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .no-js .schedule-container { display: none; }
 
 @media only screen and (min-width: 768px) {
-    .schedule-table thead th.time   { width: 20%; background-color: #CCC; padding: 1rem .5rem; }
-    .schedule-table thead th.track0  { width: 40%; background-color: #EEE; color: #222;}
-    .schedule-table thead th.track1  { width: 40%; background-color: #DDD; color: #222;}
-    .schedule-table th.time     { width: 20%; background-color: #CCC; }
-    .schedule-table td.track-0  { width: 40%; background-color: #EEE; }
-    .schedule-table td.track-1  { width: 40%; background-color: #DDD; display: table-cell; }
+    .schedule-table thead th.time   { width: 12%; background-color: #CCC; padding: 1rem .5rem; }
+    .schedule-table thead th.track0  { width: 34%; background-color: #EEE; color: #222;}
+    .schedule-table thead th.track1  { width: 34%; background-color: #DDD; color: #222;}
+    .schedule-table thead th.track2  { width: 20%; background-color: #F9F9F9; color: #222;}
+    .schedule-table th.time     { width: 12%; background-color: #CCC; }
+    .schedule-table td.track-0  { width: 34%; background-color: #EEE; }
+    .schedule-table td.track-1  { width: 34%; background-color: #DDD; display: table-cell; }
+    .schedule-table td.track-2 { width: 20%; background-color: #F9F9F9; display: table-cell; }
 
     .schedule-table.tracks3 .time     { background-color: #EAEAEA; width: 12%; }
     .schedule-table.tracks3 .track-1  { background-color: #F9F9F9; width: 30%; }
