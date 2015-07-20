@@ -7,9 +7,10 @@
 
 {% block page_nav_items %}
 <!--   <li><a href="#announcements" class="darkgray link-white-hover smooth-scroll">Announcements</a></li> -->
-  <li><a href="#sessions" class="darkgray link-white-hover">Featured Speakers</a></li>
-  <li><a href="#schedules" class="darkgray link-white-hover smooth-scroll">Schedules</a></li>
+  <!-- <li><a href="#sessions" class="darkgray link-white-hover">Featured Speakers</a></li> -->
+  <!-- <li><a href="#schedules" class="darkgray link-white-hover smooth-scroll">Schedules</a></li> -->
 <!--   <li><a href="#tickets" class="darkgray link-white-hover smooth-scroll">Ticket Details</a></li> -->
+  <li><a href="#highlights" class="darkgray link-white-hover smooth-scroll">Highlights</a></li>
   <li><a href="#sponsors" class="darkgray link-white-hover smooth-scroll">Sponsors</a></li>
   <li><a href="#hasgeek" class="darkgray link-white-hover smooth-scroll">Behind The Scenes</a></li>
   <li><a href="/2015/code-of-conduct" class="darkgray link-white-hover smooth-scroll">Code of Conduct</a></li>
@@ -57,8 +58,8 @@
 {% endblock %}
 
 {% block content %}
-{% from theme("data/highlights.html") import highlights %}
-<!-- <section id="announcements" class="announcements pad-one legible center-block space-four clearfix">
+<!-- {% from theme("data/highlights.html") import highlights %}
+<section id="announcements" class="announcements pad-one legible center-block space-four clearfix">
    <h1 class="calm centered space-two large">
     Highlights
  </h1>
@@ -76,31 +77,88 @@
 </section> -->
 <section class="measure-10words pad-one center-block legible space-four-top space-three-bottom prose clearfix">
   <h2 class="visuallyhidden">Introduction</h2>
-  <div class="centered center-block legible title-type space-three-bottom">3 days - 50+ - speakers - 1000+ smartest programmers, <br class="hide-mobile">data scientists and CTOs. <br class="hide-mobile">Descend in Namma Bengaluru's most happening <br class="hide-mobile">Community powered conference &amp; workshops <br class="hide-mobile">on large-scale data processing.</div>
+<!--   <div class="centered center-block legible title-type space-three-bottom">3 days - 50+ - speakers - 1000+ smartest programmers, <br class="hide-mobile">data scientists and CTOs. <br class="hide-mobile">Descend in Namma Bengaluru's most happening <br class="hide-mobile">Community powered conference &amp; workshops <br class="hide-mobile">on large-scale data processing.</div>
   <p>The Fifth Elephant is the premier Indian developer conference on data. It is a place for hackers, and academics at the cutting edge of data science to meet and talk about what they are working on. The goal is to teach, learn and find inspiration among our peers in the art and science of data.</p>  
   <p>This edition of The Fifth Elephant will revolve around the two tracks: Discovering Insights and Speed at Scale.</p>
   <p><b>Discovering Insights</b> is a track about Statistics, Machine Learning and Visualizations - the fundamental conceptual tools that help us excavate, understand, and vividly present actionable information from raw data.</p>
   <p><b>Speed at Scale</b> is a track about software tools for storage, retrieval and processing of data at large scales under different application requirements. Specifically, about distributed, parallel, or high-performance computing.</p>
-  <p>This year's edition of the conference will feature technologies such as Apache Spark, Kafka, Storm, Postgres, Julia, Erlang and R. Participants will also be exposed to theory at the core of today's data driven products -- linear algebra, machine learning techniques, CAP theorem, distributed systems, parallel computing models, hardware acceleration, Graph algorithms, Computer vision, stunning multi-dimensional visualizations, and more.</p>
-  <p class="centered space-two-top">
-     <a class="button space-half-bottom" href="http://www.youtube.com/playlist?list=PL279M8GbNsesm3P1Qb5EQ8b2Xi1vMMWBJ" target="_blank">Watch Day 1 Videos</a>
-     <a class="button" href="http://www.youtube.com/playlist?list=PL279M8GbNsev-EKOZMlq8h0XmjEhd7MlC" target="_blank">Watch Day 2 Videos</a>
-  </p>
-  <p>Next edition of Fifth Elephant will be on 28 and 29 July, 2016 at NIMHANS Convention Centre, Bangalore. For more updates, follows us on <a href="http://www.facebook.com/the5el">Facebook</a> and <a href="http://twitter.com/fifthel">Twitter</a>.</p>
+  <p>This year's edition of the conference will feature technologies such as Apache Spark, Kafka, Storm, Postgres, Julia, Erlang and R. Participants will also be exposed to theory at the core of today's data driven products -- linear algebra, machine learning techniques, CAP theorem, distributed systems, parallel computing models, hardware acceleration, Graph algorithms, Computer vision, stunning multi-dimensional visualizations, and more.</p> -->
+  <p>The 2015 edition is over. The Fifth Elephant will be back next year on 28 and 29 July, at the NIMHANS Convention Centre, Bangalore</p>
+  <p class="centered space-two-top">For more updates, follows us on <a href="http://www.facebook.com/the5el">Facebook</a> and <a href="http://twitter.com/fifthel">Twitter</a>.</p>
 <!--   <p class="centered space-two-top">
      <a class="button" href="http://fifthelephant.talkfunnel.com/2015/">View Funnel Submissions</a>
   </p> -->
 </section>
 
-<section id="sessions" class="space-four-top push-one-top fill-light legible clearfix">
+<section id="highlights" class="space-four-top push-one-top fill-light legible clearfix">
+      <h2 class="centered calm measure-10words center-block space-two">Highlights</h2>
+      <ul class="thumbnail-columns thumbnail-columns-four video-thumbnails regular clearfix">
+        <li class="clearfix">
+          <a class="occupy block-link" href="https://www.youtube.com/watch?v=c9YVIQ0995A">
+            <p class="poster video contain-width">
+              <img alt="" src="https://images.hasgeek.com/embed/file/dc9aa31cc56b4a3fae95bb1834263431" width="350" height="197">
+            </p>
+            <hgroup>
+              <h3>Data Comes in Shapes</h3>
+              <h4 class="space-1q-top nospace-bottom">Tim Poston</h4>
+              <h6 class="space-1q-top space-half-bottom secondary thin darkblue">Chief Scientist at Forus Health</h6>
+            </hgroup>
+          </a>
+        </li>
+        <li class="clearfix">
+          <a class="occupy block-link" href="https://www.youtube.com/watch?v=dFt_N9C7zU4">
+            <p class="poster video contain-width">
+              <img alt="" src="https://images.hasgeek.com/embed/file/421f1027ddca4d37ae05abb249467dc5" width="350" height="197">
+            </p>
+            <hgroup>
+              <h3>Future patterns in data ecosystem</h3>
+              <h4 class="space-1q-top nospace-bottom">Amod Malviya</h4>
+              <h6 class="space-1q-top space-half-bottom secondary thin darkblue">CTO at Flipkart</h6>
+            </hgroup>
+          </a>
+        </li>
+        <li class="clearfix">
+          <a class="occupy block-link" href="https://www.youtube.com/watch?v=SuNsMC8IliI">
+            <p class="poster video contain-width">
+              <img alt="" src="https://images.hasgeek.com/embed/file/ca2304fc1c6f45cc854ed3a790f3e614" width="350" height="197">
+            </p>
+            <hgroup>
+              <h3>Call me maybe Jepsen and flaky networks </h3>
+              <h4 class="space-1q-top nospace-bottom">Shalin Mangar</h4>
+              <h6 class="space-1q-top space-half-bottom secondary thin darkblue">Engineer at LucidWorks</h6>
+            </hgroup>
+          </a>
+        </li>
+        <li class="clearfix">
+          <a class="occupy block-link" href="https://www.youtube.com/watch?v=HCcO-715acM">
+            <p class="poster video contain-width">
+              <img alt="" src="https://images.hasgeek.com/embed/file/bf3df0d18d4e49e4a1dea65c5d3744e6" width="350" height="197">
+            </p>
+            <hgroup>
+              <h3>The many ways of parallel computing with Julia </h3>
+              <h4 class="space-1q-top nospace-bottom">Viral B. Shah</h4>
+              <h6 class="space-1q-top space-half-bottom secondary thin darkblue">Founding partner at Julia Computing</h6>
+            </hgroup>
+          </a>
+        </li>
+      </ul>
+      
+     <p class="centered space-two regular">
+         <a class="button space-half-bottom" href="http://www.youtube.com/playlist?list=PL279M8GbNsesm3P1Qb5EQ8b2Xi1vMMWBJ" target="_blank">Watch Day 1 Videos</a>
+         <a class="button" href="http://www.youtube.com/playlist?list=PL279M8GbNsev-EKOZMlq8h0XmjEhd7MlC" target="_blank">Watch Day 2 Videos</a>
+      </p>
+    </div>
+</section>
+
+<!-- <section id="sessions" class="space-four-top push-one-top fill-light legible clearfix">
 {% with session_kind = 'Talks' %}
 <h2 class="centered calm space-four-top space-one-bottom">Featured speakers</h2>
 {% from theme("data/talks.html") import talks as sessions %}
 {% include theme("partials/_sessions.html") %}
 {% endwith %}
-</section>
+</section> -->
 
-{% include theme("data/schedule_table.html") %}
+<!-- {% include theme("data/schedule_table.html") %}
 <section id="schedules" class="schedule legible">
   <div class="push-four space-two-top funnel-schedule-link">
     <h2 class="centered calm nospace">Conference and Workshop Schedules</h2>
@@ -122,7 +180,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- <section id="tickets" class="fill-light push-1q space-two-top clearfix pad-one">
   <h1 class="calm centered space-two large">
