@@ -89,6 +89,18 @@
   <p>This year's edition of the conference will feature technologies such as Apache Spark, Kafka, Storm, Postgres, Julia, Erlang and R. Participants will also be exposed to theory at the core of today's data driven products -- linear algebra, machine learning techniques, CAP theorem, distributed systems, parallel computing models, hardware acceleration, Graph algorithms, Computer vision, stunning multi-dimensional visualizations, and more.</p> -->
   <p>The 2015 edition is over. The Fifth Elephant will be back next year on 28 and 29 July, at the NIMHANS Convention Centre, Bangalore</p>
   <p class="centered space-two-top">For more updates, follows us on <a href="http://www.facebook.com/the5el" target="_blank">Facebook</a> and <a href="http://twitter.com/fifthel" target="_blank">Twitter</a>.</p>
+  <div>
+      <p class="space-half centered">Sign up to receive updates.</p>
+      <form class="form-horizontal nospace" id='subscribe' action="" role="form" autocomplete="off">
+        <div class="centered">
+          <input type="email" class="subscribe-input" id="subscribe-email" name="subscribe-email" required placeholder="Email"/>
+          <button type="submit" class="subscribe-button prose-type all-caps">Subscribe</button>
+          <img src="{{ theme_static('img/ajax-loader.gif') }}" class="ajax-loader"/>
+        </div>
+      </form>
+      <div class="regular centered helptext"><p class="subscribe-status nospace"></p></div>
+    </div>
+  </div>
 <!--   <p class="centered space-two-top">
      <a class="button" href="http://fifthelephant.talkfunnel.com/2015/">View Funnel Submissions</a>
   </p> -->

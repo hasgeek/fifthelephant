@@ -1658,3 +1658,46 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
   background-image: url(/favicon.ico) !important;
   background-size: 50%;
 }
+
+.subscribe-input {
+  background-color: #F2DE9C;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.4;
+  border: none;
+  box-shadow: none;
+  margin: 0 5px 10px;
+  padding: 0 10px;
+  width: 300px;
+  height: 42px;
+  max-height: 42px;
+}
+.subscribe-button {
+  background-color: #EC6015;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #FFF;
+  cursor: pointer;
+  border: none;
+  padding: 0 10px;
+  height: 42px;
+  max-height: 42px;
+  margin: 0 0 5px;
+}
+.subscribe-button:active, .subscribe-button:focus,
+.subscribe-input:active, .subscribe-input:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.subscribe-button:active, .subscribe-button:focus,
+.subscribe-button:hover {
+  background-color: #000;
+}
+.ajax-loader {
+  visibility: hidden;
+  padding: 0px 10px 5px;
+}
+.helptext {
+  height: 30px;
+}
