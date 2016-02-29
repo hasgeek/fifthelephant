@@ -419,7 +419,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
     .sticky-nav .page-nav nav ul,
     .sticky-nav .page-nav nav li,
     .sticky-nav a,
-    .sticky-nav a:visited { font-size: .8rem; height: 30px; line-height: 30px; }
+    .sticky-nav a:visited { font-size: 13px; height: 30px; line-height: 30px; }
     .sticky-nav .page-nav nav li a { padding: 0 1rem !important; }
 }
 @media only screen and (min-width: 50em) { .sticky-nav .page-nav nav li a { padding: 0 2rem !important; } }
