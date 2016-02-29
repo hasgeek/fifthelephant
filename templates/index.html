@@ -6,15 +6,12 @@
 {% set fixed_width_sticky = true %}
 
 {% block page_nav_items %}
-<!--   <li><a href="#announcements" class="darkgray link-white-hover smooth-scroll">Announcements</a></li> -->
-  <!-- <li><a href="#sessions" class="darkgray link-white-hover">Featured Speakers</a></li> -->
-  <!-- <li><a href="#schedules" class="darkgray link-white-hover smooth-scroll">Schedules</a></li> -->
-<!--   <li><a href="#tickets" class="darkgray link-white-hover smooth-scroll">Ticket Details</a></li> -->
-  <li><a href="#highlights" class="darkgray link-white-hover smooth-scroll">Highlights</a></li>
-  <li><a href="#testimonials" class="darkgray link-white-hover smooth-scroll">Testimonials</a></li>
+  <li><a href="#announcements" class="darkgray link-white-hover smooth-scroll">Announcements</a></li>
+  <li><a href="#highlights" class="darkgray link-white-hover smooth-scroll">Past Editions</a></li>
   <li><a href="#sponsors" class="darkgray link-white-hover smooth-scroll">Sponsors</a></li>
   <li><a href="#hasgeek" class="darkgray link-white-hover smooth-scroll">Behind The Scenes</a></li>
-  <li><a href="/2015/code-of-conduct" class="darkgray link-white-hover smooth-scroll">Code of Conduct</a></li>
+  <li><a href="/2016/venue" class="darkgray link-white-hover smooth-scroll">Venue</a></li>
+  <li><a href="/2016/code-of-conduct" class="darkgray link-white-hover smooth-scroll">Code of Conduct</a></li>
 {% endblock %}
 
 {% block banner %}
@@ -22,11 +19,11 @@
   <header class="clearfix">
     {% block image_banner %}
       
-      <div class="space-three">{% block nav %}{{ super() }}{% endblock %}</div>
+      <div class="space-one">{% block nav %}{{ super() }}{% endblock %}</div>
       <div class="masthead-svg-container">
         {% include theme("partials/_bigdata_banner.html") %}
       </div>
-      <div class="masthead-svg-alternative"><p class="big-data center-block ir space-two-top">The Fifth Elephant, 16 - 18 July, Bangalore</p></div>
+      <div class="masthead-svg-alternative"><p class="big-data center-block ir space-two-top">The Fifth Elephant, 28 and 29 July, Bangalore</p></div>
       {% block header_caption %}
         
       {% endblock %}
@@ -38,7 +35,7 @@
         <h1 class="calm huge space-one-top space-one-bottom darkblue textshadow">The Fifth Elephant</h1>
       </div>
       <h3 class="calm brown legible space-one">
-        16 - 18 July 2015, <a href="/2015/venue" class="brown venue link-silent-hover">Bangalore</a>
+        28 and 29 July, <a href="/2016/venue" class="brown venue link-silent-hover">Bangalore</a>
       </h3>
     </hgroup>
 <!--     <p class="ticket-link event-tickets centered legible space-six-bottom">
@@ -50,8 +47,8 @@
         Buy Tickets
       </a>
     </p> -->
-    <p class="centered space-one regular">
-      <a class="button" href="https://www.flickr.com/photos/hasgeek/sets/72157655705316089" target="_blank">Event Photos</a>
+    <p class="centered nospace-top space-two-bottom regular">
+      <a class="button" href="https://fifthelephant.talkfunnel.com/2016/" target="_blank">Propose to speak</a>
     </p>
   </header>
   
@@ -62,106 +59,83 @@
 {% endblock %}
 
 {% block content %}
-<!-- {% from theme("data/highlights.html") import highlights %}
-<section id="announcements" class="announcements pad-one legible center-block space-four clearfix">
-   <h1 class="calm centered space-two large">
-    Highlights
- </h1>
- <div class="tile-block clearfix">   
-    <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom">
-      {% for tile in highlights.tiles %}
-      <li class="{{ tile.background }} centered">
-        <a class="occupy unhighlight legible" href="{{ tile.link_title }}"><div class="white">{{ tile.title|safe }}</div></a>
-        <a href="{{ tile.link_schedule }}" class="smooth-scroll"><div class="regular wrap space-half">Schedule: {{ tile.date|safe }}</div></a>
-        <a href="{{ tile.link_venue }}" class="brown"><div class="regular"><img alt="Co-ordinates" src="{{ theme_static('img/map-marker.svg') }}" width="15" class="gap-1q-right ultrafaded">{{ tile.venue|safe }}</div></a>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-</section> -->
-<section class="measure-10words pad-one center-block legible space-four-top space-three-bottom prose clearfix">
+<section id="announcements" class="measure-10words pad-one center-block legible space-four-top space-three-bottom prose clearfix">
   <h2 class="visuallyhidden">Introduction</h2>
-<!--   <div class="centered center-block legible title-type space-three-bottom">3 days - 50+ - speakers - 1000+ smartest programmers, <br class="hide-mobile">data scientists and CTOs. <br class="hide-mobile">Descend in Namma Bengaluru's most happening <br class="hide-mobile">Community powered conference &amp; workshops <br class="hide-mobile">on large-scale data processing.</div>
-  <p>The Fifth Elephant is the premier Indian developer conference on data. It is a place for hackers, and academics at the cutting edge of data science to meet and talk about what they are working on. The goal is to teach, learn and find inspiration among our peers in the art and science of data.</p>  
-  <p>This edition of The Fifth Elephant will revolve around the two tracks: Discovering Insights and Speed at Scale.</p>
-  <p><b>Discovering Insights</b> is a track about Statistics, Machine Learning and Visualizations - the fundamental conceptual tools that help us excavate, understand, and vividly present actionable information from raw data.</p>
-  <p><b>Speed at Scale</b> is a track about software tools for storage, retrieval and processing of data at large scales under different application requirements. Specifically, about distributed, parallel, or high-performance computing.</p>
-  <p>This year's edition of the conference will feature technologies such as Apache Spark, Kafka, Storm, Postgres, Julia, Erlang and R. Participants will also be exposed to theory at the core of today's data driven products -- linear algebra, machine learning techniques, CAP theorem, distributed systems, parallel computing models, hardware acceleration, Graph algorithms, Computer vision, stunning multi-dimensional visualizations, and more.</p> -->
-  <p>The 2015 edition is over. The Fifth Elephant will be back next year on 28 and 29 July, at the NIMHANS Convention Centre, Bangalore</p>
+  <div class="centered center-block legible title-type space-three-bottom">3 days - 50+ - speakers - 1000+ smartest programmers, <br class="hide-mobile">data scientists and CTOs. <br class="hide-mobile">Descend in Namma Bengaluru's most happening <br class="hide-mobile">Community powered conference &amp; workshops <br class="hide-mobile">on large-scale data processing.</div>
+  <p>The Fifth Elephant is India’s most renowned data science conference. It is a space for discussing some of the most cutting edge developments in the fields of machine learning, data science and technology that powers data collection and analysis.</p>  
+  <p>The Fifth Elephant 2016 will revolve around Machine Learning, Distributed and Parallel Computing, and High-performance Computing.</p>
+  <p>This year's edition is happening on 28 and 29 July, at the NIMHANS Convention Centre, Bangalore</p>
   <p class="centered space-two-top">For more updates, follows us on <a href="http://www.facebook.com/the5el" target="_blank">Facebook</a> and <a href="http://twitter.com/fifthel" target="_blank">Twitter</a>.</p>
-  <div>
-      <p class="space-half centered">Sign up to receive updates.</p>
-      <form class="form-horizontal nospace" id='subscribe' action="" role="form" autocomplete="off">
-        <div class="centered">
-          <input type="email" class="subscribe-input" id="subscribe-email" name="subscribe-email" required placeholder="Email"/>
-          <button type="submit" class="subscribe-button prose-type all-caps">Subscribe</button>
-          <img src="{{ theme_static('img/ajax-loader.gif') }}" class="ajax-loader"/>
-        </div>
-      </form>
-      <div class="regular centered helptext"><p class="subscribe-status nospace"></p></div>
+  <p class="space-half centered">Sign up to receive updates.</p>
+  <form class="form-horizontal nospace" id='subscribe' action="" role="form" autocomplete="off">
+    <div class="centered">
+      <input type="email" class="subscribe-input" id="subscribe-email" name="subscribe-email" required placeholder="Email"/>
+      <button type="submit" class="subscribe-button prose-type all-caps">Subscribe</button>
+      <img src="{{ theme_static('img/ajax-loader.gif') }}" class="ajax-loader"/>
     </div>
-  </div>
+  </form>
+  <div class="regular centered helptext"><p class="subscribe-status nospace"></p></div>
 <!--   <p class="centered space-two-top">
-     <a class="button" href="http://fifthelephant.talkfunnel.com/2015/">View Funnel Submissions</a>
+     <a class="button" href="http://fifthelephant.talkfunnel.com/2016/">View Funnel Submissions</a>
   </p> -->
 </section>
 
-<section id="highlights" class="space-four-top push-one-top fill-light legible clearfix">
+<section id="highlights" class="space-four-top space-three-bottom push-one-top fill-light legible clearfix">
   <h2 class="centered calm measure-10words center-block space-two">Highlights</h2>
   <ul class="thumbnail-columns thumbnail-columns-four video-thumbnails regular clearfix">
     <li class="clearfix">
-      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-day-1/1129-tim-poston-keynote-data-comes-in-shapes">
-        <p class="poster video contain-width">
-          <img alt="" src="https://images.hasgeek.com/embed/file/dc9aa31cc56b4a3fae95bb1834263431" width="350" height="197">
-        </p>
-        <hgroup>
-          <h3>Data Comes in Shapes</h3>
-          <h4 class="space-1q-top nospace-bottom">Tim Poston</h4>
-          <h6 class="space-1q-top space-half-bottom secondary thin darkblue">Chief Scientist at Forus Health</h6>
-        </hgroup>
-      </a>
-    </li>
-    <li class="clearfix">
-      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-day-1/1131-amod-malviya-keynote-future-patterns-in-data-ecosystem-sponsored">
+      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-day-1/1131-amod-malviya-keynote-future-patterns-in-data-ecosystem-sponsored" target="_blank">
         <p class="poster video contain-width">
           <img alt="" src="https://images.hasgeek.com/embed/file/421f1027ddca4d37ae05abb249467dc5" width="350" height="197">
         </p>
         <hgroup>
           <h3>Future patterns in data ecosystem</h3>
-          <h4 class="space-1q-top nospace-bottom">Amod Malviya</h4>
-          <h6 class="space-1q-top space-half-bottom secondary thin darkblue">CTO at Flipkart</h6>
+          <h4 class="space-1q-top nospace-bottom orange">Amod Malviya</h4>
+<!--           <h6 class="space-1q-top space-half-bottom secondary thin darkblue">CTO at Flipkart</h6> -->
         </hgroup>
       </a>
     </li>
     <li class="clearfix">
-      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-2/1116-shalin-mangar-call-me-maybe-jepsen-and-flaky-networks">
+      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-2/1113-devashish-shankar-deep-learning-for-natural-language-processing" target="_blank">
         <p class="poster video contain-width">
-          <img alt="" src="https://images.hasgeek.com/embed/file/ca2304fc1c6f45cc854ed3a790f3e614" width="350" height="197">
+          <img alt="" src="https://images.hasgeek.com/embed/file/b3df7e42acc84b18948914dbecfaa4fc" width="350" height="197">
         </p>
         <hgroup>
-          <h3>Call me maybe Jepsen and flaky networks </h3>
-          <h4 class="space-1q-top nospace-bottom">Shalin Mangar</h4>
-          <h6 class="space-1q-top space-half-bottom secondary thin darkblue">Engineer at LucidWorks</h6>
+          <h3>Deep Learning for Natural Language Processing</h3>
+          <h4 class="space-1q-top nospace-bottom orange">Devashish Shankar</h4>
+<!--           <h6 class="space-1q-top space-half-bottom secondary thin darkblue">Engineer at LucidWorks</h6> -->
         </hgroup>
       </a>
     </li>
     <li class="clearfix">
-      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-2/1119-viral-b-shah-the-many-ways-of-parallel-computing-with-julia">
+      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-2/1112-shailesh-kumar-towards-thinking-machines" target="_blank">
         <p class="poster video contain-width">
-          <img alt="" src="https://images.hasgeek.com/embed/file/b930a29b3e9f4fa1a02022529781afd3" width="350" height="197">
+          <img alt="" src="https://images.hasgeek.com/embed/file/654f031da57a41a08e33c60204b5b052" width="350" height="197">
         </p>
         <hgroup>
-          <h3>The many ways of parallel computing with Julia </h3>
-          <h4 class="space-1q-top nospace-bottom">Viral B. Shah</h4>
-          <h6 class="space-1q-top space-half-bottom secondary thin darkblue">Founding partner at Julia Computing</h6>
+          <h3>Towards “Thinking Machines”</h3>
+          <h4 class="space-1q-top nospace-bottom orange">Shailesh Kumar</h4>
+<!--           <h6 class="space-1q-top space-half-bottom secondary thin darkblue">Founding partner at Julia Computing</h6> -->
+        </hgroup>
+      </a>
+    </li>
+    <li class="clearfix">
+      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-day-1/1129-tim-poston-keynote-data-comes-in-shapes" target="_blank">
+        <p class="poster video contain-width">
+          <img alt="" src="https://images.hasgeek.com/embed/file/dc9aa31cc56b4a3fae95bb1834263431" width="350" height="197">
+        </p>
+        <hgroup>
+          <h3>Data Comes in Shapes</h3>
+          <h4 class="space-1q-top nospace-bottom orange">Tim Poston</h4>
+<!--           <h6 class="space-1q-top space-half-bottom secondary thin darkblue">Chief Scientist at Forus Health</h6> -->
         </hgroup>
       </a>
     </li>
   </ul>
       
   <p class="centered space-two regular">
-      <a class="button space-half-bottom" href="https://hasgeek.tv/fifthelephant/2015-day-1">Watch Day 1 Videos</a>
-      <a class="button" href="https://hasgeek.tv/fifthelephant/2015-2">Watch Day 2 Videos</a>
+      <a class="button space-half-bottom" href="https://hasgeek.tv/fifthelephant/2015-day-1" target="_blank">Watch Day 1 Videos</a>
+      <a class="button" href="https://hasgeek.tv/fifthelephant/2015-2" target="_blank">Watch Day 2 Videos</a>
       <a class="button" href="https://www.flickr.com/photos/hasgeek/sets/72157655705316089" target="_blank">Event Photos</a>
   </p>
 </section>
@@ -171,276 +145,9 @@
   <div class="container center-block pad-two">
     <p class="regular clearfix"><i class="fa fa-quote-left ultrafaded"></i> Fifth Elephant did something wonderfully positive for our Mad Street Den team. Between refreshing new lessons, business leads, potential hires and the sheer energy of the talent present at the conference, I think it was money & time well spent, even for an early stage startup as ours. We sent 11 members of our team including interns, and I'd do it all over again without thinking twice! This is the standard of discourse we should try and maintain across any conference or event we organize, these guys at HasGeek have a thing or two to teach the rest of our tech ecosystem. <i class="fa fa-quote-right ultrafaded"></i><br><span class="secondary flushright blue">Ashwini Asokan, <br><span class="darkgray">Co-founder of Mad Street Den</span></span></p>
     <p class="regular clearfix"><i class="fa fa-quote-left ultrafaded"></i> Very helpful, and very supportive! Any queries I had were quickly and clearly handled. The process of wiring up the speaker and connecting laptops was as good as the sound system and the video recording, all excellent. <i class="fa fa-quote-right ultrafaded"></i><br><span class="secondary flushright blue">Tim Poston, <br><span class="darkgray">Chief Scientist at Forus Health</span></span></p>
-    <p class="regular clearfix"><i class="fa fa-quote-left ultrafaded"></i> The biggest call out of the Hasgeek Fifthelephant conference is the talk selection process and diversity, richness of content in the talks. The second highlight is the post selection preparation of talks and mentoring for speakers. <br>The logistics of the conference itself - wifi, videos, communication etc is as good as it gets. Kudos to your guys for running such a high quality data conference overall. <i class="fa fa-quote-right ultrafaded"></i><br><span class="secondary flushright blue">Regunath Balasubramanian, <br><span class="darkgray">Principal Architect at Flipkart</span></span></p>
+    <p class="regular clearfix"><i class="fa fa-quote-left ultrafaded"></i> The biggest call out of the HasGeek Fifthelephant conference is the talk selection process and diversity, richness of content in the talks. The second highlight is the post selection preparation of talks and mentoring for speakers. <br>The logistics of the conference itself - wifi, videos, communication etc is as good as it gets. Kudos to your guys for running such a high quality data conference overall. <i class="fa fa-quote-right ultrafaded"></i><br><span class="secondary flushright blue">Regunath Balasubramanian, <br><span class="darkgray">Principal Architect at Flipkart</span></span></p>
   </div>
 </section>
-
-<!-- <section id="sessions" class="space-four-top push-one-top fill-light legible clearfix">
-{% with session_kind = 'Talks' %}
-<h2 class="centered calm space-four-top space-one-bottom">Featured speakers</h2>
-{% from theme("data/talks.html") import talks as sessions %}
-{% include theme("partials/_sessions.html") %}
-{% endwith %}
-</section> -->
-
-<!-- {% include theme("data/schedule_table.html") %}
-<section id="schedules" class="schedule legible">
-  <div class="push-four space-two-top funnel-schedule-link">
-    <h2 class="centered calm nospace">Conference and Workshop Schedules</h2>
-    <p class="centered space-two-top">
-      <a class="button" href="http://fifthelephant.talkfunnel.com/2015/schedule" target="_blank">View Schedule</a>
-    </p>
-  </div>
-  <div class="schedule-container">
-    <div class="push-four space-two-top" id="conference-schedule">
-      <h2 class="centered calm nospace">Conference Schedule</h2>
-      <div class="schedule-table-container center-block pad-one regular" id="conferenceschedule">
-        <p class="centered loadingtxt">Loading...</p>
-      </div>
-    </div>
-    <div class="push-four space-two-bottom" id="workshop-schedule">
-      <h2 class="centered calm nospace">Workshop Schedule</h2>
-      <div class="schedule-table-container center-block pad-one regular" id="workshopschedule">
-        <p class="centered loadingtxt">Loading...</p>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-<!-- <section id="tickets" class="fill-light push-1q space-two-top clearfix pad-one">
-  <h1 class="calm centered space-two large">
-    Tickets
-  </h1>
-  <ul class="ticket-columns clearfix">
-    <li>
-      <div class="ticket fill-white clearfix">
-        <hgroup class="centered fill-green">
-          <h2 class="body-type calm large">Conference</h2>
-          <h3 class="body-type calm secondary all-caps faded nospace">
-            July 16 <span class="amp calm ultrafaded">&amp;</span> 17
-          </h3>
-        </hgroup>
-        <ul class="space-two">
-          <li>Two days of talks &amp; discussions</li>
-          <li>Breakfast &amp; Lunch</li>
-        </ul>
-        <p class="centered space-line-top pad-one limited">
-          <del class="ultrafaded gap-1q-right">
-            Regular ticket</del> 
-          <span class="legible bold">
-            Rs&nbsp;5,500
-          </span>
-          <br>
-          <span class="secondary faded">
-            Available until July&nbsp;15<sup>th</sup>
-          </span>
-        </p>
-      </div>
-    </li>  
-    <li>
-      <div class="ticket fill-white clearfix">
-        <hgroup class="centered fill-green">
-          <h2 class="body-type calm large">Workshop</h2>
-          <h3 class="body-type calm secondary all-caps faded nospace">
-            July 18
-          </h3>
-        </hgroup>
-        <ul class="space-two">
-          <li>One day of hands-on workshop sessions</li>
-          <li>Breakfast &amp; Lunch</li>
-        </ul>
-        <p class="centered space-line-top pad-one limited">
-          <span class="legible bold">
-            Rs 4000
-          </span>
-          <br>
-          <span class="secondary faded">
-            Available until July&nbsp;17<sup>th</sup>
-          </span>
-        </p>
-      </div>
-    </li>
-    <li>
-      <div class="ticket fill-white clearfix">
-        <hgroup class="centered fill-green">
-          <h2 class="body-type calm">Conference Networking Dinner</h2>
-          <h3 class="body-type calm secondary all-caps faded nospace">
-            July 16
-          </h3>
-        </hgroup>
-        <ul class="space-two">
-          <li>Entry to networking dinner with conference speakers and participants on July 16<br><br>
-              <img alt="Co-ordinates" src="{{ theme_static('img/map-marker.svg') }}" width="15" class="gap-1q-right ultrafaded"> Toit, Bangalore
-        </ul>
-        <p class="centered space-line-top pad-one">
-          <span class="legible bold">Rs&nbsp;3,000</span>
-          <br>
-          <span class="secondary faded">
-            Available until July 16<sup>th</sup>
-          </span>
-        </p>
-      </div>
-    </li>
-  </ul>
-  
-  <p class="centered legible space-two">
-    <a
-      class="button button-primary min-measure-3words"
-      title="Fifth Elephant 2015 Tickets on Explara"
-      href="https://in.explara.com/e/the-fifth-elephant-2015"
-      target="_blank">
-      Buy Tickets
-    </a>
-    <br>
-     <span class="ticket-note center-block secondary occupy space-line-top faded">
-      Single day conference tickets for 12<sup>th</sup> &amp; 13<sup>th</sup> will be available at the venue.
-    </span>
-  </p>
-</section> -->
-
-<!--<section id="community" class="legible push-one space-two-top space-one-bottom clearfix">  
-  <article class="clearfix">
-    <h2 class="centered calm nospace-top space-two-bottom space-three-top pad-one">The Editorial Panel</h2>
-    <ul class="committee thumbnail-columns thumbnail-columns-four-narrow regular clearfix nospace">
-      <li class="clearfix">
-        <a class="occupy block-link" href="./community#vinayak">
-          <p class="poster contain-width"><img alt="" src="https://imgee.s3.amazonaws.com/imgee/f3e2dc37fc7d4f028cf0c366435d5799_w150_h150.jpeg" width="150" height="150"></p>
-          <hgroup>
-            <h3>Vinayak Hegde</h3>
-            <h4>Helpshift</h4>
-          </hgroup>
-        </a>
-      </li>
-      <li class="clearfix">
-        <a class="occupy block-link" href="./community#govind">
-          <p class="poster contain-width"><img alt="" src="https://imgee.s3.amazonaws.com/imgee/28d2eb91ca5640b9aa6a567b8784974e.jpeg" width="150" height="150"></p>
-          <hgroup>
-            <h3>Govind Kanshi</h3>
-            <h4>Microsoft</h4>
-          </hgroup>
-        </a>
-      </li>
-      <li class="clearfix">
-        <a class="occupy block-link" href="./community#shailesh">
-          <p class="poster contain-width"><img alt="Shailesh Kumar" src="https://imgee.s3.amazonaws.com/imgee/650a2fd4818b43d397d04609d30850c0_w150_h150.jpeg" width="150" height="150"></p>
-          <hgroup>
-            <h3>Shailesh Kumar</h3>
-            <h4>Google</h4>
-          </hgroup>
-        </a>
-      </li>
-      <li class="clearfix">
-        <a class="occupy block-link" href="./community#viral">
-          <p class="poster contain-width"><img alt="Viral Shah" src="https://imgee.s3.amazonaws.com/imgee/a98dfbb9c96f4f0489e0fa33d084efba_w150_h150.jpeg" width="150" height="150"></p>
-          <hgroup>
-            <h3>Viral Shah</h3>
-            <h4>co-creator of Julia language</h4>
-          </hgroup>
-        </a>
-      </li>
-    </ul>
-    <p class="centered space-two-top space-three-bottom regular">
-      <a class="button" href="./community#committee">More about the panel</a>
-    </p>
-  </article>
-</section>
--->
-
-<!-- <section id="last-year" class="last-year legible nospace clearfix">
-    <div class="resetcoords full fill-dark">
-      <div class="band last-year white freeflow full">
-        <h1 class="centered calm measure-10words space-half-bottom space-one-top">2014 Edition</h1>
-        <ul class="large numbers-2012 centered space-half">
-          <li class="numbers-2012-days">3 days</li>
-          <li class="numbers-2012-tracks">2 tracks</li>
-          <li class="numbers-2012-sessions">30 talks</li>
-          <li class="numbers-2012-workshops">5 workshops</li>
-          <li class="numbers-2012-participants">900 participants</li>
-        </ul>
-      </div>
-      <ul class="flipboard contain-width regular fill-dark full clearfix">
-      </ul>
-      <script id="card-template" type="text/template">
-        <li>
-          <div class="flipcard">
-            <p class="face front"></p>
-            <p class="face back"></p>
-          </div>
-        </li>
-      </script>
-    </div>
-    
-    <article class="prose measure-10words pad-one space-four-top space-two-bottom center-block">
-        <p>
-          <a href="http://fifthelephant.in/2012/">The 2012 edition</a> of The Fifth Elephant was the first conference in India which focused on big data and analytics. Followed by that, the <a href="http://fifthelephant.in/2013/">2013 edition</a> also showcased a successful event with big data, storage and analytics.
-        </p>
-        <p>
-          The event brought together developers, researchers, scientists, analysts, CTOs, CEOs and academicians who took part in various discussions on big data infrastructure, analytics and application of technology for harnessing untapped potential of data.
-        </p>
-      <div class="regular">
-        <p>
-          Participants were exposed to some of the popular and emerging technology stacks for storing and processing big data. They learnt about <a href="https://hasgeek.tv/fifthelephant/2013-workshops/568-a-tutorial-about-julia-language-part-i">programming languages</a> and <a href="http://hasgeek.tv/fifthelephant/2012-1/52-lessons-from-the-evolution-of-mayavi">libraries</a> available for producing compelling <a href="https://hasgeek.tv/fifthelephant/all-videos/634-visualising-networks">visualisations</a>. <a href="https://hasgeek.tv/fifthelephant/all-videos/631-what-happens-when-firefox-crashes">Firefox crash reports</a>, Indian Census report, <a href="https://hasgeek.tv/fifthelephant/all-videos/636-big-data-and-ssds">Big data on SSDs</a>, etc were more popular talks. In the analytics track, statisticians and analysts spoke about various <a href="http://hasgeek.tv/fifthelephant/2012-1/530-goldee-udani-finding-signal-in-the-noise-how-to-put-big-data-to-use">tools</a>, <a href="http://hasgeek.tv/fifthelephant/2012-1/531-the-science-behind-predictive-analytics-a-text-mining-perspective">techniques</a>, <a href="https://hasgeek.tv/fifthelephant/all-videos/643-strategic-advantages-of-mongodb">strategies</a> and <a href="https://hasgeek.tv/fifthelephant/all-videos/640-co-occurrence-analytics-a-versatile-framework-for-finding-interesting-needles-in-crazy-haystacks">frameworks</a> for building business intelligence and <a href="http://hasgeek.tv/fifthelephant/2012-1/42-telling-stories-with-data">telling stories with data</a>. Overall, the past editions presented the multiple meanings and facets of big data to participants and helped them in understanding the emerging ecosystem.
-        </p>
-        <p>
-          The Fifth Elephant 2012 brought together community and advocacy organisations such as <a href="http://cis-india.org">The Centre for Internet and Society</a>, <a href="http://archive.org">The Internet Archive</a>, <a href="http://okfn.org">Open Knowledge Foundation Network</a> and Wikipedia India chapter to showcase the value of open data and community supported efforts in collecting and publishing public data. The 2013 edition highlighted <a href="http://www.mongodb.com/">MongoDB (10gen)</a> and <a href="http://julialang.org/">Julia language</a> community. The presence of these organisations facilitated in answering participants’ questions about how to use big data for the benefit of society. The 2014 edition focused on analytics – the infrastructure that powers analytics and how analytics is done.
-          </p>
-      </div>
-    </article>
-    
-    <div class="push-one-top push-four-bottom fill-white">
-      <h2 class="centered calm measure-10words center-block space-two">Featured Talks</h2>
-      <ul class="thumbnail-columns thumbnail-columns-four video-thumbnails regular clearfix">
-        <li class="clearfix">
-          <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/all-videos/643-strategic-advantages-of-mongodb">
-            <p class="poster video contain-width">
-              <img alt="" src="https://imgee.s3.amazonaws.com/imgee/5278d997699544b5860ff7bfa97a84f0.jpeg" width="350" height="197">
-            </p>
-            <hgroup>
-              <h3>Strategic advantages of MongoDB</h3>
-              <h4 class="space-1q-top nospace-bottom">Edouard Servan-Schreiber</h4>
-            </hgroup>
-          </a>
-        </li>
-        <li class="clearfix">
-          <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/all-videos/638-mapreduce-and-the-art-of-thinking-parallel">
-            <p class="poster video contain-width">
-              <img alt="" src="https://imgee.s3.amazonaws.com/imgee/a9ec1c31b6284651ad99bb85046cdf6c.jpeg" width="350" height="197">
-            </p>
-            <hgroup>
-              <h3>MapReduce and the "Art of Thinking Parallel"</h3>
-              <h4 class="space-1q-top nospace-bottom">Shailesh Kumar</h4>
-            </hgroup>
-          </a>
-        </li>
-        <li class="clearfix">
-          <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/all-videos/631-what-happens-when-firefox-crashes">
-            <p class="poster video contain-width">
-              <img alt="" src="https://imgee.s3.amazonaws.com/imgee/46663c416f144417ae4da88ef66d1262.jpeg" width="350" height="197">
-            </p>
-            <hgroup>
-              <h3>What Happens When Firefox Crashes?</h3>
-              <h4 class="space-1q-top nospace-bottom">Erik Rose</h4>
-            </hgroup>
-          </a>
-        </li>
-        <li class="clearfix">
-          <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/all-videos/636-big-data-and-ssds">
-            <p class="poster video contain-width">
-              <img alt="" src="https://imgee.s3.amazonaws.com/imgee/8420df4c2a1c478c9e8a847d6cd78b37.jpeg" width="350" height="197">
-            </p>
-            <hgroup>
-              <h3>Big Data and SSDs</h3>
-              <h4 class="space-1q-top nospace-bottom">Brian Bulkowski</h4>
-            </hgroup>
-          </a>
-        </li>
-      </ul>
-      
-      <p class="centered space-two regular">
-        <a class="button" href="http://hasgeek.tv/fifthelephant/">More on HasGeek TV</a>
-      </p>
-    </div>
-</section> -->
 
 <section id="sponsors" class="fill-dark legible clearfix">
   <div class="sponsors clearfix center-block">
@@ -480,38 +187,25 @@
         Under One Roof
       </p>
       <p class="centered space-two">
-        <a class="button" href="http://hsgk.in/2015-sponsorship-deck">Get Sponsorship Deck</a>
+        <a class="button" href="http://hsgk.in/1STVG2U" target="_blank">Get Sponsorship Deck</a>
       </p>
     </article>
   </div>
   </div>
 </section>
 
-<section class="behind-the-scenes fill-light partners-floating-box clearfix">
-  
-  <section id="hasgeek" class="hasgeek regular space-four clearfix">
-    <div class="measure-10words pad-one center-block prose clearfix">
-      <h2 class="clearfix"><a href="http://hasgeek.com/" class="hasgeek-logo ir center-block unhighlight">HasGeek</a></h2>
-      <article class="clearboth">
-        <p><a href="http://hasgeek.com/">HasGeek</a> helps people in technology meet each other, collaborate on new opportunities and advance the state of the art. We organize conferences, hacknights, workshops and geekups, and provide tools for communities to self-organize.</p>
-        <p>We’ve created conferences around the themes of <a href="http://metarefresh.in/">front end engineering</a>, <a href="http://fifthelephant.in/">big data and cloud computing</a>, <a href="http://jsfoo.in/">JavaScript</a>, <a href="http://droidcon.in/">Android</a>, <a href="http://cartonama.com/">location-aware services</a> and <a href="http://rootconf.in/">devops</a>. Our <a href="http://jobs.hasgeek.com/">Job Board</a> is used by thousands of geeks every month to find new opportunities.</p>
-        <p>HasGeek is a technology company in the media business, bringing software automation to a traditionally people-intensive operation. In a little over two years, HasGeek has organized over two dozen conferences attended by thousands of technology professionals, made several thousand connections, and built open source tools that are now used by many communities.</p>
-      </article>
-    </div>
-  </section>
- 
-  <section id="credits" class="fill-white credits clearfix">  
-    <article class="clearfix legible space-two-bottom pad-one measure-10words center-block">
-      <h2 class="centered calm space-three-top">Credits</h2>
-      <p class="regular">Editorial Panel: Gopal V, Govind Kanshi, Shashi Gowda and Zainab Bawa</p>
-      <p class="regular">HasGeek Team: Akshat Goyal, Anish TP, Hari C M, Karthik Balakrishnan, Kiran Jonnalagadda, Rajasekharreddy Sagamreddy, Shreyas Satish, Vaman Kamath, Vidya Ramakrishnan and Zainab Bawa. </p>
-      <p class="regular">A special thanks to all the volunteers. Jessy James, Kingsly, Rohit Verkey, Saifi, Srinath, and the entire team of Geekskool: Akshay Kanthi, Ankit Goel, Archana Raut, Arunkrishnan, Arun S, Ashiya Ghosh, Jaison, Karthik Yelchuru, Keshav Meda, Mansi Shah, Ramshreyas Rao, Santosh Rajan and Sindhu S.</p>
+<section class="behind-the-scenes fill-light partners-floating-box clearfix" id="hasgeek">
+  <div class="measure-10words pad-one center-block prose clearfix space-two">
+    <h2 class="clearfix"><a href="http://hasgeek.com/" class="hasgeek-logo ir center-block unhighlight">HasGeek</a></h2>
+    <article class="clearboth">
+      <p><a href="http://hasgeek.com/">HasGeek</a> helps people in technology meet each other, collaborate on new opportunities and advance the state of the art. We organize conferences, hacknights, workshops and geekups, and provide tools for communities to self-organize.</p>
+      <p>We’ve created conferences around the themes of <a href="http://rootconf.in/" target="_blank">devops</a>, <a href="http://metarefresh.in/" target="_blank">front end engineering</a>, <a href="http://www.juliacon.in/" target="_blank">Julia</a>, <a href="http://fifthelephant.in/" target="_blank">big data and cloud computing</a>, <a href="http://jsfoo.in/" target="_blank">JavaScript</a> and <a href="http://droidcon.in/" target="_blank">Android</a>. Our <a href="http://hasjob.co/" target="_blank">Job Board</a> is used by thousands of geeks every month to find new opportunities.</p>
+      <p>HasGeek is a technology company in the media business, bringing software automation to a traditionally people-intensive operation. In a little over two years, HasGeek has organized over two dozen conferences attended by thousands of technology professionals, made several thousand connections, and built open source tools that are now used by many communities.</p>
     </article>
-  </section>
-
+  </div>
 </section>
 
-<section id="code-of-conduct" class="code-of-conduct regular push-three-top push-four-bottom space-one-bottom clearfix">
+<section id="code-of-conduct" class="code-of-conduct regular fill-light push-two clearfix">
   <article class="clearfix center-block centered prose">
     <h2 class="visuallyhidden">Code of Conduct</h2>
     <p class="space-line-bottom nospace-top serif-type italic commitment"><span class="wrap-mobile">We strive to make our events</span> <span class="wrap-mobile">friendly, safe and harassment&#8209;free for all.</span>

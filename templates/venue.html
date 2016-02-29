@@ -17,7 +17,7 @@
 {% block page_nav_items %}
    <li><a href="#venue" class="link-white-hover">Venue</a></li>
    <!-- <li><a href="#workshops" class="link-white-hover">Workshops</a></li> -->
-   <li><a href="#accomodation" class="link-white-hover">Stay</a></li>
+   <!-- <li><a href="#accomodation" class="link-white-hover">Stay</a></li> -->
 {% from theme("data/emergency.html") import emergency_contacts -%}
 {% if emergency_contacts -%}
 <li><a href="#emergency" class="link-white-hover">Emergency</a></li>
@@ -107,96 +107,7 @@
       </dl>
     </section>
 </section>
-<!--  <section id="workshops" class="legible conference-venue space-two-top space-four-bottom push-four-top">
-    <article class="legible">
-    <hgroup class="space-two-bottom">
-      <h1 class="calm centered nospace large">The Energy and Resources Institute (<abbr title="The Energy and Resources Institute">TERI</abbr>), Domlur</h1>
-      <h2 class="calm centered space-half-top nospace-bottom ultrafaded legible">Workshops venue</h2>
-    </hgroup>
-      <section>
-        <div class="venue-showcase conference-venue contain-width clearfix">
-          <p class="full "></p>
-          <p class="quarter flushleft">
-            <img class="venuephoto" src="{{ theme_static('img/venue/teri-1-400.jpg') }}" alt="TERI" />
-          </p>
-          <p class="quarter flushleft">
-            <img class="venuephoto" src="{{ theme_static('img/venue/teri-2-400.jpg') }}" alt="TERI" />
-          </p>
-          <p class="quarter flushleft">
-            <img class="venuephoto" src="{{ theme_static('img/venue/teri-3-400.jpg') }}" alt="TERI" />
-          </p>
-          <p class="quarter flushleft">
-            <img class="venuephoto" src="{{ theme_static('img/venue/teri-4-400.jpg') }}" alt="TERI" />
-          </p>
-        </div>
-        <div class="measure-10words regular prose center-block pad-one space-two-top">
-          <h4 class="space-two-top nospace-bottom">Address</h4>
-            <p class="space-half">
-            The Energy and Resources Institute (TERI),<br>
-            4th Main Rd, Domlur II Stage,<br>
-            Domlur, Bangalore,<br>
-            Karnataka 560008, India<br>
-            <a href="http://www.teriin.org/index.php?option=com_content&task=view&id=25">www.teriin.org</a></p>
-            <p><strong>Landmark:</strong> Near Domlur Club</p>
-          <p class="secondary space-half-top space-two-bottom"><a href="http://goo.gl/maps/E7Pfj">View on Google Maps</a></p>
-        </div>
-        <div class="map-container measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="workshop-map" class="map"></div></div>
-      </section>
-    </article>
-  </section> -->
 <hr class="twenty center-block">
-<section id="accomodation" class="accomodation legible highlight-links clearfix space-two-top push-four-top">
-  <h1 class="calm centered nospace">Stay</h1>
-  {% from theme("data/hotels.html") import hotels %}
-  {% for item in hotels %}
-    <article class="clearfix fill-light space-three gap-one push-three-top push-two-bottom">
-      <hgroup class="space-two-bottom centered pad-one">
-        <h3 class="nospace">{{ item.category }}</h3>
-        <h4 class="price-range calm faded regular nospace">{{ item.pricing }}</h4>
-      </hgroup>
-      <ul id="hotels-list" class="hotels-list thumbnail-columns thumbnail-columns-three-wide center-block nospace clearfix">
-      {% for hotel in item.options %}
-        <li class="hotel space-one-bottom secondary clearfix">
-            <h4 class="regular space-1q capitalize">{% if hotel.web %}<a href="{{ hotel.web.link }}" class="spooky">{% endif %}{{ hotel.name }}{% if hotel.web %}</a>{% endif %}</h4>
-            <p class="space-1q-top space-one-bottom capitalize">{{ hotel.address }}</p>
-            {% if hotel.phones %}
-            <p class="space-1q">
-              {% for phone in hotel.phones %}
-                <a href="tel:{{ phone.dial }}" class="spooky">{{ phone.display }}</a>{% if not loop.last %} / {% endif %}
-              {% endfor %}
-            </p>
-            {% endif %}
-            {% if hotel.email %}<p class="space-1q faded">{{ hotel.email|safe }}</p>{% endif %}
-            {% if hotel.web %}<p class="space-1q"><a href="{{ hotel.web.link }}">{{ hotel.web.display }}</a></p>{% endif %}
-            {% if hotel.distances %}
-            <h5 class="visuallyhidden">Distances</h5>
-            <ul class="space-one-top tiny clearfix">
-              {% if hotel.distances.venue %}
-              <li class="flushleft pad-two-right">
-                <h6 class="nospace tiny faded">Venue</h6>
-                <p class="nospace"><span class="regular">{{ hotel.distances.venue }}</span> kms</p>
-              </li>
-              {% endif %}
-              {% if hotel.distances.airport %}
-              <li class="flushleft pad-two-right">
-                <h6 class="nospace tiny faded">Airport</h6>
-                <p class="nospace"><span class="regular">{{ hotel.distances.airport }}</span> kms</p>
-              </li>
-              {% endif %}
-              {% if hotel.distances.majestic %}
-              <li class="flushleft">
-                <h6 class="nospace tiny faded">Rly Stn / Bus Terminal</h6>
-                <p class="nospace"><span class="regular">{{ hotel.distances.majestic }}</span> kms</p>
-              </li>
-              {% endif %}
-            </ul>
-            {% endif %}
-        </li>
-        {% endfor %}
-      </ul>
-    </article>
-  {% endfor %}
-</section>
 {% from theme("data/emergency.html") import emergency_contacts %}
 {% if emergency_contacts %}
 <section id="emergency" class="emergency legible clearfix measure-8words center-block space-two-top space-four-bottom push-four-top">

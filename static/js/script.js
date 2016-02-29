@@ -392,7 +392,7 @@ function parseJson(data) {
 }
 
 $(function() {
-    var funnelurl = 'https://fifthelephant.talkfunnel.com/2015/schedule/json';
+    var funnelurl = 'https://fifthelephant.talkfunnel.com/2016/schedule/json';
     //If schedule divs are present on the page, then make the ajax call.
     if(($('#conferenceschedule').length) || ($('#workshopschedule').length)) {
         $.ajax({
