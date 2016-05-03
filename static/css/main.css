@@ -39,7 +39,7 @@ a.unhighlight:visited,
 a.unhighlight:hover { border-bottom: 0; }
 
 a.spooky,
-a.block-link { color: inherit !important; border-bottom: none !important; background-color: transparent !important; outline: none !important; }
+a.block-link { border-bottom: none !important; background-color: transparent !important; outline: none !important; }
 a.block-link:hover { color: #C54C17 !important; outline: none; }
 .fill-dark a.block-link:hover { color: #E55 !important; }
 
@@ -85,6 +85,7 @@ hr {
 .brown      { color: #603913 !important; }
 .darkblue   { color: #498F94 !important; }
 .orange       { color: #EC5F13 !important;/*#C54C17*/ }
+.twitter-blue   { color: #55acee !important;}
 img.ultrafaded { opacity: 0.35 }
 
 .fill-fixme     { background-color: rgba(255,255,0,0.3) }

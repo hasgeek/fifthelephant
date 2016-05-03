@@ -1074,11 +1074,20 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 }
 
 /* Conference Talks Preview */
-.sessions { max-width: 1600px; }
+.sessions { max-width: 1170px; }
 .sessions .session-summary p { margin-bottom: 0; }
 @media only screen and (min-width: 35em) {
     .sessions .session-meta-links li { float: left; }
     .sessions .session-meta-links li + li:before { content: '\2022'; margin: 0 .4rem 0 .4rem; color: #BBB; font-size: .8rem; }
+}
+.panel-photo {
+  max-height: 173px !important;
+  width: 173px !important;
+  border-radius: 50%;
+  -webkit-filter:grayscale(0.9);
+  -moz-filter:grayscale(0.9);
+  filter:gray;
+  filter:grayscale(0.9);
 }
 
 /* Schedule */

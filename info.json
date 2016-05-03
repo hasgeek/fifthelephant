@@ -9,6 +9,7 @@
     "options": {
         "assets_css": [
             "css/normalize.css",
+            "css/font-awesome.min.css",
             "js/vendor/leaflet/leaflet.ie.css",
             "js/vendor/leaflet/leaflet.css",
             "css/typography.css",
