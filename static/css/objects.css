@@ -1074,7 +1074,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 }
 
 /* Conference Talks Preview */
-.sessions { max-width: 1170px; }
+.sessions { max-width: 1200px; }
 .sessions .session-summary p { margin-bottom: 0; }
 @media only screen and (min-width: 35em) {
     .sessions .session-meta-links li { float: left; }
