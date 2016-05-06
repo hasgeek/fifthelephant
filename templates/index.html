@@ -8,6 +8,7 @@
 {% block page_nav_items %}
   <li><a href="#announcements" class="darkgray link-white-hover smooth-scroll">Announcements</a></li>
   <li><a href="#highlights" class="darkgray link-white-hover smooth-scroll">Past Editions</a></li>
+  <li><a href="#tickets" class="darkgray link-white-hover smooth-scroll">Tickets</a></li>
   <li><a href="#sponsors" class="darkgray link-white-hover smooth-scroll">Sponsors</a></li>
   <li><a href="#hasgeek" class="darkgray link-white-hover smooth-scroll">Behind The Scenes</a></li>
   <li><a href="/2016/venue" class="darkgray link-white-hover smooth-scroll">Venue</a></li>
@@ -38,15 +39,14 @@
         28 - 29 July 2016, <a href="/2016/venue" class="brown venue link-silent-hover">Bangalore</a>
       </h3>
     </hgroup>
-<!--     <p class="ticket-link event-tickets centered legible space-six-bottom">
+    <p class="ticket-link event-tickets centered legible space-six-bottom">
       <a
         class="button button-primary min-measure-3words prose-type"
-        title="Fifth Elephant 2015 Tickets on Explara"
-        href="https://in.explara.com/e/the-fifth-elephant-2015"
-        target="_blank">
+        title="Fifth Elephant 2016 Tickets"
+        href="#tickets" onClick="ga('send', { hitType: 'event', eventCategory: 'ticketing', eventAction: 'buy button click', eventLabel: 'Fifth Elephant - Buy your ticket'});">
         Buy Tickets
       </a>
-    </p> -->
+    </p>
     <p class="centered nospace-top space-two-bottom regular">
       <a class="button" href="https://fifthelephant.talkfunnel.com/2016/" target="_blank">Propose to speak</a>
     </p>
@@ -153,7 +153,14 @@
   </p>
 </section>
 
-<section id="testimonials" class="space-four-top push-one-top space-two-bottom legible clearfix">
+<section id="tickets" class="push-1q space-two-top clearfix pad-one">
+  <h1 class="calm centered space-two large">
+    Tickets
+  </h1>
+  <div id="boxoffice-widget" class="text-center regular"><p>Loading...</p></div>
+</section>
+
+<section id="testimonials" class="fill-light space-four-top push-one legible clearfix">
   <h2 class="centered calm measure-10words center-block nospace-top space-two-bottom">Testimonials</h2>
   <div class="container center-block pad-two">
     <p class="regular clearfix"><i class="fa fa-quote-left ultrafaded"></i> Fifth Elephant did something wonderfully positive for our Mad Street Den team. Between refreshing new lessons, business leads, potential hires and the sheer energy of the talent present at the conference, I think it was money & time well spent, even for an early stage startup as ours. We sent 11 members of our team including interns, and I'd do it all over again without thinking twice! This is the standard of discourse we should try and maintain across any conference or event we organize, these guys at HasGeek have a thing or two to teach the rest of our tech ecosystem. <i class="fa fa-quote-right ultrafaded"></i><br><span class="secondary flushright blue">Ashwini Asokan, <br><span class="darkgray">Co-founder of Mad Street Den</span></span></p>
@@ -228,6 +235,72 @@
   </article>
 </section>
 
+{% endblock %}
+
+
+{% block footer_script %}
+<style type="text/css">    
+  #boxoffice-widget .boxoffice-button-action {    
+    background-color: #E05F26;    
+    border-color:  #B94C1D;   
+    color: #fff;    
+  }   
+  #boxoffice-widget .boxoffice-button-info {    
+    background-color: #5BC0DE;    
+    border-color: #2A9CBE;    
+    color: #fff;    
+  }   
+  #boxoffice-widget .payment-stages-bg {    
+    background-color: #60583E;    
+  }   
+  #boxoffice-widget .progress-indicator>li {    
+    color: #bbb;    
+  }   
+  #boxoffice-widget .category-heading {   
+    background-color: #F2DE9C;    
+    border-bottom: 3px solid #bcad7a;   
+    color: rgba(0,0,0,0.6);  
+    line-height: 1.1;  
+  }   
+  #boxoffice-widget .category-heading:after {   
+    border-color: #F2DE9C transparent #F2DE9C #F2DE9C;    
+  }
+</style>    
+    
+<script>    
+  $(function(){   
+    //Boxoffice widget    
+    var boxofficeUrl = "https://boxoffice.hasgeek.com";   
+    var username, userphone, useremail;   
+    {% if g.user %}   
+      {% if g.user.fullname %}    
+        username = "{{ g.user.fullname }}";   
+      {% endif %}   
+      {% if g.user.phone %}   
+        userphone = "{{ g.user.phone }}";   
+      {% endif %}   
+      useremail = "{{ g.user.email }}";   
+    {% endif %}   
+    $.get({   
+      url: boxofficeUrl+"/api/1/boxoffice.js",    
+      crossDomain: true   
+    }).done(function(data) {    
+      var boxofficeScript = document.createElement('script');   
+      boxofficeScript.innerHTML = data.script;    
+      document.getElementsByTagName('body')[0].appendChild(boxofficeScript);    
+      window.Boxoffice.init({   
+        org: 'hasgeek',   
+        itemCollection: '',   
+        user_name: username,    
+        user_phone: userphone,    
+        user_email: useremail,    
+        paymentDesc: 'Fifth Elephant 2016'    
+      });   
+    }).fail(function(response) {    
+      $('#boxoffice-widget p').html('Unable to connect. Please try again.');    
+    });   
+  });   
+</script>
 {% endblock %}
 
 {% block sponsor_compact %}
