@@ -1,0 +1,237 @@
+{% extends theme("layout.html") %}
+
+{% set title = 'Deep learning' %}
+{% set description = 'Deep learning conference' %}
+{% set long_page_nav = true %}
+{% set fixed_width_sticky = true %}
+
+{% block page_nav_items %}
+  <li><a href="#announcements" class="darkgray link-white-hover smooth-scroll">Announcements</a></li>
+  <li><a href="#editorial-panel" class="darkgray link-white-hover smooth-scroll">Editorial Panel</a></li>
+  <!-- <li><a href="#highlights" class="darkgray link-white-hover smooth-scroll">Highlights</a></li> -->
+  <li><a href="#sponsors" class="darkgray link-white-hover smooth-scroll">Sponsors</a></li>
+  <li><a href="#hasgeek" class="darkgray link-white-hover smooth-scroll">Behind The Scenes</a></li>
+  <!-- <li><a href="/2016/venue" class="darkgray link-white-hover smooth-scroll">Venue</a></li> -->
+  <li><a href="/2016/code-of-conduct" class="darkgray link-white-hover smooth-scroll">Code of Conduct</a></li>
+{% endblock %}
+
+{% block banner %}
+<div class="banner long-page-nav fill-beige home resetcoords clearfix">
+  <header class="clearfix">
+    {% block image_banner %}
+      
+      <div class="space-one">{% block nav %}{{ super() }}{% endblock %}</div>
+<!--       <div class="masthead-svg-container">
+        {% include theme("partials/_bigdata_banner.html") %}
+      </div> -->
+      <div class="masthead-svg-alternative"><p class="big-data center-block ir space-two-top">Deep Learning conference, 2 July 2016, Bangalore</p></div>
+      {% block header_caption %}
+        
+      {% endblock %}
+    {% endblock %}  
+
+    <!--<hr class="half center-block space-three-bottom">-->
+    <hgroup class="centered clearfix">
+      <div class="">
+        <h1 class="calm huge space-two-top space-half-bottom darkblue textshadow"><a class="link-white-translucent-hover darkblue" href="deep-learning">Deep Learning conference</a></h1>
+      </div>
+      <h3 class="calm brown legible nospace-top space-one-bottom">
+        2 July 2016, Bangalore
+      </h3>
+    </hgroup>
+    <p class="ticket-link event-tickets centered legible space-six-bottom">
+      <a
+        class="button button-primary min-measure-3words prose-type"
+        title="Deep Learning 2016 Tickets"
+        href="#tickets" onClick="ga('send', { hitType: 'event', eventCategory: 'ticketing', eventAction: 'buy button click', eventLabel: 'Deep Learning - Buy your ticket'});">
+        Buy Tickets
+      </a>
+    </p>
+    <p class="centered nospace-top space-two-bottom regular">
+      <a class="button" href="https://fifthelephant.talkfunnel.com/deep-learning-2016/" target="_blank">Propose to speak</a>
+    </p>
+  </header>
+  
+  
+  {% block page_nav %}{{ super() }}{% endblock %}
+  
+</div>
+{% endblock %}
+
+{% block content %}
+<section id="announcements" class="measure-10words pad-one center-block legible space-four-top space-three-bottom prose clearfix">
+  <h2 class="visuallyhidden">Introduction</h2>
+  <p>The Deep Learning Conference (2nd July 2016) is a single-day mini conference for 80-100 participants. The conference will have full, crisp and lightning talks from morning to lunch time, followed by two tracks of three-hour workshops. The workshops will cover NLP in the first track and Computer Vision / AI in the second. Participants can join either one of the two workshop tracks post-lunch.</p>  
+  <p>Deep Learning is a new area of research that is getting us closer in achieving one of the primary objectives of Machine Learning – Artificial Intelligence. It is used widely in the fields of Image Recognition, Natural Language Processing (NLP) and Video Classification.</p>
+  <p class="centered space-two-top">
+    <a class="button" href="https://fifthelephant.talkfunnel.com/deep-learning-2016/" target="_blank">View Funnel Submissions</a>
+  </p>
+  <p class="centered space-three-top">For more updates, follows us on <a href="http://www.facebook.com/the5el" target="_blank">Facebook</a> and <a href="http://twitter.com/fifthel" target="_blank">Twitter</a>.</p>
+  <p class="space-half centered">Tickets will be made available shortly. Sign up to receive updates.</p>
+  <form class="form-horizontal nospace" id='subscribe' action="" role="form" autocomplete="off">
+    <div class="centered">
+      <input type="email" class="subscribe-input" id="subscribe-email" name="subscribe-email" required placeholder="Email"/>
+      <input type="hidden" name="event" id="subscribe-event" value="Deep Learning 2016"/>
+      <button type="submit" class="subscribe-button prose-type all-caps">Subscribe</button>
+      <img src="{{ theme_static('img/ajax-loader.gif') }}" class="ajax-loader"/>
+    </div>
+  </form>
+  <div class="regular centered helptext"><p class="subscribe-status nospace"></p></div>
+</section>
+
+<!-- <section id="highlights" class="space-four-top space-three-bottom push-one-top fill-light legible clearfix">
+  <h2 class="centered calm measure-10words center-block space-two">Highlights</h2>
+</section> -->
+
+<section id="editorial-panel" class="space-four-top push-one-top fill-light legible clearfix">
+<h2 class="centered calm space-four-top space-one-bottom">Editorial Panel</h2>
+{% from theme("data/editorial-panel.html") import panelist as sessions %}
+{% include theme("partials/_sessions.html") %}
+<p class="centered nospace-top space-two-bottom regular">
+  <a class="button" href="deep-learning-community">More about the panel</a>
+</p>
+</section>
+
+<section id="tickets" class="push-1q space-two-top clearfix pad-one">
+  <h1 class="calm centered space-two large">
+    Tickets
+  </h1>
+  <div id="boxoffice-widget"><p>Loading...</p></div>
+</section>
+
+<section id="sponsors" class="fill-dark legible clearfix">
+  <div class="sponsors clearfix center-block">
+  <div class="space-two-top space-two-bottom">
+    <h1 class="centered calm measure-10words center-block space-two-bottom">Sponsors</h1>
+    <div class="eventsponsor-block center-block clearfix">
+    <article class="about-sponsor nospace-top clearfix pad-two space-line-bottom resetcoords highlight-links js-hidden">
+      <div class="sponsor-detail"></div>
+      <p class="all-caps space-three-bottom clearfix"><a class="close" href="#">Close</a></p>
+    </article>
+    <article class="sponsor-logos clearfix">
+      <div class="sponsor-logos-list clearfix">
+      <dl class="nospace v-middle clearfix">
+        {% from theme("data/sponsors-deep-learning.html") import sponsors %}
+        {% for type in sponsors %}
+          {% for item in type.list %}
+            {% if loop.first %}<dt class="{{ type.category|lower|replace(" ","-") }}"><span>{{ type.category }}</span></dt>{% endif %}
+            <dd class="{{ item.logo.size }} {% if item.logo.orientation == 'portrait' %}contain-height{% else %}contain-width{% endif %} {{ type.category|lower|replace(" ","-") }}">
+              <h5 class="sponsor-logo"><a href="{{ item.web.link }}" class="unhighlight{% if item.blurb %} sponsor-blurb{% endif %}" target="_blank"><img src="{{ item.logo.url }}" alt=" "></a></h5>
+              <h4 class="legible sponsor-name">{{ item.name|safe }}</h4>
+              <p class="secondary all-caps sponsor-link"><a href="{{ item.web.link }}" target="_blank">{{ item.web.display }}</a></p>
+              {% if item.blurb %}
+              <hr class="invisible">
+              <div class="regular stretch clearboth sponsor-description space-one-top clearfix">{{ item.blurb|safe }}</div>
+              {% endif %}
+            </dd>
+          {% endfor %}
+        {% endfor %}
+      </dl>
+      </div>
+    </article>
+    </div>
+    <article class="sponsor-pitch space-two-top clearfix">
+      <p class="centered nospace legible">
+        Startups to Fast Growing Companies<br>
+        Developers to Chiefs in-charge<br>
+        Under One Roof
+      </p>
+      <p class="centered space-two">
+        For further information on sponsorship, please <br>write to us at <a href="mailto:info@hasgeek.com">info@hasgeek.com</a> or call us at <a href="tel: +91-767-633-2020">+91-767-633-2020</a>
+        <!-- <a class="button" href="http://hsgk.in/1STVG2U" target="_blank">Get Sponsorship Deck</a> -->
+      </p>
+    </article>
+  </div>
+  </div>
+</section>
+
+<section class="behind-the-scenes fill-light partners-floating-box clearfix" id="hasgeek">
+  <div class="measure-10words pad-one center-block prose clearfix space-two">
+    <h2 class="clearfix"><a href="http://hasgeek.com/" class="hasgeek-logo ir center-block unhighlight">HasGeek</a></h2>
+    <article class="clearboth">
+      <p><a href="http://hasgeek.com/" target="_blank">HasGeek</a> helps people in technology meet each other, collaborate on new opportunities and advance the state of the art. We organize conferences, hacknights, workshops and geekups, and provide tools for communities to self-organize.</p>
+      <p>We’ve created conferences around the themes of <a href="http://rootconf.in/" target="_blank">devops</a>, <a href="http://metarefresh.in/" target="_blank">front end engineering</a>, <a href="http://www.juliacon.in/" target="_blank">Julia</a>, <a href="http://fifthelephant.in/" target="_blank">big data and cloud computing</a>, <a href="http://jsfoo.in/" target="_blank">JavaScript</a> and <a href="http://droidcon.in/" target="_blank">Android</a>. Our <a href="http://hasjob.co/" target="_blank">Job Board</a> is used by thousands of geeks every month to find new opportunities.</p>
+      <p>HasGeek is a technology company in the media business, bringing software automation to a traditionally people-intensive operation. In a little over two years, HasGeek has organized over two dozen conferences attended by thousands of technology professionals, made several thousand connections, and built open source tools that are now used by many communities.</p>
+    </article>
+  </div>
+</section>
+
+<section id="code-of-conduct" class="code-of-conduct regular fill-light push-two clearfix">
+  <article class="clearfix center-block centered prose">
+    <h2 class="visuallyhidden">Code of Conduct</h2>
+    <p class="space-line-bottom nospace-top serif-type italic commitment"><span class="wrap-mobile">We strive to make our events</span> <span class="wrap-mobile">friendly, safe and harassment&#8209;free for all.</span>
+    </p>
+    <p class="secondary semi-bold all-caps">Please observe the <a href="/2016/code-of-conduct">code of conduct</a> at the event.</p>
+  </article>
+</section>
+
+{% endblock %}
+
+{% block footer_script %}
+<style type="text/css">    
+  #boxoffice-widget .boxoffice-button-action {    
+    background-color: #E05F26;    
+    border-color:  #B94C1D;   
+    color: #fff;    
+  }   
+  #boxoffice-widget .boxoffice-button-info {    
+    background-color: #5BC0DE;    
+    border-color: #2A9CBE;    
+    color: #fff;    
+  }   
+  #boxoffice-widget .payment-stages-bg {    
+    background-color: #60583E;    
+  }   
+  #boxoffice-widget .progress-indicator>li {    
+    color: #bbb;    
+  }   
+  #boxoffice-widget .category-heading {   
+    background-color: #F2DE9C;    
+    border-bottom: 3px solid #bcad7a;   
+    color: rgba(0,0,0,0.6);  
+    line-height: 1.1;  
+  }   
+  #boxoffice-widget .category-heading:after {   
+    border-color: #F2DE9C transparent #F2DE9C #F2DE9C;    
+  }
+</style>    
+    
+<script>    
+  $(function(){   
+    //Boxoffice widget    
+    var boxofficeUrl = "https://boxoffice.hasgeek.com";   
+    var username, userphone, useremail;   
+    {% if g.user %}   
+      {% if g.user.fullname %}    
+        username = "{{ g.user.fullname }}";   
+      {% endif %}   
+      {% if g.user.phone %}   
+        userphone = "{{ g.user.phone }}";   
+      {% endif %}   
+      useremail = "{{ g.user.email }}";   
+    {% endif %}   
+    $.get({   
+      url: boxofficeUrl+"/api/1/boxoffice.js",    
+      crossDomain: true   
+    }).done(function(data) {    
+      var boxofficeScript = document.createElement('script');   
+      boxofficeScript.innerHTML = data.script;    
+      document.getElementsByTagName('body')[0].appendChild(boxofficeScript);    
+      window.Boxoffice.init({   
+        org: 'hasgeek',   
+        itemCollection: '',   
+        user_name: username,    
+        user_phone: userphone,    
+        user_email: useremail,    
+        paymentDesc: 'Deep Learning 2016'    
+      });   
+    }).fail(function(response) {    
+      $('#boxoffice-widget p').html('Unable to connect. Please try again.');    
+    });   
+  });   
+</script>
+{% endblock %}
+
+{% block sponsor_compact %}
+  
+{% endblock %}

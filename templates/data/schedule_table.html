@@ -1,0 +1,55 @@
+{% raw %}
+<script id="scheduletemplate" type="text/x-mustache-template">
+  <h3 class="centered calm space-two">{{date}}</h3>
+  <table class="schedule-table">
+    <thead>
+      <tr>
+        <th class="time semi-bold">Time</th>
+        {{#rooms}}
+        {{#track}}
+          <th class="track{{track}} semi-bold" data-td="track-{{track}}">{{title}}</th>
+        {{/track}}
+        {{^track}}
+          <th class="track{{track}} semi-bold tab-active" data-td="track-{{track}}">{{title}}</th>
+        {{/track}}
+        {{/rooms}}
+      </tr>
+    </thead>
+    <tbody>
+    {{#slots}}
+      <tr>
+        <th class="time" scope="row">{{slot}}</th>
+        {{#sessions}}
+        {{#is_break}}
+        <td colspan="3" class="centered">{{title}}</td>        
+        {{/is_break}}
+        {{^is_break}}
+        {{#track}}
+          <td class="track-{{track}}" rowspan={{rowspan}}>
+        {{/track}}
+        {{^track}}
+          <td class="track-{{track}} tab-active" rowspan={{rowspan}}>
+        {{/track}}
+          <h4>
+          {{#proposal_url}}
+          <a href="{{proposal_url}}" target="_blank">{{title}}</a>
+          {{/proposal_url}}
+          {{^proposal_url}}
+          {{title}}
+          {{/proposal_url}}
+          </h4>
+          {{#speaker}}
+          <p>{{speaker}}</p>
+          {{/speaker}}
+          {{#title}}
+          <p><em>{{start}} - {{end}}</em></p>
+          {{/title}}
+        </td>
+        {{/is_break}}
+        {{/sessions}}
+      </tr>
+    {{/slots}}
+    </tbody>
+  </table>
+</script>
+{% endraw %}

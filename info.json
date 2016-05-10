@@ -1,0 +1,30 @@
+{
+    "application": "eventframe",
+    "identifier": "fifthelephant2016",
+    "name": "The Fifth Elephant 2016",
+    "author": "HasGeek",
+    "description": "Fifth Elephant 2016 website template adapted from 2014 website",
+    "license": "All rights reserved",
+    "doctype": "html5",
+    "options": {
+        "assets_css": [
+            "css/normalize.css",
+            "css/font-awesome.min.css",
+            "js/vendor/leaflet/leaflet.ie.css",
+            "js/vendor/leaflet/leaflet.css",
+            "css/typography.css",
+            "css/layout.css",
+            "css/main.css",
+            "css/objects.css",
+            "css/2x.css"
+        ],
+        "assets_js": [
+            "js/libs/underscore.min.js",
+            "js/plugins.js",
+            "js/flipboard.js",
+            "js/vendor/leaflet/leaflet.js",
+            "js/script.js",
+            "js/libs/mustache.min.js"
+        ]
+    }
+}

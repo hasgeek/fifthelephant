@@ -1,0 +1,20 @@
+Deployment Notes
+====
+
+1. Remove class `wf-active` from <html>.
+
+2. Remove `<link rel="stylesheet" href="{{ theme_static('css/fonts.css') }}">` from the <head> section.
+
+3. Create and link Typekit stack/kit having the following fonts/weights.
+    - Bree Serif 400
+    - Proxima Nova 400
+    - Proxima Nova 600
+    - Proxima Nova 700
+
+4. Use minified custom modernizr build (already added to repo) — Replace `<script src="{{ theme_static('js/libs/modernizr-2.5.3.js') }}"></script>` with `<script src="{{ theme_static('js/libs/modernizr.custom.12911.js') }}"></script>` in the <head> section.
+
+5. Uncomment `<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->` (below page footer code) to fetch jQuery from Google CDN.
+
+6. Minify and combine all css/js sources.
+
+7. Verify analytics code at the bottom of the index.html.

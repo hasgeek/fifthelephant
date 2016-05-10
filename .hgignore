@@ -9,3 +9,5 @@ test.db
 .sass-cache
 .webassets-cache
 error.log
+fonts.css$
+.packed.css$

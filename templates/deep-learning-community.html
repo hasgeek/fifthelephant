@@ -1,0 +1,72 @@
+{% extends theme("deep-learning.html") %}
+
+{% set title = 'Deep learning' %}
+{% set description = '' %}
+{% set page_caption = 'Community' %}
+{% set page = 'community' %}
+{% set banner_title_size = 'huge' %}
+
+{% block image_banner %}
+<!-- <p class="community-banner center-block ir space-two-top">Community</p> -->
+{% endblock %}
+
+{% block page_nav_items %}
+   <li><a href="#committee" class="link-white-hover">Programme Committee</a></li>
+{% endblock %}
+
+{% block content %}
+<h2 class="large clearboth centered calm measure-10words center-block space-six-top space-two-bottom">
+  Of&nbsp;the&nbsp;Community,
+  By&nbsp;the&nbsp;Community,
+  For&nbsp;the&nbsp;Community
+</h2>
+<section id="community" class="legible clearfix">
+  <article class="prose clearfix">
+    <div class="measure-10words pad-one center-block">
+      <p>
+        One of the unique features of <a href="http://hasgeek.com/" class="block-link" target="_blank">HasGeek</a> events in general is the community’s defining role. The speakers, the curators and the attendees are all from the same community.
+      </p>
+      <p class="regular">
+        Anyone is welcome to propose a session on <a href="http://talkfunnel.com/" class="block-link" target="_blank">HasGeek Funnel</a>. Participants who have purchased conference tickets will vote on session proposals. The Editorial Panel steering Deep learning will also vote on submissions and balance the community voting.
+      </p>
+<!--       <p class="regular">
+        Proposal submissions are reviewed on the basis of use cases, how a problem was solved, or why a particular technology and/or approach was adopted for solving the problem. Proposers can refer to open source technologies and tools available for storage, analytics and visualisation in their submissions.
+      </p> -->
+    </div>
+      <!-- <p class="centered red">Status: Proposal submissions closed</p> -->
+    <p class="centered space-two-top">
+      <a class="button" href="https://fifthelephant.talkfunnel.com/deep-learning-2016/" target="_blank">View Funnel Submissions</a>
+    </p>
+  </article>
+  
+  <article id="committee" class="push-three-top push-two-bottom fill-light space-four-top clearfix">
+    <div class="prose measure-10words pad-one center-block">
+      <h2 class="centered calm space-two-top space-one-bottom">The Programme Committee</h2>
+      <p class="regular">
+        <!-- This year’s programme committee boasts of experience and expertise from different spectrums of Big Data &mdash; practitioners working on storage and cloud computing as well as architects and technologists working on analytics and business intelligence.  -->
+      </p>
+    </div>
+    {% from theme("data/editorial-panel.html") import panelist as sessions %}
+    <ul class="programme-committee poster-with-bio prose regular clearfix push-one-bottom space-two-top nospace-bottom">
+      {% for session in sessions %}
+        <li class="clearfix">
+          <div class="poster clearfix">
+            <p class="contain-width clearfix"><img alt="{{session.speaker.name}}" src="{{session.speaker.photo}}" width="150" height="150"></p>
+            <hgroup class="clearboth">
+              <h3>{{session.speaker.name}}</h3>
+              <h4 class="all-caps secondary">{{ session.speaker.designation|safe }}</h4>
+              <p><a class="block-link twitter-blue" href="https://twitter.com/{{ session.speaker.twitter }}" target="_blank">@{{ session.speaker.twitter }}</a></p>
+            </hgroup>
+          </div>
+          <div class="bio">
+            {{ session.speaker.bio|safe }}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </article>
+
+</section>
+
+{% endblock %}
+

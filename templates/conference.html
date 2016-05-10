@@ -1,0 +1,133 @@
+{% extends theme("layout.html") %}
+
+{% set title = 'Conference' %}
+{% set description = '' %}
+{% set page_caption = 'Conference' %}
+{% set page = 'conference' %}
+{% set banner_title_size = 'huge' %}
+
+{% block image_banner %}
+<!-- <p class="conference-banner center-block ir space-two-top">Community</p> -->
+{% endblock %}
+
+{% block page_nav_items %}
+   <li><a href="#tracks" class="link-white-hover">Tracks</a></li>
+   <!-- <li><a href="#sessions" class="link-white-hover">Confirmed Talks</a></li> -->
+   <li><a href="#schedule" class="link-white-hover">Schedule</a></li>
+   <li><a href="#venue" class="link-white-hover">Venue</a></li>
+{% endblock %}
+
+{% block content %}
+<h2 id="tracks" class="large clearboth centered calm measure-10words center-block space-two push-four-top">
+  Machine Learning&nbsp;<span class="amp">&amp;</span>&nbsp;Analytics.<br>
+  Every&nbsp;stone,&nbsp;unturned.
+</h2>
+<section class="legible clearfix">
+  <article class="prose clearfix">
+    <h1 class="visuallyhidden">Introduction</h1>
+    <div class="measure-10words pad-one center-block">
+      <p class="legible">The Fifth Elephant is India's largest gathering of big data and analytics practitioners. Machine Learning, Distributed and Parallel Computing, and High-performance Computing are the themes for this year’s edition.</p>
+      <p class="darkblue">
+        The conference has two tracks: Discovering Insights and Speed at Scale.
+      </p>
+      <p class="space-two-top space-half-bottom"><b>Discovering Insights</b>: This track is about general, novel, fundamental, and advanced techniques for making sense of data and driving decisions from data.</p>
+      <p class="space-two-top space-half-bottom"><b>Speed at Scale</b>: This track is about tools and processes for collecting, indexing, and processing vast amounts of data. </p>
+<!--       <p class="event-tickets centered legible space-two-top">
+        <a
+          class="button button-primary min-measure-3words prose-type"
+          title="Fifth Elephant 2015 Tickets on Explara"
+          href="https://in.explara.com/e/the-fifth-elephant-2015"
+          target="_blank">
+          Buy Tickets
+        </a>
+      </p> -->
+    </div>
+  </article>
+</section> 
+
+<!-- <section id="sessions" class="space-four-top push-one-top fill-light legible clearfix">
+{% with session_kind = 'Talks' %}
+<h2 class="centered calm space-four-top space-one-bottom">Confirmed Talks</h2>
+{% from theme("data/talks.html") import talks as sessions %}
+{% include theme("partials/_sessions.html") %}
+{% endwith %}
+</section> -->
+
+<!--schedule -->
+{% include theme("data/schedule_table.html") %}
+<section id="schedule" class="schedule space-two push-four legible">
+  <h2 class="centered calm nospace">Schedule</h2>
+  <div class="funnel-schedule-link">
+    <p class="centered space-two-top">
+      <a class="button" href="http://fifthelephant.talkfunnel.com/2015/schedule" target="_blank">View Schedule</a>
+    </p>
+  </div>
+  <div class="schedule-container">
+    <div class="schedule-table-container center-block pad-one regular" id="conferenceschedule">
+      <p class="centered loadingtxt">Loading...</p>
+    </div>
+  </div>
+</section>
+<!--schedule -->
+
+  <section id="venue" class="legible conference-venue space-two-top space-four-bottom push-four-top">
+    <article class="legible">
+      <hgroup class="space-two-bottom">
+        <h1 class="calm centered nospace large">Conference Venue</h1>
+        <h2 class="calm centered space-half-top nospace-bottom ultrafaded legible">NIMHANS Convention Centre</h2>
+      </hgroup>
+      <section>
+        <div class="venue-showcase conference-venue contain-width clearfix">
+          <p class="full">
+          <img  class="venuephoto occupy" style="width:50%; margin: 0 auto;"
+                  src="{{ theme_static('img/venue/nimhans-facade-640.jpg') }}"
+                  alt="NIMHANS Convention Centre">
+          </p>
+        </div>
+        <div class="measure-10words regular prose center-block pad-one space-two-top">
+          <h4 class="space-two-top nospace-bottom">When</h4>
+          <p class="space-half">July 16 &amp; 17</p>
+          <h4 class="space-two-top nospace-bottom">Address</h4>
+            <p class="space-half">
+            NIMHANS Convention Centre<br>
+            NIMHANS Hospital Premises,<br>
+            Hosur Road / Marigowda Road, (Lakkasandra, Wilson Garden)<br>
+            Bangalore, Karnataka 560029<br>
+            </p>
+            <p><strong>Landmark:</strong> Near Dairy Circle</p>
+          <p class="secondary space-half-top space-two-bottom"><a href="http://goo.gl/maps/PvXY">View on Google Maps</a></p>
+        </div>
+        <div class="map-container measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="conference-map" class="map"></div></div>
+      </section>
+    </article>
+  </section>
+
+{% endblock %}
+{% block footer_script %}
+<script type="text/javascript">
+function initMap(div, map_venue, map_center) {
+  var map = new L.Map(div);
+  var cloudmadeUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
+    subDomains = ['otile1','otile2','otile3','otile4'],
+    cloudmadeAttrib = '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>';
+  var cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib, subdomains: subDomains});
+  var   venue = new L.LatLng(map_venue.lat, map_venue.lon)
+      , center = new L.LatLng(map_center.lat, map_center.lon)
+      ;
+  map.setView(center, 13).addLayer(cloudmade);
+  if ($(window).width() < 768) map.setView(venue,13);
+  // map.dragging.disable(); 
+  var marker = new L.Marker(venue);
+  map.addLayer(marker);
+  marker.bindPopup(map_venue.name);
+  marker.openPopup();
+  map.scrollWheelZoom.disable();
+  map.doubleClickZoom.disable();
+  map.on('zoomend', onZoomend);
+  function onZoomend(){ map.setView(venue, map.getZoom()); };
+}
+$(function() { 
+  initMap('conference-map', { lat: 12.9431, lon: 77.5969, name: 'NIMHANS Convention Centre' }, { lat: 12.9431, lon: 77.5969 });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,110 @@
+/* ============== */
+/* = Typography = */
+/* ============== */
+
+
+/*  Families  */
+
+body,
+.body-type      { font-family: Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif; }
+h1,
+h2,
+h3,
+.title-type     { font-family: 'Bree Serif', FF Tisa Web Pro, Georgia, serif; }
+.serif-type     { font-family: Baskerville, Palatino, 'Book Antiqua', Constantia, 'URW Palladio L'; }
+.monospace      { font-family: monospace; }
+
+.wf-active body,
+.wf-active .body-type      { font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif; }
+.wf-active h1,
+.wf-active h2,
+.wf-active h3,
+.wf-active .title-type     { font-family: bree-serif, Bree Serif, FF Tisa Web Pro, Georgia, serif; }
+
+
+
+/*  Scale  */
+
+html            { font-size: 14px; line-height: 1.5 }
+
+
+.massive        { font-size: 9.00rem; line-height: 0.8000; text-rendering: optimizeLegibility; }
+.giant          { font-size: 5.500rem; line-height: 1; text-rendering: optimizeLegibility; }
+.huge           { font-size: 2.500rem; line-height: 1.1667; }
+.large          { font-size: 2.000rem; line-height: 1.5000; }
+.legible        { font-size: 1.250rem; line-height: 1.5000; }
+.regular        { font-size: 1.000rem; line-height: 1.5000; }
+.secondary      { font-size:  .800rem; line-height: 1.4000; }
+.tiny           { font-size:  .700rem; line-height: 1.4000; }
+
+.textshadow     { text-shadow: 0.001em 0.001em 3px rgba(0, 0, 0, 0.1);}
+
+
+@media only screen and (min-width: 30em) {
+    html        { font-size: 18px; }
+    .huge       { font-size: 3.000rem; line-height: 1.1667; }
+    .massive    { font-size: 8.450rem; }
+    .giant      { font-size: 6.000rem; }    
+}
+@media only screen and (min-width: 45em) {
+    .massive    { font-size: 9.000rem; }
+}
+@media only screen and (min-width: 50em) {
+    .massive    { font-size: 12.00rem; }
+}
+@media only screen and (min-width: 60em) {
+    .massive    { font-size: 18.00rem; }
+}
+
+
+/*  Base  */
+
+pre  { word-wrap: normal; overflow: auto; }
+code { font: 0.857em/1  Menlo, Monaco, 'Bitstream Vera Sans Mono', 'Courier New', monospace; }
+pre code { font-family: Menlo, 'Bitstream Vera Sans Mono', Monaco, 'Courier New', monospace; }
+
+
+
+
+/*  Helpers  */
+
+.centered       { text-align: center; }
+.right-aligned  { text-align: right; }
+.left-aligned   { text-align: left; }
+
+.thin           { font-weight: 300; }
+.calm           { font-weight: normal; }
+.semi-bold      { font-weight: 600; }
+.bold           { font-weight: bold;   }
+.italic         { font-style: italic; }
+.no-italic      { font-style: normal; }
+
+.small-caps     { font-variant: small-caps; }
+.all-caps       { text-transform: uppercase; }
+.all-lower      { text-transform: lowercase; }
+.capitalize     { text-transform: capitalize; }
+.strike         { text-decoration: line-through; }
+.no-underline   { text-decoration: none; }
+
+.amp {
+    font-family: Baskerville, Palatino, 'Book Antiqua', Constantia, 'URW Palladio L';
+    font-style: italic;
+    font-size: 1.2em;
+    line-height: 0.5em;
+}
+.quo  { margin-left: -0.24em; }
+.dquo { margin-left: -0.44em; }
+.tquo { margin-left: -0.68em; }
+
+.red {
+    color: rgba(200, 0, 0, 0.9);
+}
+.green {
+    color: #55CC55;
+}
+.orange {
+    color: #CCA351;
+}
+.blue {
+    color: #58B3F2;
+}

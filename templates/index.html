@@ -1,0 +1,308 @@
+{% extends theme("layout.html") %}
+
+{% set title = '' %}
+{% set description = '' %}
+{% set long_page_nav = true %}
+{% set fixed_width_sticky = true %}
+
+{% block page_nav_items %}
+  <li><a href="#announcements" class="darkgray link-white-hover smooth-scroll">Announcements</a></li>
+  <li><a href="#highlights" class="darkgray link-white-hover smooth-scroll">Past Editions</a></li>
+  <li><a href="#tickets" class="darkgray link-white-hover smooth-scroll">Tickets</a></li>
+  <li><a href="#sponsors" class="darkgray link-white-hover smooth-scroll">Sponsors</a></li>
+  <li><a href="#hasgeek" class="darkgray link-white-hover smooth-scroll">Behind The Scenes</a></li>
+  <li><a href="/2016/venue" class="darkgray link-white-hover smooth-scroll">Venue</a></li>
+  <li><a href="/2016/code-of-conduct" class="darkgray link-white-hover smooth-scroll">Code of Conduct</a></li>
+{% endblock %}
+
+{% block banner %}
+<div class="banner long-page-nav fill-beige home resetcoords clearfix">
+  <header class="clearfix">
+    {% block image_banner %}
+      
+      <div class="space-one">{% block nav %}{{ super() }}{% endblock %}</div>
+      <div class="masthead-svg-container">
+        {% include theme("partials/_bigdata_banner.html") %}
+      </div>
+      <div class="masthead-svg-alternative"><p class="big-data center-block ir space-two-top">The Fifth Elephant, 28 - 29 July 2016, Bangalore</p></div>
+      {% block header_caption %}
+        
+      {% endblock %}
+    {% endblock %}  
+
+    <!--<hr class="half center-block space-three-bottom">-->
+    <hgroup class="centered clearfix">
+      <div class="">
+        <h1 class="calm huge space-two-top space-half-bottom darkblue textshadow">The Fifth Elephant</h1>
+      </div>
+      <h3 class="calm brown legible nospace-top space-one-bottom">
+        28 - 29 July 2016, <a href="/2016/venue" class="brown venue link-silent-hover">Bangalore</a>
+      </h3>
+    </hgroup>
+    <p class="ticket-link event-tickets centered legible space-six-bottom">
+      <a
+        class="button button-primary min-measure-3words prose-type"
+        title="Fifth Elephant 2016 Tickets"
+        href="#tickets" onClick="ga('send', { hitType: 'event', eventCategory: 'ticketing', eventAction: 'buy button click', eventLabel: 'Fifth Elephant - Buy your ticket'});">
+        Buy Tickets
+      </a>
+    </p>
+    <p class="centered nospace-top space-two-bottom regular">
+      <a class="button" href="https://fifthelephant.talkfunnel.com/2016/" target="_blank">Propose to speak</a>
+    </p>
+  </header>
+  
+  
+  {% block page_nav %}{{ super() }}{% endblock %}
+  
+</div>
+{% endblock %}
+
+{% block content %}
+<section id="announcements" class="measure-10words pad-one center-block legible space-four-top space-three-bottom clearfix">
+  <h2 class="visuallyhidden">Introduction</h2>
+  <div class="centered center-block legible title-type space-three-bottom">3 days - 50+ - speakers - 1000+ smartest programmers, <br class="hide-mobile">data scientists and CTOs. <br class="hide-mobile">Descend in Namma Bengaluru's most happening <br class="hide-mobile">Community powered conference &amp; workshops <br class="hide-mobile">on large-scale data processing.</div>
+  <!-- {% from theme("data/highlights.html") import highlights %}
+   <div class="tile-block clearfix">   
+    <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom">
+      {% for tile in highlights.tiles %}
+      <li class="{{ tile.background }} centered">
+        <div class="white"><a class="occupy unhighlight legible link-silent" href="{{ tile.link_title }}">{{ tile.title|safe }}</a></div>
+        <div class="regular wrap space-half"><i class="fa fa-calendar"></i> {{ tile.date|safe }}</div>
+        {% if tile.venue %}<div class="regular"><a href="{{ tile.link_venue }}" class="brown link-silent"><i class="fa fa-map-marker"></i> {{ tile.venue|safe }}</a></div>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div> -->
+  <p>The Fifth Elephant is India’s most renowned data science conference. It is a space for discussing some of the most cutting edge developments in the fields of machine learning, data science and technology that powers data collection and analysis.</p>  
+  <p>The Fifth Elephant 2016 will revolve around Machine Learning, Distributed and Parallel Computing, and High-performance Computing. This year's edition is being held on 28<sup class="tiny">th</sup> and 29<sup class="tiny">th</sup> July, at the <a href="/2016/venue" class="orange block-link">NIMHANS Convention Centre, Bangalore</a></p>
+  <p class="centered space-two-top">
+    <a class="button" href="https://fifthelephant.talkfunnel.com/2016/">View Funnel Submissions</a>
+  </p>
+  <p class="space-three-top">This year we are organising a <a  href="/2016/deep-learning" class="orange block-link">Deep learning conference</a> <!-- on 2<sup class="tiny">nd</sup> July, --> as part of the lead-up to fifth elephant. It will have exploratory talks in the morning and workshops post-lunch, running on two parallel tracks -- on applying deep learning to Natural Language Processing and Image Processing.</p>
+  <p class="centered space-three-top">For more updates, follows us on <a href="http://www.facebook.com/the5el" target="_blank">Facebook</a> and <a href="http://twitter.com/fifthel" target="_blank">Twitter</a>.</p>
+  <p class="space-half centered">Tickets will be made available shortly. Sign up to receive updates.</p>
+  <form class="form-horizontal nospace" id='subscribe' action="" role="form" autocomplete="off">
+    <div class="centered">
+      <input type="email" class="subscribe-input" id="subscribe-email" name="subscribe-email" required placeholder="Email"/>
+      <input type="hidden" name="event" id="subscribe-event" value="Fifth Elephant 2016"/>
+      <button type="submit" class="subscribe-button prose-type all-caps">Subscribe</button>
+      <img src="{{ theme_static('img/ajax-loader.gif') }}" class="ajax-loader"/>
+    </div>
+  </form>
+  <div class="regular centered helptext"><p class="subscribe-status nospace"></p></div>
+</section>
+
+<section id="highlights" class="space-four-top space-three-bottom push-one-top fill-light legible clearfix">
+  <h2 class="centered calm measure-10words center-block space-two">Highlights</h2>
+  <ul class="thumbnail-columns thumbnail-columns-four video-thumbnails regular clearfix">
+    <li class="clearfix">
+      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-day-1/1131-amod-malviya-keynote-future-patterns-in-data-ecosystem-sponsored" target="_blank">
+        <p class="poster video contain-width">
+          <img alt="" src="https://images.hasgeek.com/embed/file/421f1027ddca4d37ae05abb249467dc5" width="350" height="197">
+        </p>
+        <hgroup>
+          <h3>Future patterns in data ecosystem</h3>
+          <h4 class="space-1q-top nospace-bottom orange">Amod Malviya</h4>
+<!--           <h6 class="space-1q-top space-half-bottom secondary thin darkblue">CTO at Flipkart</h6> -->
+        </hgroup>
+      </a>
+    </li>
+    <li class="clearfix">
+      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-2/1113-devashish-shankar-deep-learning-for-natural-language-processing" target="_blank">
+        <p class="poster video contain-width">
+          <img alt="" src="https://images.hasgeek.com/embed/file/b3df7e42acc84b18948914dbecfaa4fc" width="350" height="197">
+        </p>
+        <hgroup>
+          <h3>Deep Learning for Natural Language Processing</h3>
+          <h4 class="space-1q-top nospace-bottom orange">Devashish Shankar</h4>
+<!--           <h6 class="space-1q-top space-half-bottom secondary thin darkblue">Engineer at LucidWorks</h6> -->
+        </hgroup>
+      </a>
+    </li>
+    <li class="clearfix">
+      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-2/1112-shailesh-kumar-towards-thinking-machines" target="_blank">
+        <p class="poster video contain-width">
+          <img alt="" src="https://images.hasgeek.com/embed/file/654f031da57a41a08e33c60204b5b052" width="350" height="197">
+        </p>
+        <hgroup>
+          <h3>Towards “Thinking Machines”</h3>
+          <h4 class="space-1q-top nospace-bottom orange">Shailesh Kumar</h4>
+<!--           <h6 class="space-1q-top space-half-bottom secondary thin darkblue">Founding partner at Julia Computing</h6> -->
+        </hgroup>
+      </a>
+    </li>
+    <li class="clearfix">
+      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-day-1/1129-tim-poston-keynote-data-comes-in-shapes" target="_blank">
+        <p class="poster video contain-width">
+          <img alt="" src="https://images.hasgeek.com/embed/file/dc9aa31cc56b4a3fae95bb1834263431" width="350" height="197">
+        </p>
+        <hgroup>
+          <h3>Data Comes in Shapes</h3>
+          <h4 class="space-1q-top nospace-bottom orange">Tim Poston</h4>
+<!--           <h6 class="space-1q-top space-half-bottom secondary thin darkblue">Chief Scientist at Forus Health</h6> -->
+        </hgroup>
+      </a>
+    </li>
+  </ul>
+      
+  <p class="centered space-two regular">
+      <a class="button space-half-bottom" href="https://hasgeek.tv/fifthelephant/2015-day-1" target="_blank">Watch Day 1 Videos</a>
+      <a class="button" href="https://hasgeek.tv/fifthelephant/2015-2" target="_blank">Watch Day 2 Videos</a>
+      <a class="button" href="https://www.flickr.com/photos/hasgeek/sets/72157655705316089" target="_blank">Event Photos</a>
+  </p>
+</section>
+
+<section id="tickets" class="push-1q space-two-top clearfix pad-one">
+  <h1 class="calm centered space-two large">
+    Tickets
+  </h1>
+  <div id="boxoffice-widget" class="text-center regular"><p>Loading...</p></div>
+</section>
+
+<section id="testimonials" class="fill-light space-four-top push-one legible clearfix">
+  <h2 class="centered calm measure-10words center-block nospace-top space-two-bottom">Testimonials</h2>
+  <div class="container center-block pad-two">
+    <p class="regular clearfix"><i class="fa fa-quote-left ultrafaded"></i> Fifth Elephant did something wonderfully positive for our Mad Street Den team. Between refreshing new lessons, business leads, potential hires and the sheer energy of the talent present at the conference, I think it was money & time well spent, even for an early stage startup as ours. We sent 11 members of our team including interns, and I'd do it all over again without thinking twice! This is the standard of discourse we should try and maintain across any conference or event we organize, these guys at HasGeek have a thing or two to teach the rest of our tech ecosystem. <i class="fa fa-quote-right ultrafaded"></i><br><span class="secondary flushright blue">Ashwini Asokan, <br><span class="darkgray">Co-founder of Mad Street Den</span></span></p>
+    <p class="regular clearfix"><i class="fa fa-quote-left ultrafaded"></i> Very helpful, and very supportive! Any queries I had were quickly and clearly handled. The process of wiring up the speaker and connecting laptops was as good as the sound system and the video recording, all excellent. <i class="fa fa-quote-right ultrafaded"></i><br><span class="secondary flushright blue">Tim Poston, <br><span class="darkgray">Chief Scientist at Forus Health</span></span></p>
+    <p class="regular clearfix"><i class="fa fa-quote-left ultrafaded"></i> The biggest call out of the HasGeek Fifthelephant conference is the talk selection process and diversity, richness of content in the talks. The second highlight is the post selection preparation of talks and mentoring for speakers. <br>The logistics of the conference itself - wifi, videos, communication etc is as good as it gets. Kudos to your guys for running such a high quality data conference overall. <i class="fa fa-quote-right ultrafaded"></i><br><span class="secondary flushright blue">Regunath Balasubramanian, <br><span class="darkgray">Principal Architect at Flipkart</span></span></p>
+  </div>
+</section>
+
+<section id="sponsors" class="fill-dark legible clearfix">
+  <div class="sponsors clearfix center-block">
+  <div class="space-two-top space-two-bottom">
+    <h1 class="centered calm measure-10words center-block space-two-bottom">Sponsors</h1>
+    <div class="eventsponsor-block center-block clearfix">
+    <article class="about-sponsor nospace-top clearfix pad-two space-line-bottom resetcoords highlight-links js-hidden">
+      <div class="sponsor-detail"></div>
+      <p class="all-caps space-three-bottom clearfix"><a class="close" href="#">Close</a></p>
+    </article>
+    <article class="sponsor-logos clearfix">
+      <div class="sponsor-logos-list clearfix">
+      <dl class="nospace v-middle clearfix">
+        {% from theme("data/sponsors.html") import sponsors %}
+        {% for type in sponsors %}
+          {% for item in type.list %}
+            {% if loop.first %}<dt class="{{ type.category|lower|replace(" ","-") }}"><span>{{ type.category }}</span></dt>{% endif %}
+            <dd class="{{ item.logo.size }} {% if item.logo.orientation == 'portrait' %}contain-height{% else %}contain-width{% endif %} {{ type.category|lower|replace(" ","-") }}">
+              <h5 class="sponsor-logo"><a href="{{ item.web.link }}" class="unhighlight{% if item.blurb %} sponsor-blurb{% endif %}" target="_blank"><img src="{{ item.logo.url }}" alt=" "></a></h5>
+              <h4 class="legible sponsor-name">{{ item.name|safe }}</h4>
+              <p class="secondary all-caps sponsor-link"><a href="{{ item.web.link }}" target="_blank">{{ item.web.display }}</a></p>
+              {% if item.blurb %}
+              <hr class="invisible">
+              <div class="regular stretch clearboth sponsor-description space-one-top clearfix">{{ item.blurb|safe }}</div>
+              {% endif %}
+            </dd>
+          {% endfor %}
+        {% endfor %}
+      </dl>
+      </div>
+    </article>
+    </div>
+    <article class="sponsor-pitch space-two-top clearfix">
+      <p class="centered nospace legible">
+        Startups to Fast Growing Companies<br>
+        Developers to Chiefs in-charge<br>
+        Under One Roof
+      </p>
+      <p class="centered space-two">
+        For further information on sponsorship, please <br>write to us at <a href="mailto:info@hasgeek.com">info@hasgeek.com</a> or call us at <a href="tel: +91-767-633-2020">+91-767-633-2020</a>
+        <!-- <a class="button" href="http://hsgk.in/1STVG2U" target="_blank">Get Sponsorship Deck</a> -->
+      </p>
+    </article>
+  </div>
+  </div>
+</section>
+
+<section class="behind-the-scenes fill-light partners-floating-box clearfix" id="hasgeek">
+  <div class="measure-10words pad-one center-block prose clearfix space-two">
+    <h2 class="clearfix"><a href="http://hasgeek.com/" class="hasgeek-logo ir center-block unhighlight">HasGeek</a></h2>
+    <article class="clearboth">
+      <p><a href="http://hasgeek.com/" target="_blank">HasGeek</a> helps people in technology meet each other, collaborate on new opportunities and advance the state of the art. We organize conferences, hacknights, workshops and geekups, and provide tools for communities to self-organize.</p>
+      <p>We’ve created conferences around the themes of <a href="http://rootconf.in/" target="_blank">devops</a>, <a href="http://metarefresh.in/" target="_blank">front end engineering</a>, <a href="http://www.juliacon.in/" target="_blank">Julia</a>, <a href="http://fifthelephant.in/" target="_blank">big data and cloud computing</a>, <a href="http://jsfoo.in/" target="_blank">JavaScript</a> and <a href="http://droidcon.in/" target="_blank">Android</a>. Our <a href="http://hasjob.co/" target="_blank">Job Board</a> is used by thousands of geeks every month to find new opportunities.</p>
+      <p>HasGeek is a technology company in the media business, bringing software automation to a traditionally people-intensive operation. In a little over two years, HasGeek has organized over two dozen conferences attended by thousands of technology professionals, made several thousand connections, and built open source tools that are now used by many communities.</p>
+    </article>
+  </div>
+</section>
+
+<section id="code-of-conduct" class="code-of-conduct regular fill-light push-two clearfix">
+  <article class="clearfix center-block centered prose">
+    <h2 class="visuallyhidden">Code of Conduct</h2>
+    <p class="space-line-bottom nospace-top serif-type italic commitment"><span class="wrap-mobile">We strive to make our events</span> <span class="wrap-mobile">friendly, safe and harassment&#8209;free for all.</span>
+    </p>
+    <p class="secondary semi-bold all-caps">Please observe the <a href="/2015/code-of-conduct">code of conduct</a> at the event.</p>
+  </article>
+</section>
+
+{% endblock %}
+
+
+{% block footer_script %}
+<style type="text/css">    
+  #boxoffice-widget .boxoffice-button-action {    
+    background-color: #E05F26;    
+    border-color:  #B94C1D;   
+    color: #fff;    
+  }   
+  #boxoffice-widget .boxoffice-button-info {    
+    background-color: #5BC0DE;    
+    border-color: #2A9CBE;    
+    color: #fff;    
+  }   
+  #boxoffice-widget .payment-stages-bg {    
+    background-color: #60583E;    
+  }   
+  #boxoffice-widget .progress-indicator>li {    
+    color: #bbb;    
+  }   
+  #boxoffice-widget .category-heading {   
+    background-color: #F2DE9C;    
+    border-bottom: 3px solid #bcad7a;   
+    color: rgba(0,0,0,0.6);  
+    line-height: 1.1;  
+  }   
+  #boxoffice-widget .category-heading:after {   
+    border-color: #F2DE9C transparent #F2DE9C #F2DE9C;    
+  }
+</style>    
+    
+<script>    
+  $(function(){   
+    //Boxoffice widget    
+    var boxofficeUrl = "https://boxoffice.hasgeek.com";   
+    var username, userphone, useremail;   
+    {% if g.user %}   
+      {% if g.user.fullname %}    
+        username = "{{ g.user.fullname }}";   
+      {% endif %}   
+      {% if g.user.phone %}   
+        userphone = "{{ g.user.phone }}";   
+      {% endif %}   
+      useremail = "{{ g.user.email }}";   
+    {% endif %}   
+    $.get({   
+      url: boxofficeUrl+"/api/1/boxoffice.js",    
+      crossDomain: true   
+    }).done(function(data) {    
+      var boxofficeScript = document.createElement('script');   
+      boxofficeScript.innerHTML = data.script;    
+      document.getElementsByTagName('body')[0].appendChild(boxofficeScript);    
+      window.Boxoffice.init({   
+        org: 'hasgeek',   
+        itemCollection: '',   
+        user_name: username,    
+        user_phone: userphone,    
+        user_email: useremail,    
+        paymentDesc: 'Fifth Elephant 2016'    
+      });   
+    }).fail(function(response) {    
+      $('#boxoffice-widget p').html('Unable to connect. Please try again.');    
+    });   
+  });   
+</script>
+{% endblock %}
+
+{% block sponsor_compact %}
+  
+{% endblock %}

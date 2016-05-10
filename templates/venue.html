@@ -1,0 +1,150 @@
+{% extends theme("layout.html") %}
+
+{% set title = 'Venue' %}
+{% set description = '' %}
+{% set page_caption = 'Venue' %}
+{% set page = 'venue' %}
+{% set banner_title_size = 'huge' %}
+
+{% block page_nav_items %}
+   <li><a href="#venue" class="link-white-hover">Venue</a></li>
+   <!-- <li><a href="#workshops" class="link-white-hover">Workshops</a></li> -->
+   <!-- <li><a href="#accomodation" class="link-white-hover">Stay</a></li> -->
+{% from theme("data/emergency.html") import emergency_contacts -%}
+{% if emergency_contacts -%}
+<li><a href="#emergency" class="link-white-hover">Emergency</a></li>
+{%- endif %}
+{%- endblock %}
+
+{% block content %}
+<section id="venue" class="legible conference-venue space-two-top space-four-bottom push-four-top">
+  <article class="legible">
+    <hgroup class="space-two-bottom">
+      <h1 class="calm centered nospace large"><abbr title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention&nbsp;Centre</h1>
+      <h2 class="calm centered space-half-top nospace-bottom ultrafaded legible">Conference &amp; Workshops venue</h2>
+    </hgroup>
+    <section>
+      <div class="venue-showcase conference-venue contain-width clearfix">
+        <p class="full "></p>
+        <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/nimhans-audi1-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/nimhans-audi1-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/nimhans-audi1-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/nimhans-audi1-800.jpg') }}" }]'
+                alt="Main Auditorium at NIMHANS Convention Centre">
+        </p>
+        <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/nimhans-audi2-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/nimhans-audi2-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/nimhans-audi2-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/nimhans-audi2-800.jpg') }}" }]'
+                alt="Auditorium 2 at NIMHANS Convention Centre">
+        </p>
+        <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/nimhans-hall-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/nimhans-hall-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/nimhans-hall-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/nimhans-hall-800.jpg') }}" }]'
+                alt="Main Hall at NIMHANS Convention Centre">
+        </p>
+        <p class="quarter flushleft">
+          <img  class="venuephoto"
+                src="{{ theme_static('img/venue/nimhans-greens-256.jpg') }}"
+                data-src='[{ "test": "(max-width: 1024px), (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 512px), (min-device-pixel-ratio: 1.5) and (max-width: 512px)", "src": "{{ theme_static('img/venue/nimhans-greens-256.jpg') }}" }, { "test": "(min-width: 1025px) and (max-width: 1600px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px), (min-device-pixel-ratio: 1.5) and (min-width: 513px) and (max-width: 800px)", "src": "{{ theme_static('img/venue/nimhans-greens-400.jpg') }}" }, { "test": "(min-width: 1601px), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 801px), (min-device-pixel-ratio: 1.5) and (min-width: 801px)", "src": "{{ theme_static('img/venue/nimhans-greens-800.jpg') }}" }]'
+                alt="Greens at NIMHANS Convention Centre">
+        </p>
+      </div>
+      <div class="measure-10words regular prose center-block space-two-top pad-one">
+        <p class="space-one">
+          The <abbr class="silent" title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention Centre is one of the best conference venues in Bangalore. 
+        </p>
+        <p class="space-one">
+          With three large capacity auditoriums, spacious exhibition area for sponsors and plenty of open space for conference attendees to interact and hack, the venue can conveniently hold 1,500 people without the space appearing crowded.
+        </p>
+        <p class="space-one">
+           The Convention Centre is on Marigowda Road, past the main <abbr class="silent" title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> campus when you approach from Dairy Circle.
+        </p>
+        <h4 class="space-two-top nospace-bottom">Address</h4>
+        <p class="space-half">
+          <abbr class="silent" title="National Institute of Mental Health and Neurosciences">NIMHANS</abbr> Convention&nbsp;Centre<br>
+          NIMHANS Hospital Premises,<br>
+          Hosur Road / Marigowda Road, (Lakkasandra, Wilson Garden)<br>
+          Bangalore, Karnataka 560029
+        </p>
+        <div class="clearfix">
+          <h5 class="nospace ultrafaded flushleft regular pad-half-right">Landmark</h5>
+          <p class="nospace flushleft">Near Dairy Circle</p>
+        </div>
+        <p class="secondary space-half-top space-two-bottom"><a href="http://goo.gl/maps/PvXY">View on Google Maps</a></p>
+      </div>
+      <div class="map-container measure-10words center-block legible clearfix links-prevent-hover-highlight"><div id="conference-map" class="map"></div></div>
+    </section>
+    <h4 class="space-four-top space-two-bottom centered semi-bold">Getting There</h4>
+    <section class="getting-there measure-10words regular center-block highlight-links pad-one clearfix">
+      <h5 class="nospace regular faded capitalize">From Airport</h5>
+      <p class="regular space-half">NIMHANS Convention Centre is approximately 41 kms away from the Bangalore International Airport (BIA). You can hire a cab from the taxi lane or board an air-conditioned city bus (route BIAS1) from the BMTC bus stand at the airport to reach the venue directly. It takes about 1-1.5 hours to reach the Convention Centre from the airport.</p>
+      <p class="regular space-half-top space-two-bottom">Alternate bus routes BIAS9, BIAS 8A will bring you to Majestic bus terminal from where you can board a bus to reach the venue.</p>
+      <h5 class="nospace regular faded capitalize">From Majestic</h5>
+      <p class="regular space-half-top space-half-bottom">NIMHANS Convention Centre is about 8.5 kms from Majestic bus terminus. Buses to the venue depart from platform numbers 13 and 14 (<a href="mailto:info@hasgeek.com?Subject=Route%Verification">verification of platform numbers required</a>). Bus routes 365, 369D, 369F, 369C, 360, 171, 171c, 165, 168 will get you to the venue directly.</p>
+      <p class="regular space-half-top space-two-bottom">On a regular day it takes about 33-35 minutes to reach the Convention Centre from the Majestic bus terminus. If you have trouble getting to the venue, try using <a href="http://btis.in/direction">Bangalore Transport Information System</a>.</p>
+      <h5 class="nospace regular faded capitalize">City Cabs</h5>
+      <p class="regular space-half-top space-half-bottom">A number of reliable taxi services operate in the city and can help you reach NIMHANS Convention Centre. To make a booking, you can call them on the following numbers:
+      </p>
+      <dl class="centered-key-value cabs">
+        <dt class="secondary">Ola Cabs</dt>
+        <dd><a href="tel:+918033553355" class="spooky">+91 80 3355 3355</a></dd>
+        <dt class="secondary">Taxi for Sure</dt>
+        <dd><a href="tel:+918060601010" class="spooky">+91 80 6060 1010</a></dd>
+        <dt class="secondary">Meru</dt>
+        <dd><a href="tel:+918044224422" class="spooky">+91 80 4422 4422</a></dd>
+        <dt class="secondary">Easy Cabs</dt>
+        <dd><a href="tel:+918043434343" class="spooky">+91 80 4343 4343</a></dd>
+      </dl>
+    </section>
+</section>
+<hr class="twenty center-block">
+{% from theme("data/emergency.html") import emergency_contacts %}
+{% if emergency_contacts %}
+<section id="emergency" class="emergency legible clearfix measure-8words center-block space-two-top space-four-bottom push-four-top">
+  <h1 class="calm centered nospace">Emergency</h1>
+  <p class="pad-one">Here’s a list of contact numbers that you should keep handy in case of emergency.</p>
+  <dl class="centered-key-value clearfix v-middle regular nospace highlight-links center-block ">
+    {% for group in emergency_contacts %}
+    <dt class="secondary">{{ group.category|safe }}</dt>
+      {% for item in group.list %}
+      <dd><a href="tel:{{ item.contact.dial }}" class="spooky">{{ item.contact.display }}</a>{% if item.name %} <span class="who faded secondary">({{ item.name }})</span>{% endif %}</dd>
+      {% endfor %}
+    {% endfor %}
+  </dl>
+</section>
+{% endif %}
+{% endblock %}
+
+
+{% block footer_script %}
+<script type="text/javascript">
+function initMap(div, map_venue, map_center) {
+  var map = new L.Map(div);
+  var cloudmadeUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
+    subDomains = ['otile1','otile2','otile3','otile4'],
+    cloudmadeAttrib = '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>';
+  var cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib, subdomains: subDomains});
+  var   venue = new L.LatLng(map_venue.lat, map_venue.lon)
+      , center = new L.LatLng(map_center.lat, map_center.lon)
+      ;
+  map.setView(center, 13).addLayer(cloudmade);
+  if ($(window).width() < 768) map.setView(venue,13);
+  // map.dragging.disable(); 
+  var marker = new L.Marker(venue);
+  map.addLayer(marker);
+  marker.bindPopup(map_venue.name);
+  marker.openPopup();
+  map.scrollWheelZoom.disable();
+  map.doubleClickZoom.disable();
+  map.on('zoomend', onZoomend);
+  function onZoomend(){ map.setView(venue, map.getZoom()); };
+}
+$(function() { 
+  initMap('conference-map', { lat: 12.9431, lon: 77.5969, name: 'NIMHANS Convention Centre' }, { lat: 12.9599, lon: 77.5969 });
+  initMap('workshop-map', { lat: 12.963369, lon: 77.638320, name: 'The Energy and Research Institute (TERI), Domlur' }, { lat: 12.963369, lon: 77.638320 });
+});
+</script>
+{% endblock %}
+
