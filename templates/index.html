@@ -158,7 +158,7 @@
   <h1 class="calm centered space-two large">
     Tickets
   </h1>
-  <div id="boxoffice-widget" class="text-center regular"><p>Loading...</p></div>
+  <div id="boxoffice-widget" class="text-center regular"><p>Launching Soon.</p></div>
 </section>
 
 <section id="testimonials" class="fill-light space-four-top push-one legible clearfix">
@@ -282,24 +282,24 @@
       {% endif %}   
       useremail = "{{ g.user.email }}";   
     {% endif %}   
-    $.get({   
-      url: boxofficeUrl+"/api/1/boxoffice.js",    
-      crossDomain: true   
-    }).done(function(data) {    
-      var boxofficeScript = document.createElement('script');   
-      boxofficeScript.innerHTML = data.script;    
-      document.getElementsByTagName('body')[0].appendChild(boxofficeScript);    
-      window.Boxoffice.init({   
-        org: 'hasgeek',   
-        itemCollection: '',   
-        user_name: username,    
-        user_phone: userphone,    
-        user_email: useremail,    
-        paymentDesc: 'Fifth Elephant 2016'    
-      });   
-    }).fail(function(response) {    
-      $('#boxoffice-widget p').html('Unable to connect. Please try again.');    
-    });   
+    // $.get({
+    //   url: boxofficeUrl+"/api/1/boxoffice.js",
+    //   crossDomain: true
+    // }).done(function(data) {
+    //   var boxofficeScript = document.createElement('script');
+    //   boxofficeScript.innerHTML = data.script;
+    //   document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
+    //   window.Boxoffice.init({
+    //     org: 'hasgeek',
+    //     itemCollection: '',
+    //     user_name: username,
+    //     user_phone: userphone,
+    //     user_email: useremail,
+    //     paymentDesc: 'Fifth Elephant 2016'
+    //   });
+    // }).fail(function(response) {
+    //   $('#boxoffice-widget p').html('Unable to connect. Please try again.');
+    // });
   });   
 </script>
 {% endblock %}
