@@ -7,15 +7,17 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>{% if title %}{{ title }}{%- else %}The Fifth Elephant{% endif %}</title>
-  <meta name="description" content="{% if description %}{{ description }}{% else %}The Fifth Elephant is a community-powered conference on the big data ecosystem, covering the technology and its applications in a range of industries.{% endif %}">
+  <title>{% if title %}{{ title }}{%- else %}The Fifth Elephant - India’s most renowned data science conference{% endif %}</title>
+  <meta name="title" content="{% if title %}{{ title }}{%- else %}The Fifth Elephant - India’s most renowned data science conference{% endif %}" />
+  <meta name="description" content="{% if description %}{{ description }}{% else %}Discuss the most cutting edge developments in the fields of machine learning, data science and technology that power data collection and analysis.{% endif %}">
+  <meta name="keywords" content="Conference, Workshop, Data Science, Analytics, Machine Learning, NLP, Big Data, Deep Learning">
   <meta name="author" content="HasGeek and friends">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   
-  <meta property="og:title" content="The Fifth Elephant"/>
+  <meta property="og:title" content="{% if title %}{{ title }}{%- else %}The Fifth Elephant - India’s most renowned data science conference{% endif %}"/>
   <meta property="og:image" content="{{ request.url_root[:-1] }}{{ theme_static('img/logo.png') }}"/>
   <meta property="og:url" content="{{ request.url }}"/>
-  <meta property="og:description" content="The Fifth Elephant is a community-powered conference on the big data ecosystem, covering the technology and its applications in a range of industries."/>
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}Discuss the most cutting edge developments in the fields of machine learning, data science and technology that power data collection and analysis.{% endif %}"/>
 
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
