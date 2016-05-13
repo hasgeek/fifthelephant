@@ -4,16 +4,18 @@
       'on-the-side': true
     , 'tiles': [
         {
-          'title': 'Deep learning conference'
+          'title': 'Deep Learning Conf'
         , 'date': 'July&nbsp;2, 2016'
+        , 'venue': 'CMR Institute of Technology'
         , 'background': 'conference'
         , 'link_title': '/2016/deep-learning'
+        , 'link_venue': 'https://www.google.co.in/maps/place/CMRIT/@12.9666193,77.7117629,15z/data=!4m5!3m4!1s0x0:0x7896436c100b0272!8m2!3d12.9666193!4d77.7117629'
        },
        {
           'title': 'Fifth Elephant conference'
         , 'date': 'July&nbsp;28&nbsp;&amp;&nbsp;29, 2016'
         , 'venue': 'NIMHANS Convention Centre, Bangalore'
-        , 'background': 'workshops'
+        , 'background': 'conference'
         , 'link_title': '#announcements'
         , 'link_venue': '/2016/venue'
       }
@@ -21,29 +23,30 @@
   }
 %}
 
-
-<!-- {%
-  set highlights = {
-      'on-the-side': true
-    , 'tiles': [
-        {
-          'title': 'Deep learning conference'
-        , 'date': 'July&nbsp;2'
-        , 'venue': ''
-        , 'background': 'conference'
-        , 'link_title': '/2016/deep-learning'
-        , 'link_schedule': '/2016/deep-learning#conference-schedule'
-        , 'link_venue': '/2016/deep-learning#venue'
-       },
-       {
-          'title': 'Fifthelephant conference'
-        , 'date': 'July&nbsp;28&nbsp;&amp;&nbsp;29'
-        , 'venue': 'NIMHANS Convention Centre, Bangalore'
-        , 'background': 'workshops'
-        , 'link_title': '/2016/conference'
-        , 'link_schedule': '#conference-schedule'
-        , 'link_venue': '/2016/venue'
-      }
-    ]
-  }
-%} -->
+{#
+  {%
+    set highlights = {
+        'on-the-side': true
+      , 'tiles': [
+          {
+            'title': 'Deep Learning Conf'
+          , 'date': 'July&nbsp;2'
+          , 'venue': ''
+          , 'background': 'conference'
+          , 'link_title': '/2016/deep-learning'
+          , 'link_schedule': '/2016/deep-learning#conference-schedule'
+          , 'link_venue': '/2016/deep-learning#venue'
+         },
+         {
+            'title': 'Fifthelephant conference'
+          , 'date': 'July&nbsp;28&nbsp;&amp;&nbsp;29'
+          , 'venue': 'NIMHANS Convention Centre, Bangalore'
+          , 'background': 'workshops'
+          , 'link_title': '/2016/conference'
+          , 'link_schedule': '#conference-schedule'
+          , 'link_venue': '/2016/venue'
+        }
+      ]
+    }
+  %}
+#}
