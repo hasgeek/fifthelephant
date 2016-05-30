@@ -116,7 +116,7 @@
           {% for item in type.list %}
             {% if loop.first %}<dt class="{{ type.category|lower|replace(" ","-") }}"><span>{{ type.category }}</span></dt>{% endif %}
             <dd class="{{ item.logo.size }} {% if item.logo.orientation == 'portrait' %}contain-height{% else %}contain-width{% endif %} {{ type.category|lower|replace(" ","-") }}">
-              <h5 class="sponsor-logo"><a href="{{ item.web.link }}" class="unhighlight{% if item.blurb %} sponsor-blurb{% endif %}" target="_blank"><img src="{{ item.logo.url }}" alt=" "></a></h5>
+              <h5 class="sponsorlogo"><a href="{{ item.web.link }}" class="unhighlight{% if item.blurb %} sponsor-blurb{% endif %}" target="_blank"><img src="{{ item.logo.url }}" alt=" "></a></h5>
               <h4 class="legible sponsor-name">{{ item.name|safe }}</h4>
               <p class="secondary all-caps sponsor-link"><a href="{{ item.web.link }}" target="_blank">{{ item.web.display }}</a></p>
               {% if item.blurb %}

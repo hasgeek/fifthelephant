@@ -794,14 +794,14 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .js .sponsors dd > hr { display: none; }
 .js .sponsors dd h5 { margin: 0; }
 .js .sponsors dd a:hover { background-color: rgba(255,255,255,.4); }
-.no-js .sponsors .sponsor-logo,
-.about-sponsor .sponsor-logo { width: 30%; float: right; margin: 0; }
+.no-js .sponsors .sponsorlogo,
+.about-sponsor .sponsorlogo { width: 30%; float: right; margin: 0; }
 .no-js .sponsors .sponsor-name,
 .no-js .sponsors .sponsor-link,
 .about-sponsor .sponsor-name,
 .about-sponsor .sponsor-link { width: 65%; float: left; margin: 0; }
-.no-js .sponsors .sponsor-logo img,
-.about-sponsor .sponsor-logo img { max-width:  100%; height: auto; }
+.no-js .sponsors .sponsorlogo img,
+.about-sponsor .sponsorlogo img { max-width:  100%; height: auto; }
 .about-sponsor .sponsor-description p { margin-bottom: 0; }
 .sponsors .about-sponsor a.close:before { content: '×'; font-size: 1.8rem; line-height: .25; display: inline-block; margin-right: .5rem; }
 .sponsors .about-sponsor a.close {
@@ -828,8 +828,8 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 @media only screen and (min-width: 40em) { 
     .js .sponsors .sponsor-logos .sponsor-logos-list { max-width: 90%; }
     .js .sponsors .about-sponsor { float: right; width: 45%; padding-left: 1rem; padding-top: 1rem; }
-    .no-js .sponsors .sponsor-logo,
-    .sponsors .about-sponsor .sponsor-logo { float: none; width: 6em; margin: 1rem 0; }
+    .no-js .sponsors .sponsorlogo,
+    .sponsors .about-sponsor .sponsorlogo { float: none; width: 6em; margin: 1rem 0; }
     .no-js .sponsors .sponsor-name,
     .no-js .sponsors .sponsor-link,
     .sponsors .about-sponsor .sponsor-name,              
@@ -986,8 +986,8 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 
 /* Community Sponsors */
 .community-partners-list { max-width: 32em; margin-left: auto; margin-right: auto; }
-.community-partners-list .sponsor-logo { max-height: 5em; text-align: right; }
-.community-partners-list li.contain-height .sponsor-logo { max-height: 5em; }
+.community-partners-list .sponsorlogo { max-height: 5em; text-align: right; }
+.community-partners-list li.contain-height .sponsorlogo { max-height: 5em; }
 @media only screen and (min-width: 50em) {
     .community-partners-list { max-width: 55em; }
     .community-partners-list > li { width: 40%; margin-left: 5%; margin-right: 5%; float: left; }
