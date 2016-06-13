@@ -7,8 +7,10 @@
 
 {% block page_nav_items %}
   <li><a href="#announcements" class="darkgray link-white-hover smooth-scroll">Announcements</a></li>
+<!--   <li><a href="#highlights" class="darkgray link-white-hover smooth-scroll">Higlights</a></li> -->
+  <li><a href="#schedule" class="darkgray link-white-hover smooth-scroll">Schedule</a></li>
+  <li><a href="#tickets" class="darkgray link-white-hover smooth-scroll">Tickets</a></li>
   <li><a href="#editorial-panel" class="darkgray link-white-hover smooth-scroll">Editorial Panel</a></li>
-  <!-- <li><a href="#highlights" class="darkgray link-white-hover smooth-scroll">Highlights</a></li> -->
   <li><a href="#sponsors" class="darkgray link-white-hover smooth-scroll">Sponsors</a></li>
   <li><a href="#hasgeek" class="darkgray link-white-hover smooth-scroll">Behind The Scenes</a></li>
   <!-- <li><a href="/2016/venue" class="darkgray link-white-hover smooth-scroll">Venue</a></li> -->
@@ -61,39 +63,42 @@
   <p>We're hosting India's first deep learning conference on 1st July, bringing together practitioners, researchers and developers to understand conceptual issues in Deep Learning, how Deep Learning is emerging as a distinct discipline within the field of Machine Learning, and to review cutting edge technological developments in India and across the world.</p>  
   <p>The conference will have full, crisp and lightning talks from 10AM to 5PM, followed by two parallel tracks of workshops on 2nd July. The workshops will cover NLP in the first track and Computer Vision / AI in the second. Participants can join the track of their choice on July 2nd. Workshop tickets have to be purchased separately.
 </p>
-  <p class="centered space-two-top">
+<!--   <p class="centered space-two-top">
     <a class="button" href="https://fifthelephant.talkfunnel.com/deep-learning-2016/" target="_blank">View Funnel Submissions</a>
-  </p>
+  </p> -->
   <p class="centered space-three-top">For more updates, follows us on <a href="http://www.facebook.com/the5el" target="_blank">Facebook</a> and <a href="http://twitter.com/fifthel" target="_blank">Twitter</a>.</p>
-<!--   <form class="form-horizontal nospace" id='subscribe' action="" role="form" autocomplete="off">
-    <div class="centered">
-      <input type="email" class="subscribe-input" id="subscribe-email" name="subscribe-email" required placeholder="Email"/>
-      <input type="hidden" name="event" id="subscribe-event" value="Deep Learning 2016"/>
-      <button type="submit" class="subscribe-button prose-type all-caps">Subscribe</button>
-      <img src="{{ theme_static('img/ajax-loader.gif') }}" class="ajax-loader"/>
-    </div>
-  </form>
-  <div class="regular centered helptext"><p class="subscribe-status nospace"></p></div> -->
 </section>
 
 <!-- <section id="highlights" class="space-four-top space-three-bottom push-one-top fill-light legible clearfix">
   <h2 class="centered calm measure-10words center-block space-two">Highlights</h2>
 </section> -->
 
-<section id="editorial-panel" class="space-four-top push-one-top fill-light legible clearfix">
+{% include theme("schedule-table.html") %}
+<section id="schedule" class="push-one-top push-two-bottom fill-light legible clearfix">
+  <div class="container schedule-container">
+    <div class="text-center" id="conference-schedule">
+      <h2 class="centered calm measure-10words center-block space-two">Conference Schedule</h2>
+      <div class="schedule-table-container text-center" id="dl-conferenceschedule">
+        <p class="text-center loadingtxt"><a class="button dark regular" href="https://fifthelephant.talkfunnel.com/deep-learning-2016/schedule" target="_blank">View Schedule</a></p>
+      </div>
+    </div>
+  </div>  
+</section>
+
+<section id="tickets" class="push-one-top push-two-bottom clearfix">
+  <h1 class="calm centered space-two large">
+    Tickets
+  </h1>
+  <div id="boxoffice-widget"><p>Loading...</p></div>
+</section>
+
+<section id="editorial-panel" class="push-one-top push-two-bottom legible fill-light clearfix">
 <h2 class="centered calm space-four-top space-one-bottom">Editorial Panel</h2>
 {% from theme("data/editorial-panel.html") import panelist as sessions %}
 {% include theme("partials/_sessions.html") %}
 <p class="centered nospace-top space-two-bottom regular">
   <a class="button" href="deep-learning-community">More about the panel</a>
 </p>
-</section>
-
-<section id="tickets" class="push-1q space-two clearfix pad-one">
-  <h1 class="calm centered space-two large">
-    Tickets
-  </h1>
-  <div id="boxoffice-widget"><p>Loading...</p></div>
 </section>
 
 <section id="sponsors" class="fill-dark legible clearfix">
@@ -134,7 +139,6 @@
         Under One Roof
       </p>
       <p class="centered space-two">
-        <!-- For further information on sponsorship, please <br>write to us at <a href="mailto:info@hasgeek.com">info@hasgeek.com</a> or call us at <a href="tel: +91-767-633-2020">+91-767-633-2020</a>-->
         <a class="button" href="http://hsgk.in/deep-learning-sponsordeck" target="_blank">Get Sponsorship Deck</a>
       </p>
     </article>
