@@ -1037,9 +1037,9 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 }
 
 /* List of poster image + bio */
-.poster-with-bio > li { margin: 3rem auto; max-width: 36em; padding: 0 1rem; }
+.poster-with-bio > li { margin: 3rem auto; max-width: 36em; padding: 0 1rem; list-style: none}
 .poster-with-bio .poster { position: relative; }
-.poster-with-bio .poster p { margin: 0; max-width: 9.375rem; }
+.poster-with-bio .poster p { margin: 0; max-width: 8rem; }
 .poster-with-bio .poster p img { display: block; }
 .poster-with-bio .poster hgroup { position: absolute; left: 11rem; bottom: 0; }
 .poster-with-bio h3,
@@ -1048,8 +1048,8 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 @media only screen and (min-width: 51em) { 
     .poster-with-bio li { max-width: none; }
     .poster-with-bio .poster { width: 50%; margin-left: -8em; float: left; margin-right: 2em; text-align: right; }
-    .poster-with-bio .poster p { margin: .5rem 0; width: auto; float: right; }
-    .poster-with-bio .poster p img { margin: .5rem 0; width: 9.375rem; float: right; }
+    .poster-with-bio .poster p { margin: .5rem 0 0; width: auto; float: right; }
+    .poster-with-bio .poster p img { margin: .3rem 0; width: 7rem; float: right; }
     .poster-with-bio .poster hgroup { position: relative; left: auto; bottom: auto; }
     .poster-with-bio .bio { float: left; width: 24em; }
     .poster-with-bio .bio p { margin: .5rem 0; }
@@ -1057,20 +1057,25 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 
 /* Conference Featured Talks */
 .featured-sessions .featured-session-topic { text-transform: capitalize; }
+.poster-with-bio .poster p.double-width { margin: 0; max-width: 15rem; }
+.featured-sessions.poster-with-bio > li { margin: 2rem auto; }
 .featured-sessions.poster-with-bio .bio { color: rgba(0,0,0,.8); font-size: .9rem; }
-.featured-sessions.poster-with-bio .poster p { width: 30%; }
-.featured-sessions.poster-with-bio .poster hgroup { left: 35%; }
-.featured-sessions.poster-with-bio .poster { margin-top: 2rem; }
+.featured-sessions.poster-with-bio .bio .title { font-weight: 500}
+.featured-sessions.poster-with-bio .poster img { border-radius: 50%; border: 2px solid #EC6015; }
+.featured-sessions.poster-with-bio .poster img.half-width { width: 48%; margin: 0 1%;}
+.featured-sessions.poster-with-bio .poster hgroup { float: right; width: 35%;}
+.featured-sessions.poster-with-bio .poster { margin-top: 0.5rem; }
+.featured-sessions.poster-with-bio .poster hgroup .designation { color: #666; }
 .featured-sessions .featured-session-description p { margin-bottom: 0; }
 .featured-sessions .session-meta-links li { float: left; }
 .featured-sessions .session-meta-links li + li:before { content: '\2022'; margin: 0 .6rem 0 .6rem; color: #BBB; font-size: .8rem; }
 @media only screen and (min-width: 30em) { .featured-sessions.poster-with-bio .poster hgroup { left: 10rem; } }
-@media only screen and (min-width: 51em) { 
+@media only screen and (min-width: 51em) {
     .featured-sessions .featured-session-topic { text-align: center; }
     .featured-sessions .featured-session-description { max-width: 32em; margin: 1rem auto 0; }
     .featured-sessions .session-meta-links           { max-width: 32em; }
-    .featured-sessions.poster-with-bio .poster { margin-left: -7em; margin-right: 1em; margin-top: 0; }
-    .featured-sessions.poster-with-bio .bio { float: left; width: 25em; }
+    .featured-sessions.poster-with-bio .poster { margin-right: 1em; margin-top: 0; }
+    .featured-sessions.poster-with-bio .bio { float: left; width: 28em;}
     .featured-sessions.poster-with-bio .poster hgroup { left: auto; }
 }
 
@@ -1082,6 +1087,11 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .sessions .session-meta-links li + li:before { content: '\2022'; margin: 0 .4rem 0 .4rem; color: #BBB; font-size: .8rem; }
 }
 .panel-photo {
+  max-height: 173px !important;
+  width: 173px !important;
+  border-radius: 50%;
+}
+.grayscale {
   max-height: 173px !important;
   width: 173px !important;
   border-radius: 50%;
