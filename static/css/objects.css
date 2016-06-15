@@ -1961,3 +1961,6 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
 .helptext {
   height: 30px;
 }
+.waitlist-link {
+  margin: 5px 14px;
+}

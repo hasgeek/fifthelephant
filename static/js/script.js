@@ -480,35 +480,43 @@ function parseJson(data, eventType, divContainer) {
 
 $(function() {
 
-    //Subscribe form
-    $('#subscribe').on('submit', function(event) {
-        event.preventDefault();
-        $('.subscribe-status').html('');
-        var postData ={};
-        if($('#subscribe-email').val() === "") {
-            $('.subscribe-status').html('Please enter an email id');
+    //Waitlist form
+    $('#waitlist').on('submit', function(event) {
+      event.preventDefault();
+      $('.form-status').html('');
+      var formElements = $('#waitlist').serializeArray();
+      var formDataValid = true;
+      var formData ={};
+      for (var formIndex=0; formIndex < formElements.length; formIndex++) {
+        if(formElements[formIndex].value === "") {
+            formDataValid = false;
         }
-        else {
-            postData = { "Email": $('#subscribe-email').val(), "Event" : $('#subscribe-event').val() };
-            $('.ajax-loader').css('visibility', 'visible');
-            $.ajax({
-                type: 'post',
-                url: 'https://script.google.com/macros/s/AKfycbwkkVFfdoQF7_aozgUPyfxDuuxOrN2melaehVBcsuP84Fa7Vks/exec',
-                data: postData,
-                dataType: 'json',
-                timeout: 5000,
-                complete: function(response, textStatus) {
-                    $('.ajax-loader').css('visibility', 'hidden');
-                    if(response.status === 200) {
-                        $("#subscribe")[0].reset();
-                        $('.subscribe-status').show().html('Thank you for subscribing!');
-                    }
-                    else {
-                        $('.subscribe-status').show().html('Error, try again.');
-                    }
+        formData[formElements[formIndex].name] = formElements[formIndex].value;
+      }
+      if(!formDataValid) {
+        $('.form-status').html('Please enter all the details');
+      }
+      else {
+        postData = { "Name": formData.name, "Email": formData.email, "ticket" : formData.ticket };
+        $('.ajax-loader').css('visibility', 'visible');
+        $.ajax({
+            type: 'post',
+            url: 'https://script.google.com/macros/s/AKfycbwLm-aZg80QFi2e4ZuMPOmRHq9ZaV0tt57TpRfDBZ-MzYvh4afs/exec',
+            data: postData,
+            dataType: 'json',
+            timeout: 5000,
+            complete: function(response, textStatus) {
+                $('.ajax-loader').css('visibility', 'hidden');
+                if(response.status === 200) {
+                    $("#waitlist")[0].reset();
+                    $('.form-status').show().html('You have been waitlisted');
                 }
-            });
-        }
+                else {
+                    $('.form-status').show().html('Error, try again.');
+                }
+            }
+        });
+      }
     });
 
   // For conference and workshop schedule
