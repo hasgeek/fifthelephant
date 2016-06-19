@@ -1059,11 +1059,12 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .featured-sessions .featured-session-topic { text-transform: capitalize; }
 .poster-with-bio .poster p.double-width { margin: 0; max-width: 15rem; }
 .featured-sessions.poster-with-bio > li { margin: 2rem auto; }
-.featured-sessions.poster-with-bio .bio { color: rgba(0,0,0,.8); font-size: .9rem; }
+.featured-sessions.poster-with-bio .bio { margin-top: 1rem; color: rgba(0,0,0,.8); font-size: .9rem; }
 .featured-sessions.poster-with-bio .bio .title { font-weight: 500}
 .featured-sessions.poster-with-bio .poster img { border-radius: 50%; border: 2px solid #EC6015; }
-.featured-sessions.poster-with-bio .poster img.half-width { width: 48%; margin: 0 1%;}
+.featured-sessions.poster-with-bio .poster img.half-width { width: 48%; margin: 0.3rem 1%; float: left;}
 .featured-sessions.poster-with-bio .poster hgroup { float: right; width: 35%;}
+.featured-sessions.poster-with-bio .poster hgroup.move-left { left: 16rem;}
 .featured-sessions.poster-with-bio .poster { margin-top: 0.5rem; }
 .featured-sessions.poster-with-bio .poster hgroup .designation { color: #666; }
 .featured-sessions .featured-session-description p { margin-bottom: 0; }
@@ -1075,8 +1076,9 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .featured-sessions .featured-session-description { max-width: 32em; margin: 1rem auto 0; }
     .featured-sessions .session-meta-links           { max-width: 32em; }
     .featured-sessions.poster-with-bio .poster { margin-right: 1em; margin-top: 0; }
-    .featured-sessions.poster-with-bio .bio { float: left; width: 28em;}
+    .featured-sessions.poster-with-bio .bio { float: left; width: 28em; margin-top: 0;}
     .featured-sessions.poster-with-bio .poster hgroup { left: auto; }
+    .featured-sessions.poster-with-bio .poster hgroup.move-left { left: auto; }
 }
 
 /* Conference Talks Preview */

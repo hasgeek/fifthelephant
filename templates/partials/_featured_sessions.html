@@ -6,7 +6,7 @@
           {% for img in session.photo %}
             <img alt="{{session.name}}" src="{{img}}" {% if session.photo|length > 1 %}class="half-width"{% endif %}>
           {% endfor %}
-          <hgroup class="contain-width clearboth">
+          <hgroup class="contain-width clearboth {% if session.photo|length > 1 %}move-left{% endif %}">
             <h3 class="push-half-bottom regular">{{session.name}}</h3>
             <h4 class="secondary designation">{{ session.designation }}</h4>
           </hgroup>
