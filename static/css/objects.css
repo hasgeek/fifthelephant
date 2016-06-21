@@ -762,7 +762,10 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .js .sponsors dd.party { background-color: #FBEFF2; background-color: rgba(251,239,242,.85); }
 .js .sponsors dd.lanyard { background-color: #FBEFF2; background-color: rgba(251,239,242,.85); }
 .js .sponsors dd.accommodation-partner { background-color: #FBEFF2; background-color: rgba(255,255,255,.85); }
-.js .sponsors dd.speaker-travel-support, .js .sponsors dd.community-partner { background-color: #F1F1FF; background-color: rgba(241,241,255,.85); }
+.js .sponsors dd.speaker-travel-support,
+.js .sponsors dd.community-partner, 
+.js .sponsors dd.hospitality-partner,
+.js .sponsors dd.education-partner  { background-color: #F1F1FF; background-color: rgba(241,241,255,.85); }
 .js .sponsors dd.community { background-color: #FBEFF2; background-color: rgba(251,239,242,.85); }
 .js .sponsors dd.corporate,
 .js .sponsors dd.corporate-tickets { background-color: #EFFBEF; background-color: rgba(239,251,239,.85); }
