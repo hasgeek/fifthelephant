@@ -754,6 +754,13 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     color: rgba(255,255,255,.95);
     z-index: 100;
 }
+.js .sponsors dt.accommodation-partner span,
+.js .sponsors dt.speaker-travel-support span,
+.js .sponsors dt.community-partner span, 
+.js .sponsors dt.hospitality-partner span,
+.js .sponsors dt.education-partner span {
+    font-size: .500rem;
+}
 .js .sponsors dd.platinum { background-color: #FFFFFF; background-color: rgba(255,255,255,.85); }
 .js .sponsors dd.gold { background-color: #EED }
 .js .sponsors dd.silver { background-color: #EAF5FC; background-color: rgba(234,245,252,.85); }
@@ -765,7 +772,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .js .sponsors dd.speaker-travel-support,
 .js .sponsors dd.community-partner, 
 .js .sponsors dd.hospitality-partner,
-.js .sponsors dd.education-partner  { background-color: #F1F1FF; background-color: rgba(241,241,255,.85); }
+.js .sponsors dd.education-partner  { background-color: #ddd; }
 .js .sponsors dd.community { background-color: #FBEFF2; background-color: rgba(251,239,242,.85); }
 .js .sponsors dd.corporate,
 .js .sponsors dd.corporate-tickets { background-color: #EFFBEF; background-color: rgba(239,251,239,.85); }
