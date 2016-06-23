@@ -755,7 +755,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     z-index: 100;
 }
 .js .sponsors dd.platinum { background-color: #FFFFFF; background-color: rgba(255,255,255,.85); }
-.js .sponsors dd.gold { background-color: #F8F8E1; background-color: rgba(255,237,138,.85); }
+.js .sponsors dd.gold { background-color: #EED }
 .js .sponsors dd.silver { background-color: #EAF5FC; background-color: rgba(234,245,252,.85); }
 .js .sponsors dd.bronze { background-color: #F7F2E0; background-color: rgba(247,242,224,.85); }
 .js .sponsors dd.vc-sponsor  { background-color: #EAF5FC; background-color: rgba(234,245,252,.85); }
