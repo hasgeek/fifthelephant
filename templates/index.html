@@ -158,7 +158,7 @@
     Tickets
   </h1>
   <div id="boxoffice-widget"><p>Loading...</p></div>
-  <form class="form-horizontal nospace" id='waitlist' action="" role="form" autocomplete="off">
+<!--   <form class="form-horizontal nospace" id='waitlist' action="" role="form" autocomplete="off">
     <p class="text-center push-two-top">Please register below to be waitlisted for Deep Learning workshop</p>
     <div class="centered">
       <input type="name" class="subscribe-input" name="name" required placeholder="Name"/>
@@ -168,7 +168,7 @@
       <img src="{{ theme_static('img/ajax-loader.gif') }}" class="ajax-loader"/>
     </div>
   </form>
-  <div class="regular centered helptext"><p class="form-status nospace"></p></div>
+  <div class="regular centered helptext"><p class="form-status nospace"></p></div> -->
 </section>
 
 
@@ -309,12 +309,12 @@
         paymentDesc: 'Fifth Elephant 2016'
       });
 
-      var timerID = window.setInterval(function() {
-        if(($('#deep-learning-workshop .sold-out').length)) {
-          $('<p class="waitlist-link"><a href="#waitlist" class="secondary smooth-scroll block-link">Waitlist me</a></p>').insertAfter($('#deep-learning-workshop .sold-out'));
-          window.clearInterval(timerID);
-        }
-      }, 1000);
+      // var timerID = window.setInterval(function() {
+      //   if(($('#deep-learning-workshop .sold-out').length)) {
+      //     $('<p class="waitlist-link"><a href="#waitlist" class="secondary smooth-scroll block-link">Waitlist me</a></p>').insertAfter($('#deep-learning-workshop .sold-out'));
+      //     window.clearInterval(timerID);
+      //   }
+      // }, 1000);
 
     }).fail(function(response) {
       $('#boxoffice-widget p').html('Unable to connect. Please try again.');
