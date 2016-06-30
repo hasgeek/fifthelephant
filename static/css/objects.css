@@ -1114,7 +1114,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 }
 
 /* Schedule */
-.schedule-container { max-width: 1000px; }
+.schedule-container { max-width: 1000px; margin: auto;}
 .schedule-table { background-color: transparent; border-collapse: separate; height: 100%;}
 
 .schedule-table thead th.time   { 

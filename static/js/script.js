@@ -357,13 +357,13 @@ var renderScheduleTable = function(schedules, eventType, divContainer) {
       $(".schedule-table-container p.loadingtxt").hide();
     }
     else {
-      var workshopDates = $('#workshopschedule').attr('data-date');
-      workshopDates = workshopDates.split('-');
-      var date = schedule.date.substr(8, 2);
-      if (workshopDates.indexOf(date) > -1) {
+      //var workshopDates = $('#dl-workshopschedule').attr('data-date');
+      //workshopDates = workshopDates.split('-');
+      //var date = schedule.date.substr(8, 2);
+      //if (workshopDates.indexOf(date) > -1) {
         $(divContainer).append(Mustache.render(tableTemplate, schedule));
         $(".schedule-table-container p.loadingtxt").hide();
-      }
+      //}
     }
   });
   if ($(window).width() < 768){
@@ -377,7 +377,6 @@ function parseJson(data, eventType, divContainer) {
   var conferenceSchedule = [];
   var conferenceScheduleCounter = 0;
   var workshopScheduleCounter = 0;
-
   //Create rows at 5min intervals
   schedules.forEach(function(eachSchedule, scheduleindex, schedules) {        
     var rooms = [];
@@ -475,7 +474,12 @@ function parseJson(data, eventType, divContainer) {
       workshopScheduleCounter += 1;
     }
   }); //eof schedules loop
-  renderScheduleTable(conferenceSchedule, 'conference', divContainer);
+
+  if (eventType === 'conference') {
+    renderScheduleTable(conferenceSchedule, 'conference', divContainer);
+  } else {
+    renderScheduleTable(workshopSchedule, 'workshop', divContainer);
+  }
 }
 
 $(function() {
@@ -531,10 +535,20 @@ $(function() {
       divContainer = '#dl-conferenceschedule';
       eventType = 'conference';
     }
+    else if($('#dl-workshopschedule').length) {
+      funnelurl = dlfunnelurl;
+      divContainer = '#dl-workshopschedule';
+      eventType = 'workshop';
+    }
     else if($('#fifconferenceschedule').length) {
       funnelurl = fifelfunnelurl;
       divContainer = '#fifconferenceschedule';
       eventType = 'conference';
+    }
+    else if($('#fifworkshopschedule').length) {
+      funnelurl = fifelfunnelurl;
+      divContainer = '#fifworkshopschedule';
+      eventType = 'workshop';
     }
 
     $.ajax({
