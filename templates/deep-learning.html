@@ -7,13 +7,10 @@
 
 {% block page_nav_items %}
   <li><a href="#announcements" class="darkgray link-white-hover smooth-scroll">Announcements</a></li>
-<!--   <li><a href="#highlights" class="darkgray link-white-hover smooth-scroll">Higlights</a></li> -->
-  <li><a href="#schedule" class="darkgray link-white-hover smooth-scroll">Schedule</a></li>
-  <li><a href="#tickets" class="darkgray link-white-hover smooth-scroll">Tickets</a></li>
+  <li><a href="#highlights" class="darkgray link-white-hover smooth-scroll">Highlights</a></li>
   <li><a href="#editorial-panel" class="darkgray link-white-hover smooth-scroll">Editorial Panel</a></li>
   <li><a href="#sponsors" class="darkgray link-white-hover smooth-scroll">Sponsors</a></li>
   <li><a href="#hasgeek" class="darkgray link-white-hover smooth-scroll">Behind The Scenes</a></li>
-  <!-- <li><a href="/2016/venue" class="darkgray link-white-hover smooth-scroll">Venue</a></li> -->
   <li><a href="/2016/code-of-conduct" class="darkgray link-white-hover smooth-scroll">Code of Conduct</a></li>
 {% endblock %}
 
@@ -37,18 +34,10 @@
       <div class="">
         <h1 class="calm huge space-two-top space-half-bottom darkblue textshadow"><a class="link-white-translucent-hover darkblue" href="deep-learning">Deep Learning Conf</a></h1>
       </div>
-      <h3 class="calm brown legible nospace-top space-one-bottom">
+      <h3 class="calm brown legible nospace-top space-four-bottom">
         1 July 2016, Bangalore
       </h3>
     </hgroup>
-    <p class="ticket-link event-tickets centered legible space-six-bottom">
-      <a
-        class="button button-primary min-measure-3words prose-type smooth-scroll"
-        title="Deep Learning 2016 Tickets"
-        href="#tickets" onClick="ga('send', { hitType: 'event', eventCategory: 'ticketing', eventAction: 'buy button click', eventLabel: 'Deep Learning - Buy your ticket'});">
-        Buy Tickets
-      </a>
-    </p>
 </header>
   
   
@@ -59,36 +48,39 @@
 
 {% block content %}
 <section id="announcements" class="measure-10words pad-one center-block legible space-four-top prose clearfix">
-  <h2 class="visuallyhidden">Introduction</h2>
-  <p>India's first Deep Learning conference brings together pioneers in the field from places like the Indian Institute of Science, IIT Guwahati, NVIDIA and Mad Street Den - researchers advancing current understanding as well as engineers developing new products based on Deep Learning. Participants will acquire insight into the most promising advances in computer vision, medical imaging, general healthcare, chat bots used in conversational search, slot-filling and AI. Researchers will exhibit original advances in associated fields like human pose estimation, stochastic depth and libraries such as Espresso. Industry participation includes a session on advances in GPU computation, how-tos and use cases by NVIDIA for their latest GPU dev tools.</p>
+  <p>The 2016 edition is over. Deep Learning conference will be back next year. Stay tuned for our next conference, <a href="/2016" class="orange block-link">The Fifth Elephant</a>.</p>
+  <p>It will be centered around machine learning and distributed/parallel/high-performance computing and will happen on 28<sup class="tiny">th</sup> and 29<sup class="tiny">th</sup> July, at the <a href="/2016/venue" class="orange block-link">NIMHANS Convention Centre, Bangalore</a>.</p>
+  <p class="ticket-link event-tickets centered legible space-four-bottom">
+    <a
+      class="button button-primary min-measure-3words prose-type smooth-scroll"
+      title="Fifth Elephant 2016 Tickets"
+      href="#tickets" onClick="ga('send', { hitType: 'event', eventCategory: 'ticketing', eventAction: 'buy button click', eventLabel: 'Fifth Elephant - Buy your ticket'});">
+      Buy Tickets
+    </a>
+  </p>
+  <p class="centered space-one">For more updates, follows us on <a href="http://www.facebook.com/the5el" target="_blank" class="block-link">Facebook</a> and <a href="http://twitter.com/fifthel" target="_blank" class="block-link">Twitter</a>.</p>
+  <p class="space-half-bottom text-center">Sign up to receive updates.</p>    
+  <form class="form-horizontal nospace" id='subscribe' action="" role="form" autocomplete="off">
+    <div class="centered">
+      <input type="email" class="subscribe-input" id="subscribe-email" name="subscribe-email" required placeholder="Email"/>
+      <input type="hidden" name="event" id="subscribe-event" value="Deep Learning 2017"/>
+      <button type="submit" class="subscribe-button prose-type all-caps">Subscribe</button>
+      <img src="{{ theme_static('img/ajax-loader.gif') }}" class="ajax-loader"/>
+    </div>
+  </form>
+  <div class="regular centered helptext"><p class="subscribe-status nospace"></p></div>
 </section>
 
-<section id="higlights">
-  <h2 class="centered calm measure-10words center-block space-two large">Conference Highlights</h2>
+<section id="highlights" class="fill-light space-two push-two">
+  <h2 class="centered calm measure-10words center-block large">Conference Highlights</h2>
+  <div class="measure-10words center-block space-two clearfix">
+    <p>India's first Deep Learning conference brings together pioneers in the field from places like the Indian Institute of Science, IIT Guwahati, NVIDIA and Mad Street Den - researchers advancing current understanding as well as engineers developing new products based on Deep Learning. Participants will acquire insight into the most promising advances in computer vision, medical imaging, general healthcare, chat bots used in conversational search, slot-filling and AI. Researchers will exhibit original advances in associated fields like human pose estimation, stochastic depth and libraries such as Espresso. Industry participation includes a session on advances in GPU computation, how-tos and use cases by NVIDIA for their latest GPU dev tools.</p>
+  </div>
   {% from theme("data/talks.html") import talks as sessions %}
   {% include theme("partials/_featured_sessions.html") %}
-  <h2 class="centered calm measure-10words center-block space-two">Workshop</h2>
-    <div class="measure-10words pad-one center-block legible nospace prose clearfix">
-    <p>There are two parallel tracks of workshops on 2nd July. The workshops will cover NLP in the first track and Computer Vision / AI in the second. Workshop tickets have to be purchased separately.</p>
-    <p>Conference and workshop tickets are selling fast, so grab yours.</p>
-  </div>
+  <h2 class="centered calm measure-10words center-block space-two-top">Workshop</h2>
   {% from theme("data/talks.html") import workshops as sessions %}
   {% include theme("partials/_featured_sessions.html") %}
-</article>
-
-<article>
-</article>
-
-{% include theme("schedule-table.html") %}
-<section id="schedule" class="push-one-top push-two-bottom fill-light legible clearfix">
-  <div class="container schedule-container">
-    <div class="text-center" id="conference-schedule">
-      <h2 class="centered calm measure-10words center-block space-two">Conference Schedule</h2>
-      <div class="schedule-table-container text-center" id="dl-conferenceschedule">
-        <p class="text-center loadingtxt"><a class="button dark regular" href="https://fifthelephant.talkfunnel.com/deep-learning-2016/schedule" target="_blank">View Schedule</a></p>
-      </div>
-    </div>
-  </div>  
 </section>
 
 <section id="tickets" class="push-one-top push-two-bottom clearfix">
@@ -96,17 +88,6 @@
     Tickets
   </h1>
   <div id="boxoffice-widget"><p>Loading...</p></div>
-<!--   <form class="form-horizontal nospace" id='waitlist' action="" role="form" autocomplete="off">
-    <p class="text-center push-two-top">Please register below to be waitlisted for Deep Learning workshop</p>
-    <div class="centered">
-      <input type="name" class="subscribe-input" name="name" required placeholder="Name"/>
-      <input type="email" class="subscribe-input" name="email" required placeholder="Email"/>
-      <input type="hidden" name="ticket" value="Deep Learning workshop ticket"/>
-      <button type="submit" class="subscribe-button prose-type all-caps">Submit</button>
-      <img src="{{ theme_static('img/ajax-loader.gif') }}" class="ajax-loader"/>
-    </div>
-  </form>
-  <div class="regular centered helptext"><p class="form-status nospace"></p></div> -->
 </section>
 
 <section id="editorial-panel" class="push-one-top push-two-bottom legible fill-light clearfix">
@@ -169,9 +150,18 @@
     <article class="clearboth">
       <p><a href="http://hasgeek.com/" target="_blank">HasGeek</a> helps people in technology meet each other, collaborate on new opportunities and advance the state of the art. We organize conferences, hacknights, workshops and geekups, and provide tools for communities to self-organize.</p>
       <p>We’ve created conferences around the themes of <a href="http://rootconf.in/" target="_blank">devops</a>, <a href="http://metarefresh.in/" target="_blank">front end engineering</a>, <a href="http://www.juliacon.in/" target="_blank">Julia</a>, <a href="http://fifthelephant.in/" target="_blank">big data and cloud computing</a>, <a href="http://jsfoo.in/" target="_blank">JavaScript</a> and <a href="http://droidcon.in/" target="_blank">Android</a>. Our <a href="http://hasjob.co/" target="_blank">Job Board</a> is used by thousands of geeks every month to find new opportunities.</p>
-      <p>HasGeek is a technology company in the media business, bringing software automation to a traditionally people-intensive operation. In a little over two years, HasGeek has organized over two dozen conferences attended by thousands of technology professionals, made several thousand connections, and built open source tools that are now used by many communities.</p>
+      <p>HasGeek is a technology company in the media business, bringing software automation to a traditionally people-intensive operation. Over the past six years, HasGeek has organized dozens of conferences attended by thousands of technology professionals, made several thousand connections, and built open source tools that are now used by many communities.</p>
     </article>
   </div>
+</section>
+
+<section id="credits" class="fill-light credits clearfix">  
+  <article class="clearfix legible space-two-bottom pad-one measure-10words center-block">
+    <h2 class="centered calm space-three-top">Credits</h2>
+    <p class="regular">Editorial Panel: Ashwin Kumar, Bargava Subramanian, Nischal HP, Raghotham S and Zainab Bawa.</p>
+    <p class="regular">HasGeek Team: Anish TP, Beli Bopaiah, Hari C M, Jaya Lakshmi, Jyothsna Vinod, Kiran Jonnalagadda, Mak, Shreyas Satish, Vidya Ramakrishnan and Zainab Bawa.</p>
+    <p class="regular">A special thanks to all the volunteers. Anusanthya, Jithukrishnan S, Kavya Amakuri, Mithun T M, Mukesh M, Prajwal Kail, Rahul Rayaprolu, Rahul Venugopal, Shyam G Krishnan, Ujjwal kumar, Vamshi Palreddy and Varsha D.</p>
+  </article>
 </section>
 
 <section id="code-of-conduct" class="code-of-conduct regular fill-light push-two clearfix">
