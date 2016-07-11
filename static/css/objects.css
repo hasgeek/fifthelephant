@@ -1304,7 +1304,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .schedule-table tbody td .description-text {
   padding: 2px 5px;
   font-size: 12px;
-  color: #666;
+  color: #000;
 }
 .schedule-table tbody td.tab-active { display: table-cell; }
 
