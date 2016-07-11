@@ -7,7 +7,7 @@
 
 {% block page_nav_items %}
   <li><a href="#announcements" class="darkgray link-white-hover smooth-scroll">Announcements</a></li>
-  <li><a href="#highlights" class="darkgray link-white-hover smooth-scroll">Past Editions</a></li>
+  <li><a href="#schedule" class="darkgray link-white-hover smooth-scroll">Schedule</a></li>
   <li><a href="#tickets" class="darkgray link-white-hover smooth-scroll">Tickets</a></li>
   <li><a href="#sponsors" class="darkgray link-white-hover smooth-scroll">Sponsors</a></li>
   <li><a href="#hasgeek" class="darkgray link-white-hover smooth-scroll">Behind The Scenes</a></li>
@@ -91,7 +91,7 @@
   <div class="regular centered helptext"><p class="subscribe-status nospace"></p></div> -->
 </section>
 
-<section id="highlights" class="space-four-top space-three-bottom push-one-top fill-light legible clearfix">
+<!-- <section id="highlights" class="space-four-top space-three-bottom push-one-top fill-light legible clearfix">
   <h2 class="centered calm measure-10words center-block space-two">Featured Talks from 2015</h2>
   <ul class="thumbnail-columns thumbnail-columns-four video-thumbnails regular clearfix">
     <li class="clearfix">
@@ -102,7 +102,6 @@
         <hgroup>
           <h3>Future patterns in data ecosystem</h3>
           <h4 class="space-1q-top nospace-bottom orange">Amod Malviya</h4>
-<!--           <h6 class="space-1q-top space-half-bottom secondary thin darkblue">CTO at Flipkart</h6> -->
         </hgroup>
       </a>
     </li>
@@ -114,7 +113,6 @@
         <hgroup>
           <h3>Deep Learning for Natural Language Processing</h3>
           <h4 class="space-1q-top nospace-bottom orange">Devashish Shankar</h4>
-<!--           <h6 class="space-1q-top space-half-bottom secondary thin darkblue">Engineer at LucidWorks</h6> -->
         </hgroup>
       </a>
     </li>
@@ -126,7 +124,6 @@
         <hgroup>
           <h3>Towards “Thinking Machines”</h3>
           <h4 class="space-1q-top nospace-bottom orange">Shailesh Kumar</h4>
-<!--           <h6 class="space-1q-top space-half-bottom secondary thin darkblue">Founding partner at Julia Computing</h6> -->
         </hgroup>
       </a>
     </li>
@@ -138,7 +135,6 @@
         <hgroup>
           <h3>Data Comes in Shapes</h3>
           <h4 class="space-1q-top nospace-bottom orange">Tim Poston</h4>
-<!--           <h6 class="space-1q-top space-half-bottom secondary thin darkblue">Chief Scientist at Forus Health</h6> -->
         </hgroup>
       </a>
     </li>
@@ -149,6 +145,18 @@
       <a class="button" href="https://hasgeek.tv/fifthelephant/2015-2" target="_blank">Watch Day 2 Videos</a>
       <a class="button" href="https://www.flickr.com/photos/hasgeek/sets/72157655705316089" target="_blank">Event Photos</a>
   </p>
+</section> -->
+
+{% include theme("schedule-table.html") %}    
+<section id="schedule" class="push-one-top push-two-bottom fill-light legible clearfix">    
+ <div class="container schedule-container">    
+   <div class="text-center" id="conference-schedule">    
+     <h2 class="centered calm measure-10words center-block space-two">Conference Schedule</h2>   
+     <div class="schedule-table-container text-center" id="fifconferenceschedule">   
+       <p class="text-center loadingtxt"><a class="button dark regular" href="https://fifthelephant.talkfunnel.com/2016/schedule" target="_blank">View Schedule</a></p>    
+     </div>    
+   </div>    
+ </div>      
 </section>
 
 <section id="tickets" class="push-1q space-two-top clearfix pad-one">
