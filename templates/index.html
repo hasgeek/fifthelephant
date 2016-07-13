@@ -7,6 +7,7 @@
 
 {% block page_nav_items %}
   <li><a href="#announcements" class="darkgray link-white-hover smooth-scroll">Announcements</a></li>
+  <li><a href="#highlights" class="darkgray link-white-hover smooth-scroll">Highlights</a></li>
   <li><a href="#schedule" class="darkgray link-white-hover smooth-scroll">Schedule</a></li>
   <li><a href="#tickets" class="darkgray link-white-hover smooth-scroll">Tickets</a></li>
   <li><a href="#sponsors" class="darkgray link-white-hover smooth-scroll">Sponsors</a></li>
@@ -61,7 +62,7 @@
 {% block content %}
 <section id="announcements" class="measure-10words pad-one center-block legible space-four-top space-three-bottom clearfix">
   <h2 class="visuallyhidden">Introduction</h2>
-  <div class="centered center-block legible title-type space-three-bottom">Three days, fifty speakers, and more than a thousand devs, data scientists and CTOs - our best and brightest.</div>
+  <div class="centered center-block calm legible title-type space-one-bottom">Three days, fifty speakers, and more than a thousand devs, <br class="visible-lg">data scientists and CTOs - our best and brightest.</div>
   {% from theme("data/highlights.html") import highlights %}
    <div class="tile-block clearfix">   
     <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom">
@@ -70,16 +71,20 @@
         <div class="white"><a class="occupy unhighlight legible link-silent" href="{{ tile.link_title }}">{{ tile.title|safe }}</a></div>
         <div class="regular wrap space-half"><i class="fa fa-calendar"></i> {{ tile.date|safe }}</div>
         <div class="regular"><a href="{{ tile.link_venue }}" class="brown link-silent"><i class="fa fa-map-marker"></i> {{ tile.venue|safe }}</a></div>
+        {%if tile.active %}<p class="space-half secondary">{{ tile.active }}</p>{% endif %}
       </li>
       {% endfor %}
     </ul>
-  </div>
   <p>The Fifth Elephant is India’s most renowned conference on data, a space for discussing the most relevant tools, techniques and frameworks with expert practitioners in the field.</p>  
   <p>Fifth Elephant 2016 will be centered around machine learning and distributed/parallel/high-performance computing. It will happen on 28<sup class="tiny">th</sup> and 29<sup class="tiny">th</sup> July, at the <a href="/2016/venue" class="orange block-link">NIMHANS Convention Centre, Bangalore</a>.</p>
-  <p class="centered space-two-top">
+  </div>
+  <div class="responsive-video ">
+    <iframe src="https://www.youtube.com/embed/ZeOf9Cnj2H0" frameborder="0" allowfullscreen></iframe>
+  </div>
+<!--   <p class="centered space-two-top">
     <a class="button" href="https://fifthelephant.talkfunnel.com/2016/">View Funnel Submissions</a>
   </p>
-  <p class="centered space-three-top">For more updates, follow us on <a href="http://www.facebook.com/the5el" target="_blank">Facebook</a> and <a href="http://twitter.com/fifthel" target="_blank">Twitter</a>.</p>
+  <p class="centered space-three-top">For more updates, follow us on <a href="http://www.facebook.com/the5el" target="_blank">Facebook</a> and <a href="http://twitter.com/fifthel" target="_blank">Twitter</a>.</p> -->
 <!--   <form class="form-horizontal nospace" id='subscribe' action="" role="form" autocomplete="off">
     <div class="centered">
       <input type="email" class="subscribe-input" id="subscribe-email" name="subscribe-email" required placeholder="Email"/>
@@ -91,61 +96,20 @@
   <div class="regular centered helptext"><p class="subscribe-status nospace"></p></div> -->
 </section>
 
-<!-- <section id="highlights" class="space-four-top space-three-bottom push-one-top fill-light legible clearfix">
-  <h2 class="centered calm measure-10words center-block space-two">Featured Talks from 2015</h2>
-  <ul class="thumbnail-columns thumbnail-columns-four video-thumbnails regular clearfix">
-    <li class="clearfix">
-      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-day-1/1131-amod-malviya-keynote-future-patterns-in-data-ecosystem-sponsored" target="_blank">
-        <p class="poster video contain-width">
-          <img alt="" src="https://images.hasgeek.com/embed/file/421f1027ddca4d37ae05abb249467dc5" width="350" height="197">
-        </p>
-        <hgroup>
-          <h3>Future patterns in data ecosystem</h3>
-          <h4 class="space-1q-top nospace-bottom orange">Amod Malviya</h4>
-        </hgroup>
-      </a>
-    </li>
-    <li class="clearfix">
-      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-2/1113-devashish-shankar-deep-learning-for-natural-language-processing" target="_blank">
-        <p class="poster video contain-width">
-          <img alt="" src="https://images.hasgeek.com/embed/file/b3df7e42acc84b18948914dbecfaa4fc" width="350" height="197">
-        </p>
-        <hgroup>
-          <h3>Deep Learning for Natural Language Processing</h3>
-          <h4 class="space-1q-top nospace-bottom orange">Devashish Shankar</h4>
-        </hgroup>
-      </a>
-    </li>
-    <li class="clearfix">
-      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-2/1112-shailesh-kumar-towards-thinking-machines" target="_blank">
-        <p class="poster video contain-width">
-          <img alt="" src="https://images.hasgeek.com/embed/file/654f031da57a41a08e33c60204b5b052" width="350" height="197">
-        </p>
-        <hgroup>
-          <h3>Towards “Thinking Machines”</h3>
-          <h4 class="space-1q-top nospace-bottom orange">Shailesh Kumar</h4>
-        </hgroup>
-      </a>
-    </li>
-    <li class="clearfix">
-      <a class="occupy block-link" href="https://hasgeek.tv/fifthelephant/2015-day-1/1129-tim-poston-keynote-data-comes-in-shapes" target="_blank">
-        <p class="poster video contain-width">
-          <img alt="" src="https://images.hasgeek.com/embed/file/dc9aa31cc56b4a3fae95bb1834263431" width="350" height="197">
-        </p>
-        <hgroup>
-          <h3>Data Comes in Shapes</h3>
-          <h4 class="space-1q-top nospace-bottom orange">Tim Poston</h4>
-        </hgroup>
-      </a>
-    </li>
-  </ul>
-      
-  <p class="centered space-two regular">
-      <a class="button space-half-bottom" href="https://hasgeek.tv/fifthelephant/2015-day-1" target="_blank">Watch Day 1 Videos</a>
-      <a class="button" href="https://hasgeek.tv/fifthelephant/2015-2" target="_blank">Watch Day 2 Videos</a>
-      <a class="button" href="https://www.flickr.com/photos/hasgeek/sets/72157655705316089" target="_blank">Event Photos</a>
-  </p>
-</section> -->
+<section id="highlights" class="space-two push-two-bottom">
+  <h2 class="centered calm measure-10words center-block large">Conference Highlights</h2>
+  <div class="measure-10words pad-one center-block legible">
+    <p>Foursquare is a popular app; Chipotle, a successful restaurant chain. Foursquare used the drop in walk-ins by its users into Chipotle to predict a 30% fall in Chipotle's earnings -- to the last percentage point. This is the power of data, even -- or especially -- ‘alternative’ data.</p><p>The advent of Machine Learning has been described as the second industrial revolution. Join the vanguard at this years’ edition of The Fifth Elephant: we’ll be looking at where and how ML has penetrated the marketplace and into domains like fintech, finance, advertising, e-commerce, health and education.</p><p>We'll also look at handling data at scale, and handling it in real time, and the challenges of bringing realtime logging, realtime analysis, and the processing of massive datasets into production. Not least, we've got to know how good our data is - so we'll go over the best benchmarking tools, versioning and how best to handle large data for business.</p><p>If you're getting your hands dirty as an engineer or analyzing complex datasets, optimizing returns across your business or looking for optimal returns for your capital, join us at The Fifth Elephant. If you'd prefer to get a longer, more hands-on experience, consider attending our workshops.</p>
+  </div>
+  {% from theme("data/fifel-talks.html") import talks as sessions %}
+  {% include theme("partials/_featured_sessions.html") %}
+  <div class="measure-10words pad-one center-block legible">
+    <p><b>In addition to the talks</b>, there will be three interactive Birds Of a Feather sessions on statistics, machine learning, and ‘alternative’ data. If you have questions or want to discuss applications, please join a BOF session of your choice.</p>
+  </div>
+  <h2 class="centered calm measure-10words center-block space-two-top">Workshops</h2>
+  {% from theme("data/fifel-talks.html") import workshops as sessions %}
+  {% include theme("partials/_featured_sessions.html") %}
+</section>
 
 {% include theme("schedule-table.html") %}    
 <section id="schedule" class="push-one-top push-two-bottom fill-light legible clearfix">    

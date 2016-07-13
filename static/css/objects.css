@@ -1051,7 +1051,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .poster-with-bio .poster { position: relative; }
 .poster-with-bio .poster p { margin: 0; max-width: 8rem; }
 .poster-with-bio .poster p img { display: block; }
-.poster-with-bio .poster hgroup { position: absolute; left: 11rem; bottom: 0; }
+.poster-with-bio .poster hgroup { position: absolute; left: 9rem; bottom: 0; }
 .poster-with-bio h3,
 .poster-with-bio h4 { font-weight: normal; margin: 0; }
 @media only screen and (min-width: 30em) { .poster-with-bio .poster hgroup { left: 10rem; } }
@@ -1059,7 +1059,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .poster-with-bio li { max-width: none; }
     .poster-with-bio .poster { width: 50%; margin-left: -8em; float: left; margin-right: 2em; text-align: right; }
     .poster-with-bio .poster p { margin: .5rem 0 0; width: auto; float: right; }
-    .poster-with-bio .poster p img { margin: .3rem 0; width: 7rem; float: right; }
+    .poster-with-bio .poster p img { margin: .3rem 15px; width: 15rem; float: right; }
     .poster-with-bio .poster hgroup { position: relative; left: auto; bottom: auto; }
     .poster-with-bio .bio { float: left; width: 24em; }
     .poster-with-bio .bio p { margin: .5rem 0; }
@@ -1073,8 +1073,8 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .featured-sessions.poster-with-bio .bio .title { font-weight: 500}
 .featured-sessions.poster-with-bio .poster img { border-radius: 50%; border: 2px solid #EC6015; }
 .featured-sessions.poster-with-bio .poster img.half-width { width: 48%; margin: 0.3rem 1%; float: left;}
-.featured-sessions.poster-with-bio .poster hgroup { float: right; width: 35%;}
-.featured-sessions.poster-with-bio .poster hgroup.move-left { left: 16rem;}
+.featured-sessions.poster-with-bio .poster hgroup { float: right; width: 50%;}
+.featured-sessions.poster-with-bio .poster hgroup.move-left { left: 16rem; width: 50%;}
 .featured-sessions.poster-with-bio .poster { margin-top: 0.5rem; }
 .featured-sessions.poster-with-bio .poster hgroup .designation { color: #666; }
 .featured-sessions .featured-session-description p { margin-bottom: 0; }
@@ -1087,7 +1087,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .featured-sessions .session-meta-links           { max-width: 32em; }
     .featured-sessions.poster-with-bio .poster { margin-right: 1em; margin-top: 0; }
     .featured-sessions.poster-with-bio .bio { float: left; width: 28em; margin-top: 0;}
-    .featured-sessions.poster-with-bio .poster hgroup { left: auto; }
+    .featured-sessions.poster-with-bio .poster hgroup { width: 30%; left: -30px; }
     .featured-sessions.poster-with-bio .poster hgroup.move-left { left: auto; }
 }
 
@@ -1978,4 +1978,19 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
 }
 .waitlist-link {
   margin: 5px 14px;
+}
+.responsive-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 60px; overflow: hidden;
+}
+
+.responsive-video iframe,
+.responsive-video object,
+.responsive-video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
