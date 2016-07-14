@@ -49,12 +49,16 @@
 {% block content %}
 <section id="announcements" class="measure-10words pad-one center-block legible space-four-top prose clearfix">
   <p>The 2016 edition is over. Deep Learning conference will be back next year. Stay tuned for our next conference, <a href="/2016" class="orange block-link">The Fifth Elephant</a>.</p>
+  <p class="centered space-one regular">
+      <a class="button" href="http://hsgk.in/Dl-Conf-2016-Photos" target="_blank">Photos</a>
+      <a class="button gap-one-left" href="https://hasgeek.tv/fifthelephant/deep-learning-conf-2016" target="_blank">Videos</a>
+    </p>
   <p>It will be centered around machine learning and distributed/parallel/high-performance computing and will happen on 28<sup class="tiny">th</sup> and 29<sup class="tiny">th</sup> July, at the <a href="/2016/venue" class="orange block-link">NIMHANS Convention Centre, Bangalore</a>.</p>
   <p class="ticket-link event-tickets centered legible space-four-bottom">
     <a
       class="button button-primary min-measure-3words prose-type smooth-scroll"
       title="Fifth Elephant 2016 Tickets"
-      href="#tickets" onClick="ga('send', { hitType: 'event', eventCategory: 'ticketing', eventAction: 'buy button click', eventLabel: 'Fifth Elephant - Buy your ticket'});">
+      href="https://fifthelephant.in/2016#tickets" onClick="ga('send', { hitType: 'event', eventCategory: 'ticketing', eventAction: 'buy button click', eventLabel: 'Fifth Elephant - Buy your ticket'});">
       Buy Tickets
     </a>
   </p>
@@ -173,79 +177,6 @@
   </article>
 </section>
 
-{% endblock %}
-
-{% block footer_script %}
-<style type="text/css">    
-  #boxoffice-widget .boxoffice-button-action {    
-    background-color: #E05F26;    
-    border-color:  #B94C1D;   
-    color: #fff;    
-  }   
-  #boxoffice-widget .boxoffice-button-info {    
-    background-color: #5BC0DE;    
-    border-color: #2A9CBE;    
-    color: #fff;    
-  }   
-  #boxoffice-widget .payment-stages-bg {    
-    background-color: #60583E;    
-  }   
-  #boxoffice-widget .progress-indicator>li {    
-    color: #bbb;    
-  }   
-  #boxoffice-widget .category-heading {   
-    background-color: #F2DE9C;    
-    border-bottom: 3px solid #bcad7a;   
-    color: rgba(0,0,0,0.6);  
-    line-height: 1.1;  
-  }   
-  #boxoffice-widget .category-heading:after {   
-    border-color: #F2DE9C transparent #F2DE9C #F2DE9C;    
-  }
-</style>    
-    
-<script>    
-  $(function(){   
-    //Boxoffice widget    
-    var boxofficeUrl = "https://boxoffice.hasgeek.com";   
-    var username, userphone, useremail;   
-    {% if g.user %}   
-      {% if g.user.fullname %}    
-        username = "{{ g.user.fullname }}";   
-      {% endif %}   
-      {% if g.user.phone %}   
-        userphone = "{{ g.user.phone }}";   
-      {% endif %}   
-      useremail = "{{ g.user.email }}";   
-    {% endif %}   
-    $.get({   
-      url: boxofficeUrl+"/api/1/boxoffice.js",    
-      crossDomain: true   
-    }).done(function(data) {    
-      var boxofficeScript = document.createElement('script');   
-      boxofficeScript.innerHTML = data.script;    
-      document.getElementsByTagName('body')[0].appendChild(boxofficeScript);    
-      window.Boxoffice.init({   
-        org: 'hasgeek',   
-        itemCollection: '5af6c5fd-1691-11e6-a0d6-31ddea389faf',
-        user_name: username,    
-        user_phone: userphone,    
-        user_email: useremail,    
-        paymentDesc: 'Deep Learning 2016'    
-      });
-
-      // var timerID = window.setInterval(function() {
-      //   if(($('#workshop-ticket .sold-out').length)) {
-      //     $('<p class="waitlist-link"><a href="#waitlist" class="secondary smooth-scroll block-link">Waitlist me</a></p>').insertAfter($('#workshop-ticket .sold-out'));
-      //     window.clearInterval(timerID);
-      //   }
-      // }, 1000);
-
-    }).fail(function(response) {    
-      $('#boxoffice-widget p').html('Unable to connect. Please try again.');    
-    });   
-  });   
-</script>
 {% endblock %}
 
 {% block sponsor_compact %}
