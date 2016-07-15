@@ -62,19 +62,7 @@
 {% block content %}
 <section id="announcements" class="measure-10words pad-one center-block legible space-four-top space-three-bottom clearfix">
   <h2 class="visuallyhidden">Introduction</h2>
-  <div class="centered center-block calm legible title-type space-one-bottom">Three days, fifty speakers, and more than a thousand devs, <br class="visible-lg">data scientists and CTOs - our best and brightest.</div>
-  {% from theme("data/highlights.html") import highlights %}
    <div class="tile-block clearfix">   
-    <ul class="tiles title-type clearfix measure-8words center-block nospace-bottom">
-      {% for tile in highlights.tiles %}
-      <li class="{{ tile.background }} centered">
-        <div class="white"><a class="occupy unhighlight legible link-silent" href="{{ tile.link_title }}">{{ tile.title|safe }}</a></div>
-        <div class="regular wrap space-half"><i class="fa fa-calendar"></i> {{ tile.date|safe }}</div>
-        <div class="regular"><a href="{{ tile.link_venue }}" class="brown link-silent"><i class="fa fa-map-marker"></i> {{ tile.venue|safe }}</a></div>
-        {%if tile.active %}<p class="space-half secondary">{{ tile.active }}</p>{% endif %}
-      </li>
-      {% endfor %}
-    </ul>
   <p>The Fifth Elephant is India’s most renowned conference on data, a space for discussing the most relevant tools, techniques and frameworks with expert practitioners in the field.</p>  
   <p>Fifth Elephant 2016 will be centered around machine learning and distributed/parallel/high-performance computing. It will happen on 28<sup class="tiny">th</sup> and 29<sup class="tiny">th</sup> July, at the <a href="/2016/venue" class="orange block-link">NIMHANS Convention Centre, Bangalore</a>.</p>
   </div>
