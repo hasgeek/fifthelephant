@@ -1094,7 +1094,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     .featured-sessions.poster-with-bio .poster { margin-right: 1em; margin-top: 0; }
     .featured-sessions.poster-with-bio .bio { float: left; width: 28em; margin-top: 0;}
     .featured-sessions.poster-with-bio .poster hgroup { width: 30%; left: -30px; }
-    .featured-sessions.poster-with-bio .poster hgroup.move-left { left: auto; }
+    .featured-sessions.poster-with-bio .poster hgroup.move-left { position:relative; left: auto; }
 }
 
 /* Conference Talks Preview */
