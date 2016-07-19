@@ -1164,6 +1164,10 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
   height: 65px;
   overflow: hidden;
 }
+.schedule-table th.track2,
+.schedule-table td.track2 {
+  display: none;
+}
 .schedule-table th.track0.tab-active div,
 .schedule-table th.track1.tab-active  div {
   opacity: 0.4;
