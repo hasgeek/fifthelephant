@@ -1939,6 +1939,10 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
   background-size: 50%;
 }
 
+#waitlist {
+  position: relative;
+}
+
 .subscribe-input {
   background-color: #F2DE9C;
   font-size: 18px;
@@ -1954,7 +1958,7 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
 }
 @media(min-width:480px) {
   .subscribe-input {
-    width: 300px;
+    width: 289px;
   }
 }
 .subscribe-button {
@@ -1988,6 +1992,16 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
 }
 .waitlist-link {
   margin: 5px 14px;
+}
+
+@media(min-width: 1200px){
+  #waitlist .centered {
+    position: absolute;
+    left: 197px;
+  }
+  #waitlist {
+    min-height: 135px;
+  }
 }
 .responsive-video {
   position: relative;

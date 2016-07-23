@@ -501,7 +501,7 @@ $(function() {
         $('.form-status').html('Please enter all the details');
       }
       else {
-        postData = { "Name": formData.name, "Email": formData.email, "ticket" : formData.ticket };
+        postData = { "Name": formData.name, "Email": formData.email, "Ticket" : formData.ticket };
         $('.ajax-loader').css('visibility', 'visible');
         $.ajax({
             type: 'post',
@@ -513,7 +513,7 @@ $(function() {
                 $('.ajax-loader').css('visibility', 'hidden');
                 if(response.status === 200) {
                     $("#waitlist")[0].reset();
-                    $('.form-status').show().html('You have been waitlisted');
+                    $('.form-status').show().html('Thank you. You have been waitlisted.');
                 }
                 else {
                     $('.form-status').show().html('Error, try again.');
