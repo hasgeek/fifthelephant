@@ -103,7 +103,7 @@
   <div id="page">
     {% block banner %}
       <header class="clearfix">
-        <div class="banner internal fill-beige resetcoords layer-one clearfix centered push-one-bottom{% if long_page_nav %} long-page-nav{% endif %}">
+        <div class="banner internal fill-beige resetcoords layer-one clearfix centered{% if long_page_nav %} long-page-nav{% endif %}">
           {% block image_banner %}{% endblock %}
           <h2 class="home-link calm large centered"><a class="link-white-translucent-hover brown" href="/">The Fifth Elephant</a></h2>
           {% block banner_title %}
@@ -116,7 +116,7 @@
               <h2 class="space-half">{{ node.properties.date }}</h2>
             {% endif %}
             {% if node.properties.venue %}
-              <h2 class="space-half">{{ node.properties.venue }}</h2>
+              <h2 class="space-half-top space-one-bottom">{{ node.properties.venue }}</h2>
             {% endif %}
           {% endblock %}
           {% if node.properties.buy_ticket %}
