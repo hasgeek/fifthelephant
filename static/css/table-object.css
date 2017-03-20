@@ -429,7 +429,7 @@ a.button.small-button { font-size: 0.8rem; padding: 0.35em 1.1em; }
 }
 @media only screen and (min-width: 50em) { .sticky-nav .page-nav nav li a { padding: 0 2rem !important; } }
 @media only screen and (min-width: 60em) {
-    .sticky-nav .page-nav.fixed-width-sticky nav li { width: calc(100%/6); }
+    .sticky-nav .page-nav.fixed-width-sticky nav li { width: calc(100%/4); }
     .sticky-nav .page-nav.fixed-width-sticky nav li a { padding: 0 1rem !important; }
 }
 
@@ -632,7 +632,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
     margin: 0;
     z-index: 10;
     min-height: 40em;
-    background-image: url(https://c1.staticflickr.com/9/8239/28050900363_9a851b1a63_k.jpg);
+    background-image: url(http://farm9.staticflickr.com/8435/7851360194_1fab697a2b_c_d.jpg);
     background-size: auto 100%;
     background-position: 50% 70%;
     background-repeat: no-repeat;
@@ -640,7 +640,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 }
 @media only screen and (min-width: 60em) {
     .flipboard {
-        background-image: url(https://c1.staticflickr.com/9/8239/28050900363_9a851b1a63_k.jpg);
+        background-image: url(http://farm9.staticflickr.com/8435/7851360194_c505cc357e_h_d.jpg);
         background-size: 100%;
         min-height: 35em;
     }
@@ -1142,7 +1142,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 }
 .schedule-table th.track0,
 .schedule-table th.track1,
-.schedule-table th.track2  { 
+.schedule-table th.track2 { 
   border-color: transparent; 
   border-style: solid; 
   border-width: 0 5px 10px 0; 
@@ -1154,7 +1154,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 }
 .schedule-table th.track0 div,
 .schedule-table th.track1 div,
-.schedule-table th.track2 div {
+.schedule-table th.track2 div  {
   margin: 0 0.2rem;
   box-shadow: 0 1px 2px rgba(0,0,0,0.25);
   border-radius: 4px;
@@ -1168,15 +1168,18 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 }
 .schedule-table th.track0.tab-active div,
 .schedule-table th.track1.tab-active div,
-.schedule-table th.track2.tab-active div {
+.schedule-table th.track2.tab-active div  {
   opacity: 0.4;
 }
 @media(min-width: 480px) {
   .schedule-table thead th.time div,
-  .schedule-table th.track0 div,
+  .schedule-table th.track0 div {
+    padding: 15px 5px;
+    font-size: inherit;
+  }
   .schedule-table th.track1 div,
   .schedule-table th.track2 div {
-    padding: 15px 5px;
+    padding: 5px;
     font-size: inherit;
   }
 }
@@ -1229,7 +1232,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .schedule-table tbody td.time-hide .time-text { 
   visibility: hidden; 
 }
-.schedule-table tbody td.break { 
+.schedule-table tbody td.centered { 
   background-color: transparent; 
   display: table-cell; 
   padding: 0;
@@ -1237,17 +1240,31 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
   border-style: solid;
   border-width: 5px 5px 5px 20px;
 }
-.schedule-table td.track-0,
-.schedule-table td.track-1,
-.schedule-table td.track-2 { 
-  width: 44%; 
+.schedule-table td.track-0  { 
+  width: 40%; 
   background-color: transparent; 
   padding: 0;
   border-color: transparent;   
   border-style: solid;
   border-width: 5px 5px 5px 20px;
 }
-.schedule-table tbody td .schedule-talk{
+.schedule-table td.track-1  { 
+  width: 40%; 
+  background-color: transparent; 
+  padding: 0;
+  border-color: transparent;   
+  border-style: solid;
+  border-width: 5px 5px 5px 20px;
+}
+.schedule-table td.track-2  { 
+  width: 20%; 
+  background-color: transparent; 
+  padding: 0;
+  border-color: transparent;   
+  border-style: solid;
+  border-width: 5px 5px 5px 20px;
+}
+.schedule-table tbody td .content{
   padding: 0;
   box-shadow: 0 1px 2px rgba(0,0,0,0.4);
   border-radius: 4px;
@@ -1255,7 +1272,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
   min-height: 100%;
   height: 100% !important;
 }
-.schedule-table tbody td.break div {
+.schedule-table tbody td.centered div {
   background-color: #F0DAAB;
   padding: 15px 0;
 }
@@ -1340,50 +1357,46 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 }
 @media only screen and (min-width: 768px) {
   .schedule-table thead th.time   { 
-    width: 12%; 
+    width: 6%; 
     display: none;
   }
   .schedule-table thead th.track0  { 
-    width: 50%; 
+    width: 36%; 
     display: none;
   }
   .schedule-table thead th.track1  { 
-    width: 30%; 
+    width: 36%;
     display: none;
   }
   .schedule-table thead th.track2  { 
-    width: 8%; 
+    width: 22%; 
     display: none;
   }
   .schedule-table tbody td.time    { 
-    width: 12%; 
+    width: 6%; 
     padding: 5px 10px 1rem 1rem
   }
   .schedule-table td.track-0  { 
-    width: 40%; 
+    width: 36%; 
     background-color: transparent; 
     display: table-cell;
   }
   .schedule-table td.track-1  { 
-    width: 25%; 
+    width: 36%; 
     background-color: transparent; 
     display: table-cell;
     border-width: 5px;
   }
   .schedule-table td.track-2  { 
-    width: 23%; 
+    width: 22%; 
     background-color: transparent; 
     display: table-cell;
     border-width: 5px;
   }
   .schedule-table td.track-empty  { 
-    width: 34%; 
-    background-color: transparent; 
+    width: 36%; 
+    background-color: #FFF; 
     display: table-cell;
-    border: none;
-  }
-  .schedule-table td.track-empty .schedule-talk  { 
-    box-shadow: none;
   }
   .schedule-table .js-expand { 
     display: inline-block; 
@@ -1416,53 +1429,30 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 } 
 
 /* Venue */
-.venue-home h2 {
-    margin-bottom: 2rem;
+@media only screen and (min-width: 641px),
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 321px),
+@media only screen and (min-device-pixel-ratio: 1.5) and (min-width: 321px) { .js .venue-showcase { display: none; } }
+.venue-showcase { max-width: 1600px; width: 640px; margin: auto; }
+.venue-showcase.stretch { width: 100%; }
+.venue-showcase p { margin: 0; }
+.venue-showcase.conference-venue p { margin: .25rem 0; }
+.venue-showcase.conference-venue p:nth-of-type(2),
+.venue-showcase.conference-venue p:nth-of-type(4) { width: 50%; padding-right: .25rem; }
+.venue-showcase.conference-venue p:nth-of-type(3),
+.venue-showcase.conference-venue p:nth-of-type(5) { width: 50%; padding-left: .25rem; }
+@media only screen and (min-width: 30em) { 
+    .venue-showcase.conference-venue p:nth-of-type(2) { width: 25%; padding-right: .375rem; }
+    .venue-showcase.conference-venue p:nth-of-type(3) { width: 25%; padding-left: .125rem; padding-right: .25rem; }
+    .venue-showcase.conference-venue p:nth-of-type(4) { width: 25%; padding-left: .25rem; padding-right: .125rem; }
+    .venue-showcase.conference-venue p:nth-of-type(5) { width: 25%; padding-left: .375rem; }
 }
-@media (min-width: 768px) {
-    .venue-home .city-level p { margin-top: -4.4rem; }
-    .venue-home .country-level p { margin-top: 0; }
-}
-.js .venue-home {
-    position: relative;
-    padding: 0;
-/*    padding: 1.5rem;*/
-}
-.js .venue-home h2 {
-    position: absolute;
-    z-index: 100;
-    color: black;
-    width: auto;
-    margin: 0;
-    padding:0;
-    font-size: 3rem;
-    right: 1.2rem;
-    top:   0.55rem;
-}
-.js .leaflet-map {
-    height: 555px;
-    color: black;
-    width: 80%;
-    margin: auto;
-}
-.js .leaflet-map a { border-bottom: none; }
-@media (max-width: 767px) {
-    .js .venue-home { padding: 0; }
-    .js .venue-home h2 {
-        right: 5%;
-        top:   5%;
-        font-size: 2rem;
-        text-shadow: rgba(0,0,0,0.5) 0 0 1px;
-    }
-    .js .venue-home .city-level    { width: 100%; }
-    .js .venue-home .country-level { display: none; }
-}
-@media (min-height: 300px) { .js .leaflet-map { height: 250px; } }
-@media (min-height: 450px) { .js .leaflet-map { height: 425px; } }
-@media (min-height: 550px) { .js .venue-home .leaflet-map { height: 535px; } }
-@media (min-height: 630px) { .js .venue-home .leaflet-map { height: 620px; } }
-@media (min-height: 725px) { .js .venue-home .leaflet-map { height: 725px; } }
-@media (min-height: 800px) { .js .venue-home .leaflet-map { height: 800px; } }
+
+.venue-showcase img { display: block; }
+.map-container { position: relative; height: 18em; max-width: 32em; }
+.map           { position: absolute; left: 0; right: 0; top: 0; bottom: 0; height: 100%; }
+
+@media all and (max-width: 768px) and (orientation:portrait)  { .map-container { width: 100%; height: 0; padding-top: 80%; } }
+@media all and (max-width: 768px) and (orientation:landscape) { .map-container { width: 80%; height: 0; padding-top: 50%; } }
 
 
 .accomodation .price-range:before { content: '('; }
@@ -1971,10 +1961,6 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
   background-size: 50%;
 }
 
-#waitlist {
-  position: relative;
-}
-
 .subscribe-input {
   background-color: #F2DE9C;
   font-size: 18px;
@@ -1990,7 +1976,7 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
 }
 @media(min-width:480px) {
   .subscribe-input {
-    width: 289px;
+    width: 300px;
   }
 }
 .subscribe-button {
@@ -2025,16 +2011,6 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
 .waitlist-link {
   margin: 5px 14px;
 }
-
-@media(min-width: 1200px){
-  #waitlist .centered {
-    position: absolute;
-    left: 197px;
-  }
-  #waitlist {
-    min-height: 135px;
-  }
-}
 .responsive-video {
   position: relative;
   padding-bottom: 56.25%;
@@ -2050,146 +2026,3 @@ dl.centered-key-value.cabs dd { width: 65%; float: right; text-align: left; clea
   width: 100%;
   height: 100%;
 }
-
-/* Proposal section */
-.proposals
-{
-  width: 100%;
-  height: 480px;
-  overflow: auto;
-  outline: none;
-  padding-left: 15px;
-  position: relative;
-  z-index: 1;
-}
-
-@media (min-width: 768px) {
-  .proposals
-  {
-    height: 460px;
-  }
-}
-
-.proposal-card  {
-  display: inline-block;
-  vertical-align: top;
-  box-shadow: 0 0 2px rgba(0,0,0,0.6);
-  border-radius: 5px;
-  padding: 0;
-  background-color: #fff;
-  width: 290px;
-  height: 400px;
-  margin: 30px 10px;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-@media (min-width: 768px) {
-  .proposal-card  {
-    width: 420px;
-    height: 380px;
-    margin: 30px 15px;
-  }
-}
-
-.proposal-card :focus,
-.proposal-card :active {
-  outline: none;
-}
-
-.talk .title {
-  font-weight: bold;
-  font-size: 18px;
-  min-height: 50px;
-  max-height: 75px; /* fit text in one line */
-  margin: 0 0 10px;
-  padding: 15px 15px 0;
-  line-height: 1.2;
-}
-
-@media (min-width: 768px) {
-  .talk .title {
-    max-height: 55px; /* fit text in one line */
-  }
-}
-
-.talk .separator {
-  border-width: 3px;
-  border-color: #F0DAAB;
-  margin: 0;
-}
-
-.talk .description {
-  max-height: 270px;
-  overflow: hidden;
-  padding: 15px 15px 0;
-}
-
-.description:after {
-  content: "";
-  width: 100%;
-  height: 52px;
-  position: absolute;
-  left: 0;
-  bottom: 52px;
-  z-index: 4;
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 70%, #fff 100%);
-}
-
-@media (min-width: 768px) {
-  .talk .description {
-    max-height: 250px;
-  }
-}
-
-.proposal-card .description p, 
-.proposal-card .description ul,
-.proposal-card .description ol,
-.proposal-card .description pre {
-  background: transparent;
-  border: 0;
-  font-family: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-.proposal-card .description img {
-  width: 100%;
-}
-
-.proposal-card .description ul,
-.proposal-card .description ol {
-  margin: 0;
-  padding: 0 0 0 20px;
-}
-
-.talk .fullname {
-  background-color: #F0DAAB;
-  margin: 0;
-  padding: 15px;
-  color: #333;
-  text-align: right;
-  line-height: 1.2;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.modal-description-title {
-  font-weight: bold;
-  margin: 0 0 10px;
-}
-
-.modal-body img {
-  width: 100%;
-}
-
-.modal-description {
-  margin: 0 0 10px;
-}
-
-body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom {
-  margin-right: 0!important;
-}
-

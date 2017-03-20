@@ -1,0 +1,20 @@
+{% extends theme('layouts/page.html') %}
+
+{% block content %}
+  {% include theme("sections/session.html") %}
+  {% if node.properties.tickets %}
+    {% include theme("sections/tickets.html") %}
+  {% endif %}
+  {% if node.properties.venue %}
+    {% include theme("sections/venue.html") %}
+  {% endif %}
+  {% include theme("sections/sponsors-summary.html") %}
+{% endblock %}
+
+{% block footerscripts %}
+<script>
+  $(document).ready(function() {
+    initLeaflets();
+  });
+</script>
+{% endblock %}

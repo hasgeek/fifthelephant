@@ -1,3 +1,10 @@
+window.Fifthel = {};
+
+Fifthel.sendGA = function(category, action, label) {
+  if (typeof ga !== "undefined") {
+    ga('send', { hitType: 'event', eventCategory: category, eventAction: action, eventLabel: label});
+  }
+};
 
 function setupFlipboard () {
     if(!$('.flipboard').length) return;
@@ -181,6 +188,56 @@ function main () {
     replaceVenueImages();
 }
 
+function initLeaflets() {
+
+  if(typeof window.L === "undefined") {
+    window.setTimeout(initLeaflets, 5000);
+    return;
+  }
+
+  $('.leaflet-map').each(function initLeafletMap () {
+      var   $container = $(this)
+          , defaults = {
+                zoom: 5
+              , marker: [12.9833, 77.5833] // bangalore
+              , label: null
+              , maxZoom: 18
+              , attribution: '<a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/" target="_blank">CC-BY-SA</a>'
+              , subdomains: ['a','b','c']
+              , scrollWheelZoom: false
+          }
+          , args
+          , options
+          , map
+          , marker
+          ;
+      
+      // remove any child elements from the container
+      $container.empty();
+      
+      args = $container.data();
+      if (args.marker) { args.marker = args.marker.split(','); }
+      options = $.extend({}, defaults, args);
+      
+      map = new L.Map($container[0], {
+            center: options.center || options.marker
+          , zoom: options.zoom
+          , scrollWheelZoom: options.scrollWheelZoom
+      });
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: options.maxZoom
+          , attribution: options.attribution
+          , subdomains: options.subdomains
+      }).addTo(map);
+      
+      
+      marker = new L.marker(options.marker).addTo(map);
+      if (options.label) marker.bindPopup(options.label).openPopup();
+  })
+}
+
+
 // For conference and workshop schedule
 //dateStr is expected in the format 2015-07-16", then returns "Thu Jul 16 2015"
 var getDateString = function(dateStr) {
@@ -357,13 +414,8 @@ var renderScheduleTable = function(schedules, eventType, divContainer) {
       $(".schedule-table-container p.loadingtxt").hide();
     }
     else {
-      //var workshopDates = $('#dl-workshopschedule').attr('data-date');
-      //workshopDates = workshopDates.split('-');
-      //var date = schedule.date.substr(8, 2);
-      //if (workshopDates.indexOf(date) > -1) {
-        $(divContainer).append(Mustache.render(tableTemplate, schedule));
-        $(".schedule-table-container p.loadingtxt").hide();
-      //}
+      $(divContainer).append(Mustache.render(tableTemplate, schedule));
+      $(".schedule-table-container p.loadingtxt").hide();
     }
   });
   if ($(window).width() < 768){
@@ -482,76 +534,58 @@ function parseJson(data, eventType, divContainer) {
   }
 }
 
-$(function() {
-
-    //Subscribe
-    $('#subscribe').on('submit', function(event) {
-        event.preventDefault();
-        $('.subscribe-status').html('');
-        var postData ={};
-        if($('#subscribe-email').val() === "") {
-            $('.subscribe-status').html('Please enter an email id');
-        }
-        else {
-            postData = { "Email": $('#subscribe-email').val(), "Event" : "FifthElephant 2017" };
-            $('.ajax-loader').css('visibility', 'visible');
-            $.ajax({
-                type: 'post',
-                url: 'https://script.google.com/macros/s/AKfycbwkkVFfdoQF7_aozgUPyfxDuuxOrN2melaehVBcsuP84Fa7Vks/exec',
-                data: postData,
-                dataType: 'json',
-                timeout: 5000,
-                complete: function(response, textStatus) {
-                    $('.ajax-loader').css('visibility', 'hidden');
-                    if(response.status === 200) {
-                        $("#subscribe")[0].reset();
-                        $('.subscribe-status').show().html('Thank you for subscribing!');
-                    }
-                    else {
-                        $('.subscribe-status').show().html('Error, try again.');
-                    }
-                }
-            });
-        }
-    });
-
-  // For conference and workshop schedule
-  var dlfunnelurl = 'https://fifthelephant.talkfunnel.com/deep-learning-2016/schedule/json';
-  var fifelfunnelurl = 'https://fifthelephant.talkfunnel.com/2016/schedule/json';
-
-  //If schedule divs are present on the page, then make the ajax call.
-  if(($('.schedule-table-container').length)) {
-
-    if($('#dl-conferenceschedule').length) {
-      funnelurl = dlfunnelurl;
-      divContainer = '#dl-conferenceschedule';
-      eventType = 'conference';
-    }
-    else if($('#dl-workshopschedule').length) {
-      funnelurl = dlfunnelurl;
-      divContainer = '#dl-workshopschedule';
-      eventType = 'workshop';
-    }
-    else if($('#fifconferenceschedule').length) {
-      funnelurl = fifelfunnelurl;
-      divContainer = '#fifconferenceschedule';
-      eventType = 'conference';
-    }
-    else if($('#fifworkshopschedule').length) {
-      funnelurl = fifelfunnelurl;
-      divContainer = '#fifworkshopschedule';
-      eventType = 'workshop';
-    }
-
-    $.ajax({
-      type: 'GET',
-      dataType: 'jsonp',
-      url: funnelurl,
-      success: function(data) {
-        parseJson(data, eventType, divContainer);
-      }
-    });//eof ajax call
+var updateFontSize = function(elem) {
+  var fontStep = 1;
+  var parentWidth = $(elem).width();
+  var parentHeight = parseInt($(elem).css('max-height'), 10);
+  var childElem = $(elem).find('span');
+  while ((childElem.width() > parentWidth) || (childElem.height() > parentHeight)) {
+    childElem.css('font-size', parseInt(childElem.css('font-size'), 10) - fontStep + 'px');
   }
+};
+
+var getElemWidth = function(elem) {
+  var card_width = $(elem).css('width');
+  var card_margin = $(elem).css('margin-left');
+  var card_total_width = parseInt(card_width, 10) + 2.5 * parseInt(card_margin, 10);
+  return card_total_width;
+};
+
+var enableScroll = function(items_length) {
+  $(".mCustomScrollbar").css('width', items_length * getElemWidth(".proposal-card") + 'px');
+  $('.mCustomScrollbar').mCustomScrollbar({ axis:"x", theme: "dark-3", scrollInertia: 10, alwaysShowScrollbar: 0});
+};
+
+function parseProposalJson(json) {
+  var proposal_ractive = new Ractive({
+    el: '#funnel-proposals',
+    template: '#proposals-wrapper',
+    data: {
+      proposals: json.proposals
+    },
+    complete: function() {
+      $.each($('.proposal-card .title'), function(index, title) {
+        updateFontSize(title);
+      });
+
+      //Set width of content div to enable horizontal scrolling
+      enableScroll(json.proposals.length);
+
+      $(window).resize(function() {
+        enableScroll(json.proposals.length);
+      });
+
+      $('#funnel-proposals .click, #funnel-proposals .btn').click(function(event) {
+        var action = $(this).data('label');
+        var target = $(this).data('target');
+        Fifthel.sendGA('click', action, target);
+      });
+    }
+  });
+};
+
+
+$(function() {
 
   $(window).resize(function() {
     if($(window).width() < 768) {
@@ -562,7 +596,7 @@ $(function() {
     }
   });
 
-  $('#dl-conferenceschedule, #fifconferenceschedule').on('click', 'table td .js-expand', function() {
+  $('#fifconferenceschedule').on('click', 'table td .js-expand', function() {
     if($(this).hasClass('fa-caret-right')) {
       $(this).removeClass('fa-caret-right').addClass('fa-caret-down');
       $(this).parents('td').find('.description-text').slideDown();
@@ -573,7 +607,7 @@ $(function() {
     }
   });
 
-  $('#dl-conferenceschedule, #fifconferenceschedule').on('click', 'table th.track0, table th.track1, table th.track2', function() {
+  $('#fifconferenceschedule').on('click', 'table th.track0, table th.track1, table th.track2', function() {
     if($(window).width() < 768){
       var parentTable = $(this).parents('table');
       var activeColumn = $(this).attr('data-td');
@@ -582,6 +616,19 @@ $(function() {
       parentTable.find('.' + activeColumn).addClass('tab-active');
       renderResponsiveTable();
     }
+  });
+
+    // Function that tracks a click button in Google Analytics.
+  $('.button').click(function(event) {
+    var button = $(this).html();
+    var section = $(this).attr('href');
+    Fifthel.sendGA('click', button, section);
+  });
+
+  $('.click').click(function(event) {
+    var target = $(this).data('target');
+    var action = $(this).data('label');
+    Fifthel.sendGA('click', action, target);
   });
 
 });
@@ -712,13 +759,13 @@ PHOTOS_FLICKR = [
 'http://farm8.staticflickr.com/7273/7687638954_036a32806f_m.jpg',
 'http://farm8.staticflickr.com/7251/7687594136_4d1af10c5f_m.jpg',
 'http://farm8.staticflickr.com/7132/7687475424_28779f562b_m.jpg',
-'http://farm8.staticflickr.com/7265/7687412314_0835b45e9a_m.jpg',
-'http://farm9.staticflickr.com/8006/7687366642_8a9d74a121_m.jpg',
-'http://farm8.staticflickr.com/7276/7687290862_f269fba243_m.jpg',
-'http://farm9.staticflickr.com/8001/7687249304_b3777a47e9_m.jpg',
-'http://farm8.staticflickr.com/7129/7687199966_112606b536_m.jpg',
-'http://farm9.staticflickr.com/8141/7687112686_9894c72295_m.jpg',
-'http://farm8.staticflickr.com/7270/7686978046_f5b67646d6_m.jpg'
+'https://c1.staticflickr.com/1/458/19252146334_3109b295d7_k.jpg',
+'https://c1.staticflickr.com/4/3757/19879803601_aed9914844_k.jpg',
+'https://c1.staticflickr.com/9/8421/28383240770_e839263faf_k.jpg',
+'https://c1.staticflickr.com/8/7730/29092804650_2eb2ac7a4f_k.jpg',
+'https://c1.staticflickr.com/9/8620/28382586260_201c5ca21a_k.jpg',
+'https://c1.staticflickr.com/9/8628/28667014855_3417c3d430_k.jpg',
+'https://c1.staticflickr.com/9/8322/28756564384_a99d5b1822_k.jpg'
 ];
 
 PHOTOS = PHOTOS_FLICKR;

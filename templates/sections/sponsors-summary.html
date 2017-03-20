@@ -1,0 +1,41 @@
+<section id="sponsors" class="fill-dark legible clearfix">
+  <div class="sponsors clearfix center-block">
+  <div class="space-two-top space-two-bottom">
+    <h1 class="centered calm measure-10words center-block space-two-bottom">Sponsors</h1>
+    <div class="eventsponsor-block center-block clearfix">
+    <article class="about-sponsor nospace-top clearfix pad-two space-line-bottom resetcoords highlight-links js-hidden">
+      <div class="sponsor-detail"></div>
+      <p class="all-caps space-three-bottom clearfix"><a class="close" href="#">Close</a></p>
+    </article>
+    <article class="sponsor-logos clearfix">
+      <div class="sponsor-logos-list clearfix">
+      <dl class="nospace v-middle clearfix">
+        {% set sponsors = getnode(path='2017-sponsors').data['sponsors'] %}
+        {% for type in sponsors %}
+          {% for item in type.list %}
+            {% if loop.first %}<dt class="{{ type.category|lower|replace(" ","-") }}"><span>{{ type.category }}</span></dt>{% endif %}
+            <dd class="{{ item.logo.size }} {% if item.logo.orientation == 'portrait' %}contain-height{% else %}contain-width{% endif %} {{ type.category|lower|replace(" ","-") }}">
+              <h5 class="sponsorlogo"><a href="{{ item.web.link }}" class="unhighlight{% if item.blurb %} sponsor-blurb{% endif %}" target="_blank"><img src="{{ item.logo.url }}" alt=" "></a></h5>
+              <h4 class="legible sponsor-name">{{ item.name|safe }}</h4>
+              <p class="secondary all-caps sponsor-link"><a href="{{ item.web.link }}" target="_blank">{{ item.web.display }}</a></p>
+              {% if item.blurb %}
+              <hr class="invisible">
+              <div class="regular stretch clearboth sponsor-description space-one-top clearfix">{{ item.blurb|safe }}</div>
+              {% endif %}
+            </dd>
+          {% endfor %}
+        {% endfor %}
+      </dl>
+      </div>
+    </article>
+    </div>
+    <article class="sponsor-pitch space-two-top clearfix">
+      <div class="centered space-two">
+        {% with f = fragment('2017', 'about-sponsorship') %}
+          {{ f.content }}
+        {% endwith %}
+      </div>
+    </article>
+  </div>
+  </div>
+</section>

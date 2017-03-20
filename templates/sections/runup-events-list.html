@@ -1,0 +1,24 @@
+{% set events = getnode(path='runup-events-list').data['runup-list'] %}
+
+<section id="runup-events" class="push-two-top centered">
+  <div class="row-fluid">
+    <h1 class="calm centered space-one large">Run-up event series</h1>
+    <p>We are organizing run-up events in different cities across India.</p>
+    <ul id='htimeline'>
+    {% for event in events %}
+      <li class='work'>
+        <input class='radio {% if event.type == "past" %}theme-red{% else %}theme-green{% endif %}' id='work4' name='works' type='radio'>
+        <div class="relative">
+          <span class='date'>{{ event.date }}</span>
+          <span class='circle'></span>
+        </div>
+        <div class='content'>
+        {% for item in event.events %}
+          <p><a class="link-silent" href="/2014/{{ item.url }}">{{ item.city }}</a></p>
+        {% endfor %}
+        </div>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,184 @@
+{% extends theme('layouts/page.html') %}
+
+{% block image_banner %}     
+  <div class="masthead-svg-container">
+    {% include theme("layouts/bigdata_banner.html") %}
+  </div>
+{% endblock %}
+
+{% block page_nav_items %}
+  <li><a href="#announcements" class="darkgray link-white-hover smooth-scroll">Announcements</a></li>
+  {% if node.properties.past_editions %}
+    <li><a href="#past-editions" class="darkgray link-white-hover smooth-scroll">Past edition</a></li>
+  {% endif %}
+  {% if node.properties.proposals %}
+    <li><a href="#proposals" class="darkgray link-white-hover smooth-scroll">Proposals</a></li>
+  {% endif %}
+  {% if node.properties.schedule %}
+    <li><a href="#schedule" class="darkgray link-white-hover smooth-scroll">Schedule</a></li>
+  {% endif %}
+  {% if node.properties.tickets %}
+    <li><a href="#tickets" class="darkgray link-white-hover smooth-scroll">Tickets</a></li>
+  {% endif %}
+  {% if node.properties.runup_events_list %}
+    <li><a href="#runup-events" class="darkgray link-white-hover smooth-scroll">Runup events</a></li>
+  {% endif %}
+  {% if node.properties.testimonials %}
+    <li><a href="#testimonials" class="darkgray link-white-hover smooth-scroll">Testimonials</a></li>
+  {% endif %}
+  <li><a href="#sponsors" class="darkgray link-white-hover smooth-scroll">Sponsors</a></li>
+  <li><a href="#venue" class="darkgray link-white-hover smooth-scroll">Venue</a></li>
+  <li><a href="#about" class="darkgray link-white-hover smooth-scroll">About HasGeek</a></li>
+  <li><a href="code-of-conduct" class="darkgray link-white-hover">Code of Conduct</a></li>
+{% endblock %}
+
+{% block content %}
+  {% include theme("sections/announcements.html") %}
+  {% if node.properties.past_editions %}
+    {% include theme("sections/past-editions.html") %}
+  {% endif %}
+  {% if node.properties.runup_events_list %}
+    {% include theme("sections/runup-events-list.html") %}
+  {% endif %}
+  {% if node.properties.proposals %}
+    {% include theme("sections/proposals.html") %}
+  {% endif %}
+  {% if node.properties.schedule %}
+    {% include theme("sections/schedule.html") %}
+  {% endif %}
+  {% if node.properties.tickets %}
+    {% include theme("sections/tickets.html") %}
+  {% endif %}
+  {% include theme("sections/venue.html") %}
+  {% include theme("sections/sponsors-summary.html") %}
+{% endblock %}
+
+{% block footer_script %}
+<style type="text/css">        
+  #boxoffice-widget .boxoffice-button-action {        
+    background-color: #E05F26;        
+    border-color:  #B94C1D;       
+    color: #fff;        
+  }       
+  #boxoffice-widget .boxoffice-button-info {        
+    background-color: #5BC0DE;        
+    border-color: #2A9CBE;        
+    color: #fff;        
+  }       
+  #boxoffice-widget .payment-stages-bg {        
+    background-color: #60583E;        
+  }       
+  #boxoffice-widget .progress-indicator>li {        
+    color: #bbb;        
+  }       
+  #boxoffice-widget .category-heading {       
+    background-color: #F2DE9C;        
+    border-bottom: 3px solid #bcad7a;       
+    color: rgba(0,0,0,0.6);     
+    line-height: 1.1;     
+  }       
+  #boxoffice-widget .category-heading:after {       
+    border-color: #F2DE9C #fff #F2DE9C #F2DE9C;        
+  }   
+</style>
+<script>
+$(document).ready(function() {  
+  var boxofficeUrl = "https://boxoffice.hasgeek.com";
+
+  $.get({
+    url: boxofficeUrl + "/api/1/boxoffice.js",   
+    crossDomain: true,
+    timeout: 8000,
+    retries: 1,
+    retryInterval: 8000,
+    success: function(data) {
+      var boxofficeScript = document.createElement('script');
+      boxofficeScript.innerHTML = data.script;
+      document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
+      window.Boxoffice.init({
+        org: "hasgeek",
+        itemCollection: "{{ node.properties.item_collection }}",
+        paymentDesc: "{{ node.properties.payment_desc }}"
+      });
+      loadProposals();
+      initLeaflets();
+    },
+    error: function(response) {
+      var ajaxLoad = this;
+      ajaxLoad.retries -= 1;
+      var errorMsg;
+      if (response.readyState === 4) {
+        errorMsg = "Server error, please try again later.";
+        logError(errorMsg);
+      }
+      else if (response.readyState === 0) {
+        if (ajaxLoad.retries < 0) {
+          if(!navigator.onLine) {
+            errorMsg = "Unable to connect. There is no network!";
+            logError(errorMsg);
+          }
+          else {
+            errorMsg = "<p>Unable to connect. If you are behind a firewall or using any script blocking extension (like Privacy Badger).<p></p> Please ensure your browser can load boxoffice.hasgeek.com, api.razorpay.com and checkout.razorpay.com .</p>";
+            logError(errorMsg);
+          }
+        } else {
+          setTimeout(function() {
+            $.get(ajaxLoad);
+          }, ajaxLoad.retryInterval);
+        }
+      }
+    }
+  });
+
+  var logError = function (errorMsg) {
+    $('#boxoffice-widget p').html(errorMsg);
+    {% if g.user %}
+      Raven.setUserContext({
+        email: "{{ g.user.email }}",
+        id: "{{ g.user.username }}"
+      });
+    {% endif %}
+    Raven.captureMessage(errorMsg, {
+      level: 'error',
+      logger: 'boxoffice'
+    });
+    Fifthel.sendGA('error', 'boxoffice load error', errorMsg);
+    loadProposals();
+    initLeaflets();
+  }
+
+  var loadProposals = function () {
+    // For conference and workshop schedule
+    var funnelurl = "{{ node.properties.funnel_url }}" + "schedule/json";
+    //If schedule divs are present on the page, then make the ajax call.
+    if(($('#conferenceschedule').length) || ($('#workshopschedule').length)) {
+      $.ajax({
+        type: 'GET',
+        dataType: 'jsonp',
+        url: funnelurl,
+        success: function(data) {
+          parseJson(data, 'conference', '#conferenceschedule');
+        }
+      });//eof ajax call
+    }
+
+      // For proposals
+    var proposals_url = "{{ node.properties.funnel_url }}" + 'json';
+    console.log("proposals_url", proposals_url)
+    //If funnel-proposals divs is present on the page, then make the ajax call.
+    if(($('#funnel-proposals').length)) {
+      $.ajax({
+        type: 'GET',
+        dataType: 'jsonp',
+        url: proposals_url,
+        success: function(data) {
+          console.log("parseProposalJson", data)
+          parseProposalJson(data);
+        }
+      });//eof ajax call
+    }
+  }
+
+});
+</script>
+{% endblock %}

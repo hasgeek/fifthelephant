@@ -1,0 +1,13 @@
+<section class="push-three-top push-two-bottom clearfix">
+  <div class="container"> 
+    <div class="row">
+      <div class="regular space-one-top">
+        {% with f = fragment('2017', 'code-of-conduct-license') %}
+          <h3 class="calm centered space-one large text-center">{{ f.title }}</h3>
+          {{ f.content }}
+        {% endwith %}
+      </div>
+    </div>
+  </div>
+</section>
+

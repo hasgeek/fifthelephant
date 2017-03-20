@@ -1,0 +1,38 @@
+{% set venue_url = node.properties.url %}
+{% set venue = getnode(path=venue_url).data['venue'] %}
+
+<section id="venue" class="venue push-three-top push-two-bottom clearfix fill-light">
+  <div class="container">
+    <div class="row">
+        <h2 class="calm centered space-one large text-center">Venue</h2>
+    </div>
+    <div class="row">
+      <div class="pad-line">
+          <div class="legible-prose text-center">
+            <div class="regular-prose space-one">
+              <p class="legible semibold">{{ venue.title|safe }}</p>
+              <p class="legible">{{ venue.address|safe }}</p>
+            </div>
+          </div>
+      </div>
+      <div class="no-js-hidden space-one clearfix">
+          <h3 class="visuallyhidden">Map</h3>
+          <div class="legible-prose prose prose-type clearfix">
+              <div
+                class="border-one leaflet-map" id="toner" class="map"
+                data-label="{{ venue.map.osm.label }}"
+                data-zoom="{{ venue.map.osm.zoom }}"
+                data-marker="{{ venue.map.osm.marker }}">
+                <p class="text-center regular">Loading ...</p>
+              </div>
+          </div>
+      </div>
+
+      {% if venue.map.google %}
+      <div class="space-one text-center">
+        <p class="regular semibold"><a href="{{ venue.map.google|safe }}" class="button" target="_blank">Find directions</a></p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

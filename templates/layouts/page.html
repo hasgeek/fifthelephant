@@ -1,0 +1,246 @@
+{% from "baseframe/components.html" import networkbar with context -%}
+<!DOCTYPE html>
+<!--[if lt IE 8]>      <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js {%- if config['DEBUG'] %} wf-active{% endif %}"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+  {% block title %}
+    <title>{{ node.title }}</title>
+  {% endblock %}
+
+  <meta name="title" content="{{ node.title }}" />
+  <meta name="description" content="{{ node.description }}">
+  <meta name="keywords" content="Conference, Workshop, Data Science, Analytics, Machine Learning, NLP, Big Data, Deep Learning">
+  <meta name="author" content="HasGeek and friends">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  
+  <meta property="og:title" content="{{ node.title }}"/>
+  <meta property="og:image" content="{{ node.properties.image }}"/>
+  <meta property="og:image:type" content="{{ node.properties.image_type }}" />
+  <meta property="og:image:width" content="{{ node.properties.image_width }}" />
+  <meta property="og:image:height" content="{{ node.properties.image_height }}" />
+  <meta property="og:url" content="{{ request.url }}"/>
+  <meta property="og:description" content="{{ node.description }}"/>
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@fifthel" />
+  <meta name="twitter:title" content="{{ node.title }}" />
+  <meta name="twitter:image" content="{{ node.properties.image }}">
+
+  <meta property="fb:app_id" content="1601103083538049" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  {%- if _theme %}
+    {% assets "css_" + _theme -%}
+      <link rel="stylesheet" href="{{ ASSET_URL }}"/>
+    {% endassets -%}
+  {%- endif %}
+
+  <script src="{{ theme_static('js/libs/modernizr-2.5.3.js') }}"></script>
+
+  {%- if config['DEBUG'] %}
+    <link rel="stylesheet" href="{{ theme_static('css/fonts.css') }}">
+  {%- else %}
+    <script type="text/javascript" src="//use.typekit.net/ftd4kro.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  {%- endif %}
+  <link rel="stylesheet" href="/_baseframe/css/networkbar.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400italic,600italic,400,600">
+  <link href='//fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://static.hasgeek.co.in/static/gen/fontawesome-css-gte-4-0-0.css?58d88a1b">
+
+  {% block header_script %}{% endblock %}
+  {% block page_styling %}{% endblock %}
+
+  <script>(function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+    }
+    _fbq.push(['addPixelId', '1652854178264244']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+  </script>
+  <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=1652854178264244&amp;ev=PixelInitialized" /></noscript>
+
+  <!-- Facebook Conversion Code for Key Page Views - The Fifth Elephant 1 -->
+  <script>(function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+    }
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', '6028526817317', {'value':'4500','currency':'INR'}]);
+  </script>
+  <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6028526817317&amp;cd[value]=4500&amp;cd[currency]=INR&amp;noscript=1" /></noscript>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</head>
+<body>
+  <div class="hg-bar-holder fill-white">
+    {% block networkbar %}
+      {{ networkbar(siteid='events', login=false) }}
+    {% endblock %}
+  </div>
+  <div id="page">
+    {% block banner %}
+      <header class="clearfix">
+        <div class="banner internal fill-beige resetcoords layer-one clearfix centered push-one-bottom{% if long_page_nav %} long-page-nav{% endif %}">
+          {% block image_banner %}{% endblock %}
+          <h2 class="home-link calm large centered"><a class="link-white-translucent-hover brown" href="/">The Fifth Elephant</a></h2>
+          {% block banner_title %}
+            {% if node.properties.tagline %}
+            <h1 class="clearboth centered calm measure-10words center-block space-half">
+              {{ node.properties.tagline}}
+            </h1>
+            {% endif %}
+            {% if node.properties.date %}
+              <h2 class="space-half">{{ node.properties.date }}</h2>
+            {% endif %}
+            {% if node.properties.venue %}
+              <h2 class="space-half">{{ node.properties.venue }}</h2>
+            {% endif %}
+          {% endblock %}
+          {% if node.properties.buy_ticket %}
+            <p class="space-one">
+              <a href="/#tickets" class="button" target="_blank">Buy tickets</a>
+            </p>
+          {% elif node.properties.propose_talk %}
+            <p class="space-one">
+              <a href="{{ node.properties.funnel_url }}" class="button" target="_blank">Propose a talk</a>
+            </p>
+          {% endif %}
+          {% block page_nav %}
+            <div class="page-nav{% if fixed_width_sticky %} fixed-width-sticky{% endif %} clearfix">
+              <nav class="all-caps nospace sticky-width clearfix">
+                <ul class="nospace darkgray clearfix">
+                  {% block page_nav_items %}{% endblock %}
+                </ul>
+              </nav>
+            </div>
+          {% endblock %}
+        </div><!-- .banner -->
+      </header>
+    {% endblock %}
+
+    <section id="sticky-offset" class="clearfix">
+      <div id="sticky-nav" class="sticky-nav fill-beige clearfix">
+        <div class="sticky-main-bar clearfix"><div class="on-sticky-content sticky-width clearfix"></div></div>
+        <div class="sticky-page-bar clearfix"><div class="on-sticky-content sticky-width clearfix"></div></div>
+      </div>
+    </section>
+
+    <section id="content" class="clearfix">
+    {% block content %}
+    {% endblock %}
+    </section>
+
+    <footer id="about" class="clearfix fill-light highlight-links push-four-bottom">
+      <div class="measure-10words pad-one center-block prose clearfix space-two">
+        <h2 class="clearfix"><a href="http://hasgeek.com/" class="hasgeek-logo ir center-block unhighlight">HasGeek</a></h2>
+        <article class="clearboth link-silent">
+          {% with f = fragment('2017', 'about-hasgeek') %}
+            {{ f.content }}
+          {% endwith %}
+        </article>
+      </div>
+
+      <article>
+      {% with f = fragment('2017', 'credits') %}
+      <div class="credits space-two">
+        <h2 class="calm">{{ f.title }}</h2>
+        {{ f.content }}
+      </div>
+      {% endwith %}
+      </article>
+
+      <article class="clearfix center-block centered prose">
+        <h2 class="visuallyhidden">Code of Conduct</h2>
+        <p class="space-line-bottom nospace-top serif-type italic commitment"><span class="wrap-mobile">We strive to make our events</span> <span class="wrap-mobile">friendly, safe and harassment&#8209;free for all.</span>
+        </p>
+        <p class="secondary semi-bold all-caps">Please observe the <a href="code-of-conduct" class="block-link" target="_blank">code of conduct</a> at the event.</p>
+      </article>
+
+      <p class="centered secondary space-two-top space-half-bottom copyright center-block"><span class="wrap-mobile">For further information / sponsorship:</span> <span class="wrap-mobile"> <a href="mailto:info@hasgeek.com" class="block-link">info@hasgeek.com</a> / <a href="tel: +91-767-633-2020" class="block-link">+91-767-633-2020</a>
+      
+      <p class="centered secondary space-half-top space-line-bottom copyright center-block"><span class="wrap-mobile">The Fifth Elephant is a conference by <a href="http://hasgeek.com" class="block-link" target="_blank">HasGeek</a>.</p>
+      
+      <p class="centered tiny space-half-top faded center-block attribution">Copyright © {{ node.properties.copyright_year }}. All rights reserved.</p>
+      
+      <nav class="tiny space-three">
+        <p class="centered secondary space-two-top space-half-bottom center-block">For more updates, follows us on</p>
+        <ul class="centered all-caps semi-bold">
+          <li class="inline"><a href="http://www.facebook.com/the5el" class="block-link" target="_blank">Facebook</a></li>
+          <li class="inline"><a href="http://twitter.com/fifthel" class="block-link" target="_blank">Twitter</a></li>
+          <li class="inline"><a href="https://www.youtube.com/user/hasgeek" class="block-link" target="_blank">HasGeek TV</a></li>
+          <li class="inline"><a href="https://www.flickr.com/photos/hasgeek/sets/" class="block-link" target="_blank">Flickr</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+
+  </div><!-- #page -->
+
+<!-- Included JS Files -->
+<!--[if lt IE 9]>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    if (typeof jQuery === 'undefined')
+      document.write('<script type="text/javascript" src="{{ theme_static('js/vendor/jquery-1.11.2.min.js') }}"><\/script>');
+  </script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    if (typeof jQuery === 'undefined')
+      document.write('<script type="text/javascript" src="{{ theme_static('js/vendor/jquery-2.2.0.min.js') }}"><\/script>');
+  </script>
+<!--<![endif]-->
+
+<script src="https://cdn.ravenjs.com/3.11.0/raven.min.js"></script>
+<script>Raven.config('https://3d19a9eb41214af1a0b7bd66a9722166@sentry.io/141526', {
+  environment: 'production',
+  tags: {event_edition: '{{ node.title }}', item_collection: "{{ node.properties.item_collection }}"}
+}).install()</script>
+
+{%- if _theme %}
+  {% assets "js_" + _theme -%}
+    <script src="{{ ASSET_URL }}"></script>
+  {% endassets -%}
+{%- endif %}
+
+<script>
+// Google Analytics
+if (location.hostname == 'fifthelephant.in') {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-19123154-20', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+
+{% block footer_script %}{% endblock %}
+
+</body>
+</html>
