@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       {% for testimonial in testimonials %}
-        <div class="regular space-half-one clearfix col-xs-12">
+        <div class="regular space-half-one clearfix col-xs-12 col-sm-8 col-sm-offset-2">
           <i class="fa fa-quote-left ultrafaded inline"></i> <div class="testimonial-blurb">{{ testimonial.blurb|safe }}</div> <i class="fa fa-quote-right ultrafaded inline"></i>
           <div class="secondary text-right red">{{ testimonial.name|safe }}</div>
           <div class="secondary text-right darkgray">{{ testimonial.designation|safe }}</div>

@@ -22,11 +22,11 @@
       </script>
     </div>
     
-    <article class="push-two clearfix center-block regular">
+    <article class="push-two clearfix regular">
       <div class="container">
         <div class="row">
           {% with f = fragment('2017', 'past-editions') %}
-            <div class="col-xs-12">{{ f.content }}</div>
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">{{ f.content }}</div>
           {% endwith %}
         </div>
       </div>
@@ -34,7 +34,7 @@
     
     {% set talks = getnode(path='past-featured-talks').data['talks'] %}
     <div class="push-one-top push-four-bottom">
-      <h2 class="centered calm measure-10words center-block space-two">Featured Talks</h2>
+      <h2 class="centered space-two">Featured Talks</h2>
       <ul class="thumbnail-columns thumbnail-columns-four video-thumbnails regular clearfix no-list">
         {% for talk in talks %}
           <li class="clearfix">

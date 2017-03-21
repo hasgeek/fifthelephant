@@ -21,7 +21,9 @@
   <li><a href="#highlights" class="darkgray link-white-hover smooth-scroll">Highlights</a></li>
   <li><a href="#become-a-sponsor" class="darkgray link-white-hover smooth-scroll">Become a sponsor</a></li>
   <li><a href="#testimonials" class="darkgray link-white-hover smooth-scroll">Testimonials</a></li>
-  <li><a href="#sponsors" class="darkgray link-white-hover smooth-scroll">Sponsors</a></li>
+  {% if node.properties.sponsors %}
+    <li><a href="#sponsors" class="darkgray link-white-hover smooth-scroll">Sponsors</a></li>
+  {% endif %}
   <li><a href="#about" class="darkgray link-white-hover smooth-scroll">About HasGeek</a></li>
 {% endblock %}
 
@@ -29,7 +31,9 @@
   {% include theme("sections/highlights.html") %}
   {% include theme("sections/sponsorship-catalogue.html") %}
   {% include theme("sections/testimonials.html") %}
-  {% include theme("sections/sponsors-summary.html") %}
+  {% if node.properties.sponsors %}
+    {% include theme("sections/sponsors-summary.html") %}
+  {% endif %}
 {% endblock %}
 
 {% block footer_script %}

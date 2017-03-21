@@ -157,7 +157,7 @@
       <div class="container">
         <div class="row">
           <h2><a href="http://hasgeek.com/" class="hasgeek-logo ir center-block unhighlight">HasGeek</a></h2>
-          <article class="col-xs-12 clearboth link-silent">
+          <article class="col-xs-12 col-sm-8 col-sm-offset-2 clearboth link-silent">
             {% with f = fragment('2017', 'about-hasgeek') %}
               <div>{{ f.content }}</div>
             {% endwith %}
@@ -170,28 +170,27 @@
           </div>
           {% endwith %}
 
-          <article class="clearfix centered  col-xs-12">
+          <article class="clearfix centered col-sm-8 col-sm-offset-2 clearboth">
             <h2 class="visuallyhidden">Code of Conduct</h2>
             <p class="space-line-bottom nospace-top serif-type italic commitment"><span class="wrap-mobile">We strive to make our events</span> <span class="wrap-mobile">friendly, safe and harassment&#8209;free for all.</span>
             </p>
             <p class="secondary semi-bold all-caps">Please observe the <a href="code-of-conduct" class="block-link" target="_blank">code of conduct</a> at the event.</p>
           </article>
 
-          <p class="centered secondary space-two-top space-half-bottom copyright center-block"><span class="wrap-mobile">For further information / sponsorship:</span> <span class="wrap-mobile"> <a href="mailto:info@hasgeek.com" class="block-link">info@hasgeek.com</a> / <a href="tel: +91-767-633-2020" class="block-link">+91-767-633-2020</a>
-          
-          <p class="centered secondary space-half-top space-line-bottom copyright center-block"><span class="wrap-mobile">The Fifth Elephant is a conference by <a href="http://hasgeek.com" class="block-link" target="_blank">HasGeek</a>.</p>
-          
-          <p class="centered tiny space-half-top faded center-block attribution">Copyright © {{ node.properties.copyright_year }}. All rights reserved.</p>
-          
-          <nav class="tiny space-three">
-            <p class="centered secondary space-two-top space-half-bottom center-block">For more updates, follows us on</p>
-            <ul class="centered all-caps semi-bold">
-              <li class="inline"><a href="http://www.facebook.com/the5el" class="block-link" target="_blank">Facebook</a></li>
-              <li class="inline"><a href="http://twitter.com/fifthel" class="block-link" target="_blank">Twitter</a></li>
-              <li class="inline"><a href="https://www.youtube.com/user/hasgeek" class="block-link" target="_blank">HasGeek TV</a></li>
-              <li class="inline"><a href="https://www.flickr.com/photos/hasgeek/sets/" class="block-link" target="_blank">Flickr</a></li>
-            </ul>
-          </nav>
+          <article class="clearboth">
+            <p class="centered secondary space-two-top space-half-bottom copyright center-block"><span class="wrap-mobile">For further information / sponsorship:</span> <span class="wrap-mobile"> <a href="mailto:info@hasgeek.com" class="block-link">info@hasgeek.com</a> / <a href="tel: +91-767-633-2020" class="block-link">+91-767-633-2020</a>
+            <p class="centered secondary space-half-top space-line-bottom copyright center-block"><span class="wrap-mobile">The Fifth Elephant is a conference by <a href="http://hasgeek.com" class="block-link" target="_blank">HasGeek</a>.</p>
+            <p class="centered tiny space-half-top faded center-block attribution">Copyright © {{ node.properties.copyright_year }}. All rights reserved.</p>
+            <nav class="tiny space-three">
+              <p class="centered secondary space-two-top space-half-bottom center-block">For more updates, follows us on</p>
+              <ul class="centered all-caps semi-bold">
+                <li class="inline"><a href="http://www.facebook.com/the5el" class="block-link" target="_blank">Facebook</a></li>
+                <li class="inline"><a href="http://twitter.com/fifthel" class="block-link" target="_blank">Twitter</a></li>
+                <li class="inline"><a href="https://www.youtube.com/user/hasgeek" class="block-link" target="_blank">HasGeek TV</a></li>
+                <li class="inline"><a href="https://www.flickr.com/photos/hasgeek/sets/" class="block-link" target="_blank">Flickr</a></li>
+              </ul>
+            </nav>
+          </article>
         </div>
       </div>
     </footer>

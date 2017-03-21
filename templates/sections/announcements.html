@@ -3,7 +3,7 @@
     <div class="row">
       <div class="tile-block clearfix link-silent">
       {% with f = fragment('2017', 'announcement') %}
-        {{ f.content|safe }}
+        <div class="col-sm-8 col-sm-offset-2">{{ f.content|safe }}</div>
       {% endwith %}
 
       {% if node.properties.propose_talk %}
@@ -12,7 +12,7 @@
         <p class="space-one text-center"><a href="/#tickets" class="button">Buy tickets</a></p>
       {% endif %}
 
-      <div class="text-center space-half link-silent">
+      <div class="text-center space-half link-silent col-xs-12 col-sm-8 col-sm-offset-2">
         <p>
           <a href="http://hasgeek.us2.list-manage.com/subscribe?u=c84c1486d2d6a025417c5d146&id=47afa263c6" target="_blank" class="orange click" data-label="Sign up" data-target="HasGeek sign up page">Sign up</a> to receive updates and information about tickets, speakers, schedule and more.
         </p>
