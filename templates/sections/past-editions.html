@@ -24,9 +24,11 @@
     
     <article class="push-two clearfix center-block regular">
       <div class="container">
-        {% with f = fragment('2017', 'past-editions') %}
-          <div class="row">{{ f.content }}</div>
-        {% endwith %}
+        <div class="row">
+          {% with f = fragment('2017', 'past-editions') %}
+            <div class="col-xs-12">{{ f.content }}</div>
+          {% endwith %}
+        </div>
       </div>
     </article>
     
