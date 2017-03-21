@@ -1,0 +1,129 @@
+{% extends theme('layouts/page.html') %}
+
+{% block banner_title %}
+  {% if node.properties.tagline %}
+  <h1 class="clearboth centered calm measure-10words center-block space-half">
+    {{ node.properties.tagline}}
+  </h1>
+  {% endif %}
+  <p class="space-one">
+    <a href="#become-a-sponsor" class="button smooth-scroll" target="_blank">Become a sponsor</a>
+  </p>
+{% endblock %}
+
+{% block image_banner %}     
+  <div class="masthead-svg-container">
+    {% include theme("layouts/bigdata_banner.html") %}
+  </div>
+{% endblock %}
+
+{% block page_nav_items %}
+  <li><a href="#highlights" class="darkgray link-white-hover smooth-scroll">Highlights</a></li>
+  <li><a href="#become-a-sponsor" class="darkgray link-white-hover smooth-scroll">Become a sponsor</a></li>
+  <li><a href="#testimonials" class="darkgray link-white-hover smooth-scroll">Testimonials</a></li>
+  <li><a href="#sponsors" class="darkgray link-white-hover smooth-scroll">Sponsors</a></li>
+  <li><a href="#about" class="darkgray link-white-hover smooth-scroll">About HasGeek</a></li>
+{% endblock %}
+
+{% block content %}
+  {% include theme("sections/highlights.html") %}
+  {% include theme("sections/sponsorship-catalogue.html") %}
+  {% include theme("sections/testimonials.html") %}
+  {% include theme("sections/sponsors-summary.html") %}
+{% endblock %}
+
+{% block footer_script %}
+<style type="text/css">
+  #outreach-widget .outreach-button-action {
+    background: #DF5E0E;
+    border-color: #a64508;
+    color: #fff;
+    border-width: 0 0 3px;
+  }
+  #outreach-widget .outreach-button-info {
+    background-color: #F5F5F5;
+    border-color: #ADADAD;
+    color: #333;
+    border-width: 1px 1px 3px;
+  }
+  .category-heading {
+    font-size: 1.650rem;
+    line-height: 1.30;
+    font-weight: 500;
+    margin-top: 1.00rem!important;
+    margin-bottom: 0!important;
+    padding: 0 15px;
+  }
+  .category-description {
+    margin: 0;
+  }
+  #outreach-widget .ticket-description {
+    font-size: .800rem;
+    line-height: 1.60;
+  }
+</style>
+<script>
+$(document).ready(function() {  
+  var outreachUrl = "https://outreach.hasgeek.com";
+
+  $.get({
+    url: outreachUrl + "//api/1/outreach.js",   
+    crossDomain: true,
+    timeout: 8000,
+    retries: 1,
+    retryInterval: 8000,
+    success: function(data) {
+      var outreachScript = document.createElement('script');
+      outreachScript.innerHTML = data.script;
+      document.getElementsByTagName('body')[0].appendChild(outreachScript);
+      window.outreach_widget.init({
+        orgName: 'hasgeek',
+        itemCollection: "{{ node.properties.item_collection }}",
+        eventName: "{{ node.properties.payment_desc }}"
+      });
+    },
+    error: function(response) {
+      var ajaxLoad = this;
+      ajaxLoad.retries -= 1;
+      var errorMsg;
+      if (response.readyState === 4) {
+        errorMsg = "Server error, please try again later.";
+        logError(errorMsg);
+      }
+      else if (response.readyState === 0) {
+        if (ajaxLoad.retries < 0) {
+          if(!navigator.onLine) {
+            errorMsg = "Unable to connect. There is no network!";
+            logError(errorMsg);
+          }
+          else {
+            errorMsg = "<p>Unable to connect. If you are behind a firewall or using any script blocking extension (like Privacy Badger).<p></p> Please ensure your browser can load outreach.hasgeek.com, api.razorpay.com and checkout.razorpay.com .</p>";
+            logError(errorMsg);
+          }
+        } else {
+          setTimeout(function() {
+            $.get(ajaxLoad);
+          }, ajaxLoad.retryInterval);
+        }
+      }
+    }
+  });
+
+  var logError = function (errorMsg) {
+    $('#outreach-widget p').html(errorMsg);
+    {% if g.user %}
+      Raven.setUserContext({
+        email: "{{ g.user.email }}",
+        id: "{{ g.user.username }}"
+      });
+    {% endif %}
+    Raven.captureMessage(errorMsg, {
+      level: 'error',
+      logger: 'outreach'
+    });
+    Fifthel.sendGA('error', 'outreach load error', errorMsg);
+  }
+
+});
+</script>
+{% endblock %}

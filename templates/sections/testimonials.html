@@ -1,13 +1,13 @@
 {% set testimonials = getnode(path='testimonials').data['testimonials'] %}
-<section id="testimonials" class="space-four-top push-one legible clearfix">
+<section id="testimonials" class="push-two clearfix fill-light">
   <h2 class="centered calm measure-10words center-block nospace-top space-two-bottom">Testimonials</h2>
   <div class="container center-block pad-two">
     {% for testimonial in testimonials %}
-      <p class="regular clearfix">
-        <i class="fa fa-quote-left ultrafaded"></i>{{ testimonial.text }}
-        <i class="fa fa-quote-right ultrafaded"></i><br><span class="secondary flushright blue">{{ testimonial.fullname }}, <br>
-        <span class="darkgray">{{ testimonial.designation }}</span></span>
-      </p>
+      <div class="regular space-half-one clearfix">
+        <i class="fa fa-quote-left ultrafaded inline"></i> <div class="testimonial-blurb">{{ testimonial.blurb|safe }}</div> <i class="fa fa-quote-right ultrafaded inline"></i>
+        <div class="secondary text-right red">{{ testimonial.name|safe }}</div>
+        <div class="secondary text-right darkgray">{{ testimonial.designation|safe }}</div>
+      </div>
     {% endfor %}
   </div>
 </section>

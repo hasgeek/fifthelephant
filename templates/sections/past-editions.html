@@ -1,4 +1,4 @@
-<section id="past-editions" class="last-year legible nospace clearfix fill-light">
+<section id="past-editions" class="last-year nospace clearfix fill-light">
     <div class="resetcoords full fill-dark">
       <div class="band last-year white freeflow full">
         <h1 class="centered calm measure-10words space-half-bottom space-one-top">2016 Edition</h1>
@@ -22,16 +22,18 @@
       </script>
     </div>
     
-    <article class="prose measure-10words pad-one space-four-top space-two-bottom center-block regular">
-      {% with f = fragment('2017', 'past-editions') %}
-        {{ f.content }}
-      {% endwith %}
+    <article class="push-two clearfix center-block regular">
+      <div class="container">
+        {% with f = fragment('2017', 'past-editions') %}
+          <div class="row">{{ f.content }}</div>
+        {% endwith %}
+      </div>
     </article>
     
     {% set talks = getnode(path='past-featured-talks').data['talks'] %}
     <div class="push-one-top push-four-bottom">
       <h2 class="centered calm measure-10words center-block space-two">Featured Talks</h2>
-      <ul class="thumbnail-columns thumbnail-columns-four video-thumbnails regular clearfix">
+      <ul class="thumbnail-columns thumbnail-columns-four video-thumbnails regular clearfix no-list">
         {% for talk in talks %}
           <li class="clearfix">
             <a class="occupy block-link" href="{{ talk.video_url }}" target="_blank">

@@ -29,13 +29,15 @@
       </div>
     </article>
     </div>
-    <article class="sponsor-pitch space-two-top clearfix">
-      <div class="centered space-two">
-        {% with f = fragment('2017', 'about-sponsorship') %}
-          {{ f.content }}
-        {% endwith %}
-      </div>
-    </article>
+    {% if not node.properties.hide_about_sponsorship %}
+      <article class="sponsor-pitch space-two-top clearfix">
+        <div class="centered space-two">
+          {% with f = fragment('2017', 'about-sponsorship') %}
+            {{ f.content }}
+          {% endwith %}
+        </div>
+      </article>
+    {% endif %}
   </div>
   </div>
 </section>

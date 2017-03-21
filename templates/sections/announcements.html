@@ -1,27 +1,30 @@
-<section id="announcements" class="measure-10words pad-one center-block legible space-four-top space-three-bottom clearfix">
-  <h2 class="visuallyhidden">Introduction</h2>
-   <div class="tile-block clearfix link-silent">
-    {% with f = fragment('2017', 'announcement') %}
-      {{ f.content|safe }}
-    {% endwith %}
+<section id="announcements" class="pad-one center-block legible push-two clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="tile-block clearfix link-silent">
+      {% with f = fragment('2017', 'announcement') %}
+        {{ f.content|safe }}
+      {% endwith %}
 
-    {% if node.properties.propose_talk %}
-      <p class="space-one text-center"><a href="{{ node.properties.funnel_url }}" class="button">Propose a talk</a></p>
-    {% elif node.properties.buy_ticket %}
-      <p class="space-one text-center"><a href="/#tickets" class="button">Buy tickets</a></p>
-    {% endif %}
-    
-    <div class="text-center space-half link-silent">
-      <p>
-        <a href="http://hasgeek.us2.list-manage.com/subscribe?u=c84c1486d2d6a025417c5d146&id=47afa263c6" target="_blank" class="orange click" data-label="Sign up" data-target="HasGeek sign up page">Sign up</a> to receive updates and information about tickets, speakers, schedule and more.
-      </p>
-      <p class="text-center space-half-bottom">For more updates, follow us on <a href="https://www.facebook.com/rootconf" target="_blank" class="orange click" data-label="Facebook" data-target="Facebook">Facebook</a>, <a href="https://twitter.com/rootconf" target="_blank" class="orange" data-label="Twitter" data-target="Twitter">Twitter</a> and <a href="https://www.youtube.com/user/hasgeek" title="Watch the latest videos from HasGeek" target="_blank" class="orange click" data-label="YouTube" data-target="YouTube">YouTube</a>.
-      </p>
+      {% if node.properties.propose_talk %}
+        <p class="space-one text-center"><a href="{{ node.properties.funnel_url }}" class="button">Propose a talk</a></p>
+      {% elif node.properties.buy_ticket %}
+        <p class="space-one text-center"><a href="/#tickets" class="button">Buy tickets</a></p>
+      {% endif %}
+
+      <div class="text-center space-half link-silent">
+        <p>
+          <a href="http://hasgeek.us2.list-manage.com/subscribe?u=c84c1486d2d6a025417c5d146&id=47afa263c6" target="_blank" class="orange click" data-label="Sign up" data-target="HasGeek sign up page">Sign up</a> to receive updates and information about tickets, speakers, schedule and more.
+        </p>
+        <p class="text-center space-half-bottom">For more updates, follow us on <a href="https://www.facebook.com/rootconf" target="_blank" class="orange click" data-label="Facebook" data-target="Facebook">Facebook</a>, <a href="https://twitter.com/rootconf" target="_blank" class="orange" data-label="Twitter" data-target="Twitter">Twitter</a> and <a href="https://www.youtube.com/user/hasgeek" title="Watch the latest videos from HasGeek" target="_blank" class="orange click" data-label="YouTube" data-target="YouTube">YouTube</a>.
+        </p>
+      </div>
+      </div>
+      {% if node.properties.campaign_video %}
+      <div class="responsive-video">
+        <iframe src="{{ campaign_video }}" frameborder="0" allowfullscreen></iframe>
+      </div>
+      {% endif %}
     </div>
   </div>
-  {% if node.properties.campaign_video %}
-  <div class="responsive-video">
-    <iframe src="{{ campaign_video }}" frameborder="0" allowfullscreen></iframe>
-  </div>
-  {% endif %}
 </section>
