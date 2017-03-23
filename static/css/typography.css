@@ -6,27 +6,18 @@
 /*  Families  */
 
 body,
-.body-type      { font-family: Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif; }
-h1,
-h2,
-h3,
-.title-type     { font-family: 'Bree Serif', FF Tisa Web Pro, Georgia, serif; }
-.serif-type     { font-family: Baskerville, Palatino, 'Book Antiqua', Constantia, 'URW Palladio L'; }
-.monospace      { font-family: monospace; }
-
-.wf-active body,
-.wf-active .body-type      { font-family: proxima-nova, Proxima Nova, Avenir, Helvetica Neue, Helvetica, sans-serif; }
-.wf-active h1,
-.wf-active h2,
-.wf-active h3,
-.wf-active .title-type     { font-family: bree-serif, Bree Serif, FF Tisa Web Pro, Georgia, serif; }
+.body-type      { 
+  font-family: 'Source Sans Pro', sans-serif; 
+  font-size: 1.000rem;
+  line-height: 1.5000;
+}
+.title-type, h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5     
+  { font-family: 'Bree Serif', serif; }
 
 
 
 /*  Scale  */
-
-html            { font-size: 14px; line-height: 1.5 }
-
 
 .massive        { font-size: 9.00rem; line-height: 0.8000; text-rendering: optimizeLegibility; }
 .giant          { font-size: 5.500rem; line-height: 1; text-rendering: optimizeLegibility; }

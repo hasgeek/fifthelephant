@@ -5,8 +5,6 @@ input,
 select,
 textarea { color: #222; }
 body {
-    font-size: inherit;
-    line-height: inherit;
     background: #FFF;
 }
 

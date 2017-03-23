@@ -3,7 +3,7 @@
     <div class="row">
       <div class="tile-block clearfix link-silent">
       {% with f = fragment('2017', 'announcement') %}
-        <div class="col-sm-8 col-sm-offset-2">{{ f.content|safe }}</div>
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">{{ f.content|safe }}</div>
       {% endwith %}
 
       {% if node.properties.propose_talk %}

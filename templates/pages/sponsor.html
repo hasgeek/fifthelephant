@@ -50,25 +50,28 @@
     color: #333;
     border-width: 1px 1px 3px;
   }
-  .category-heading {
-    font-size: 1.650rem;
-    line-height: 1.30;
-    font-weight: 500;
-    margin-top: 1.00rem!important;
-    margin-bottom: 0!important;
-    padding: 0 15px;
+  #outreach-widget .category-heading {
+    font-size: 1.5em;
+    margin: 0.83em 0;
+    padding: 0;
   }
-  .category-description {
-    margin: 0;
+  #outreach-widget .ticket-title {
+    font-size: 1.250rem;
+    line-height: 1.5000;
   }
-  #outreach-widget .ticket-description {
-    font-size: .800rem;
-    line-height: 1.60;
+  #outreach-widget .ticket-description .blurb, 
+  #outreach-widget .ticket-description .description {
+    font-size: 1.000rem;
+    line-height: 1.5000;
+  }
+  #outreach-widget .ticket-description .js-read-more {
+    font-size: .850rem;
+    line-height: 1.50;
   }
 </style>
 <script>
 $(document).ready(function() {  
-  var outreachUrl = "https://outreach.hasgeek.com";
+  var outreachUrl = "http://outreach.vidya.dev:4000";
 
   $.get({
     url: outreachUrl + "//api/1/outreach.js",   
