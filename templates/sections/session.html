@@ -3,7 +3,7 @@
 
 <section id="{{ session.id }}" class="push-three-top push-two-bottom clearfix">
   <div class="container-fluid">
-    {% if session.label %}<h2 class="calm centered space-one large text-center">{{ session.label }}</h2>{% endif %}
+    {% if session.label %}<h2 class="space-one large text-center">{{ session.label }}</h2>{% endif %}
     {% for item in session|sort(attribute='count') %}
       <div id="{{ item.id }}" class="row push-two-bottom pad-3q session">
         <div class="row">
