@@ -7,9 +7,9 @@
       {% endwith %}
 
       {% if node.properties.propose_talk %}
-        <p class="space-one text-center"><a href="{{ node.properties.funnel_url }}" class="button">Propose a talk</a></p>
+        <p class="space-one text-center"><a href="{{ node.properties.funnel_url }}" class="button" target="_blank">Propose a talk</a></p>
       {% elif node.properties.buy_ticket %}
-        <p class="space-one text-center"><a href="/#tickets" class="button">Buy tickets</a></p>
+        <p class="space-one text-center"><a href="#tickets" class="button smooth-scroll">Buy tickets</a></p>
       {% endif %}
 
       <div class="text-center space-half link-silent col-xs-12 col-sm-8 col-sm-offset-2">

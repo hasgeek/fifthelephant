@@ -6,6 +6,29 @@
   </div>
 {% endblock %}
 
+{% block banner_title %}
+  {% if node.properties.tagline %}
+  <h1 class="clearboth centered calm measure-10words center-block space-half">
+    {{ node.properties.tagline}}
+  </h1>
+  {% endif %}
+  {% if node.properties.date %}
+    <h2 class="space-half">{{ node.properties.date }}</h2>
+  {% endif %}
+  {% if node.properties.venue %}
+    <h2 class="space-half-top space-one-bottom">{{ node.properties.venue }}</h2>
+  {% endif %}
+  {% if node.properties.buy_ticket %}
+    <p class="space-one">
+      <a href="#tickets" class="button smooth-scroll" target="_blank">Buy tickets</a>
+    </p>
+  {% elif node.properties.propose_talk %}
+    <p class="space-one">
+      <a href="{{ node.properties.funnel_url }}" class="button" target="_blank">Propose a talk</a>
+    </p>
+  {% endif %}
+{% endblock %}
+
 {% block page_nav_items %}
   <li><a href="#announcements" class="darkgray link-white-hover smooth-scroll">Announcements</a></li>
   {% if node.properties.past_editions %}

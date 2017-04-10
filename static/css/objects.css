@@ -1120,8 +1120,47 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 }
 
 /* Schedule */
-.schedule-container { max-width: 1000px; margin: auto;}
-.schedule-table { background-color: transparent; border-collapse: separate; height: 100%;}
+.schedule-container { 
+  max-width: 1000px; 
+  margin: auto;
+  min-height: 7030px;
+}
+
+@media (min-width: 480px) {
+  .schedule-container {
+    min-height: 5700px;
+  }
+}
+
+@media (min-width: 768px) {
+  .schedule-container {
+    min-height: 4730px;
+  }
+}
+
+@media (min-width: 980px) {
+  .schedule-container {
+    min-height: 4600px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .schedule-container {
+    min-height: 4770px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .schedule-container {
+    min-height: 4810px;
+  }
+}
+
+.schedule-table {
+  background-color: transparent;
+  border-collapse: separate;
+  height: 100%;
+}
 
 .schedule-table thead th.time   { 
   width: 12%;
