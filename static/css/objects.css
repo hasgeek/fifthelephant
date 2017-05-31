@@ -2237,3 +2237,21 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   display: inline;
 }
 
+.speaker-photo {
+  max-width: 250px;
+  border-radius: 50%;
+  border: 4px solid #e05f26;
+}
+.speaker-photo-2 {
+  float: left;
+  width: 40%;
+  margin:0 5%;
+  max-width: auto;
+}
+.speaker-photo-3 {
+  float: left;
+  width: 30%;
+  margin:0 1.5%;
+  max-width: auto;
+}
+

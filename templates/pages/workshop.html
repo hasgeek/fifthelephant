@@ -12,9 +12,98 @@
 {% endblock %}
 
 {% block footerscripts %}
+<style type="text/css">        
+  #boxoffice-widget .boxoffice-button-action {        
+    background-color: #E05F26;        
+    border-color:  #B94C1D;       
+    color: #fff;        
+  }       
+  #boxoffice-widget .boxoffice-button-info {        
+    background-color: #5BC0DE;        
+    border-color: #2A9CBE;        
+    color: #fff;        
+  }       
+  #boxoffice-widget .payment-stages-bg {        
+    background-color: #60583E;        
+  }       
+  #boxoffice-widget .progress-indicator>li {        
+    color: #bbb;        
+  }       
+  #boxoffice-widget .category-heading {       
+    background-color: #F2DE9C;        
+    border-bottom: 3px solid #bcad7a;       
+    color: rgba(0,0,0,0.6);     
+    line-height: 1.1;     
+  }       
+  #boxoffice-widget .category-heading:after {       
+    border-color: #F2DE9C #fff #F2DE9C #F2DE9C;        
+  }   
+</style>
+
 <script>
-  $(document).ready(function() {
-    initLeaflets();
+$(document).ready(function() {  
+  var boxofficeUrl = "https://boxoffice.hasgeek.com";
+
+  $.get({
+    url: boxofficeUrl + "/api/1/boxoffice.js",   
+    crossDomain: true,
+    timeout: 8000,
+    retries: 5,
+    retryInterval: 8000,
+    success: function(data) {
+      var boxofficeScript = document.createElement('script');
+      boxofficeScript.innerHTML = data.script;
+      document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
+      window.Boxoffice.init({
+        org: "hasgeek",
+        itemCollection: "{{ node.properties.item_collection }}",
+        paymentDesc: "{{ node.properties.payment_desc }}"
+      });
+      initLeaflets();
+    },
+    error: function(response) {
+      var ajaxLoad = this;
+      ajaxLoad.retries -= 1;
+      var errorMsg;
+      if (response.readyState === 4) {
+        errorMsg = "Server error, please try again later.";
+        logError(errorMsg);
+      }
+      else if (response.readyState === 0) {
+        if (ajaxLoad.retries < 0) {
+          if(!navigator.onLine) {
+            errorMsg = "Unable to connect. There is no network!";
+            logError(errorMsg);
+          }
+          else {
+            errorMsg = "<p>Unable to connect. If you are behind a firewall or using any script blocking extension (like Privacy Badger).<p></p> Please ensure your browser can load boxoffice.hasgeek.com, api.razorpay.com and checkout.razorpay.com .</p>";
+            logError(errorMsg);
+          }
+        } else {
+          setTimeout(function() {
+            $.get(ajaxLoad);
+          }, ajaxLoad.retryInterval);
+        }
+      }
+    }
   });
+
+  var logError = function (errorMsg) {
+    $('#boxoffice-widget p').html(errorMsg);
+    {% if g.user %}
+      Raven.setUserContext({
+        email: "{{ g.user.email }}",
+        id: "{{ g.user.username }}"
+      });
+    {% endif %}
+    Raven.captureMessage(errorMsg, {
+      level: 'error',
+      logger: 'boxoffice'
+    });
+    Fifthel.sendGA('error', 'boxoffice load error', errorMsg);
+    initLeaflets();
+  }
+
+});
 </script>
 {% endblock %}

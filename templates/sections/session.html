@@ -9,7 +9,7 @@
         <div class="row">
           <h3 class="legible nospace-top medium push-one-top pad-half darkblue bold text-center">{{ item.title|safe }}</h3>
           <div class="col-md-4 col-xs-12 speaker-bio">
-            {% if item.photos %}<div class="clearfix nospace-top push-one-top space-half-bottom">{% for photo in item.photos %}<img src="{{photo}}" alt="" class="center-block speaker-photo {% if item.photos|length > 1 %} speaker-photo-small {% endif %}">{% endfor %}</div>{% endif %}
+            {% if item.photos %}<div class="clearfix nospace-top push-one-top space-half-bottom">{% for photo in item.photos %}<img src="{{photo}}" alt="" class="center-block speaker-photo {% if item.photos|length > 1 %} speaker-photo-{{item.photos|length}} {% endif %}">{% endfor %}</div>{% endif %}
             <h4 class="regular prose-type calm all-caps space-1q-top nospace-bottom darkblue bold text-center">{{ item.speaker|safe }}</h4>
             {% if item.twitter %}<div class="link-silent regular-prose space-1q-top nospace-bottom text-center"><a href="https://twitter.com/{{ item.twitter }}" target="_blank">@{{ item.twitter }}</a></div>{% endif %}
             {% if item.designation %}<p class="secondary italic space-1q-top nospace-bottom darkyellow text-center">{{ item.designation|safe }}</p>{% endif %}
@@ -32,10 +32,24 @@
               {% if item.url %}<li class="space-1q"><a class="orange" target="_blank" href="{{ item.url }}">Read workshop proposal</a></li>{% endif %}
             </ul>
             {% if node.properties.buy_ticket %}
-              <div class="push-one pad-half text-left">
-                <a href="/#tickets" class="button">Buy tickets</a>
+            <div class="space-one pad-half text-left">
+              <a href="/#tickets" class="button">Buy tickets</a>
+            </div>
+            {% elif node.properties.interested_btn %}
+              <div class="space-one pad-half text-left">
+                <a href="#tickets" class="button smooth-scroll">Attend</a>
               </div>
             {% endif %}
+            <div class="space-one-top pad-half share-btns">
+              <p class="regular">Tell your friends!</p>
+              <span class="tweet-button">
+              <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+              </span>
+              <div class="fb-share-button pad-half" data-layout="button"></div>
+              <div id="fb-root"></div>
+              <script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </div>
           </div>
         </div>
       </div>
