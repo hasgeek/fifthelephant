@@ -53,8 +53,8 @@
       <h2 class="space-one">{{ event.title|safe }}</h2>
       <div>{{ event.content }}</div>
       <div class="space-one">
-        <p><b>Date</b>: {{ event.start_datetime.strftime('%d %B %Y') }}</p>
-        <p><b>Time</b>: {{ event.start_datetime.strftime('%H:%M') }} - {{ event.end_datetime.strftime('%H:%M') }}</p>
+        <p><b>Start date & time</b>: {{ event.start_datetime|datetime }}</p>
+        <p><b>End date & time</b>: {{ event.end_datetime|datetime }}</p>
         <p><b>Venue</b>: {{ event.location_name }}</p>
         <p>{{ event.location_address }}</p>
       </div>
