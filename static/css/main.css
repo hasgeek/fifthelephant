@@ -58,13 +58,13 @@ a.dark:hover { color: black; border-bottom: 2px solid black !important; backgrou
 
 hr {
     display: block; clear: both; height: 0; margin: 0; padding: 0;
-    
+
     border: none;
     border-top: 1px solid #000;
     border-top: 1px solid rgba(0,0,0,0.1);
     border-bottom: 1px solid #FFF;
     border-bottom: 1px solid rgba(255,255,255,0.3);
-    
+
     filter: alpha(opacity = 30);
 }
 
@@ -168,35 +168,35 @@ a.link-unfade-hover:hover,
         and (min-device-pixel-ratio: 1.5)
         and (min-width: 251px)
         and (max-width: 400px) {
-    .big-data { 
+    .big-data {
         background-image: url(https://imgee.s3.amazonaws.com/imgee/11050ab1efa041febfbe1d2f06373bba_w500_h513.png);
         padding-top: 80%; }
     .community-banner { background-image: url(../img/community-banner-800.png); }
     .conference-banner { background-image: url(../img/conference-banner-800.png); }
     .workshop-banner { background-image: url(../img/workshop-banner-800.png); }
 }
-@media only screen and (min-width: 501px) and (max-width: 880px) { 
+@media only screen and (min-width: 501px) and (max-width: 880px) {
     .big-data {
         background-image: url(https://imgee.s3.amazonaws.com/imgee/c0866f85c10c4c2fae2480cf5e0db506_w880_h662.png);
-        margin-bottom: 7%; 
+        margin-bottom: 7%;
         width: 85%;
         padding-top: 63%;
     }
     .community-banner {
         background-image: url(../img/community-banner-800.png);
-        margin-bottom: 7.5%; 
+        margin-bottom: 7.5%;
         width: 90%;
         padding-top: 63%;
     }
     .conference-banner {
         background-image: url(../img/conference-banner-800.png);
-        margin-bottom: 7%; 
+        margin-bottom: 7%;
         width: 90%;
         padding-top: 50%;
     }
     .workshop-banner {
         background-image: url(../img/workshop-banner-800.png);
-        margin-bottom: 5%; 
+        margin-bottom: 5%;
         width: 90%;
         padding-top: 24%;
     }
@@ -209,7 +209,7 @@ a.link-unfade-hover:hover,
         and (min-device-pixel-ratio: 1.5)
         and (min-width: 401px)
         and (max-width: 550px) {
-    .big-data { 
+    .big-data {
         background-image: url(https://imgee.s3.amazonaws.com/imgee/11050ab1efa041febfbe1d2f06373bba_w600_h615.png);
         padding-top: 80%;
         width: 80%;
@@ -226,14 +226,14 @@ a.link-unfade-hover:hover,
         and (min-device-pixel-ratio: 1.5)
         and (min-width: 551px)
         and (max-width: 880px) {
-    .big-data { 
+    .big-data {
         background-image: url(../img/masthead.png);
         padding-top: 65%; }
     .community-banner { background-image: url(../img/community-banner-1600.png); }
     .conference-banner { background-image: url(../img/conference-banner-1600.png); }
     .workshop-banner { background-image: url(../img/workshop-banner-1600.png); }
 }
-@media only screen and (min-width: 881px) and (max-width: 1370px) { 
+@media only screen and (min-width: 881px) and (max-width: 1370px) {
     .big-data {
         background-image: url(../img/masthead.png);
         margin-bottom: 2%;
@@ -259,7 +259,7 @@ a.link-unfade-hover:hover,
         padding-top: 24%;
     }
 }
-@media only screen and (min-width: 1371px) and (max-width: 2280px) { 
+@media only screen and (min-width: 1371px) and (max-width: 2280px) {
     .big-data {
         background-image: url(../img/masthead.png);
         width: 65%;
@@ -292,7 +292,7 @@ a.link-unfade-hover:hover,
         only screen
         and (min-device-pixel-ratio: 1.5)
         and (min-width: 881px) {
-    .big-data { 
+    .big-data {
         background-image: url(../img/masthead.png);
         background-size: 100%;
         width: 65%;
@@ -303,7 +303,7 @@ a.link-unfade-hover:hover,
     .workshop-banner { background-image: url(../img/workshop-banner-2800.png); }
 }
 
-.hasgeek-logo { 
+.hasgeek-logo {
     background: url('../img/hasgeek.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -422,13 +422,14 @@ a.link-unfade-hover:hover,
 
 
 @media only screen and (min-width: 30em) { }
-@media only screen and (min-width: 40em) { 
+@media only screen and (min-width: 40em) {
 /*    .js .sponsors dt.party { clear: none; }*/
 /*    .js .sponsors dd.corporate:nth-of-type(4):after { display: none; }*/
     .js .sponsors dt.bronze { clear: both; }
+    .js .sponsors dt.payment-partner { clear: both; }
     .js .sponsors dt.corporate-tickets { clear: none; }
     .js .sponsors dd.corporate-tickets:nth-of-type(6):after { /*display: none;*/ }
-    
+
 /*    .js .sponsors dd    { width: 33.3333%; width: calc(100%/3); }*/
 /*    .js .sponsors dd.s  { width: 16.6666%; width: calc(100%/6); }    */
 }
@@ -471,4 +472,3 @@ footer nav ul li + li:before { content: '\2022'; margin: 0 .7rem 0 .4rem; color:
         display: none;
     }
 }
-
