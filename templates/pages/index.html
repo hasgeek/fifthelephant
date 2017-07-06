@@ -37,6 +37,9 @@
   {% if node.properties.proposals %}
     <li><a href="#proposals" class="darkgray link-white-hover smooth-scroll">Proposals</a></li>
   {% endif %}
+  {% if node.properties.confirmed_talks %}
+    <li><a href="#confirmed-talks" class="darkgray link-white-hover smooth-scroll">Confirmed talks</a></li>
+  {% endif %}
   {% if node.properties.schedule %}
     <li><a href="#schedule" class="darkgray link-white-hover smooth-scroll">Schedule</a></li>
   {% endif %}
@@ -65,6 +68,9 @@
   {% endif %}
   {% if node.properties.proposals %}
     {% include theme("sections/proposals.html") %}
+  {% endif %}
+  {% if node.properties.confirmed_talks %}
+    {% include theme("sections/confirmed-talks.html") %}
   {% endif %}
   {% if node.properties.schedule %}
     {% include theme("sections/schedule.html") %}
@@ -187,7 +193,6 @@ $(document).ready(function() {
 
       // For proposals
     var proposals_url = "{{ node.properties.funnel_url }}" + 'json';
-    console.log("proposals_url", proposals_url)
     //If funnel-proposals divs is present on the page, then make the ajax call.
     if(($('#funnel-proposals').length)) {
       $.ajax({
@@ -195,7 +200,6 @@ $(document).ready(function() {
         dataType: 'jsonp',
         url: proposals_url,
         success: function(data) {
-          console.log("parseProposalJson", data)
           parseProposalJson(data);
         }
       });//eof ajax call
