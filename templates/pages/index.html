@@ -60,6 +60,12 @@
 
 {% block content %}
   {% include theme("sections/announcements.html") %}
+  {% if node.properties.featured_speakers %}
+    {% include theme("sections/featured-speakers.html") %}
+  {% endif %}
+  {% if node.properties.workshops %}
+    {% include theme("sections/workshops.html") %}
+  {% endif %}
   {% if node.properties.past_editions %}
     {% include theme("sections/past-editions.html") %}
   {% endif %}

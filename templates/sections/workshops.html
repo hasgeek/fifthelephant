@@ -1,0 +1,42 @@
+<section id="workshops" class="featured-speakers clearfix">
+  <h2 class="calm centered space-one large text-center">Workshops</h2>
+  {% for item in getnode(path='workshops').data['workshops'] -%}
+      {% if loop.first %}
+      <div class="container space-two-top">
+        <div class="row">
+          <ul class="space-half-top list-space-line list-plain list-silent row">
+      {% endif %}
+            <li class="col-xs-12 col-sm-6 col-lg-4 text-left">
+              <div class="workshop-card">
+                <div class="workshop-header">
+                  <h2 class="secondary workshop-title">{{ item.title }}</h2>
+                </div>
+                <h5 class="space-1q secondary-prose workshop-objective text-left">{{ item.objective|safe }}</h5>
+                {% if item.trainers.length == 1 %}
+                  <h5 class="space-1q secondary-prose workshop-objective text-left">Trainer</h5>
+                {% else %}
+                  <h5 class="space-1q secondary-prose workshop-objective text-left">Trainers</h5>
+                {% endif %}
+                {% for trainer in item.trainers -%}
+                  <div class="row no-gutter">
+                    <div class="col-xs-4">
+                      <div class="img-wrapper" style="float:right;">
+                        <img class="photo featured-speaker circle" src="{{ trainer.photo }}">
+                      </div>
+                    </div>
+                    <div class="col-xs-8">
+                      <h3 class="regular semibold nospace-bottom">{{ trainer.fullname }}</h3>
+                  {% if trainer.twitter %}<p class="nospace-top space-1q-bottom secondary"><a  class="twitter-blue secondary-prose" href="https://twitter.com/{{ trainer.twitter }}" target="_blank">@{{ trainer.twitter }}</a></p>{% endif %}
+                    </div>
+                  </div>
+                {%- endfor %}
+              </div>
+            </li>
+      {% if loop.last %}
+          </ul>
+        </div>    
+      </div>
+      {% endif %}
+  {%- endfor %}
+</section>
+

@@ -2257,3 +2257,115 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   max-width: auto;
 }
 
+.photo{
+  /*border-radius: 50%;*/
+  /*border-top: 5px solid;
+  border-right: 5px solid;*/
+  width: 100%;
+  overflow: hidden;
+  z-index: 9;
+  border-radius: 50%;
+  display: block;
+}
+.img-wrapper{
+  border: 13px solid rgba(255, 255, 255, 0.3);
+  display: block;
+  border-radius: 50%;
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bg-photo{
+  width: 216px;
+  height: 212px;
+  display: block;
+  background-size: 100% !important;
+  border-radius: 50%;
+}
+@media screen and (min-width:768px) and (max-width:1199px){
+  .bg-photo{
+    width: 165px;
+    height: 165px;
+  }
+}
+
+@media screen and (max-width:767px){
+  .bg-photo{
+    width: 200px;
+    height: 200px;
+  }
+  .img-wrapper{
+    width: 230px;
+  }
+}
+
+.featured-speakers h5{
+  line-height: 20px;
+}
+
+.featured-speakers li{    
+  height: 430px;
+  list-style: none;
+}
+
+@media screen and (min-width: 980px) and (max-width: 1200px){
+  .featured-speakers li{    
+    height: 390px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 979px){
+  .featured-speakers li{    
+    height: 380px;
+  }
+}
+
+@media (max-width: 767px){
+  .photo{
+    width: 100%;
+  }
+  .img-wrapper{
+    width: 226px;
+  }
+
+  .featured-speakers li{
+    padding-bottom: 20px;
+    height: 400px;
+  }
+}
+
+.workshop-card {
+  display: inline-block;
+  vertical-align: top;
+  box-shadow: 0 0 2px rgba(0,0,0,0.6);
+  border-radius: 5px;
+  padding: 0;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  max-width: 350px;
+}
+
+.workshop-header {
+  margin: 0;
+  padding: 10px;
+  background: #F0DAAB;
+}
+
+.workshop-title {
+  color: #000;
+  font-size: 18px
+}
+
+.instructor {
+  position: absolute;
+  top: 92px;
+  right: 0;
+  left: 0;
+  width: 130px;
+}
+
+.workshop-objective {
+  padding: 0 20px 5px;
+}
