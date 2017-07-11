@@ -1,30 +1,24 @@
-<section class="featured-speakers push-two clearfix" style="background: #F2DE9C !important;">
-  <div class="container">
-  <div class="row-fluid">
-    <h2 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 large all-caps text-center space-two-bottom">Featured speakers</h2>
-  </div>
+<section class="featured-speakers push-three-top push-two-bottom clearfix fill-light" id="speakers">
+  <h2 class="centered space-one large text-center">Speakers</h2>
   {% for item in getnode(path='featured-speakers').data['speakers'] %}
       {% if loop.first %}
-      <div class="row-fluid space-three-top">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 legible-prose">
-          <ul class="space-half-top list-space-line list-plain list-silent row">
+      <div class="container">
+        <div class="row space-three-top">
+          <ul class="no-list no-padding list-silent">
       {% endif %}
-            <li class="col-lg-3 col-md-3 col-sm-4 col-xs-12 text-center">
+            <li class="col-md-4 col-sm-6 col-xs-12 text-center">
               <a href="{{ item.funnel }}"><span class="img-wrapper">
                 <!-- <img class="photo" src="{{ item.photo }}"> -->
                 <div class="bg-photo" style="background: /* top, transparent #c7c575 */ linear-gradient(rgba(255, 237, 102, 0.2),rgba(255, 237, 102, 0.2)),/* bottom, image */url({{item.photo}});"></div>
               </span></a>
-              {% if item.title %} <h5 class="nospace"><a target="_blank" {% if item.funnel %} href="{{ item.funnel }}" {% endif %}>{{ item.title }}</a></h5>{% endif %}
-              <h3 class="nospace-bottom">{{ item.speaker }}</h3>
-              <h5 class="nospace" style="color:#3f3f3f">{{ item.designation|safe }}</h5>
-              <h5 class="all-caps nospace">{{ item.place }}</h5>
-              {% if item.twitter %}<h4 class="brown link-silent nospace"><a target="_blank" href="https://twitter.com/{{ item.twitter }}">@{{ item.twitter }}</a></h4>{% endif %}
-              {% if item.sponsor %}<h5 class="link-silent dark">Sponsored by <a target="_blank" href="{{ item.sponsor_link }}">{{ item.sponsor }}</a></h5>{% endif %}
-              {% if item.preview %}<h5 class="link-silent orange"><a target="_blank" href="{{ item.preview }}"><i class="icon-youtube-play"></i> preview video</a></h5>{% endif %}
+              {% if item.title %} <h5 class="space-1q"><a target="_blank" {% if item.funnel %} href="{{ item.funnel }}" {% endif %}>{{ item.title }}</a></h5>{% endif %}
+              <h3 class="space-1q">{{ item.speaker }}</h3>
+              <h5 class="space-1q">{{ item.designation|safe }}</h5>
+              {% if item.twitter %}<h4 class="link-silent space-1q"><a class="twitter-blue" target="_blank" href="https://twitter.com/{{ item.twitter }}">@{{ item.twitter }}</a></h4>{% endif %}
             </li>
       {% if loop.last %}
-          </ul>
-        </div>    
+          </ul>  
+        </div>
       </div>
       {% endif %}
   {%- endfor %}

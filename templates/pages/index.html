@@ -34,6 +34,12 @@
   {% if node.properties.past_editions %}
     <li><a href="#past-editions" class="darkgray link-white-hover smooth-scroll">Past edition</a></li>
   {% endif %}
+  {% if node.properties.featured_speakers %}
+    <li><a href="#speakers" class="darkgray link-white-hover smooth-scroll">Speakers</a></li>
+  {% endif %}
+  {% if node.properties.workshops %}
+    <li><a href="#workshops" class="darkgray link-white-hover smooth-scroll">Workshops</a></li>
+  {% endif %}
   {% if node.properties.proposals %}
     <li><a href="#proposals" class="darkgray link-white-hover smooth-scroll">Proposals</a></li>
   {% endif %}
