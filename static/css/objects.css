@@ -759,6 +759,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .js .sponsors dt.community-partner span,
 .js .sponsors dt.hospitality-partner span,
 .js .sponsors dt.payment-partner span,
+.js .sponsors dt.lanyard-sponsor span,
 .js .sponsors dt.diversity-sponsor span,
 .js .sponsors dt.education-partner span {
     font-size: .500rem;
@@ -776,6 +777,7 @@ dl.centered-key-value dt + dd { margin-top: .25rem; }
 .js .sponsors dd.hospitality-partner,
 .js .sponsors dd.payment-partner,
 .js .sponsors dd.diversity-sponsor,
+.js .sponsors dd.lanyard-sponsor,
 .js .sponsors dd.education-partner  { background-color: #ddd; }
 .js .sponsors dd.community { background-color: #FBEFF2; background-color: rgba(251,239,242,.85); }
 .js .sponsors dd.corporate,
